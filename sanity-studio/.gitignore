@@ -27,4 +27,4 @@
 
 
 # Environmental variable files
-.env
+.env.*
