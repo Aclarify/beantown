@@ -17,6 +17,7 @@ export async function getStaticProps(context: any) {
 }
 
 export default function Home({ post }: any) {
+  console.log('Printing props', post);
   return (
     <div className="main">
       <h1>{post.name}</h1>
