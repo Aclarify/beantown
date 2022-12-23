@@ -24,12 +24,12 @@ export default function Home({ post }: any) {
             <img className='w-full' src='images/homepage.png' alt="Home Page Background Image Image"></img>          
         </div> 
        
-        <div className='absolute top-0  flex items-center  justify-center gap-20'>
+        <div className='absolute top-0  flex w-full  justify-around items-center '>
             <div>
-            <img className='object-cover ' src='images/logo.png' alt="logo Image"></img>
+               <img className='object-cover  ' src='images/logo.png' alt="logo Image"></img>
             </div>
-            <div className='flex items-center text-white'>
-            <button className="p-8 pr-1 group inline-block">Home</button>
+            <div className='items-center text-xl  font-[neue-plak] justify-center text-white'>
+             <button className="p-8 pr-1 group inline-block">Home</button>
               <div className="group inline-block">
 
                 <button
@@ -89,14 +89,15 @@ export default function Home({ post }: any) {
               </ul>
 
               </div>
-          </div>
-            <button className='border bg-white p-2'>Book Now</button>
+            </div>
+            <div>
+              <button className='border  text-xl bg-white p-2'>Book Now</button>
+            </div>
+``
+            
         </div>
    
       
-        <div className="main">
-          <h1>{post.name}</h1>
-        </div>
 
     </>
    
