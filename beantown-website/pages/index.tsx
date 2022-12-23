@@ -20,6 +20,7 @@ export default function Home({ post }: any) {
   console.log('Printing props', post);
   return (
     <div className="main">
+      <h3>Home</h3>
       <h1>{post.name}</h1>
     </div>
   );
