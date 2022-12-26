@@ -5,7 +5,7 @@ import client from '../lib/sanity';
 export async function getStaticProps(context: any) {
   const post = await client.fetch(
     `
-    *[_type == "aboutUs"][0]
+    *[_type == "header"]
   `
   );
   return {
@@ -17,16 +17,17 @@ export async function getStaticProps(context: any) {
 
 export default function Home({ post }: any) {
   console.log('Printing props', post);
+  console.log(post.navLinks.linkName);
   return (
     <>
         <div className="relative aspect-w-16 aspect-h-9"> 
              {/* fetch image from cms and update */}
-            <img className='w-full' src='images/homepage.png' alt="Home Page Background Image Image"></img>          
+            <img className='w-full' src='images/homepage.svg' alt="Home Page Background Image Image"></img>          
         </div> 
        
         <div className='absolute top-0  flex w-full  justify-around items-center '>
             <div>
-               <img className='object-cover  ' src='images/logo.png' alt="logo Image"></img>
+               <img className='object-cover  ' src='images/logo.svg' alt="logo Image"></img>
             </div>
             <div className='items-center text-xl  font-[neue-plak] justify-center text-white'>
              <button className="p-8 pr-1 group inline-block">Home</button>
