@@ -1,25 +1,50 @@
+import groq from 'groq';
 import Head from 'next/head';
 import Image from 'next/image';
 import client from '../lib/sanity';
 
+
+const headerInfoQuery = groq `*[_type == "header"][0]{
+  logo,
+  headerButton,
+  navGroup[]{
+    groupTitle,
+    links[]->{
+         linkName
+       }
+   }
+}`
+let linksCount : number = 0 
 export async function getStaticProps(context: any) {
-  const post = await client.fetch(
-    `
-    *[_type == "header"]
-  `
-  );
+  const headerInfo = await client.fetch(headerInfoQuery);
+        console.log('Printing props',{headerInfo});
+        linksCount = Object.keys( headerInfo.navGroup[0].links).length
+        console.log('count    :'+ linksCount);
+
+        console.log(headerInfo.navGroup[0].links);
+
+        console.log(headerInfo.navGroup[0].links[0]);
+        console.log(headerInfo.navGroup[0].links[1]);
+        console.log(headerInfo.navGroup[0].links[2]);
+
+        console.log(headerInfo.navGroup[0].groupTitle);
+        console.log(headerInfo.navGroup[1].groupTitle);
+        console.log(headerInfo.navGroup[2].groupTitle);      
+   
   return {
     props: {
-      post,
+        headerInfo,
     },
   };
 }
 
-export default function Home({ post }: any) {
-  console.log('Printing props', post);
-  console.log(post.navLinks.linkName);
+export default function Home({ headerInfo }: any) {
+
+  
+ 
   return (
     <>
+       
         <div className="relative aspect-w-16 aspect-h-9"> 
              {/* fetch image from cms and update */}
             <img className='w-full' src='images/homepage.svg' alt="Home Page Background Image Image"></img>          
@@ -30,13 +55,13 @@ export default function Home({ post }: any) {
                <img className='object-cover  ' src='images/logo.svg' alt="logo Image"></img>
             </div>
             <div className='items-center text-xl  font-[neue-plak] justify-center text-white'>
-             <button className="p-8 pr-1 group inline-block">Home</button>
+             <button className="p-8 pr-1 group inline-block">{headerInfo.navGroup[1].groupTitle}</button>
               <div className="group inline-block">
 
                 <button
                   className="outline-none focus:outline-none  px-3 py-1  rounded-sm flex items-center min-w-32"
                 >
-                  <span className="pr-1  flex-1 ">Services</span>
+                  <span className="pr-1  flex-1 ">{headerInfo.navGroup[0].groupTitle}</span>
                   <span>
                     <svg
                       className="fill-current h-4 w-4 transform group-hover:-rotate-180
@@ -54,7 +79,7 @@ export default function Home({ post }: any) {
               className="rounded-sm transform scale-0 group-hover:scale-100 absolute 
                         transition duration-150 ease-in-out origin-top min-w-32"
             >
-                <li className="rounded-sm px-3 py-1 ">Cooling and Heating Service</li>
+                <li className="rounded-sm px-3 py-1 ">Cooling </li>
                 <li className="rounded-sm px-3 py-1 ">Electrical Service Page</li>    
                 <li className="rounded-sm px-3 py-1">Plumbing Service Page</li>
               </ul>
@@ -65,7 +90,7 @@ export default function Home({ post }: any) {
                 <button
                   className="outline-none focus:outline-none  px-3 py-1 rounded-sm flex items-center min-w-32"
                 >
-                  <span className="pr-1  flex-1">About Us</span>
+                  <span className="pr-1  flex-1">{headerInfo.navGroup[2].groupTitle}</span>
                   <span>
                     <svg
                       className="fill-current h-4 w-4 transform group-hover:-rotate-180
