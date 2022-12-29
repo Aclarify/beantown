@@ -14,22 +14,12 @@ const headerInfoQuery = groq `*[_type == "header"][0]{
        }
    }
 }`
-let linksCount : number = 0 
+
+const footerInfoQuery = groq ``
+
 export async function getStaticProps(context: any) {
-  const headerInfo = await client.fetch(headerInfoQuery);
-        console.log('Printing props',{headerInfo});
-        linksCount = Object.keys( headerInfo.navGroup[0].links).length
-        console.log('count    :'+ linksCount);
-
-        console.log(headerInfo.navGroup[0].links);
-
-        console.log(headerInfo.navGroup[0].links[0]);
-        console.log(headerInfo.navGroup[0].links[1]);
-        console.log(headerInfo.navGroup[0].links[2]);
-
-        console.log(headerInfo.navGroup[0].groupTitle);
-        console.log(headerInfo.navGroup[1].groupTitle);
-        console.log(headerInfo.navGroup[2].groupTitle);      
+  const headerInfo = await client.fetch(headerInfoQuery);     
+          
    
   return {
     props: {
@@ -40,7 +30,10 @@ export async function getStaticProps(context: any) {
 
 export default function Home({ headerInfo }: any) {
 
-  
+       
+        const servicesNavSubLinks = headerInfo.navGroup[0]
+        console.log(servicesNavSubLinks);
+
  
   return (
     <>
@@ -75,13 +68,24 @@ export default function Home({ headerInfo }: any) {
                     </svg>
                   </span>
                 </button>
+                
+
               <ul
               className="rounded-sm transform scale-0 group-hover:scale-100 absolute 
                         transition duration-150 ease-in-out origin-top min-w-32"
             >
-                <li className="rounded-sm px-3 py-1 ">Cooling </li>
-                <li className="rounded-sm px-3 py-1 ">Electrical Service Page</li>    
-                <li className="rounded-sm px-3 py-1">Plumbing Service Page</li>
+                
+
+                
+                  {
+                    servicesNavSubLinks.links.map((item:any, i:number)=>{
+                      return <li className="rounded-sm px-3 py-1 " key={i}>{item.linkName}</li>
+                    })
+                  }
+                     
+                
+
+               
               </ul>
 
               </div>
