@@ -101,46 +101,46 @@ export default function Home({ headerInfo }: any ) {
             </div>
        </section>
 
-       <section id="whyUs" className=" pt-32" >
+       <section id="whyUs" className="pt-32 flex flex-col" >
           <div className='flex flex-col-reverse md:flex md:flex-row  items-center'>
               <div className='p-8 m-8 space-y-4 flex flex-col items-center '>
                   <h1 className='text-4xl font-bold'>Why Us?</h1>
                   <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim venias.</p>
                   <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Et laborum magnam vitae blanditiis corporis adipisci consequuntur, soluta saepe veritatis delectus!</p>
-                  <button className='border rounded-lg text-white text-xs  bg-[#15284C] p-2 '>Book Now</button>
+                  <button className='border rounded-lg text-white text-sm  bg-[#15284C] p-4  '>Know More</button>
               </div>
               <div className=''>  
                 <img src="images/home_page/whyUsBlobImage.svg"/> 
               </div>
           </div>
 
-          <div className='pt-32 grid grid-cols-1 md:grid-cols-2 gap-2'>
+          <div className=' p-2 m-2 pt-4 grid grid-cols-1 md:grid-cols-2 gap-2'>
                 <div className='flex border rounded-lg bg-[#F5F5F5]'>
                  
-                  <img src="images/home_page/quality.svg"/>
+                  <img className='p-1' src="images/home_page/quality.svg"/>
                   <div className=''>
-                    <h1>Quality</h1>
+                    <h1 className='text-xl font-bold'>Quality</h1>
                     <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
                   </div>
                 </div>
                 <div className='flex border rounded-lg bg-[#F5F5F5]'>
-                  <img src="images/home_page/trustWorthy.svg"/>
+                  <img className='p-1' src="images/home_page/trustWorthy.svg"/>
                   <div className=''>
-                    <h1>Trustworthy</h1>
+                    <h1 className='text-xl font-bold'>Trustworthy</h1>
                     <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
                   </div>
                 </div>
                 <div className='flex border rounded-lg bg-[#F5F5F5]'>
-                  <img src="images/home_page/efficiency.svg"/>
+                  <img className='p-1' src="images/home_page/efficiency.svg"/>
                   <div className=''>
-                    <h1>Efficiency</h1>
+                    <h1 className='text-xl font-bold'>Efficiency</h1>
                     <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
                   </div>
                 </div>
                 <div className='flex border rounded-lg bg-[#F5F5F5] '>
-                  <img src="images/home_page/expertise.svg"/>
+                  <img className='p-1' src="images/home_page/expertise.svg"/>
                   <div className=''>
-                    <h1>Expertise</h1>
+                    <h1 className='text-xl font-bold'>Expertise</h1>
                     <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
                   </div>
                 </div>
@@ -148,33 +148,23 @@ export default function Home({ headerInfo }: any ) {
 
        </section>
 
-       <section id="reviews" className='flex pt-32 '>
-          <div className='flex flex-nowrap overflow-x-auto space-x-4  ' >
-                <div className='bg-[#F5F5F5]  w-[250px] flex-none  gap-5   '>
+       <section id="reviews" className=' pt-32 '>
+          <div className=''>
+                <div className='bg-[#F5F5F5]  w-full flex-none  gap-5   '>
                   <div className='p-8 m-8'>
                     <h4>Clients Testimonial</h4>
                     <h1 className='text-2xl'>What Do They Say?</h1>   
-                    <div className='flex gap-2 m-4'>
-                      <button className='w-8 border rounded-lg h-2 bg-[#1E1E1E] '></button>
-                      <button className='w-8 border rounded-lg h-2 bg-[#1E1E1E] '></button>
-                      <button className='w-8 border rounded-lg h-2 bg-[#1E1E1E] '></button>
-                      <button className='w-8 border rounded-lg h-2 bg-[#1E1E1E] '></button>
-                    </div>
-                    <div className='flex gap-4 pt-4 '>
-                      <button className='bg-[#FFFFFF] py-2 px-4 rounded-full w-20'>
-                        <FontAwesomeIcon icon={faArrowLeft} />
-                      </button>
-                      <button className='bg-[#FFFFFF] py-2 px-4 rounded-full w-20'>
-                          <FontAwesomeIcon icon={faArrowRight} />
-                      </button>
-                    
-                    </div>
+                   
                   </div>
                 </div>
+          </div>
+          
+          <div className='flex flex-nowrap overflow-x-auto space-x-4  ' >
+               
        
             {/* card data from sanity */}
                             
-                <div className=' bg-[#F5F5F5]   w-[250px]  flex-none gap-2 '>
+                <div className='flex flex-col items-center bg-[#F5F5F5]   w-[250px]  flex-none gap-2 '>
                   <div className='p-4'>
                     <img src="images/home_page/testimonialCardsImageUnionVector.svg"/>
                   </div>
@@ -192,7 +182,7 @@ export default function Home({ headerInfo }: any ) {
                 </div>
             
                            
-                <div className=' bg-[#F5F5F5]   w-[250px]  flex-none gap-2 '>
+                <div className='flex flex-col items-center bg-[#F5F5F5]   w-[250px]  flex-none gap-2 '>
                   <div className='p-4'>
                     <img src="images/home_page/testimonialCardsImageUnionVector.svg"/>
                   </div>
@@ -210,7 +200,7 @@ export default function Home({ headerInfo }: any ) {
                 </div>
             
                             
-                <div className=' bg-[#F5F5F5]  w-[250px]  flex-none gap-2 '>
+                <div className='flex flex-col items-center bg-[#F5F5F5]  w-[250px]  flex-none gap-2 '>
                   <div className='p-4'>
                     <img src="images/home_page/testimonialCardsImageUnionVector.svg"/>
                   </div>
@@ -229,7 +219,28 @@ export default function Home({ headerInfo }: any ) {
 
                 
              
-          </div>       
+          </div>  
+
+           <div className='flex items-center justify-between'>
+                <div className='flex gap-2 m-4'>
+                  <button className='w-8 border rounded-lg h-2 bg-blue-100 '></button>
+                  <button className='w-8 border rounded-lg h-2 bg-[#1E1E1E] '></button>
+                  <button className='w-8 border rounded-lg h-2 bg-blue-100 '></button>
+                  <button className='w-8 border rounded-lg h-2 bg-blue-100 '></button>
+                </div>
+                <div className='flex gap-4 pt-4 '>
+                  
+                    <button className='bg-blue-100 py-2 px-4 rounded-full w-16'>
+                      <FontAwesomeIcon icon={faArrowLeft} />
+                    </button>
+                    <button className=' py-2 px-4 rounded-full w-16 text-white bg-[#1E1E1E]'>
+                        <FontAwesomeIcon icon={faArrowRight} />
+                    </button>
+                 
+                  
+                                          
+                </div>
+           </div>     
        </section>
 
         <section id="service_area" className=' '>
