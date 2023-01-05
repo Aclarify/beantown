@@ -6,10 +6,10 @@ type Props = {}
 
 export default function Footer({}: Props) {
   return (
-    <div className="w-full h-auto bg-[#15284C] text-white">      
+    <div className="w-full h-auto bg-[#15284C] text-white  ">      
       {/* <img className='w-full ' src='/images/faq_page/FAQ_footer_blue_curve.svg' alt="Footer Curve Image"></img>           */}
-      <div>
-        <h1>Services</h1>
+      <div className='py-8 px-8 max-w-sm'>
+        <h1 className='text-xl '>Services</h1>
         <div className='flex gap-4'>
             <span>Heating & Cooling</span>
             <span>Electrical</span>
@@ -17,7 +17,7 @@ export default function Footer({}: Props) {
         </div>        
       </div>   
 
-      <div>
+      <div className='p-6 mx-auto'>
         <h1>Company</h1>
         <div className='flex gap-4'>
             <span>About Us</span>
@@ -28,7 +28,7 @@ export default function Footer({}: Props) {
         </div>        
       </div>   
 
-      <div>
+      <div className=''>
           <div className='flex'>
             <FontAwesomeIcon icon={faLocation} />
             <span>9 Aldrin Rd Suite 10, Plymouth, MA 02360</span>

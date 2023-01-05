@@ -245,7 +245,7 @@ export default function Home({ headerInfo }: any ) {
                   
                   <div className=''>
                     <img src="images/home_page/beantownServiceArea.svg"/>
-                    <div>
+                    <div className='bg-[#FFFFFF]'>
                         <h1>Service Areas</h1>
                         <div className='grid grid-cols-2 gap-2 m-4 bg-[#FFFFFF]'>
                             <div className='px-4 flex space-x-2 bg-slate-100 border rounded-lg'>
@@ -367,7 +367,63 @@ export default function Home({ headerInfo }: any ) {
         </div>
        </section>
       
-       <Footer/>
+       <section id="footer">
+        <div className="w-full h-auto bg-[#15284C] text-white  ">      
+        {/* <img className='w-full ' src='/images/faq_page/FAQ_footer_blue_curve.svg' alt="Footer Curve Image"></img>           */}
+        <div className='py-4 px-4 max-w-sm'>
+          <h1 className='text-xl '>Services</h1>
+          <div className='flex justify-between'>
+              <span>Heating & Cooling</span>
+              <span>Electrical</span>
+              <span>Plumbing</span>
+          </div>        
+        </div>   
+
+        <div className='py-4 px-4 max-w-sm'>
+          <h1 className='text-xl'>Company</h1>
+          <div className='flex  justify-between'>
+              <span>About Us</span>
+              <span>Carrers</span>
+              <span>Memberships</span>
+              <span>FAQ</span>
+              <span>Blog</span>
+          </div>        
+        </div>   
+
+        <div className=''>
+            <div className='flex'>
+              <FontAwesomeIcon icon={faLocation} />
+              <span>9 Aldrin Rd Suite 10, Plymouth, MA 02360</span>
+            </div>
+            <div className='flex'>
+              <FontAwesomeIcon icon={faPhone} />
+              <span>(508) 594-3279</span>
+            </div> 
+            <div className='flex'>
+              <FontAwesomeIcon icon={faMailBulk} />
+              <span>info@brantownac.com</span>
+            </div>
+        </div>  
+        
+        <div className='flex'>       
+          <div>
+            <img src=""/>
+          </div>
+          <div>
+            
+          </div>
+        </div>
+
+        <div>
+          <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim </p>
+        </div>
+
+        <div>
+            <span>© Beantown 2022 · Privacy Policy</span>
+        </div>
+
+        </div>
+       </section>
 
     </>
    
