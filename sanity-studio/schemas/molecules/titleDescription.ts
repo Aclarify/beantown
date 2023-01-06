@@ -10,10 +10,14 @@ export default defineType({
       type: 'string',
     }),
     defineField({
+      name: 'subText',
+      title: 'Subtle Text',
+      type: 'string',
+    }),
+    defineField({
       name: 'description',
       title: 'Description',
-      type: 'array',
-      of: [{type: 'reference', to: [{type: 'contentCoordinator'}]}],
+      type: 'portableText',
     }),
   ],
 })

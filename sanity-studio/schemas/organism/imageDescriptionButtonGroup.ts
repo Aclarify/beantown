@@ -1,7 +1,7 @@
 import {defineField, defineType} from 'sanity'
 export default defineType({
-  name: 'list',
-  title: 'List',
+  name: 'imageDescriptionButtonGroup',
+  title: 'Images with Description & Button',
   type: 'object',
   fields: [
     defineField({
@@ -10,23 +10,26 @@ export default defineType({
       type: 'string',
     }),
     defineField({
-      name: 'titleText',
-      title: 'Title Text',
-      type: 'string',
-    }),
-    defineField({
       name: 'description',
       title: 'Description',
-      type: 'array',
-      of: [{type: 'portableText'}],
+      type: 'portableText',
     }),
     defineField({
-      name: 'icons',
-      title: 'Icons',
+      name: 'image',
+      title: 'Images',
+      type: 'imageIcon',
+    }),
+    defineField({
+      name: 'button',
+      title: 'Button',
       type: 'array',
       of: [
         {
-          type: 'imageTextGroup',
+          type: 'cta',
+        },
+        {
+          type: 'reference',
+          to: [{type: 'cta'}],
         },
       ],
     }),
