@@ -4,8 +4,8 @@
 import {defineField} from 'sanity'
 
 export default {
-  name: 'contentCoordinator',
-  title: 'ContentCoordinator',
+  name: 'portableText',
+  title: 'Rich Text',
   type: 'object',
   fields: [
     defineField({

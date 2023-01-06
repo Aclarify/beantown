@@ -13,7 +13,7 @@ import imageTextGroup from './organism/imageTextGroup'
 import textImageContentGroup from './organism/textImageContentGroup'
 import list from './organism/list'
 import titleDescriptionGroup from './organism/titleDescriptionGroup'
-import contentCoordinator from './molecules/contentCoordinator'
+import portableText from './molecules/portableText'
 import {breakType} from './molecules/breakType'
 import footer from './layouts/footer'
 import home from './pages/home'
@@ -36,7 +36,7 @@ export const schemaTypes = [
   textTitle,
   titleDescription,
   textImageContent,
-  contentCoordinator,
+  portableText,
   imageIconGroup,
   imageText,
   imageTextGroup,

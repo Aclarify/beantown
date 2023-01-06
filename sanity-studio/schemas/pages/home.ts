@@ -19,7 +19,7 @@ export default defineType({
     defineField({
       name: 'headerDescription',
       title: 'Header Description',
-      type: 'contentCoordinator',
+      type: 'portableText',
     }),
     defineField({
       name: 'headerButton',
@@ -35,7 +35,7 @@ export default defineType({
     defineField({
       name: 'servicesDescription',
       title: 'Services Offered Description',
-      type: 'contentCoordinator',
+      type: 'portableText',
     }),
     defineField({
       name: 'servicesGroup',
@@ -51,7 +51,7 @@ export default defineType({
     defineField({
       name: 'whyUsDescription',
       title: 'Why Us Description',
-      type: 'contentCoordinator',
+      type: 'portableText',
     }),
     defineField({
       name: 'whyUsCards',
@@ -157,7 +157,7 @@ export default defineType({
     defineField({
       name: 'ctaDescription',
       title: 'CTA Description',
-      type: 'contentCoordinator',
+      type: 'portableText',
     }),
     defineField({
       name: 'finalCtaButton',

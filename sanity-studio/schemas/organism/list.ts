@@ -18,7 +18,7 @@ export default defineType({
       name: 'description',
       title: 'Description',
       type: 'array',
-      of: [{type: 'contentCoordinator'}],
+      of: [{type: 'portableText'}],
     }),
     defineField({
       name: 'icons',
