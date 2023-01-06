@@ -10,7 +10,7 @@ export default defineType({
       type: 'string',
     }),
     defineField({
-      name: 'imageIcon',
+      name: 'image',
       title: 'Icon or Image',
       type: 'image',
       options: {
