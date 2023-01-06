@@ -24,7 +24,7 @@ export default defineType({
       name: 'description',
       title: 'Description',
       type: 'array',
-      of: [{type: 'reference', to: [{type: 'contentCoordinator'}]}],
+      of: [{type: 'contentCoordinator'}],
     }),
 
     defineField({
@@ -42,6 +42,10 @@ export default defineType({
       of: [
         {
           type: 'cta',
+        },
+        {
+          type: 'reference',
+          to: [{type: 'cta'}],
         },
       ],
     }),

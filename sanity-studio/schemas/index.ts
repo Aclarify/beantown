@@ -16,10 +16,16 @@ import titleDescriptionGroup from './organism/titleDescriptionGroup'
 import contentCoordinator from './molecules/contentCoordinator'
 import {breakType} from './molecules/breakType'
 import footer from './layouts/footer'
+import home from './pages/home'
+import titleDescriptionImageGroup from './organism/titleDescriptionImageGroup'
+import textButtonGroup from './organism/textButtonGroup'
+import textList from './molecules/textList'
+import imageDescriptionButtonGroup from './organism/imageDescriptionButtonGroup'
 
 export const schemaTypes = [
   //Document Types
   aboutUs,
+  home,
   header,
   footer,
   //Other Types
@@ -34,8 +40,12 @@ export const schemaTypes = [
   imageIconGroup,
   imageText,
   imageTextGroup,
+  textButtonGroup,
+  imageDescriptionButtonGroup,
   linkGroup,
+  textList,
   list,
   textImageContentGroup,
   titleDescriptionGroup,
+  titleDescriptionImageGroup,
 ]

@@ -9,16 +9,6 @@ export default {
   type: 'object',
   fields: [
     defineField({
-      name: 'name',
-      title: 'Name',
-      type: 'string',
-    }),
-    defineField({
-      name: 'title',
-      title: 'Title Text',
-      type: 'string',
-    }),
-    defineField({
       title: 'Content',
       name: 'content',
       type: 'array',
@@ -57,19 +47,6 @@ export default {
               },
             ],
           },
-        },
-        {
-          type: 'breakType',
-        },
-      ],
-    }),
-    defineField({
-      name: 'highlightText',
-      title: 'Highlight Text',
-      type: 'array',
-      of: [
-        {
-          type: 'block',
         },
         {
           type: 'breakType',

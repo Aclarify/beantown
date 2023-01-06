@@ -5,11 +5,6 @@ export default defineType({
   type: 'object',
   fields: [
     defineField({
-      name: 'name',
-      title: 'Name',
-      type: 'string',
-    }),
-    defineField({
       name: 'titlesDescription',
       title: 'Titles with description',
       type: 'array',
