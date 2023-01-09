@@ -12,7 +12,7 @@ import {
   faMailBulk,
 } from "@fortawesome/free-solid-svg-icons";
 import FAQDisclosure from "../components/faq_disclosure";
-import Footer from "../components/Footer";
+// import Footer from "../components/Footer";
 
 const headerInfoQuery = groq`*[_type == "header"][0]{
   logo,
