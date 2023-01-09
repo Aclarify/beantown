@@ -1,18 +1,18 @@
-import groq from 'groq';
-// import Footer from '../components/footer';
-import client from '../lib/sanity';
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import groq from "groq";
+import client from "../lib/sanity";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import {
   faArrowRight,
   faArrowLeft,
   faMapLocation,
-} from '@fortawesome/free-solid-svg-icons';
+} from "@fortawesome/free-solid-svg-icons";
 import {
   faLocation,
   faPhone,
   faMailBulk,
-} from '@fortawesome/free-solid-svg-icons';
-import FAQDisclosure from '../components/faq_disclosure';
+} from "@fortawesome/free-solid-svg-icons";
+import FAQDisclosure from "../components/faq_disclosure";
+// import Footer from "../components/Footer";
 
 const headerInfoQuery = groq`*[_type == "header"][0]{
   logo,
@@ -287,69 +287,108 @@ export default function Home({ headerInfo }: any) {
       </section>
 
       <section id="service_area" className=" ">
-        <div className="">
-          <div className="flex-col md:flex m-8 p-4">
+        <div className="p-4">
+          <div className="flex-col md:flex ">
             <div className="border-r-4 md:w-1/2">
               <h1 className="text-xl font-bold">Beantown Services Areas</h1>
             </div>
-            <div className="">
+            <div className="pt-4">
               <p>
-                {' '}
+                {" "}
                 consectetur adipiscing elit, sed do eiusmod tempor incididunt ut
                 labore et dolore magna aliqua. Ut enim ad minim veniam.
               </p>
             </div>
           </div>
 
-          <div className="">
+          <div className=" pt-12">
             <img src="images/home_page/beantownServiceArea.svg" />
             <div className="bg-[#FFFFFF]">
-              <h1>Service Areas</h1>
+              <h1 className="text-lg font-bold">Service Areas</h1>
               <div className="grid grid-cols-2 gap-2 m-4 bg-[#FFFFFF]">
-                <div className="px-4 flex space-x-2 bg-slate-100 border rounded-lg">
+                <div className="px-4 flex space-x-2 bg-blue-100 border text-xs rounded-lg">
                   <span>
-                    {' '}
+                    {" "}
                     <FontAwesomeIcon icon={faMapLocation} />
                   </span>
-                  <span>Plymouth</span>
-                  <span>,</span>
-                  <span> MA</span>
+                  <span>Plymouth, MA</span>
                 </div>
-                <div className="px-4 flex space-x-2 bg-slate-100 border rounded-lg">
+                <div className="px-4 flex space-x-2 bg-blue-100 border text-xs rounded-lg">
                   <span>
-                    {' '}
+                    {" "}
                     <FontAwesomeIcon icon={faMapLocation} />
                   </span>
-                  <span>Plymouth</span>
-                  <span>,</span>
-                  <span> MA</span>
+                  <span>Plymouth, MA</span>
                 </div>
-                <div className="px-4  flex space-x-2 bg-slate-100 border rounded-lg">
+                <div className="px-4  flex space-x-2 bg-blue-100 border text-xs rounded-lg">
                   <span>
-                    {' '}
+                    {" "}
                     <FontAwesomeIcon icon={faMapLocation} />
                   </span>
-                  <span>Plymouth</span>
-                  <span>,</span>
-                  <span> MA</span>
+                  <span>Plymouth, MA</span>
                 </div>
-                <div className="px-4  flex space-x-2 bg-slate-100 border rounded-lg">
+                <div className="px-4 flex space-x-2 bg-blue-100 border text-xs rounded-lg">
                   <span>
-                    {' '}
+                    {" "}
                     <FontAwesomeIcon icon={faMapLocation} />
                   </span>
-                  <span>Plymouth</span>
-                  <span>,</span>
-                  <span> MA</span>
+                  <span>Plymouth, MA</span>
                 </div>
-                <div className="px-4  flex space-x-2 bg-slate-100 border rounded-lg">
+                <div className="px-4 flex space-x-2 bg-blue-100 border text-xs rounded-lg">
                   <span>
-                    {' '}
+                    {" "}
                     <FontAwesomeIcon icon={faMapLocation} />
                   </span>
-                  <span>Plymouth</span>
-                  <span>,</span>
-                  <span> MA</span>
+                  <span>Plymouth, MA</span>
+                </div>
+                <div className="px-4  flex space-x-2 bg-blue-100 border text-xs rounded-lg">
+                  <span>
+                    {" "}
+                    <FontAwesomeIcon icon={faMapLocation} />
+                  </span>
+                  <span>Plymouth, MA</span>
+                </div>
+                <div className="px-4 flex space-x-2 bg-blue-100 border text-xs rounded-lg">
+                  <span>
+                    {" "}
+                    <FontAwesomeIcon icon={faMapLocation} />
+                  </span>
+                  <span>Plymouth, MA</span>
+                </div>
+                <div className="px-4 flex space-x-2 bg-blue-100 border text-xs rounded-lg">
+                  <span>
+                    {" "}
+                    <FontAwesomeIcon icon={faMapLocation} />
+                  </span>
+                  <span>Plymouth, MA</span>
+                </div>
+                <div className="px-4  flex space-x-2 bg-blue-100 border text-xs rounded-lg">
+                  <span>
+                    {" "}
+                    <FontAwesomeIcon icon={faMapLocation} />
+                  </span>
+                  <span>Plymouth, MA</span>
+                </div>
+                <div className="px-4  flex space-x-2 bg-blue-100 border text-xs rounded-lg">
+                  <span>
+                    {" "}
+                    <FontAwesomeIcon icon={faMapLocation} />
+                  </span>
+                  <span>Plymouth, MA</span>
+                </div>
+                <div className="px-4  flex space-x-2 bg-blue-100 border text-xs rounded-lg">
+                  <span>
+                    {" "}
+                    <FontAwesomeIcon icon={faMapLocation} />
+                  </span>
+                  <span>Plymouth, MA</span>
+                </div>
+                <div className="px-4  flex space-x-2 bg-blue-100 border text-xs rounded-lg">
+                  <span>
+                    {" "}
+                    <FontAwesomeIcon icon={faMapLocation} />
+                  </span>
+                  <span>Plymouth, MA</span>
                 </div>
               </div>
             </div>
@@ -357,11 +396,11 @@ export default function Home({ headerInfo }: any) {
         </div>
       </section>
 
-      <section id="blog" className="flex flex-col gap-2 p-4 ">
-        <div className="text-xl font-bold">
+      <section id="blog" className="flex flex-col p-4 mt-12">
+        <div className="text-xl font-bold text-center">
           <h1>Lorem ipsum dolor sit amet consectetur adipiscing</h1>
         </div>
-        <div className="text-xs">
+        <div className="text-xs text-center py-6">
           <p>
             Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
             eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim
@@ -372,44 +411,55 @@ export default function Home({ headerInfo }: any) {
         <div className="flex flex-nowrap overflow-x-auto ">
           <div className="flex-none w-[250px] p-4 ">
             <img src="images/home_page/blogImage1.svg" />
-            <p>
+            <p className="pt-4 text-xl font-bold">
+              Let us build the bridge between your brand and your customer!!!
+            </p>
+            <p className="pt-2">
               Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
               eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut
               enim ad minim veniam.
             </p>
-            <button className="text-xs underline">ReadMore</button>
+            <button className="text-md font-bold underline">Read More</button>
           </div>
           <div className="flex-none w-[250px] p-4">
             <img src="images/home_page/blogImage1.svg" />
-            <p>
+            <p className="pt-4 text-xl font-bold">
+              Let us build the bridge between your brand and your customer!!!
+            </p>
+            <p className="pt-2">
               Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
               eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut
               enim ad minim veniam.
             </p>
-            <button className="text-xs underline">ReadMore</button>
+            <button className="text-md font-bold underline">Read More</button>
           </div>
           <div className="flex-none w-[250px] p-4">
             <img src="images/home_page/blogImage1.svg" />
-            <p>
+            <p className="pt-4 text-xl font-bold">
+              Let us build the bridge between your brand and your customer!!!
+            </p>
+            <p className="pt-2">
               Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
               eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut
               enim ad minim veniam.
             </p>
-            <button className="text-xs underline">ReadMore</button>
+            <button className="text-md font-bold underline">Read More</button>
           </div>
         </div>
-        <div className="justify-center">
+        <div className="items-center text-center pt-4">
           <button className="bg-[#15284C] text-white rounded-lg p-2 text-xs ">
-            Load More
+            View More
           </button>
         </div>
       </section>
 
       <section id="faq">
-        <div>
-          <div className="flex flex-col place-items-center">
-            <h1 className="text-xl font-bold">Frequently Asked Questions</h1>
-            <p>
+        <div className="bg-blue-100 mt-16">
+          <div className="flex flex-col items-center mx-6">
+            <h1 className="text-xl font-bold mt-2">
+              Frequently Asked Questions
+            </h1>
+            <p className="text-center py-4">
               Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
               eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut
               enim ad minim veniam.
@@ -423,7 +473,7 @@ export default function Home({ headerInfo }: any) {
       </section>
       <section id="brand">
         <div className="flex  justify-center">
-          <h1>Proud To Represent</h1>
+          <span className="text-l font-bold">Proud To Represent</span>
         </div>
         <div className="flex flex-nowrap overflow-x-auto">
           <div className="flex-none w-[150px] p-4">
@@ -451,76 +501,105 @@ export default function Home({ headerInfo }: any) {
               className="object-cover"
               src="images/home_page/footer_cta_theme/mask_group.svg"
             />
-            <div className="space-y-4  absolute bottom-20 inset-x-0 p-2  md:p-12">
-              <p className="text-xl  md:text-4xl font-bold">
-                Lorem ipsum dolor sit amet consectetur adipisicing elit.
-              </p>
-              <p className="text-sm  md:text-2xl">
-                Lorem ipsum dolor sit amet consectetur adipisicing elit.
-              </p>
-              <button className="border rounded-lg text-xs  md:text-xl bg-[#15284C] text-white  p-2">
-                Book Now
-              </button>
+            <div className=" space-y-4  absolute bottom-20 inset-x-0 p-2  md:p-12">
+              {" "}
+              <div className="flex-col ">
+                <div className="flex-col space-y-2 ">
+                  <p className="text-2xl  md:text-4xl font-bold text-center">
+                    Lorem ipsum dolor sit amet consectetur adipisicing elit.
+                  </p>
+                  <p className="text-sm  md:text-2xl text-center">
+                    Lorem ipsum dolor sit amet consectetur adipisicing elit.
+                  </p>
+                </div>
+                <div className="flex justify-center pt-4">
+                  <button className="border rounded-lg text-xs  md:text-xl bg-[#15284C] text-white  p-2">
+                    Book Now
+                  </button>
+                </div>
+              </div>
             </div>
           </div>
         </div>
       </section>
 
       <section id="footer">
-        <div className="w-full h-auto bg-[#15284C] text-white  ">
+        <div className="w-full h-auto bg-[#15284C] text-white px-4  ">
           {/* <img className='w-full ' src='/images/faq_page/FAQ_footer_blue_curve.svg' alt="Footer Curve Image"></img>           */}
-          <div className="py-4 px-4 max-w-sm">
+          <div className="pt-10 max-w-sm">
             <h1 className="text-xl ">Services</h1>
-            <div className="flex justify-between">
+            <div className="flex space-x-8">
               <span>Heating & Cooling</span>
               <span>Electrical</span>
               <span>Plumbing</span>
             </div>
           </div>
 
-          <div className="py-4 px-4 max-w-sm">
-            <h1 className="text-xl">Company</h1>
-            <div className="flex  justify-between">
+          <div className="pt-8 max-w-sm">
+            <h1 className="text-xl font-bold">Company</h1>
+            <div className="flex justify-between">
               <span>About Us</span>
-              <span>Carrers</span>
+              <span>Carreers</span>
               <span>Memberships</span>
               <span>FAQ</span>
               <span>Blog</span>
             </div>
           </div>
 
-          <div className="">
-            <div className="flex">
+          <div className="pt-8">
+            <div>
+              <span className="font-bold text-xl">Contact</span>
+            </div>
+            <div className="flex justify-start pt-2 space-x-2">
               <FontAwesomeIcon icon={faLocation} />
               <span>9 Aldrin Rd Suite 10, Plymouth, MA 02360</span>
             </div>
-            <div className="flex">
+            <div className="flex justify-start pt-2 space-x-2 ">
               <FontAwesomeIcon icon={faPhone} />
               <span>(508) 594-3279</span>
             </div>
-            <div className="flex">
+            <div className="flex justify-start pt-2 space-x-2 ">
               <FontAwesomeIcon icon={faMailBulk} />
               <span>info@brantownac.com</span>
             </div>
           </div>
 
-          <div className="flex">
+          <div className="flex space-x-4 pt-8 ">
             <div>
-              <img src="" />
+              <img src="images/logo.svg" />
             </div>
-            <div></div>
+            <div className="flex align-middle items-center space-x-2">
+              <div className="rounded-full h-10 w-10 flex  items-center bg-white">
+                <img
+                  className="mx-auto h-5 w-5"
+                  src="images/home_page/fb.svg"
+                />
+              </div>
+              <div className="rounded-full h-10 w-10 flex  items-center bg-white">
+                <img
+                  className="mx-auto h-5 w-5"
+                  src="images/home_page/instagram.svg"
+                />
+              </div>
+              <div className="rounded-full h-10 w-10 flex  items-center bg-white">
+                <img
+                  className="mx-auto h-5 w-5"
+                  src="images/home_page/twitter.svg"
+                />
+              </div>
+            </div>
           </div>
 
-          <div>
+          <div className="pb-8">
             <p>
               Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
               eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut
-              enim{' '}
+              enim{" "}
             </p>
           </div>
 
-          <div>
-            <span>© Beantown 2022 · Privacy Policy</span>
+          <div className="flex justify-center items-center align-middle pt-6 border-t-2 border-grey-100 ">
+            <span className="text-xs">© Beantown 2022 · Privacy Policy</span>
           </div>
         </div>
       </section>
