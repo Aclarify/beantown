@@ -59,7 +59,7 @@ export default function Home({ headerInfo }: any) {
     <>
       <section id="home_page_hero" className="">
         <div className="flex-shrink-0">
-          <div className="space-y-4   md:mt-64 absolute w-1/2 text-white p-2  md:p-12">
+          <div className="space-y-4  mt-12 md:mt-64 absolute w-1/2 text-white p-2  md:p-12">
             <p className="text-sm  md:text-4xl font-bold">
               Lorem ipsum dolor sit amet consectetur adipisicing elit.
             </p>
@@ -71,15 +71,15 @@ export default function Home({ headerInfo }: any) {
             </button>
           </div>
           <img
-            className="w-full h-auto object-cover"
+            className="w-full h-auto object-cover "
             src="images/home_page/homepageHero.svg"
             alt="Home Page Hero Image"
           ></img>
         </div>
       </section>
 
-      <section id="services" className="pt-32">
-        <div className="border space-y-4">
+      <section id="services" className="pt-12">
+        <div className="border space-y-5">
           <div className="flex flex-col items-center">
             <h1 className="text-4xl font-bold">Lorem ipsum dolor sit amet</h1>
             <p>
@@ -89,7 +89,7 @@ export default function Home({ headerInfo }: any) {
             </p>
           </div>
           {/*   grid for services card */}
-          <div className="grid grid-cols-1 md:grid-cols-3 mx-8 space-y-2">
+          <div className="grid grid-cols-1 md:grid-cols-3 mx-8 md:space-x-5 space-y-5 ">
             <div className="border rounded-lg flex flex-col  items-center gap-4 bg-[#FFFFFF]">
               <a>
                 <img src="images/home_page/servicesCardImage1.svg" />
@@ -189,7 +189,7 @@ export default function Home({ headerInfo }: any) {
       </section>
 
       <section id="reviews" className=" pt-32 ">
-        <div className="">
+        <div className="md:hidden">
           <div className="bg-[#F5F5F5]  w-full flex-none  gap-5   ">
             <div className="p-8 m-8">
               <h4>Clients Testimonial</h4>
@@ -200,6 +200,32 @@ export default function Home({ headerInfo }: any) {
 
         <div className="flex flex-nowrap overflow-x-auto space-x-4  ">
           {/* card data from sanity */}
+
+          <div className="hidden md:flex flex-col items-center bg-[#F5F5F5]   w-[250px]  flex-none gap-2 ">
+              <div className="bg-[#F5F5F5]  flex-none  gap-5   ">
+                <div className="p-8 m-8">
+                  <h4>Clients Testimonial</h4>
+                  <h1 className="text-2xl">What Do They Say?</h1>
+                </div>
+              </div>
+              <div className='flex flex-col'>           
+                <div className="flex gap-2 m-4">
+                  <button className="w-8 border rounded-lg h-2 bg-blue-100 "></button>
+                  <button className="w-8 border rounded-lg h-2 bg-[#1E1E1E] "></button>
+                  <button className="w-8 border rounded-lg h-2 bg-blue-100 "></button>
+                  <button className="w-8 border rounded-lg h-2 bg-blue-100 "></button>
+                </div>
+                <div className="flex gap-4 pt-4 ">
+                  <button className="bg-blue-100 py-2 px-4 rounded-full w-16">
+                    <FontAwesomeIcon icon={faArrowLeft} />
+                  </button>
+                  <button className=" py-2 px-4 rounded-full w-16 text-white bg-[#1E1E1E]">
+                    <FontAwesomeIcon icon={faArrowRight} />
+                  </button>
+                </div>          
+              </div>
+
+        </div>
 
           <div className="flex flex-col items-center bg-[#F5F5F5]   w-[250px]  flex-none gap-2 ">
             <div className="p-4">
@@ -268,21 +294,25 @@ export default function Home({ headerInfo }: any) {
           </div>
         </div>
 
-        <div className="flex items-center justify-between">
-          <div className="flex gap-2 m-4">
-            <button className="w-8 border rounded-lg h-2 bg-blue-100 "></button>
-            <button className="w-8 border rounded-lg h-2 bg-[#1E1E1E] "></button>
-            <button className="w-8 border rounded-lg h-2 bg-blue-100 "></button>
-            <button className="w-8 border rounded-lg h-2 bg-blue-100 "></button>
+        <div className="md:hidden">
+         
+          <div className='flex items-center justify-between '>
+            <div className="flex gap-2 m-4">
+              <button className="w-8 border rounded-lg h-2 bg-blue-100 "></button>
+              <button className="w-8 border rounded-lg h-2 bg-[#1E1E1E] "></button>
+              <button className="w-8 border rounded-lg h-2 bg-blue-100 "></button>
+              <button className="w-8 border rounded-lg h-2 bg-blue-100 "></button>
+            </div>
+            <div className="flex gap-4 pt-4 ">
+              <button className="bg-blue-100 py-2 px-4 rounded-full w-16">
+                <FontAwesomeIcon icon={faArrowLeft} />
+              </button>
+              <button className=" py-2 px-4 rounded-full w-16 text-white bg-[#1E1E1E]">
+                <FontAwesomeIcon icon={faArrowRight} />
+              </button>
+            </div>
           </div>
-          <div className="flex gap-4 pt-4 ">
-            <button className="bg-blue-100 py-2 px-4 rounded-full w-16">
-              <FontAwesomeIcon icon={faArrowLeft} />
-            </button>
-            <button className=" py-2 px-4 rounded-full w-16 text-white bg-[#1E1E1E]">
-              <FontAwesomeIcon icon={faArrowRight} />
-            </button>
-          </div>
+         
         </div>
       </section>
 
@@ -448,7 +478,7 @@ export default function Home({ headerInfo }: any) {
           </div>
           <div className="bg-blue-100 relative w-full">
             <img
-              className="object-cover"
+              className="object-cover animate-ping"
               src="images/home_page/footer_cta_theme/mask_group.svg"
             />
             <div className="space-y-4  absolute bottom-20 inset-x-0 p-2  md:p-12">
