@@ -43,10 +43,6 @@ export default defineType({
         {
           type: 'cta',
         },
-        {
-          type: 'reference',
-          to: [{type: 'cta'}],
-        },
       ],
     }),
   ],
