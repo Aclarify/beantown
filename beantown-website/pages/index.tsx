@@ -12,6 +12,9 @@ import {
   faMailBulk,
 } from "@fortawesome/free-solid-svg-icons";
 import FAQDisclosure from "../components/faq_disclosure";
+import Nav from "../components/nav";
+import Brands from "../components/brands";
+import Faq from "../components/faq";
 // import Footer from "../components/Footer";
 
 const headerInfoQuery = groq`*[_type == "header"][0]{
@@ -57,9 +60,10 @@ export default function Home({ headerInfo }: any) {
 
   return (
     <>
+     <Nav />
       <section id="home_page_hero" className="">
         <div className="flex-shrink-0">
-          <div className="space-y-4   md:mt-64 absolute w-1/2 text-white p-2  md:p-12">
+          <div className="space-y-4  mt-12 md:mt-64 absolute w-1/2 text-white p-2  md:p-12">
             <p className="text-sm  md:text-4xl font-bold">
               Lorem ipsum dolor sit amet consectetur adipisicing elit.
             </p>
@@ -71,15 +75,15 @@ export default function Home({ headerInfo }: any) {
             </button>
           </div>
           <img
-            className="w-full h-auto object-cover"
+            className="w-full h-auto object-cover "
             src="images/home_page/homepageHero.svg"
             alt="Home Page Hero Image"
           ></img>
         </div>
       </section>
 
-      <section id="services" className="pt-32">
-        <div className="border space-y-4">
+      <section id="services" className="pt-12">
+        <div className="border space-y-5">
           <div className="flex flex-col items-center">
             <h1 className="text-4xl font-bold">Lorem ipsum dolor sit amet</h1>
             <p>
@@ -89,8 +93,17 @@ export default function Home({ headerInfo }: any) {
             </p>
           </div>
           {/*   grid for services card */}
-          <div className="grid grid-cols-1 md:grid-cols-3 mx-8 space-y-2">
-            <div className="border rounded-lg flex flex-col  items-center gap-4 bg-[#FFFFFF]">
+          <div className="group grid grid-cols-1 md:grid-cols-3 mx-8 md:space-x-5 space-y-5 ">
+            <div className="group-hover:scale-[0.55]  hover:!scale-100 duration-500 cursor-pointer border rounded-lg flex flex-col  items-center gap-4 bg-[#FFFFFF]">
+              <a>
+                <img className="" src="images/home_page/servicesCardImage1.svg" />
+              </a>
+              <h1>Electrical Services</h1>
+              <button className="border rounded-lg text-white text-xs  bg-[#15284C] p-2 ">
+                Book Now
+              </button>
+            </div>
+            <div className="group-hover:scale-[0.55]  hover:!scale-100 duration-500 cursor-pointer border rounded-lg flex flex-col items-center gap-4 bg-[#FFFFFF]">
               <a>
                 <img src="images/home_page/servicesCardImage1.svg" />
               </a>
@@ -99,16 +112,7 @@ export default function Home({ headerInfo }: any) {
                 Book Now
               </button>
             </div>
-            <div className="border rounded-lg flex flex-col items-center gap-4 bg-[#FFFFFF]">
-              <a>
-                <img src="images/home_page/servicesCardImage1.svg" />
-              </a>
-              <h1>Electrical Services</h1>
-              <button className="border rounded-lg text-white text-xs  bg-[#15284C] p-2 ">
-                Book Now
-              </button>
-            </div>
-            <div className="border rounded-lg flex flex-col items-center gap-4 bg-[#FFFFFF]">
+            <div className="group-hover:scale-[0.55]  hover:!scale-100 duration-500 cursor-pointer border rounded-lg flex flex-col items-center gap-4 bg-[#FFFFFF]">
               <a>
                 <img src="images/home_page/servicesCardImage1.svg" />
               </a>
@@ -139,8 +143,8 @@ export default function Home({ headerInfo }: any) {
               Know More
             </button>
           </div>
-          <div className="">
-            <img src="images/home_page/whyUsBlobImage.svg" />
+          <div className="group">
+            <img className="group-hover:scale-125  transition-all  duration-500" src=" images/home_page/whyUsBlobImage.svg" />
           </div>
         </div>
 
@@ -189,7 +193,7 @@ export default function Home({ headerInfo }: any) {
       </section>
 
       <section id="reviews" className=" pt-32 ">
-        <div className="">
+        <div className="md:hidden">
           <div className="bg-[#F5F5F5]  w-full flex-none  gap-5   ">
             <div className="p-8 m-8">
               <h4>Clients Testimonial</h4>
@@ -200,6 +204,32 @@ export default function Home({ headerInfo }: any) {
 
         <div className="flex flex-nowrap overflow-x-auto space-x-4  ">
           {/* card data from sanity */}
+
+          <div className="hidden md:flex flex-col items-center bg-[#F5F5F5]   w-[250px]  flex-none gap-2 ">
+              <div className="bg-[#F5F5F5]  flex-none  gap-5   ">
+                <div className="p-8 m-8">
+                  <h4>Clients Testimonial</h4>
+                  <h1 className="text-2xl">What Do They Say?</h1>
+                </div>
+              </div>
+              <div className='flex flex-col'>           
+                <div className="flex gap-2 m-4">
+                  <button className="w-8 border rounded-lg h-2 bg-blue-100 "></button>
+                  <button className="w-8 border rounded-lg h-2 bg-[#1E1E1E] "></button>
+                  <button className="w-8 border rounded-lg h-2 bg-blue-100 "></button>
+                  <button className="w-8 border rounded-lg h-2 bg-blue-100 "></button>
+                </div>
+                <div className="flex gap-4 pt-4 ">
+                  <button className="bg-blue-100 py-2 px-4 rounded-full w-16">
+                    <FontAwesomeIcon icon={faArrowLeft} />
+                  </button>
+                  <button className=" py-2 px-4 rounded-full w-16 text-white bg-[#1E1E1E]">
+                    <FontAwesomeIcon icon={faArrowRight} />
+                  </button>
+                </div>          
+              </div>
+
+        </div>
 
           <div className="flex flex-col items-center bg-[#F5F5F5]   w-[250px]  flex-none gap-2 ">
             <div className="p-4">
@@ -268,21 +298,25 @@ export default function Home({ headerInfo }: any) {
           </div>
         </div>
 
-        <div className="flex items-center justify-between">
-          <div className="flex gap-2 m-4">
-            <button className="w-8 border rounded-lg h-2 bg-blue-100 "></button>
-            <button className="w-8 border rounded-lg h-2 bg-[#1E1E1E] "></button>
-            <button className="w-8 border rounded-lg h-2 bg-blue-100 "></button>
-            <button className="w-8 border rounded-lg h-2 bg-blue-100 "></button>
+        <div className="md:hidden">
+         
+          <div className='flex items-center justify-between '>
+            <div className="flex gap-2 m-4">
+              <button className="w-8 border rounded-lg h-2 bg-blue-100 "></button>
+              <button className="w-8 border rounded-lg h-2 bg-[#1E1E1E] "></button>
+              <button className="w-8 border rounded-lg h-2 bg-blue-100 "></button>
+              <button className="w-8 border rounded-lg h-2 bg-blue-100 "></button>
+            </div>
+            <div className="flex gap-4 pt-4 ">
+              <button className="bg-blue-100 py-2 px-4 rounded-full w-16">
+                <FontAwesomeIcon icon={faArrowLeft} />
+              </button>
+              <button className=" py-2 px-4 rounded-full w-16 text-white bg-[#1E1E1E]">
+                <FontAwesomeIcon icon={faArrowRight} />
+              </button>
+            </div>
           </div>
-          <div className="flex gap-4 pt-4 ">
-            <button className="bg-blue-100 py-2 px-4 rounded-full w-16">
-              <FontAwesomeIcon icon={faArrowLeft} />
-            </button>
-            <button className=" py-2 px-4 rounded-full w-16 text-white bg-[#1E1E1E]">
-              <FontAwesomeIcon icon={faArrowRight} />
-            </button>
-          </div>
+         
         </div>
       </section>
 
@@ -408,8 +442,8 @@ export default function Home({ headerInfo }: any) {
           </p>
         </div>
 
-        <div className="flex flex-nowrap overflow-x-auto ">
-          <div className="flex-none w-[250px] p-4 ">
+        <div className="group flex flex-nowrap overflow-x-auto gap-5 ">
+          <div className=" group-hover:scale-[0.85] hover:!scale-100 duration-500  flex-none w-[250px] p-4 ">
             <img src="images/home_page/blogImage1.svg" />
             <p className="pt-4 text-xl font-bold">
               Let us build the bridge between your brand and your customer!!!
@@ -421,7 +455,7 @@ export default function Home({ headerInfo }: any) {
             </p>
             <button className="text-md font-bold underline">Read More</button>
           </div>
-          <div className="flex-none w-[250px] p-4">
+          <div className=" group-hover:scale-[0.85] hover:!scale-100 duration-500 flex-none w-[250px] p-4">
             <img src="images/home_page/blogImage1.svg" />
             <p className="pt-4 text-xl font-bold">
               Let us build the bridge between your brand and your customer!!!
@@ -433,7 +467,7 @@ export default function Home({ headerInfo }: any) {
             </p>
             <button className="text-md font-bold underline">Read More</button>
           </div>
-          <div className="flex-none w-[250px] p-4">
+          <div className=" group-hover:scale-[0.85] hover:!scale-100 duration-500 flex-none w-[250px] p-4">
             <img src="images/home_page/blogImage1.svg" />
             <p className="pt-4 text-xl font-bold">
               Let us build the bridge between your brand and your customer!!!
@@ -453,52 +487,17 @@ export default function Home({ headerInfo }: any) {
         </div>
       </section>
 
-      <section id="faq">
-        <div className="bg-blue-100 mt-16">
-          <div className="flex flex-col items-center mx-6">
-            <h1 className="text-xl font-bold mt-2">
-              Frequently Asked Questions
-            </h1>
-            <p className="text-center py-4">
-              Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
-              eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut
-              enim ad minim veniam.
-            </p>
-            <button className="border  rounded-lg text-white text-xs  bg-[#15284C] px-4 py-2 ">
-              View More
-            </button>
-          </div>
-          <FAQDisclosure />
-        </div>
-      </section>
-      <section id="brand">
-        <div className="flex  justify-center">
-          <span className="text-l font-bold">Proud To Represent</span>
-        </div>
-        <div className="flex flex-nowrap overflow-x-auto">
-          <div className="flex-none w-[150px] p-4">
-            <img src="images/home_page/brands/mitsubishi.svg" />
-          </div>
-          <div className="flex-none w-[150px] p-4">
-            <img src="images/home_page/brands/lennox.svg" />
-          </div>
-          <div className="flex-none w-[150px] p-4">
-            <img src="images/home_page/brands/mitsubishi.svg" />
-          </div>
-          <div className="flex-none w-[150px] p-4">
-            <img src="images/home_page/brands/lennox.svg" />
-          </div>
-        </div>
-      </section>
+      <Faq/>
+      <Brands/>
 
       <section id="footercta">
         <div className="md:flex ">
           <div className="">
             <img src="images/home_page/home_page_footer_cta_image.svg" />
           </div>
-          <div className="bg-blue-100 relative w-full">
+          <div className="bg-blue-900 relative w-full">
             <img
-              className="object-cover"
+              className="object-cover animate-pulse"
               src="images/home_page/footer_cta_theme/mask_group.svg"
             />
             <div className=" space-y-4  absolute bottom-20 inset-x-0 p-2  md:p-12">

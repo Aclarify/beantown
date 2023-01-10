@@ -1,3 +1,4 @@
+import Link from 'next/link'
 import React from 'react'
 
 type Props = {}
@@ -10,10 +11,10 @@ export default function Nav({}: Props) {
                 <img className='object-cover ' src='images/logo.svg' alt="logo Image"></img>
               </div>
               <div className= ' text-white items-center text-xl   justify-center '>
-                <button className="p-8 pr-1 group inline-block">Home</button>
+                <Link href={"/#"} className="p-8 pr-1 group inline-block">Home</Link>
                 <div className="group inline-block">
 
-                  <button  className="outline-none focus:outline-none  px-3 py-1  rounded-sm flex items-center min-w-32">
+                  <Link href={"/"}  className="outline-none focus:outline-none  px-3 py-1  rounded-sm flex items-center min-w-32">
                     <span className="pr-1  flex-1 ">Services</span>
                     <span>
                       <svg
@@ -27,7 +28,7 @@ export default function Nav({}: Props) {
                         />
                       </svg>
                     </span>
-                  </button>
+                  </Link>
                         <ul className="rounded-sm transform scale-0 group-hover:scale-100 absolute  transition duration-150 ease-in-out origin-top min-w-32">
                           <li className="rounded-sm px-3 py-1">Electrical Services</li>
                           <li className="rounded-sm px-3 py-1 ">Plumbing Services</li>    
@@ -36,7 +37,7 @@ export default function Nav({}: Props) {
                 </div>
                 <div className="group inline-block">
 
-                  <button
+                  <Link href={"/about"}
                     className="outline-none focus:outline-none  px-3 py-1 rounded-sm flex items-center min-w-32"
                   >
                     <span className="pr-1  flex-1">About Us</span>
@@ -52,7 +53,7 @@ export default function Nav({}: Props) {
                         />
                       </svg>
                     </span>
-                  </button>
+                  </Link>
                 <ul
                 className="rounded-sm transform scale-0 group-hover:scale-100 absolute 
                           transition duration-150 ease-in-out origin-top min-w-32"
