@@ -11,10 +11,12 @@ import {
   faPhone,
   faMailBulk,
 } from "@fortawesome/free-solid-svg-icons";
-import FAQDisclosure from "../components/faq_disclosure";
+import FAQDisclosure from "../components/template/home/faq_disclosure";
 import Nav from "../components/nav";
-import Brands from "../components/brands";
-import Faq from "../components/faq";
+import Brands from "../components/template/home/brands";
+import Faq from "../components/template/home/faq";
+import ServiceCard from "../components/template/home/service-card";
+import Footer from "../components/Footer";
 // import Footer from "../components/Footer";
 
 const headerInfoQuery = groq`*[_type == "header"][0]{
@@ -91,37 +93,8 @@ export default function Home({ headerInfo }: any) {
               eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut
               enim ad minim veniam.
             </p>
-          </div>
-          {/*   grid for services card */}
-          <div className="group grid grid-cols-1 md:grid-cols-3 mx-8 md:space-x-5 space-y-5 ">
-            <div className="group-hover:scale-[0.55]  hover:!scale-100 duration-500 cursor-pointer border rounded-lg flex flex-col  items-center gap-4 bg-[#FFFFFF]">
-              <a>
-                <img className="" src="images/home_page/servicesCardImage1.svg" />
-              </a>
-              <h1>Electrical Services</h1>
-              <button className="border rounded-lg text-white text-xs  bg-[#15284C] p-2 ">
-                Book Now
-              </button>
-            </div>
-            <div className="group-hover:scale-[0.55]  hover:!scale-100 duration-500 cursor-pointer border rounded-lg flex flex-col items-center gap-4 bg-[#FFFFFF]">
-              <a>
-                <img src="images/home_page/servicesCardImage1.svg" />
-              </a>
-              <h1>Electrical Services</h1>
-              <button className="border rounded-lg text-white text-xs  bg-[#15284C] p-2 ">
-                Book Now
-              </button>
-            </div>
-            <div className="group-hover:scale-[0.55]  hover:!scale-100 duration-500 cursor-pointer border rounded-lg flex flex-col items-center gap-4 bg-[#FFFFFF]">
-              <a>
-                <img src="images/home_page/servicesCardImage1.svg" />
-              </a>
-              <h1>Electrical Services</h1>
-              <button className="border rounded-lg text-white text-xs  bg-[#15284C] p-2 ">
-                Book Now
-              </button>
-            </div>
-          </div>
+          </div>          
+          <ServiceCard/>
         </div>
       </section>
 
@@ -495,7 +468,7 @@ export default function Home({ headerInfo }: any) {
           <div className="">
             <img src="images/home_page/home_page_footer_cta_image.svg" />
           </div>
-          <div className="bg-blue-900 relative w-full">
+          <div className="bg-blue-500 relative w-full">
             <img
               className="object-cover animate-pulse"
               src="images/home_page/footer_cta_theme/mask_group.svg"
@@ -522,86 +495,7 @@ export default function Home({ headerInfo }: any) {
         </div>
       </section>
 
-      <section id="footer">
-        <div className="w-full h-auto bg-[#15284C] text-white px-4  ">
-          {/* <img className='w-full ' src='/images/faq_page/FAQ_footer_blue_curve.svg' alt="Footer Curve Image"></img>           */}
-          <div className="pt-10 max-w-sm">
-            <h1 className="text-xl ">Services</h1>
-            <div className="flex space-x-8">
-              <span>Heating & Cooling</span>
-              <span>Electrical</span>
-              <span>Plumbing</span>
-            </div>
-          </div>
-
-          <div className="pt-8 max-w-sm">
-            <h1 className="text-xl font-bold">Company</h1>
-            <div className="flex justify-between">
-              <span>About Us</span>
-              <span>Carreers</span>
-              <span>Memberships</span>
-              <span>FAQ</span>
-              <span>Blog</span>
-            </div>
-          </div>
-
-          <div className="pt-8">
-            <div>
-              <span className="font-bold text-xl">Contact</span>
-            </div>
-            <div className="flex justify-start pt-2 space-x-2">
-              <FontAwesomeIcon icon={faLocation} />
-              <span>9 Aldrin Rd Suite 10, Plymouth, MA 02360</span>
-            </div>
-            <div className="flex justify-start pt-2 space-x-2 ">
-              <FontAwesomeIcon icon={faPhone} />
-              <span>(508) 594-3279</span>
-            </div>
-            <div className="flex justify-start pt-2 space-x-2 ">
-              <FontAwesomeIcon icon={faMailBulk} />
-              <span>info@brantownac.com</span>
-            </div>
-          </div>
-
-          <div className="flex space-x-4 pt-8 ">
-            <div>
-              <img src="images/logo.svg" />
-            </div>
-            <div className="flex align-middle items-center space-x-2">
-              <div className="rounded-full h-10 w-10 flex  items-center bg-white">
-                <img
-                  className="mx-auto h-5 w-5"
-                  src="images/home_page/fb.svg"
-                />
-              </div>
-              <div className="rounded-full h-10 w-10 flex  items-center bg-white">
-                <img
-                  className="mx-auto h-5 w-5"
-                  src="images/home_page/instagram.svg"
-                />
-              </div>
-              <div className="rounded-full h-10 w-10 flex  items-center bg-white">
-                <img
-                  className="mx-auto h-5 w-5"
-                  src="images/home_page/twitter.svg"
-                />
-              </div>
-            </div>
-          </div>
-
-          <div className="pb-8">
-            <p>
-              Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
-              eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut
-              enim{" "}
-            </p>
-          </div>
-
-          <div className="flex justify-center items-center align-middle pt-6 border-t-2 border-grey-100 ">
-            <span className="text-xs">© Beantown 2022 · Privacy Policy</span>
-          </div>
-        </div>
-      </section>
+      <Footer />
     </>
   );
 }

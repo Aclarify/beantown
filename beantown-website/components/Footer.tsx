@@ -57,7 +57,10 @@ export default function Footer({}: Props) {
           </div>
           <div className="flex align-middle items-center space-x-2">
             <div className="rounded-full h-10 w-10 flex  items-center bg-white">
-              <img className="mx-auto h-5 w-5" src="images/home_page/fb.svg" />
+              <img
+                className="mx-auto h-5 w-5"
+                src="images/home_page/fb.svg"
+              />
             </div>
             <div className="rounded-full h-10 w-10 flex  items-center bg-white">
               <img
@@ -74,17 +77,16 @@ export default function Footer({}: Props) {
           </div>
         </div>
 
-        <div>
+        <div className="pb-8">
           <p>
             Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
-            eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim{" "}
+            eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut
+            enim{" "}
           </p>
         </div>
 
-        <div className="flex justify-center pt-8 ">
-          <span className="text-xs border-t-2 border-grey-100">
-            © Beantown 2022 · Privacy Policy
-          </span>
+        <div className="flex justify-center items-center align-middle pt-6 border-t-2 border-grey-100 ">
+          <span className="text-xs">© Beantown 2022 · Privacy Policy</span>
         </div>
       </div>
     </section>
