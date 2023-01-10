@@ -12,6 +12,9 @@ import {
   faMailBulk,
 } from "@fortawesome/free-solid-svg-icons";
 import FAQDisclosure from "../components/faq_disclosure";
+import Nav from "../components/nav";
+import Brands from "../components/brands";
+import Faq from "../components/faq";
 // import Footer from "../components/Footer";
 
 const headerInfoQuery = groq`*[_type == "header"][0]{
@@ -57,6 +60,7 @@ export default function Home({ headerInfo }: any) {
 
   return (
     <>
+     <Nav />
       <section id="home_page_hero" className="">
         <div className="flex-shrink-0">
           <div className="space-y-4  mt-12 md:mt-64 absolute w-1/2 text-white p-2  md:p-12">
@@ -89,8 +93,17 @@ export default function Home({ headerInfo }: any) {
             </p>
           </div>
           {/*   grid for services card */}
-          <div className="grid grid-cols-1 md:grid-cols-3 mx-8 md:space-x-5 space-y-5 ">
-            <div className="border rounded-lg flex flex-col  items-center gap-4 bg-[#FFFFFF]">
+          <div className="group grid grid-cols-1 md:grid-cols-3 mx-8 md:space-x-5 space-y-5 ">
+            <div className="group-hover:scale-[0.55]  hover:!scale-100 duration-500 cursor-pointer border rounded-lg flex flex-col  items-center gap-4 bg-[#FFFFFF]">
+              <a>
+                <img className="" src="images/home_page/servicesCardImage1.svg" />
+              </a>
+              <h1>Electrical Services</h1>
+              <button className="border rounded-lg text-white text-xs  bg-[#15284C] p-2 ">
+                Book Now
+              </button>
+            </div>
+            <div className="group-hover:scale-[0.55]  hover:!scale-100 duration-500 cursor-pointer border rounded-lg flex flex-col items-center gap-4 bg-[#FFFFFF]">
               <a>
                 <img src="images/home_page/servicesCardImage1.svg" />
               </a>
@@ -99,16 +112,7 @@ export default function Home({ headerInfo }: any) {
                 Book Now
               </button>
             </div>
-            <div className="border rounded-lg flex flex-col items-center gap-4 bg-[#FFFFFF]">
-              <a>
-                <img src="images/home_page/servicesCardImage1.svg" />
-              </a>
-              <h1>Electrical Services</h1>
-              <button className="border rounded-lg text-white text-xs  bg-[#15284C] p-2 ">
-                Book Now
-              </button>
-            </div>
-            <div className="border rounded-lg flex flex-col items-center gap-4 bg-[#FFFFFF]">
+            <div className="group-hover:scale-[0.55]  hover:!scale-100 duration-500 cursor-pointer border rounded-lg flex flex-col items-center gap-4 bg-[#FFFFFF]">
               <a>
                 <img src="images/home_page/servicesCardImage1.svg" />
               </a>
@@ -139,8 +143,8 @@ export default function Home({ headerInfo }: any) {
               Know More
             </button>
           </div>
-          <div className="">
-            <img src="images/home_page/whyUsBlobImage.svg" />
+          <div className="group">
+            <img className="group-hover:scale-125  transition-all  duration-500" src=" images/home_page/whyUsBlobImage.svg" />
           </div>
         </div>
 
@@ -438,8 +442,8 @@ export default function Home({ headerInfo }: any) {
           </p>
         </div>
 
-        <div className="flex flex-nowrap overflow-x-auto ">
-          <div className="flex-none w-[250px] p-4 ">
+        <div className="group flex flex-nowrap overflow-x-auto gap-5 ">
+          <div className=" group-hover:scale-[0.85] hover:!scale-100 duration-500  flex-none w-[250px] p-4 ">
             <img src="images/home_page/blogImage1.svg" />
             <p className="pt-4 text-xl font-bold">
               Let us build the bridge between your brand and your customer!!!
@@ -451,7 +455,7 @@ export default function Home({ headerInfo }: any) {
             </p>
             <button className="text-md font-bold underline">Read More</button>
           </div>
-          <div className="flex-none w-[250px] p-4">
+          <div className=" group-hover:scale-[0.85] hover:!scale-100 duration-500 flex-none w-[250px] p-4">
             <img src="images/home_page/blogImage1.svg" />
             <p className="pt-4 text-xl font-bold">
               Let us build the bridge between your brand and your customer!!!
@@ -463,7 +467,7 @@ export default function Home({ headerInfo }: any) {
             </p>
             <button className="text-md font-bold underline">Read More</button>
           </div>
-          <div className="flex-none w-[250px] p-4">
+          <div className=" group-hover:scale-[0.85] hover:!scale-100 duration-500 flex-none w-[250px] p-4">
             <img src="images/home_page/blogImage1.svg" />
             <p className="pt-4 text-xl font-bold">
               Let us build the bridge between your brand and your customer!!!
@@ -483,52 +487,17 @@ export default function Home({ headerInfo }: any) {
         </div>
       </section>
 
-      <section id="faq">
-        <div className="bg-blue-100 mt-16">
-          <div className="flex flex-col items-center mx-6">
-            <h1 className="text-xl font-bold mt-2">
-              Frequently Asked Questions
-            </h1>
-            <p className="text-center py-4">
-              Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
-              eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut
-              enim ad minim veniam.
-            </p>
-            <button className="border  rounded-lg text-white text-xs  bg-[#15284C] px-4 py-2 ">
-              View More
-            </button>
-          </div>
-          <FAQDisclosure />
-        </div>
-      </section>
-      <section id="brand">
-        <div className="flex  justify-center">
-          <span className="text-l font-bold">Proud To Represent</span>
-        </div>
-        <div className="flex flex-nowrap overflow-x-auto">
-          <div className="flex-none w-[150px] p-4">
-            <img src="images/home_page/brands/mitsubishi.svg" />
-          </div>
-          <div className="flex-none w-[150px] p-4">
-            <img src="images/home_page/brands/lennox.svg" />
-          </div>
-          <div className="flex-none w-[150px] p-4">
-            <img src="images/home_page/brands/mitsubishi.svg" />
-          </div>
-          <div className="flex-none w-[150px] p-4">
-            <img src="images/home_page/brands/lennox.svg" />
-          </div>
-        </div>
-      </section>
+      <Faq/>
+      <Brands/>
 
       <section id="footercta">
         <div className="md:flex ">
           <div className="">
             <img src="images/home_page/home_page_footer_cta_image.svg" />
           </div>
-          <div className="bg-blue-100 relative w-full">
+          <div className="bg-blue-900 relative w-full">
             <img
-              className="object-cover animate-ping"
+              className="object-cover animate-pulse"
               src="images/home_page/footer_cta_theme/mask_group.svg"
             />
             <div className=" space-y-4  absolute bottom-20 inset-x-0 p-2  md:p-12">
