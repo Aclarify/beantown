@@ -17,10 +17,6 @@ export default defineType({
         {
           type: 'imageIcon',
         },
-        {
-          type: 'reference',
-          to: [{type: 'imageIcon'}],
-        },
       ],
     }),
     defineField({
