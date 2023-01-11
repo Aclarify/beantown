@@ -1,5 +1,5 @@
 import React from "react";
-import FAQDisclosure from "../../template/home/faq_disclosure";
+import FAQDisclosure from "../../molecules/faq_disclosure";
 
 export default function Faq() {
   return (

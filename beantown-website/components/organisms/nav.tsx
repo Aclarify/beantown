@@ -11,7 +11,7 @@ export default function Nav({}: Props) {
                 <img className='object-cover ' src='images/logo.svg' alt="logo Image"></img>
               </div>
               <div className= ' text-white items-center text-xl   justify-center '>
-                <Link href={"/#"} className="p-8 pr-1 group inline-block">Home</Link>
+                <Link href={"/"} className="p-8 pr-1 group inline-block">Home</Link>
                 <div className="group inline-block">
 
                   <Link href={"/"}  className="outline-none focus:outline-none  px-3 py-1  rounded-sm flex items-center min-w-32">
@@ -29,10 +29,10 @@ export default function Nav({}: Props) {
                       </svg>
                     </span>
                   </Link>
-                        <ul className="rounded-sm transform scale-0 group-hover:scale-100 absolute  transition duration-150 ease-in-out origin-top min-w-32">
-                          <li className="rounded-sm px-3 py-1">Electrical Services</li>
-                          <li className="rounded-sm px-3 py-1 ">Plumbing Services</li>    
-                          <li className="rounded-sm px-3 py-1 ">Heating and Cooling</li>
+                        <ul className="rounded-sm transform scale-0 group-hover:scale-100 absolute  transition duration-500 ease-in-out origin-top min-w-32">
+                          <Link href={'/'}><li className="rounded-sm px-3 py-1">Electrical Services</li></Link> 
+                          <Link href={'/'}><li className="rounded-sm px-3 py-1 ">Plumbing Services</li></Link>    
+                          <Link href={'/heating-and-cooling'}> <li className="rounded-sm px-3 py-1 ">Heating and Cooling</li></Link>
                         </ul>
                 </div>
                 <div className="group inline-block">
