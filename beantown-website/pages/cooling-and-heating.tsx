@@ -44,7 +44,7 @@ export default function CoolingandHeating() {
               </button>
             </div>
             <img
-                  className="w-full h-auto object-cover "
+                  className="w-full h-auto object-cover  "
                   src="images/cooling-and-heating-service-page/hero/Mobile_Hero.svg"
                   alt="Home Page Hero Image"
                 ></img>           
