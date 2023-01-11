@@ -1,44 +1,54 @@
 import React from 'react'
 import Image from 'next/image'
 import Nav from '../components/nav'
-import cardImg1 from '../public/images/cooling-and-heating-service-page/service-cards/heating-service-card-image-installation.svg'
+import cardImg1 from 'images/cooling-and-heating-service-page/footer-cta/footer-cta-curve-image.svg'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faArrowLeft, faArrowRight } from '@fortawesome/free-solid-svg-icons'
+import Brands from '../components/template/home/brands'
+import Faq from '../components/template/home/faq'
+import Footer from '../components/Footer'
 
 export default function CoolingandHeating() {
   return (
     <>
         <Nav />
-       <section id="cooling-and-heating-hero">       
-       
-         <div className='flex flex-col relative'>
-              <div className='absolute w-full'> 
-                  <div className="space-y-4  mt-12 md:mt-64 absolute w-1/2 text-white p-2  md:p-12">
-                    <p className="text-sm  md:text-4xl font-bold">
-                      Lorem ipsum dolor sit amet consectetur adipisicing elit.
-                    </p>
-                    <p className="text-sm  md:text-2xl">
-                      Lorem ipsum dolor sit amet consectetur adipisicing elit.
-                    </p>
-                    <button className="border rounded-lg text-xs  md:text-xl bg-white text-black p-2">
-                      Book Now
-                    </button>
-                  </div>
-                <img
+       <section id="cooling-and-heating-hero"> 
+          <div className="hidden md:block">
+            <div className="space-y-4   md:mt-32 absolute  text-white   md:p-12">
+              <p className="text-sm  md:text-4xl font-bold">
+                Lorem ipsum dolor sit amet consectetur adipisicing elit.
+              </p>
+              <p className=" md:text-2xl">
+                Lorem ipsum dolor sit amet consectetur adipisicing elit.
+              </p>
+              <button className="border rounded-lg md:text-xl bg-white text-black ">
+                Book Now
+              </button>
+            </div>
+            <img
+              className="w-full h-auto object-cover "
+              src="images/cooling-and-heating-service-page/hero/Desktop_Header.svg"
+              alt="Home Page Hero Image"
+            ></img>
+          </div>
+          <div className='inline md:hidden'>            
+            <div className="space-y-4  mt-12 md:mt-64 absolute w-1/2 text-white p-2  md:p-12">
+              <p className="text-sm  md:text-4xl font-bold">
+                Lorem ipsum dolor sit amet consectetur adipisicing elit.
+              </p>
+              <p className="text-sm  md:text-2xl">
+                Lorem ipsum dolor sit amet consectetur adipisicing elit.
+              </p>
+              <button className="border rounded-lg text-xs  md:text-xl bg-white text-black p-2">
+                Book Now
+              </button>
+            </div>
+            <img
                   className="w-full h-auto object-cover  "
-                  src="images/cooling-and-heating-service-page/heating-and cooling-hero-image.svg"
+                  src="images/cooling-and-heating-service-page/hero/Mobile_Hero.svg"
                   alt="Home Page Hero Image"
-                ></img>
-
-              </div>
-             
-              <img
-                className="w-full h-auto object-cover animate-pulse "
-                src="images/cooling-and-heating-service-page/heating-service-page-hero-curve.svg"
-                alt="Home Page Hero Image"
-              ></img>
-               
-         </div> 
+                ></img>           
+          </div>   
        </section>
 
        <section id="heatingCard ">
@@ -47,7 +57,7 @@ export default function CoolingandHeating() {
             <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam.</p>
           </div>
           <div className='group grid md:grid-cols-4 md:grid-col-4 mx-8 px-8 items-center space-y-5 md:space-x-5 '>
-            <div className='group-hover:blur-sm hover:! blur-none group-hover:scale-[0.85] hover:!scale-100 duration-500 bg-[FFFFFF]  text-center space-y-2 py-8  items-center  shadow-[rgba(7,_65,_210,_0.1)_0px_9px_30px]'>
+            <div className='group-hover:scale-[0.85] hover:!scale-100 duration-500 bg-[FFFFFF]  text-center space-y-2 py-8  items-center  shadow-[rgba(7,_65,_210,_0.1)_0px_9px_30px]'>
 
               
               {/* <Image src={cardImg1} alt={'card Image'}  width={100}
@@ -58,7 +68,7 @@ export default function CoolingandHeating() {
               <p>Installation</p>
               <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam.</p>
             </div>
-            <div className='group-hover:blur-sm hover:! blur-none group-hover:scale-[0.85] hover:!scale-100 duration-500 bg-[FFFFFF]  text-center space-y-2 py-8 items-center shadow-[rgba(7,_65,_210,_0.1)_0px_9px_30px]'>
+            <div className='group-hover:scale-[0.85] hover:!scale-100 duration-500 bg-[FFFFFF]  text-center space-y-2 py-8 items-center shadow-[rgba(7,_65,_210,_0.1)_0px_9px_30px]'>
            
               <div className='ml-48 md:ml-16 p-4 '>
                 <img src ="images/cooling-and-heating-service-page/service-cards/heating-service-card-image-installation.svg"></img>           
@@ -66,7 +76,7 @@ export default function CoolingandHeating() {
               <p>Installation</p>
               <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam.</p>
             </div>
-            <div className='bg-[FFFFFF]  text-center space-y-2 py-8 items-center shadow-[rgba(7,_65,_210,_0.1)_0px_9px_30px]'>
+            <div className='group-hover:scale-[0.85] hover:!scale-100 duration-500 bg-[FFFFFF]  text-center space-y-2 py-8 items-center shadow-[rgba(7,_65,_210,_0.1)_0px_9px_30px]'>
            
               <div className='ml-48 md:ml-16  p-4 '>
                 <img src ="images/cooling-and-heating-service-page/service-cards/heating-service-card-image-installation.svg"></img>           
@@ -74,7 +84,7 @@ export default function CoolingandHeating() {
               <p>Installation</p>
               <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam.</p>
             </div>
-            <div className='bg-[FFFFFF]  text-center space-y-2 py-8  items-center  shadow-[rgba(7,_65,_210,_0.1)_0px_9px_30px]'>
+            <div className='group-hover:scale-[0.85] hover:!scale-100 duration-500 bg-[FFFFFF]  text-center space-y-2 py-8  items-center  shadow-[rgba(7,_65,_210,_0.1)_0px_9px_30px]'>
            
               <div className='ml-48 md:ml-16 p-4 '>
                 <img src ="images/cooling-and-heating-service-page/service-cards/heating-service-card-image-installation.svg"></img>           
@@ -174,6 +184,135 @@ export default function CoolingandHeating() {
         </div>
         
       </section>
+
+      <section id="footercta ">  
+
+          <div className="hidden md:flex items-center justify-center h-auto "> 
+          
+             
+              <img className='relative animate-pulse' 
+                  src="images/cooling-and-heating-service-page/footer-cta/Desktop_CTA.svg" />                                 
+               <div className="absolute  ml-96 w-1/2">
+           
+                  <div className=" space-y-4  bottom-20 inset-x-0 p-2  md:p-12">
+                    {" "}
+                    <div className="flex-col ">
+                      <div className="flex-col space-y-2 ">
+                        <p className="text-2xl  md:text-4xl font-bold text-center">
+                          Lorem ipsum dolor sit amet consectetur adipisicing elit.
+                        </p>
+                        <p className="text-sm  md:text-2xl text-center">
+                          Lorem ipsum dolor sit amet consectetur adipisicing elit.
+                        </p>
+                      </div>
+                      <div className="flex justify-center pt-4">
+                        <button className="border rounded-lg text-xs  md:text-xl bg-[#15284C] text-white  p-2">
+                          Book Now
+                        </button>
+                      </div>
+                    </div>
+                  </div>
+     
+               </div>
+             
+          </div>
+          <div className="flex flex-col md:hidden "> 
+              <div className='object-contain'>
+                <img 
+                  src="images/cooling-and-heating-service-page/footer-cta/footer-cta-image.svg" /> 
+              </div>
+              <div className='relative '>
+                <img
+                className="object-contain "
+                src="images/cooling-and-heating-service-page/footer-cta/footer-cta-curve-image.svg"
+                />
+
+                 <div className="absolute left-20 top-24">           
+                    <div className=" space-y-4  bottom-20 inset-x-0 p-2  md:p-12">
+                      {" "}
+                      <div className="flex-col ">
+                        <div className="flex-col space-y-2 ">
+                          <p className="text-2xl  md:text-4xl font-bold text-center">
+                            Lorem ipsum dolor sit amet consectetur adipisicing elit.
+                          </p>
+                          <p className="text-sm  md:text-2xl text-center">
+                            Lorem ipsum dolor sit amet consectetur adipisicing elit.
+                          </p>
+                        </div>
+                        <div className="flex justify-center pt-4">
+                          <button className="border rounded-lg text-xs  md:text-xl bg-[#15284C] text-white  p-2">
+                            Book Now
+                          </button>
+                        </div>
+                      </div>
+                    </div>
+                 </div> 
+              </div>                   
+          </div>
+          
+      </section>
+
+      <Brands/>
+
+      <section id="blog" className="flex flex-col p-4 mt-12">
+        <div className="text-xl font-bold text-center">
+          <h1>Lorem ipsum dolor sit amet consectetur adipiscing</h1>
+        </div>
+        <div className="text-xs text-center py-6">
+          <p>
+            Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
+            eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim
+            ad minim veniam.
+          </p>
+        </div>
+
+        <div className="group flex flex-nowrap overflow-x-auto gap-5 ">
+          <div className=" group-hover:scale-[0.85] hover:!scale-100 duration-500  flex-none w-[250px] p-4 ">
+            <img src="images/home_page/blogImage1.svg" />
+            <p className="pt-4 text-xl font-bold">
+              Let us build the bridge between your brand and your customer!!!
+            </p>
+            <p className="pt-2">
+              Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
+              eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut
+              enim ad minim veniam.
+            </p>
+            <button className="text-md font-bold underline">Read More</button>
+          </div>
+          <div className=" group-hover:scale-[0.85] hover:!scale-100 duration-500 flex-none w-[250px] p-4">
+            <img src="images/home_page/blogImage1.svg" />
+            <p className="pt-4 text-xl font-bold">
+              Let us build the bridge between your brand and your customer!!!
+            </p>
+            <p className="pt-2">
+              Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
+              eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut
+              enim ad minim veniam.
+            </p>
+            <button className="text-md font-bold underline">Read More</button>
+          </div>
+          <div className=" group-hover:scale-[0.85] hover:!scale-100 duration-500 flex-none w-[250px] p-4">
+            <img src="images/home_page/blogImage1.svg" />
+            <p className="pt-4 text-xl font-bold">
+              Let us build the bridge between your brand and your customer!!!
+            </p>
+            <p className="pt-2">
+              Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
+              eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut
+              enim ad minim veniam.
+            </p>
+            <button className="text-md font-bold underline">Read More</button>
+          </div>
+        </div>
+        <div className="items-center text-center pt-4">
+          <button className="bg-[#15284C] text-white rounded-lg p-2 text-xs ">
+            View More
+          </button>
+        </div>
+      </section>
+
+      <Faq/>
+      <Footer/>
     </>
    
    
