@@ -7,8 +7,12 @@ export default defineConfig({
   name: 'default',
   title: 'Beantown Marketing Site',
 
-  projectId: import.meta.env.SANITY_STUDIO_PROJECT_ID,
-  dataset: import.meta.env.SANITY_STUDIO_DATASET,
+  projectId: import.meta.env
+    ? import.meta.env.SANITY_STUDIO_PROJECT_ID
+    : process.env.SANITY_STUDIO_PROJECT_ID || '',
+  dataset: import.meta.env
+    ? import.meta.env.SANITY_STUDIO_DATASET
+    : process.env.SANITY_STUDIO_DATASET || '',
 
   plugins: [deskTool(), visionTool()],
 

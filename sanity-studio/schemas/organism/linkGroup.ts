@@ -22,10 +22,6 @@ export default defineType({
         {
           type: 'link',
         },
-        {
-          type: 'reference',
-          to: [{type: 'link'}],
-        },
       ],
     }),
   ],
