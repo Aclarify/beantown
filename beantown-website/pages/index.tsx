@@ -34,8 +34,7 @@ export async function getStaticProps(context: any) {
   };
 }
 
-export default function Home({ headerInfo, aboutUsInfo }: any) {
-  const servicesNavSubLinks = headerInfo.navGroup[0];
+export default function Home({ aboutUsInfo }: any) {
   console.log("aboutUsInfo", aboutUsInfo);
 
   return (
