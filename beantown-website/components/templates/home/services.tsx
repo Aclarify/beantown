@@ -1,5 +1,5 @@
 import React from "react";
-import ServiceCard from "../../template/home/service-card";
+import ServiceCard from "../../molecules/service-card";
 
 export default function Services() {
   return (
