@@ -3,9 +3,9 @@ import React, { Component } from "react";
 export default class WhyUs extends Component {
   render() {
     return (
-      <section id="whyUs" className="pt-32 flex flex-col">
+      <section id="whyUs" className="p-6 flex flex-col">
         <div className="flex flex-col-reverse md:flex md:flex-row  items-center">
-          <div className="p-8 m-8 space-y-4 flex flex-col items-center ">
+          <div className=" pt-8 space-y-4 flex flex-col items-center text-justify ">
             <h1 className="text-4xl font-bold">Why Us?</h1>
             <p>
               Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
@@ -29,12 +29,12 @@ export default class WhyUs extends Component {
           </div>
         </div>
 
-        <div className=" p-2 m-2 pt-4 grid grid-cols-1 md:grid-cols-2 gap-2">
+        <div className="  pt-4 grid grid-cols-1 md:grid-cols-2 gap-2">
           <div className="flex border rounded-lg bg-[#F5F5F5]">
             <img className="p-1" src="images/home_page/quality.svg" />
-            <div className="">
-              <h1 className="text-xl font-bold">Quality</h1>
-              <p>
+            <div className="p-2">
+              <h1 className=" text-2xl font-bold">Quality</h1>
+              <p className="text-base">
                 Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
                 eiusmod tempor incididunt ut labore et dolore magna aliqua.
               </p>
@@ -42,9 +42,9 @@ export default class WhyUs extends Component {
           </div>
           <div className="flex border rounded-lg bg-[#F5F5F5]">
             <img className="p-1" src="images/home_page/trustWorthy.svg" />
-            <div className="">
-              <h1 className="text-xl font-bold">Trustworthy</h1>
-              <p>
+            <div className="p-2">
+              <h1 className="text-2xl font-bold">Trustworthy</h1>
+              <p className="text-base">
                 Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
                 eiusmod tempor incididunt ut labore et dolore magna aliqua.
               </p>
@@ -52,9 +52,9 @@ export default class WhyUs extends Component {
           </div>
           <div className="flex border rounded-lg bg-[#F5F5F5]">
             <img className="p-1" src="images/home_page/efficiency.svg" />
-            <div className="">
-              <h1 className="text-xl font-bold">Efficiency</h1>
-              <p>
+            <div className="p-2">
+              <h1 className="text-2xl font-bold">Efficiency</h1>
+              <p className="text-base">
                 Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
                 eiusmod tempor incididunt ut labore et dolore magna aliqua.
               </p>
@@ -62,9 +62,9 @@ export default class WhyUs extends Component {
           </div>
           <div className="flex border rounded-lg bg-[#F5F5F5] ">
             <img className="p-1" src="images/home_page/expertise.svg" />
-            <div className="">
-              <h1 className="text-xl font-bold">Expertise</h1>
-              <p>
+            <div className="p-2">
+              <h1 className="text-2xl font-bold">Expertise</h1>
+              <p className="text-base">
                 Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
                 eiusmod tempor incididunt ut labore et dolore magna aliqua.
               </p>

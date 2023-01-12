@@ -8,9 +8,9 @@ import {
 
 export default function Testimonials() {
   return (
-    <section id="testimonials" className=" pt-32 ">
+    <section id="testimonials" className=" p-6 bg-blue-50">
       <div className="md:hidden">
-        <div className="bg-blue-50  w-full flex-none  gap-5   ">
+        <div className="  w-full flex-none  gap-5   ">
           <div className="p-8 m-8">
             <h4>Clients Testimonial</h4>
             <h1 className="text-2xl">What Do They Say?</h1>
