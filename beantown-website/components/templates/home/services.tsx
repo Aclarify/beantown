@@ -3,8 +3,8 @@ import ServiceCard from "../../molecules/service-card";
 
 export default function Services() {
   return (
-    <section id="services" className="pt-12">
-      <div className="border space-y-5">
+    <section id="services">
+      <div className="m-4">
         <div className="flex flex-col items-center">
           <h1 className="text-4xl font-bold">Lorem ipsum dolor sit amet</h1>
           <p>
