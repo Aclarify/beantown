@@ -1,7 +1,14 @@
-import React from "react";
-import ServiceCard from "../../molecules/service-card";
+import { GlobalContext } from '@contexts/global/global.context';
+import { GlobalContextProps } from '@typing/common/interfaces/contexts.interface';
+import { HomePageContentProps } from 'pages';
+import React, { useContext } from 'react';
+import ServiceCard from '../../molecules/service-card';
 
 export default function Services() {
+  const { pageContent } =
+    useContext<GlobalContextProps<HomePageContentProps>>(GlobalContext);
+  const homeData = pageContent?.allHome[0];
+  console.log('homeData', homeData);
   return (
     <section id="services">
       <div className="m-4">
