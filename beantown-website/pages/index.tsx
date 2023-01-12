@@ -1,32 +1,24 @@
 import groq from 'groq';
 import client, { graphQLClient } from '../lib/sanity';
 import Nav from '../components/organisms/nav';
-import Brands from '../components/templates/home/Brands';
-import Faq from '../components/templates/home/Faq';
-import Footer from '../components/organisms/Footer';
+import Brands from '../components/templates/home/brands';
+import Faq from '../components/templates/home/faq';
+import Footer from '../components/organisms/footer';
 import { gql } from '@apollo/client';
-import FooterCta from '../components/templates/home/FooterCta';
-import Blogs from '../components/templates/home/Blogs';
+import FooterCta from '../components/templates/home/footer-cta-home';
+import Blogs from '../components/templates/home/blogs';
 import React from 'react';
-import ServiceAreas from '../components/templates/home/ServiceAreas';
-import Testimonials from '../components/templates/home/Testimonials';
-import WhyUs from '../components/templates/home/WhyUs';
-import Services from '../components/templates/home/Services';
-import HomeHero from '../components/templates/home/HomeHero';
-import GET_ABOUT_US from '../lib/graphql/pages/get-about-us.query';
+import ServiceAreas from '../components/templates/home/service-areas';
+import Testimonials from '../components/templates/home/testimonials';
+import WhyUs from '../components/templates/home/why-us';
+import Services from '../components/templates/home/services';
+import HomeHero from '../components/templates/home/home-hero';
 import { RootQuery } from '../typing/gql/graphql';
-
-const GET_HEADER_INFO = gql`
-  query {
-    allAboutUs {
-      name
-    }
-  }
-`;
+import GET_ABOUT_US_QUERY from '../lib/graphql/pages/get-about-us.query';
 
 export async function getStaticProps(context: any) {
   const { data } = await graphQLClient.query({
-    query: GET_ABOUT_US,
+    query: GET_ABOUT_US_QUERY,
   });
 
   return {
