@@ -1,6 +1,8 @@
 /* eslint-disable */
 import * as types from './graphql';
+import { OperationVariables } from '@apollo/client';
 import { TypedDocumentNode as DocumentNode } from '@graphql-typed-document-node/core';
+import { getDocument } from '@lib/clients/apollo/apollo.client';
 
 const documents: any = [];
 /**
@@ -23,3 +25,23 @@ export function graphql(source: string) {
 
 export type DocumentType<TDocumentNode extends DocumentNode<any, any>> =
   TDocumentNode extends DocumentNode<infer TType, any> ? TType : never;
+
+export const getCMSDocs = async <Response = any>(
+  query: DocumentNode,
+  variables?: OperationVariables | undefined
+): Promise<Response | null> => {
+  try {
+    const documents = await getDocument<Response>(query, variables);
+    if (documents) {
+      return documents;
+    }
+    throw new Error('No documents  returned');
+  } catch (err) {
+    console.error(err);
+    return null;
+  }
+};
+
+export const getPage = (pageQuery: DocumentNode): Promise<unknown | null> => {
+  return getCMSDocs(pageQuery);
+};
