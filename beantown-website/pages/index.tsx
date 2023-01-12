@@ -1,20 +1,20 @@
-import groq from "groq";
-import client, { graphQLClient } from "../lib/sanity";
-import Nav from "../components/organisms/nav";
-import Brands from "../components/templates/home/brands";
-import Faq from "../components/templates/home/faq";
-import Footer from "../components/organisms/footer";
-import { gql } from "@apollo/client";
-import FooterCta from "../components/templates/home/footer-cta-home";
-import Blogs from "../components/templates/home/blogs";
-import React from "react";
-import ServiceAreas from "../components/templates/home/service-areas";
-import Testimonials from "../components/templates/home/testimonials";
-import WhyUs from "../components/templates/home/why-us";
-import Services from "../components/templates/home/services";
-import HomeHero from "../components/templates/home/home-hero";
-import { RootQuery } from "../typing/gql/graphql";
-import GET_ABOUT_US_QUERY from "../lib/graphql/pages/get-about-us.query"
+import groq from 'groq';
+import client, { graphQLClient } from '../lib/sanity';
+import Nav from '../components/organisms/nav';
+import Brands from '../components/templates/home/brands1';
+import Faq from '../components/templates/home/faq1';
+import Footer from '../components/organisms/footer1';
+import { gql } from '@apollo/client';
+import FooterCta from '../components/templates/home/footer-cta-home';
+import Blogs from '../components/templates/home/blogs1';
+import React from 'react';
+import ServiceAreas from '../components/templates/home/service-areas';
+import Testimonials from '../components/templates/home/testimonials1';
+import WhyUs from '../components/templates/home/why-us';
+import Services from '../components/templates/home/services1';
+import HomeHero from '../components/templates/home/home-hero';
+import { RootQuery } from '../typing/gql/graphql';
+import GET_ABOUT_US_QUERY from '../lib/graphql/pages/get-about-us.query';
 
 export async function getStaticProps(context: any) {
   const { data } = await graphQLClient.query({
