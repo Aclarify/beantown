@@ -1,9 +1,5 @@
-import React from 'react'
+import React from 'react';
 
-type Props = {}
-
-export default function Header({}: Props) {
-  return (
-    <div>Header</div>
-  )
+export default function Header() {
+	return <div>Header</div>;
 }

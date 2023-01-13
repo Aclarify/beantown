@@ -9,7 +9,7 @@ export default function Services() {
 	const { pageContent } =
 		useContext<GlobalContextProps<HomePageContentProps>>(GlobalContext);
 	if (!pageContent) {
-		return;
+		return null;
 	}
 	const homeData = pageContent.allHome[0];
 	// console.log('homeData', homeData);
@@ -19,14 +19,16 @@ export default function Services() {
 			<div className="m-4">
 				<div className="flex flex-col items-center">
 					<h1 className="text-4xl font-bold">{servicesTitle}</h1>
-					<RichText value={servicesDescription.contentRaw} />
+					<RichText value={servicesDescription?.contentRaw} />
 				</div>
 				<div className="flex justify-evenly flex-wrap m-4  ">
-					{servicesGroup.map((service, index) => {
+					{servicesGroup?.map((service, index) => {
 						return (
 							<ServiceCard
-								title={service?.text}
-								buttonText={service?.button?.text}
+								key={index}
+								title={service?.text || ''}
+								buttonText={service?.button?.text || ''}
+								hRef={service?.button?.href || ''}
 							/>
 						);
 					})}
