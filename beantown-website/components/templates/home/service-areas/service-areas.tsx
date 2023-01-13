@@ -17,7 +17,7 @@ export default function ServiceAreas() {
 	const homeData = pageContent.allHome[0];
 	const { serviceAreaTitle, serviceAreaDescription, serviceAreas } = homeData;
 	return (
-		<section id="serviceAreas" className=" ">
+		<section id="serviceAreas">
 			<div className="p-4">
 				<div className="flex-col md:flex ">
 					<div className="border-r-4 md:w-1/2">
@@ -30,23 +30,22 @@ export default function ServiceAreas() {
 
 				<div className=" pt-12">
 					<img src="images/home_page/beantownServiceArea.svg" />
-					<div className="bg-[#FFFFFF]  border rounded-lg p-4">
-						<div>
-							<h1 className="text-lg font-bold">"Service Areas"</h1>
+					<div className="bg-[#FFFFFF]  border rounded-lg ">
+						<div className="p-4">
+							<h1 className="text-lg font-bold">{serviceAreas?.title}</h1>
 						</div>
-
-						{/* {serviceAreas[0]?.listItem?.map((serviceArea, index) => {
-							return ( */}
-						<div className="flex flex-wrap justify-around space-y-2 bg-[#FFFFFF] ">
-							<div className="px-4 py-2 justify-center flex space-x-2 bg-blue-100 border text-xs rounded-lg">
-								<span>
-									<FontAwesomeIcon icon={faMapLocation} />
-								</span>
-								<span>"Plymouth,MA"</span>
-							</div>
+						<div className="flex flex-wrap justify-evenly   bg-[#FFFFFF] ">
+							{serviceAreas?.listItem?.map((serviceArea, index) => {
+								return (
+									<div className="px-4 py-2  my-2 w-36 justify-center flex space-x-2 bg-blue-100 border text-xs rounded-lg">
+										<span>
+											<FontAwesomeIcon icon={faMapLocation} />
+										</span>
+										<span>{serviceArea}</span>
+									</div>
+								);
+							})}
 						</div>
-						{/* );
-						})} */}
 					</div>
 				</div>
 			</div>
