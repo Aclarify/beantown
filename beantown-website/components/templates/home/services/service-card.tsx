@@ -13,7 +13,7 @@ const ServiceCard: React.FC<Props> = (props) => {
 					<img className="" src="images/home_page/servicesCardImage1.svg" />
 				</a>
 				<h1>{props.title}</h1>
-				<button className="border rounded-lg text-white text-xs  bg-[#15284C] p-2 ">
+				<button className="border rounded-lg text-white text-xs  bg-[#15284C] p-2 mb-4 ">
 					{props.buttonText}
 				</button>
 			</div>
