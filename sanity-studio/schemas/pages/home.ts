@@ -96,8 +96,7 @@ export default defineType({
     defineField({
       name: 'serviceAreas',
       title: 'Service Areas',
-      type: 'array',
-      of: [{type: 'textList'}],
+      type: 'textList',
     }),
     defineField({
       name: 'blogTitle',
