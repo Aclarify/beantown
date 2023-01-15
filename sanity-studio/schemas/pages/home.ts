@@ -96,8 +96,7 @@ export default defineType({
     defineField({
       name: 'serviceAreas',
       title: 'Service Areas',
-      type: 'array',
-      of: [{type: 'textList'}],
+      type: 'textList',
     }),
     defineField({
       name: 'blogTitle',
@@ -141,7 +140,7 @@ export default defineType({
       name: 'faqList',
       title: 'FAQ List',
       type: 'array',
-      of: [{type: 'titleDescriptionGroup'}],
+      of: [{type: 'titleDescription'}],
     }),
     defineField({
       name: 'clientsLogo',

@@ -12,7 +12,7 @@ export default function Services() {
 		return null;
 	}
 	const homeData = pageContent.allHome[0];
-	console.log('homeData', homeData);
+	// console.log('homeData', homeData);
 	const { servicesTitle, servicesDescription, servicesGroup } = homeData;
 	return (
 		<section id="services">

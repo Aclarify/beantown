@@ -372,7 +372,7 @@ export type Home = Document & {
   ctaTitle?: Maybe<Scalars['String']>;
   faqButton?: Maybe<Cta>;
   faqDescription?: Maybe<Scalars['String']>;
-  faqList?: Maybe<Array<Maybe<TitleDescriptionGroup>>>;
+  faqList?: Maybe<Array<Maybe<TitleDescription>>>;
   faqTitle?: Maybe<Scalars['String']>;
   finalCtaButton?: Maybe<Cta>;
   headerButton?: Maybe<Cta>;
@@ -381,7 +381,7 @@ export type Home = Document & {
   name?: Maybe<Scalars['String']>;
   serviceAreaDescription?: Maybe<Scalars['String']>;
   serviceAreaTitle?: Maybe<Scalars['String']>;
-  serviceAreas?: Maybe<Array<Maybe<TextList>>>;
+  serviceAreas?: Maybe<TextList>;
   servicesDescription?: Maybe<PortableText>;
   servicesGroup?: Maybe<Array<Maybe<TextButtonGroup>>>;
   servicesTitle?: Maybe<Scalars['String']>;
@@ -417,6 +417,7 @@ export type HomeFilter = {
   name?: InputMaybe<StringFilter>;
   serviceAreaDescription?: InputMaybe<StringFilter>;
   serviceAreaTitle?: InputMaybe<StringFilter>;
+  serviceAreas?: InputMaybe<TextListFilter>;
   servicesDescription?: InputMaybe<PortableTextFilter>;
   servicesTitle?: InputMaybe<StringFilter>;
   testimonialDescription?: InputMaybe<StringFilter>;
@@ -443,6 +444,7 @@ export type HomeSorting = {
   name?: InputMaybe<SortOrder>;
   serviceAreaDescription?: InputMaybe<SortOrder>;
   serviceAreaTitle?: InputMaybe<SortOrder>;
+  serviceAreas?: InputMaybe<TextListSorting>;
   servicesDescription?: InputMaybe<PortableTextSorting>;
   servicesTitle?: InputMaybe<SortOrder>;
   testimonialDescription?: InputMaybe<SortOrder>;
