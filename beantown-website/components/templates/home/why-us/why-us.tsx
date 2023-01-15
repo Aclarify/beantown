@@ -8,7 +8,7 @@ export default function WhyUs() {
 	const { pageContent } =
 		useContext<GlobalContextProps<HomePageContentProps>>(GlobalContext);
 	if (!pageContent) {
-		return;
+		return null;
 	}
 	const homeData = pageContent.allHome[0];
 	const { whyUsTitle, whyUsDescription, whyUsCards } = homeData;
@@ -35,6 +35,7 @@ export default function WhyUs() {
 					return (
 						ourValues?.titleText && (
 							<WhyUsCard
+								key={index}
 								title={ourValues?.titleText}
 								description={ourValues?.description?.contentRaw}
 							/>

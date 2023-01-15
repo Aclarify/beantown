@@ -12,7 +12,7 @@ export default function ServiceAreas() {
 	const { pageContent } =
 		useContext<GlobalContextProps<HomePageContentProps>>(GlobalContext);
 	if (!pageContent) {
-		return;
+		return null;
 	}
 	const homeData = pageContent.allHome[0];
 	const { serviceAreaTitle, serviceAreaDescription, serviceAreas } = homeData;
@@ -37,7 +37,10 @@ export default function ServiceAreas() {
 						<div className="flex flex-wrap justify-evenly   bg-[#FFFFFF] ">
 							{serviceAreas?.listItem?.map((serviceArea, index) => {
 								return (
-									<div className="px-4 py-2  my-2 w-36 justify-center flex space-x-2 bg-blue-100 border text-xs rounded-lg">
+									<div
+										key={index}
+										className="px-4 py-2  my-2 w-36 justify-center flex space-x-2 bg-blue-100 border text-xs rounded-lg"
+									>
 										<span>
 											<FontAwesomeIcon icon={faMapLocation} />
 										</span>

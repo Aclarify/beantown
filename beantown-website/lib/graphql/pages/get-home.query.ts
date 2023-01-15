@@ -82,12 +82,10 @@ export default gql`
 				href
 			}
 			faqList {
-				titlesDescription {
-					titleText
-					subText
-					description {
-						contentRaw
-					}
+				titleText
+				subText
+				description {
+					contentRaw
 				}
 			}
 			ctaTitle

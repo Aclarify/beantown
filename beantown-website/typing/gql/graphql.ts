@@ -372,7 +372,7 @@ export type Home = Document & {
   ctaTitle?: Maybe<Scalars['String']>;
   faqButton?: Maybe<Cta>;
   faqDescription?: Maybe<Scalars['String']>;
-  faqList?: Maybe<Array<Maybe<TitleDescriptionGroup>>>;
+  faqList?: Maybe<Array<Maybe<TitleDescription>>>;
   faqTitle?: Maybe<Scalars['String']>;
   finalCtaButton?: Maybe<Cta>;
   headerButton?: Maybe<Cta>;

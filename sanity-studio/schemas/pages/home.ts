@@ -140,7 +140,7 @@ export default defineType({
       name: 'faqList',
       title: 'FAQ List',
       type: 'array',
-      of: [{type: 'titleDescriptionGroup'}],
+      of: [{type: 'titleDescription'}],
     }),
     defineField({
       name: 'clientsLogo',

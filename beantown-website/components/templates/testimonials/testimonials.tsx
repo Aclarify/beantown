@@ -14,7 +14,7 @@ export default function Testimonials() {
 	const { pageContent } =
 		useContext<GlobalContextProps<HomePageContentProps>>(GlobalContext);
 	if (!pageContent) {
-		return;
+		return null;
 	}
 	const homeData = pageContent.allHome[0];
 	const { testimonialTitle, testimonialDescription, testimonialCards } =
@@ -66,8 +66,9 @@ export default function Testimonials() {
 					{testimonialCards?.map((reviews, index) => {
 						return (
 							<TestimonialCard
-								clientName={reviews?.titleText}
-								clientDetails={reviews?.subText}
+								key={index}
+								clientName={reviews?.titleText || ''}
+								clientDetails={reviews?.subText || ''}
 								reviewComments={reviews?.description?.contentRaw}
 							/>
 						);

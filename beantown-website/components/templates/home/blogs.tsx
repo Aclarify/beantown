@@ -8,7 +8,7 @@ export default function Blogs() {
 	const { pageContent } =
 		useContext<GlobalContextProps<HomePageContentProps>>(GlobalContext);
 	if (!pageContent) {
-		return;
+		return null;
 	}
 	const homeData = pageContent.allHome[0];
 	const { blogTitle, blogDescription, blogCards, blogButton } = homeData;
@@ -24,13 +24,14 @@ export default function Blogs() {
 			<div className="group flex flex-nowrap overflow-x-auto gap-5 ">
 				{blogCards?.map((blog, index) => {
 					return (
-						<div className=" group-hover:scale-[0.85] hover:!scale-100 duration-500  flex-none w-[250px] p-4 ">
+						<div
+							key={index}
+							className=" group-hover:scale-[0.85] hover:!scale-100 duration-500  flex-none w-[250px] p-4 "
+						>
 							<img src="images/home_page/blogImage1.svg" />
 							<p className="pt-4 text-xl font-bold">{blog?.name}</p>
 							<RichText value={blog?.description?.contentRaw} />
-							<button className="text-md font-bold underline">
-								"Read More"
-							</button>
+							<button className="text-md font-bold underline">Read More</button>
 						</div>
 					);
 				})}

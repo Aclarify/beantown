@@ -8,7 +8,7 @@ export default function HomeHero() {
 	const { pageContent } =
 		useContext<GlobalContextProps<HomePageContentProps>>(GlobalContext);
 	if (!pageContent) {
-		return;
+		return null;
 	}
 	const homeData = pageContent.allHome[0];
 	const { headerTitle, headerDescription, headerButton } = homeData;

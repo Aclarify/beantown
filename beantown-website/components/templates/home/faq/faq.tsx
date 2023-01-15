@@ -9,7 +9,7 @@ export default function Faq() {
 	const { pageContent } =
 		useContext<GlobalContextProps<HomePageContentProps>>(GlobalContext);
 	if (!pageContent) {
-		return;
+		return null;
 	}
 	const homeData = pageContent.allHome[0];
 	const { faqTitle, faqDescription, faqButton, faqList } = homeData;
@@ -23,18 +23,22 @@ export default function Faq() {
 						{faqButton?.text}
 					</button>
 				</div>
-				{faqList[0].titlesDescription?.map((faqs, index) => {
-					return (
-						<div className="w-full px-4 bg-blue-100 pt-2">
-							<div className="mx-auto w-full max-w-md rounded-2xl bg-blue-100 p-2">
+
+				<div className="w-full px-4 bg-blue-100 pt-2">
+					{faqList?.map((faqs, index) => {
+						return (
+							<div
+								key={index}
+								className="mx-auto w-full max-w-md rounded-2xl bg-blue-100 p-2"
+							>
 								<FAQDisclosure
-									faq={faqs?.titleText}
+									faq={faqs?.titleText || ''}
 									faqAnswer={faqs?.description?.contentRaw}
 								/>
 							</div>
-						</div>
-					);
-				})}
+						);
+					})}
+				</div>
 			</div>
 		</section>
 	);
