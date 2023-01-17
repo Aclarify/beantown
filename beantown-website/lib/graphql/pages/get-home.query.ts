@@ -92,13 +92,11 @@ export default gql`
 			ctaDescription {
 				contentRaw
 			}
+			brandsTitle
 			clientsLogo {
-				text
-				icons {
-					image {
-						asset {
-							url
-						}
+				image {
+					asset {
+						url
 					}
 				}
 			}

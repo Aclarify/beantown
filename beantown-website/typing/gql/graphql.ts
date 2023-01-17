@@ -247,14 +247,14 @@ export type Footer = Document & {
   _type?: Maybe<Scalars['String']>;
   /** Date the document was last modified */
   _updatedAt?: Maybe<Scalars['DateTime']>;
-  contactUs?: Maybe<Array<Maybe<ImageTextGroup>>>;
+  contactUs?: Maybe<Array<Maybe<ImageText>>>;
   copyright?: Maybe<Scalars['String']>;
   description?: Maybe<Scalars['String']>;
-  logo?: Maybe<Array<Maybe<ImageIcon>>>;
+  logo?: Maybe<ImageIcon>;
   name?: Maybe<Scalars['String']>;
   navGroup?: Maybe<Array<Maybe<LinkGroup>>>;
-  navLinks?: Maybe<Array<Maybe<Link>>>;
-  socialMediaIcons?: Maybe<Array<Maybe<ImageIconGroup>>>;
+  navLinks?: Maybe<Link>;
+  socialMediaIcons?: Maybe<Array<Maybe<ImageIcon>>>;
 };
 
 export type FooterFilter = {
@@ -268,7 +268,9 @@ export type FooterFilter = {
   _updatedAt?: InputMaybe<DatetimeFilter>;
   copyright?: InputMaybe<StringFilter>;
   description?: InputMaybe<StringFilter>;
+  logo?: InputMaybe<ImageIconFilter>;
   name?: InputMaybe<StringFilter>;
+  navLinks?: InputMaybe<LinkFilter>;
 };
 
 export type FooterSorting = {
@@ -280,7 +282,9 @@ export type FooterSorting = {
   _updatedAt?: InputMaybe<SortOrder>;
   copyright?: InputMaybe<SortOrder>;
   description?: InputMaybe<SortOrder>;
+  logo?: InputMaybe<ImageIconSorting>;
   name?: InputMaybe<SortOrder>;
+  navLinks?: InputMaybe<LinkSorting>;
 };
 
 export type Geopoint = {
@@ -308,48 +312,6 @@ export type GeopointSorting = {
   lng?: InputMaybe<SortOrder>;
 };
 
-export type Header = Document & {
-  __typename?: 'Header';
-  /** Date the document was created */
-  _createdAt?: Maybe<Scalars['DateTime']>;
-  /** Document ID */
-  _id?: Maybe<Scalars['ID']>;
-  _key?: Maybe<Scalars['String']>;
-  /** Current document revision */
-  _rev?: Maybe<Scalars['String']>;
-  /** Document type */
-  _type?: Maybe<Scalars['String']>;
-  /** Date the document was last modified */
-  _updatedAt?: Maybe<Scalars['DateTime']>;
-  headerButton?: Maybe<Array<Maybe<Cta>>>;
-  logo?: Maybe<Array<Maybe<ImageIcon>>>;
-  name?: Maybe<Scalars['String']>;
-  navGroup?: Maybe<Array<Maybe<LinkGroup>>>;
-  navLinks?: Maybe<Array<Maybe<Link>>>;
-};
-
-export type HeaderFilter = {
-  /** Apply filters on document level */
-  _?: InputMaybe<Sanity_DocumentFilter>;
-  _createdAt?: InputMaybe<DatetimeFilter>;
-  _id?: InputMaybe<IdFilter>;
-  _key?: InputMaybe<StringFilter>;
-  _rev?: InputMaybe<StringFilter>;
-  _type?: InputMaybe<StringFilter>;
-  _updatedAt?: InputMaybe<DatetimeFilter>;
-  name?: InputMaybe<StringFilter>;
-};
-
-export type HeaderSorting = {
-  _createdAt?: InputMaybe<SortOrder>;
-  _id?: InputMaybe<SortOrder>;
-  _key?: InputMaybe<SortOrder>;
-  _rev?: InputMaybe<SortOrder>;
-  _type?: InputMaybe<SortOrder>;
-  _updatedAt?: InputMaybe<SortOrder>;
-  name?: InputMaybe<SortOrder>;
-};
-
 export type Home = Document & {
   __typename?: 'Home';
   /** Date the document was created */
@@ -367,7 +329,8 @@ export type Home = Document & {
   blogCards?: Maybe<Array<Maybe<ImageDescriptionButtonGroup>>>;
   blogDescription?: Maybe<Scalars['String']>;
   blogTitle?: Maybe<Scalars['String']>;
-  clientsLogo?: Maybe<Array<Maybe<ImageIconGroup>>>;
+  brandsTitle?: Maybe<Scalars['String']>;
+  clientsLogo?: Maybe<Array<Maybe<ImageIcon>>>;
   ctaDescription?: Maybe<PortableText>;
   ctaTitle?: Maybe<Scalars['String']>;
   faqButton?: Maybe<Cta>;
@@ -405,6 +368,7 @@ export type HomeFilter = {
   blogButton?: InputMaybe<CtaFilter>;
   blogDescription?: InputMaybe<StringFilter>;
   blogTitle?: InputMaybe<StringFilter>;
+  brandsTitle?: InputMaybe<StringFilter>;
   ctaDescription?: InputMaybe<PortableTextFilter>;
   ctaTitle?: InputMaybe<StringFilter>;
   faqButton?: InputMaybe<CtaFilter>;
@@ -435,6 +399,7 @@ export type HomeSorting = {
   _updatedAt?: InputMaybe<SortOrder>;
   blogDescription?: InputMaybe<SortOrder>;
   blogTitle?: InputMaybe<SortOrder>;
+  brandsTitle?: InputMaybe<SortOrder>;
   ctaDescription?: InputMaybe<PortableTextSorting>;
   ctaTitle?: InputMaybe<SortOrder>;
   faqDescription?: InputMaybe<SortOrder>;
@@ -742,6 +707,54 @@ export type ListSorting = {
   titleText?: InputMaybe<SortOrder>;
 };
 
+export type Nav = Document & {
+  __typename?: 'Nav';
+  /** Date the document was created */
+  _createdAt?: Maybe<Scalars['DateTime']>;
+  /** Document ID */
+  _id?: Maybe<Scalars['ID']>;
+  _key?: Maybe<Scalars['String']>;
+  /** Current document revision */
+  _rev?: Maybe<Scalars['String']>;
+  /** Document type */
+  _type?: Maybe<Scalars['String']>;
+  /** Date the document was last modified */
+  _updatedAt?: Maybe<Scalars['DateTime']>;
+  headerButton?: Maybe<Cta>;
+  logo?: Maybe<ImageIcon>;
+  name?: Maybe<Scalars['String']>;
+  navGroup?: Maybe<Array<Maybe<LinkGroup>>>;
+  navLinks?: Maybe<Link>;
+};
+
+export type NavFilter = {
+  /** Apply filters on document level */
+  _?: InputMaybe<Sanity_DocumentFilter>;
+  _createdAt?: InputMaybe<DatetimeFilter>;
+  _id?: InputMaybe<IdFilter>;
+  _key?: InputMaybe<StringFilter>;
+  _rev?: InputMaybe<StringFilter>;
+  _type?: InputMaybe<StringFilter>;
+  _updatedAt?: InputMaybe<DatetimeFilter>;
+  headerButton?: InputMaybe<CtaFilter>;
+  logo?: InputMaybe<ImageIconFilter>;
+  name?: InputMaybe<StringFilter>;
+  navLinks?: InputMaybe<LinkFilter>;
+};
+
+export type NavSorting = {
+  _createdAt?: InputMaybe<SortOrder>;
+  _id?: InputMaybe<SortOrder>;
+  _key?: InputMaybe<SortOrder>;
+  _rev?: InputMaybe<SortOrder>;
+  _type?: InputMaybe<SortOrder>;
+  _updatedAt?: InputMaybe<SortOrder>;
+  headerButton?: InputMaybe<CtaSorting>;
+  logo?: InputMaybe<ImageIconSorting>;
+  name?: InputMaybe<SortOrder>;
+  navLinks?: InputMaybe<LinkSorting>;
+};
+
 export type PortableText = {
   __typename?: 'PortableText';
   _key?: Maybe<Scalars['String']>;
@@ -765,20 +778,20 @@ export type RootQuery = {
   Cta?: Maybe<Cta>;
   Document?: Maybe<Document>;
   Footer?: Maybe<Footer>;
-  Header?: Maybe<Header>;
   Home?: Maybe<Home>;
   ImageIcon?: Maybe<ImageIcon>;
   Link?: Maybe<Link>;
+  Nav?: Maybe<Nav>;
   SanityFileAsset?: Maybe<SanityFileAsset>;
   SanityImageAsset?: Maybe<SanityImageAsset>;
   allAboutUs: Array<AboutUs>;
   allCta: Array<Cta>;
   allDocument: Array<Document>;
   allFooter: Array<Footer>;
-  allHeader: Array<Header>;
   allHome: Array<Home>;
   allImageIcon: Array<ImageIcon>;
   allLink: Array<Link>;
+  allNav: Array<Nav>;
   allSanityFileAsset: Array<SanityFileAsset>;
   allSanityImageAsset: Array<SanityImageAsset>;
 };
@@ -804,11 +817,6 @@ export type RootQueryFooterArgs = {
 };
 
 
-export type RootQueryHeaderArgs = {
-  id: Scalars['ID'];
-};
-
-
 export type RootQueryHomeArgs = {
   id: Scalars['ID'];
 };
@@ -820,6 +828,11 @@ export type RootQueryImageIconArgs = {
 
 
 export type RootQueryLinkArgs = {
+  id: Scalars['ID'];
+};
+
+
+export type RootQueryNavArgs = {
   id: Scalars['ID'];
 };
 
@@ -866,14 +879,6 @@ export type RootQueryAllFooterArgs = {
 };
 
 
-export type RootQueryAllHeaderArgs = {
-  limit?: InputMaybe<Scalars['Int']>;
-  offset?: InputMaybe<Scalars['Int']>;
-  sort?: InputMaybe<Array<HeaderSorting>>;
-  where?: InputMaybe<HeaderFilter>;
-};
-
-
 export type RootQueryAllHomeArgs = {
   limit?: InputMaybe<Scalars['Int']>;
   offset?: InputMaybe<Scalars['Int']>;
@@ -895,6 +900,14 @@ export type RootQueryAllLinkArgs = {
   offset?: InputMaybe<Scalars['Int']>;
   sort?: InputMaybe<Array<LinkSorting>>;
   where?: InputMaybe<LinkFilter>;
+};
+
+
+export type RootQueryAllNavArgs = {
+  limit?: InputMaybe<Scalars['Int']>;
+  offset?: InputMaybe<Scalars['Int']>;
+  sort?: InputMaybe<Array<NavSorting>>;
+  where?: InputMaybe<NavFilter>;
 };
 
 

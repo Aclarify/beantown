@@ -1,8 +1,7 @@
-import Nav from '../components/organisms/nav';
+import Header from '../components/organisms/nav';
 import Brands from '../components/templates/home/brands';
 import Faq from '../components/templates/home/faq/faq';
-import Footer from '../components/organisms/footer';
-import { gql } from '@apollo/client';
+import FooterComponent from '../components/organisms/footer';
 import FooterCta from '../components/templates/home/footer-cta-home';
 import Blogs from '../components/templates/home/blogs';
 import React from 'react';
@@ -11,8 +10,10 @@ import Testimonials from '../components/templates/testimonials/testimonials';
 import WhyUs from '../components/templates/home/why-us/why-us';
 import Services from '../components/templates/home/services/services';
 import HomeHero from '../components/templates/home/home-hero';
-import { Home } from '@typing/gql/graphql';
+import { Nav, Footer, Home } from '@typing/gql/graphql';
 import pageQuery from '@lib/graphql/pages/get-home.query';
+import navQuery from '@lib/graphql/pages/get-nav.query';
+import footerQuery from '@lib/graphql/pages/get-footer.query';
 import WithGlobalContent, {
 	generateGetStaticProps,
 } from '../components/containers/global-content/global-content.container';
@@ -22,16 +23,27 @@ export interface HomePageContentProps {
 	allHome: Home[];
 }
 
-const getStaticProps = generateGetStaticProps<HomePageContentProps>(
-	pageQuery,
-	PageNames.HOME
-);
-export { getStaticProps };
+const getHomeContentProps =
+	generateGetStaticProps<HomePageContentProps>(pageQuery);
+export { getHomeContentProps };
+
+export interface NavProps {
+	allNav: Nav[];
+}
+const getStaticNavProps = generateGetStaticProps<NavProps>(navQuery);
+export { getStaticNavProps };
+// export interface FooterProps {
+// 	allFooter: Footer[];
+// }
+// const getStaticFooterProps = generateGetStaticProps<FooterProps>(
+// 	footerQuery,
+// );
+// export { getStaticFooterProps };
 
 const HomePage: React.FC = () => {
 	return (
 		<>
-			<Nav />
+			<Header />
 			<HomeHero />
 			<Services />
 			<WhyUs />
@@ -41,7 +53,7 @@ const HomePage: React.FC = () => {
 			<Faq></Faq>
 			<Brands />
 			<FooterCta />
-			<Footer />
+			<FooterComponent />
 		</>
 	);
 };

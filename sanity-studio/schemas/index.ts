@@ -1,5 +1,4 @@
 import aboutUs from './pages/aboutUs'
-import header from './layouts/header'
 import imageIconGroup from './organism/imageIconGroup'
 import linkGroup from './organism/linkGroup'
 import cta from './molecules/cta'
@@ -21,12 +20,13 @@ import titleDescriptionImageGroup from './organism/titleDescriptionImageGroup'
 import textButtonGroup from './organism/textButtonGroup'
 import textList from './molecules/textList'
 import imageDescriptionButtonGroup from './organism/imageDescriptionButtonGroup'
+import nav from './layouts/nav'
 
 export const schemaTypes = [
   //Document Types
   aboutUs,
   home,
-  header,
+  nav,
   footer,
   //Other Types
   breakType,
