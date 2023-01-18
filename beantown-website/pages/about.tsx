@@ -8,11 +8,12 @@ const About: React.FC = () => {
 	return (
 		<>
 			<section>
-				<img
+				{/* <img
 					className="w-full"
 					src="images/aboutUsHeroImage.svg"
 					alt="Home Page Hero Image"
-				></img>
+				></img> */}
+				<div className=" "></div>
 			</section>
 		</>
 	);
