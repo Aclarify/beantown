@@ -1,11 +1,4 @@
 const navQuery = `allNav(where: { name: { eq: "Header" } }) {
-			logo {
-				image {
-					asset {
-						url
-					}
-				}
-			}
 			navLinks {
 				linkText
 				href

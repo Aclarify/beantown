@@ -17,41 +17,42 @@ import { graphQLClient } from '@lib/clients/apollo/apollo.client';
 // 	variable: '--font-neuePlak',
 // });
 const neuePlak = localFont({
+	variable: '--font-neue-plak',
 	src: [
 		{
 			path: './fonts/neue-plak-cufonfonts/NeuePlak-Thin.woff2',
-			weight: '400',
-			style: 'thin',
+			weight: '100',
+			style: 'normal',
 		},
 		{
 			path: './fonts/neue-plak-cufonfonts/NeuePlak-Bold.woff2',
 			weight: '700',
-			style: 'Bold',
+			style: 'normal',
 		},
 		{
 			path: './fonts/neue-plak-cufonfonts/NeuePlak-Black.woff2',
-			weight: '700',
-			style: 'Black',
+			weight: '900',
+			style: 'normal',
 		},
 		{
 			path: './fonts/neue-plak-cufonfonts/NeuePlak-ExtraBlack.woff2',
-			weight: '700',
-			style: 'ExtraBlack',
+			weight: '950',
+			style: 'normal',
 		},
 		{
 			path: './fonts/neue-plak-cufonfonts/NeuePlak-Light.woff2',
-			weight: '700',
-			style: 'Light',
+			weight: '300',
+			style: 'normal',
 		},
 		{
 			path: './fonts/neue-plak-cufonfonts/NeuePlak-Regular.woff2',
 			weight: '400',
-			style: 'Regular',
+			style: 'normal',
 		},
 		{
 			path: './fonts/neue-plak-cufonfonts/NeuePlak-SemiBold.woff2',
-			weight: '400',
-			style: 'SemiBold',
+			weight: '600',
+			style: 'normal',
 		},
 	],
 });
@@ -60,8 +61,7 @@ export default function App({ Component, pageProps }: AppProps) {
 	return (
 		<>
 			<ApolloProvider client={graphQLClient}>
-				<main className={neuePlak.className}>
-					{/* <main className={`${neuePlak.variable} font-neuePlak`}> */}
+				<main className={`${neuePlak.className}`}>
 					<Component {...pageProps} />
 				</main>
 				{/* <Footer /> */}

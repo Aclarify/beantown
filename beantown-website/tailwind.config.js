@@ -8,7 +8,7 @@ module.exports = {
 	theme: {
 		extend: {
 			fontFamily: {
-				neuePlak: ['var(--font-neuePlak)'],
+				neuePlak: ['var(--font-neue-plak)'],
 			},
 		},
 	},

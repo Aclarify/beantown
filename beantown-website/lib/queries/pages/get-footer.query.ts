@@ -1,12 +1,5 @@
 const footerQuery = `
 		allFooter(where: { name: { eq: "Footer" } }) {
-			logo {
-				image {
-					asset {
-						url
-					}
-				}
-			}
 			description
 			socialMediaIcons {
 				image {
