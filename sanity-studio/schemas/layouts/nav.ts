@@ -12,14 +12,15 @@ export default defineType({
       type: 'string',
     }),
     defineField({
-      name: 'logo',
-      title: 'Logo',
-      type: 'imageIcon',
-    }),
-    defineField({
       name: 'navLinks',
       title: 'Navigation Links',
-      type: 'link',
+      type: 'array',
+      of: [
+        {
+          type: 'reference',
+          to: [{type: 'link', weak: true}],
+        },
+      ],
     }),
     defineField({
       name: 'navGroup',
@@ -30,7 +31,8 @@ export default defineType({
     defineField({
       name: 'headerButton',
       title: 'Header Button',
-      type: 'cta',
+      type: 'reference',
+      to: [{type: 'cta', weak: true}],
     }),
   ],
 })

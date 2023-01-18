@@ -250,10 +250,9 @@ export type Footer = Document & {
   contactUs?: Maybe<Array<Maybe<ImageText>>>;
   copyright?: Maybe<Scalars['String']>;
   description?: Maybe<Scalars['String']>;
-  logo?: Maybe<ImageIcon>;
   name?: Maybe<Scalars['String']>;
   navGroup?: Maybe<Array<Maybe<LinkGroup>>>;
-  navLinks?: Maybe<Link>;
+  navLinks?: Maybe<Array<Maybe<Link>>>;
   socialMediaIcons?: Maybe<Array<Maybe<ImageIcon>>>;
 };
 
@@ -268,9 +267,7 @@ export type FooterFilter = {
   _updatedAt?: InputMaybe<DatetimeFilter>;
   copyright?: InputMaybe<StringFilter>;
   description?: InputMaybe<StringFilter>;
-  logo?: InputMaybe<ImageIconFilter>;
   name?: InputMaybe<StringFilter>;
-  navLinks?: InputMaybe<LinkFilter>;
 };
 
 export type FooterSorting = {
@@ -282,9 +279,7 @@ export type FooterSorting = {
   _updatedAt?: InputMaybe<SortOrder>;
   copyright?: InputMaybe<SortOrder>;
   description?: InputMaybe<SortOrder>;
-  logo?: InputMaybe<ImageIconSorting>;
   name?: InputMaybe<SortOrder>;
-  navLinks?: InputMaybe<LinkSorting>;
 };
 
 export type Geopoint = {
@@ -338,9 +333,10 @@ export type Home = Document & {
   faqList?: Maybe<Array<Maybe<TitleDescription>>>;
   faqTitle?: Maybe<Scalars['String']>;
   finalCtaButton?: Maybe<Cta>;
-  headerButton?: Maybe<Cta>;
-  headerDescription?: Maybe<PortableText>;
-  headerTitle?: Maybe<Scalars['String']>;
+  heroButton?: Maybe<Cta>;
+  heroDescription?: Maybe<PortableText>;
+  heroTitle?: Maybe<Scalars['String']>;
+  logo?: Maybe<Image>;
   name?: Maybe<Scalars['String']>;
   serviceAreaDescription?: Maybe<Scalars['String']>;
   serviceAreaTitle?: Maybe<Scalars['String']>;
@@ -375,9 +371,10 @@ export type HomeFilter = {
   faqDescription?: InputMaybe<StringFilter>;
   faqTitle?: InputMaybe<StringFilter>;
   finalCtaButton?: InputMaybe<CtaFilter>;
-  headerButton?: InputMaybe<CtaFilter>;
-  headerDescription?: InputMaybe<PortableTextFilter>;
-  headerTitle?: InputMaybe<StringFilter>;
+  heroButton?: InputMaybe<CtaFilter>;
+  heroDescription?: InputMaybe<PortableTextFilter>;
+  heroTitle?: InputMaybe<StringFilter>;
+  logo?: InputMaybe<ImageFilter>;
   name?: InputMaybe<StringFilter>;
   serviceAreaDescription?: InputMaybe<StringFilter>;
   serviceAreaTitle?: InputMaybe<StringFilter>;
@@ -404,8 +401,9 @@ export type HomeSorting = {
   ctaTitle?: InputMaybe<SortOrder>;
   faqDescription?: InputMaybe<SortOrder>;
   faqTitle?: InputMaybe<SortOrder>;
-  headerDescription?: InputMaybe<PortableTextSorting>;
-  headerTitle?: InputMaybe<SortOrder>;
+  heroDescription?: InputMaybe<PortableTextSorting>;
+  heroTitle?: InputMaybe<SortOrder>;
+  logo?: InputMaybe<ImageSorting>;
   name?: InputMaybe<SortOrder>;
   serviceAreaDescription?: InputMaybe<SortOrder>;
   serviceAreaTitle?: InputMaybe<SortOrder>;
@@ -489,6 +487,7 @@ export type ImageIcon = Document & {
   href?: Maybe<Scalars['String']>;
   image?: Maybe<Image>;
   name?: Maybe<Scalars['String']>;
+  newWindow?: Maybe<Scalars['Boolean']>;
   text?: Maybe<Scalars['String']>;
 };
 
@@ -505,6 +504,7 @@ export type ImageIconFilter = {
   href?: InputMaybe<StringFilter>;
   image?: InputMaybe<ImageFilter>;
   name?: InputMaybe<StringFilter>;
+  newWindow?: InputMaybe<BooleanFilter>;
   text?: InputMaybe<StringFilter>;
 };
 
@@ -542,6 +542,7 @@ export type ImageIconSorting = {
   href?: InputMaybe<SortOrder>;
   image?: InputMaybe<ImageSorting>;
   name?: InputMaybe<SortOrder>;
+  newWindow?: InputMaybe<SortOrder>;
   text?: InputMaybe<SortOrder>;
 };
 
@@ -721,10 +722,9 @@ export type Nav = Document & {
   /** Date the document was last modified */
   _updatedAt?: Maybe<Scalars['DateTime']>;
   headerButton?: Maybe<Cta>;
-  logo?: Maybe<ImageIcon>;
   name?: Maybe<Scalars['String']>;
   navGroup?: Maybe<Array<Maybe<LinkGroup>>>;
-  navLinks?: Maybe<Link>;
+  navLinks?: Maybe<Array<Maybe<Link>>>;
 };
 
 export type NavFilter = {
@@ -737,9 +737,7 @@ export type NavFilter = {
   _type?: InputMaybe<StringFilter>;
   _updatedAt?: InputMaybe<DatetimeFilter>;
   headerButton?: InputMaybe<CtaFilter>;
-  logo?: InputMaybe<ImageIconFilter>;
   name?: InputMaybe<StringFilter>;
-  navLinks?: InputMaybe<LinkFilter>;
 };
 
 export type NavSorting = {
@@ -749,10 +747,7 @@ export type NavSorting = {
   _rev?: InputMaybe<SortOrder>;
   _type?: InputMaybe<SortOrder>;
   _updatedAt?: InputMaybe<SortOrder>;
-  headerButton?: InputMaybe<CtaSorting>;
-  logo?: InputMaybe<ImageIconSorting>;
   name?: InputMaybe<SortOrder>;
-  navLinks?: InputMaybe<LinkSorting>;
 };
 
 export type PortableText = {

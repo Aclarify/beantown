@@ -11,11 +11,6 @@ export default defineType({
       type: 'string',
     }),
     defineField({
-      name: 'logo',
-      title: 'Logo',
-      type: 'imageIcon',
-    }),
-    defineField({
       name: 'description',
       title: 'Description',
       type: 'string',
@@ -24,12 +19,18 @@ export default defineType({
       name: 'socialMediaIcons',
       title: 'Social Media Icons',
       type: 'array',
-      of: [{type: 'imageIcon'}],
+      of: [{type: 'reference', to: [{type: 'imageIcon', weak: true}]}],
     }),
     defineField({
       name: 'navLinks',
       title: 'Navigation Links',
-      type: 'link',
+      type: 'array',
+      of: [
+        {
+          type: 'reference',
+          to: [{type: 'link', weak: true}],
+        },
+      ],
     }),
     defineField({
       name: 'navGroup',

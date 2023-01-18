@@ -3,11 +3,16 @@ import footerQuery from './get-footer.query';
 import navQuery from './get-nav.query';
 
 const homeQuery = `allHome {
-			headerTitle
-			headerDescription {
+			logo {
+					asset {
+						url
+					}
+			}
+			heroTitle
+			heroDescription {
 				contentRaw
 			}
-			headerButton {
+			heroButton {
 				text
 				href
 			}

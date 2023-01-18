@@ -28,6 +28,12 @@ export default defineType({
       title: 'Link To',
       type: 'string',
     }),
+
+    defineField({
+      name: 'newWindow',
+      title: 'Opens in new window?',
+      type: 'boolean',
+    }),
     defineField({
       name: 'altText',
       title: 'Text on hover',
