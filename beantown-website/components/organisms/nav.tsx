@@ -3,7 +3,7 @@ import React from 'react';
 
 export default function Nav() {
 	return (
-		<nav className="absolute w-full">
+		<nav className="absolute w-full  ">
 			<div className="hidden md:flex max-w-6xl mx-auto  justify-around items-center">
 				<div>
 					<img

@@ -15,6 +15,7 @@ import pageQuery from '@lib/queries/pages/get-home.query';
 import WithGlobalContent, {
 	generateGetStaticProps,
 } from '../components/containers/global-content/global-content.container';
+import { PageNames } from '@configs/client/pages/pages.config';
 
 export interface HomePageContentProps {
 	home: Home[];
@@ -22,7 +23,10 @@ export interface HomePageContentProps {
 	footer: Footer[];
 }
 
-const getStaticProps = generateGetStaticProps<HomePageContentProps>(pageQuery);
+const getStaticProps = generateGetStaticProps<HomePageContentProps>(
+	pageQuery,
+	PageNames.HOME
+);
 export { getStaticProps };
 
 const HomePage: React.FC = () => {

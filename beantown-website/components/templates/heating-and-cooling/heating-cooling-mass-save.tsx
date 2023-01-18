@@ -2,7 +2,7 @@ import React from 'react'
 
 export default function MassSave() {
   return (
-    <section id="massSave" className="pt-32 flex flex-col">
+    <section id="massSave" className="pt-32 flex flex-col ">
     <div className="flex flex-col-reverse md:flex md:flex-row  items-center">
       <div className="p-8 m-8 space-y-4 flex flex-col items-center w-full  md:w-1/2">
         <p className="text-4xl font-bold">

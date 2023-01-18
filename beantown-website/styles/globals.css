@@ -4,13 +4,24 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
-
-
-@layer base{
-  body{
+ 
+/* @layer base{
+  /* body{
     font-family: 'neue-plak';
+  } */
+  /* @font-face {
+    font-family:'neuePlak' ;
+    font-weight: 400;
+    font-style:Black ;
+    src: url("/fonts/neue-plak-cufonfonts/NeuePlak-Black.woff2") format("woff2");    
   }
-}
+     @font-face {
+       font-family: 'neuePlak';
+       font-weight: 400;
+       font-style:Bold ;
+       src: url("/fonts/neue-plak-cufonfonts/NeuePlak-Bold.woff2") format("woff2");
+     } */
+/* }  */
 
 
 

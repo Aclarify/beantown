@@ -9,10 +9,10 @@ import React from 'react';
 export default function Footer() {
 	return (
 		<section id="footer">
-			<div className="w-full h-auto bg-[#15284C] text-white px-4  ">
+			<div className="w-full h-auto font-extralight  bg-[#15284C] text-white px-4  ">
 				{/* <img className='w-full ' src='/images/faq_page/FAQ_footer_blue_curve.svg' alt="Footer Curve Image"></img>           */}
 				<div className="pt-10 max-w-sm">
-					<h1 className="text-xl ">Services</h1>
+					<h1 className="text-xl">Services</h1>
 					<div className="flex space-x-8">
 						<span>Heating & Cooling</span>
 						<span>Electrical</span>
@@ -21,7 +21,7 @@ export default function Footer() {
 				</div>
 
 				<div className="pt-8 max-w-sm">
-					<h1 className="text-xl font-bold">Company</h1>
+					<h1 className="text-xl font-light">Company</h1>
 					<div className="flex justify-between">
 						<span>About Us</span>
 						<span>Carreers</span>
