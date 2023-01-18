@@ -11,34 +11,19 @@ import WhyUs from '../components/templates/home/why-us/why-us';
 import Services from '../components/templates/home/services/services';
 import HomeHero from '../components/templates/home/home-hero';
 import { Nav, Footer, Home } from '@typing/gql/graphql';
-import pageQuery from '@lib/graphql/pages/get-home.query';
-import navQuery from '@lib/graphql/pages/get-nav.query';
-import footerQuery from '@lib/graphql/pages/get-footer.query';
+import pageQuery from '@lib/queries/pages/get-home.query';
 import WithGlobalContent, {
 	generateGetStaticProps,
 } from '../components/containers/global-content/global-content.container';
-import { PageNames } from '@configs/client/pages/pages.config';
 
 export interface HomePageContentProps {
-	allHome: Home[];
+	home: Home[];
+	header: Nav[];
+	footer: Footer[];
 }
 
-const getHomeContentProps =
-	generateGetStaticProps<HomePageContentProps>(pageQuery);
-export { getHomeContentProps };
-
-export interface NavProps {
-	allNav: Nav[];
-}
-const getStaticNavProps = generateGetStaticProps<NavProps>(navQuery);
-export { getStaticNavProps };
-// export interface FooterProps {
-// 	allFooter: Footer[];
-// }
-// const getStaticFooterProps = generateGetStaticProps<FooterProps>(
-// 	footerQuery,
-// );
-// export { getStaticFooterProps };
+const getStaticProps = generateGetStaticProps<HomePageContentProps>(pageQuery);
+export { getStaticProps };
 
 const HomePage: React.FC = () => {
 	return (

@@ -1,8 +1,4 @@
-import { gql } from '@apollo/client';
-
-export default gql`
-	# Write your query or mutation here
-	query {
+const footerQuery = `
 		allFooter(where: { name: { eq: "Footer" } }) {
 			logo {
 				image {
@@ -47,5 +43,6 @@ export default gql`
 			}
 			copyright
 		}
-	}
 `;
+
+export default footerQuery;
