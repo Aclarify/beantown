@@ -10,7 +10,7 @@ export default function HomeHero() {
 	if (!pageContent) {
 		return null;
 	}
-	const homeData = pageContent.allHome[0];
+	const homeData = pageContent.home[0];
 	const { headerTitle, headerDescription, headerButton } = homeData;
 	return (
 		<section id="home_page_hero" className="">

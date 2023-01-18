@@ -1,8 +1,8 @@
 import { gql } from '@apollo/client';
+import footerQuery from './get-footer.query';
+import navQuery from './get-nav.query';
 
-export default gql`
-	query {
-		allHome {
+const homeQuery = `allHome {
 			headerTitle
 			headerDescription {
 				contentRaw
@@ -92,13 +92,11 @@ export default gql`
 			ctaDescription {
 				contentRaw
 			}
+			brandsTitle
 			clientsLogo {
-				text
-				icons {
-					image {
-						asset {
-							url
-						}
+				image {
+					asset {
+						url
 					}
 				}
 			}
@@ -106,6 +104,12 @@ export default gql`
 				text
 				href
 			}
-		}
+		}`;
+
+export default gql`
+	query {
+		home: ${homeQuery}
+		header: ${navQuery}
+		footer: ${footerQuery}
 	}
 `;

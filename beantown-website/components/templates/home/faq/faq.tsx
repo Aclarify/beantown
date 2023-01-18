@@ -3,7 +3,6 @@ import FAQDisclosure from './faq-disclosure';
 import { GlobalContext } from '@contexts/global/global.context';
 import { GlobalContextProps } from '@typing/common/interfaces/contexts.interface';
 import { HomePageContentProps } from 'pages';
-import RichText from 'components/molecules/rich-text.molecule';
 
 export default function Faq() {
 	const { pageContent } =
@@ -11,7 +10,7 @@ export default function Faq() {
 	if (!pageContent) {
 		return null;
 	}
-	const homeData = pageContent.allHome[0];
+	const homeData = pageContent.home[0];
 	const { faqTitle, faqDescription, faqButton, faqList } = homeData;
 	return (
 		<section id="faq">

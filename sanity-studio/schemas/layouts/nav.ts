@@ -1,8 +1,8 @@
 import {defineField, defineType} from 'sanity'
 
 export default defineType({
-  name: 'header',
-  title: 'Header',
+  name: 'nav',
+  title: 'Nav',
   type: 'document',
 
   fields: [
@@ -14,14 +14,12 @@ export default defineType({
     defineField({
       name: 'logo',
       title: 'Logo',
-      type: 'array',
-      of: [{type: 'imageIcon'}],
+      type: 'imageIcon',
     }),
     defineField({
       name: 'navLinks',
       title: 'Navigation Links',
-      type: 'array',
-      of: [{type: 'link'}],
+      type: 'link',
     }),
     defineField({
       name: 'navGroup',
@@ -32,12 +30,7 @@ export default defineType({
     defineField({
       name: 'headerButton',
       title: 'Header Button',
-      type: 'array',
-      of: [
-        {
-          type: 'cta',
-        },
-      ],
+      type: 'cta',
     }),
   ],
 })

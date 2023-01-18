@@ -10,7 +10,7 @@ export default function Blogs() {
 	if (!pageContent) {
 		return null;
 	}
-	const homeData = pageContent.allHome[0];
+	const homeData = pageContent.home[0];
 	const { blogTitle, blogDescription, blogCards, blogButton } = homeData;
 	return (
 		<section id="blogs" className="flex flex-col p-4 mt-12">

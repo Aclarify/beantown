@@ -143,10 +143,15 @@ export default defineType({
       of: [{type: 'titleDescription'}],
     }),
     defineField({
+      name: 'brandsTitle',
+      title: 'Client Brands Title',
+      type: 'string',
+    }),
+    defineField({
       name: 'clientsLogo',
       title: 'Clients Logo',
       type: 'array',
-      of: [{type: 'imageIconGroup'}],
+      of: [{type: 'imageIcon'}],
     }),
     defineField({
       name: 'ctaTitle',

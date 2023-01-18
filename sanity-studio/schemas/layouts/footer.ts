@@ -13,12 +13,7 @@ export default defineType({
     defineField({
       name: 'logo',
       title: 'Logo',
-      type: 'array',
-      of: [
-        {
-          type: 'imageIcon',
-        },
-      ],
+      type: 'imageIcon',
     }),
     defineField({
       name: 'description',
@@ -29,17 +24,12 @@ export default defineType({
       name: 'socialMediaIcons',
       title: 'Social Media Icons',
       type: 'array',
-      of: [{type: 'imageIconGroup'}],
+      of: [{type: 'imageIcon'}],
     }),
     defineField({
       name: 'navLinks',
       title: 'Navigation Links',
-      type: 'array',
-      of: [
-        {
-          type: 'link',
-        },
-      ],
+      type: 'link',
     }),
     defineField({
       name: 'navGroup',
@@ -51,7 +41,7 @@ export default defineType({
       name: 'contactUs',
       title: 'Contact us',
       type: 'array',
-      of: [{type: 'imageTextGroup'}],
+      of: [{type: 'imageText'}],
     }),
     defineField({
       name: 'copyright',

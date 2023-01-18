@@ -14,7 +14,7 @@ export default function ServiceAreas() {
 	if (!pageContent) {
 		return null;
 	}
-	const homeData = pageContent.allHome[0];
+	const homeData = pageContent.home[0];
 	const { serviceAreaTitle, serviceAreaDescription, serviceAreas } = homeData;
 	return (
 		<section id="serviceAreas">
