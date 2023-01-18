@@ -11,7 +11,7 @@ export default function Services() {
 	if (!pageContent) {
 		return null;
 	}
-	const homeData = pageContent.allHome[0];
+	const homeData = pageContent.home[0];
 	// console.log('homeData', homeData);
 	const { servicesTitle, servicesDescription, servicesGroup } = homeData;
 	return (

@@ -1,8 +1,4 @@
-import { gql } from '@apollo/client';
-
-export default gql`
-	query {
-		allNav(where: { name: { eq: "Header" } }) {
+const navQuery = `allNav(where: { name: { eq: "Header" } }) {
 			logo {
 				image {
 					asset {
@@ -27,6 +23,6 @@ export default gql`
 				text
 				href
 			}
-		}
-	}
-`;
+		}`;
+
+export default navQuery;

@@ -10,7 +10,7 @@ export default function WhyUs() {
 	if (!pageContent) {
 		return null;
 	}
-	const homeData = pageContent.allHome[0];
+	const homeData = pageContent.home[0];
 	const { whyUsTitle, whyUsDescription, whyUsCards } = homeData;
 	return (
 		<section id="whyUs" className="p-6 flex flex-col">

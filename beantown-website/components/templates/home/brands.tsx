@@ -10,7 +10,7 @@ export default function Brands() {
 	if (!pageContent) {
 		return null;
 	}
-	const homeData = pageContent.allHome[0];
+	const homeData = pageContent.home[0];
 	const { clientsLogo, brandsTitle } = homeData;
 	return (
 		<section id="brand">
@@ -22,10 +22,11 @@ export default function Brands() {
 					{clientsLogo?.map((logo, index) => {
 						return (
 							<Image
+								alt={logo?.image?.asset?.altText || ''}
 								key={index}
 								width={200}
 								height={300}
-								src={logo?.image?.asset?.url}
+								src={logo?.image?.asset?.url || ''}
 							/>
 						);
 					})}
