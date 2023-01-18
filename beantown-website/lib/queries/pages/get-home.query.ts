@@ -3,6 +3,11 @@ import footerQuery from './get-footer.query';
 import navQuery from './get-nav.query';
 
 const homeQuery = `allHome {
+			logo{
+				asset{
+					url
+				}
+			}
 			heroTitle
 			heroDescription {
 				contentRaw

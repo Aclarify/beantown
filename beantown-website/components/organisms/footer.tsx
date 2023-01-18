@@ -4,9 +4,30 @@ import {
 	faPhone,
 } from '@fortawesome/free-solid-svg-icons';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import React from 'react';
+import React, { useContext } from 'react';
+import Link from 'next/link';
+import { GlobalContext } from '@contexts/global/global.context';
+import { GlobalContextProps } from '@typing/common/interfaces/contexts.interface';
+import { HomePageContentProps } from 'pages';
+import Image from 'next/image';
 
 export default function Footer() {
+	const { pageContent } =
+		useContext<GlobalContextProps<HomePageContentProps>>(GlobalContext);
+	if (!pageContent) {
+		return null;
+	}
+	const homeData = pageContent.header[0];
+	const { logo } = homeData;
+	const footerData = pageContent.footer[0];
+	const {
+		description,
+		socialMediaIcons,
+		navLinks,
+		navGroup,
+		contactUs,
+		copyright,
+	} = footerData;
 	return (
 		<section id="footer">
 			<div className="w-full h-auto font-extralight  bg-[#15284C] text-white px-4  ">
