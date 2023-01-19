@@ -18,19 +18,23 @@ export default function Brands() {
 				<span className="text-xl md:text-2xl font-bold">{brandsTitle}</span>
 			</div>
 			<div className="group flex flex-nowrap overflow-x-auto space-x-4 md:space-x-10">
-				<div className=" group-hover:scale-[0.55] hover:!scale-100 duration-500 flex w-[150px] h-[150px] md:w-[250px] md:h-[250] p-4">
-					{clientsLogo?.map((logo, index) => {
-						return (
-							<Image
-								alt={logo?.image?.asset?.altText || ''}
+				{clientsLogo?.map((logo, index) => {
+					return (
+						logo && (
+							<div
 								key={index}
-								width={200}
-								height={300}
-								src={logo?.image?.asset?.url || ''}
-							/>
-						);
-					})}
-				</div>
+								className=" group-hover:scale-[0.55] hover:!scale-100 duration-500 flex w-[150px] h-[150px] md:w-[250px] md:h-[250] p-4"
+							>
+								<Image
+									alt={logo?.image?.asset?.altText || ''}
+									width={200}
+									height={300}
+									src={logo?.image?.asset?.url || ''}
+								/>
+							</div>
+						)
+					);
+				})}
 			</div>
 		</section>
 	);

@@ -21,12 +21,12 @@ export default function Blogs() {
 				<p>{blogDescription}</p>
 			</div>
 
-			<div className="group flex flex-nowrap overflow-x-auto gap-5 ">
+			<div className="group flex flex-nowrap overflow-x-auto sm:grid sm:grid-cols-3  gap-5 ">
 				{blogCards?.map((blog, index) => {
 					return (
 						<div
 							key={index}
-							className=" group-hover:scale-[0.85] hover:!scale-100 duration-500  flex-none w-[250px] p-4 "
+							className=" group-hover:scale-[0.85] hover:!scale-100 duration-500  flex-none w-[250px] md:w-full  p-4 "
 						>
 							<img src="images/home_page/blogImage1.svg" />
 							<p className="pt-4 text-xl font-bold">{blog?.name}</p>
@@ -36,6 +36,7 @@ export default function Blogs() {
 					);
 				})}
 			</div>
+
 			<div className="items-center text-center pt-4">
 				<button className="bg-[#15284C] text-white rounded-lg p-2 text-xs ">
 					{blogButton?.text}

@@ -3,6 +3,7 @@ import { GlobalContext } from '@contexts/global/global.context';
 import { GlobalContextProps } from '@typing/common/interfaces/contexts.interface';
 import { HomePageContentProps } from 'pages';
 import RichText from 'components/molecules/rich-text.molecule';
+import { url } from 'inspector';
 
 export default function FooterCta() {
 	const { pageContent } =
@@ -14,7 +15,10 @@ export default function FooterCta() {
 	const { ctaTitle, ctaDescription, finalCtaButton } = homeData;
 	return (
 		<section id="footerCta" className="">
-			<div className="flex flex-col sm:flex sm:flex-row-reverse">
+			<div
+				className="flex flex-col sm:flex sm:flex-row-reverse "
+				
+			>
 				<div id="image" className="">
 					<img src="images/home_page/home_page_footer_cta_image.svg" />
 				</div>
@@ -26,17 +30,21 @@ export default function FooterCta() {
 						className="object-cover animate-pulse md:absolute"
 						src="images/home_page/footer_cta_theme/mask_group.svg"
 					/>
-					<div className=" space-y-4  absolute bottom-20 inset-x-0 p-2  md:p-12">
+					<div className="space-y-4  absolute bottom-20 inset-x-0 sm:inset-y-8  p-2  md:p-12">
 						{' '}
 						<div className="flex-col ">
 							<div className="flex flex-col space-y-2 text-center sm:place-items-start  ">
-								<p className="text-2xl  md:text-4xl font-bold text-center">
-									{ctaTitle}
-								</p>
-								<RichText value={ctaDescription?.contentRaw} />
+								<div>
+									<p className="text-2xl  md:text-2xl font-bold text-center">
+										{ctaTitle}
+									</p>
+								</div>
+								<div className="justify-center sm:justify-start">
+									<RichText value={ctaDescription?.contentRaw} />
+								</div>
 							</div>
-							<div className="flex justify-center sm:justify-start pt-4">
-								<button className="border rounded-lg  sm:text-xl bg-[#15284C] text-white  px-4 py-2  ">
+							<div className="flex justify-center sm:justify-start pt-4 ">
+								<button className="border rounded-lg text-sm sm:text-xl bg-[#15284C] text-white  px-2 py-1  ">
 									{finalCtaButton?.text}
 								</button>
 							</div>
