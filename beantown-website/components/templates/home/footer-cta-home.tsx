@@ -3,6 +3,7 @@ import { GlobalContext } from '@contexts/global/global.context';
 import { GlobalContextProps } from '@typing/common/interfaces/contexts.interface';
 import { HomePageContentProps } from 'pages';
 import RichText from 'components/molecules/rich-text.molecule';
+import Image from 'next/image';
 
 export default function FooterCta() {
 	const { pageContent } =
@@ -11,12 +12,17 @@ export default function FooterCta() {
 		return null;
 	}
 	const homeData = pageContent.home[0];
-	const { ctaTitle, ctaDescription, finalCtaButton } = homeData;
+	const { ctaTitle, ctaDescription, finalCtaButton, ctaImage } = homeData;
 	return (
 		<section id="footerCta" className="">
 			<div className="flex flex-col sm:flex sm:flex-row-reverse">
 				<div id="image" className="">
-					<img src="images/home_page/home_page_footer_cta_image.svg" />
+					<Image
+						alt={ctaImage?.asset?.altText || ''}
+						width={1000}
+						height={800}
+						src={ctaImage?.asset?.url || ''}
+					/>
 				</div>
 				<div
 					id="content"

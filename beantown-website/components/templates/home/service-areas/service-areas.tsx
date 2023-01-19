@@ -8,6 +8,8 @@ import {
 import { GlobalContext } from '@contexts/global/global.context';
 import { GlobalContextProps } from '@typing/common/interfaces/contexts.interface';
 import { HomePageContentProps } from 'pages';
+import Image from 'next/image';
+
 export default function ServiceAreas() {
 	const { pageContent } =
 		useContext<GlobalContextProps<HomePageContentProps>>(GlobalContext);
@@ -15,7 +17,12 @@ export default function ServiceAreas() {
 		return null;
 	}
 	const homeData = pageContent.home[0];
-	const { serviceAreaTitle, serviceAreaDescription, serviceAreas } = homeData;
+	const {
+		serviceAreaTitle,
+		serviceAreaDescription,
+		serviceAreas,
+		serviceAreaImage,
+	} = homeData;
 	return (
 		<section id="serviceAreas">
 			<div className="p-4">
@@ -29,7 +36,12 @@ export default function ServiceAreas() {
 				</div>
 
 				<div className=" pt-12">
-					<img src="images/home_page/beantownServiceArea.svg" />
+					<Image
+						src={serviceAreaImage?.asset?.url || ''}
+						alt={serviceAreaImage?.asset?.altText || ''}
+						width="1070"
+						height="708"
+					/>
 					<div className="bg-[#FFFFFF]  border rounded-lg ">
 						<div className="p-4">
 							<h1 className="text-lg font-bold">{serviceAreas?.title}</h1>
