@@ -2,8 +2,8 @@ import { gql } from '@apollo/client';
 import footerQuery from './get-footer.query';
 import navQuery from './get-nav.query';
 
-const homeQuery = `allHome {
-			logo{
+const homeQuery = ` allHome {
+    		logo{
 				asset{
 					url
 				}
@@ -16,6 +16,11 @@ const homeQuery = `allHome {
 				text
 				href
 			}
+			heroImage{
+			asset{
+				url
+			}
+			}
 			servicesTitle
 			servicesDescription {
 				contentRaw
@@ -23,6 +28,11 @@ const homeQuery = `allHome {
 			servicesGroup {
 				name
 				text
+				thumbnailImage{
+					asset{
+						url
+					}
+				}
 				button {
 					text
 					href
@@ -32,15 +42,30 @@ const homeQuery = `allHome {
 			whyUsDescription {
 				contentRaw
 			}
+			whyUsImage{
+			asset{
+				url
+			}
+			}
 			whyUsCards {
 				titleText
 				subText
+				image{
+				asset{
+					url
+				}
+				}
 				description {
 					contentRaw
 				}
 			}
 			testimonialTitle
 			testimonialDescription
+			testimonialCardIcon{
+			asset{
+				url
+			}
+			}
 			testimonialCards {
 				titleText
 				subText
@@ -50,6 +75,11 @@ const homeQuery = `allHome {
 			}
 			serviceAreaTitle
 			serviceAreaDescription
+			serviceAreaImage{
+			asset{
+				url
+			}
+			}
 			serviceAreas {
 				title
 				listItem
@@ -109,7 +139,12 @@ const homeQuery = `allHome {
 				text
 				href
 			}
-		}`;
+    		ctaImage{
+      			asset{
+        			url
+      			}
+    		}
+}`;
 
 export default gql`
 	query {

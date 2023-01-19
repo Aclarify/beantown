@@ -33,6 +33,14 @@ export default defineType({
       to: [{type: 'cta'}],
     }),
     defineField({
+      name: 'heroImage',
+      title: 'Hero Background Image',
+      type: 'image',
+      options: {
+        hotspot: true,
+      },
+    }),
+    defineField({
       name: 'servicesTitle',
       title: 'Services Offered Title',
       type: 'string',
@@ -46,7 +54,7 @@ export default defineType({
       name: 'servicesGroup',
       title: 'Services Group',
       type: 'array',
-      of: [{type: 'textButtonGroup'}],
+      of: [{type: 'textImageButtonGroup'}],
     }),
     defineField({
       name: 'whyUsTitle',
@@ -59,12 +67,20 @@ export default defineType({
       type: 'portableText',
     }),
     defineField({
+      name: 'whyUsImage',
+      title: 'Why Us Image',
+      type: 'image',
+      options: {
+        hotspot: true,
+      },
+    }),
+    defineField({
       name: 'whyUsCards',
       title: 'Why Us Cards',
       type: 'array',
       of: [
         {
-          type: 'titleDescription',
+          type: 'titleDescriptionImage',
         },
       ],
     }),
@@ -77,6 +93,14 @@ export default defineType({
       name: 'testimonialDescription',
       title: 'Testimonial Description',
       type: 'string',
+    }),
+    defineField({
+      name: 'testimonialCardIcon',
+      title: 'Testimonial Card Icon',
+      type: 'image',
+      options: {
+        hotspot: true,
+      },
     }),
     defineField({
       name: 'testimonialCards',
@@ -97,6 +121,14 @@ export default defineType({
       name: 'serviceAreaDescription',
       title: 'Service Area Description',
       type: 'string',
+    }),
+    defineField({
+      name: 'serviceAreaImage',
+      title: 'Service Areas Image',
+      type: 'image',
+      options: {
+        hotspot: true,
+      },
     }),
     defineField({
       name: 'serviceAreas',
@@ -173,6 +205,14 @@ export default defineType({
       title: 'Final CTA Button',
       type: 'reference',
       to: [{type: 'cta'}],
+    }),
+    defineField({
+      name: 'ctaImage',
+      title: 'Final CTA Image',
+      type: 'image',
+      options: {
+        hotspot: true,
+      },
     }),
   ],
 })
