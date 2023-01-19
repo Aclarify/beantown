@@ -17,6 +17,7 @@ import WithGlobalContent, {
 } from '../components/containers/global-content/global-content.container';
 import { PageNames } from '@configs/client/pages/pages.config';
 
+
 export interface HomePageContentProps {
 	home: Home[];
 	header: Nav[];
@@ -39,7 +40,7 @@ const HomePage: React.FC = () => {
 			<Testimonials />
 			<ServiceAreas />
 			<Blogs />
-			<Faq></Faq>
+			<Faq></Faq>		
 			<Brands />
 			<FooterCta />
 			<FooterComponent />

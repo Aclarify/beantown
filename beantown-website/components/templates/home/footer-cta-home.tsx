@@ -13,27 +13,30 @@ export default function FooterCta() {
 	const homeData = pageContent.home[0];
 	const { ctaTitle, ctaDescription, finalCtaButton } = homeData;
 	return (
-		<section id="footerCta">
-			<div className="md:flex ">
-				<div className="">
+		<section id="footerCta" className="">
+			<div className="flex flex-col sm:flex sm:flex-row-reverse">
+				<div id="image" className="">
 					<img src="images/home_page/home_page_footer_cta_image.svg" />
 				</div>
-				<div className="bg-blue-500 relative w-full">
+				<div
+					id="content"
+					className=" bg-gradient-to-r from-blue-300  bg-blue-50 relative w-full"
+				>
 					<img
-						className="object-cover animate-pulse"
+						className="object-cover animate-pulse md:absolute"
 						src="images/home_page/footer_cta_theme/mask_group.svg"
 					/>
 					<div className=" space-y-4  absolute bottom-20 inset-x-0 p-2  md:p-12">
 						{' '}
 						<div className="flex-col ">
-							<div className="flex-col space-y-2 ">
+							<div className="flex flex-col space-y-2 text-center sm:place-items-start  ">
 								<p className="text-2xl  md:text-4xl font-bold text-center">
 									{ctaTitle}
 								</p>
 								<RichText value={ctaDescription?.contentRaw} />
 							</div>
-							<div className="flex justify-center pt-4">
-								<button className="border rounded-lg text-xs  md:text-xl bg-[#15284C] text-white  p-2">
+							<div className="flex justify-center sm:justify-start pt-4">
+								<button className="border rounded-lg  sm:text-xl bg-[#15284C] text-white  px-4 py-2  ">
 									{finalCtaButton?.text}
 								</button>
 							</div>
