@@ -20,7 +20,8 @@ export default defineType({
       type: 'array',
       of: [
         {
-          type: 'link',
+          type: 'reference',
+          to: [{type: 'link', weak: true}],
         },
       ],
     }),
