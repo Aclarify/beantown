@@ -18,7 +18,7 @@ export default function Footer() {
 					className="sm:col-span-4 sm:order-last  sm:flex sm:justify-between m-10 "
 				>
 					<div id="services" className="pt-10 max-w-sm">
-						<h1 className="text-xl ">Services</h1>
+						<h1 className="text-xl font-bold">Services</h1>
 						<div className="flex justify-between sm:flex-col">
 							<span>Heating & Cooling</span>
 							<span>Electrical</span>
@@ -42,7 +42,6 @@ export default function Footer() {
 							<span>Resources2</span>
 							<span>Resources3</span>
 							<span>Resources4</span>
-							<span>Resources5</span>
 						</div>
 					</div>
 					<div id="contact" className="pt-8">
@@ -72,15 +71,12 @@ export default function Footer() {
 							id="socialMediaIconGroup"
 							className="sm:hidden flex align-middle items-center space-x-2"
 						>
-							<img className="mx-auto h-5 w-5" src="images/home_page/fb.svg" />
+							<img className="h-8 w-8" src="images/home_page/fb.svg" />
 							<img
-								className="mx-auto h-5 w-5"
+								className=" h-8 w-8"
 								src="images/home_page/instagram.svg"
 							/>
-							<img
-								className="mx-auto h-5 w-5"
-								src="images/home_page/twitter.svg"
-							/>
+							<img className=" h-8 w-8" src="images/home_page/twitter.svg" />
 						</div>
 					</div>
 					<div id="footerDescription" className="pb-8 ">
@@ -94,9 +90,9 @@ export default function Footer() {
 						id="socialMediaIconGroup"
 						className="hidden md:flex space-x-2 pb-8"
 					>
-						<img className="h-5 w-5" src="images/home_page/fb.svg" />
-						<img className=" h-5 w-5" src="images/home_page/instagram.svg" />
-						<img className=" h-5 w-5" src="images/home_page/twitter.svg" />
+						<img className="h-10 w-10" src="images/home_page/fb.svg" />
+						<img className=" h-10 w-10" src="images/home_page/instagram.svg" />
+						<img className=" h-10 w-10" src="images/home_page/twitter.svg" />
 					</div>
 				</div>
 			</div>

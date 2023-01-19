@@ -14,23 +14,24 @@ export default function Faq() {
 	const { faqTitle, faqDescription, faqButton, faqList } = homeData;
 	return (
 		<section id="faq">
-			<div className="bg-blue-100 mt-16">
-				<div className="flex flex-col items-center mx-6">
-					<h1 className="text-xl font-bold mt-2">{faqTitle}</h1>
+			<div className="bg-blue-50 mt-16  md:flex  items-center">
+				<div className="flex flex-col items-center mx-6 ">
+					<h1 className=" text-xl md:text-4xl font-bold mt-2">{faqTitle}</h1>
 					<p className="text-center py-4">{faqDescription}</p>
 					<button className="border  rounded-lg text-white text-xs  bg-[#15284C] px-4 py-2 ">
 						{faqButton?.text}
 					</button>
 				</div>
 
-				<div className="w-full px-4 bg-blue-100 pt-2">
+				<div className="w-full  px-4 bg-blue-50 pt-2">
 					{faqList?.map((faqs, index) => {
 						return (
 							<div
 								key={index}
-								className="mx-auto w-full max-w-md rounded-2xl bg-blue-100 p-2"
+								className="mx-auto w-full max-w-md rounded-2xl bg-blue-50 p-2"
 							>
 								<FAQDisclosure
+									isOpen = {index == 0} 
 									faq={faqs?.titleText || ''}
 									faqAnswer={faqs?.description?.contentRaw}
 								/>

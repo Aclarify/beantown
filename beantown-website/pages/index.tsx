@@ -16,6 +16,7 @@ import WithGlobalContent, {
 	generateGetStaticProps,
 } from '../components/containers/global-content/global-content.container';
 import { PageNames } from '@configs/client/pages/pages.config';
+import BrandsSwiperCards from 'components/templates/home/brands-swiper-cards';
 
 export interface HomePageContentProps {
 	home: Home[];
@@ -40,6 +41,7 @@ const HomePage: React.FC = () => {
 			<ServiceAreas />
 			<Blogs />
 			<Faq></Faq>
+			{/* <BrandsSwiperCards/> */}
 			<Brands />
 			<FooterCta />
 			<FooterComponent />
