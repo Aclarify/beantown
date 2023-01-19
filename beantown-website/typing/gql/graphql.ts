@@ -248,6 +248,7 @@ export type Footer = Document & {
   /** Date the document was last modified */
   _updatedAt?: Maybe<Scalars['DateTime']>;
   contactUs?: Maybe<Array<Maybe<ImageText>>>;
+  contactUsTitle?: Maybe<Scalars['String']>;
   copyright?: Maybe<Scalars['String']>;
   description?: Maybe<Scalars['String']>;
   name?: Maybe<Scalars['String']>;
@@ -265,6 +266,7 @@ export type FooterFilter = {
   _rev?: InputMaybe<StringFilter>;
   _type?: InputMaybe<StringFilter>;
   _updatedAt?: InputMaybe<DatetimeFilter>;
+  contactUsTitle?: InputMaybe<StringFilter>;
   copyright?: InputMaybe<StringFilter>;
   description?: InputMaybe<StringFilter>;
   name?: InputMaybe<StringFilter>;
@@ -277,6 +279,7 @@ export type FooterSorting = {
   _rev?: InputMaybe<SortOrder>;
   _type?: InputMaybe<SortOrder>;
   _updatedAt?: InputMaybe<SortOrder>;
+  contactUsTitle?: InputMaybe<SortOrder>;
   copyright?: InputMaybe<SortOrder>;
   description?: InputMaybe<SortOrder>;
   name?: InputMaybe<SortOrder>;
@@ -558,7 +561,7 @@ export type ImageText = {
   Name?: Maybe<Scalars['String']>;
   _key?: Maybe<Scalars['String']>;
   _type?: Maybe<Scalars['String']>;
-  iconImage?: Maybe<Array<Maybe<ImageIcon>>>;
+  iconImage?: Maybe<ImageIcon>;
   text?: Maybe<Scalars['String']>;
 };
 
@@ -566,6 +569,7 @@ export type ImageTextFilter = {
   Name?: InputMaybe<StringFilter>;
   _key?: InputMaybe<StringFilter>;
   _type?: InputMaybe<StringFilter>;
+  iconImage?: InputMaybe<ImageIconFilter>;
   text?: InputMaybe<StringFilter>;
 };
 
@@ -596,6 +600,7 @@ export type ImageTextSorting = {
   Name?: InputMaybe<SortOrder>;
   _key?: InputMaybe<SortOrder>;
   _type?: InputMaybe<SortOrder>;
+  iconImage?: InputMaybe<ImageIconSorting>;
   text?: InputMaybe<SortOrder>;
 };
 

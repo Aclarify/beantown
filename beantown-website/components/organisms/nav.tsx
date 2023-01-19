@@ -32,8 +32,7 @@ export default function Nav() {
 						return (
 							<Link
 								key={index}
-								//href={link?.href}
-								href={'/'}
+								href={link?.href || '/'}
 								className="p-8 pr-1 group inline-block"
 							>
 								{link?.linkText}
@@ -43,9 +42,8 @@ export default function Nav() {
 
 					{navGroup?.map((linkGroup, index) => {
 						return (
-							<div className="group inline-block">
+							<div key={index} className="group inline-block">
 								<Link
-									key={index}
 									href={'/'}
 									className="outline-none focus:outline-none  px-3 py-1  rounded-sm flex items-center min-w-32"
 								>
@@ -64,11 +62,7 @@ export default function Nav() {
 								<ul className="rounded-sm transform scale-0 group-hover:scale-100 absolute  transition duration-500 ease-in-out origin-top min-w-32">
 									{linkGroup?.links?.map((link, index) => {
 										return (
-											<Link
-												key={index}
-												//href={link?.href}
-												href={'/'}
-											>
+											<Link key={index} href={link?.href || '/'}>
 												<li className="rounded-sm px-3 py-1">
 													{link?.linkText}
 												</li>

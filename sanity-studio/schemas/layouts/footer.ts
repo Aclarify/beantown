@@ -39,6 +39,11 @@ export default defineType({
       of: [{type: 'linkGroup'}],
     }),
     defineField({
+      name: 'contactUsTitle',
+      title: 'Contact Us Title',
+      type: 'string',
+    }),
+    defineField({
       name: 'contactUs',
       title: 'Contact us',
       type: 'array',
