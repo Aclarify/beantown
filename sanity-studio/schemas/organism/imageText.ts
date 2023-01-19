@@ -12,12 +12,7 @@ export default defineType({
     defineField({
       name: 'iconImage',
       title: 'Icon or Image',
-      type: 'array',
-      of: [
-        {
-          type: 'imageIcon',
-        },
-      ],
+      type: 'imageIcon',
     }),
     defineField({
       name: 'text',

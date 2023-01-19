@@ -23,15 +23,15 @@ const footerQuery = `
 					newWindow
 				}
 			}
+			contactUsTitle
 			contactUs {
-				Name
+				text
 				iconImage {
 					image {
 						asset {
 							url
 						}
 					}
-					text
 				}
 			}
 			copyright
