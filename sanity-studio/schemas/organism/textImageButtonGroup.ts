@@ -1,13 +1,21 @@
 import {defineField, defineType} from 'sanity'
 export default defineType({
-  name: 'textButtonGroup',
-  title: 'Text Button Group',
+  name: 'textImageButtonGroup',
+  title: 'Text Image with Button Group',
   type: 'object',
   fields: [
     defineField({
       name: 'name',
       title: 'Name',
       type: 'string',
+    }),
+    defineField({
+      name: 'thumbnailImage',
+      title: 'Thumbnail Image',
+      type: 'image',
+      options: {
+        hotspot: true,
+      },
     }),
     defineField({
       name: 'text',

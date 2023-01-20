@@ -33,11 +33,13 @@ export default function WhyUs() {
 			<div className="pt-4 grid grid-cols-1 md:grid-cols-2 gap-2">
 				{whyUsCards?.map((ourValues, index) => {
 					return (
-						ourValues?.titleText && (
+						ourValues?.image && (
 							<WhyUsCard
 								key={index}
-								title={ourValues?.titleText}
+								title={ourValues?.titleText || ''}
 								description={ourValues?.description?.contentRaw}
+								thumbnailSrc={ourValues.image?.asset?.url || ''}
+								thumbnailAltText={ourValues.image?.asset?.altText || ''}
 							/>
 						)
 					);

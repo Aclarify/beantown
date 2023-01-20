@@ -21,15 +21,21 @@ export default function Services() {
 					<h1 className="text-4xl font-bold">{servicesTitle}</h1>
 					<RichText value={servicesDescription?.contentRaw} />
 				</div>
-				<div className="flex justify-evenly flex-wrap m-4  ">
+				<div className="flex justify-evenly  ">
 					{servicesGroup?.map((service, index) => {
 						return (
-							<ServiceCard
-								key={index}
-								title={service?.text || ''}
-								buttonText={service?.button?.text || ''}
-								hRef={service?.button?.href || ''}
-							/>
+							service?.thumbnailImage?.asset?.url && (
+								<ServiceCard
+									key={index}
+									title={service?.text || ''}
+									buttonText={service?.button?.text || ''}
+									hRef={service?.button?.href || ''}
+									thumbnailSrc={service.thumbnailImage?.asset?.url || ''}
+									thumbnailAltText={
+										service.thumbnailImage?.asset?.altText || ''
+									}
+								/>
+							)
 						);
 					})}
 				</div>
