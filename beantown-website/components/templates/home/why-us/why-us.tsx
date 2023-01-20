@@ -4,6 +4,7 @@ import { GlobalContextProps } from '@typing/common/interfaces/contexts.interface
 import RichText from 'components/molecules/rich-text.molecule';
 import { HomePageContentProps } from 'pages';
 import WhyUsCard from './why-us-card';
+import Image from 'next/image';
 export default function WhyUs() {
 	const { pageContent } =
 		useContext<GlobalContextProps<HomePageContentProps>>(GlobalContext);
@@ -11,7 +12,7 @@ export default function WhyUs() {
 		return null;
 	}
 	const homeData = pageContent.home[0];
-	const { whyUsTitle, whyUsDescription, whyUsCards } = homeData;
+	const { whyUsTitle, whyUsDescription, whyUsCards, whyUsImage } = homeData;
 	return (
 		<section id="whyUs" className="p-6 flex flex-col">
 			<div className="flex flex-col-reverse md:flex md:flex-row  items-center">
@@ -22,10 +23,12 @@ export default function WhyUs() {
 						Know More
 					</button>
 				</div>
-				<div className="group">
-					<img
-						className="group-hover:scale-125  transition-all  duration-500"
-						src=" images/home_page/whyUsBlobImage.svg"
+				<div className="group px-4">
+					<Image
+						src={whyUsImage?.asset?.url || ''}
+						alt={whyUsImage?.asset?.altText || ''}
+						width="800"
+						height="800"
 					/>
 				</div>
 			</div>
