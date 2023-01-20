@@ -90,7 +90,7 @@ export default function Footer() {
 						</div>
 						<div
 							id="socialMediaIconGroupMobile"
-							className="sm:hidden flex align-middle items-center space-x-2"
+							className="sm:hidden flex align-middle items-center space-x-4"
 						>
 							{socialMediaIcons?.map((icon, index) => {
 								return (
@@ -98,8 +98,8 @@ export default function Footer() {
 										<Image
 											key={index}
 											alt={icon?.image?.asset?.altText || ''}
-											width={20}
-											height={20}
+											width={35}
+											height={35}
 											src={icon?.image?.asset?.url || ''}
 										/>
 									)
@@ -112,7 +112,7 @@ export default function Footer() {
 					</div>
 					<div
 						id="socialMediaIconGroupDesktop"
-						className="hidden md:flex space-x-2 pb-8"
+						className="hidden md:flex space-x-4 pb-8"
 					>
 						{socialMediaIcons?.map((icon, index) => {
 							return (
@@ -120,8 +120,8 @@ export default function Footer() {
 									<Image
 										key={index}
 										alt={icon?.image?.asset?.altText || ''}
-										width={40}
-										height={40}
+										width={35}
+										height={35}
 										src={icon?.image?.asset?.url || ''}
 									/>
 								)
@@ -132,7 +132,7 @@ export default function Footer() {
 			</div>
 			<div
 				id="copyWrite"
-				className="flex justify-center items-center align-middle pt-6 border-t-2 border-grey-100 bg-[#15284C] text-gray-400"
+				className="flex justify-center  p- border-t-2 border-slate-700 bg-[#15284C] text-gray-300"
 			>
 				<span className="text-xs">{copyright} </span>
 
