@@ -30,10 +30,10 @@ export default function Footer() {
 		copyright,
 	} = footerData;
 	return (
-		<section id="footer">
+		<section id="footer" >
 			<div
 				id="footerContainer"
-				className="flex flex-col md:grid md:grid-cols-5   w-full h-auto bg-[#15284C] text-white px-4 "
+				className="flex flex-col md:grid md:grid-cols-5   w-full h-auto bg-[#15284C]  text-gray-400 px-4 "
 			>
 				<div
 					id="linkSection"
@@ -42,7 +42,7 @@ export default function Footer() {
 					{navGroup &&
 						navGroup.map((linkGroup, index) => (
 							<div key={index} className="pt-10 max-w-sm">
-								<h1 className="text-xl font-medium">{linkGroup?.groupTitle}</h1>
+								<h1 className="text-xl font-medium text-gray-200">{linkGroup?.groupTitle}</h1>
 								{linkGroup?.links?.map((link, index) => {
 									return (
 										link && (
@@ -56,7 +56,7 @@ export default function Footer() {
 						))}
 					<div id="contact" className="pt-10">
 						<div>
-							<span className=" font-medium text-xl">{contactUsTitle}</span>
+							<span className=" font-medium text-xl  text-gray-200">{contactUsTitle}</span>
 						</div>
 						{contactUs?.map((contactDtl, index) => {
 							return (
@@ -107,7 +107,7 @@ export default function Footer() {
 							})}
 						</div>
 					</div>
-					<div id="footerDescription" className="pb-8 font-thin">
+					<div id="footerDescription" className="pb-8">
 						<p>{description}</p>
 					</div>
 					<div
@@ -132,7 +132,7 @@ export default function Footer() {
 			</div>
 			<div
 				id="copyWrite"
-				className="flex justify-center items-center align-middle pt-6 border-t-2 border-grey-100 bg-[#15284C] text-white"
+				className="flex justify-center items-center align-middle pt-6 border-t-2 border-grey-100 bg-[#15284C] text-gray-400"
 			>
 				<span className="text-xs">{copyright} </span>
 
