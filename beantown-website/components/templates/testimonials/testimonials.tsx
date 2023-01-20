@@ -51,23 +51,39 @@ export default function Testimonials() {
 
 			},
 			{
+				url:'https://images.unsplash.com/photo-1499750310107-5fef28a66643?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxzZWFyY2h8Mnx8YmxvZ3xlbnwwfHwwfHw%3D&auto=format&fit=crop&w=600&q=60',
+				title:'title',
+				subTitle:'subTitle',
+				description:'Description Text hsdsadaljdklajklasjdklsdasdfadfafafa'
+
+			},
+			{
+				url:'https://images.unsplash.com/photo-1499750310107-5fef28a66643?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxzZWFyY2h8Mnx8YmxvZ3xlbnwwfHwwfHw%3D&auto=format&fit=crop&w=600&q=60',
+				title:'title',
+				subTitle:'subTitle',
+				description:'Description Text hsdsadaljdklajklasjdklsdasdfadfafafa'
+
+			},
+			{
 				url:'https://images.unsplash.com/photo-1432821596592-e2c18b78144f?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxzZWFyY2h8Nnx8YmxvZ3xlbnwwfHwwfHw%3D&auto=format&fit=crop&w=600&q=60',
 				title:'title',
 				subTitle:'subTitle',
 				description:'Description Text hsdsadaljdklajklasjdklsdasdfadfafafa',
 			},
-		];
-	
+			
 
+		];
 	
 		const [currentIndex,setCurrentIndex]=  react.useState(0);
 
-        const previousSlide=()=>{
-        
-            const isFirstSlide = currentIndex === 0;
-            const newIndex = isFirstSlide ? cards.length -1 : currentIndex - 1;
-            setCurrentIndex(newIndex);            
-       
+        const previousSlide=(event:MouseEvent<HTMLButtonElement>)=>{
+			
+			if(event){
+				event.preventDefault();
+				const isFirstSlide = currentIndex === 0;
+				const newIndex = isFirstSlide ? cards.length -1 : currentIndex - 1;
+				setCurrentIndex(newIndex); 
+			}
            
         }
         const nextSlide=(event:MouseEvent<HTMLButtonElement>)=>{
@@ -101,7 +117,7 @@ export default function Testimonials() {
 				{/* card data from sanity */}
 
 				<div className="hidden md:flex flex-col items-center   w-[250px]  flex-none gap-2 ">
-					<div className="  flex-none  gap-5   ">
+					<div className="flex-none gap-5">
 						<div className="p-8 m-8 bg-blue-50">
 							<h4>{testimonialTitle}</h4>
 							<h1 className="sm:text-4xl text-2xl font-bold">
@@ -111,12 +127,11 @@ export default function Testimonials() {
 					</div>
 					<div className="flex flex-col">
 						<div className="flex gap-2 m-4 ">
-							<button className="w-8 border rounded-lg h-2 bg-blue-100 "></button>
-							<button className="w-8 border rounded-lg h-2 bg-[#1E1E1E] "></button>
-							<button className="w-8 border rounded-lg h-2 bg-blue-100 "></button>
-							<button className="w-8 border rounded-lg h-2 bg-blue-100 "></button>
+						{cards.map((card,cardIndex)=>(                                     
+                                    <button  key={cardIndex} onClick={()=>goToSlide(cardIndex)} className="w-8 border rounded-lg h-2 bg-blue-100 "></button>
+                                ))}
 						</div>
-						<div className="flex gap-4 pt-4 ">
+						<div className="flex gap-4 pt-4 justify-center">
 							<button  onClick={previousSlide} className="bg-blue-100 py-2 px-4 rounded-full w-16">
 								<FontAwesomeIcon icon={faArrowLeft} />
 							</button>
@@ -127,7 +142,7 @@ export default function Testimonials() {
 					</div>
 				</div>
 
-				<div>
+				<div className='grid  grid-cols-1 md:grid-cols-3  gap-x-5'>
 					{testimonialCards?.map((reviews, index) => {
 						return (
 							// <TestimonialCard
@@ -136,11 +151,8 @@ export default function Testimonials() {
 							// 	clientDetails={reviews?.subText || ''}
 							// 	reviewComments={reviews?.description?.contentRaw}
 							// />
-							<> 
-							   <div className="flex flex-col items-center bg-[#FFFFFF] my-6 p-4 flex-none gap-2 border rounded-xl ">
-									<div className="">
-										<img src="images/home_page/testimonialCardsImageUnionVector.svg" />
-									</div>
+						
+							    <div className="flex flex-col  items-center bg-[#FFFFFF] my-6 p-4 flex-none gap-2 border rounded-xl ">
 									<div className=" flex flex-col gap-2 items-center pt-10 pb-6 ">
 										<div>
 											<h1 className="text-4xl font-bold">name</h1>
@@ -153,7 +165,7 @@ export default function Testimonials() {
 										</div>
 									</div>
 								</div>
-							</>
+						
 						);
 					})}
 				</div>
@@ -161,11 +173,11 @@ export default function Testimonials() {
 			<div className="md:hidden">
 				<div className="flex items-center justify-between ">
 					<div className="flex gap-2 m-4">
-						<button className="w-8 border rounded-lg h-2 bg-blue-100 "></button>
-						<button className="w-8 border rounded-lg h-2 bg-[#1E1E1E] "></button>
-						<button className="w-8 border rounded-lg h-2 bg-blue-100 "></button>
-						<button className="w-8 border rounded-lg h-2 bg-blue-100 "></button>
+					{cards.map((card,cardIndex)=>(                                      
+                                    <button  key={cardIndex} onClick={()=>goToSlide(cardIndex)} className="w-8 border rounded-lg h-2 bg-blue-100 "></button>
+                                ))}
 					</div>
+
 					<div className="flex gap-4 pt-4 ">
 						<button  onClick={previousSlide} className="bg-blue-100 py-2 px-4 rounded-full w-16">
 							<FontAwesomeIcon icon={faArrowLeft} />

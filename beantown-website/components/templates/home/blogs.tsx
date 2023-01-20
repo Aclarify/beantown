@@ -25,16 +25,6 @@ export default function Blogs() {
 			<div className="group flex flex-nowrap overflow-x-auto sm:grid sm:grid-cols-3  gap-5 ">
 				{blogCards?.map((blog, index) => {
 					return (
-<<<<<<< HEAD
-						<div
-							key={index}
-							className=" group-hover:scale-[0.85] hover:!scale-100 duration-500  flex-none w-[250px] md:w-full  p-4 "
-						>
-							<img src="images/home_page/blogImage1.svg" />
-							<p className="pt-4 text-xl font-bold">{blog?.name}</p>
-							<RichText value={blog?.description?.contentRaw} />
-							<button className="text-md font-bold underline">Read More</button>
-=======
 						<div key={index} className="flex-col ">
 							<div className=" group-hover:scale-[0.85] hover:!scale-100 duration-500 "></div>
 							<Image
@@ -52,7 +42,6 @@ export default function Blogs() {
 									Read More
 								</button>
 							</div>
->>>>>>> 886a7f1d5e02b1be5d5fc871942c1473497a9932
 						</div>
 					);
 				})}
