@@ -22,11 +22,11 @@ export default function Blogs() {
 				<p>{blogDescription}</p>
 			</div>
 
-			<div className="group flex flex-nowrap overflow-x-auto gap-5 ">
+			<div className=" flex flex-nowrap overflow-x-auto gap-5 ">
 				{blogCards?.map((blog, index) => {
 					return (
 						<div key={index} className="flex-col ">
-							<div className=" group-hover:scale-[0.85] hover:!scale-100 duration-500 "></div>
+							<div className="  hover:!scale-100 duration-500 "></div>
 							<Image
 								src={blog?.image?.image?.asset?.url || ''}
 								alt={blog?.image?.altText || ''}
