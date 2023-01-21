@@ -13,12 +13,12 @@ export default function Faq() {
 	const homeData = pageContent.home[0];
 	const { faqTitle, faqDescription, faqButton, faqList } = homeData;
 	return (
-		<section id="faq">
-			<div className="bg-blue-50 mt-16  md:flex  items-center">
-				<div className="flex flex-col items-center mx-6 ">
-					<h1 className=" text-xl md:text-4xl font-bold mt-2">{faqTitle}</h1>
+		<section id="faq" className=' '>
+			<div className="bg-blue-50 mt-16  md:flex  items-center ">
+				<div className="flex flex-col items-center m-10 ">
+					<h1 className=" text-xl md:text-4xl font-semibold mt-10 ">{faqTitle}</h1>
 					<p className="text-center py-4">{faqDescription}</p>
-					<button className="border  rounded-lg text-white text-xs  bg-[#15284C] px-4 py-2 ">
+					<button className="border mb-10  rounded-md text-white text-xs  bg-[#15284C] px-4 py-2 ">
 						{faqButton?.text}
 					</button>
 				</div>
