@@ -17,9 +17,11 @@ export default function HomeHero() {
 		<section id="home_page_hero" className="">
 			<div className="flex-shrink-0 ">
 				<div className="space-y-4  mt-12 md:mt-64 absolute w-1/2 text-white p-2  md:p-12">
-					<p className="text-sm  md:text-4xl font-bold">{heroTitle}</p>
-					<RichText value={heroDescription?.contentRaw} />
-					<button className="border rounded-lg text-xs  md:text-xl bg-white text-black p-2">
+					<p className=" text-3xl sm:text-6xl font-bold">{heroTitle}</p>
+					<div className=" text-base sm:text-2xl font-normal">
+						<RichText value={heroDescription?.contentRaw} />
+					</div>
+					<button className="border rounded-lg text-xl sm:text-2xl font-normal bg-white text-black py-2 px-8">
 						{heroButton?.text}
 					</button>
 				</div>

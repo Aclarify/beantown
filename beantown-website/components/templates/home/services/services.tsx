@@ -18,8 +18,12 @@ export default function Services() {
 		<section id="services">
 			<div className="m-4">
 				<div className="flex flex-col items-center">
-					<h1 className="text-4xl font-bold">{servicesTitle}</h1>
-					<RichText value={servicesDescription?.contentRaw} />
+					<h1 className=" text-3xl sm:text-5xl font-semibold">
+						{servicesTitle}
+					</h1>
+					<div className=" sm:text-2xl text-base font-light">
+						<RichText value={servicesDescription?.contentRaw} />
+					</div>
 				</div>
 				<div className="flex justify-evenly  ">
 					{servicesGroup?.map((service, index) => {
