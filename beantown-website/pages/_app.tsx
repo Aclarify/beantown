@@ -12,37 +12,37 @@ const neuePlak = localFont({
 	variable: '--font-neue-plak',
 	src: [
 		{
-			path: './fonts/neue-plak-narrow/NeuePlak-NarrowThin.woff2',
+			path: './fonts/neue-plak-condensed/NeuePlak-CondThin.ttf',
 			weight: '100',
 			style: 'normal',
 		},
 		{
-			path: './fonts/neue-plak-narrow/NeuePlak-NarrowBold.woff2',
+			path: './fonts/neue-plak-condensed/NeuePlak-CondBold.ttf',
 			weight: '700',
 			style: 'normal',
 		},
 		{
-			path: './fonts/neue-plak-narrow/NeuePlak-NarrowBlack.woff2',
+			path: './fonts/neue-plak-condensed/NeuePlak-CondBlack.ttf',
 			weight: '900',
 			style: 'normal',
 		},
 		{
-			path: './fonts/neue-plak-narrow/NeuePlak-NarrowExtraBlack.woff2',
+			path: './fonts/neue-plak-condensed/NeuePlak-CondExtraBlack.ttf',
 			weight: '950',
 			style: 'normal',
 		},
 		{
-			path: './fonts/neue-plak-narrow/NeuePlak-NarrowLight.woff2',
+			path: './fonts/neue-plak-condensed/NeuePlak-CondLight.ttf',
 			weight: '300',
 			style: 'normal',
 		},
 		{
-			path: './fonts/neue-plak-narrow/NeuePlak-NarrowRegular.woff2',
+			path: './fonts/neue-plak-condensed/NeuePlak-CondRegular.ttf',
 			weight: '400',
 			style: 'normal',
 		},
 		{
-			path: './fonts/neue-plak-narrow/NeuePlak-NarrowSemiBold.woff2',
+			path: './fonts/neue-plak-condensed/NeuePlak-CondSemiBold.ttf',
 			weight: '600',
 			style: 'normal',
 		},
@@ -53,7 +53,7 @@ export default function App({ Component, pageProps }: AppProps) {
 	return (
 		<>
 			<ApolloProvider client={graphQLClient}>
-				<main className={`${neuePlak.className} font-light`}>
+				<main className={`${neuePlak.className}`}>
 					<Component {...pageProps} />
 				</main>
 			</ApolloProvider>
