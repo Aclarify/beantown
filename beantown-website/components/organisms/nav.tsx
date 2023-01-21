@@ -27,7 +27,7 @@ export default function Nav() {
 						src={logo?.asset?.url || ''}
 					/>
 				</div>
-				<div className=" text-white items-center text-xl   justify-center ">
+				<div className=" text-white items-center text-xl font-light justify-center">
 					{navLinks?.map((link, index) => {
 						return (
 							<Link
@@ -75,7 +75,7 @@ export default function Nav() {
 					})}
 				</div>
 				<div className="">
-					<button className="border rounded-lg   text-sm  md:text-xl bg-white p-2">
+					<button className="border rounded-lg text-lg font-light md:text-xl bg-white py-2 px-8">
 						{headerButton?.text}
 					</button>
 				</div>
