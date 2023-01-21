@@ -65,7 +65,9 @@ export default function Testimonials() {
 					: 0;
 			}, []);
 
-
+			 const goToSlide = (slideIndex: number) => {
+					setCurrentIndex(slideIndex);
+				}; 
 
 
 
@@ -100,6 +102,7 @@ export default function Testimonials() {
 								return (
 									<button
 										key={index}
+										onClick={() => goToSlide(index)}
 										className="w-8 border rounded-lg h-2 bg-blue-100 "
 									></button>
 								);
@@ -166,6 +169,7 @@ export default function Testimonials() {
 							return (
 								<button
 									key={index}
+									onClick={() => goToSlide(index)}
 									className="w-8 border rounded-lg h-2 bg-blue-100 "
 								></button>
 							);
