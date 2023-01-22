@@ -53,7 +53,7 @@ export default function App({ Component, pageProps }: AppProps) {
 	return (
 		<>
 			<ApolloProvider client={graphQLClient}>
-				<main className={`${neuePlak.className}`}>
+				<main className={`${neuePlak.className} font-thin`}>
 					<Component {...pageProps} />
 				</main>
 			</ApolloProvider>

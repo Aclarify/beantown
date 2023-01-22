@@ -103,7 +103,7 @@ export default function Testimonials() {
 									<button
 										key={index}
 										onClick={() => goToSlide(index)}
-										className="w-8 border rounded-lg h-2 bg-blue-100 "
+										className="w-8 border rounded-lg h-2 hover:bg-[#15284C] bg-blue-100 "
 									></button>
 								);
 							})}
@@ -112,14 +112,14 @@ export default function Testimonials() {
 							<button
 								onClick={movePrevious}
 								disabled={isDisabled('prev')}
-								className="bg-blue-900 rounded-full text-black w-10 h-full text-center opacity-75 hover:opacity-100 disabled:opacity-25 disabled:cursor-not-allowed  transition-all ease-in-out duration-300"
+								className="bg-[#15284C] rounded-full text-white w-10 h-full text-center opacity-75 hover:opacity-100 disabled:opacity-25 disabled:cursor-not-allowed  transition-all ease-in-out duration-300"
 							>
 								<FontAwesomeIcon icon={faArrowLeft} />
 							</button>
 							<button
 								onClick={moveNext}
 								disabled={isDisabled('next')}
-								className="bg-blue-900 rounded-full text-black w-10 h-full text-center opacity-75 hover:opacity-100 disabled:opacity-25 disabled:cursor-not-allowed transition-all ease-in-out duration-300"
+								className="bg-[#15284C] rounded-full text-white w-10 h-full text-center opacity-75 hover:opacity-100 disabled:opacity-25 disabled:cursor-not-allowed transition-all ease-in-out duration-300"
 							>
 								<FontAwesomeIcon icon={faArrowRight} />
 							</button>
@@ -170,7 +170,7 @@ export default function Testimonials() {
 								<button
 									key={index}
 									onClick={() => goToSlide(index)}
-									className="w-8 border rounded-lg h-2 bg-blue-100 "
+									className="w-8 border rounded-lg h-2 bg-blue-100 hover:bg-[#15284C]  "
 								></button>
 							);
 						})}
@@ -179,14 +179,14 @@ export default function Testimonials() {
 						<button
 							onClick={movePrevious}
 							disabled={isDisabled('prev')}
-							className="bg-blue-900  rounded-full text-black w-10 h-full  text-center opacity-75 hover:opacity-100 disabled:opacity-25 disabled:cursor-not-allowed z-10 p-0 m-0 transition-all ease-in-out duration-300"
+							className="bg-[#15284C]  rounded-full text-white w-10 h-full  text-center opacity-65 hover:opacity-100 disabled:opacity-25 disabled:cursor-not-allowed z-10 p-0 m-0 transition-all ease-in-out duration-300"
 						>
 							<FontAwesomeIcon icon={faArrowLeft} />
 						</button>
 						<button
 							onClick={moveNext}
 							disabled={isDisabled('next')}
-							className="bg-blue-900 rounded-full text-black w-10 h-full text-center opacity-75 hover:opacity-100 disabled:opacity-25 disabled:cursor-not-allowed z-10 p-0 m-0 transition-all ease-in-out duration-300"
+							className="bg-[#15284C] rounded-full text-white w-10 h-full text-center opacity-65 hover:opacity-100 disabled:opacity-25 disabled:cursor-not-allowed z-10 p-0 m-0 transition-all ease-in-out duration-300"
 						>
 							<FontAwesomeIcon icon={faArrowRight} />
 						</button>
