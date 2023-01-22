@@ -15,10 +15,7 @@ export default function FooterCta() {
 	const { ctaTitle, ctaDescription, finalCtaButton, ctaImage } = homeData;
 	return (
 		<section id="footerCta" className="">
-			<div
-				className="flex flex-col sm:flex sm:flex-row-reverse "
-				
-			>
+			<div className="flex flex-col sm:flex sm:flex-row-reverse ">
 				<div id="image" className="">
 					<Image
 						alt={ctaImage?.asset?.altText || ''}
@@ -40,20 +37,19 @@ export default function FooterCta() {
 						<div className="flex-col ">
 							<div className="flex flex-col space-y-2 text-center sm:m-8  ">
 								<div>
-									<p className="text-2xl  md:text-2xl font-bold text-center">
+									<p className="title-5 md:title-2 text-primary-black text-center">
 										{ctaTitle}
 									</p>
 								</div>
-								<div className="justify-center sm:justify-start">
+								<div className="para-4 md:para-2 text-primary-shade-1 justify-center sm:justify-start">
 									<RichText value={ctaDescription?.contentRaw} />
 								</div>
 								<div className="flex justify-center ">
-								<button className="border rounded-md text-sm font-medium sm:text-xl bg-[#15284C] text-white  px-4 py-2  ">
-									{finalCtaButton?.text}
-								</button>
+									<button className="border rounded-md para-3 md:para-2 bg-primary-shade-1 text-white tracking-wide md:tracking-wider  px-6 py-2  ">
+										{finalCtaButton?.text}
+									</button>
+								</div>
 							</div>
-							</div>
-							
 						</div>
 					</div>
 				</div>

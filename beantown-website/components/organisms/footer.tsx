@@ -30,10 +30,10 @@ export default function Footer() {
 		copyright,
 	} = footerData;
 	return (
-		<section id="footer" >
+		<section id="footer">
 			<div
 				id="footerContainer"
-				className="flex flex-col md:grid md:grid-cols-5   w-full h-auto bg-[#15284C]  text-gray-400 px-4 "
+				className="flex flex-col md:grid md:grid-cols-5   w-full h-auto bg-primary-shade-1   p-6 md:px-10"
 			>
 				<div
 					id="linkSection"
@@ -42,12 +42,19 @@ export default function Footer() {
 					{navGroup &&
 						navGroup.map((linkGroup, index) => (
 							<div key={index} className="pt-10 max-w-sm">
-								<h1 className="text-xl font-medium text-gray-200">{linkGroup?.groupTitle}</h1>
+								<h1 className="para-3 md:para-1 text-white pb-6">
+									{linkGroup?.groupTitle}
+								</h1>
 								{linkGroup?.links?.map((link, index) => {
 									return (
 										link && (
-											<div key={index}>
-												<Link className='font-thin' href={link?.href || '/'}>{link?.linkText}</Link>
+											<div key={index} className="pt-2">
+												<Link
+													className="para-4 md:para-3 text-gray-300 "
+													href={link?.href || '/'}
+												>
+													{link?.linkText}
+												</Link>
 											</div>
 										)
 									);
@@ -55,15 +62,17 @@ export default function Footer() {
 							</div>
 						))}
 					<div id="contact" className="pt-10">
-						<div>
-							<span className=" font-medium text-xl  text-gray-200">{contactUsTitle}</span>
+						<div className="pb-4">
+							<span className=" para-3 md:para-1 text-white">
+								{contactUsTitle}
+							</span>
 						</div>
 						{contactUs?.map((contactDtl, index) => {
 							return (
 								contactDtl?.iconImage && (
 									<div
 										key={index}
-										className="flex justify-start pt-2 space-x-2"
+										className="flex justify-start pt-2 space-x-2 para-4 md:para-3 text-gray-300"
 									>
 										<Image
 											alt={contactDtl.iconImage?.image?.asset?.altText || ''}
@@ -108,7 +117,7 @@ export default function Footer() {
 						</div>
 					</div>
 					<div id="footerDescription" className="pb-8">
-						<p>{description}</p>
+						<p className="para-4 md:para-3 text-gray-300">{description}</p>
 					</div>
 					<div
 						id="socialMediaIconGroupDesktop"
@@ -132,14 +141,14 @@ export default function Footer() {
 			</div>
 			<div
 				id="copyWrite"
-				className="flex justify-center  p- border-t-2 border-slate-700 bg-[#15284C] text-gray-300"
+				className="flex justify-center py-6 border-t-2 border-gray-shade-2 bg-[#15284C] text-gray-300 para-5 md:para-3"
 			>
-				<span className="text-xs">{copyright} </span>
+				<span className="">{copyright} </span>
 
 				{navLinks?.map((link, index) => {
 					return (
 						link && (
-							<div className="text-xs">
+							<div className="">
 								<span className="px-2"> . </span>
 								<Link href={link?.href || '/'}>{link?.linkText}</Link>
 							</div>

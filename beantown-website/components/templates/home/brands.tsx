@@ -15,11 +15,11 @@ export default function Brands() {
 	return (
 		<section id="brand">
 			<div className="flex  justify-center">
-				<span className="text-xl md:text-2xl font-bold p-4 m-4">
+				<span className="title-6 md:title-3 text-primary-black p-4 m-4">
 					{brandsTitle}
 				</span>
 			</div>
-			<div className="group flex flex-nowrap overflow-x-auto  md:space-x-2 p-4 m-4">
+			<div className="group flex flex-nowrap justify-center overflow-x-auto  md:space-x-2 p-4 m-4">
 				{clientsLogo?.map((logo, index) => {
 					return (
 						logo &&
