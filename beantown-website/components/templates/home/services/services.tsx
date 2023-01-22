@@ -16,16 +16,16 @@ export default function Services() {
 	const { servicesTitle, servicesDescription, servicesGroup } = homeData;
 	return (
 		<section id="services">
-			<div className="m-4">
-				<div className="flex flex-col items-center">
-					<h1 className=" text-3xl sm:text-5xl font-semibold">
+			<div className="px-6 md:px-10 bg-secondary-shade-3 ">
+				<div className="flex flex-col items-center my-4">
+					<h1 className=" title-5 md:title-2 mb-4 text-primary-black">
 						{servicesTitle}
 					</h1>
-					<div className=" sm:text-2xl text-base font-light">
+					<div className=" md:para-2 para-4 text-center text-primary-shade-1 flex-wrap">
 						<RichText value={servicesDescription?.contentRaw} />
 					</div>
 				</div>
-				<div className="flex justify-evenly  ">
+				<div className="flex flex-wrap md:flex-nowrap md:space-x-4 space-y-4 md:space-y-0 justify-around py-4">
 					{servicesGroup?.map((service, index) => {
 						return (
 							service?.thumbnailImage?.asset?.url && (

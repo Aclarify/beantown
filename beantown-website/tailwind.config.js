@@ -10,6 +10,29 @@ module.exports = {
 			fontFamily: {
 				neuePlak: ['var(--font-neue-plak)'],
 			},
+			fontSize: {
+				//	text-
+			},
+			colors: {
+				'primary-black': '#18181B',
+				'primary-shade-1': '#15284C',
+				'primary-shade-2': '#A0A9B7',
+				'primary-shade-3': '#ECEEF1',
+				'secondary-shade-1': '#7AADD3',
+				'secondary-shade-2': '#CADEED',
+				'secondary-shade-3': '#F4F8FB',
+				'secondary-shade-4': '#D9D9D9',
+				'gray-shade-1': '#47515F',
+				'gray-shade-2': '#8B98AB',
+				'gray-shade-3': '#E3E5EA',
+				'service-red': '#BC3B39',
+				'service-yellow': '#F4DE00',
+				'service-green': '#008340',
+			},
+			letterSpacing: {
+				wide: '1px',
+				wider: '1.5px',
+			},
 		},
 	},
 	plugins: [],

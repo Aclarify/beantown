@@ -14,16 +14,20 @@ export default function WhyUs() {
 	const homeData = pageContent.home[0];
 	const { whyUsTitle, whyUsDescription, whyUsCards, whyUsImage } = homeData;
 	return (
-		<section id="whyUs" className="p-6 flex flex-col">
-			<div className="flex flex-col-reverse md:flex md:flex-row  items-center">
-				<div className=" pt-8 space-y-4 flex flex-col items-center text-justify ">
-					<h1 className="text-4xl font-bold">{whyUsTitle}</h1>
-					<RichText value={whyUsDescription?.contentRaw} />
-					<button className="border rounded-lg text-white text-sm  bg-[#15284C] p-4  ">
+		<section id="whyUs" className=" p-6 md:px-10 flex flex-col ">
+			<div className="flex flex-col-reverse md:flex md:flex-row  items-center w-full">
+				<div className=" pt-8  flex flex-col items-start text-justify basis-1/2 ">
+					<h1 className="title-5 md:title-2 text-primary-black ">
+						{whyUsTitle}
+					</h1>
+					<div className="md:para-2 para-4 text-primary-shade-1 text-left pb-4">
+						<RichText value={whyUsDescription?.contentRaw} />
+					</div>
+					<button className="border rounded-lg text-white para-4 md:para-2  bg-primary-shade-1 md:tracking-wider tracking-wide py-2 px-8 ">
 						Know More
 					</button>
 				</div>
-				<div className="group px-4">
+				<div className=" px-20 basis-1/2">
 					<Image
 						src={whyUsImage?.asset?.url || ''}
 						alt={whyUsImage?.asset?.altText || ''}

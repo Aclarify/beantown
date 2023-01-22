@@ -14,14 +14,14 @@ export default function HomeHero() {
 	const homeData = pageContent.home[0];
 	const { heroTitle, heroDescription, heroButton, heroImage } = homeData;
 	return (
-		<section id="home_page_hero" className="">
-			<div className="flex-shrink-0 ">
-				<div className="space-y-4  mt-12 md:mt-64 absolute w-1/2 text-white p-2  md:p-12">
-					<p className=" text-3xl sm:text-6xl font-bold">{heroTitle}</p>
-					<div className=" text-base sm:text-2xl font-normal">
+		<section id="home_page_hero">
+			<div className="flex-shrink-0">
+				<div className="space-y-4  mt-12 md:mt-64 absolute w-3/4 text-white px-6 md:px-10 align-middle ">
+					<h1 className="title-4 md:title-1">{heroTitle}</h1>
+					<div className="para-4 md:para-2">
 						<RichText value={heroDescription?.contentRaw} />
 					</div>
-					<button className="border rounded-lg text-xl sm:text-2xl font-normal bg-white text-black py-2 px-8">
+					<button className="border rounded-lg text-xl md:text-2xl tracking-wider font-light bg-white text-primary-shade-1 py-2 px-8">
 						{heroButton?.text}
 					</button>
 				</div>

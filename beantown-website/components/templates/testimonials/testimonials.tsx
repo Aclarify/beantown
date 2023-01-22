@@ -76,28 +76,34 @@ export default function Testimonials() {
 	};
 
 	return (
-		<section id="testimonials" className=" p-6 bg-blue-50">
+		<section id="testimonials" className=" p-6 md:px-10  bg-secondary-shade-3">
 			<div className="md:hidden">
 				<div className="  w-full flex-none  gap-5   ">
-					<div className="p-4 m-4">
-						<h4>{testimonialTitle}</h4>
-						<h1 className="sm:text-4xl text-2xl font-extrabold">
+					<div className="">
+						<h4 className="para-4 text-primary-shade-1 ">{testimonialTitle}</h4>
+						<h1 className="title-5 text-primary-black">
 							{testimonialDescription}
 						</h1>
 					</div>
 				</div>
 			</div>
 
-			<div className="flex flex-nowrap overflow-x-auto space-x-4 bg-blue-50 ">
+			<div className="flex flex-nowrap overflow-x-auto space-x-4   ">
 				{/* card data from sanity */}
 
-				<div className="hidden md:flex flex-col items-center   w-[250px]  flex-none gap-2 ">
+				<div className="hidden md:flex flex-col items-center     flex-none gap-2 ">
 					<div className="  flex-none  gap-5   ">
-						<div className="p-8 m-8 bg-blue-50">
-							<h4>{testimonialTitle}</h4>
-							<h1 className="sm:text-4xl text-2xl font-bold">
-								{testimonialDescription}
-							</h1>
+						<div className=" ">
+							<div>
+								<span className=" text-light-1 text-primary-shade-1 ">
+									{testimonialTitle}
+								</span>
+							</div>
+							<div>
+								<span className=" title-2 text-primary-black">
+									{testimonialDescription}
+								</span>
+							</div>
 						</div>
 					</div>
 					<div className="flex flex-col ">
@@ -145,10 +151,10 @@ export default function Testimonials() {
 							// />
 							<div
 								key={index}
-								className="relative w-96 h-96 snap-start items-center bg-[#FFFFFF] my-6 p-4 flex-none gap-2 border rounded-xl "
+								className="relative w-72 h-96 snap-start items-center bg-[#FFFFFF] my-6 p-4 flex-none gap-2 border rounded-xl "
 							>
 								<div className=" flex flex-col text-center  ">
-									<div>
+									<div className="flex justify-center">
 										<img src="images/home_page/testimonialCardsImageUnionVector.svg" />
 									</div>
 									<div>

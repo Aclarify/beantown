@@ -13,25 +13,26 @@ export default function Faq() {
 	const homeData = pageContent.home[0];
 	const { faqTitle, faqDescription, faqButton, faqList } = homeData;
 	return (
-		<section id="faq" className=' '>
-			<div className="bg-blue-50 mt-16  md:flex  items-center ">
-				<div className="flex flex-col items-center m-10 ">
-					<h1 className=" text-xl md:text-4xl font-semibold mt-10 ">{faqTitle}</h1>
-					<p className="text-center py-4">{faqDescription}</p>
-					<button className="border mb-10  rounded-md text-white text-xs  bg-[#15284C] px-4 py-2 ">
+		<section id="faq" className=" ">
+			<div className=" p-6 md:px-10 bg-secondary-shade-3 mt-16 md:flex  ">
+				<div className="text-center md:text-left m-10">
+					<h1 className=" title-5 md:title-2 text-primary-black mt-10 ">
+						{faqTitle}
+					</h1>
+					<p className="para-4 md:para-2 text-primary-shade-1 mb-4">
+						{faqDescription}
+					</p>
+					<button className="border mb-10  rounded-md text-white para-3 md:para-2 bg-primary-shade-1 px-6 py-2 ">
 						{faqButton?.text}
 					</button>
 				</div>
 
-				<div className="w-full  px-4 bg-blue-50 pt-2">
+				<div className="w-full pt-2">
 					{faqList?.map((faqs, index) => {
 						return (
-							<div
-								key={index}
-								className="mx-auto w-full max-w-md rounded-2xl bg-blue-50 p-2"
-							>
+							<div key={index} className="w-full rounded-2xl bg-blue-50 p-2">
 								<FAQDisclosure
-									isOpen = {index == 0} 
+									isOpen={index == 0}
 									faq={faqs?.titleText || ''}
 									faqAnswer={faqs?.description?.contentRaw}
 								/>
