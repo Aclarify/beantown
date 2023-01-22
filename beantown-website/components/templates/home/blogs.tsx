@@ -43,7 +43,7 @@ export default function Blogs() {
 								</div>
 								<div className="flex justify-between">
 									<button className="para-4 md:para-2 text-primary-black underline pt-4">
-										{blog?.button[0]?.text}
+										{blog && blog.button && blog?.button[0]?.text}
 									</button>
 									<img src="images/home_page/blog-arrow.svg" />
 								</div>
