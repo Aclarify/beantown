@@ -17,15 +17,15 @@ export default function Services() {
 	return (
 		<section id="services">
 			<div className="m-4">
-				<div className="flex flex-col items-center">
-					<h1 className=" text-3xl sm:text-5xl font-semibold">
+				<div className="flex flex-col items-center my-4">
+					<h1 className=" text-3xl sm:text-5xl font-normal mb-4">
 						{servicesTitle}
 					</h1>
-					<div className=" sm:text-2xl text-base font-light">
+					<div className=" sm:text-2xl text-base font-light text-center text-gray-500 flex-wrap">
 						<RichText value={servicesDescription?.contentRaw} />
 					</div>
 				</div>
-				<div className="flex justify-evenly  ">
+				<div className="flex justify-evenly">
 					{servicesGroup?.map((service, index) => {
 						return (
 							service?.thumbnailImage?.asset?.url && (

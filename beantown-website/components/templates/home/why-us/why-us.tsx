@@ -15,15 +15,17 @@ export default function WhyUs() {
 	const { whyUsTitle, whyUsDescription, whyUsCards, whyUsImage } = homeData;
 	return (
 		<section id="whyUs" className="p-6 flex flex-col">
-			<div className="flex flex-col-reverse md:flex md:flex-row  items-center">
-				<div className=" pt-8 space-y-4 flex flex-col items-center text-justify ">
-					<h1 className="text-4xl font-bold">{whyUsTitle}</h1>
-					<RichText value={whyUsDescription?.contentRaw} />
-					<button className="border rounded-lg text-white text-sm  bg-[#15284C] p-4  ">
+			<div className="flex flex-col-reverse md:flex md:flex-row  items-center w-full">
+				<div className=" pt-8  flex flex-col items-start text-justify basis-1/4 ">
+					<h1 className=" sm:text-5xl text-3xl font-semibold">{whyUsTitle}</h1>
+					<div className="sm:text-2xl text-base font-light text-gray-500 text-left">
+						<RichText value={whyUsDescription?.contentRaw} />
+					</div>
+					<button className="border rounded-lg text-white text-2xl font-normal  bg-[#15284C] py-2 px-8 ">
 						Know More
 					</button>
 				</div>
-				<div className="group px-4">
+				<div className=" px-20 basis-3/4">
 					<Image
 						src={whyUsImage?.asset?.url || ''}
 						alt={whyUsImage?.asset?.altText || ''}

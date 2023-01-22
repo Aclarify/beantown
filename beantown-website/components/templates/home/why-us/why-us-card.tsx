@@ -21,8 +21,10 @@ const WhyUsCard: React.FC<Props> = (props) => {
 					/>
 				</div>
 				<div className="p-2">
-					<h1 className="text-2xl font-bold">{props.title}</h1>
-					<RichText value={props.description} />
+					<h1 className="text-2xl sm:text-4xl font-semibold">{props.title}</h1>
+					<div className="text-base sm:text-xl font-light text-gray-500">
+						<RichText value={props.description} />
+					</div>
 				</div>
 			</div>
 		</>

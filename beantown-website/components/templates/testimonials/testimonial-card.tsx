@@ -14,12 +14,16 @@ const TestimonialCard: React.FC<Props> = (props) => {
 			</div>
 			<div className=" flex flex-col gap-2 items-center pt-10 pb-6 ">
 				<div>
-					<h1 className="text-4xl font-bold">{props.clientName}</h1>
+					<h1 className="sm:text-3xl text-2xl font-semibold">
+						{props.clientName}
+					</h1>
 				</div>
 				<div>
-					<h4 className="text-2xl font-light">{props.clientDetails}</h4>
+					<h4 className="sm:text-xl text-base font-light text-[#8B98AB]">
+						{props.clientDetails}
+					</h4>
 				</div>
-				<div className="text-center text-xl pt-10">
+				<div className="text-center sm:text-2xl text-base pt-10 text-gray-500">
 					<RichText value={props.reviewComments} />
 				</div>
 			</div>

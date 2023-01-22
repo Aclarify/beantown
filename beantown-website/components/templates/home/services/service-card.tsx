@@ -21,8 +21,8 @@ const ServiceCard: React.FC<Props> = (props) => {
 					height="350"
 				/>
 
-				<h1 className="pt-4">{props.title}</h1>
-				<button className="border rounded-lg text-white text-xs  bg-[#15284C] p-2 m-4 ">
+				<h1 className="pt-4 sm:text-4xl text-3xl">{props.title}</h1>
+				<button className="border rounded-lg text-white sm:text-xl text-lg bg-[#15284C] py-2 sm:px-8 px-10 my-4 ">
 					{props.buttonText}
 				</button>
 			</div>

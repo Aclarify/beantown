@@ -38,10 +38,16 @@ export default function Testimonials() {
 				<div className="hidden md:flex flex-col items-center   w-[250px]  flex-none gap-2 ">
 					<div className="  flex-none  gap-5   ">
 						<div className="p-8 m-8 bg-blue-50">
-							<h4>{testimonialTitle}</h4>
-							<h1 className="sm:text-4xl text-2xl font-bold">
-								{testimonialDescription}
-							</h1>
+							<div>
+								<span className=" text-base sm:text-3xl font-light text-gray-500 ">
+									{testimonialTitle}
+								</span>
+							</div>
+							<div>
+								<span className=" sm:text-5xl text-3xl font-semibold">
+									{testimonialDescription}
+								</span>
+							</div>
 						</div>
 					</div>
 					<div className="flex flex-col ">
