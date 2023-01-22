@@ -8,11 +8,11 @@ interface Props {
 }
 const FAQDisclosure: React.FC<Props> = (props) => {
 	return (
-		<div className="py-2 bg-gray-50  rounded-lg">
+		<div className="py-2  bg-white  rounded-lg">
 			<Disclosure defaultOpen={props.isOpen}>
 				{({ open }) => (
 					<>
-						<Disclosure.Button className="flex border-1 border-b-gray-900 w-full justify-between rounded-lg  px-4 py-2 text-left text-sm font-medium text-black-900 hover:bg-black-200 focus:outline-none focus-visible:ring focus-visible:ring-black-500 focus-visible:ring-opacity-75">
+						<Disclosure.Button className="flex  border-b-2 w-full justify-between rounded-lg  px-4 py-2 text-left text-sm font-medium text-gray-900 hover:bg-black-200 focus:outline-none focus-visible:ring focus-visible:ring-black-500 focus-visible:ring-opacity-75">
 							<span>{props.faq}</span>
 							<ChevronUpIcon
 								className={`${
