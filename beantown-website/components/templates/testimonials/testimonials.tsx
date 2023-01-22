@@ -1,4 +1,3 @@
-
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import {
 	faArrowRight,
@@ -6,15 +5,38 @@ import {
 	faMapLocation,
 } from '@fortawesome/free-solid-svg-icons';
 import TestimonialCard from './testimonial-card';
-import React, { Component, useContext, useEffect, useRef, useState } from 'react';
+import React, {
+	Component,
+	useContext,
+	useEffect,
+	useRef,
+	useState,
+} from 'react';
 import { GlobalContext } from '@contexts/global/global.context';
 import { GlobalContextProps } from '@typing/common/interfaces/contexts.interface';
 import { HomePageContentProps } from 'pages';
 import RichText from 'components/molecules/rich-text.molecule';
 
 export default function Testimonials() {
+	const [currentIndex, setCurrentIndex] = useState(0);
+	const maxScrollWidth = useRef(0);
+	const carousel = useRef<any>(null);
+
+	useEffect(() => {
+		if (carousel !== null && carousel.current !== null) {
+			carousel.current.scrollLeft = carousel.current.offsetWidth * currentIndex;
+		}
+	}, [currentIndex]);
+
+	useEffect(() => {
+		maxScrollWidth.current = carousel.current
+			? carousel.current.scrollWidth - carousel.current.offsetWidth
+			: 0;
+	}, []);
+
 	const { pageContent } =
 		useContext<GlobalContextProps<HomePageContentProps>>(GlobalContext);
+
 	if (!pageContent) {
 		return null;
 	}
@@ -22,54 +44,36 @@ export default function Testimonials() {
 	const { testimonialTitle, testimonialDescription, testimonialCards } =
 		homeData;
 
-	const maxScrollWidth = useRef(0);
-    const [currentIndex, setCurrentIndex] = useState(0);
-    const carousel = useRef<any>(null);	
-
 	const movePrevious = () => {
 		if (currentIndex > 0) {
 			setCurrentIndex((preciousState) => preciousState - 1);
 		}
 	};
-	 const moveNext = () => {
-			if (
-				carousel.current !== null &&
-				carousel.current.offsetWidth * currentIndex <= maxScrollWidth.current
-			) {
-				setCurrentIndex((previousState) => previousState + 1);
-			}
+	const moveNext = () => {
+		if (
+			carousel.current !== null &&
+			carousel.current.offsetWidth * currentIndex <= maxScrollWidth.current
+		) {
+			setCurrentIndex((previousState) => previousState + 1);
+		}
 	};
-	  const isDisabled = (direction: any) => {
-			if (direction === 'prev') {
-				return currentIndex <= 0;
-			}
+	const isDisabled = (direction: any) => {
+		if (direction === 'prev') {
+			return currentIndex <= 0;
+		}
 
-			if (direction === 'next' && carousel.current !== null) {
-				return (
-					carousel.current.offsetWidth * currentIndex >= maxScrollWidth.current
-				);
-			}
+		if (direction === 'next' && carousel.current !== null) {
+			return (
+				carousel.current.offsetWidth * currentIndex >= maxScrollWidth.current
+			);
+		}
 
-			return false;
-		};
-		   useEffect(() => {
-					if (carousel !== null && carousel.current !== null) {
-						carousel.current.scrollLeft =
-							carousel.current.offsetWidth * currentIndex;
-					}
-				}, [currentIndex]);
+		return false;
+	};
 
-			useEffect(() => {
-				maxScrollWidth.current = carousel.current
-					? carousel.current.scrollWidth - carousel.current.offsetWidth
-					: 0;
-			}, []);
-
-			 const goToSlide = (slideIndex: number) => {
-					setCurrentIndex(slideIndex);
-				}; 
-
-
+	const goToSlide = (slideIndex: number) => {
+		setCurrentIndex(slideIndex);
+	};
 
 	return (
 		<section id="testimonials" className=" p-6 bg-blue-50">
@@ -154,7 +158,7 @@ export default function Testimonials() {
 										<h4 className="text-2xl font-light">{reviews?.subText}</h4>
 									</div>
 									<div className="text-center text-xl pt-10">
-										<RichText value={reviews?.description.contentRaw} />
+										<RichText value={reviews?.description?.contentRaw} />
 									</div>
 								</div>
 							</div>
