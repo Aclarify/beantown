@@ -46,6 +46,7 @@ export default function Blogs() {
 					);
 				})}
 			</div>
+
 			<div className="items-center text-center pt-4">
 				<button className="bg-[#15284C] text-white rounded-lg p-2 text-xs ">
 					{blogButton?.text}
