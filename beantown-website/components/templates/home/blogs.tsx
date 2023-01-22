@@ -22,7 +22,7 @@ export default function Blogs() {
 				<p>{blogDescription}</p>
 			</div>
 
-			<div className=" flex flex-nowrap overflow-x-auto gap-5 ">
+			<div className=" flex flex-wrap md:flex-nowrap overflow-x-auto gap-5 ">
 				{blogCards?.map((blog, index) => {
 					return (
 						<div key={index} className="flex-col justify-center ">

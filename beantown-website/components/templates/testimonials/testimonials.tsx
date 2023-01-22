@@ -151,10 +151,10 @@ export default function Testimonials() {
 							// />
 							<div
 								key={index}
-								className="relative w-96 h-96 snap-start items-center bg-[#FFFFFF] my-6 p-4 flex-none gap-2 border rounded-xl "
+								className="relative w-72 h-96 snap-start items-center bg-[#FFFFFF] my-6 p-4 flex-none gap-2 border rounded-xl "
 							>
 								<div className=" flex flex-col text-center  ">
-									<div>
+									<div className="flex justify-center">
 										<img src="images/home_page/testimonialCardsImageUnionVector.svg" />
 									</div>
 									<div>

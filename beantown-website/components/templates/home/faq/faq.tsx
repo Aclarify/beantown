@@ -15,25 +15,22 @@ export default function Faq() {
 	return (
 		<section id="faq" className=" ">
 			<div className=" p-6 md:px-10 bg-secondary-shade-3 mt-16 md:flex  ">
-				<div className="flex flex-col items-center m-10 ">
+				<div className="text-center md:text-left m-10">
 					<h1 className=" title-5 md:title-2 text-primary-black mt-10 ">
 						{faqTitle}
 					</h1>
 					<p className="para-4 md:para-2 text-primary-shade-1 mb-4">
 						{faqDescription}
 					</p>
-					<button className="border mb-10  rounded-md text-white para-3 md:para-2 bg-primary-shade-1 tracking-wide md:tracking-wider px-6 py-2 ">
+					<button className="border mb-10  rounded-md text-white para-3 md:para-2 bg-primary-shade-1 px-6 py-2 ">
 						{faqButton?.text}
 					</button>
 				</div>
 
-				<div className="w-full  px-4  pt-2">
+				<div className="w-full pt-2">
 					{faqList?.map((faqs, index) => {
 						return (
-							<div
-								key={index}
-								className="mx-auto w-full max-w-md rounded-2xl bg-blue-50 p-2"
-							>
+							<div key={index} className="w-full rounded-2xl bg-blue-50 p-2">
 								<FAQDisclosure
 									isOpen={index == 0}
 									faq={faqs?.titleText || ''}

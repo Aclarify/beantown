@@ -148,7 +148,7 @@ export default function Footer() {
 				{navLinks?.map((link, index) => {
 					return (
 						link && (
-							<div className="">
+							<div className="" key={index}>
 								<span className="px-2"> . </span>
 								<Link href={link?.href || '/'}>{link?.linkText}</Link>
 							</div>

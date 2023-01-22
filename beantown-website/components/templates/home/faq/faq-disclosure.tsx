@@ -1,5 +1,5 @@
 import { Disclosure } from '@headlessui/react';
-import { ChevronUpIcon } from '@heroicons/react/20/solid';
+import { ChevronDownIcon } from '@heroicons/react/20/solid';
 import RichText from 'components/molecules/rich-text.molecule';
 interface Props {
 	faq: string;
@@ -14,14 +14,16 @@ const FAQDisclosure: React.FC<Props> = (props) => {
 					<>
 						<Disclosure.Button className="flex w-full justify-between rounded-lg  px-4 py-2 text-left subtitle-4 md:subtitle-2 text-primary-shade-1 hover:bg-black-200 focus:outline-none focus-visible:ring focus-visible:ring-black-500 focus-visible:ring-opacity-75">
 							<span>{props.faq}</span>
-							<ChevronUpIcon
+							<ChevronDownIcon
 								className={`${
 									open ? 'rotate-180 transform' : ''
 								} h-5 w-5 text-black-500`}
 							/>
 						</Disclosure.Button>
-						<Disclosure.Panel className="px-4 pt-4 pb-2 para-4 md:para-3 text-primary-shade-1 bg-white">
-							<RichText value={props.faqAnswer} />
+						<Disclosure.Panel className="px-4 pt-2 para-4 md:para-3 text-primary-shade-1 bg-white">
+							<div className="border-t-2 pt-2">
+								<RichText value={props.faqAnswer} />
+							</div>
 						</Disclosure.Panel>
 					</>
 				)}
