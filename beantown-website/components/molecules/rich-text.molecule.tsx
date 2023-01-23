@@ -19,7 +19,7 @@ const RichText: React.FC<Props> = (props) => {
 			internalLink: (props: any) => {
 				return (
 					<a
-						className="underline text-[#206B9E] hover:cursor-pointer"
+						className="underline  hover:cursor-pointer"
 						href={props.value.href}
 					>
 						{props.children}

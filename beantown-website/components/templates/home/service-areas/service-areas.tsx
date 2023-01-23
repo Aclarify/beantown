@@ -25,12 +25,14 @@ export default function ServiceAreas() {
 	} = homeData;
 	return (
 		<section id="serviceAreas">
-			<div className="p-4">
+			<div className="p-6 md:px-10">
 				<div className="md:flex">
 					<div className="md:border-r-2 md:w-1/2">
-						<h1 className="text-xl font-bold">{serviceAreaTitle}</h1>
+						<h1 className="title-5 md:title-2 text-primary-black pr-20">
+							{serviceAreaTitle}
+						</h1>
 					</div>
-					<div className="pt-4 w-full md:w-1/2">
+					<div className="pl-20 pt-4 w-full md:w-1/2 para-4 md:para-2 text-primary-shade-1">
 						<p>{serviceAreaDescription}</p>
 					</div>
 				</div>
@@ -42,25 +44,27 @@ export default function ServiceAreas() {
 						width="1000"
 						height="600"
 					/>
-					<div className="bg-[#FFFFFF] absolute inset-x-5 -bottom-64	md:inset-x-1/2 	md:inset-y-1/3  md:h-1/2 md:w-1/2  border rounded-lg  w-[1000] ">
+					<div className="bg-[#FFFFFF] absolute inset-x-5 -bottom-64	md:inset-x-1/2 	md:inset-y-1/4 md:h-2/3 md:w-1/3  border rounded-lg   ">
 						<div className="p-4">
-							<h1 className="text-lg font-bold">{serviceAreas?.title}</h1>
+							<h1 className="subtitle-6 md:subtitle-3 text-primary-black">
+								{serviceAreas?.title}
+							</h1>
 						</div>
-						<div className="grid grid-cols-2 justify-evenly mx-10 ">
+						<div className="grid grid-cols-2 justify-evenly mx-2 h-auto ">
 							{serviceAreas?.listItem?.map((serviceArea, index) => {
 								return (
 									<div
 										key={index}
-										className="px-4 py-2  my-2 w-44 justify-center flex space-x-2 bg-blue-50 	 text-xs rounded-md"
+										className="py-2 w-36 my-2 md:w-56 justify-center flex  space-x-2 bg-secondary-shade-3 para-6 md:para-2 rounded-md align-middle items-center"
 									>
-										<span>
-											{/* <FontAwesomeIcon icon={faMapLocation} /> */}
+										<div>
 											<img
-												src={'./images/home_page/locationIcon.svg'}
+												src={'./images/home_page/location-icon.svg'}
 												alt={'location Icon'}
-												className="w-3 h-3"
+												className="w-5 h-5"
 											/>
-										</span>
+										</div>
+
 										<span>{serviceArea?.split(',').join(', ')}</span>
 									</div>
 								);
