@@ -92,7 +92,7 @@ export default function Testimonials() {
 				{/* card data from sanity */}
 
 				<div className="hidden md:flex flex-col items-center   w-[250px]  flex-none gap-2 ">
-					<div className="  flex-none  gap-5   ">
+					<div className="flex gap-5 ">
 						<div className="p-8 m-8 bg-blue-50">
 							<h4>{testimonialTitle}</h4>
 							<h1 className="sm:text-4xl text-2xl font-bold">
@@ -112,7 +112,7 @@ export default function Testimonials() {
 								);
 							})}
 						</div>
-						<div className="flex gap-4 pt-4 ">
+						<div className="flex gap-4 pt-4 justify-center ">
 							<button
 								onClick={movePrevious}
 								disabled={isDisabled('prev')}
@@ -147,10 +147,14 @@ export default function Testimonials() {
 								key={index}
 								className="relative w-96 h-96 snap-start items-center bg-[#FFFFFF] my-6 p-4 flex-none gap-2 border rounded-xl "
 							>
-								<div className=" flex flex-col text-center  ">
+								<div className=" flex flex-col text-center justify-center">
 									<div>
-										<img src="images/home_page/testimonialCardsImageUnionVector.svg" />
+										<img
+											className="h-10 w-10"
+											src="images/home_page/testimonialCardsImageUnionVector.svg"
+										/>
 									</div>
+
 									<div>
 										<h1 className="text-4xl font-bold">{reviews?.titleText}</h1>
 									</div>
