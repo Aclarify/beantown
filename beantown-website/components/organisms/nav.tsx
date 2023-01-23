@@ -17,7 +17,7 @@ export default function Nav() {
 	const { navLinks, navGroup, headerButton } = navData;
 
 	return (
-		<nav className="absolute w-full  px-10">
+		<nav className="absolute w-full  px-10 z-10">
 			<div className="hidden md:flex max-w-6xl mx-auto  justify-between items-center">
 				<div className="align-middle items-center">
 					<Image

@@ -16,7 +16,7 @@ export default function HomeHero() {
 	return (
 		<section id="home_page_hero">
 			<div className="flex-shrink-0">
-				<div className="space-y-4  mt-12 md:mt-64 absolute w-3/4 text-white px-6 md:px-10 align-middle ">
+				<div className="space-y-4  mt-12 md:mt-64 absolute w-3/4 text-white px-6 md:px-10 align-middle z-10">
 					<h1 className="title-4 md:title-1">{heroTitle}</h1>
 					<div className="para-4 md:para-2">
 						<RichText value={heroDescription?.contentRaw} />
@@ -29,13 +29,21 @@ export default function HomeHero() {
 					className="w-full h-auto object-cover "
 					src="images/home_page/homepageHero.svg"
 					alt="Home Page Hero Image"
+					style={{
+						WebkitMaskImage: "url('./home-hero-mask.svg')",
+						WebkitMaskSize: 'cover',
+					}}
 				></img>
 
 				{/* <Image
 					alt={heroImage?.asset?.altText || ''}
-					// width={200}
-					// height={300}
+					width={4000}
+					height={1000}
 					src={heroImage?.asset?.url || ''}
+					style={{
+						WebkitMaskImage: "url('./home-hero-mask.svg')",
+						WebkitMaskSize: 'cover',
+					}}
 				/> */}
 			</div>
 		</section>
