@@ -34,6 +34,10 @@ export default function WhyUs() {
 						alt={whyUsImage?.asset?.altText || ''}
 						width="800"
 						height="800"
+						style={{
+							WebkitMaskImage: "url('./why-us-mask.svg')",
+							WebkitMaskSize: 'cover',
+						}}
 					/>
 				</div>
 			</div>
