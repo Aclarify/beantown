@@ -3,7 +3,7 @@ import Brands from '../components/templates/home/brands';
 import Faq from '../components/templates/home/faq/faq';
 import FooterComponent from '../components/organisms/footer';
 import FooterCta from '../components/templates/home/footer-cta-home';
-import Blogs from '../components/templates/home/blogs';
+import Blogs from '../components/templates/home/blogs/blogs';
 import React from 'react';
 import ServiceAreas from '../components/templates/home/service-areas/service-areas';
 import Testimonials from '../components/templates/testimonials/testimonials';

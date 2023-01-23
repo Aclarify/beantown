@@ -12,7 +12,8 @@ export default function WhyUs() {
 		return null;
 	}
 	const homeData = pageContent.home[0];
-	const { whyUsTitle, whyUsDescription, whyUsCards, whyUsImage } = homeData;
+	const { whyUsTitle, whyUsDescription, whyUsButton, whyUsCards, whyUsImage } =
+		homeData;
 	return (
 		<section id="whyUs" className=" p-6 md:px-10 flex flex-col ">
 			<div className="flex flex-col-reverse md:flex md:flex-row  items-center w-full">
@@ -24,7 +25,7 @@ export default function WhyUs() {
 						<RichText value={whyUsDescription?.contentRaw} />
 					</div>
 					<button className="border rounded-lg text-white para-4 md:para-2  bg-primary-shade-1 md:tracking-wider tracking-wide py-2 px-8 ">
-						Know More
+						{whyUsButton?.text}
 					</button>
 				</div>
 				<div className=" px-20 basis-1/2">

@@ -22,8 +22,8 @@ export default defineType({
     defineField({
       name: 'button',
       title: 'Button',
-      type: 'array',
-      of: [
+      type: 'reference',
+      to: [
         {
           type: 'cta',
         },

@@ -8,8 +8,8 @@ interface Props {
 
 const TestimonialCard: React.FC<Props> = (props) => {
 	return (
-		<div className="flex flex-col items-center bg-[#FFFFFF] my-6 p-4 flex-none gap-2 border rounded-xl ">
-			<div className=" ">
+		<section id="testimonialCard">
+			<div className="flex justify-center ">
 				<img src="images/home_page/testimonialCardsImageUnionVector.svg" />
 			</div>
 			<div className=" flex flex-col gap-2 items-center pt-10 pb-6 ">
@@ -19,15 +19,15 @@ const TestimonialCard: React.FC<Props> = (props) => {
 					</h1>
 				</div>
 				<div>
-					<h4 className="md:text-light-1 para-4 text-gray-shade-2">
+					<h4 className="md:para-3 para-4 text-gray-shade-2">
 						{props.clientDetails}
 					</h4>
 				</div>
-				<div className="pt-10 para-4 md:para-2 text-primary-black">
+				<div className="pt-10 para-4 md:para-3 text-center text-primary-black">
 					<RichText value={props.reviewComments} />
 				</div>
 			</div>
-		</div>
+		</section>
 	);
 };
 export default TestimonialCard;

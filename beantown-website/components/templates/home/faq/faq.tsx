@@ -15,7 +15,7 @@ export default function Faq() {
 	return (
 		<section id="faq" className=" ">
 			<div className=" p-6 md:px-10 bg-secondary-shade-3 mt-16 md:flex  ">
-				<div className="text-center md:text-left m-10">
+				<div className="text-center md:text-left ">
 					<h1 className=" title-5 md:title-2 text-primary-black mt-10 ">
 						{faqTitle}
 					</h1>

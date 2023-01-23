@@ -27,7 +27,7 @@ export default function Nav() {
 						src={logo?.asset?.url || ''}
 					/>
 				</div>
-				<div className=" text-white items-center text-xl font-light justify-center">
+				<div className=" text-white items-center para-4 md:para-3 justify-center">
 					{navLinks?.map((link, index) => {
 						return (
 							<Link
@@ -47,7 +47,9 @@ export default function Nav() {
 									href={'/'}
 									className="outline-none focus:outline-none  px-3 py-1  rounded-sm flex items-center min-w-32"
 								>
-									<span className="pr-1  flex-1 ">{linkGroup?.groupTitle}</span>
+									<span className="pr-1 flex-1 para-4 md:para-3 ">
+										{linkGroup?.groupTitle}
+									</span>
 									<span>
 										<svg
 											className="fill-current h-4 w-4 transform group-hover:-rotate-180
@@ -63,7 +65,7 @@ export default function Nav() {
 									{linkGroup?.links?.map((link, index) => {
 										return (
 											<Link key={index} href={link?.href || '/'}>
-												<li className="rounded-sm px-3 py-1">
+												<li className="rounded-sm px-3 py-1 para-4 md:para-3 ">
 													{link?.linkText}
 												</li>
 											</Link>
