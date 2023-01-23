@@ -67,6 +67,12 @@ export default defineType({
       type: 'portableText',
     }),
     defineField({
+      name: 'whyUsButton',
+      title: 'Why Us Button',
+      type: 'reference',
+      to: [{type: 'cta'}],
+    }),
+    defineField({
       name: 'whyUsImage',
       title: 'Why Us Image',
       type: 'image',

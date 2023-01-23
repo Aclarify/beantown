@@ -26,25 +26,24 @@ export default function FooterCta() {
 				</div>
 				<div
 					id="content"
-					className=" bg-gradient-to-r from-blue-200  bg-blue-50 relative w-full "
+					className=" bg-gradient-to-r from-blue-200  bg-blue-50 relative w-full  "
 				>
 					<img
 						className="object-fill animate-pulse object-center "
 						src="images/home_page/footer_cta_theme/mask_group.svg"
 					/>
-					<div className="space-y-8 inset-y-20 absolute inset-x-0 sm:inset-y-4 md:p-4 md:m-4 ">
-						{' '}
-						<div className="flex-col ">
-							<div className="flex flex-col space-y-2 text-center sm:m-8  ">
+					<div className="space-y-8 inset-y-20 absolute inset-x-0 sm:inset-y-4 px-6 md:px-10 ">
+						<div className="flex-col  ">
+							<div className="flex flex-col space-y-2 align-middle ">
 								<div>
-									<p className="title-5 md:title-2 text-primary-black text-center">
+									<p className="title-5 md:title-2 text-primary-black text-center md:text-left">
 										{ctaTitle}
 									</p>
 								</div>
-								<div className="para-4 md:para-2 text-primary-shade-1 justify-center sm:justify-start">
+								<div className="para-4 md:para-2 text-primary-shade-1 justify-center md:justify-start">
 									<RichText value={ctaDescription?.contentRaw} />
 								</div>
-								<div className="flex justify-center ">
+								<div className="flex justify-center md:justify-start ">
 									<button className="border rounded-md para-3 md:para-2 bg-primary-shade-1 text-white tracking-wide md:tracking-wider  px-6 py-2  ">
 										{finalCtaButton?.text}
 									</button>

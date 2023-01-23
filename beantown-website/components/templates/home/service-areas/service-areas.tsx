@@ -44,28 +44,30 @@ export default function ServiceAreas() {
 						width="1000"
 						height="600"
 					/>
-					<div className="bg-[#FFFFFF] absolute inset-x-5 -bottom-64	md:inset-x-1/2 	md:inset-y-1/4 md:h-2/3 md:w-1/3  border rounded-lg   ">
+					<div className="bg-[#FFFFFF] absolute inset-x-5 -bottom-64	md:inset-x-1/2 	md:inset-y-1/4 md:h-2/3 md:w-1/2  border rounded-lg   ">
 						<div className="p-4">
 							<h1 className="subtitle-6 md:subtitle-3 text-primary-black">
 								{serviceAreas?.title}
 							</h1>
 						</div>
-						<div className="grid grid-cols-2 justify-evenly mx-2 h-auto ">
+						<div className="grid grid-cols-2  mx-6 h-auto ">
+							{/* <div className="flex "> */}
 							{serviceAreas?.listItem?.map((serviceArea, index) => {
 								return (
 									<div
 										key={index}
 										className="py-2 w-36 my-2 md:w-56 justify-center flex  space-x-2 bg-secondary-shade-3 para-6 md:para-2 rounded-md align-middle items-center"
 									>
-										<div>
+										<div className="">
 											<img
 												src={'./images/home_page/location-icon.svg'}
 												alt={'location Icon'}
-												className="w-5 h-5"
+												className="w-6 h-5"
 											/>
 										</div>
-
-										<span>{serviceArea?.split(',').join(', ')}</span>
+										<div className="">
+											<span>{serviceArea?.split(',').join(', ')}</span>
+										</div>
 									</div>
 								);
 							})}

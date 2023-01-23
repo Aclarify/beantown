@@ -113,7 +113,7 @@ export default function Testimonials() {
 									<button
 										key={index}
 										onClick={() => goToSlide(index)}
-										className="w-8 border rounded-lg h-2 bg-blue-100 "
+										className="w-8 border rounded-lg h-2 bg-white hover:bg-primary-shade-1 "
 									></button>
 								);
 							})}
@@ -122,14 +122,14 @@ export default function Testimonials() {
 							<button
 								onClick={movePrevious}
 								disabled={isDisabled('prev')}
-								className="bg-blue-900 rounded-full text-black w-10 h-full text-center opacity-75 hover:opacity-100 disabled:opacity-25 disabled:cursor-not-allowed  transition-all ease-in-out duration-300"
+								className="bg-primary-shade-1 rounded-full text-black w-10 h-full text-center opacity-75 hover:opacity-100 disabled:opacity-25 disabled:cursor-not-allowed  transition-all ease-in-out duration-300"
 							>
 								<FontAwesomeIcon icon={faArrowLeft} />
 							</button>
 							<button
 								onClick={moveNext}
 								disabled={isDisabled('next')}
-								className="bg-blue-900 rounded-full text-black w-10 h-full text-center opacity-75 hover:opacity-100 disabled:opacity-25 disabled:cursor-not-allowed transition-all ease-in-out duration-300"
+								className="bg-primary-shade-1 rounded-full text-black w-10 h-full text-center opacity-75 hover:opacity-100 disabled:opacity-25 disabled:cursor-not-allowed transition-all ease-in-out duration-300"
 							>
 								<FontAwesomeIcon icon={faArrowRight} />
 							</button>
@@ -143,30 +143,16 @@ export default function Testimonials() {
 				>
 					{testimonialCards?.map((reviews, index) => {
 						return (
-							// <TestimonialCard
-							// 	key={index}
-							// 	clientName={reviews?.titleText || ''}
-							// 	clientDetails={reviews?.subText || ''}
-							// 	reviewComments={reviews?.description?.contentRaw}
-							// />
 							<div
 								key={index}
-								className="relative w-72 h-96 snap-start items-center bg-[#FFFFFF] my-6 p-4 flex-none gap-2 border rounded-xl "
+								className="relative w-72 h-120 snap-start items-center bg-[#FFFFFF] my-6 p-4 flex-none gap-2 border rounded-xl "
 							>
-								<div className=" flex flex-col text-center  ">
-									<div className="flex justify-center">
-										<img src="images/home_page/testimonialCardsImageUnionVector.svg" />
-									</div>
-									<div>
-										<h1 className="text-4xl font-bold">{reviews?.titleText}</h1>
-									</div>
-									<div>
-										<h4 className="text-2xl font-light">{reviews?.subText}</h4>
-									</div>
-									<div className="text-center text-xl pt-10">
-										<RichText value={reviews?.description?.contentRaw} />
-									</div>
-								</div>
+								<TestimonialCard
+									key={index}
+									clientName={reviews?.titleText || ''}
+									clientDetails={reviews?.subText || ''}
+									reviewComments={reviews?.description?.contentRaw}
+								/>
 							</div>
 						);
 					})}
@@ -180,7 +166,7 @@ export default function Testimonials() {
 								<button
 									key={index}
 									onClick={() => goToSlide(index)}
-									className="w-8 border rounded-lg h-2 bg-blue-100 "
+									className="w-8 border rounded-lg h-2 bg-white hover:bg-primary-shade-1 "
 								></button>
 							);
 						})}
@@ -189,14 +175,14 @@ export default function Testimonials() {
 						<button
 							onClick={movePrevious}
 							disabled={isDisabled('prev')}
-							className="bg-blue-900  rounded-full text-black w-10 h-full  text-center opacity-75 hover:opacity-100 disabled:opacity-25 disabled:cursor-not-allowed z-10 p-0 m-0 transition-all ease-in-out duration-300"
+							className="bg-primary-shade-1  rounded-full text-black w-10 h-full  text-center opacity-75 hover:opacity-100 disabled:opacity-25 disabled:cursor-not-allowed z-10 p-0 m-0 transition-all ease-in-out duration-300"
 						>
 							<FontAwesomeIcon icon={faArrowLeft} />
 						</button>
 						<button
 							onClick={moveNext}
 							disabled={isDisabled('next')}
-							className="bg-blue-900 rounded-full text-black w-10 h-full text-center opacity-75 hover:opacity-100 disabled:opacity-25 disabled:cursor-not-allowed z-10 p-0 m-0 transition-all ease-in-out duration-300"
+							className="bg-primary-shade-1 rounded-full text-black w-10 h-full text-center opacity-75 hover:opacity-100 disabled:opacity-25 disabled:cursor-not-allowed z-10 p-0 m-0 transition-all ease-in-out duration-300"
 						>
 							<FontAwesomeIcon icon={faArrowRight} />
 						</button>
