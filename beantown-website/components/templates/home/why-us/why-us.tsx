@@ -15,8 +15,15 @@ export default function WhyUs() {
 	const { whyUsTitle, whyUsDescription, whyUsButton, whyUsCards, whyUsImage } =
 		homeData;
 	return (
-		<section id="whyUs" className=" p-6 md:px-10 flex flex-col ">
-			<div className="flex flex-col-reverse md:flex md:flex-row  items-center w-full">
+		<section
+			id="whyUs"
+			className=" p-6 md:px-10 flex flex-col mt-30 bg-white "
+			style={{
+				WebkitMaskImage: "url('./why-us-wave-mask.svg')",
+				WebkitMaskSize: 'cover',
+			}}
+		>
+			<div className="flex flex-col-reverse md:flex md:flex-row  items-center w-full mt-20 ">
 				<div className=" pt-8  flex flex-col items-start text-justify basis-1/2 ">
 					<h1 className="title-5 md:title-2 text-primary-black ">
 						{whyUsTitle}
@@ -28,7 +35,7 @@ export default function WhyUs() {
 						{whyUsButton?.text}
 					</button>
 				</div>
-				<div className=" px-20 basis-1/2">
+				<div className="px-20 basis-1/2">
 					<Image
 						src={whyUsImage?.asset?.url || ''}
 						alt={whyUsImage?.asset?.altText || ''}
@@ -42,7 +49,7 @@ export default function WhyUs() {
 				</div>
 			</div>
 
-			<div className="pt-4 grid grid-cols-1 md:grid-cols-2 gap-2">
+			<div className="pt-4 grid grid-cols-1 md:grid-cols-2 gap-2 ">
 				{whyUsCards?.map((ourValues, index) => {
 					return (
 						ourValues?.image && (
