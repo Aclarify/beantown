@@ -15,7 +15,7 @@ export default function Services() {
 	// console.log('homeData', homeData);
 	const { servicesTitle, servicesDescription, servicesGroup } = homeData;
 	return (
-		<section id="services">
+		<section id="services" className="my-20">
 			<div className="px-6 md:px-10 bg-secondary-shade-3 ">
 				<div className="flex flex-col items-center my-4">
 					<h1 className=" title-5 md:title-2 mb-4 text-primary-black">

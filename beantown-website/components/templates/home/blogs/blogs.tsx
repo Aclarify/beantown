@@ -15,7 +15,7 @@ export default function Blogs() {
 	const homeData = pageContent.home[0];
 	const { blogTitle, blogDescription, blogCards, blogButton } = homeData;
 	return (
-		<section id="blogs" className="flex flex-col p-6 md:px-10 mt-80 md:mt-6">
+		<section id="blogs" className="flex flex-col p-6 md:px-10 bg-white">
 			<div className="title-5 md:title-2 text-primary-black text-center">
 				<h1>{blogTitle}</h1>
 			</div>

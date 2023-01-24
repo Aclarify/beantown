@@ -25,17 +25,8 @@ export default function HomeHero() {
 						{heroButton?.text}
 					</button>
 				</div>
-				<img
-					className="w-full h-auto object-cover "
-					src="images/home_page/homepageHero.svg"
-					alt="Home Page Hero Image"
-					style={{
-						WebkitMaskImage: "url('./home-hero-mask.svg')",
-						WebkitMaskSize: 'cover',
-					}}
-				></img>
 
-				{/* <Image
+				<Image
 					alt={heroImage?.asset?.altText || ''}
 					width={4000}
 					height={1000}
@@ -44,7 +35,7 @@ export default function HomeHero() {
 						WebkitMaskImage: "url('./home-hero-mask.svg')",
 						WebkitMaskSize: 'cover',
 					}}
-				/> */}
+				/>
 			</div>
 		</section>
 	);
