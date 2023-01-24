@@ -25,13 +25,14 @@ const BlogCard: React.FC<Props> = (props) => {
 				<p className="py-4 title-7 md:title-5 text-primary-black">
 					{props.blogName}
 				</p>
-				<div className="para-4 md:para-2 text-primary-shade-1">
+				<div className="para-4 md:para-2 mb-4 text-primary-shade-1">
 					<RichText value={props.blogDescription} />
 				</div>
-				<div className="flex justify-between">
-					<button className="para-4 md:para-2 text-primary-black underline pt-4">
+				<div className="flex justify-between items-center">
+					<button className="para-4 md:para-2 text-primary-black underline ">
 						{props.buttonText}
 					</button>
+					
 					<img src="images/home_page/blog-arrow.svg" />
 				</div>
 			</div>

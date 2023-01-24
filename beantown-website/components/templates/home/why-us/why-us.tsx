@@ -5,6 +5,8 @@ import RichText from 'components/molecules/rich-text.molecule';
 import { HomePageContentProps } from 'pages';
 import WhyUsCard from './why-us-card';
 import Image from 'next/image';
+import Button from 'components/molecules/button';
+import Link from 'next/link';
 export default function WhyUs() {
 	const { pageContent } =
 		useContext<GlobalContextProps<HomePageContentProps>>(GlobalContext);
@@ -31,9 +33,14 @@ export default function WhyUs() {
 					<div className="md:para-2 para-4 text-primary-shade-1 text-left pb-4">
 						<RichText value={whyUsDescription?.contentRaw} />
 					</div>
-					<button className="border rounded-lg text-white para-4 md:para-2  bg-primary-shade-1 md:tracking-wider tracking-wide py-2 px-8 ">
+					{/* <button className="border rounded-lg text-white para-4 md:para-2  bg-primary-shade-1 md:tracking-wider tracking-wide py-2 px-8 ">
 						{whyUsButton?.text}
-					</button>
+					</button> */}
+					<Link href={'/'}>
+						<Button fontColor="text-white" bgColor=" bg-primary-shade-1">
+							{whyUsButton?.text}
+						</Button>
+					</Link>
 				</div>
 				<div className="px-20 basis-1/2">
 					<Image

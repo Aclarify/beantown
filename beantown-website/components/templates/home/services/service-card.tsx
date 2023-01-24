@@ -1,5 +1,7 @@
 import React from 'react';
 import Image from 'next/image';
+import Link from 'next/link';
+import Button from 'components/molecules/button';
 
 interface Props {
 	title: string;
@@ -12,21 +14,31 @@ interface Props {
 const ServiceCard: React.FC<Props> = (props) => {
 	return (
 		<>
-			<div className="border border-white rounded-xl flex flex-col items-center bg-[#FFFFFF] ">
-				<div className="rounded-t-lg">
-					<Image
-						src={props.thumbnailSrc}
-						alt={props.thumbnailAltText}
-						width="350"
-						height="350"
-					/>
+			<div className="flex">
+				<div className="rounded-lg shadow-lg flex flex-col justify-center items-center  bg-white max-w-sm ">
+					<div>
+						<Image
+							src={props.thumbnailSrc}
+							alt={props.thumbnailAltText}
+							width="350"
+							height="350"
+						/>
+					</div>
+					<div className="flex flex-col justify-center items-center">
+						<h1 className="pt-4  title-5 md:title-3 text-primary-shade-1 text-center">
+							{props.title}
+						</h1>
+						<Link href={'/'}>
+							<Button fontColor="text-white" bgColor=" bg-primary-shade-1">
+								{props.buttonText}
+							</Button>
+						</Link>
+					</div>
 				</div>
-				<h1 className="pt-4  title-5 md:title-3 text-primary-shade-1 text-center">
-					{props.title}
-				</h1>
-				<button className="border rounded-lg text-white para-3 bg-primary-shade-1 py-2 sm:px-8 px-10 my-4 md:tracking-wider tracking-wide  ">
+
+				{/* <button className="border rounded-lg text-white para-3 bg-primary-shade-1 py-2 sm:px-8 px-10 my-4 md:tracking-wider tracking-wide  ">
 					{props.buttonText}
-				</button>
+				</button> */}
 			</div>
 		</>
 	);

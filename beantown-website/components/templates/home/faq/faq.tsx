@@ -3,6 +3,8 @@ import FAQDisclosure from './faq-disclosure';
 import { GlobalContext } from '@contexts/global/global.context';
 import { GlobalContextProps } from '@typing/common/interfaces/contexts.interface';
 import { HomePageContentProps } from 'pages';
+import Button from 'components/molecules/button';
+import Link from 'next/link';
 
 export default function Faq() {
 	const { pageContent } =
@@ -22,9 +24,15 @@ export default function Faq() {
 					<p className="para-4 md:para-2 text-primary-shade-1 mb-4">
 						{faqDescription}
 					</p>
-					<button className="border mb-10  rounded-md text-white para-3 md:para-2 bg-primary-shade-1 px-6 py-2 ">
+					{/* <button className="border mb-10  rounded-md text-white para-3 md:para-2 bg-primary-shade-1 px-6 py-2 ">
 						{faqButton?.text}
-					</button>
+					</button> */}
+
+					<Link href={'/'}>
+						<Button fontColor="text-white" bgColor=" bg-primary-shade-1">
+							{faqButton?.text}
+						</Button>
+					</Link>
 				</div>
 
 				<div className="w-full pt-2">
