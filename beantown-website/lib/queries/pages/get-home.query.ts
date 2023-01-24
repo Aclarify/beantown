@@ -42,10 +42,14 @@ const homeQuery = ` allHome {
 			whyUsDescription {
 				contentRaw
 			}
-			whyUsImage{
-			asset{
-				url
+			whyUsButton{
+					text
+					href
 			}
+			whyUsImage{
+				asset{
+					url
+				}
 			}
 			whyUsCards {
 				titleText

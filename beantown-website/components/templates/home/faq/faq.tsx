@@ -13,9 +13,9 @@ export default function Faq() {
 	const homeData = pageContent.home[0];
 	const { faqTitle, faqDescription, faqButton, faqList } = homeData;
 	return (
-		<section id="faq" className=" ">
-			<div className=" p-6 md:px-10 bg-secondary-shade-3 mt-16 md:flex  ">
-				<div className="text-center md:text-left m-10">
+		<section id="faq">
+			<div className=" p-6 md:px-10 bg-secondary-shade-3 mt-16 md:flex bg-[url('../public/home-faq-mask-shape.svg')] ">
+				<div className="text-center md:text-left ">
 					<h1 className=" title-5 md:title-2 text-primary-black mt-10 ">
 						{faqTitle}
 					</h1>
@@ -30,7 +30,7 @@ export default function Faq() {
 				<div className="w-full pt-2">
 					{faqList?.map((faqs, index) => {
 						return (
-							<div key={index} className="w-full rounded-2xl bg-blue-50 p-2">
+							<div key={index} className="w-full rounded-2xl p-2">
 								<FAQDisclosure
 									isOpen={index == 0}
 									faq={faqs?.titleText || ''}

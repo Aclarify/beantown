@@ -354,6 +354,7 @@ export type Home = Document & {
   testimonialCards?: Maybe<Array<Maybe<TitleDescription>>>;
   testimonialDescription?: Maybe<Scalars['String']>;
   testimonialTitle?: Maybe<Scalars['String']>;
+  whyUsButton?: Maybe<Cta>;
   whyUsCards?: Maybe<Array<Maybe<TitleDescriptionImage>>>;
   whyUsDescription?: Maybe<PortableText>;
   whyUsImage?: Maybe<Image>;
@@ -395,6 +396,7 @@ export type HomeFilter = {
   testimonialCardIcon?: InputMaybe<ImageFilter>;
   testimonialDescription?: InputMaybe<StringFilter>;
   testimonialTitle?: InputMaybe<StringFilter>;
+  whyUsButton?: InputMaybe<CtaFilter>;
   whyUsDescription?: InputMaybe<PortableTextFilter>;
   whyUsImage?: InputMaybe<ImageFilter>;
   whyUsTitle?: InputMaybe<StringFilter>;
@@ -458,7 +460,7 @@ export type ImageDescriptionButtonGroup = {
   __typename?: 'ImageDescriptionButtonGroup';
   _key?: Maybe<Scalars['String']>;
   _type?: Maybe<Scalars['String']>;
-  button?: Maybe<Array<Maybe<Cta>>>;
+  button?: Maybe<Cta>;
   description?: Maybe<PortableText>;
   image?: Maybe<ImageIcon>;
   name?: Maybe<Scalars['String']>;
@@ -467,6 +469,7 @@ export type ImageDescriptionButtonGroup = {
 export type ImageDescriptionButtonGroupFilter = {
   _key?: InputMaybe<StringFilter>;
   _type?: InputMaybe<StringFilter>;
+  button?: InputMaybe<CtaFilter>;
   description?: InputMaybe<PortableTextFilter>;
   image?: InputMaybe<ImageIconFilter>;
   name?: InputMaybe<StringFilter>;

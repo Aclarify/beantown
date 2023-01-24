@@ -13,13 +13,20 @@ export default function Brands() {
 	const homeData = pageContent.home[0];
 	const { clientsLogo, brandsTitle } = homeData;
 	return (
-		<section id="brand">
-			<div className="flex  justify-center">
+		<section
+			id="brand"
+			className="bg-white "
+			style={{
+				WebkitMaskImage: "url('./brand-top-wave-mask.svg')",
+				WebkitMaskSize: 'cover',
+			}}
+		>
+			<div className="flex  justify-center pt-10">
 				<span className="title-6 md:title-3 text-primary-black p-4 m-4">
 					{brandsTitle}
 				</span>
 			</div>
-			<div className="group flex flex-nowrap justify-center overflow-x-auto  md:space-x-2 p-4 m-4">
+			<div className="group flex flex-nowrap justify-center overflow-x-auto  md:space-x-2 p-4 ">
 				{clientsLogo?.map((logo, index) => {
 					return (
 						logo &&
