@@ -4,6 +4,7 @@ import { GlobalContext } from '@contexts/global/global.context';
 import { GlobalContextProps } from '@typing/common/interfaces/contexts.interface';
 import { HomePageContentProps } from 'pages';
 import Image from 'next/image';
+import Button from 'components/atoms/button.atom';
 
 export default function Nav() {
 	const { pageContent } =
@@ -77,9 +78,14 @@ export default function Nav() {
 					})}
 				</div>
 				<div className="">
-					<button className="border rounded-lg text-lg font-light md:text-xl bg-white py-2 px-8">
+					{/* <button className="border rounded-lg text-lg font-light md:text-xl bg-white py-2 px-8">
 						{headerButton?.text}
-					</button>
+					</button> */}
+					<Link href={'/'}>
+						<Button fontColor="text-primary-shade-1" bgColor="bg-white">
+							{headerButton?.text}
+						</Button>
+					</Link>
 				</div>
 			</div>
 		</nav>

@@ -4,6 +4,8 @@ import { GlobalContextProps } from '@typing/common/interfaces/contexts.interface
 import { HomePageContentProps } from 'pages';
 import RichText from 'components/molecules/rich-text.molecule';
 import Image from 'next/image';
+import Button from 'components/atoms/button.atom';
+import Link from 'next/link';
 
 export default function FooterCta() {
 	const { pageContent } =
@@ -44,9 +46,15 @@ export default function FooterCta() {
 									<RichText value={ctaDescription?.contentRaw} />
 								</div>
 								<div className="flex justify-center md:justify-start ">
-									<button className="border rounded-md para-3 md:para-2 bg-primary-shade-1 text-white tracking-wide md:tracking-wider  px-6 py-2  ">
-										{finalCtaButton?.text}
-									</button>
+								
+									<Link href={'/'}>
+										<Button
+											fontColor="text-white"
+											bgColor=" bg-primary-shade-1"
+										>
+											{finalCtaButton?.text}
+										</Button>
+									</Link>
 								</div>
 							</div>
 						</div>

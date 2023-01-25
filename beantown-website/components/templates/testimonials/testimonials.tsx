@@ -56,6 +56,9 @@ export default function Testimonials() {
 		) {
 			setCurrentIndex((previousState) => previousState + 1);
 		}
+
+
+		
 	};
 	const isDisabled = (direction: any) => {
 		if (direction === 'prev') {
@@ -63,6 +66,9 @@ export default function Testimonials() {
 		}
 
 		if (direction === 'next' && carousel.current !== null) {
+			console.log(carousel.current.offsetWidth)
+			console.log(currentIndex);
+			console.log(maxScrollWidth.current);
 			return (
 				carousel.current.offsetWidth * currentIndex >= maxScrollWidth.current
 			);
@@ -106,7 +112,7 @@ export default function Testimonials() {
 							</div>
 						</div>
 					</div>
-					<div className="flex flex-col ">
+					<div className="flex flex-col  ">
 						<div className="flex gap-2 m-4 ">
 							{testimonialCards?.map((cards, index) => {
 								return (
@@ -118,7 +124,7 @@ export default function Testimonials() {
 								);
 							})}
 						</div>
-						<div className="flex gap-4 pt-4 ">
+						<div className="flex gap-4 pt-4 justify-center ">
 							<button
 								onClick={movePrevious}
 								disabled={isDisabled('prev')}
