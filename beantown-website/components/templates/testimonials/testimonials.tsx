@@ -84,7 +84,7 @@ export default function Testimonials() {
 	};
 
 	return (
-		<section id="testimonials" className=" p-6 md:px-10  bg-secondary-shade-3">
+		<section id="testimonials" className="mt-10 p-6 md:px-10  bg-secondary-shade-3">
 			<div className="md:hidden">
 				<div className="  w-full flex-none  gap-5   ">
 					<div className="">
