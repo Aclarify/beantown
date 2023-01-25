@@ -35,10 +35,6 @@ const ServiceCard: React.FC<Props> = (props) => {
 						</Link>
 					</div>
 				</div>
-
-				{/* <button className="border rounded-lg text-white para-3 bg-primary-shade-1 py-2 sm:px-8 px-10 my-4 md:tracking-wider tracking-wide  ">
-					{props.buttonText}
-				</button> */}
 			</div>
 		</>
 	);

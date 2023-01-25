@@ -35,16 +35,16 @@ export default function ServiceAreas() {
 			<div className="p-6 md:px-10 mt-20">
 				<div className="md:flex mt-20">
 					<div className="md:border-r-2 md:w-1/2 mt-10">
-						<h1 className="title-5 md:title-2 text-primary-black pr-20">
+						<h1 className="title-5 md:title-2 text-primary-black pr-20 pl-6">
 							{serviceAreaTitle}
 						</h1>
 					</div>
-					<div className="pl-20 pt-4 w-full md:w-1/2 para-4 md:para-2 text-primary-shade-1 mt-10">
+					<div className=" pl-6 md:pl-20 pt-4 w-full md:w-1/2 para-4 md:para-2 text-primary-shade-1 mt-10">
 						<p>{serviceAreaDescription}</p>
 					</div>
 				</div>
 
-				<div className="relative pt-12 ">
+				<div className="relative pt-12 text-left">
 					<Image
 						src={serviceAreaImage?.asset?.url || ''}
 						alt={serviceAreaImage?.asset?.altText || ''}
@@ -57,8 +57,7 @@ export default function ServiceAreas() {
 								{serviceAreas?.title}
 							</h1>
 						</div>
-						<div className="grid grid-cols-2  mx-6 h-auto ">
-							{/* <div className="flex "> */}
+						<div className="grid grid-cols-2  mx-6 h-auto ">						
 							{serviceAreas?.listItem?.map((serviceArea, index) => {
 								return (
 									<div

@@ -21,7 +21,7 @@ const WhyUsCard: React.FC<Props> = (props) => {
 					/>
 				</div>
 				<div className="p-2 flex-1">
-					<h1 className="subtitle-4 md:subtitle-1 text-primary-black">
+					<h1 className="subtitle-4 md:subtitle-1 text-primary-black pt-2">
 						{props.title}
 					</h1>
 					<div className="para-4 md:para-1  text-gray-shade-1 pt-6">
