@@ -13,7 +13,7 @@ interface Props {
 const BlogCard: React.FC<Props> = (props) => {
 	return (
 		<>
-			<div className="  flex-col justify-center ">
+			<div className="flex-col justify-center ">
 				<div className="">
 					<Image
 						src={props.thumbnailSrc}
@@ -28,7 +28,7 @@ const BlogCard: React.FC<Props> = (props) => {
 				<div className="para-4 md:para-2 mb-4 text-primary-shade-1">
 					<RichText value={props.blogDescription} />
 				</div>
-				<div className="flex justify-between items-center">
+				<div className="flex justify-between align-middle">
 					<button className="para-4 md:para-2 text-primary-black underline ">
 						{props.buttonText}
 					</button>
