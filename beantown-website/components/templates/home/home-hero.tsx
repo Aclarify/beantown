@@ -4,7 +4,7 @@ import { GlobalContextProps } from '@typing/common/interfaces/contexts.interface
 import { HomePageContentProps } from 'pages';
 import RichText from 'components/molecules/rich-text.molecule';
 import Image from 'next/image';
-import Button from 'components/molecules/button';
+import Button from 'components/atoms/button.atom';
 import Link from 'next/link';
 
 export default function HomeHero() {
@@ -23,9 +23,9 @@ export default function HomeHero() {
 					<div className="para-4 md:para-2">
 						<RichText value={heroDescription?.contentRaw} />
 					</div>
-					
+
 					<Link href={'/'}>
-						<Button fontColor="text-primary-shade-1" bgColor="bg-white" >
+						<Button fontColor="text-primary-shade-1" bgColor="bg-white">
 							Book Now
 						</Button>
 					</Link>

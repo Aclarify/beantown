@@ -1,7 +1,7 @@
 import React from 'react';
 import Image from 'next/image';
 import Link from 'next/link';
-import Button from 'components/molecules/button';
+import Button from 'components/atoms/button.atom';
 
 interface Props {
 	title: string;

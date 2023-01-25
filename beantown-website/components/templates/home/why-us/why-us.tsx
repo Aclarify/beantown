@@ -5,7 +5,7 @@ import RichText from 'components/molecules/rich-text.molecule';
 import { HomePageContentProps } from 'pages';
 import WhyUsCard from './why-us-card';
 import Image from 'next/image';
-import Button from 'components/molecules/button';
+import Button from 'components/atoms/button.atom';
 import Link from 'next/link';
 export default function WhyUs() {
 	const { pageContent } =

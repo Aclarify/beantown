@@ -4,7 +4,7 @@ import { GlobalContext } from '@contexts/global/global.context';
 import { GlobalContextProps } from '@typing/common/interfaces/contexts.interface';
 import { HomePageContentProps } from 'pages';
 import Image from 'next/image';
-import Button from 'components/molecules/button';
+import Button from 'components/atoms/button.atom';
 
 export default function Nav() {
 	const { pageContent } =
