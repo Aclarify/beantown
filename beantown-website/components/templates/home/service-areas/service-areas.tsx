@@ -57,8 +57,7 @@ export default function ServiceAreas() {
 								{serviceAreas?.title}
 							</h1>
 						</div>
-						<div className="grid grid-cols-2  mx-6 h-auto ">
-							{/* <div className="flex "> */}
+						<div className="grid grid-cols-2  mx-6 h-auto ">						
 							{serviceAreas?.listItem?.map((serviceArea, index) => {
 								return (
 									<div
