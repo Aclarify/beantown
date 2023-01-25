@@ -145,7 +145,7 @@ export default function Testimonials() {
 
 				<div
 					ref={carousel}
-					className=" carousel container relative flex gap-1 m-10 p-20  overflow-hidden scroll-smooth snap-x snap-mandatory touch-pan-x z-0"
+					className="container relative flex gap-1 m-10 p-20  overflow-hidden scroll-smooth snap-x snap-mandatory touch-pan-x z-0"
 				>
 					{testimonialCards?.map((reviews, index) => {
 						return (
