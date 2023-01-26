@@ -1,4 +1,3 @@
-
 import '../styles/globals.css';
 import type { AppProps } from 'next/app';
 import { ApolloProvider } from '@apollo/client/react';
@@ -55,7 +54,7 @@ export default function App({ Component, pageProps }: AppProps) {
 		<>
 			<ApolloProvider client={graphQLClient}>
 				<main
-					className={`${neuePlak.className} tracking-wide sm:tracking-wider bg-secondary-shade-3`}
+					className={`${neuePlak.className} tracking-wide sm:tracking-wider bg-secondary-shade-3 max-2xl:container max-2xl:mx-auto`}
 				>
 					<Component {...pageProps} />
 				</main>
