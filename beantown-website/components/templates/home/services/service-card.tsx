@@ -19,7 +19,7 @@ const ServiceCard: React.FC<Props> = (props) => {
 			<div className="flex">
 				<div className="rounded-lg shadow-lg flex flex-col justify-center items-center  bg-white max-w-sm ">
 					<div
-						className="w-96 h-72 rounded-t-lg }} "
+						className="w-96 h-72 rounded-t-lg "
 						style={{ backgroundImage: `url(${imagePath})` }}
 					></div>
 					{/* <Image
