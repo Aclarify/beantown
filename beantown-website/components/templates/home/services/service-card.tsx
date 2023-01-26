@@ -12,20 +12,27 @@ interface Props {
 }
 
 const ServiceCard: React.FC<Props> = (props) => {
+	const imagePath = props.thumbnailSrc;
+	console.log('inside service card', imagePath);
 	return (
 		<>
 			<div className="flex">
 				<div className="rounded-lg shadow-lg flex flex-col justify-center items-center  bg-white max-w-sm ">
-					<div>
-						<Image
+					<div
+						className="w-96 h-72 rounded-t-lg }} "
+						style={{ backgroundImage: `url(${imagePath})` }}
+					></div>
+					{/* <Image
 							src={props.thumbnailSrc}
 							alt={props.thumbnailAltText}
-							width="350"
+							width="400"
 							height="350"
-						/>
-					</div>
+							className='rounded-t-lg h-72 object-cover'
+						
+						/> */}
+
 					<div className="flex flex-col justify-center items-center">
-						<h1 className="pt-4  title-5 md:title-3 text-primary-shade-1 text-center">
+						<h1 className="p-4  title-5 md:title-3 text-primary-shade-1 text-center">
 							{props.title}
 						</h1>
 						<Link href={'/'}>
