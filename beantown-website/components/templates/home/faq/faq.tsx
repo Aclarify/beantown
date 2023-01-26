@@ -24,10 +24,7 @@ export default function Faq() {
 					<p className="para-4 md:para-2 text-primary-shade-1 mb-4">
 						{faqDescription}
 					</p>
-					{/* <button className="border mb-10  rounded-md text-white para-3 md:para-2 bg-primary-shade-1 px-6 py-2 ">
-						{faqButton?.text}
-					</button> */}
-
+					
 					<Link href={'/'}>
 						<Button fontColor="text-white" bgColor=" bg-primary-shade-1">
 							{faqButton?.text}

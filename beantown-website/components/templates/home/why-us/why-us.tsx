@@ -33,16 +33,14 @@ export default function WhyUs() {
 					<div className="md:para-2 para-4 text-primary-shade-1 text-left pb-4">
 						<RichText value={whyUsDescription?.contentRaw} />
 					</div>
-					{/* <button className="border rounded-lg text-white para-4 md:para-2  bg-primary-shade-1 md:tracking-wider tracking-wide py-2 px-8 ">
-						{whyUsButton?.text}
-					</button> */}
+					
 					<Link href={'/'}>
 						<Button fontColor="text-white" bgColor=" bg-primary-shade-1">
 							{whyUsButton?.text}
 						</Button>
 					</Link>
 				</div>
-				<div className="px-20 basis-1/2">
+				<div className= "mt-12 px-20 basis-1/2">
 					<Image
 						src={whyUsImage?.asset?.url || ''}
 						alt={whyUsImage?.asset?.altText || ''}
@@ -56,7 +54,7 @@ export default function WhyUs() {
 				</div>
 			</div>
 
-			<div className="pt-4 grid grid-cols-1 md:grid-cols-2 gap-2 ">
+			<div className="pt-4 grid grid-cols-1 md:grid-cols-2 gap-2  mb-20">
 				{whyUsCards?.map((ourValues, index) => {
 					return (
 						ourValues?.image && (

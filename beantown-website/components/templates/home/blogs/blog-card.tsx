@@ -32,7 +32,7 @@ const BlogCard: React.FC<Props> = (props) => {
 					<button className="para-4 md:para-2 text-primary-black underline ">
 						{props.buttonText}
 					</button>
-					
+
 					<img src="images/home_page/blog-arrow.svg" />
 				</div>
 			</div>

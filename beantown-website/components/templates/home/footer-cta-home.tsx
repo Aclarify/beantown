@@ -46,9 +46,7 @@ export default function FooterCta() {
 									<RichText value={ctaDescription?.contentRaw} />
 								</div>
 								<div className="flex justify-center md:justify-start ">
-									{/* <button className="border rounded-md para-3 md:para-2 bg-primary-shade-1 text-white tracking-wide md:tracking-wider  px-6 py-2  ">
-										{finalCtaButton?.text}
-									</button> */}
+								
 									<Link href={'/'}>
 										<Button
 											fontColor="text-white"
