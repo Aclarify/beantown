@@ -99,7 +99,7 @@ export default function Testimonials() {
 			<div className="flex flex-nowrap overflow-x-auto space-x-4   ">
 				{/* card data from sanity */}
 
-				<div className="hidden md:flex flex-col items-center    flex-none gap-2 ">
+				<div className="hidden md:flex flex-col items-center  justify-center   flex-none gap-2 ">
 					<div className="flex-none  gap-5">						
 							<div>
 								<span className=" text-light-1 text-primary-shade-1 ">
