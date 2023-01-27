@@ -49,7 +49,7 @@ export default function Services() {
 						height={184}
 					></Image>
 				</div> */}
-				<div
+				{/* <div
 					id="right-blob"
 					className="hidden md:block relative bottom-[32rem] right-36 left-[88vw] h-0"
 				>
@@ -59,9 +59,9 @@ export default function Services() {
 						width={933}
 						height={850}
 					></Image>
-				</div>
+				</div> */}
 
-				<div className="flex flex-wrap md:flex-nowrap md:space-x-2 space-y-4 md:space-y-0 justify-center py-4 relative z-10">
+				<div className="flex flex-wrap md:flex-nowrap md:space-x-20 space-y-4 md:space-y-0 justify-center py-4 relative z-10">
 					{servicesGroup?.map((service, index) => {
 						return (
 							service?.thumbnailImage?.asset?.url && (
