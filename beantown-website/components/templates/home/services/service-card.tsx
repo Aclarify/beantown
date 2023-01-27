@@ -24,8 +24,8 @@ const ServiceCard: React.FC<Props> = (props) => {
 					className="rounded-t-lg h-72 object-cover"
 				/>
 			</div>
-			<div id="name-container" className="flex flex-wrap basis-1/8">
-				<h1 className="p-4  title-5 md:title-3 text-primary-shade-1 text-center ">
+			<div id="name-container" className=" basis-1/8">
+				<h1 className="p-4  title-5 md:title-3 text-primary-shade-1 text-center  ">
 					{props.title}
 				</h1>
 			</div>
