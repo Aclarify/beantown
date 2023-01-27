@@ -37,33 +37,35 @@ export default function Footer() {
 			>
 				<div
 					id="linkSection"
-					className="sm:col-span-4 sm:order-last  sm:flex sm:justify-between sm:p-10 "
+					className="sm:col-span-4 sm:order-last  sm:flex sm:justify-between sm:p-10 basis-3/4"
 				>
 					{navGroup &&
 						navGroup.map((linkGroup, index) => (
-							<div key={index} className="pt-10 max-w-sm">
-								<h1 className="para-3 md:para-1 text-white pb-6">
+							<div key={index} className="pt-4 sm:pt-10 max-w-sm">
+								<h1 className="para-3 md:para-1 text-white font-bold sm:font-normal sm:pb-6">
 									{linkGroup?.groupTitle}
 								</h1>
-								{linkGroup?.links?.map((link, index) => {
-									return (
-										link && (
-											<div key={index} className="pt-2">
-												<Link
-													className="para-4 md:para-3 text-gray-300 "
-													href={link?.href || '/'}
-												>
-													{link?.linkText}
-												</Link>
-											</div>
-										)
-									);
-								})}
+								<div className="flex justify-start sm:flex-col">
+									{linkGroup?.links?.map((link, index) => {
+										return (
+											link && (
+												<div key={index} className="pt-2 pr-4  ">
+													<Link
+														className="para-4 md:para-3 text-gray-300 "
+														href={link?.href || '/'}
+													>
+														{link?.linkText}
+													</Link>
+												</div>
+											)
+										);
+									})}
+								</div>
 							</div>
 						))}
-					<div id="contact" className="pt-10">
-						<div className="pb-4">
-							<span className=" para-3 md:para-1 text-white">
+					<div id="contact" className="pt-4 sm:pt-10">
+						<div className="pb-2 sm:pb-4">
+							<span className=" para-3 md:para-1 text-white font-bold sm:font-normal">
 								{contactUsTitle}
 							</span>
 						</div>
@@ -87,7 +89,7 @@ export default function Footer() {
 						})}
 					</div>
 				</div>
-				<div id="logoSection" className="">
+				<div id="logoSection" className="basis-1/4">
 					<div className="flex space-x-4 pt-8">
 						<div id="logoImage">
 							<Image
@@ -116,7 +118,7 @@ export default function Footer() {
 							})}
 						</div>
 					</div>
-					<div id="footerDescription" className="pb-8">
+					<div id="footerDescription" className="sm:pb-6 sm:pt-4">
 						<p className="para-4 md:para-3 text-gray-300">{description}</p>
 					</div>
 					<div

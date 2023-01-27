@@ -84,7 +84,7 @@ export default function Testimonials() {
 	};
 
 	return (
-		<section id="testimonials" className=" p-6 md:px-10  bg-secondary-shade-3">
+		<section id="testimonials" className="mt-10 p-6 md:px-10  bg-secondary-shade-3">
 			<div className="md:hidden">
 				<div className="  w-full flex-none  gap-5   ">
 					<div className="">
@@ -145,7 +145,7 @@ export default function Testimonials() {
 
 				<div
 					ref={carousel}
-					className=" carousel container relative flex gap-1 m-10 p-20  overflow-hidden scroll-smooth snap-x snap-mandatory touch-pan-x z-0"
+					className="container relative flex gap-1 m-10 p-20  overflow-hidden scroll-smooth snap-x snap-mandatory touch-pan-x z-0"
 				>
 					{testimonialCards?.map((reviews, index) => {
 						return (
