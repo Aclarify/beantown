@@ -19,7 +19,7 @@ export default function WhyUs() {
 	return (
 		<section
 			id="whyUs"
-			className=" p-6 md:px-10 flex flex-col mt-30 bg-white "
+			className=" p-6 md:px-10 flex flex-col mt-30 bg-primary-white-shade-1 "
 			style={{
 				WebkitMaskImage: "url('./why-us-wave-mask.svg')",
 				WebkitMaskSize: 'cover',
@@ -33,14 +33,14 @@ export default function WhyUs() {
 					<div className="md:para-2 para-4 text-primary-shade-1 text-left pb-4">
 						<RichText value={whyUsDescription?.contentRaw} />
 					</div>
-					
+
 					<Link href={'/'}>
 						<Button fontColor="text-white" bgColor=" bg-primary-shade-1">
 							{whyUsButton?.text}
 						</Button>
 					</Link>
 				</div>
-				<div className= "mt-12 px-20 basis-1/2">
+				<div className="mt-12 px-20 basis-1/2">
 					<Image
 						src={whyUsImage?.asset?.url || ''}
 						alt={whyUsImage?.asset?.altText || ''}
@@ -54,7 +54,7 @@ export default function WhyUs() {
 				</div>
 			</div>
 
-			<div className="pt-4 grid grid-cols-1 md:grid-cols-2 gap-2  mb-20">
+			<div className="py-6 grid grid-cols-1 md:grid-cols-2 gap-2 mb-10">
 				{whyUsCards?.map((ourValues, index) => {
 					return (
 						ourValues?.image && (
