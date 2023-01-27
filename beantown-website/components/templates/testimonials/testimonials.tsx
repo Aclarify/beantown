@@ -84,9 +84,9 @@ export default function Testimonials() {
 	};
 
 	return (
-		<section id="testimonials" className="mt-10 p-6 md:px-10  bg-secondary-shade-3">
+		<section id="testimonials" className="md:mt-10 p-6 md:px-10  bg-secondary-shade-3">
 			<div className="md:hidden">
-				<div className="  w-full flex-none  gap-5   ">
+				<div className=" w-full flex-none  gap-5   ">
 					<div className="">
 						<h4 className="para-4 text-primary-shade-1 ">{testimonialTitle}</h4>
 						<h1 className="title-5 text-primary-black">
@@ -99,7 +99,7 @@ export default function Testimonials() {
 			<div className="flex flex-nowrap overflow-x-auto space-x-4   ">
 				{/* card data from sanity */}
 
-				<div className="hidden md:flex flex-col items-center  justify-center   flex-none gap-2 ">
+				<div className="hidden md:flex flex-col items-center justify-center    flex-none gap-2 ">
 					<div className="flex-none  gap-5">						
 							<div>
 								<span className=" text-light-1 text-primary-shade-1 ">
