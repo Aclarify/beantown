@@ -23,6 +23,8 @@ export default function WhyUs() {
 			style={{
 				WebkitMaskImage: "url('./why-us-wave-mask.svg')",
 				WebkitMaskSize: 'cover',
+				maskImage: "url('./why-us-wave-mask.svg')",
+				maskSize: 'cover',
 			}}
 		>
 			<div className="flex flex-col-reverse md:flex md:flex-row  items-center w-full mt-20 ">
@@ -49,6 +51,8 @@ export default function WhyUs() {
 						style={{
 							WebkitMaskImage: "url('./why-us-mask.svg')",
 							WebkitMaskSize: 'cover',
+							maskImage: "url('./why-us-mask.svg')",
+							maskSize: 'cover',
 						}}
 					/>
 				</div>

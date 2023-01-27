@@ -16,7 +16,7 @@ export default function Faq() {
 	const { faqTitle, faqDescription, faqButton, faqList } = homeData;
 	return (
 		<section id="faq">
-			<div className=" p-6 md:px-10 bg-secondary-shade-3 mt-16  bg-[url('../public/home-faq-mask-shape.svg')] flex items-center align-middle ">
+			<div className=" p-6 md:px-10 bg-secondary-shade-3 mt-16  bg-[url('../public/home-faq-mask-shape.svg')] bg-cover flex items-center align-middle ">
 				<div className="md:flex">
 					<div className=" md:text-left text-center ">
 						<h1 className=" title-5 md:title-2 text-primary-black mt-10 ">

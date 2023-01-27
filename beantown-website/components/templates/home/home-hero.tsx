@@ -39,6 +39,8 @@ export default function HomeHero() {
 					style={{
 						WebkitMaskImage: "url('./home-hero-mask.svg')",
 						WebkitMaskSize: 'cover',
+						maskImage: "url('./home-hero-mask.svg')",
+						maskSize: 'cover',
 					}}
 				/>
 			</div>
