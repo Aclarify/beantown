@@ -41,6 +41,8 @@ const HomePage: React.FC = () => {
 				style={{
 					WebkitMaskImage: "url('./service-area-wave-mask.svg')",
 					WebkitMaskSize: 'cover',
+					maskImage: "url('./service-area-wave-mask.svg')",
+					maskSize: 'cover',
 				}}
 			>
 				<ServiceAreas />

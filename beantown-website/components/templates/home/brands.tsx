@@ -19,6 +19,8 @@ export default function Brands() {
 			style={{
 				WebkitMaskImage: "url('./brand-top-wave-mask.svg')",
 				WebkitMaskSize: 'cover',
+				maskImage: "url('./brand-top-wave-mask.svg')",
+				maskSize: 'cover',
 			}}
 		>
 			<div className="flex  justify-center pt-10">
