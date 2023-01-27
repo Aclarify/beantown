@@ -3,7 +3,6 @@ import { GlobalContext } from '@contexts/global/global.context';
 import { GlobalContextProps } from '@typing/common/interfaces/contexts.interface';
 import { HomePageContentProps } from 'pages';
 import RichText from 'components/molecules/rich-text.molecule';
-import Image from 'next/image';
 import Button from 'components/atoms/button.atom';
 import Link from 'next/link';
 
@@ -22,19 +21,19 @@ export default function FooterCta() {
 				<div className="flex  flex-row bg-white">
 					<div
 						id="content"
-						className=" bg-gradient-to-r from-secondary-shade-2  to-bg-white relative  basis-2/3 "
+						className=" bg-gradient-to-r from-secondary-shade-1  to-secondary-shade-2 relative  basis-1/2 "
 					>
 						<img
 							className="object-fill animate-pulse object-center "
 							src="images/home_page/footer_cta_theme/mask_group.svg"
 						/>
-						<div className="  absolute inset-x-0 inset-y-4 px-10 py-14 ">
+						<div className=" flex-col items-center justify-center absolute inset-x-0 inset-y-4 px-10   ">
 							<div>
 								<p className="title-5 md:title-2 text-primary-black text-left">
 									{ctaTitle}
 								</p>
 							</div>
-							<div className="para-2 text-primary-shade-1 justify-start w-2/3 ">
+							<div className="para-2 text-primary-shade-1 justify-start w-3/4 ">
 								<RichText value={ctaDescription?.contentRaw} />
 							</div>
 							<div className="flex justify-start ">
@@ -47,14 +46,14 @@ export default function FooterCta() {
 						</div>
 					</div>
 					<div
-						className={`basis-1/3 height-auto`}
+						className={`basis-1/2 height-auto`}
 						style={{
 							backgroundImage: `linear-gradient(
 							to right,
-							white,
+							#CADEED,
 							transparent 20%
 						), url('${imagePath}')`,
-							backgroundSize: 'contain',
+							backgroundSize: 'cover',
 							backgroundRepeat: 'no-repeat',
 						}}
 					></div>
@@ -79,7 +78,7 @@ export default function FooterCta() {
 						style={{
 							backgroundImage: `linear-gradient(
 							#F4F8FB,
-							#cadeed)`,
+							#7AADD3)`,
 						}}
 					>
 						<img
@@ -94,7 +93,7 @@ export default function FooterCta() {
 											{ctaTitle}
 										</p>
 									</div>
-									<div className="para-4  text-primary-shade-1 justify-center ">
+									<div className="para-4  text-primary-shade-1 justify-center text-center ">
 										<RichText value={ctaDescription?.contentRaw} />
 									</div>
 									<div className="flex justify-center  ">
