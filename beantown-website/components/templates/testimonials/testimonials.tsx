@@ -112,7 +112,7 @@ export default function Testimonials() {
 								</span>
 							</div>					
 					</div>
-					<div className="flex flex-col  ">
+					<div className="flex flex-col items-center justify-center  ">
 						<div className="flex gap-2 m-4 ">
 							{testimonialCards?.map((cards, index) => {
 								return (

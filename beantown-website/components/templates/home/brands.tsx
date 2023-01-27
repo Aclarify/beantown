@@ -1,8 +1,11 @@
-import React, { useContext } from 'react';
+import  { useContext } from 'react';
+import React from 'react';
 import { GlobalContext } from '@contexts/global/global.context';
 import { GlobalContextProps } from '@typing/common/interfaces/contexts.interface';
 import { HomePageContentProps } from 'pages';
 import Image from 'next/image';
+import Carousel from 'react-multi-carousel';
+import 'react-multi-carousel/lib/styles.css';
 
 export default function Brands() {
 	const { pageContent } =
@@ -12,6 +15,27 @@ export default function Brands() {
 	}
 	const homeData = pageContent.home[0];
 	const { clientsLogo, brandsTitle } = homeData;
+
+
+	const responsive = {
+		superLargeDesktop: {
+			// the naming can be any, depends on you.
+			breakpoint: { max: 4000, min: 3000 },
+			items: 5,
+		},
+		desktop: {
+			breakpoint: { max: 3000, min: 1024 },
+			items: 5,
+		},
+		tablet: {
+			breakpoint: { max: 1024, min: 464 },
+			items: 3,
+		},
+		mobile: {
+			breakpoint: { max: 464, min: 0 },
+			items: 2,
+		},
+	};
 	return (
 		<section
 			id="brand"
@@ -26,25 +50,32 @@ export default function Brands() {
 					{brandsTitle}
 				</span>
 			</div>
-			<div className="group flex flex-nowrap justify-center overflow-x-scroll  md:space-x-2 p-4 ">
-				{clientsLogo?.map((logo, index) => {
-					return (
-						logo &&
-						logo.image && (
-							<div
-								key={index}
-								className="flex-none sm:flex w-[100px] h-[100px] md:w-[250px] md:h-[250] p-4"
-							>
-								<Image
-									alt={logo?.image?.asset?.altText || ''}
-									width={200}
-									height={300}
-									src={logo?.image?.asset?.url || ''}
-								/>
-							</div>
-						)
-					);
-				})}
+			<div>
+				<Carousel
+					responsive={responsive}
+					additionalTransfrom={0}
+					centerMode={false}
+					autoPlay={true}
+					infinite
+					autoPlaySpeed={2000}
+					 removeArrowOnDeviceType={['tablet', 'desktop','mobile']}
+				>
+					{clientsLogo?.map((logo, index) => {
+						return (
+							logo &&
+							logo.image && (
+								<div key={index}>
+									<Image
+										alt={logo?.image?.asset?.altText || ''}
+										width={200}
+										height={300}
+										src={logo?.image?.asset?.url || ''}
+									/>
+								</div>
+							)
+						);
+					})}
+				</Carousel>
 			</div>
 		</section>
 	);
