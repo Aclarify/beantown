@@ -26,14 +26,14 @@ export default function Brands() {
 					{brandsTitle}
 				</span>
 			</div>
-			<div className="group flex flex-nowrap justify-center overflow-x-auto  md:space-x-2 p-4 ">
+			<div className="group flex flex-nowrap justify-center overflow-x-scroll  md:space-x-2 p-4 ">
 				{clientsLogo?.map((logo, index) => {
 					return (
 						logo &&
 						logo.image && (
 							<div
 								key={index}
-								className=" group-hover:scale-[0.55] hover:!scale-100 duration-500 flex w-[100px] h-[100px] md:w-[250px] md:h-[250] md:p-4"
+								className="flex-none sm:flex w-[100px] h-[100px] md:w-[250px] md:h-[250] p-4"
 							>
 								<Image
 									alt={logo?.image?.asset?.altText || ''}
