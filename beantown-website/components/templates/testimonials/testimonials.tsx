@@ -46,9 +46,9 @@ export default function Testimonials() {
 
 	const movePrevious = () => {
 		if (currentIndex > 0) {
-			console.log('current Index before'+ currentIndex);
+			console.log('current Index before' + currentIndex);
 			setCurrentIndex((previousState) => previousState - 1);
-				console.log('current Index after click' +currentIndex);
+			console.log('current Index after click' + currentIndex);
 		}
 	};
 	const moveNext = () => {
@@ -58,9 +58,6 @@ export default function Testimonials() {
 		) {
 			setCurrentIndex((previousState) => previousState + 1);
 		}
-
-
-		
 	};
 	const isDisabled = (direction: any) => {
 		if (direction === 'prev') {
@@ -68,9 +65,9 @@ export default function Testimonials() {
 		}
 
 		if (direction === 'next' && carousel.current !== null) {
-			console.log('current offsetWidth '+  carousel.current.offsetWidth)
-			console.log('current Index '+currentIndex);
-			console.log('max Scroll width '+ maxScrollWidth.current);
+			console.log('current offsetWidth ' + carousel.current.offsetWidth);
+			console.log('current Index ' + currentIndex);
+			console.log('max Scroll width ' + maxScrollWidth.current);
 			return (
 				carousel.current.offsetWidth * currentIndex >= maxScrollWidth.current
 			);
@@ -84,7 +81,7 @@ export default function Testimonials() {
 	};
 
 	return (
-		<section id="testimonials" className="md:mt-10 p-6 md:px-10  bg-secondary-shade-3">
+		<section id="testimonials" className=" p-6 md:px-10  bg-secondary-shade-3">
 			<div className="md:hidden">
 				<div className=" w-full flex-none  gap-5   ">
 					<div className="">
@@ -100,17 +97,17 @@ export default function Testimonials() {
 				{/* card data from sanity */}
 
 				<div className="hidden md:flex flex-col items-center justify-center    flex-none gap-2 ">
-					<div className="flex-none  gap-5">						
-							<div>
-								<span className=" text-light-1 text-primary-shade-1 ">
-									{testimonialTitle}
-								</span>
-							</div>
-							<div>
-								<span className=" title-2 text-primary-black">
-									{testimonialDescription}
-								</span>
-							</div>					
+					<div className="flex-none  gap-5">
+						<div>
+							<span className=" text-light-1 text-primary-shade-1 ">
+								{testimonialTitle}
+							</span>
+						</div>
+						<div>
+							<span className=" title-2 text-primary-black">
+								{testimonialDescription}
+							</span>
+						</div>
 					</div>
 					<div className="flex flex-col  ">
 						<div className="flex gap-2 m-4 ">
@@ -145,7 +142,7 @@ export default function Testimonials() {
 
 				<div
 					ref={carousel}
-					className="container relative flex gap-1 m-10 p-20  overflow-hidden scroll-smooth snap-x snap-mandatory touch-pan-x z-0"
+					className="container relative flex gap-1   overflow-hidden scroll-smooth snap-x snap-mandatory touch-pan-x z-0"
 				>
 					{testimonialCards?.map((reviews, index) => {
 						return (
