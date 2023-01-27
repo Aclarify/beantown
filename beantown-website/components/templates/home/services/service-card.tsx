@@ -12,15 +12,17 @@ interface Props {
 }
 
 const ServiceCard: React.FC<Props> = (props) => {
-	const imagePath = props.thumbnailSrc;
 	return (
-		<div id="card-container" className="flex-col bg-white rounded-lg shadow-lg">
+		<div
+			id="card-container"
+			className="flex-col flex-grow bg-white rounded-lg shadow-lg"
+		>
 			<div id="image-container" className="basis-3/4">
 				<Image
 					src={props.thumbnailSrc}
 					alt={props.thumbnailAltText}
-					width="400"
-					height="350"
+					width="500"
+					height="450"
 					className="rounded-t-lg h-72 object-cover"
 				/>
 			</div>
