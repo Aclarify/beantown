@@ -19,7 +19,7 @@ export default function WhyUs() {
 	return (
 		<section
 			id="whyUs"
-			className=" p-6 md:px-10 flex flex-col mt-30 bg-[#FCFDFC] "
+			className=" p-6 md:px-10 flex flex-col mt-30 bg-primary-white-shade-1 "
 			style={{
 				WebkitMaskImage: "url('./why-us-wave-mask.svg')",
 				WebkitMaskSize: 'cover',

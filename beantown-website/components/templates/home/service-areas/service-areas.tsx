@@ -46,7 +46,7 @@ export default function ServiceAreas() {
 					></Image>
 					<div
 						id="service-area-outer-container"
-						className="bg-[#FCFDFC] relative top-[-20px] left-2 w-[95%] bottom-[20%] md:absolute  md:p-10 md:inset-x-1/2 md:top-[15%] md:h-2/3 md:w-1/2  md:rounded-3xl "
+						className="bg-primary-white-shade-1 relative top-[-20px] left-2 w-[95%] bottom-[20%] md:absolute  md:p-10 md:inset-x-1/2 md:top-[15%] md:h-2/3 md:w-1/2  md:rounded-3xl "
 					>
 						<div
 							id="service-areas-inner-container p-4"
