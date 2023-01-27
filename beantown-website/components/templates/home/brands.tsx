@@ -15,7 +15,7 @@ export default function Brands() {
 	return (
 		<section
 			id="brand"
-			className="bg-white "
+			className="bg-white"
 			style={{
 				WebkitMaskImage: "url('./brand-top-wave-mask.svg')",
 				WebkitMaskSize: 'cover',
