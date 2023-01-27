@@ -60,14 +60,14 @@ export default function FooterCta() {
 					></div>
 				</div>
 			</section>
-			<section id="footerCtaMobile" className="block sm:hidden">
-				<div className="flex  flex-col bg-white">
+			<section id="footerCtaMobile" className="block sm:hidden pt-6 bg-white">
+				<div className="flex flex-col">
 					<div
-						className={` height-auto`}
+						className={`block h-[30vh]`}
 						style={{
 							backgroundImage: `linear-gradient(
 							transparent 20%,
-							white
+							#F4F8FB
 						), url('${imagePath}')`,
 							backgroundSize: 'cover',
 							backgroundRepeat: 'no-repeat',
@@ -75,7 +75,12 @@ export default function FooterCta() {
 					></div>
 					<div
 						id="content"
-						className=" bg-gradient from-white to-secondary-shade-2   relative   "
+						className="relative  block h-[50vh] "
+						style={{
+							backgroundImage: `linear-gradient(
+							#F4F8FB,
+							#cadeed)`,
+						}}
 					>
 						<img
 							className="object-fill animate-pulse object-center "

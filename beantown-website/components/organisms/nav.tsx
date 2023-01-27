@@ -137,7 +137,7 @@ export default function Nav() {
 							{navGroup &&
 								navGroup.length &&
 								navGroup.map((childLink, index) => (
-									<Popover className="relative">
+									<Popover className="relative" key={index}>
 										{({ open }) => (
 											<>
 												<Popover.Button className="flex w-full justify-between rounded-lg  px-4 py-2 text-left subtitle-4 md:subtitle-2 text-primary-shade-1 hover:bg-black-200 focus:outline-none focus-visible:ring focus-visible:ring-black-500 focus-visible:ring-opacity-75">
