@@ -21,7 +21,7 @@ export default function Blogs() {
 			<div className="title-5 md:title-2 text-primary-black text-center">
 				<h1>{blogTitle}</h1>
 			</div>
-			<div className="para-4 md:para-2 text-primary-shade-1 text-center py-6">
+			<div className="para-4 md:para-2 text-primary-shade-1 text-center pt-4 pb-6">
 				<p>{blogDescription}</p>
 			</div>
 
