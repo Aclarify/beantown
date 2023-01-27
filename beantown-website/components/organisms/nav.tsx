@@ -23,7 +23,6 @@ export default function Nav() {
 	const navData = pageContent.header[0];
 	const { navLinks, navGroup, headerButton } = navData;
 	const childLinks = navGroup?.map((nav) => nav?.links).flat();
-	// console.log('navGroup:::', navGroup);
 
 	const allNavLinks = [
 		...(navLinks ? navLinks : []),
@@ -36,100 +35,30 @@ export default function Nav() {
 
 	return (
 		<>
-			{/* <nav className="absolute w-full  px-10 z-10">
-				<div className="hidden md:flex  mx-auto  justify-between items-center">
-					<div className="align-middle items-center">
-						<Image
-							alt={logo?.asset?.altText || ''}
-							width={200}
-							height={300}
-							src={logo?.asset?.url || ''}
-						/>
-					</div>
-					<div className=" text-white items-center para-4 md:para-3 justify-center">
-						{navLinks?.map((link, index) => {
-							return (
-								<Link
-									key={index}
-									href={link?.href || '/'}
-									className="p-8 pr-1 group inline-block"
-								>
-									{link?.linkText}
-								</Link>
-							);
-						})}
-
-						{navGroup?.map((linkGroup, index) => {
-							return (
-								<div key={index} className="group inline-block">
-									<Link
-										href={'/'}
-										className="outline-none focus:outline-none  px-3 py-1  rounded-sm flex items-center min-w-32"
-									>
-										<span className="pr-1 flex-1 para-4 md:para-3 ">
-											{linkGroup?.groupTitle}
-										</span>
-										<span>
-											<svg
-												className="fill-current h-4 w-4 transform group-hover:-rotate-180
-		                transition duration-150 ease-in-out"
-												xmlns="http://www.w3.org/2000/svg"
-												viewBox="0 0 20 20"
-											>
-												<path d="M9.293 12.95l.707.707L15.657 8l-1.414-1.414L10 10.828 5.757 6.586 4.343 8z" />
-											</svg>
-										</span>
-									</Link>
-									<ul className="rounded-sm transform scale-0 group-hover:scale-100 absolute  transition duration-500 ease-in-out origin-top min-w-32">
-										{linkGroup?.links?.map((link, index) => {
-											return (
-												<Link key={index} href={link?.href || '/'}>
-													<li className="rounded-sm px-3 py-1 para-4 md:para-3 ">
-														{link?.linkText}
-													</li>
-												</Link>
-											);
-										})}
-									</ul>
-								</div>
-							);
-						})}
-					</div>
-					<div className="">
-						<Link href={'/'}>
-							<Button fontColor="text-primary-shade-1" bgColor="bg-white">
-								{headerButton?.text}
-							</Button>
-						</Link>
-					</div>
-				</div>
-			</nav> */}
-			<section className="absolute w-full  px-10 z-10 ">
-				<Popover className="relative z-10   ">
-					<div className="mx-auto max-w-7xl px-6  sm:px-8  justify-between items-center ">
-						<div className="flex  py-6 lg:py-0  md:justify-start ">
-							<div className="flex justify-between">
-								<div className="hidden md:flex align-middle ">
-									<Image
-										alt={logo?.asset?.altText || ''}
-										width={200}
-										height={300}
-										src={logo?.asset?.url || ''}
-									/>
-								</div>
-								<div className="flex align-middle md:hidden">
-									<Image
-										alt={logo?.asset?.altText || ''}
-										width={100}
-										height={100}
-										src={logo?.asset?.url || ''}
-									/>
-								</div>
-								<div className="-my-2 -mr-2 md:hidden">
-									<Popover.Button className="inline-flex rounded-md bg-white p-2 text-black  ">
-										<Bars3Icon className="h-6 w-6" aria-hidden="true" />
-									</Popover.Button>
-								</div>
+			<section className="absolute w-full  md:px-10">
+				<Popover className="relative z-30">
+					<div className="mx-auto px-4  justify-between items-center ">
+						<div className="flex  py-6 lg:py-0 justify-between md:justify-start ">
+							<div className="hidden md:flex align-middle ">
+								<Image
+									alt={logo?.asset?.altText || ''}
+									width={200}
+									height={300}
+									src={logo?.asset?.url || ''}
+								/>
+							</div>
+							<div className="flex align-middle md:hidden">
+								<Image
+									alt={logo?.asset?.altText || ''}
+									width={100}
+									height={100}
+									src={logo?.asset?.url || ''}
+								/>
+							</div>
+							<div className="-my-2 -mr-2 md:hidden">
+								<Popover.Button className="inline-flex rounded-md bg-white p-2 text-black  ">
+									<Bars3Icon className="h-6 w-6" aria-hidden="true" />
+								</Popover.Button>
 							</div>
 							<div className="hidden md:justify-center md:flex md:flex-grow text-white items-center para-4 md:para-3 ">
 								{navLinks?.map((link, index) => {
@@ -202,17 +131,9 @@ export default function Nav() {
 							focus
 							className="absolute inset-x-0 top-0 origin-top-right transform p-2 transition md:hidden"
 						>
-							<div className=" rounded-lg bg-white   ">
+							<div className="rounded-lg bg-primary-white-shade-1">
 								<div className="px-5 pt-5 pb-6">
-									<div className="flex items-center justify-between">
-										<div className="align-middle ">
-											<Image
-												alt={logo?.asset?.altText || ''}
-												width={200}
-												height={300}
-												src={logo?.asset?.url || ''}
-											/>
-										</div>
+									<div className="flex justify-end">
 										<div className="-mr-2">
 											<Popover.Button className="inline-flex items-center justify-center rounded-md bg-white p-2 text-gray-400 hover:bg-gray-100 hover:text-gray-500 focus:outline-none focus:ring-2 focus:ring-inset ">
 												<XMarkIcon className="h-6 w-6" aria-hidden="true" />
