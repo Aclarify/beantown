@@ -25,8 +25,11 @@ export default function Nav() {
 	const childLinks = navGroup?.map((nav) => nav?.links).flat();
 	console.log('childLinks:::', childLinks?.flat());
 
-	const allNavLinks = [...navLinks, ...childLinks];
-	console.log('navGroup-->', navGroup[0]?.linkGroupName);
+	const allNavLinks = [
+		...(navLinks ? navLinks : []),
+		...(childLinks ? childLinks : []),
+	];
+	// console.log('navGroup-->', navGroup?[0]?.);
 	return (
 		// <nav className="absolute w-full  px-10 z-10">
 		// 	<div className="hidden md:flex  mx-auto  justify-between items-center">
@@ -226,7 +229,7 @@ export default function Nav() {
 											allNavLinks.length &&
 											allNavLinks.map((link, index) => (
 												<Link
-													key={link?.name || ''}
+													key={index}
 													href={link?.href || '/'}
 													className="p-8 pr-1 group inline-block"
 												>
