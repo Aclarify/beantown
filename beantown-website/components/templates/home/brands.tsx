@@ -33,7 +33,7 @@ export default function Brands() {
 		},
 		mobile: {
 			breakpoint: { max: 464, min: 0 },
-			items: 2,
+			items: 1,
 		},
 	};
 	return (
@@ -66,7 +66,7 @@ export default function Brands() {
 						return (
 							logo &&
 							logo.image && (
-								<div key={index}>
+								<div key={index} className='flex justify-center'>
 									<Image
 										alt={logo?.image?.asset?.altText || ''}
 										width={200}
