@@ -16,6 +16,7 @@ import { GlobalContext } from '@contexts/global/global.context';
 import { GlobalContextProps } from '@typing/common/interfaces/contexts.interface';
 import { HomePageContentProps } from 'pages';
 import RichText from 'components/molecules/rich-text.molecule';
+import Image from 'next/image'
 
 export default function Testimonials() {
 	const [currentIndex, setCurrentIndex] = useState(0);
@@ -82,6 +83,19 @@ export default function Testimonials() {
 
 	return (
 		<section id="testimonials" className=" p-6 md:px-10  bg-secondary-shade-3">
+			<div
+				id="left-blob-mobile"
+				className="hidden md:block relative bottom-[12rem] right-[35em] h-0"
+			>
+				<Image
+					src="/blob-shape-1.svg"
+					alt="right-blob"
+					width={700}
+					height={700}
+				>
+
+				</Image>
+			</div>
 			<div className="md:hidden">
 				<div className=" w-full flex-none  gap-5   ">
 					<div className="">
@@ -96,7 +110,7 @@ export default function Testimonials() {
 			<div className="flex flex-nowrap overflow-x-auto space-x-4   ">
 				{/* card data from sanity */}
 
-				<div className="hidden md:flex flex-col items-center justify-center    flex-none gap-2 ">
+				<div className="hidden z-10 md:flex flex-col items-center justify-center    flex-none gap-2 ">
 					<div className="flex-none  gap-5">
 						<div>
 							<span className=" text-light-1 text-primary-shade-1 ">
