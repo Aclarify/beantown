@@ -142,13 +142,13 @@ export default function Testimonials() {
 
 				<div
 					ref={carousel}
-					className=" relative flex gap-1   overflow-hidden scroll-smooth snap-x snap-mandatory touch-pan-x z-0"
+					className=" relative flex gap-10   overflow-hidden scroll-smooth snap-x snap-mandatory touch-pan-x z-0"
 				>
 					{testimonialCards?.map((reviews, index) => {
 						return (
 							<div
 								key={index}
-								className="relative w-72 h-120 snap-start items-center bg-[#FFFFFF] my-6 p-4 flex-none gap-2 border rounded-xl "
+								className="relative w-96 h-120 snap-start items-center bg-[#FFFFFF] my-6 p-4 flex-none gap-2 border rounded-xl "
 							>
 								<TestimonialCard
 									key={index}
