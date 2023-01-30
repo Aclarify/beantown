@@ -25,12 +25,12 @@ export default function Blogs() {
 				<p>{blogDescription}</p>
 			</div>
 
-			<div className=" no-scrollbar flex flex-nowrap overflow-x-auto snap-x snap-mandatory">
+			<div className=" no-scrollbar flex flex-nowrap overflow-x-auto snap-x snap-mandatory pb-4  gap-3">
 				{blogCards?.map((blog, index) => {
 					return (
 						<div
 							key={index}
-							className="flex-none w-full md:w-1/3  snap-always snap-center"
+							className="flex-none w-[250px]  md:w-1/3  snap-always snap-start  "
 						>
 							<BlogCard
 								blogName={blog?.name || ''}
