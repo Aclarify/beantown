@@ -121,20 +121,20 @@ export default function Testimonials() {
 								);
 							})}
 						</div>
-						<div className="flex gap-4 pt-4 justify-center ">
+						<div className="flex  pt-4 justify-center ">
 							<button
 								onClick={movePrevious}
 								disabled={isDisabled('prev')}
-								className="bg-primary-shade-1 rounded-full text-black w-10 h-full text-center opacity-75 hover:opacity-100 disabled:opacity-25 disabled:cursor-not-allowed  transition-all ease-in-out duration-300"
+								className="bg-primary-shade-1 rounded-full text-white w-24 h-full text-center  hover:opacity-100 disabled:bg-white disabled:text-black disabled:cursor-not-allowed z-10 p-2 m-1  transition-all ease-in-out duration-300"
 							>
-								<FontAwesomeIcon icon={faArrowLeft} />
+								<FontAwesomeIcon icon={faArrowLeft} size="lg" />
 							</button>
 							<button
 								onClick={moveNext}
 								disabled={isDisabled('next')}
-								className="bg-primary-shade-1 rounded-full text-black w-10 h-full text-center opacity-75 hover:opacity-100 disabled:opacity-25 disabled:cursor-not-allowed transition-all ease-in-out duration-300"
+								className="bg-primary-shade-1 rounded-full text-white w-24  h-full text-center hover:opacity-100   disabled:bg-white disabled:text-black disabled:cursor-not-allowed z-10 p-2 m-1 transition-all ease-in-out duration-300"
 							>
-								<FontAwesomeIcon icon={faArrowRight} />
+								<FontAwesomeIcon icon={faArrowRight} size="lg" />
 							</button>
 						</div>
 					</div>
@@ -142,7 +142,7 @@ export default function Testimonials() {
 
 				<div
 					ref={carousel}
-					className="container relative flex gap-1   overflow-hidden scroll-smooth snap-x snap-mandatory touch-pan-x z-0"
+					className=" relative flex gap-1   overflow-hidden scroll-smooth snap-x snap-mandatory touch-pan-x z-0"
 				>
 					{testimonialCards?.map((reviews, index) => {
 						return (
@@ -174,18 +174,18 @@ export default function Testimonials() {
 							);
 						})}
 					</div>
-					<div className="flex gap-4 pt-4 ">
+					<div className="flex  pt-4 ">
 						<button
 							onClick={movePrevious}
 							disabled={isDisabled('prev')}
-							className="bg-primary-shade-1  rounded-full text-black w-10 h-full  text-center opacity-75 hover:opacity-100 disabled:opacity-25 disabled:cursor-not-allowed z-10 p-0 m-0 transition-all ease-in-out duration-300"
+							className="bg-primary-shade-1  rounded-full text-white w-16 h-full  text-center  hover:opacity-100   disabled:bg-white disabled:text-black disabled:cursor-not-allowed z-10 p-2 m-1 transition-all ease-in-out duration-300"
 						>
 							<FontAwesomeIcon icon={faArrowLeft} />
 						</button>
 						<button
 							onClick={moveNext}
 							disabled={isDisabled('next')}
-							className="bg-primary-shade-1 rounded-full text-black w-10 h-full text-center opacity-75 hover:opacity-100 disabled:opacity-25 disabled:cursor-not-allowed z-10 p-0 m-0 transition-all ease-in-out duration-300"
+							className="bg-primary-shade-1 rounded-full text-white w-16  h-full text-center   hover:opacity-100  disabled:bg-white disabled:text-black disabled:cursor-not-allowed z-10 p-2 m-1 transition-all ease-in-out duration-300"
 						>
 							<FontAwesomeIcon icon={faArrowRight} />
 						</button>
