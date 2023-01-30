@@ -18,8 +18,8 @@ const BlogCard: React.FC<Props> = (props) => {
 					<Image
 						src={props.thumbnailSrc}
 						alt={props.thumbnailAltText}
-						width="500"
-						height="500"
+						width="600"
+						height="600"
 					/>
 				</div>
 				<p className="py-4 title-7 md:title-5 text-primary-black">

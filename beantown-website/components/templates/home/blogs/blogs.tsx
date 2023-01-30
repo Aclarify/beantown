@@ -25,10 +25,13 @@ export default function Blogs() {
 				<p>{blogDescription}</p>
 			</div>
 
-			<div className=" flex flex-wrap md:flex-nowrap overflow-x-auto gap-5 ">
+			<div className=" no-scrollbar flex flex-nowrap overflow-x-auto snap-x snap-mandatory">
 				{blogCards?.map((blog, index) => {
 					return (
-						<div key={index} className="flex-col justify-center ">
+						<div
+							key={index}
+							className="flex-none w-full md:w-1/3  snap-always snap-center"
+						>
 							<BlogCard
 								blogName={blog?.name || ''}
 								buttonText={blog?.button?.text || ''}
