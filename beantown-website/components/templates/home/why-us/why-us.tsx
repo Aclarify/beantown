@@ -27,7 +27,7 @@ export default function WhyUs() {
 				maskSize: 'cover',
 			}}
 		>
-			<div className="flex flex-col-reverse md:flex md:flex-row  items-center w-full mt-20 ">
+			<div className="flex flex-col-reverse md:flex md:flex-row  items-center w-full mt-20  ">
 				<div className=" pt-8  flex flex-col items-start text-justify basis-1/2 ">
 					<h1 className="title-5 md:title-2 text-primary-black ">
 						{whyUsTitle}
