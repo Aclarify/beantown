@@ -83,7 +83,7 @@ export default function Testimonials() {
 
 	return (
 		<>
-			<section id="top-curve-testimonial" className="md:-mt-16 -mt-3">
+			<section id="top-curve-testimonial" className="md:-mt-14 -mt-3">
 				<Image
 					src="/testimonial-top-curve.svg"
 					alt="top-curve"
