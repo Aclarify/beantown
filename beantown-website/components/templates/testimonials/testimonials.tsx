@@ -106,9 +106,20 @@ export default function Testimonials() {
 						height={700}
 					></Image>
 				</div>
+				<div
+					id="left-blob-mobile"
+					className="md:hidden block relative  place-content-end ml-44  bottom-[12rem]  h-0 z-10"
+				>
+					<Image
+						src="/testimonial-right-half-blob.svg"
+						alt="Left-blob"
+						width={240}
+						height={200}
+					></Image>
+				</div>
 				<div className="md:hidden">
 					<div className=" w-full flex-none  gap-5">
-						<div className="mt-10">
+						<div className="mt-20 ">
 							<h4 className="para-4 text-primary-shade-1 ">
 								{testimonialTitle}
 							</h4>
@@ -123,8 +134,8 @@ export default function Testimonials() {
 					{/* card data from sanity */}
 
 					<div className="hidden z-10 md:flex flex-col items-center justify-center    flex-none gap-2 ">
-						<div className="flex-none  gap-5">
-							<div>
+						<div className="flex-none  gap-5 ">
+							<div className="">
 								<span className=" text-light-1 text-primary-shade-1 ">
 									{testimonialTitle}
 								</span>
@@ -168,7 +179,7 @@ export default function Testimonials() {
 
 					<div
 						ref={carousel}
-						className=" relative flex gap-10   overflow-hidden scroll-smooth snap-x snap-mandatory touch-pan-x z-0"
+						className=" relative flex gap-10 mt-16  overflow-hidden scroll-smooth snap-x snap-mandatory touch-pan-x z-0"
 					>
 						{testimonialCards?.map((reviews, index) => {
 							return (
