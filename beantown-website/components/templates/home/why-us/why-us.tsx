@@ -27,7 +27,7 @@ export default function WhyUs() {
 				maskSize: 'cover',
 			}}
 		>
-			<div className="flex flex-col-reverse md:flex md:flex-row  items-center w-full mt-20  ">
+			<div className="flex flex-col-reverse  md:flex-row   w-full mt-32 md:mt-20  ">
 				<div className=" pt-8  flex flex-col items-start text-justify basis-1/2 ">
 					<h1 className="title-5 md:title-2 text-primary-black ">
 						{whyUsTitle}
@@ -42,7 +42,7 @@ export default function WhyUs() {
 						</Button>
 					</Link>
 				</div>
-				<div className=" mt-12 px-20 basis-1/2">
+				<div className=" pb-44  md:mt-28 px-20 basis-1/2 ">
 					<div className=" relative">
 						<Image
 							src="/whyus-bg-shape.svg"
