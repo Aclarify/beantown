@@ -13,12 +13,15 @@ const ReadMoreReadLess: React.FC<Props> = (props) => {
         setReadMoreShown(previousState => !previousState)
     }
     return (
-        <div>
+			<div>
+				{isReadMoreShown
+					? String(props.content)
+					: String(props.content).substring(0, props.limit)}
 
-            { isReadMoreShown ? props.content: String(props.content).substring(0, props.limit)}
-           
-            <button onClick={toggleBtn}>Read More...</button>
-        </div>
-    )
+				<button onClick={toggleBtn}>
+					<a className='text-blue-600'>{isReadMoreShown ? 'Show Less' :'...Show More'}</a>
+				</button>
+			</div>
+		);
 };
 export default ReadMoreReadLess
