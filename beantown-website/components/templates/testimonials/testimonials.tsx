@@ -78,7 +78,7 @@ export default function Testimonials() {
 
 	return (
 		<>
-			<section id="top-curve-testimonial" className="md:-mt-14 -mt-3 ">
+			<section id="top-curve-testimonial" className="md:-mt-14 -mt-3">
 				<Image
 					src="/testimonial-top-curve.svg"
 					alt="top-curve"
@@ -125,10 +125,10 @@ export default function Testimonials() {
 					</div>
 				</div>
 
-				<div className="flex flex-nowrap overflow-x-auto space-x-4  m-4">
+				<div className="flex flex-nowrap overflow-x-auto space-x-4  m-4 ">
 					{/* card data from sanity */}
 
-					<div className="hidden z-10 md:flex flex-col items-center justify-center m-8   flex-none gap-15 ">
+					<div className="hidden z-10 md:flex flex-col items-center justify-center m-8   flex-none gap-15  ">
 						<div className="flex-none  gap-5 ">
 							<div className="">
 								<span className=" text-light-1 text-primary-shade-1 ">
@@ -174,13 +174,13 @@ export default function Testimonials() {
 
 					<div
 						ref={carousel}
-						className=" relative flex gap-6 mt-16  overflow-hidden scroll-smooth snap-x snap-mandatory touch-pan-x z-0"
+						className="relative flex gap-6 mt-16  overflow-hidden scroll-smooth snap-x snap-mandatory touch-pan-x z-0 cursor-pointer group "
 					>
 						{testimonialCards?.map((reviews, index) => {
 							return (
 								<div
 									key={index}
-									className="relative w-80 h-auto snap-start items-center bg-[#FFFFFF] my-6 p-2 flex-none  border rounded-2xl "
+									className="relative w-80 h-auto snap-start items-center bg-[#FFFFFF] my-6 p-2 flex-none  border rounded-2xl  duration-500  group-hover:scale-[0.85]    hover:!scale-110   "
 								>
 									<TestimonialCard
 										key={index}

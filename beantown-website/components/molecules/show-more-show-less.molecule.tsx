@@ -4,6 +4,7 @@ import React, {  useState } from 'react';
 interface Props {
 	content: any;
     limit:number;
+	// id:number
   
 }
 const ReadMoreReadLess: React.FC<Props> = (props) => {
@@ -18,10 +19,11 @@ const ReadMoreReadLess: React.FC<Props> = (props) => {
 					? String(props.content)
 					: String(props.content).substring(0, props.limit)}
 
-				<div className='h-auto'>
+				<div className="h-auto">
 					<button
+						// key={props.id}
 						onClick={toggleBtn}
-						className="text-blue-600 cursor-pointer p-10"
+						className="text-blue-600 cursor-pointer p-4"
 					>
 						{isReadMoreShown ? 'Show Less' : '...Show More'}
 					</button>

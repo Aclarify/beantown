@@ -1,4 +1,4 @@
-import ReadMoreReadLess from 'components/molecules/read-more-read-less.molecule';
+import ReadMoreReadLess from 'components/molecules/show-more-show-less.molecule';
 import RichText from 'components/molecules/rich-text.molecule';
 import Image from 'next/image';
 import React from 'react';
@@ -6,6 +6,7 @@ interface Props {
 	clientName: string;
 	clientDetails: string;
 	reviewComments: string;
+	
 }
 var blogContent :string;
 const TestimonialCard: React.FC<Props> = (props) => {
@@ -23,7 +24,7 @@ const TestimonialCard: React.FC<Props> = (props) => {
 						src="/images/home_page/testimonialCardsImageUnionVector.svg"
 					/>
 				</div>
-				<div className=" flex flex-col gap-2 items-center pt-10 pb-6 ">
+				<div  className=" flex flex-col gap-2 items-center pt-10 pb-6 ">
 					<div>
 						<h1 className="subtitle-2 md:subtitle-4 text-primary-black">
 							{props.clientName}
