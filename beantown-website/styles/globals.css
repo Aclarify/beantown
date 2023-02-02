@@ -2,7 +2,16 @@
 @tailwind components;
 @tailwind utilities;
 
-@layer base {
+@layer utilities {
+	/* hide for chrome,safari and opera */
+	.no-scrollbar::-webkit-scrollbar{
+		display: none;	
+	}
+	/* IE Edge Firefox */
+	.no-scrollbar{
+		-ms-overflow-style: none;
+		scrollbar-width: none;
+	}
 }
 
 @layer components {
