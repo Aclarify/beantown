@@ -10,6 +10,7 @@ interface Props {
 }
 var blogContent :string;
 const TestimonialCard: React.FC<Props> = (props) => {
+	
 	blogContent = props.reviewComments[0].children[0].text
 	console.log(blogContent)
 
@@ -37,7 +38,7 @@ const TestimonialCard: React.FC<Props> = (props) => {
 					</div>
 					<div className="pt-10 para-4 md:para-3 text-center text-primary-black  overflow-y-scroll ">
 						{/* <RichText value={props.reviewComments} /> */}
-						<ReadMoreReadLess content={blogContent} limit={100} />
+						<ReadMoreReadLess content={blogContent} limit={100}  />
 					</div>
 				</div>
 			</div>
