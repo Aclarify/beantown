@@ -18,7 +18,7 @@ const ReadMoreReadLess: React.FC<Props> = (props) => {
 					? String(props.content)
 					: String(props.content).substring(0, props.limit)}
 
-				<div>
+				<div className='h-auto'>
 					<button
 						onClick={toggleBtn}
 						className="text-blue-600 cursor-pointer p-10"
