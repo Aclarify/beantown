@@ -47,9 +47,9 @@ export default function Testimonials() {
 
 	const movePrevious = () => {
 		if (currentIndex > 0) {
-			console.log('current Index before' + currentIndex);
+			
 			setCurrentIndex((previousState) => previousState - 1);
-			console.log('current Index after click' + currentIndex);
+			
 		}
 	};
 	const moveNext = () => {
@@ -66,9 +66,7 @@ export default function Testimonials() {
 		}
 
 		if (direction === 'next' && carousel.current !== null) {
-			console.log('current offsetWidth ' + carousel.current.offsetWidth);
-			console.log('current Index ' + currentIndex);
-			console.log('max Scroll width ' + maxScrollWidth.current);
+			
 			return (
 				carousel.current.offsetWidth * currentIndex >= maxScrollWidth.current
 			);
@@ -179,13 +177,13 @@ export default function Testimonials() {
 
 					<div
 						ref={carousel}
-						className=" relative flex gap-10 mt-16  overflow-hidden scroll-smooth snap-x snap-mandatory touch-pan-x z-0"
+						className=" relative flex gap-6 mt-16  overflow-hidden scroll-smooth snap-x snap-mandatory touch-pan-x z-0"
 					>
 						{testimonialCards?.map((reviews, index) => {
 							return (
 								<div
 									key={index}
-									className="relative w-96 h-120 snap-start items-center bg-[#FFFFFF] my-6 p-4 flex-none gap-2 border rounded-xl "
+									className="relative w-80 h-120 snap-start items-center bg-[#FFFFFF] my-6 p-2 flex-none  border rounded-2xl "
 								>
 									<TestimonialCard
 										key={index}

@@ -1,3 +1,4 @@
+import ReadMoreReadLess from 'components/molecules/read-more-read-less.molecule';
 import RichText from 'components/molecules/rich-text.molecule';
 import Image from 'next/image';
 import React from 'react';
@@ -31,7 +32,8 @@ const TestimonialCard: React.FC<Props> = (props) => {
 						</h4>
 					</div>
 					<div className="pt-10 para-4 md:para-3 text-center text-primary-black h-[40vh] overflow-y-scroll ">
-						<RichText value={props.reviewComments} />
+						 <RichText value={props.reviewComments} />
+						{/* <ReadMoreReadLess content = {props.reviewComments}  limit ={200}/> */}
 					</div>
 				</div>
 			</div>
