@@ -18,9 +18,14 @@ const ReadMoreReadLess: React.FC<Props> = (props) => {
 					? String(props.content)
 					: String(props.content).substring(0, props.limit)}
 
-				<button onClick={toggleBtn}>
-					<a className='text-blue-600'>{isReadMoreShown ? 'Show Less' :'...Show More'}</a>
-				</button>
+				<div>
+					<button
+						onClick={toggleBtn}
+						className="text-blue-600 cursor-pointer p-10"
+					>
+						{isReadMoreShown ? 'Show Less' : '...Show More'}
+					</button>
+				</div>
 			</div>
 		);
 };

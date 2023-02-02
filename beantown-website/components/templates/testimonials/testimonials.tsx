@@ -16,7 +16,7 @@ import { GlobalContext } from '@contexts/global/global.context';
 import { GlobalContextProps } from '@typing/common/interfaces/contexts.interface';
 import { HomePageContentProps } from 'pages';
 import RichText from 'components/molecules/rich-text.molecule';
-import Image from 'next/image'
+import Image from 'next/image';
 
 export default function Testimonials() {
 	const [currentIndex, setCurrentIndex] = useState(0);
@@ -47,9 +47,7 @@ export default function Testimonials() {
 
 	const movePrevious = () => {
 		if (currentIndex > 0) {
-			
 			setCurrentIndex((previousState) => previousState - 1);
-			
 		}
 	};
 	const moveNext = () => {
@@ -66,7 +64,6 @@ export default function Testimonials() {
 		}
 
 		if (direction === 'next' && carousel.current !== null) {
-			
 			return (
 				carousel.current.offsetWidth * currentIndex >= maxScrollWidth.current
 			);
@@ -81,7 +78,7 @@ export default function Testimonials() {
 
 	return (
 		<>
-			<section id="top-curve-testimonial" className="md:-mt-14 -mt-3">
+			<section id="top-curve-testimonial" className="md:-mt-14 -mt-3 ">
 				<Image
 					src="/testimonial-top-curve.svg"
 					alt="top-curve"
@@ -128,10 +125,10 @@ export default function Testimonials() {
 					</div>
 				</div>
 
-				<div className="flex flex-nowrap overflow-x-auto space-x-4   ">
+				<div className="flex flex-nowrap overflow-x-auto space-x-4  m-4">
 					{/* card data from sanity */}
 
-					<div className="hidden z-10 md:flex flex-col items-center justify-center    flex-none gap-2 ">
+					<div className="hidden z-10 md:flex flex-col items-center justify-center m-8   flex-none gap-15 ">
 						<div className="flex-none  gap-5 ">
 							<div className="">
 								<span className=" text-light-1 text-primary-shade-1 ">
@@ -144,8 +141,8 @@ export default function Testimonials() {
 								</span>
 							</div>
 						</div>
-						<div className="flex flex-col items-center justify-center  ">
-							<div className="flex gap-2 m-4 ">
+						<div className="flex flex-col items-center justify-center m-4 ">
+							<div className="flex gap-4 m-4 ">
 								{testimonialCards?.map((cards, index) => {
 									return (
 										<button
@@ -183,7 +180,7 @@ export default function Testimonials() {
 							return (
 								<div
 									key={index}
-									className="relative w-80 h-120 snap-start items-center bg-[#FFFFFF] my-6 p-2 flex-none  border rounded-2xl "
+									className="relative w-80 h-auto snap-start items-center bg-[#FFFFFF] my-6 p-2 flex-none  border rounded-2xl "
 								>
 									<TestimonialCard
 										key={index}
