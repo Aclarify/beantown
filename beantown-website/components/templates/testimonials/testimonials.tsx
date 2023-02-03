@@ -108,7 +108,7 @@ export default function Testimonials() {
 				</div>
 				<div
 					id="left-blob-mobile"
-					className="md:hidden block relative  place-content-end ml-44  bottom-[12rem]  h-0 z-10"
+					className="sm:hidden block relative  place-content-end ml-44  bottom-[12rem]  h-0 z-10"
 				>
 					<Image
 						src="/testimonial-right-half-blob.svg"
