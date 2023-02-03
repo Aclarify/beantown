@@ -27,7 +27,7 @@ const FAQDisclosure: React.FC<Props> = (props) => {
 							</Disclosure.Button>
 							<Disclosure.Panel className="p-4 para-4 md:para-3 text-primary-shade-1 bg-white">
 								<div className="border-t-2 pt-2">
-									<RichText value={props.faqAnswer} />
+									<span>{props.faqAnswer} </span>
 								</div>
 							</Disclosure.Panel>
 						</div>

@@ -73,9 +73,7 @@ const homeQuery = ` allHome {
 			testimonialCards {
 				titleText
 				subText
-				description {
-					contentRaw
-				}
+				description 
 			}
 			serviceAreaTitle
 			serviceAreaDescription
@@ -123,9 +121,7 @@ const homeQuery = ` allHome {
 			faqList {
 				titleText
 				subText
-				description {
-					contentRaw
-				}
+				description
 			}
 			ctaTitle
 			ctaDescription {

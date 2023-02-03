@@ -59,7 +59,7 @@ export default function Faq() {
 										<FAQDisclosure
 											isOpen={index == 0}
 											faq={faqs?.titleText || ''}
-											faqAnswer={faqs?.description?.contentRaw}
+											faqAnswer={faqs?.description || ''}
 										/>
 									</div>
 								);

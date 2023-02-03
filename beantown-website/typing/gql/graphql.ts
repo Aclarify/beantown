@@ -1497,7 +1497,7 @@ export type TitleDescription = {
   __typename?: 'TitleDescription';
   _key?: Maybe<Scalars['String']>;
   _type?: Maybe<Scalars['String']>;
-  description?: Maybe<PortableText>;
+  description?: Maybe<Scalars['String']>;
   subText?: Maybe<Scalars['String']>;
   titleText?: Maybe<Scalars['String']>;
 };
@@ -1505,7 +1505,7 @@ export type TitleDescription = {
 export type TitleDescriptionFilter = {
   _key?: InputMaybe<StringFilter>;
   _type?: InputMaybe<StringFilter>;
-  description?: InputMaybe<PortableTextFilter>;
+  description?: InputMaybe<StringFilter>;
   subText?: InputMaybe<StringFilter>;
   titleText?: InputMaybe<StringFilter>;
 };
@@ -1580,7 +1580,7 @@ export type TitleDescriptionImageSorting = {
 export type TitleDescriptionSorting = {
   _key?: InputMaybe<SortOrder>;
   _type?: InputMaybe<SortOrder>;
-  description?: InputMaybe<PortableTextSorting>;
+  description?: InputMaybe<SortOrder>;
   subText?: InputMaybe<SortOrder>;
   titleText?: InputMaybe<SortOrder>;
 };

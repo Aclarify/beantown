@@ -191,7 +191,7 @@ export default function Testimonials() {
 										key={index}
 										clientName={reviews?.titleText || ''}
 										clientDetails={reviews?.subText || ''}
-										reviewComments={reviews?.description?.contentRaw}
+										reviewComments={reviews?.description || ''}
 									/>
 								</div>
 							);
