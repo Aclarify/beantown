@@ -78,14 +78,14 @@ export default function Testimonials() {
 
 	return (
 		<>
-			<section id="top-curve-testimonial" className="md:-mt-14 -mt-3">
+			{/* <section id="top-curve-testimonial" className="md:-mt-14 -mt-3">
 				<Image
 					src="/testimonial-top-curve.svg"
 					alt="top-curve"
 					width={1900}
 					height={800}
 				></Image>
-			</section>
+			</section> */}
 			<section
 				id="testimonials-cards"
 				className=" md:px-10  bg-secondary-shade-3"
@@ -186,7 +186,7 @@ export default function Testimonials() {
 										key={index}
 										clientName={reviews?.titleText || ''}
 										clientDetails={reviews?.subText || ''}
-										reviewComments={reviews?.description?.contentRaw}
+										reviewComments={reviews?.description || ''}
 									/>
 								</div>
 							);
