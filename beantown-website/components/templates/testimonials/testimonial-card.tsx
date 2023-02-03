@@ -31,7 +31,7 @@ const TestimonialCard: React.FC<Props> = (props) => {
 						</h4>
 					</div>
 					<div className="pt-10 para-4 md:para-3 text-center text-primary-black h-[40vh] overflow-y-scroll ">
-						<RichText value={props.reviewComments} />
+						<span>{props.reviewComments} </span>
 					</div>
 				</div>
 			</div>

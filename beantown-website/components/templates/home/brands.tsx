@@ -1,4 +1,4 @@
-import  { useContext } from 'react';
+import { useContext } from 'react';
 import React from 'react';
 import { GlobalContext } from '@contexts/global/global.context';
 import { GlobalContextProps } from '@typing/common/interfaces/contexts.interface';
@@ -15,7 +15,6 @@ export default function Brands() {
 	}
 	const homeData = pageContent.home[0];
 	const { clientsLogo, brandsTitle } = homeData;
-
 
 	const responsive = {
 		superLargeDesktop: {
@@ -40,12 +39,12 @@ export default function Brands() {
 		<section
 			id="brand"
 			className="bg-white"
-			style={{
-				WebkitMaskImage: "url('./brand-top-wave-mask.svg')",
-				WebkitMaskSize: 'cover',
-				maskImage: "url('./brand-top-wave-mask.svg')",
-				maskSize: 'cover',
-			}}
+			// style={{
+			// 	WebkitMaskImage: "url('./brand-top-wave-mask.svg')",
+			// 	WebkitMaskSize: 'cover',
+			// 	maskImage: "url('./brand-top-wave-mask.svg')",
+			// 	maskSize: 'cover',
+			// }}
 		>
 			<div className="flex  justify-center pt-10">
 				<span className="title-6 md:title-3 text-primary-black p-4 m-4">
@@ -60,13 +59,13 @@ export default function Brands() {
 					autoPlay={true}
 					infinite
 					autoPlaySpeed={2000}
-					 removeArrowOnDeviceType={['tablet', 'desktop','mobile']}
+					removeArrowOnDeviceType={['tablet', 'desktop', 'mobile']}
 				>
 					{clientsLogo?.map((logo, index) => {
 						return (
 							logo &&
 							logo.image && (
-								<div key={index} className='flex justify-center'>
+								<div key={index} className="flex justify-center">
 									<Image
 										alt={logo?.image?.asset?.altText || ''}
 										width={200}

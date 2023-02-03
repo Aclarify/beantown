@@ -16,7 +16,7 @@ import { GlobalContext } from '@contexts/global/global.context';
 import { GlobalContextProps } from '@typing/common/interfaces/contexts.interface';
 import { HomePageContentProps } from 'pages';
 import RichText from 'components/molecules/rich-text.molecule';
-import Image from 'next/image'
+import Image from 'next/image';
 
 export default function Testimonials() {
 	const [currentIndex, setCurrentIndex] = useState(0);
@@ -83,14 +83,14 @@ export default function Testimonials() {
 
 	return (
 		<>
-			<section id="top-curve-testimonial" className="md:-mt-14 -mt-3">
+			{/* <section id="top-curve-testimonial" className="md:-mt-14 -mt-3">
 				<Image
 					src="/testimonial-top-curve.svg"
 					alt="top-curve"
 					width={1900}
 					height={800}
 				></Image>
-			</section>
+			</section> */}
 			<section
 				id="testimonials-cards"
 				className=" md:px-10  bg-secondary-shade-3"
@@ -191,7 +191,7 @@ export default function Testimonials() {
 										key={index}
 										clientName={reviews?.titleText || ''}
 										clientDetails={reviews?.subText || ''}
-										reviewComments={reviews?.description?.contentRaw}
+										reviewComments={reviews?.description || ''}
 									/>
 								</div>
 							);
