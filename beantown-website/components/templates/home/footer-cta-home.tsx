@@ -18,7 +18,16 @@ export default function FooterCta() {
 	const imagePath = ctaImage?.asset?.url;
 	return (
 		<>
-			<section id="footerCtaDesktop" className="hidden sm:block">
+			<section
+				id="footerCtaDesktop"
+				className="hidden sm:block relative z-10 top-[5em]"
+				style={{
+					WebkitMaskImage: "url('./footer-cta-wave.svg')",
+					WebkitMaskSize: 'cover',
+					maskImage: "url('./footer-cta-wave.svg')",
+					maskSize: 'cover',
+				}}
+			>
 				<div className="flex  flex-row bg-white">
 					<div
 						id="content"

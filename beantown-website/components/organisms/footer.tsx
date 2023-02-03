@@ -33,7 +33,7 @@ export default function Footer() {
 		<section id="footer">
 			<div
 				id="footerContainer"
-				className="flex flex-col md:grid md:grid-cols-5   w-full h-auto bg-primary-shade-1   p-6 md:px-10"
+				className="flex flex-col md:grid md:grid-cols-5 w-full h-auto bg-primary-shade-1  px-6 pt-20 md:px-10"
 			>
 				<div
 					id="linkSection"

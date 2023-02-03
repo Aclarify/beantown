@@ -19,20 +19,20 @@ export default function WhyUs() {
 	return (
 		<section
 			id="whyUs"
-			className=" p-6 md:px-10 flex flex-col mt-30 bg-primary-white-shade-1 "
+			className=" p-6 md:px-10 flex flex-col mt-30 bg-primary-white-shade-1 h-[1620px] "
 			style={{
-				WebkitMaskImage: "url('./why-us-wave-mask.svg')",
+				WebkitMaskImage: "url('./why-us-wave.svg')",
 				WebkitMaskSize: 'cover',
-				maskImage: "url('./why-us-wave-mask.svg')",
+				maskImage: "url('./why-us-wave.svg')",
 				maskSize: 'cover',
 			}}
 		>
 			<div className="flex flex-col-reverse md:flex md:flex-row  items-center w-full mt-20  ">
-				<div className=" pt-8  flex flex-col items-start text-justify basis-1/2 ">
+				<div className=" lg:pt-20  flex flex-col items-start text-justify basis-1/2 ">
 					<h1 className="title-5 md:title-2 text-primary-black ">
 						{whyUsTitle}
 					</h1>
-					<div className="md:para-2 para-4 text-primary-shade-1 text-left pb-4">
+					<div className="md:para-2 para-4 text-primary-shade-1 text-left lg:py-10">
 						<RichText value={whyUsDescription?.contentRaw} />
 					</div>
 
@@ -42,12 +42,12 @@ export default function WhyUs() {
 						</Button>
 					</Link>
 				</div>
-				<div className="mt-12 px-20 basis-1/2">
+				<div className="lg:mt-12 px-20 basis-1/2">
 					<Image
 						src={whyUsImage?.asset?.url || ''}
 						alt={whyUsImage?.asset?.altText || ''}
-						width="800"
-						height="800"
+						width="1000"
+						height="1000"
 						style={{
 							WebkitMaskImage: "url('./why-us-mask.svg')",
 							WebkitMaskSize: 'cover',
@@ -58,7 +58,7 @@ export default function WhyUs() {
 				</div>
 			</div>
 
-			<div className="py-6 grid grid-cols-1 md:grid-cols-2 gap-2 mb-10">
+			<div className="py-6 grid grid-cols-1 md:grid-cols-2 gap-2    lg:mt-20">
 				{whyUsCards?.map((ourValues, index) => {
 					return (
 						ourValues?.image && (

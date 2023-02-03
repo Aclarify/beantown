@@ -15,7 +15,7 @@ const ServiceCard: React.FC<Props> = (props) => {
 	return (
 		<div
 			id="card-container"
-			className="flex-col  bg-white rounded-lg shadow-lg mb-10 "
+			className="flex-col  bg-white rounded-lg shadow-lg  "
 		>
 			<div id="image-container" className="basis-3/4 ">
 				<Image

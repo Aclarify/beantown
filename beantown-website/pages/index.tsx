@@ -39,9 +39,9 @@ const HomePage: React.FC = () => {
 			<Testimonials />
 			<div
 				style={{
-					WebkitMaskImage: "url('./service-area-wave-mask.svg')",
+					WebkitMaskImage: "url('./service-area-wave.svg')",
 					WebkitMaskSize: 'cover',
-					maskImage: "url('./service-area-wave-mask.svg')",
+					maskImage: "url('./service-area-wave.svg')",
 					maskSize: 'cover',
 				}}
 			>
