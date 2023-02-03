@@ -30,7 +30,7 @@ export default function Blogs() {
 					return (
 						<div
 							key={index}
-							className="flex-none w-[250px]  md:w-1/3  snap-always snap-start  "
+							className="flex-none w-[250px]    md:w-1/3  snap-always snap-start  "
 						>
 							<BlogCard
 								blogName={blog?.name || ''}
