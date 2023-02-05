@@ -27,7 +27,7 @@ export default function Faq() {
 				// 	maskSize: 'cover',
 				// }}
 			>
-				{/* <div id="faq-wave" className="md:-mt-14 -mt-3">
+				{/* <div id="faq-wave" className="lg:-mt-14 -mt-3">
 					<Image
 						src="/home-faq-wave.svg"
 						alt="faq-wave-mask"
@@ -35,13 +35,13 @@ export default function Faq() {
 						height={800}
 					></Image>
 				</div> */}
-				<div className=" p-6 md:px-10  mt-16  bg-[url('../public/home-faq-mask-shape.svg')] bg-cover flex items-center align-middle  ">
-					<div className="md:flex">
-						<div className=" md:text-left text-center flex flex-col justify-center">
-							<h1 className=" title-5 md:title-2 text-primary-black mt-10 ">
+				<div className=" p-6 lg:px-10  mt-16  bg-[url('../public/home-faq-mask-shape.svg')] bg-cover flex items-center align-middle  ">
+					<div className="lg:flex">
+						<div className=" lg:text-left text-center flex flex-col justify-center">
+							<h1 className=" title-5 lg:title-2 text-primary-black mt-10 ">
 								{faqTitle}
 							</h1>
-							<p className="flex para-4 md:para-2 text-primary-shade-1 my-4 flex-wrap md:w-2/3">
+							<p className="flex para-4 lg:para-2 text-primary-shade-1 my-4 flex-wrap lg:w-2/3">
 								{faqDescription}
 							</p>
 

@@ -19,8 +19,8 @@ export default function HomeHero() {
 		<section id="home_page_hero ">
 			<div className="flex-shrink-0 flex flex-col justify-center">
 				<div className="space-y-2 absolute w-3/4 md:w-2/3 text-white px-6 md:px-10 align-middle z-10">
-					<h1 className="title-4 md:title-1">{heroTitle}</h1>
-					<div className="para-4 md:para-2">
+					<h1 className="title-4 lg:title-1">{heroTitle}</h1>
+					<div className="para-4 lg:para-2">
 						<RichText value={heroDescription?.contentRaw} />
 					</div>
 

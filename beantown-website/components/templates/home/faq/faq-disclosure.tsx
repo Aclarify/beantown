@@ -17,7 +17,7 @@ const FAQDisclosure: React.FC<Props> = (props) => {
 								open ? 'bg-white' : 'bg-transparent border rounded-lg'
 							} `}
 						>
-							<Disclosure.Button className="flex w-full justify-between rounded-lg  px-4 py-2 text-left subtitle-4 md:subtitle-2 text-primary-shade-1 hover:bg-black-200 focus:outline-none focus-visible:ring focus-visible:ring-black-500 focus-visible:ring-opacity-75">
+							<Disclosure.Button className="flex w-full justify-between rounded-lg  px-4 py-2 text-left subtitle-4 lg:subtitle-2 text-primary-shade-1 hover:bg-black-200 focus:outline-none focus-visible:ring focus-visible:ring-black-500 focus-visible:ring-opacity-75">
 								<span>{props.faq}</span>
 								<ChevronDownIcon
 									className={`${
@@ -25,7 +25,7 @@ const FAQDisclosure: React.FC<Props> = (props) => {
 									} h-5 w-5 text-black-500`}
 								/>
 							</Disclosure.Button>
-							<Disclosure.Panel className="p-4 para-4 md:para-3 text-primary-shade-1 bg-white">
+							<Disclosure.Panel className="p-4 para-4 lg:para-3 text-primary-shade-1 bg-white">
 								<div className="border-t-2 pt-2">
 									<span>{props.faqAnswer} </span>
 								</div>
