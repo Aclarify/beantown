@@ -6,13 +6,11 @@ interface Props {
 	clientName: string;
 	clientDetails: string;
 	reviewComments: string;
-	
 }
-var blogContent :string;
+let blogContent: string;
 const TestimonialCard: React.FC<Props> = (props) => {
-	
-	 blogContent = props.reviewComments
-	 console.log(blogContent)
+	blogContent = props.reviewComments;
+	console.log(blogContent);
 
 	return (
 		<section id="testimonialCard">
@@ -25,7 +23,7 @@ const TestimonialCard: React.FC<Props> = (props) => {
 						src="/images/home_page/testimonialCardsImageUnionVector.svg"
 					/>
 				</div>
-				<div  className="flex flex-col gap-2 items-center pt-10 pb-6">
+				<div className="flex flex-col gap-2 items-center pt-10 pb-6">
 					<div>
 						<h1 className="subtitle-2 md:subtitle-4 text-primary-black">
 							{props.clientName}
