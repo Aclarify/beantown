@@ -37,7 +37,7 @@ const TestimonialCard: React.FC<Props> = (props) => {
 						</h4>
 					</div>
 					<div className="pt-10 para-4 md:para-3 text-center text-primary-black  overflow-y-scroll ">
-						<span>{props.reviewComments} </span>
+						
 						<ReadMoreReadLess content={props.reviewComments} limit={50}/>
 					</div>
 				</div>
