@@ -54,6 +54,7 @@ export default function WhyUs() {
 							maskImage: "url('./why-us-mask.svg')",
 							maskSize: 'cover',
 						}}
+						className="aspect-w-16 aspect-h-9 mt-24"
 					/>
 				</div>
 			</div>
