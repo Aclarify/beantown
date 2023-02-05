@@ -35,7 +35,7 @@ export default function Nav() {
 
 	return (
 		<>
-			<section className="absolute w-full  lg:px-10">
+			<section className="absolute w-full lg:max-w-screen-2xl  lg:px-10">
 				<Popover className="relative z-30">
 					<div className="mx-auto px-4  justify-between items-center ">
 						<div className="flex  py-6 lg:py-0 justify-between lg:justify-start ">
@@ -55,7 +55,7 @@ export default function Nav() {
 									src={logo?.asset?.url || ''}
 								/>
 							</div>
-							<div className="-my-2 -mr-2 lg:hidden">
+							<div className="-my-2  lg:hidden">
 								<Popover.Button className="inline-flex rounded-md bg-white p-2 text-black  ">
 									<Bars3Icon className="h-6 w-6" aria-hidden="true" />
 								</Popover.Button>
