@@ -46,18 +46,18 @@ export default function ServiceAreas() {
 					></Image>
 					<div
 						id="service-area-outer-container"
-						className="bg-primary-white-shade-1 relative top-[-20px] left-2 w-[95%] bottom-[20%] md:absolute  md:p-10 md:inset-x-1/2 md:top-[15%] md:h-2/3 md:w-1/2  md:rounded-3xl "
+						className="bg-primary-white-shade-1 relative top-[-20px] left-2 w-[95%] bottom-[20%] md:absolute  md:p-6 md:inset-x-1/2 md:top-[15%] md:h-3/4 md:w-1/2  md:rounded-3xl "
 					>
 						<div
-							id="service-areas-inner-container p-4"
-							className="bg-white rounded-2xl"
+							id="service-areas-inner-container"
+							className="bg-white rounded-2xl shadow-md"
 						>
 							<h1 className="subtitle-6 md:subtitle-3 text-primary-black pl-6 pb-2 ">
 								{serviceAreas?.title}
 							</h1>
 							<div
 								id="service-area-container"
-								className="grid grid-cols-2 mx-6 h-auto "
+								className="grid grid-cols-2 mx-6 h-auto md:my-4"
 							>
 								{serviceAreas?.listItem?.map((serviceArea, index) => {
 									return (
