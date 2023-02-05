@@ -27,8 +27,8 @@ export default function WhyUs() {
 				maskSize: 'cover',
 			}}
 		>
-			<div className="flex flex-col-reverse  md:flex md:flex-row  items-center w-full md:mt-20 ">
-				<div className=" md:mt-20 flex flex-col items-start text-justify basis-1/2 ">
+			<div className=" mt-96  flex flex-col-reverse   sm:flex sm:flex-row  items-center w-full md:mt-20 ">
+				<div className=" md:mt-10 flex flex-col items-start text-justify basis-1/2  ">
 					<div className="">
 						<h1 className="title-5 md:title-2 text-primary-black ">
 							{whyUsTitle}
@@ -44,28 +44,30 @@ export default function WhyUs() {
 						</Link>
 					</div>
 				</div>
-				<div className=" px-20 md:mt-20 basis-1/2  ">
-					<div className="aspect-w-16 aspect-h-9  relative flex items-center  ">
-						<Image
-							src={'/whyus-bg-shape.svg'}
-							alt={'Background  vector Shapes'}
-							width="1000"
-							height="700"
-							className="aspect-w-16 aspect-h-9  absolute "
-						/>
-						<Image
-							src={whyUsImage?.asset?.url || ''}
-							alt={whyUsImage?.asset?.altText || ''}
-							width="1000"
-							height="700"
-							style={{
-								WebkitMaskImage: "url('./why-us-mask.svg')",
-								WebkitMaskSize: 'cover',
-								maskImage: "url('./why-us-mask.svg')",
-								maskSize: 'cover',
-							}}
-							className="aspect-w-16 aspect-h-9  absolute "
-						/>
+				<div className="md:px-20 py-20  md:mt-10 basis-1/2 mt-20  ">
+					<div className=" relative flex items-center  ">
+						<div className="aspect-w-16 aspect-h-9 absolute ">
+							<Image
+								src={'/whyus-bg-shape.svg'}
+								alt={'Background  vector Shapes'}
+								width="1000"
+								height="700"
+							/>
+						</div>
+						<div className="aspect-w-16 aspect-h-9  absolute ">
+							<Image
+								src={whyUsImage?.asset?.url || ''}
+								alt={whyUsImage?.asset?.altText || ''}
+								width="1000"
+								height="700"
+								style={{
+									WebkitMaskImage: "url('./why-us-mask.svg')",
+									WebkitMaskSize: 'cover',
+									maskImage: "url('./why-us-mask.svg')",
+									maskSize: 'cover',
+								}}
+							/>
+						</div>
 					</div>
 				</div>
 			</div>

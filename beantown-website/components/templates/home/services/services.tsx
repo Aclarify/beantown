@@ -61,7 +61,7 @@ export default function Services() {
 					></Image>
 				</div> */}
 
-				<div className="flex flex-wrap md:flex-nowrap md:space-x-20 space-y-4 md:space-y-0 justify-center py-4 relative z-10">
+				<div className="flex flex-wrap md:flex-nowrap md:space-x-20 space-y-4 md:space-y-0 justify-center py-4 relative z-10 ">
 					{servicesGroup?.map((service, index) => {
 						return (
 							service?.thumbnailImage?.asset?.url && (
