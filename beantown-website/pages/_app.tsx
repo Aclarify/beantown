@@ -54,7 +54,7 @@ export default function App({ Component, pageProps }: AppProps) {
 		<>
 			<ApolloProvider client={graphQLClient}>
 				<main
-					className={`${neuePlak.className} tracking-wide lg:tracking-wider bg-secondary-shade-3`}
+					className={`${neuePlak.className} tracking-wide lg:tracking-wider bg-secondary-shade-3 max-w-screen-2xl mx-auto`}
 				>
 					<Component {...pageProps} />
 				</main>
