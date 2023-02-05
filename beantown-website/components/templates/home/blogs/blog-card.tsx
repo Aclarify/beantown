@@ -20,17 +20,17 @@ const BlogCard: React.FC<Props> = (props) => {
 						alt={props.thumbnailAltText}
 						width="600"
 						height="600"
-						className=" border-green-600 border-2 rounded-3xl"
+						className="  border-2 rounded-3xl"
 					/>
 				</div>
-				<p className="py-4 title-7 md:title-5 text-primary-black">
+				<p className="py-4 title-7 lg:title-5 text-primary-black">
 					{props.blogName}
 				</p>
-				<div className="para-4 md:para-2 mb-4 text-primary-shade-1">
+				<div className="para-4 lg:para-2 mb-4 text-primary-shade-1">
 					<RichText value={props.blogDescription} />
 				</div>
-				<div className="md:p-6 flex justify-between align-middle">
-					<button className="para-4 md:para-2 text-primary-black underline ">
+				<div className="lg:p-6 flex justify-between align-middle">
+					<button className="para-4 lg:para-2 text-primary-black underline ">
 						{props.buttonText}
 					</button>
 

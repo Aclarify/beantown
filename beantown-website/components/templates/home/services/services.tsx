@@ -16,11 +16,11 @@ export default function Services() {
 
 	const { servicesTitle, servicesDescription, servicesGroup } = homeData;
 	return (
-		<section id="services" className="mt-10 md:my-20">
-			<div className="px-6 md:px-10 bg-secondary-shade-3 ">
+		<section id="services" className="mt-10 lg:my-20">
+			<div className="px-6 lg:px-10 bg-secondary-shade-3 ">
 				<div
 					id="left-blob-mobile"
-					className="md:hidden block relative bottom-[1rem] right-[5em] h-0"
+					className="lg:hidden block relative bottom-[1rem] right-[5em] h-0"
 				>
 					<Image
 						src="/blob-shape-1.svg"
@@ -30,17 +30,17 @@ export default function Services() {
 					></Image>
 				</div>
 				<div className="flex flex-col items-center my-4 relative z-10">
-					<h1 className=" title-5 md:title-2 mb-4 text-primary-black">
+					<h1 className=" title-5 lg:title-2 mb-4 text-primary-black">
 						{servicesTitle}
 					</h1>
-					<div className="md:para-2 para-4 text-center text-primary-shade-1 flex-wrap">
+					<div className="lg:para-2 para-4 text-center text-primary-shade-1 flex-wrap">
 						<RichText value={servicesDescription?.contentRaw} />
 					</div>
 				</div>
 				{/* TODO Fix right blob */}
 				{/* <div
 					id="right-blob-mobile"
-					className="md:hidden block relative bottom-40 h-0"
+					className="lg:hidden block relative bottom-40 h-0"
 				>
 					<Image
 						src="/blob-shape-1.svg"
@@ -51,7 +51,7 @@ export default function Services() {
 				</div> */}
 				{/* <div
 					id="right-blob"
-					className="hidden md:block relative bottom-[32rem] right-36 left-[88vw] h-0"
+					className="hidden lg:block relative bottom-[32rem] right-36 left-[88vw] h-0"
 				>
 					<Image
 						src="/blob-shape-1.svg"
@@ -61,7 +61,7 @@ export default function Services() {
 					></Image>
 				</div> */}
 
-				<div className="flex flex-wrap md:flex-nowrap md:space-x-20 space-y-4 md:space-y-0 justify-center py-4 relative z-10 ">
+				<div className="flex flex-wrap lg:flex-nowrap lg:space-x-20 space-y-4 lg:space-y-0 justify-center py-4 relative z-10">
 					{servicesGroup?.map((service, index) => {
 						return (
 							service?.thumbnailImage?.asset?.url && (
@@ -81,7 +81,7 @@ export default function Services() {
 				</div>
 				<div
 					id="left-blob"
-					className="hidden md:block relative bottom-[20rem] right-[36rem] h-0"
+					className="hidden lg:block relative bottom-[20rem] right-[36rem] h-0"
 				>
 					<Image
 						src="/blob-shape-1.svg"

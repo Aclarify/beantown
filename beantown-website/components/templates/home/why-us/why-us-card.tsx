@@ -21,10 +21,10 @@ const WhyUsCard: React.FC<Props> = (props) => {
 					/>
 				</div>
 				<div className=" pl-4 flex-1">
-					<h1 className="subtitle-5 md:subtitle-2 font-semibold text-primary-black ">
+					<h1 className="subtitle-5 lg:subtitle-2 font-semibold text-primary-black ">
 						{props.title}
 					</h1>
-					<div className="md:para-2 para-4  text-gray-shade-1 pt-2">
+					<div className="lg:para-2 para-4  text-gray-shade-1 pt-2">
 						<RichText value={props.description} />
 					</div>
 				</div>

@@ -35,11 +35,11 @@ export default function Nav() {
 
 	return (
 		<>
-			<section className="absolute w-full  md:px-10">
+			<section className="absolute w-full lg:max-w-screen-2xl  lg:px-10">
 				<Popover className="relative z-30">
 					<div className="mx-auto px-4  justify-between items-center ">
-						<div className="flex  py-6 lg:py-0 justify-between md:justify-start ">
-							<div className="hidden md:flex align-middle ">
+						<div className="flex  py-6 lg:py-0 justify-between lg:justify-start ">
+							<div className="hidden lg:flex align-middle ">
 								<Image
 									alt={logo?.asset?.altText || ''}
 									width={200}
@@ -47,7 +47,7 @@ export default function Nav() {
 									src={logo?.asset?.url || ''}
 								/>
 							</div>
-							<div className="flex align-middle md:hidden">
+							<div className="flex align-middle lg:hidden">
 								<Image
 									alt={logo?.asset?.altText || ''}
 									width={100}
@@ -55,12 +55,12 @@ export default function Nav() {
 									src={logo?.asset?.url || ''}
 								/>
 							</div>
-							<div className="-my-2 -mr-2 md:hidden">
+							<div className="-my-2  lg:hidden">
 								<Popover.Button className="inline-flex rounded-md bg-white p-2 text-black  ">
 									<Bars3Icon className="h-6 w-6" aria-hidden="true" />
 								</Popover.Button>
 							</div>
-							<div className="hidden md:justify-center md:flex md:flex-grow text-white items-center para-4 md:para-3 ">
+							<div className="hidden lg:justify-center lg:flex lg:flex-grow text-white items-center para-4 lg:para-3 ">
 								{navLinks?.map((link, index) => {
 									return (
 										<Link
@@ -80,7 +80,7 @@ export default function Nav() {
 												href={'/'}
 												className="outline-none focus:outline-none  px-3 py-1  rounded-sm flex items-center min-w-32"
 											>
-												<span className="pr-1 flex-1 para-4 md:para-3 ">
+												<span className="pr-1 flex-1 para-4 lg:para-3 ">
 													{linkGroup?.groupTitle}
 												</span>
 												<span>
@@ -97,7 +97,7 @@ export default function Nav() {
 												{linkGroup?.links?.map((link, index) => {
 													return (
 														<Link key={index} href={link?.href || '/'}>
-															<li className="rounded-sm px-3 py-1 para-4 md:para-3 ">
+															<li className="rounded-sm px-3 py-1 para-4 lg:para-3 ">
 																{link?.linkText}
 															</li>
 														</Link>
@@ -108,7 +108,7 @@ export default function Nav() {
 									);
 								})}
 							</div>
-							<div className="hidden md:justify-center md:flex md:flex-grow">
+							<div className="hidden lg:justify-center lg:flex lg:flex-grow">
 								<Link href={'/'}>
 									<Button fontColor="text-primary-shade-1" bgColor="bg-white">
 										{headerButton?.text}
@@ -129,7 +129,7 @@ export default function Nav() {
 					>
 						<Popover.Panel
 							focus
-							className="absolute inset-x-0 top-0 origin-top-right transform p-2 transition md:hidden"
+							className="absolute inset-x-0 top-0 origin-top-right transform p-2 transition lg:hidden"
 						>
 							<div className="rounded-lg bg-primary-white-shade-1">
 								<div className="px-5 pt-5 pb-6">
