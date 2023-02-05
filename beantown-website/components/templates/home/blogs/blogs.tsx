@@ -17,21 +17,21 @@ export default function Blogs() {
 	const homeData = pageContent.home[0];
 	const { blogTitle, blogDescription, blogCards, blogButton } = homeData;
 	return (
-		<section id="blogs" className="flex flex-col pl-6 md:px-10 bg-[#FEFEFE]  ">
+		<section id="blogs" className="flex flex-col pl-6 lg:px-10 bg-[#FEFEFE]  ">
 			<div className="">
-				<div className="title-5 md:title-2 text-primary-black text-center">
+				<div className="title-5 lg:title-2 text-primary-black text-center">
 					<h1>{blogTitle}</h1>
 				</div>
-				<div className="para-4 md:para-2 text-primary-shade-1 text-center pt-4 pb-6">
+				<div className="para-4 lg:para-2 text-primary-shade-1 text-center pt-4 pb-6">
 					<p>{blogDescription}</p>
 				</div>
 
-				<div className=" no-scrollbar flex flex-nowrap overflow-x-auto snap-x snap-mandatory pb-4  md:pr-14 md:pl-14  gap-4 ">
+				<div className=" no-scrollbar flex flex-nowrap overflow-x-auto snap-x snap-mandatory pb-4  lg:pr-14 lg:pl-14  gap-4 ">
 					{blogCards?.map((blog, index) => {
 						return (
 							<div
 								key={index}
-								className="flex-none w-[250px]   md:w-1/3   snap-always snap-start  "
+								className="flex-none w-[250px]   lg:w-1/3   snap-always snap-start  "
 							>
 								<BlogCard
 									blogName={blog?.name || ''}

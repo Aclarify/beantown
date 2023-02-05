@@ -47,7 +47,7 @@ export default function Brands() {
 			// }}
 		>
 			<div className="flex  justify-center pt-10">
-				<span className="title-6 md:title-3 text-primary-black p-4 m-4">
+				<span className="title-6 lg:title-3 text-primary-black p-4 m-4">
 					{brandsTitle}
 				</span>
 			</div>
