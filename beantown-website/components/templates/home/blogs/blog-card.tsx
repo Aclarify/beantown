@@ -13,13 +13,14 @@ interface Props {
 const BlogCard: React.FC<Props> = (props) => {
 	return (
 		<>
-			<div className="flex-col justify-center  ">
-				<div className="">
+			<div className="flex-col justify-center cursor-pointer">
+				<div>
 					<Image
 						src={props.thumbnailSrc}
 						alt={props.thumbnailAltText}
 						width="600"
 						height="600"
+						className=" border-green-600 border-2 rounded-3xl"
 					/>
 				</div>
 				<p className="py-4 title-7 md:title-5 text-primary-black">
