@@ -17,8 +17,56 @@ export default function Blogs() {
 	const homeData = pageContent.home[0];
 	const { blogTitle, blogDescription, blogCards, blogButton } = homeData;
 	return (
-		<section id="blogs" className="flex flex-col pl-6 lg:px-10 bg-[#FEFEFE]  ">
-			<div className="">
+		<section
+			id="blogs"
+			className="flex flex-col pl-6 lg:px-10 bg-primary-white-shade-1  "
+		>
+			<div
+				id="left-blob-desktop"
+				className="hidden sm:block relative bottom-[2rem] right-[16em] h-0"
+			>
+				<Image
+					src="/blue-blob-shape-1.svg"
+					alt="Left-blob"
+					width={400}
+					height={400}
+				></Image>
+			</div>
+			<div
+				id="left-blob-mobile"
+				className="block sm:hidden relative bottom-[-3rem] right-[8em] h-0"
+			>
+				<Image
+					src="/blue-blob-shape-1-mobile.svg"
+					alt="Left-blob"
+					width={200}
+					height={200}
+				></Image>
+			</div>
+			<div
+				id="right-blob-desktop"
+				// className=" absolute inset-0 w-full flex justify-end items-center -z-10 "
+				className=" hidden   relative  top-[-22em] right-[-86.5rem]  h-0  "
+			>
+				<Image
+					src="/blue-blob-shape-2.svg"
+					alt="Right-blob"
+					width={500}
+					height={500}
+				></Image>
+			</div>
+			<div
+				id="right-blob-mobile"
+				className="hidden relative top-[-9em] right-[-19rem] h-0"
+			>
+				<Image
+					src="/blue-blob-shape-2-mobile.svg"
+					alt="Right-blob"
+					width={150}
+					height={150}
+				></Image>
+			</div>
+			<div className="relative z-10">
 				<div className="title-5 lg:title-2 text-primary-black text-center">
 					<h1>{blogTitle}</h1>
 				</div>
