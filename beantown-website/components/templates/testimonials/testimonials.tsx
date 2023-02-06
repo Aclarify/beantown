@@ -16,7 +16,7 @@ import { GlobalContext } from '@contexts/global/global.context';
 import { GlobalContextProps } from '@typing/common/interfaces/contexts.interface';
 import { HomePageContentProps } from 'pages';
 import RichText from 'components/molecules/rich-text.molecule';
-import Image from 'next/image'
+import Image from 'next/image';
 
 export default function Testimonials() {
 	const [currentIndex, setCurrentIndex] = useState(0);
@@ -47,9 +47,7 @@ export default function Testimonials() {
 
 	const movePrevious = () => {
 		if (currentIndex > 0) {
-			console.log('current Index before' + currentIndex);
 			setCurrentIndex((previousState) => previousState - 1);
-			console.log('current Index after click' + currentIndex);
 		}
 	};
 	const moveNext = () => {
@@ -66,9 +64,6 @@ export default function Testimonials() {
 		}
 
 		if (direction === 'next' && carousel.current !== null) {
-			console.log('current offsetWidth ' + carousel.current.offsetWidth);
-			console.log('current Index ' + currentIndex);
-			console.log('max Scroll width ' + maxScrollWidth.current);
 			return (
 				carousel.current.offsetWidth * currentIndex >= maxScrollWidth.current
 			);
@@ -83,21 +78,21 @@ export default function Testimonials() {
 
 	return (
 		<>
-			<section id="top-curve-testimonial" className="md:-mt-14 -mt-3">
+			{/* <section id="top-curve-testimonial" className="lg:-mt-14 -mt-3">
 				<Image
 					src="/testimonial-top-curve.svg"
 					alt="top-curve"
 					width={1900}
 					height={800}
 				></Image>
-			</section>
+			</section> */}
 			<section
 				id="testimonials-cards"
-				className=" md:px-10  bg-secondary-shade-3"
+				className=" lg:px-10  bg-secondary-shade-3"
 			>
 				<div
 					id="left-blob-mobile"
-					className="hidden md:block relative bottom-[12rem] right-[35em] h-0"
+					className="hidden lg:block relative bottom-[12rem] right-[35em] h-0"
 				>
 					<Image
 						src="/blob-shape-1.svg"
@@ -107,8 +102,8 @@ export default function Testimonials() {
 					></Image>
 				</div>
 				<div
-					id="left-blob-mobile"
-					className="sm:hidden block relative  place-content-end ml-44  bottom-[12rem]  h-0 z-10"
+					id="right-blob-mobile"
+					className="hidden  relative  place-content-end ml-44  bottom-[12rem]  h-0 z-10"
 				>
 					<Image
 						src="/testimonial-right-half-blob.svg"
@@ -117,9 +112,9 @@ export default function Testimonials() {
 						height={200}
 					></Image>
 				</div>
-				<div className="md:hidden">
+				<div className="lg:hidden">
 					<div className=" w-full flex-none  gap-5">
-						<div className="mt-20 ">
+						<div className="mt-20 ml-8 ">
 							<h4 className="para-4 text-primary-shade-1 ">
 								{testimonialTitle}
 							</h4>
@@ -130,10 +125,10 @@ export default function Testimonials() {
 					</div>
 				</div>
 
-				<div className="flex flex-nowrap overflow-x-auto space-x-4   ">
+				<div className="flex flex-nowrap overflow-x-auto space-x-4  m-4 ">
 					{/* card data from sanity */}
 
-					<div className="hidden z-10 md:flex flex-col items-center justify-center    flex-none gap-2 ">
+					<div className="hidden z-10 lg:flex flex-col items-center justify-center m-8   flex-none gap-15  ">
 						<div className="flex-none  gap-5 ">
 							<div className="">
 								<span className=" text-light-1 text-primary-shade-1 ">
@@ -146,8 +141,8 @@ export default function Testimonials() {
 								</span>
 							</div>
 						</div>
-						<div className="flex flex-col items-center justify-center  ">
-							<div className="flex gap-2 m-4 ">
+						<div className="flex flex-col items-center justify-center m-4 ">
+							<div className="flex gap-4 m-4 ">
 								{testimonialCards?.map((cards, index) => {
 									return (
 										<button
@@ -179,26 +174,26 @@ export default function Testimonials() {
 
 					<div
 						ref={carousel}
-						className=" relative flex gap-10 mt-16  overflow-hidden scroll-smooth snap-x snap-mandatory touch-pan-x z-0"
+						className="relative flex gap-6 mt-16  overflow-hidden scroll-smooth snap-x snap-mandatory touch-pan-x z-0 cursor-pointer group "
 					>
 						{testimonialCards?.map((reviews, index) => {
 							return (
 								<div
 									key={index}
-									className="relative w-96 h-120 snap-start items-center bg-[#FFFFFF] my-6 p-4 flex-none gap-2 border rounded-xl "
+									className="relative w-80 h-auto snap-start items-center bg-[#FFFFFF] my-6 p-2 flex-none  border rounded-2xl  duration-500  group-hover:scale-[0.85]    hover:!scale-110   "
 								>
 									<TestimonialCard
 										key={index}
 										clientName={reviews?.titleText || ''}
 										clientDetails={reviews?.subText || ''}
-										reviewComments={reviews?.description?.contentRaw}
+										reviewComments={reviews?.description || ''}
 									/>
 								</div>
 							);
 						})}
 					</div>
 				</div>
-				<div className="md:hidden">
+				<div className="lg:hidden">
 					<div className="flex items-center justify-between ">
 						<div className="flex gap-2 m-4">
 							{testimonialCards?.map((cards, index) => {

@@ -15,7 +15,7 @@ const ServiceCard: React.FC<Props> = (props) => {
 	return (
 		<div
 			id="card-container"
-			className="flex-col  bg-white rounded-lg shadow-lg mb-10 "
+			className="flex-col  bg-white rounded-lg shadow-lg  "
 		>
 			<div id="image-container" className="basis-3/4 ">
 				<Image
@@ -27,7 +27,7 @@ const ServiceCard: React.FC<Props> = (props) => {
 				/>
 			</div>
 			<div id="name-container" className=" basis-1/8">
-				<h1 className="p-4  title-5 md:title-3 text-primary-shade-1 text-center  ">
+				<h1 className="p-4  title-5 lg:title-3 text-primary-shade-1 text-center  ">
 					{props.title}
 				</h1>
 			</div>
