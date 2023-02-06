@@ -57,7 +57,7 @@ export default function Blogs() {
 			</div>
 			<div
 				id="right-blob-mobile"
-				className="block sm:hidden relative top-[-9em] right-[-19rem] h-0"
+				className="hidden relative top-[-9em] right-[-19rem] h-0"
 			>
 				<Image
 					src="/blue-blob-shape-2-mobile.svg"
