@@ -8,6 +8,7 @@ import Link from 'next/link';
 import Image from 'next/image';
 
 export default function Faq() {
+	const [indexToBeOpen, setIndexToBeOpen] = useState(0);
 	const { pageContent } =
 		useContext<GlobalContextProps<HomePageContentProps>>(GlobalContext);
 	if (!pageContent) {
@@ -15,8 +16,6 @@ export default function Faq() {
 	}
 	const homeData = pageContent.home[0];
 	const { faqTitle, faqDescription, faqButton, faqList } = homeData;
-	const [indexToBeOpen, setIndexToBeOpen] = useState(0);
-
 	function handleFaqClick(index: number) {
 		if (index == indexToBeOpen) {
 			return;

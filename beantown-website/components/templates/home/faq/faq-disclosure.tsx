@@ -4,7 +4,7 @@ interface Props {
 	faq: string;
 	faqAnswer: string;
 	isOpen?: boolean;
-	handleClick: Function;
+	handleClick: () => void;
 }
 
 const FAQDisclosure: React.FC<Props> = (props) => {
