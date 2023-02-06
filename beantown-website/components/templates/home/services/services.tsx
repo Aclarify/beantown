@@ -16,17 +16,28 @@ export default function Services() {
 
 	const { servicesTitle, servicesDescription, servicesGroup } = homeData;
 	return (
-		<section id="services" className="mt-10 lg:my-20">
+		<section id="services" className="mt-10 lg:my-20  overflow-hidden ">
 			<div className="px-6 lg:px-10 bg-secondary-shade-3 ">
 				<div
 					id="left-blob-mobile"
-					className="lg:hidden block relative bottom-[1rem] right-[5em] h-0"
+					className="md:hidden block relative bottom-[0rem] right-[6em] h-0"
 				>
 					<Image
 						src="/blob-shape-1.svg"
-						alt="right-blob"
+						alt="left-blob"
 						width={147}
 						height={134}
+					></Image>
+				</div>
+				<div
+					id="left-blob-tab"
+					className="lg:hidden md:block hidden relative bottom-[2rem] right-[25em] h-0"
+				>
+					<Image
+						src="/blob-shape-1.svg"
+						alt="left-blob"
+						width={500}
+						height={500}
 					></Image>
 				</div>
 				<div className="flex flex-col items-center my-4 relative z-10">
@@ -37,10 +48,9 @@ export default function Services() {
 						<RichText value={servicesDescription?.contentRaw} />
 					</div>
 				</div>
-				{/* TODO Fix right blob */}
-				{/* <div
+				<div
 					id="right-blob-mobile"
-					className="lg:hidden block relative bottom-40 h-0"
+					className="md:hidden block relative bottom-[7rem] -right-[77%] h-0"
 				>
 					<Image
 						src="/blob-shape-1.svg"
@@ -48,9 +58,20 @@ export default function Services() {
 						width={202}
 						height={184}
 					></Image>
-				</div> */}
-				{/* <div
-					id="right-blob"
+				</div>
+				<div
+					id="right-blob-tab"
+					className="lg:hidden md:block hidden relative bottom-[11rem] -right-[84%] h-0"
+				>
+					<Image
+						src="/blob-shape-1.svg"
+						alt="right-blob"
+						width={500}
+						height={500}
+					></Image>
+				</div>
+				<div
+					id="right-blob-desktop"
 					className="hidden lg:block relative bottom-[32rem] right-36 left-[88vw] h-0"
 				>
 					<Image
@@ -59,9 +80,9 @@ export default function Services() {
 						width={933}
 						height={850}
 					></Image>
-				</div> */}
+				</div>
 
-				<div className="flex flex-wrap lg:flex-nowrap lg:space-x-20 space-y-4 lg:space-y-0 justify-center py-4 relative z-10">
+				<div className="flex flex-wrap lg:flex-nowrap lg:space-x-20 space-y-4 lg:space-y-0 lg:mb-20 justify-center py-4 relative z-10">
 					{servicesGroup?.map((service, index) => {
 						return (
 							service?.thumbnailImage?.asset?.url && (
@@ -80,8 +101,8 @@ export default function Services() {
 					})}
 				</div>
 				<div
-					id="left-blob"
-					className="hidden lg:block relative bottom-[20rem] right-[36rem] h-0"
+					id="left-blob-desktop"
+					className="hidden lg:block relative bottom-[26rem] right-[34rem] h-0"
 				>
 					<Image
 						src="/blob-shape-1.svg"

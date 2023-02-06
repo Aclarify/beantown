@@ -19,7 +19,7 @@ export default function Blogs() {
 	return (
 		<section
 			id="blogs"
-			className="flex flex-col pl-6 lg:px-10 bg-primary-white-shade-1  "
+			className="flex flex-col pl-6 lg:px-10 bg-primary-white-shade-1 relative overflow-hidden z-10  "
 		>
 			<div
 				id="left-blob-desktop"
@@ -45,8 +45,7 @@ export default function Blogs() {
 			</div>
 			<div
 				id="right-blob-desktop"
-				// className=" absolute inset-0 w-full flex justify-end items-center -z-10 "
-				className=" hidden   relative  top-[-22em] right-[-86.5rem]  h-0  "
+				className="hidden lg:block absolute opacity-1 -right-[90%] top-[0em] h-full w-full  "
 			>
 				<Image
 					src="/blue-blob-shape-2.svg"
@@ -57,13 +56,13 @@ export default function Blogs() {
 			</div>
 			<div
 				id="right-blob-mobile"
-				className="hidden relative top-[-9em] right-[-19rem] h-0"
+				className="block lg:hidden absolute opacity-1 -right-[88%] top-[0em] h-full w-full"
 			>
 				<Image
 					src="/blue-blob-shape-2-mobile.svg"
 					alt="Right-blob"
-					width={150}
-					height={150}
+					width={200}
+					height={200}
 				></Image>
 			</div>
 			<div className="relative z-10">

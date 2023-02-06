@@ -88,10 +88,10 @@ export default function Testimonials() {
 			</section> */}
 			<section
 				id="testimonials-cards"
-				className=" lg:px-10  bg-secondary-shade-3"
+				className=" lg:px-10  bg-secondary-shade-3 overflow-hidden"
 			>
 				<div
-					id="left-blob-mobile"
+					id="left-blob"
 					className="hidden lg:block relative bottom-[12rem] right-[35em] h-0"
 				>
 					<Image
@@ -102,17 +102,28 @@ export default function Testimonials() {
 					></Image>
 				</div>
 				<div
+					id="left-blob-tab"
+					className="lg:hidden md:block hidden relative bottom-[12rem] right-[35em] h-0"
+				>
+					<Image
+						src="/blob-shape-1.svg"
+						alt="Left-blob"
+						width={700}
+						height={700}
+					></Image>
+				</div>
+				<div
 					id="right-blob-mobile"
-					className="hidden  relative  place-content-end ml-44  bottom-[12rem]  h-0 z-10"
+					className="md:hidden block relative bottom-[4rem] -right-[66%] h-0 -z-1"
 				>
 					<Image
 						src="/testimonial-right-half-blob.svg"
-						alt="Left-blob"
-						width={240}
-						height={200}
+						alt="Right-blob"
+						width={150}
+						height={150}
 					></Image>
 				</div>
-				<div className="lg:hidden">
+				<div className="lg:hidden relative ">
 					<div className=" w-full flex-none  gap-5">
 						<div className="mt-20 ml-8 ">
 							<h4 className="para-4 text-primary-shade-1 ">
