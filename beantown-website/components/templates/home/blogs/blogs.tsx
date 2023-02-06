@@ -46,7 +46,7 @@ export default function Blogs() {
 			<div
 				id="right-blob-desktop"
 				// className=" absolute inset-0 w-full flex justify-end items-center -z-10 "
-				className=" hidden sm:block  relative  top-[-22em] right-[-86.5rem]  h-0  "
+				className=" hidden   relative  top-[-22em] right-[-86.5rem]  h-0  "
 			>
 				<Image
 					src="/blue-blob-shape-2.svg"

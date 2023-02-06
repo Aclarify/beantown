@@ -60,6 +60,7 @@ export default function Brands() {
 					infinite
 					autoPlaySpeed={2000}
 					removeArrowOnDeviceType={['tablet', 'desktop', 'mobile']}
+					className="flex justify-center"
 				>
 					{clientsLogo?.map((logo, index) => {
 						return (
