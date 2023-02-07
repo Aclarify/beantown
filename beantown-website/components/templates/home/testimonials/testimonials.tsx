@@ -114,7 +114,7 @@ export default function Testimonials() {
 				</div>
 				<div
 					id="right-blob-mobile"
-					className="md:hidden block relative bottom-[4rem] -right-[66%] h-0 -z-1"
+					className="hidden relative bottom-[4rem] -right-[66%] h-0 -z-1"
 				>
 					<Image
 						src="/testimonial-right-half-blob.svg"

@@ -39,7 +39,7 @@ export default function Brands() {
 		<>
 			<section
 				id="brand-desktop"
-				className="bg-primary-white-shade-1 hidden lg:block pt-[6em] pb-[6em]  h-[44vh] relative -top-[1em] "
+				className="bg-primary-white-shade-1 hidden lg:block lg:pt-[2em] pb-[6em] h-[60vh] relative -top-[1em] "
 				style={{
 					WebkitMaskImage: "url('./brand-wave.svg')",
 					WebkitMaskSize: 'cover',

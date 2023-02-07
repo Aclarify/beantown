@@ -8,7 +8,7 @@ import FooterCta from '../components/templates/home/footer-cta-home';
 import Blogs from '../components/templates/home/blogs/blogs';
 import React from 'react';
 import ServiceAreas from '../components/templates/home/service-areas/service-areas';
-import Testimonials from '../components/templates/testimonials/testimonials';
+import Testimonials from '../components/templates/home/testimonials/testimonials';
 import WhyUs from '../components/templates/home/why-us/why-us';
 import Services from '../components/templates/home/services/services';
 import HomeHero from '../components/templates/home/home-hero';
