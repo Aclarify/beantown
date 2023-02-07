@@ -56,7 +56,10 @@ export default function Nav() {
 								/>
 							</div>
 							<div className="-my-2  lg:hidden">
-								<Popover.Button className="inline-flex rounded-md bg-white p-2 text-black  ">
+								<Popover.Button
+									className="inline-flex rounded-md bg-white p-2 text-black"
+									aria-label="menu for navigation"
+								>
 									<Bars3Icon className="h-6 w-6" aria-hidden="true" />
 								</Popover.Button>
 							</div>
@@ -139,7 +142,10 @@ export default function Nav() {
 								<div className="px-5 pt-5 pb-6">
 									<div className="flex justify-end">
 										<div className="-mr-2">
-											<Popover.Button className="inline-flex items-center justify-center rounded-md bg-white p-2 text-gray-400 hover:bg-gray-100 hover:text-gray-500 focus:outline-none focus:ring-2 focus:ring-inset ">
+											<Popover.Button
+												className="inline-flex items-center justify-center rounded-md bg-white p-2 text-gray-400 hover:bg-gray-100 hover:text-gray-500 focus:outline-none focus:ring-2 focus:ring-inset "
+												aria-label="menu for close button"
+											>
 												<XMarkIcon className="h-6 w-6" aria-hidden="true" />
 											</Popover.Button>
 										</div>
