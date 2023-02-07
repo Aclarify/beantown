@@ -46,31 +46,32 @@ export default function ServiceAreas() {
 					></Image>
 					<div
 						id="service-area-outer-container"
-						className="bg-primary-white-shade-1 relative top-[-20px] left-2 w-[95%] bottom-[20%] lg:absolute  lg:p-10 lg:inset-x-1/2 lg:top-[15%] lg:h-2/3 lg:w-1/2  lg:rounded-3xl "
+						className="bg-primary-white-shade-1 relative top-[-20px] left-2 md:left-4 w-[95%] lg:absolute  lg:p-10 lg:inset-x-1/2 lg:top-[10%] lg:h-fit lg:w-1/2  lg:rounded-3xl "
 					>
 						<div
-							id="service-areas-inner-container p-4"
-							className="bg-white rounded-2xl"
+							id="service-areas-inner-container"
+							className="bg-white pt-1 rounded-2xl shadow-md lg:p-1 translate-y-[-10px] lg:translate-y-0"
 						>
-							<h1 className="subtitle-6 lg:subtitle-3 text-primary-black pl-6 pb-2 ">
+							<h1 className="subtitle-6 lg:subtitle-3 text-primary-black pl-6 pb-2 mt-2">
 								{serviceAreas?.title}
 							</h1>
 							<div
 								id="service-area-container"
-								className="grid grid-cols-2 mx-6 h-auto "
+								className="grid grid-cols-2 mx-6 h-auto md:my-4 pb-2 place-items-center"
 							>
 								{serviceAreas?.listItem?.map((serviceArea, index) => {
 									return (
 										<div
 											key={index}
-											className="py-2 w-36 my-2 mr-2 lg:w-56 justify-center flex  space-x-2 bg-secondary-shade-3 para-6 lg:para-2 rounded-md align-middle items-center"
+											className="py-2 w-32 md:w-56 my-2 mr-2 lg:w-56 justify-center flex  space-x-2 bg-secondary-shade-3 para-6 lg:para-2 rounded-md align-middle items-center"
 										>
 											<div className="">
-												<img
-													src={'./images/home_page/location-icon.svg'}
-													alt={'location Icon'}
-													className="w-6 h-5"
-												/>
+												<Image
+													src={'/images/home_page/location-icon.svg'}
+													alt={serviceAreaImage?.asset?.altText || ''}
+													width="24"
+													height="20"
+												></Image>
 											</div>
 											<div className="">
 												<span>{serviceArea?.split(',').join(', ')}</span>
