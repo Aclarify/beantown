@@ -56,7 +56,10 @@ export default function Nav() {
 								/>
 							</div>
 							<div className="-my-2  lg:hidden">
-								<Popover.Button className="inline-flex rounded-md bg-white p-2 text-black  ">
+								<Popover.Button
+									className="inline-flex rounded-md bg-white p-2 text-black"
+									aria-label="menu for navigation"
+								>
 									<Bars3Icon className="h-6 w-6" aria-hidden="true" />
 								</Popover.Button>
 							</div>
@@ -96,7 +99,11 @@ export default function Nav() {
 											<ul className="rounded-sm transform scale-0 group-hover:scale-100 absolute  transition duration-500 ease-in-out origin-top min-w-32">
 												{linkGroup?.links?.map((link, index) => {
 													return (
-														<Link key={index} href={link?.href || '/'}>
+														<Link
+															key={index}
+															href={link?.href || '/'}
+															aria-label={`Go to ${link?.linkText} page`}
+														>
 															<li className="rounded-sm px-3 py-1 para-4 lg:para-3 ">
 																{link?.linkText}
 															</li>
@@ -135,7 +142,10 @@ export default function Nav() {
 								<div className="px-5 pt-5 pb-6">
 									<div className="flex justify-end">
 										<div className="-mr-2">
-											<Popover.Button className="inline-flex items-center justify-center rounded-md bg-white p-2 text-gray-400 hover:bg-gray-100 hover:text-gray-500 focus:outline-none focus:ring-2 focus:ring-inset ">
+											<Popover.Button
+												className="inline-flex items-center justify-center rounded-md bg-white p-2 text-gray-400 hover:bg-gray-100 hover:text-gray-500 focus:outline-none focus:ring-2 focus:ring-inset "
+												aria-label="menu for close button"
+											>
 												<XMarkIcon className="h-6 w-6" aria-hidden="true" />
 											</Popover.Button>
 										</div>

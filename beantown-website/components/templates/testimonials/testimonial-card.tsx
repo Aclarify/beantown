@@ -1,20 +1,17 @@
-import ReadMoreReadLess from 'components/molecules/show-more-show-less.molecule';
-import RichText from 'components/molecules/rich-text.molecule';
+import ReadMore from 'components/molecules/read-more.molecule';
 import Image from 'next/image';
 import React from 'react';
 interface Props {
 	clientName: string;
 	clientDetails: string;
 	reviewComments: string;
+	onShowMore: () => void;
 }
-let blogContent: string;
-const TestimonialCard: React.FC<Props> = (props) => {
-	blogContent = props.reviewComments;
-	console.log(blogContent);
 
+const TestimonialCard: React.FC<Props> = (props) => {
 	return (
 		<section id="testimonialCard">
-			<div className="mx-4">
+			<div className="">
 				<div className="flex justify-center mt-4">
 					<Image
 						alt="An image for quotes in testimonial card"
@@ -24,19 +21,18 @@ const TestimonialCard: React.FC<Props> = (props) => {
 					/>
 				</div>
 				<div className="flex flex-col gap-2 items-center pt-10 pb-6">
-					<div>
-						<h1 className="subtitle-2 lg:subtitle-4 text-primary-black">
-							{props.clientName}
-						</h1>
-					</div>
-					<div>
-						<h4 className="lg:para-3 para-4 text-gray-shade-2">
-							{props.clientDetails}
-						</h4>
-					</div>
-					<div className="pt-10 para-4 lg:para-3 text-center text-primary-black  overflow-y-scroll ">
-						<span>{props.reviewComments} </span>
-						<ReadMoreReadLess content={props.reviewComments} limit={50} />
+					<h1 className="subtitle-2 md:subtitle-4 text-primary-black">
+						{props.clientName}
+					</h1>
+					<h4 className="md:para-3 para-4 text-gray-shade-2">
+						{props.clientDetails}
+					</h4>
+					<div className="pt-10 para-4 md:para-3 text-center text-primary-black  overflow-y-scroll ">
+						<ReadMore
+							content={props.reviewComments}
+							limit={250}
+							onShowMore={props.onShowMore}
+						/>
 					</div>
 				</div>
 			</div>
