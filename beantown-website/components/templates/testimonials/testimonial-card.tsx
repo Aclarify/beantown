@@ -1,15 +1,14 @@
-import ReadMoreReadLess from 'components/molecules/show-more-show-less.molecule';
-import RichText from 'components/molecules/rich-text.molecule';
+import ReadMore from 'components/molecules/read-more.molecule';
 import Image from 'next/image';
 import React from 'react';
 interface Props {
 	clientName: string;
 	clientDetails: string;
 	reviewComments: string;
+	onShowMore: () => void;
 }
 
 const TestimonialCard: React.FC<Props> = (props) => {
-	
 	return (
 		<section id="testimonialCard">
 			<div className="">
@@ -33,8 +32,11 @@ const TestimonialCard: React.FC<Props> = (props) => {
 						</h4>
 					</div>
 					<div className="pt-10 para-4 md:para-3 text-center text-primary-black  overflow-y-scroll ">
-						
-						<ReadMoreReadLess content={props.reviewComments} limit={50}/>
+						<ReadMore
+							content={props.reviewComments}
+							limit={250}
+							onShowMore={props.onShowMore}
+						/>
 					</div>
 				</div>
 			</div>
