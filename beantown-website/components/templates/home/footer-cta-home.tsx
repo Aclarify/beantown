@@ -92,9 +92,11 @@ export default function FooterCta() {
 							#7AADD3)`,
 						}}
 					>
-						<img
-							className="object-fill animate-pulse object-center md:mx-auto md:w-3/4 "
-							src="images/home_page/footer_cta_theme/mask_group.svg"
+						<Image
+							src="/images/home_page/footer_cta_theme/mask_group.svg"
+							alt="Book us image backdrop"
+							width={1052}
+							height={690}
 						/>
 						<div className="space-y-8 inset-y-20 absolute inset-x-0  px-6 ">
 							<div className="flex flex-col space-y-2 align-middle justify-center h-full ">

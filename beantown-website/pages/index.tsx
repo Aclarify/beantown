@@ -1,3 +1,5 @@
+import Head from 'next/head';
+
 import Header from '../components/organisms/nav';
 import Brands from '../components/templates/home/brands';
 import Faq from '../components/templates/home/faq/faq';
@@ -23,6 +25,19 @@ export interface HomePageContentProps {
 	footer: Footer[];
 }
 
+const PageHead = () => {
+	return (
+		<Head>
+			{/* TODO to fetch from CMS */}
+			<title>Home - Beantown Services</title>
+			<meta
+				name="description"
+				content="Beantown Services is a full-service cleaning company that provides residential and commercial cleaning services in the Boston area."
+			/>
+			<link rel="icon" href="/favicon.ico" />
+		</Head>
+	);
+};
 const getStaticProps = generateGetStaticProps<HomePageContentProps>(
 	pageQuery,
 	PageNames.HOME
@@ -32,6 +47,7 @@ export { getStaticProps };
 const HomePage: React.FC = () => {
 	return (
 		<>
+			<PageHead />
 			<Header />
 			<HomeHero />
 			<Services />
