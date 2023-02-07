@@ -20,7 +20,7 @@ export default function FooterCta() {
 		<>
 			<section
 				id="footerCtaDesktop"
-				className="hidden lg:block relative z-10 -top-[5em]"
+				className="hidden lg:block relative z-10 -top-[6em]"
 				style={{
 					WebkitMaskImage: "url('./footer-cta-wave.svg')",
 					WebkitMaskSize: 'cover',

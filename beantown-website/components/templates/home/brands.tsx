@@ -39,7 +39,7 @@ export default function Brands() {
 		<>
 			<section
 				id="brand-desktop"
-				className="bg-primary-white-shade-1 hidden lg:block pt-[4em] h-[62vh] relative -top-[1em]"
+				className="bg-primary-white-shade-1 hidden lg:block pt-[2em] pb-[6em]  h-[44vh] relative -top-[1em] "
 				style={{
 					WebkitMaskImage: "url('./brand-wave.svg')",
 					WebkitMaskSize: 'cover',
@@ -111,7 +111,7 @@ export default function Brands() {
 							return (
 								logo &&
 								logo.image && (
-									<div key={index} className="flex justify-center">
+									<div key={index} className="flex justify-center px-6">
 										<Image
 											alt={logo?.image?.asset?.altText || ''}
 											width={200}
