@@ -35,7 +35,7 @@ export default function Nav() {
 
 	return (
 		<>
-			<section className="absolute w-full lg:max-w-screen-2xl  lg:px-10">
+			<section className="absolute w-full   lg:px-10">
 				<Popover className="relative z-30">
 					<div className="mx-auto px-4  justify-between items-center ">
 						<div className="flex  py-6 lg:py-0 justify-between lg:justify-start ">
