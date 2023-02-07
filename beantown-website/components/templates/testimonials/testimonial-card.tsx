@@ -7,11 +7,9 @@ interface Props {
 	clientDetails: string;
 	reviewComments: string;
 }
-let blogContent: string;
-const TestimonialCard: React.FC<Props> = (props) => {
-	blogContent = props.reviewComments;
-	console.log(blogContent);
 
+const TestimonialCard: React.FC<Props> = (props) => {
+	
 	return (
 		<section id="testimonialCard">
 			<div className="">

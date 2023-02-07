@@ -5,7 +5,7 @@ import {
 	faMapLocation,
 } from '@fortawesome/free-solid-svg-icons';
 
-import React, {	useContext} from 'react';
+import React, { useState,useContext} from 'react';
 import { GlobalContext } from '@contexts/global/global.context';
 import { GlobalContextProps } from '@typing/common/interfaces/contexts.interface';
 import { HomePageContentProps } from 'pages';
@@ -13,11 +13,8 @@ import Image from 'next/image';
 import { useRouter } from 'next/router';
 import TestimonialCard from './testimonial-card';
 import Modal from 'react-modal'; 
-import Link from 'next/link';
-import ReadMoreReadLess from 'components/molecules/show-more-show-less.molecule';
+import TestimonialModal from './testimonialModal';
 
-
-Modal.setAppElement("#slider");
 export default function Testimonials() {
 	
 	const { pageContent } =
@@ -30,21 +27,14 @@ export default function Testimonials() {
 	const { testimonialTitle, testimonialDescription, testimonialCards } =
 		homeData;
   
-	const router = useRouter()
-	
-
+	const[showTestimonialModel , setShowTestimonialModel] = useState(false)
+		
+	const handleOnClose = ()=> setShowTestimonialModel(false)
 
 	return (
 		<>
-			{/* <section id="top-curve-testimonial" className="lg:-mt-14 -mt-3">
-				<Image
-					src="/testimonial-top-curve.svg"
-					alt="top-curve"
-					width={1900}
-					height={800}
-				></Image>
-			</section> */}
 			<section
+				
 				id="testimonials-cards"
 				className=" lg:px-10  bg-secondary-shade-3 overflow-hidden"
 			>
@@ -141,21 +131,20 @@ export default function Testimonials() {
 									id="slider"
 									key={index}
 									className=" w-80 h-auto snap-start items-center bg-[#FFFFFF] my-6 p-2 flex-none  border rounded-2xl "
+									onClick={() => setShowTestimonialModel(true)}
 								>
 									<TestimonialCard
 										key={index}
 										clientName={reviews?.titleText || ''}
 										clientDetails={reviews?.subText || ''}
 										reviewComments={reviews?.description || ''}
-										
 									/>
 								</div>
 							);
 						})}
 					</div>
-
-					
 				</div>
+
 				<div className="lg:hidden">
 					<div className="flex items-center justify-between ">
 						<div className="flex gap-2 m-4">
@@ -181,6 +170,10 @@ export default function Testimonials() {
 						</div>
 					</div>
 				</div>
+				<TestimonialModal
+					onClose={handleOnClose}
+					visible={showTestimonialModel}
+				/>
 			</section>
 		</>
 	);
