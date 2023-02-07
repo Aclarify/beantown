@@ -70,10 +70,19 @@ export default function FooterCta() {
 					></div>
 				</div>
 			</section>
-			<section id="footerCtaMobile" className="block lg:hidden pt-6 bg-white">
+			<section
+				id="footerCtaMobile"
+				className="block lg:hidden   relative z-10 top-[5em]"
+				style={{
+					WebkitMaskImage: "url('./footer-cta-mobile-wave.svg')",
+					WebkitMaskSize: 'cover',
+					maskImage: "url('./footer-cta-mobile-wave.svg')",
+					maskSize: 'cover',
+				}}
+			>
 				<div className="flex flex-col">
 					<div
-						className={`block h-[30vh]`}
+						className={`block h-[50vh]`}
 						style={{
 							backgroundImage: `linear-gradient(
 							transparent 20%,
