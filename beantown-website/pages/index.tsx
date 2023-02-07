@@ -65,7 +65,9 @@ const HomePage: React.FC = () => {
 				<Blogs />
 			</div>
 			<Faq></Faq>
+
 			<Brands />
+
 			<FooterCta />
 			<FooterComponent />
 		</>
