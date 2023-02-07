@@ -28,7 +28,7 @@ export default function FooterCta() {
 					maskSize: 'cover',
 				}}
 			>
-				<div className="flex  flex-row bg-white">
+				<div className="flex  flex-row ">
 					<div
 						id="content"
 						className=" bg-gradient-to-r from-secondary-shade-1  to-secondary-shade-2 relative  basis-1/2 "
@@ -82,7 +82,7 @@ export default function FooterCta() {
 			>
 				<div className="flex flex-col">
 					<div
-						className={`block h-[50vh]`}
+						className={`block h-[50vh] md:h-[56vh]`}
 						style={{
 							backgroundImage: `linear-gradient(
 							transparent 20%,
