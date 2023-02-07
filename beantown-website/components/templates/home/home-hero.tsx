@@ -49,6 +49,7 @@ export default function HomeHero() {
 					alt={heroImage?.asset?.altText || ''}
 					width={428}
 					height={420}
+					priority={true}
 					className="block md:hidden h-[420px]"
 					src={heroImage?.asset?.url || ''}
 					style={{
