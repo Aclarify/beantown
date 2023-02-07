@@ -29,12 +29,17 @@ const BlogCard: React.FC<Props> = (props) => {
 				<div className="para-4 lg:para-2 mb-4 text-primary-shade-1">
 					<RichText value={props.blogDescription} />
 				</div>
-				<div className="lg:p-6 flex justify-between align-middle">
+				<div className="lg:py-6 flex justify-between align-middle">
 					<button className="para-4 lg:para-2 text-primary-black underline ">
 						{props.buttonText}
 					</button>
 
-					<img src="images/home_page/blog-arrow.svg" />
+					<Image
+						src="/images/home_page/blog-arrow.svg"
+						width="75"
+						height="20"
+						alt="Blog Arrow"
+					/>
 				</div>
 			</div>
 		</>

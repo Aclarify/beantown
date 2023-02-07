@@ -28,7 +28,7 @@ export default function FooterCta() {
 					maskSize: 'cover',
 				}}
 			>
-				<div className="flex  flex-row bg-white">
+				<div className="flex  flex-row ">
 					<div
 						id="content"
 						className=" bg-gradient-to-r from-secondary-shade-1  to-secondary-shade-2 relative  basis-1/2 "
@@ -70,10 +70,19 @@ export default function FooterCta() {
 					></div>
 				</div>
 			</section>
-			<section id="footerCtaMobile" className="block lg:hidden pt-6 bg-white">
+			<section
+				id="footerCtaMobile"
+				className="block lg:hidden   relative z-10 top-[5em]"
+				style={{
+					WebkitMaskImage: "url('./footer-cta-mobile-wave.svg')",
+					WebkitMaskSize: 'cover',
+					maskImage: "url('./footer-cta-mobile-wave.svg')",
+					maskSize: 'cover',
+				}}
+			>
 				<div className="flex flex-col">
 					<div
-						className={`block h-[30vh]`}
+						className={`block h-[50vh] md:h-[56vh]`}
 						style={{
 							backgroundImage: `linear-gradient(
 							transparent 20%,
@@ -92,9 +101,11 @@ export default function FooterCta() {
 							#7AADD3)`,
 						}}
 					>
-						<img
-							className="object-fill animate-pulse object-center md:mx-auto md:w-3/4 "
-							src="images/home_page/footer_cta_theme/mask_group.svg"
+						<Image
+							src="/images/home_page/footer_cta_theme/mask_group.svg"
+							alt="Book us image backdrop"
+							width={1052}
+							height={690}
 						/>
 						<div className="space-y-8 inset-y-20 absolute inset-x-0  px-6 ">
 							<div className="flex flex-col space-y-2 align-middle justify-center h-full ">
