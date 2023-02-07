@@ -25,24 +25,7 @@ export default function Faq() {
 	}
 	return (
 		<>
-			<section
-				id="faq"
-				//className="h-[947px]"
-				// style={{
-				// 	WebkitMaskImage: "url('./home-faq-wave.svg')",
-				// 	WebkitMaskSize: 'cover',
-				// 	maskImage: "url('./home-faq-wave.svg')",
-				// 	maskSize: 'cover',
-				// }}
-			>
-				{/* <div id="faq-wave" className="lg:-mt-14 -mt-3">
-					<Image
-						src="/home-faq-wave.svg"
-						alt="faq-wave-mask"
-						width={1900}
-						height={800}
-					></Image>
-				</div> */}
+			<section id="faq" className="relative -top-[7em]">
 				<div className=" p-6 lg:px-10  mt-16  bg-[url('../public/home-faq-mask-shape.svg')] bg-cover flex items-center align-middle  ">
 					<div className="lg:flex">
 						<div className=" lg:text-left text-center flex flex-col justify-center ">

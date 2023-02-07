@@ -54,10 +54,25 @@ const HomePage: React.FC = () => {
 			<WhyUs />
 			<Testimonials />
 			<div
+				id="desktop-view"
+				className="hidden lg:block "
 				style={{
 					WebkitMaskImage: "url('./service-area-wave.svg')",
 					WebkitMaskSize: 'cover',
 					maskImage: "url('./service-area-wave.svg')",
+					maskSize: 'cover',
+				}}
+			>
+				<ServiceAreas />
+				<Blogs />
+			</div>
+			<div
+				id="mobile-view"
+				className="block lg:hidden"
+				style={{
+					WebkitMaskImage: "url('./service-area-wave-mobile.svg')",
+					WebkitMaskSize: 'cover',
+					maskImage: "url('./service-area-wave-mobile.svg')",
 					maskSize: 'cover',
 				}}
 			>
