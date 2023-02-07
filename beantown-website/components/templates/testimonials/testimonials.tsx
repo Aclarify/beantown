@@ -1,23 +1,31 @@
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import {
-	faArrowRight,
-	faArrowLeft,
-	faMapLocation,
-} from '@fortawesome/free-solid-svg-icons';
+import { faArrowRight, faArrowLeft } from '@fortawesome/free-solid-svg-icons';
 
-import React, { useState, useContext } from 'react';
+import React, { useState, useContext, useEffect, useRef } from 'react';
 import { GlobalContext } from '@contexts/global/global.context';
 import { GlobalContextProps } from '@typing/common/interfaces/contexts.interface';
 import { HomePageContentProps } from 'pages';
 import Image from 'next/image';
-import { useRouter } from 'next/router';
 import TestimonialCard from './testimonial-card';
-import Modal from 'react-modal';
-import TestimonialModal from './testimonialModal';
+import TestimonialModal from './testimonial-modal';
 
 export default function Testimonials() {
 	const [showTestimonialModel, setShowTestimonialModel] = useState(false);
 	const [selectedTestimonial, setSelectedTestimonial] = useState<any>(null);
+	const [currentIndex, setCurrentIndex] = useState(0);
+	const maxScrollWidth = useRef(0);
+	const carousel = useRef<any>(null);
+
+	useEffect(() => {
+		maxScrollWidth.current = carousel.current
+			? carousel.current.scrollWidth - carousel.current.offsetWidth
+			: 0;
+	}, []);
+	useEffect(() => {
+		if (carousel !== null && carousel.current !== null) {
+			carousel.current.scrollLeft = carousel.current.offsetWidth * currentIndex;
+		}
+	}, [currentIndex]);
 
 	const { pageContent } =
 		useContext<GlobalContextProps<HomePageContentProps>>(GlobalContext);
@@ -33,6 +41,38 @@ export default function Testimonials() {
 		setShowTestimonialModel(false);
 		// Unsets Background Scrolling to use when SideDrawer/Modal is closed
 		document.body.style.overflow = 'unset';
+	};
+
+	const movePrevious = () => {
+		if (currentIndex > 0) {
+			setCurrentIndex((previousState) => previousState - 1);
+		}
+	};
+	const moveNext = () => {
+		if (
+			carousel.current !== null &&
+			carousel.current.offsetWidth * currentIndex <= maxScrollWidth.current
+		) {
+			setCurrentIndex((previousState) => previousState + 1);
+		}
+	};
+
+	const isDisabled = (direction: any) => {
+		if (direction === 'prev') {
+			return currentIndex <= 0;
+		}
+
+		if (direction === 'next' && carousel.current !== null) {
+			return (
+				carousel.current.offsetWidth * currentIndex >= maxScrollWidth.current
+			);
+		}
+
+		return false;
+	};
+
+	const goToSlide = (slideIndex: number) => {
+		setCurrentIndex(slideIndex);
 	};
 
 	const onTestimonialCardClick = (testimonial: any) => {
@@ -97,8 +137,6 @@ export default function Testimonials() {
 				</div>
 
 				<div className="flex flex-nowrap overflow-x-auto space-x-4  m-4 ">
-					{/* card data from sanity */}
-
 					<div className="hidden z-10 lg:flex flex-col items-center justify-center m-8   flex-none gap-15  ">
 						<div className="flex-none  gap-5 ">
 							<div className="">
@@ -118,6 +156,7 @@ export default function Testimonials() {
 									return (
 										<span
 											key={index}
+											onClick={() => goToSlide(index)}
 											className="w-8 border rounded-lg h-2 bg-white hover:bg-primary-shade-1 "
 										></span>
 									);
@@ -125,12 +164,16 @@ export default function Testimonials() {
 							</div>
 							<div className="flex  pt-4 justify-center ">
 								<button
+									onClick={movePrevious}
+									disabled={isDisabled('prev')}
 									className="bg-primary-shade-1 rounded-full text-white w-24 h-full text-center  hover:opacity-100 disabled:bg-white disabled:text-black disabled:cursor-not-allowed z-10 p-2 m-1  transition-all ease-in-out duration-300"
 									aria-label="Button for moving left"
 								>
 									<FontAwesomeIcon icon={faArrowLeft} size="lg" />
 								</button>
 								<button
+									onClick={moveNext}
+									disabled={isDisabled('next')}
 									className="bg-primary-shade-1 rounded-full text-white w-24  h-full text-center hover:opacity-100   disabled:bg-white disabled:text-black disabled:cursor-not-allowed z-10 p-2 m-1 transition-all ease-in-out duration-300"
 									aria-label="Button for moving right"
 								>
@@ -140,13 +183,14 @@ export default function Testimonials() {
 						</div>
 					</div>
 
-					{/* showing list of cards */}
-
-					<div className="no-scrollbar flex gap-6 mt-16    overflow-x-scroll scroll-smooth snap-x snap-mandatory  z-0 group ">
+					<div
+						ref={carousel}
+						className="no-scrollbar flex gap-6 mt-16    overflow-x-scroll scroll-smooth snap-x snap-mandatory  z-0 group "
+					>
 						{testimonialCards?.map((reviews, index) => {
 							return (
 								<div
-									id="slider"
+									// id="slider"
 									key={index}
 									className=" w-80 h-[70vh] max-h-[500px] snap-start items-center bg-[#FFFFFF] my-6 p-2 flex-none  border rounded-2xl "
 								>
@@ -167,6 +211,8 @@ export default function Testimonials() {
 					<div className="flex items-center justify-center ">
 						<div className="flex justify-center pt-4 ">
 							<button
+								onClick={movePrevious}
+								disabled={isDisabled('prev')}
 								className="bg-primary-shade-1  rounded-full text-white w-16 h-full  text-center  hover:opacity-100   disabled:bg-white disabled:text-black disabled:cursor-not-allowed z-10 p-2 m-1 transition-all ease-in-out duration-300"
 								aria-label="Button for moving left"
 							>
@@ -174,6 +220,8 @@ export default function Testimonials() {
 							</button>
 							<button
 								id="right"
+								onClick={moveNext}
+								disabled={isDisabled('next')}
 								className="bg-primary-shade-1 rounded-full text-white w-16  h-full text-center   hover:opacity-100  disabled:bg-white disabled:text-black disabled:cursor-not-allowed z-10 p-2 m-1 transition-all ease-in-out duration-300"
 								aria-label="Button for moving right"
 							>

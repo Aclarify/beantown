@@ -17,7 +17,11 @@ const TestimonialModal = ({
 			>
 				<div className="bg-white p-2 rounded-xl w-90 items-center  my-6 mx-2   border h-[90vh] max-h-[600px] overflow-y-scroll md:w-[50vw] lg:w-[30vw]">
 					<div className="flex justify-end">
-						<button className="text-black text-xl " onClick={onClose}>
+						<button
+							className="text-black text-3xl pr-4 fixed"
+							aria-label="Close testimonial"
+							onClick={onClose}
+						>
 							X
 						</button>
 					</div>
