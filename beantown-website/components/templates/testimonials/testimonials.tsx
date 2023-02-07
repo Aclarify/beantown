@@ -126,12 +126,12 @@ export default function Testimonials() {
 				<div className="lg:hidden relative ">
 					<div className=" w-full flex-none  gap-5">
 						<div className="mt-20 ml-8 ">
-							<span className="para-4 text-primary-shade-1 ">
+							<h1 className="para-4 text-primary-shade-1 ">
 								{testimonialTitle}
-							</span>
-							<h1 className="title-5 text-primary-black">
-								{testimonialDescription}
 							</h1>
+							<span className="title-5 text-primary-black">
+								{testimonialDescription}
+							</span>
 						</div>
 					</div>
 				</div>
@@ -139,16 +139,12 @@ export default function Testimonials() {
 				<div className="flex flex-nowrap overflow-x-auto space-x-4  m-4 ">
 					<div className="hidden z-10 lg:flex flex-col items-center justify-center m-8   flex-none gap-15  ">
 						<div className="flex-none  gap-5 ">
-							<div className="">
-								<span className=" text-light-1 text-primary-shade-1 ">
-									{testimonialTitle}
-								</span>
-							</div>
-							<div>
-								<h1 className=" title-2 text-primary-black">
-									{testimonialDescription}
-								</h1>
-							</div>
+							<h1 className=" text-light-1 text-primary-shade-1 ">
+								{testimonialTitle}
+							</h1>
+							<span className=" title-2 text-primary-black">
+								{testimonialDescription}
+							</span>
 						</div>
 						<div className="hidden lg:flex lg:flex-col items-center justify-center m-4 ">
 							<div className="flex gap-4 m-4 ">
