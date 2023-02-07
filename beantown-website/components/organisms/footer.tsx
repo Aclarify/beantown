@@ -30,7 +30,7 @@ export default function Footer() {
 		copyright,
 	} = footerData;
 	return (
-		<section id="footer">
+		<section id="footer" className="relative -top-[10em]">
 			<div
 				id="footerContainer"
 				className="flex flex-col lg:grid lg:grid-cols-5 w-full h-auto bg-primary-shade-1  px-6 pt-20 lg:px-10"
