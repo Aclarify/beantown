@@ -4,37 +4,22 @@ import {
 	faArrowLeft,
 	faMapLocation,
 } from '@fortawesome/free-solid-svg-icons';
-import TestimonialCard from './testimonial-card';
-import React, {
-	Component,
-	useContext,
-	useEffect,
-	useRef,
-	useState,
-} from 'react';
+
+import React, {	useContext} from 'react';
 import { GlobalContext } from '@contexts/global/global.context';
 import { GlobalContextProps } from '@typing/common/interfaces/contexts.interface';
 import { HomePageContentProps } from 'pages';
-import RichText from 'components/molecules/rich-text.molecule';
 import Image from 'next/image';
+import { useRouter } from 'next/router';
+import TestimonialCard from './testimonial-card';
+import Modal from 'react-modal'; 
+import Link from 'next/link';
+import ReadMoreReadLess from 'components/molecules/show-more-show-less.molecule';
 
+
+Modal.setAppElement("#slider");
 export default function Testimonials() {
-	const [currentIndex, setCurrentIndex] = useState(0);
-	const maxScrollWidth = useRef(0);
-	const carousel = useRef<any>(null);
-
-	useEffect(() => {
-		if (carousel !== null && carousel.current !== null) {
-			carousel.current.scrollLeft = carousel.current.offsetWidth * currentIndex;
-		}
-	}, [currentIndex]);
-
-	useEffect(() => {
-		maxScrollWidth.current = carousel.current
-			? carousel.current.scrollWidth - carousel.current.offsetWidth
-			: 0;
-	}, []);
-
+	
 	const { pageContent } =
 		useContext<GlobalContextProps<HomePageContentProps>>(GlobalContext);
 
@@ -44,37 +29,10 @@ export default function Testimonials() {
 	const homeData = pageContent.home[0];
 	const { testimonialTitle, testimonialDescription, testimonialCards } =
 		homeData;
+  
+	const router = useRouter()
+	
 
-	const movePrevious = () => {
-		if (currentIndex > 0) {
-			setCurrentIndex((previousState) => previousState - 1);
-		}
-	};
-	const moveNext = () => {
-		if (
-			carousel.current !== null &&
-			carousel.current.offsetWidth * currentIndex <= maxScrollWidth.current
-		) {
-			setCurrentIndex((previousState) => previousState + 1);
-		}
-	};
-	const isDisabled = (direction: any) => {
-		if (direction === 'prev') {
-			return currentIndex <= 0;
-		}
-
-		if (direction === 'next' && carousel.current !== null) {
-			return (
-				carousel.current.offsetWidth * currentIndex >= maxScrollWidth.current
-			);
-		}
-
-		return false;
-	};
-
-	const goToSlide = (slideIndex: number) => {
-		setCurrentIndex(slideIndex);
-	};
 
 	return (
 		<>
@@ -147,51 +105,45 @@ export default function Testimonials() {
 									return (
 										<button
 											key={index}
-											onClick={() => goToSlide(index)}
 											className="w-8 border rounded-lg h-2 bg-white hover:bg-primary-shade-1 "
 										></button>
 									);
 								})}
 							</div>
 							<div className="flex  pt-4 justify-center ">
-								<button
-									onClick={movePrevious}
-									disabled={isDisabled('prev')}
-									className="bg-primary-shade-1 rounded-full text-white w-24 h-full text-center  hover:opacity-100 disabled:bg-white disabled:text-black disabled:cursor-not-allowed z-10 p-2 m-1  transition-all ease-in-out duration-300"
-								>
+								<button className="bg-primary-shade-1 rounded-full text-white w-24 h-full text-center  hover:opacity-100 disabled:bg-white disabled:text-black disabled:cursor-not-allowed z-10 p-2 m-1  transition-all ease-in-out duration-300">
 									<FontAwesomeIcon icon={faArrowLeft} size="lg" />
 								</button>
-								<button
-									onClick={moveNext}
-									disabled={isDisabled('next')}
-									className="bg-primary-shade-1 rounded-full text-white w-24  h-full text-center hover:opacity-100   disabled:bg-white disabled:text-black disabled:cursor-not-allowed z-10 p-2 m-1 transition-all ease-in-out duration-300"
-								>
+								<button className="bg-primary-shade-1 rounded-full text-white w-24  h-full text-center hover:opacity-100   disabled:bg-white disabled:text-black disabled:cursor-not-allowed z-10 p-2 m-1 transition-all ease-in-out duration-300">
 									<FontAwesomeIcon icon={faArrowRight} size="lg" />
 								</button>
 							</div>
 						</div>
 					</div>
 
-					<div
-						ref={carousel}
-						className="relative flex gap-6 mt-16  overflow-hidden scroll-smooth snap-x snap-mandatory touch-pan-x z-0 cursor-pointer group "
-					>
+					{/* showing list of cards */}
+
+					<div className="no-scrollbar flex gap-6 mt-16    overflow-x-scroll scroll-smooth snap-x snap-mandatory  z-0 cursor-pointer group ">
 						{testimonialCards?.map((reviews, index) => {
 							return (
 								<div
+									id="slider"
 									key={index}
-									className="relative w-80 h-auto snap-start items-center bg-[#FFFFFF] my-6 p-2 flex-none  border rounded-2xl  duration-500  group-hover:scale-[0.85]    hover:!scale-110   "
+									className=" w-80 h-auto snap-start items-center bg-[#FFFFFF] my-6 p-2 flex-none  border rounded-2xl "
 								>
 									<TestimonialCard
 										key={index}
 										clientName={reviews?.titleText || ''}
 										clientDetails={reviews?.subText || ''}
 										reviewComments={reviews?.description || ''}
+										
 									/>
 								</div>
 							);
 						})}
 					</div>
+
+					
 				</div>
 				<div className="lg:hidden">
 					<div className="flex items-center justify-between ">
@@ -200,23 +152,17 @@ export default function Testimonials() {
 								return (
 									<button
 										key={index}
-										onClick={() => goToSlide(index)}
 										className="w-8 border rounded-lg h-2 bg-white hover:bg-primary-shade-1 "
 									></button>
 								);
 							})}
 						</div>
 						<div className="flex  pt-4 ">
-							<button
-								onClick={movePrevious}
-								disabled={isDisabled('prev')}
-								className="bg-primary-shade-1  rounded-full text-white w-16 h-full  text-center  hover:opacity-100   disabled:bg-white disabled:text-black disabled:cursor-not-allowed z-10 p-2 m-1 transition-all ease-in-out duration-300"
-							>
+							<button className="bg-primary-shade-1  rounded-full text-white w-16 h-full  text-center  hover:opacity-100   disabled:bg-white disabled:text-black disabled:cursor-not-allowed z-10 p-2 m-1 transition-all ease-in-out duration-300">
 								<FontAwesomeIcon icon={faArrowLeft} />
 							</button>
 							<button
-								onClick={moveNext}
-								disabled={isDisabled('next')}
+								id="right"
 								className="bg-primary-shade-1 rounded-full text-white w-16  h-full text-center   hover:opacity-100  disabled:bg-white disabled:text-black disabled:cursor-not-allowed z-10 p-2 m-1 transition-all ease-in-out duration-300"
 							>
 								<FontAwesomeIcon icon={faArrowRight} />
