@@ -28,6 +28,7 @@ export interface HomePageContentProps {
 const PageHead = () => {
 	return (
 		<Head>
+			{/* TODO to fetch from CMS */}
 			<title>Home - Beantown Services</title>
 			<meta
 				name="description"
