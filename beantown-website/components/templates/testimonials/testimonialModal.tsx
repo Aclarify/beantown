@@ -15,7 +15,7 @@ const TestimonialModal = ({
 				id="model"
 				className="fixed inset-0 bg-black  bg-opacity-30 backdrop-blur-sm  flex justify-center items-center z-50"
 			>
-				<div className="bg-white p-2 rounded-xl w-90 items-center  my-6 mx-2   border h-[90vh] overflow-y-scroll md:w-[50vw] lg:w-[30vw]">
+				<div className="bg-white p-2 rounded-xl w-90 items-center  my-6 mx-2   border h-[90vh] max-h-[600px] overflow-y-scroll md:w-[50vw] lg:w-[30vw]">
 					<div className="flex justify-end">
 						<button className="text-black text-xl " onClick={onClose}>
 							X

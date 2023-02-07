@@ -96,7 +96,11 @@ export default function Nav() {
 											<ul className="rounded-sm transform scale-0 group-hover:scale-100 absolute  transition duration-500 ease-in-out origin-top min-w-32">
 												{linkGroup?.links?.map((link, index) => {
 													return (
-														<Link key={index} href={link?.href || '/'}>
+														<Link
+															key={index}
+															href={link?.href || '/'}
+															aria-label={`Go to ${link?.linkText} page`}
+														>
 															<li className="rounded-sm px-3 py-1 para-4 lg:para-3 ">
 																{link?.linkText}
 															</li>

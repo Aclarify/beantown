@@ -89,9 +89,9 @@ export default function Testimonials() {
 							<span className="para-4 text-primary-shade-1 ">
 								{testimonialTitle}
 							</span>
-							<span className="title-5 text-primary-black">
+							<h1 className="title-5 text-primary-black">
 								{testimonialDescription}
-							</span>
+							</h1>
 						</div>
 					</div>
 				</div>
@@ -107,27 +107,33 @@ export default function Testimonials() {
 								</span>
 							</div>
 							<div>
-								<span className=" title-2 text-primary-black">
+								<h1 className=" title-2 text-primary-black">
 									{testimonialDescription}
-								</span>
+								</h1>
 							</div>
 						</div>
 						<div className="hidden lg:flex lg:flex-col items-center justify-center m-4 ">
 							<div className="flex gap-4 m-4 ">
 								{testimonialCards?.map((cards, index) => {
 									return (
-										<button
+										<span
 											key={index}
 											className="w-8 border rounded-lg h-2 bg-white hover:bg-primary-shade-1 "
-										></button>
+										></span>
 									);
 								})}
 							</div>
 							<div className="flex  pt-4 justify-center ">
-								<button className="bg-primary-shade-1 rounded-full text-white w-24 h-full text-center  hover:opacity-100 disabled:bg-white disabled:text-black disabled:cursor-not-allowed z-10 p-2 m-1  transition-all ease-in-out duration-300">
+								<button
+									className="bg-primary-shade-1 rounded-full text-white w-24 h-full text-center  hover:opacity-100 disabled:bg-white disabled:text-black disabled:cursor-not-allowed z-10 p-2 m-1  transition-all ease-in-out duration-300"
+									aria-label="Button for moving left"
+								>
 									<FontAwesomeIcon icon={faArrowLeft} size="lg" />
 								</button>
-								<button className="bg-primary-shade-1 rounded-full text-white w-24  h-full text-center hover:opacity-100   disabled:bg-white disabled:text-black disabled:cursor-not-allowed z-10 p-2 m-1 transition-all ease-in-out duration-300">
+								<button
+									className="bg-primary-shade-1 rounded-full text-white w-24  h-full text-center hover:opacity-100   disabled:bg-white disabled:text-black disabled:cursor-not-allowed z-10 p-2 m-1 transition-all ease-in-out duration-300"
+									aria-label="Button for moving right"
+								>
 									<FontAwesomeIcon icon={faArrowRight} size="lg" />
 								</button>
 							</div>
@@ -142,7 +148,7 @@ export default function Testimonials() {
 								<div
 									id="slider"
 									key={index}
-									className=" w-80 h-[70vh] snap-start items-center bg-[#FFFFFF] my-6 p-2 flex-none  border rounded-2xl "
+									className=" w-80 h-[70vh] max-h-[500px] snap-start items-center bg-[#FFFFFF] my-6 p-2 flex-none  border rounded-2xl "
 								>
 									<TestimonialCard
 										key={index}
@@ -160,12 +166,16 @@ export default function Testimonials() {
 				<div className="lg:hidden">
 					<div className="flex items-center justify-center ">
 						<div className="flex justify-center pt-4 ">
-							<button className="bg-primary-shade-1  rounded-full text-white w-16 h-full  text-center  hover:opacity-100   disabled:bg-white disabled:text-black disabled:cursor-not-allowed z-10 p-2 m-1 transition-all ease-in-out duration-300">
+							<button
+								className="bg-primary-shade-1  rounded-full text-white w-16 h-full  text-center  hover:opacity-100   disabled:bg-white disabled:text-black disabled:cursor-not-allowed z-10 p-2 m-1 transition-all ease-in-out duration-300"
+								aria-label="Button for moving left"
+							>
 								<FontAwesomeIcon icon={faArrowLeft} />
 							</button>
 							<button
 								id="right"
 								className="bg-primary-shade-1 rounded-full text-white w-16  h-full text-center   hover:opacity-100  disabled:bg-white disabled:text-black disabled:cursor-not-allowed z-10 p-2 m-1 transition-all ease-in-out duration-300"
+								aria-label="Button for moving right"
 							>
 								<FontAwesomeIcon icon={faArrowRight} />
 							</button>
