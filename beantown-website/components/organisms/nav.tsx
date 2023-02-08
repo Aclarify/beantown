@@ -35,93 +35,89 @@ export default function Nav() {
 
 	return (
 		<>
-			<section className="absolute w-full   lg:px-10">
+			<section className="absolute w-full lg:px-10">
 				<Popover className="relative z-30">
-					<div className="mx-auto px-4  justify-between items-center ">
-						<div className="flex  py-6 lg:py-0 justify-between lg:justify-start ">
-							<div className="hidden lg:flex align-middle ">
-								<Image
-									alt={logo?.asset?.altText || ''}
-									width={200}
-									height={300}
-									src={logo?.asset?.url || ''}
-								/>
-							</div>
-							<div className="flex align-middle lg:hidden">
-								<Image
-									alt={logo?.asset?.altText || ''}
-									width={100}
-									height={100}
-									src={logo?.asset?.url || ''}
-								/>
-							</div>
-							<div className="-my-2  lg:hidden">
-								<Popover.Button
-									className="inline-flex rounded-md bg-white p-2 text-black"
-									aria-label="menu for navigation"
-								>
-									<Bars3Icon className="h-6 w-6" aria-hidden="true" />
-								</Popover.Button>
-							</div>
-							<div className="hidden lg:justify-center lg:flex lg:flex-grow text-white items-center para-4 lg:para-3 ">
-								{navLinks?.map((link, index) => {
-									return (
-										<Link
-											key={index}
-											href={link?.href || '/'}
-											className="p-8 pr-1 group inline-block"
-										>
-											{link?.linkText}
-										</Link>
-									);
-								})}
+					<div className=" flex justify-between items-center  mx-auto px-4 py-6 lg:p-0 text-white">
+						<div className="hidden lg:flex align-middle ">
+							<Image
+								alt={logo?.asset?.altText || ''}
+								width={200}
+								height={300}
+								src={logo?.asset?.url || ''}
+							/>
+						</div>
+						<div className="flex align-middle lg:hidden">
+							<Image
+								alt={logo?.asset?.altText || ''}
+								width={100}
+								height={100}
+								src={logo?.asset?.url || ''}
+							/>
+						</div>
+						<div className="-my-2  lg:hidden">
+							<Popover.Button
+								className="inline-flex rounded-md p-2 "
+								aria-label="menu for navigation"
+							>
+								<Bars3Icon className="h-6 w-6" aria-hidden="true" />
+							</Popover.Button>
+						</div>
+						<div className="hidden lg:justify-center lg:flex lg:flex-grow  items-center para-4 lg:para-3 ">
+							{navLinks?.map((link, index) => {
+								return (
+									<Link
+										key={index}
+										href={link?.href || '/'}
+										className="p-8 pr-1 group inline-block"
+									>
+										{link?.linkText}
+									</Link>
+								);
+							})}
 
-								{navGroup?.map((linkGroup, index) => {
-									return (
-										<div key={index} className="group inline-block">
-											<Link
-												href={'/'}
-												className="outline-none focus:outline-none  px-3 py-1  rounded-sm flex items-center min-w-32"
-											>
-												<span className="pr-1 flex-1 para-4 lg:para-3 ">
-													{linkGroup?.groupTitle}
-												</span>
-												<span>
-													<svg
-														className="fill-current h-4 w-4 transform group-hover:-rotate-180 transition duration-150 ease-in-out"
-														xmlns="http://www.w3.org/2000/svg"
-														viewBox="0 0 20 20"
+							{navGroup?.map((linkGroup, index) => {
+								return (
+									<div key={index} className="group inline-block">
+										<Link
+											href={'/'}
+											className="outline-none focus:outline-none  px-3 py-1  rounded-sm flex items-center min-w-32"
+										>
+											<span className="pr-1 flex-1 para-4 lg:para-3 ">
+												{linkGroup?.groupTitle}
+											</span>
+											<span>
+												<svg
+													className="fill-current h-4 w-4 transform group-hover:-rotate-180 transition duration-150 ease-in-out"
+													xmlns="http://www.w3.org/2000/svg"
+													viewBox="0 0 20 20"
+												>
+													<path d="M9.293 12.95l.707.707L15.657 8l-1.414-1.414L10 10.828 5.757 6.586 4.343 8z" />
+												</svg>
+											</span>
+										</Link>
+										<ul className="rounded-sm transform scale-0 group-hover:scale-100 absolute  transition duration-500 ease-in-out origin-top min-w-32">
+											{linkGroup?.links?.map((link, index) => {
+												return (
+													<Link
+														key={index}
+														href={link?.href || '/'}
+														aria-label={`Go to ${link?.linkText} page`}
 													>
-														<path d="M9.293 12.95l.707.707L15.657 8l-1.414-1.414L10 10.828 5.757 6.586 4.343 8z" />
-													</svg>
-												</span>
-											</Link>
-											<ul className="rounded-sm transform scale-0 group-hover:scale-100 absolute  transition duration-500 ease-in-out origin-top min-w-32">
-												{linkGroup?.links?.map((link, index) => {
-													return (
-														<Link
-															key={index}
-															href={link?.href || '/'}
-															aria-label={`Go to ${link?.linkText} page`}
-														>
-															<li className="rounded-sm px-3 py-1 para-4 lg:para-3 ">
-																{link?.linkText}
-															</li>
-														</Link>
-													);
-												})}
-											</ul>
-										</div>
-									);
-								})}
-							</div>
-							<div className="hidden lg:justify-center lg:flex lg:flex-grow">
-								<Link href={'/'}>
-									<Button fontColor="text-primary-shade-1" bgColor="bg-white">
-										{headerButton?.text}
-									</Button>
-								</Link>
-							</div>
+														<li className="rounded-sm px-3 py-1 para-4 lg:para-3 ">
+															{link?.linkText}
+														</li>
+													</Link>
+												);
+											})}
+										</ul>
+									</div>
+								);
+							})}
+						</div>
+						<div className=" hidden lg:justify-center lg:flex lg:flex-grow">
+							<Button fontColor="text-primary-shade-1" bgColor="bg-white">
+								{headerButton?.text}
+							</Button>
 						</div>
 					</div>
 
@@ -140,15 +136,13 @@ export default function Nav() {
 						>
 							<div className="rounded-lg bg-primary-white-shade-1">
 								<div className="px-5 pt-5 pb-6">
-									<div className="flex justify-end">
-										<div className="-mr-2">
-											<Popover.Button
-												className="inline-flex items-center justify-center rounded-md bg-white p-2 text-gray-400 hover:bg-gray-100 hover:text-gray-500 focus:outline-none focus:ring-2 focus:ring-inset "
-												aria-label="menu for close button"
-											>
-												<XMarkIcon className="h-6 w-6" aria-hidden="true" />
-											</Popover.Button>
-										</div>
+									<div className="flex justify-end -mr-2">
+										<Popover.Button
+											className="inline-flex items-center justify-center rounded-md  p-2   "
+											aria-label="menu for close button"
+										>
+											<XMarkIcon className="h-6 w-6" aria-hidden="true" />
+										</Popover.Button>
 									</div>
 									<div className="mt-6 ">
 										<nav className="grid ">
