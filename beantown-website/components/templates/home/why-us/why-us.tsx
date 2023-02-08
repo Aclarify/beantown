@@ -19,13 +19,7 @@ export default function WhyUs() {
 	return (
 		<section
 			id="whyUs"
-			className=" p-6 lg:px-10 flex flex-col mt-30 bg-primary-white-shade-1 h-[1620px] overflow-hidden "
-			style={{
-				WebkitMaskImage: "url('./why-us-wave.svg')",
-				WebkitMaskSize: 'cover',
-				maskImage: "url('./why-us-wave.svg')",
-				maskSize: 'cover',
-			}}
+			className=" p-6 lg:px-10 flex flex-col mt-30 bg-primary-white-shade-1 h-[1620px] overflow-hidden [mask-image:url('/why-us-wave.svg')] [mask-size:contain] 2xl:[mask-size:cover]"
 		>
 			<div className="flex flex-col-reverse lg:flex lg:flex-row  items-center w-full mt-20  ">
 				<div className=" lg:pt-20  flex flex-col items-start text-justify basis-1/2 ">
