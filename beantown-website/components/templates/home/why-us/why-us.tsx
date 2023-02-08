@@ -42,19 +42,26 @@ export default function WhyUs() {
 						</Button>
 					</Link>
 				</div>
-				<div className="mt-12 px-20 basis-1/2 hidden lg:block">
-					<Image
-						src={whyUsImage?.asset?.url || ''}
-						alt={whyUsImage?.asset?.altText || ''}
-						width="1000"
-						height="1000"
-						style={{
-							WebkitMaskImage: "url('./why-us-mask.svg')",
-							WebkitMaskSize: 'cover',
-							maskImage: "url('./why-us-mask.svg')",
-							maskSize: 'cover',
-						}}
-					/>
+				<div className="mt-12 px-20 basis-1/2 hidden lg:block ">
+					<div className=" bg-[url('/whyus-bg-shape.svg')] bg-cover">
+					
+
+						
+							<Image
+								src={whyUsImage?.asset?.url || ''}
+								alt={whyUsImage?.asset?.altText || ''}
+								width="1000"
+								height="1000"
+								style={{
+									WebkitMaskImage: "url('./why-us-mask.svg')",
+									WebkitMaskSize: 'cover',
+									maskImage: "url('./why-us-mask.svg')",
+									maskSize: 'cover',
+								}}
+								className=""
+							/>
+					
+					</div>
 				</div>
 				<div className="block lg:hidden md:mt-10">
 					<Image
