@@ -4,11 +4,11 @@
 
 @layer utilities {
 	/* hide for chrome,safari and opera */
-	.no-scrollbar::-webkit-scrollbar{
-		display: none;	
+	.no-scrollbar::-webkit-scrollbar {
+		display: none;
 	}
 	/* IE Edge Firefox */
-	.no-scrollbar{
+	.no-scrollbar {
 		-ms-overflow-style: none;
 		scrollbar-width: none;
 	}
@@ -65,6 +65,10 @@
 		@apply font-normal;
 	}
 	.subtitle-6 {
+		@apply text-[18px];
+		@apply font-normal;
+	}
+	.subtitle-7 {
 		@apply text-base;
 		@apply font-normal;
 	}
