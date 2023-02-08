@@ -62,13 +62,13 @@ export default function Nav() {
 								<Bars3Icon className="h-6 w-6" aria-hidden="true" />
 							</Popover.Button>
 						</div>
-						<div className="hidden lg:justify-center lg:flex lg:flex-grow  items-center para-4 lg:para-3 ">
+						<div className="hidden lg:justify-center lg:flex lg:flex-grow  items-center para-4 lg:para-3  ">
 							{navLinks?.map((link, index) => {
 								return (
 									<Link
 										key={index}
 										href={link?.href || '/'}
-										className="p-8 pr-1 group inline-block"
+										className="p-8 group inline-block"
 									>
 										{link?.linkText}
 									</Link>
@@ -77,7 +77,7 @@ export default function Nav() {
 
 							{navGroup?.map((linkGroup, index) => {
 								return (
-									<div key={index} className="group inline-block">
+									<div key={index} className="group inline-block pl-8">
 										<Link
 											href={'/'}
 											className="outline-none focus:outline-none  px-3 py-1  rounded-sm flex items-center min-w-32"
@@ -114,7 +114,7 @@ export default function Nav() {
 								);
 							})}
 						</div>
-						<div className=" hidden lg:justify-center lg:flex lg:flex-grow">
+						<div className=" hidden lg:justify-end lg:flex ">
 							<Button fontColor="text-primary-shade-1" bgColor="bg-white">
 								{headerButton?.text}
 							</Button>
