@@ -59,7 +59,7 @@ export default function WhyUs() {
 						/>
 					</div>
 				</div>
-				<div className="block lg:hidden mt-20 mb-20 ">
+				<div className=" block lg:hidden mt-10 mb-8 ">
 					<div className=" bg-[url('/whyus-bg-shape.svg')] bg-cover">
 						<Image
 							src={whyUsImage?.asset?.url || ''}
@@ -77,7 +77,7 @@ export default function WhyUs() {
 				</div>
 			</div>
 
-			<div className="py-6 grid grid-cols-1 lg:grid-cols-2 gap-2 lg:mt-20">
+			<div className=" grid grid-cols-1 lg:grid-cols-2 gap-2 lg:mt-20 mt-0 ">
 				{whyUsCards?.map((ourValues, index) => {
 					return (
 						ourValues?.image && (
