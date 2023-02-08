@@ -28,7 +28,7 @@ export default function WhyUs() {
 			}}
 		>
 			<div className="flex flex-col-reverse lg:flex lg:flex-row  items-center w-full mt-20  ">
-				<div className=" lg:pt-20  flex flex-col items-start text-justify basis-1/2 ">
+				<div className="lg:pt-20  flex flex-col items-start text-justify basis-1/2  ">
 					<h1 className="title-5 lg:title-2 text-primary-black ">
 						{whyUsTitle}
 					</h1>
@@ -42,7 +42,7 @@ export default function WhyUs() {
 						</Button>
 					</Link>
 				</div>
-				<div className="mt-12 px-20 basis-1/2 hidden lg:block ">
+				<div className="mt-12 px-20 basis-1/2 hidden lg:block">
 					<div className=" bg-[url('/whyus-bg-shape.svg')] bg-cover">
 						<Image
 							src={whyUsImage?.asset?.url || ''}
@@ -59,7 +59,7 @@ export default function WhyUs() {
 						/>
 					</div>
 				</div>
-				<div className="block lg:hidden sm:mt-12">
+				<div className="block lg:hidden mt-20 mb-20 ">
 					<div className=" bg-[url('/whyus-bg-shape.svg')] bg-cover">
 						<Image
 							src={whyUsImage?.asset?.url || ''}
@@ -77,7 +77,7 @@ export default function WhyUs() {
 				</div>
 			</div>
 
-			<div className="py-6 grid grid-cols-1 lg:grid-cols-2 gap-2    lg:mt-20">
+			<div className="py-6 grid grid-cols-1 lg:grid-cols-2 gap-2 lg:mt-20">
 				{whyUsCards?.map((ourValues, index) => {
 					return (
 						ourValues?.image && (
