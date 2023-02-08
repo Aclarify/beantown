@@ -17,11 +17,15 @@ const FAQDisclosure: React.FC<Props> = (props) => {
 							className={`${
 								open && props.isOpen
 									? 'bg-white shadow-lg shadow-gray-shade-4 rounded-lg'
-									: 'bg-transparent border rounded-lg'
+									: 'bg-transparent border rounded-lg '
 							} `}
 						>
 							<Disclosure.Button
-								className="flex w-full justify-between p-4 text-left "
+								className={`${
+									open && props.isOpen
+										? 'subtitle-6 lg:subtitle-4 text-primary-shade-1 px-4 pt-4 '
+										: ' p-4 '
+								} flex w-full justify-between text-left`}
 								onClick={() => {
 									if (open) {
 										close();
