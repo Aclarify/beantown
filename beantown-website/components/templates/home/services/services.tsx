@@ -16,7 +16,7 @@ export default function Services() {
 
 	const { servicesTitle, servicesDescription, servicesGroup } = homeData;
 	return (
-		<section id="services" className="mt-10 lg:my-20  overflow-hidden ">
+		<section id="services" className="mt-10 lg:my-20  overflow-hidden mx-8 ">
 			<div className="px-6 lg:px-10 bg-secondary-shade-3 ">
 				<div
 					id="left-blob-mobile"

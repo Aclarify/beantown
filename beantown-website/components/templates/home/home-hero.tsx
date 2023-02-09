@@ -17,7 +17,7 @@ export default function HomeHero() {
 	const { heroTitle, heroDescription, heroButton, heroImage } = homeData;
 	return (
 		<section id="home_page_hero ">
-			<div className="flex flex-shrink-0 flex-col justify-center">
+			<div className="flex flex-shrink-0 flex-col justify-center ">
 				<div className="para-6  md:para-2 lg:para-2 absolute z-10 w-3/4 space-y-1 px-6 align-middle text-white md:w-1/2 md:space-y-2 md:px-8 lg:m-10 lg:space-y-4">
 					<h1 className="title-4 lg:title-1">{heroTitle}</h1>
 

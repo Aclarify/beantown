@@ -19,16 +19,16 @@ export default function WhyUs() {
 	const { whyUsTitle, whyUsDescription, whyUsButton, whyUsCards, whyUsImage } =
 		homeData;
 	return (
-		<section id="whyUs" className="mt-30">
-			<div className="relative z-1 max-h-40 overflow-hidden ">
+		<section id="whyUs" className="mt-28 ">
+			<div className="z-1 relative max-h-24  overflow-hidden ">
 				<Image src={topWave} alt="why us wave bg" style={{ width: '100vw' }} />
 			</div>
 			<div
 				id="section-wrapper"
-				className="flex flex-col overflow-hidden relative z-40 bg-primary-white-shade-1"
+				className="bg-primary-white-shade-1 relative z-40 flex flex-col overflow-hidden mx-8"
 			>
-				<div className="p-6 lg:px-10 flex flex-col-reverse lg:flex lg:flex-row  items-center w-full">
-					<div className=" lg:pt-20  flex flex-col items-start text-justify basis-1/2 z-10 ">
+				<div className="flex w-full flex-col-reverse items-center p-6 md:flex mx-8 md:flex-row lg:px-10">
+					<div className=" z-10  flex flex-col items-start text-justify sm:basis-1/2 lg:pt-20 ">
 						<h1 className="title-5 lg:title-2 text-primary-black ">
 							{whyUsTitle}
 						</h1>
@@ -36,14 +36,14 @@ export default function WhyUs() {
 							<RichText value={whyUsDescription?.contentRaw} />
 						</div>
 
-						<Link href={'/'}>
+						<Link className='mt-2 mb-2' href={'/'}>
 							<Button fontColor="text-white" bgColor=" bg-primary-shade-1">
 								{whyUsButton?.text}
 							</Button>
 						</Link>
 					</div>
-					<div className="mt-12 px-20 basis-1/2 hidden lg:block">
-						<div className=" bg-[url('/images/home/why-us/whyus-bg-blob.svg')] bg-cover">
+					<div className="md:mt-10 mb-10 basis-1/2 px-5 md:px-10 ">
+						<div className="bg-[url('/images/home/why-us/whyus-bg-blob.svg')] w-full h-auto bg-cover">
 							<Image
 								src={whyUsImage?.asset?.url || ''}
 								alt={whyUsImage?.asset?.altText || ''}
@@ -56,30 +56,13 @@ export default function WhyUs() {
 									maskImage: "url('./images/home/why-us/why-us-blob.svg')",
 									maskSize: 'cover',
 								}}
-								className=""
-							/>
-						</div>
-					</div>
-					<div className=" block lg:hidden mt-10 mb-8 ">
-						<div className=" bg-[url('/images/home/why-us/whyus-bg-blob.svg')] bg-cover">
-							<Image
-								src={whyUsImage?.asset?.url || ''}
-								alt={whyUsImage?.asset?.altText || ''}
-								width="500"
-								height="500"
-								style={{
-									WebkitMaskImage:
-										"url('./images/home/why-us/why-us-blob.svg')",
-									WebkitMaskSize: 'cover',
-									maskImage: "url('./images/home/why-us/why-us-blob.svg')",
-									maskSize: 'cover',
-								}}
+								className="h-auto w-full"
 							/>
 						</div>
 					</div>
 				</div>
 
-				<div className=" grid grid-cols-1 lg:grid-cols-2 gap-2 lg:mt-20 mt-0 ">
+				<div className=" mt-0 grid grid-cols-1 gap-y-4 lg:mt-20 mx-8  md:grid-cols-2 ">
 					{whyUsCards?.map((ourValues, index) => {
 						return (
 							ourValues?.image && (
@@ -95,7 +78,7 @@ export default function WhyUs() {
 					})}
 				</div>
 			</div>
-			<div className="relative z-1 bottom-24 -mb-24 sm:bottom-40  sm:-mb-40 md:bottom-64 md:-mb-64">
+			<div className="z-1 relative bottom-24 -mb-24 sm:bottom-40  sm:-mb-40 md:bottom-64 md:-mb-64">
 				<Image
 					src={bottomWave}
 					alt="why us bottom bg"

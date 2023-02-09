@@ -15,7 +15,7 @@ const ServiceCard: React.FC<Props> = (props) => {
 	return (
 		<div
 			id="card-container"
-			className="flex-col  rounded-xl rounded-t-3xl shadow-lg group-hover:blur-sm hover:!blur-none group-hover:scale-[1.05] hover:!scale-100 duration-500 "
+			className=" flex-col  rounded-xl rounded-t-3xl shadow-lg group-hover:blur-sm hover:!blur-none group-hover:scale-[1.05] hover:!scale-100 duration-500 "
 		>
 			
 				<Image
