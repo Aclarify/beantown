@@ -35,7 +35,7 @@ const BlogCard: React.FC<Props> = (props) => {
 					</button>
 
 					<Image
-						src="/images/home_page/blog-arrow.svg"
+						src="/images/home/blog-arrow.svg"
 						width="75"
 						height="20"
 						alt="Blog Arrow"

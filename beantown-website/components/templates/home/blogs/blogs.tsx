@@ -43,28 +43,7 @@ export default function Blogs() {
 					height={200}
 				></Image>
 			</div>
-			<div
-				id="right-blob-desktop"
-				className="hidden lg:block absolute opacity-1 -right-[90%] top-[0em] h-full w-full  "
-			>
-				<Image
-					src="/blue-blob-shape-2.svg"
-					alt="Right-blob"
-					width={500}
-					height={500}
-				></Image>
-			</div>
-			<div
-				id="right-blob-mobile"
-				className="block lg:hidden absolute opacity-1 -right-[88%] top-[0em] h-full w-full"
-			>
-				<Image
-					src="/blue-blob-shape-2-mobile.svg"
-					alt="Right-blob"
-					width={200}
-					height={200}
-				></Image>
-			</div>
+			
 			<div className="relative z-10">
 				<div className="title-5 lg:title-2 text-primary-black text-center">
 					<h1>{blogTitle}</h1>

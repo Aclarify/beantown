@@ -1,10 +1,4 @@
 import React, { useContext } from 'react';
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import {
-	faArrowRight,
-	faArrowLeft,
-	faMapLocation,
-} from '@fortawesome/free-solid-svg-icons';
 import { GlobalContext } from '@contexts/global/global.context';
 import { GlobalContextProps } from '@typing/common/interfaces/contexts.interface';
 import { HomePageContentProps } from 'pages';
@@ -36,13 +30,14 @@ export default function ServiceAreas() {
 						<p>{serviceAreaDescription}</p>
 					</div>
 				</div>
-				{/* <div className="relative flex"> */}
-				<div className="relative text-left">
+
+				<div className="relative text-left ">
 					<Image
 						src={serviceAreaImage?.asset?.url || ''}
 						alt={serviceAreaImage?.asset?.altText || ''}
 						width="1000"
 						height="600"
+						className="lg:w-3/4"
 					></Image>
 					<div
 						id="service-area-outer-container"
@@ -55,6 +50,7 @@ export default function ServiceAreas() {
 							<h1 className="subtitle-7 lg:subtitle-3 text-primary-black pl-6 pb-2 mt-2">
 								{serviceAreas?.title}
 							</h1>
+
 							<div
 								id="service-area-container"
 								className="grid grid-cols-2 mx-6 h-auto md:my-4 pb-2 place-items-center"
@@ -65,24 +61,43 @@ export default function ServiceAreas() {
 											key={index}
 											className="py-2 w-32 md:w-56 my-2 mr-2 lg:w-56 justify-center flex  space-x-2 bg-secondary-shade-3 para-6 lg:para-2 rounded-md align-middle items-center"
 										>
-											<div className="">
-												<Image
-													src={'/images/home_page/location-icon.svg'}
-													alt={serviceAreaImage?.asset?.altText || ''}
-													width="24"
-													height="20"
-												></Image>
-											</div>
-											<div className="">
-												<span>{serviceArea?.split(',').join(', ')}</span>
-											</div>
+											<Image
+												src={'/images/home/location-icon.svg'}
+												alt={serviceAreaImage?.asset?.altText || ''}
+												width="24"
+												height="20"
+											></Image>
+
+											<span>{serviceArea?.split(',').join(', ')}</span>
 										</div>
 									);
 								})}
+
+								<div
+									id="right-blob-desktop"
+									className="hidden lg:block md:hidden absolute opacity-1 -right-[95%] top-[2em]  z-10 h-full w-full  "
+								>
+									<Image
+										src="/blue-blob-shape-2.svg"
+										alt="Right-blob"
+										width={500}
+										height={500}
+									></Image>
+								</div>
+								{/* <div
+									id="right-blob-mobile"
+									className="block  lg:hidden absolute opacity-1 -right-[90%] top-[10em] h-full w-full  overflow-hidden"
+								>
+									<Image
+										src="/blue-blob-shape-2-mobile.svg"
+										alt="Right-blob"
+										width={200}
+										height={200}
+									></Image>
+								</div> */}
 							</div>
 						</div>
 					</div>
-					{/* </div> */}
 				</div>
 			</div>
 		</section>
