@@ -19,11 +19,11 @@ export default function Blogs() {
 	return (
 		<section
 			id="blogs"
-			className="flex flex-col pl-6 lg:px-10 bg-primary-white-shade-1 relative overflow-hidden z-10 pb-20 "
+			className="bg-primary-white-shade-1 relative z-10 flex flex-col overflow-hidden pl-6 pb-20 lg:px-10 "
 		>
 			<div
 				id="left-blob-desktop"
-				className="hidden sm:block relative bottom-[2rem] right-[16em] h-0"
+				className="relative bottom-[2rem] right-[16em] hidden h-0 sm:block"
 			>
 				<Image
 					src="/blue-blob-shape-1.svg"
@@ -34,7 +34,7 @@ export default function Blogs() {
 			</div>
 			<div
 				id="left-blob-mobile"
-				className="block sm:hidden relative bottom-[-3rem] right-[8em] h-0"
+				className="relative bottom-[-3rem] right-[8em] block h-0 sm:hidden"
 			>
 				<Image
 					src="/blue-blob-shape-1-mobile.svg"
@@ -43,21 +43,21 @@ export default function Blogs() {
 					height={200}
 				></Image>
 			</div>
-			
+
 			<div className="relative z-10">
 				<div className="title-5 lg:title-2 text-primary-black text-center">
 					<h1>{blogTitle}</h1>
 				</div>
-				<div className="para-4 lg:para-2 text-primary-shade-1 text-center pt-4 pb-6">
+				<div className="para-4 lg:para-2 text-primary-shade-1 pt-4 pb-6 text-center">
 					<p>{blogDescription}</p>
 				</div>
 
-				<div className=" no-scrollbar flex flex-nowrap overflow-x-auto snap-x snap-mandatory pb-4  lg:pr-14 lg:pl-14  gap-4 ">
+				<div className=" no-scrollbar flex snap-x snap-mandatory flex-nowrap gap-4 overflow-x-auto  pb-4 lg:pr-14  lg:pl-14 ">
 					{blogCards?.map((blog, index) => {
 						return (
 							<div
 								key={index}
-								className="flex-none w-[250px]   lg:w-1/3   snap-always snap-start  "
+								className="w-[250px] flex-none   snap-start   snap-always lg:w-1/3  "
 							>
 								<BlogCard
 									blogName={blog?.name || ''}
@@ -71,7 +71,7 @@ export default function Blogs() {
 					})}
 				</div>
 
-				<div className="items-center text-center pt-4">
+				<div className="items-center pt-4 text-center lg:mb-16">
 					<Link href={'/'}>
 						<Button fontColor="text-white" bgColor=" bg-primary-shade-1">
 							{blogButton?.text}
