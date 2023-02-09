@@ -46,7 +46,7 @@ export { getStaticProps };
 
 const HomePage: React.FC = () => {
 	return (
-		<>
+		<div className="overflow-hidden">
 			<PageHead />
 			<Header />
 			<HomeHero />
@@ -85,7 +85,7 @@ const HomePage: React.FC = () => {
 
 			<FooterCta />
 			<FooterComponent />
-		</>
+		</div>
 	);
 };
 
