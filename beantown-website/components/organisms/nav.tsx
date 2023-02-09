@@ -35,7 +35,7 @@ export default function Nav() {
 
 	return (
 		<>
-			<section className="absolute w-full lg:px-20">
+			<section className="absolute w-full lg:px-14">
 				<Popover className="relative z-30">
 					<div className=" flex items-center  justify-between px-4 py-2 text-white lg:p-2">
 						<Image

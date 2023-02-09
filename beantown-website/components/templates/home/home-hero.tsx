@@ -17,18 +17,15 @@ export default function HomeHero() {
 	const { heroTitle, heroDescription, heroButton, heroImage } = homeData;
 	return (
 		<section id="home_page_hero ">
-			<div className="flex-shrink-0 flex flex-col justify-center">
-				<div className="space-y-2 absolute w-3/4 md:w-2/3 text-white px-6 md:px-10 align-middle z-10">
+			<div className="flex flex-shrink-0 flex-col justify-center">
+				<div className="para-6  md:para-2 lg:para-2 absolute z-10 w-3/4 space-y-1 px-6 align-middle text-white md:w-1/2 md:space-y-2 md:px-8 lg:m-10 lg:space-y-4">
 					<h1 className="title-4 lg:title-1">{heroTitle}</h1>
-					<div className="para-4 lg:para-2">
-						<RichText value={heroDescription?.contentRaw} />
-					</div>
 
-					<Link href={'/'}>
-						<Button fontColor="text-primary-shade-1" bgColor="bg-white">
-							Book Now
-						</Button>
-					</Link>
+					<RichText value={heroDescription?.contentRaw} />
+
+					<Button fontColor="text-primary-shade-1 " bgColor="bg-white">
+						<Link href={'/'}>Book Now</Link>
+					</Button>
 				</div>
 
 				<Image
@@ -36,26 +33,12 @@ export default function HomeHero() {
 					width={4000}
 					height={1000}
 					priority={true}
-					className="hidden md:flex"
+					className="h-auto w-full bg-gradient-to-t from-[#15284C] md:flex "
 					src={heroImage?.asset?.url || ''}
 					style={{
 						WebkitMaskImage: "url('./home-hero-mask.svg')",
 						WebkitMaskSize: 'cover',
 						maskImage: "url('./home-hero-mask.svg')",
-						maskSize: 'cover',
-					}}
-				/>
-				<Image
-					alt={heroImage?.asset?.altText || ''}
-					width={428}
-					height={420}
-					priority={true}
-					className="block md:hidden h-[420px]"
-					src={heroImage?.asset?.url || ''}
-					style={{
-						WebkitMaskImage: "url('./home-hero-mobile-mask.svg')",
-						WebkitMaskSize: 'cover',
-						maskImage: "url('./home-hero-mobile-mask.svg')",
 						maskSize: 'cover',
 					}}
 				/>

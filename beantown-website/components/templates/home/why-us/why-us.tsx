@@ -20,7 +20,7 @@ export default function WhyUs() {
 		homeData;
 	return (
 		<section id="whyUs" className="mt-30">
-			<div className="relative z-1 max-h-40 overflow-hidden">
+			<div className="relative z-1 max-h-40 overflow-hidden ">
 				<Image src={topWave} alt="why us wave bg" style={{ width: '100vw' }} />
 			</div>
 			<div
