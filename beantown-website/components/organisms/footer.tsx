@@ -1,4 +1,3 @@
-
 import React, { useContext } from 'react';
 import Link from 'next/link';
 import { GlobalContext } from '@contexts/global/global.context';
@@ -25,7 +24,7 @@ export default function Footer() {
 		copyright,
 	} = footerData;
 	return (
-		<section id="footer" className="relative -top-[10em]">
+		<section id="footer" className="relative -top-[10em] -mb-40">
 			<div
 				id="footerContainer"
 				className="flex flex-col lg:grid lg:grid-cols-5 w-full h-auto bg-primary-shade-1  px-6 pt-20 lg:px-10"
