@@ -1,10 +1,4 @@
 import React, { useContext } from 'react';
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import {
-	faArrowRight,
-	faArrowLeft,
-	faMapLocation,
-} from '@fortawesome/free-solid-svg-icons';
 import { GlobalContext } from '@contexts/global/global.context';
 import { GlobalContextProps } from '@typing/common/interfaces/contexts.interface';
 import { HomePageContentProps } from 'pages';

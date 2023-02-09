@@ -81,8 +81,7 @@ export default function Services() {
 						height={850}
 					></Image>
 				</div>
-
-				<div className="flex  flex-wrap lg:flex-nowrap lg:space-x-10  space-y-8 lg:space-y-4 lg:mb-20 justify-center items-center py-4 relative z-10 group">
+				<div className="flex flex-wrap lg:flex-nowrap lg:space-x-10  space-y-8 lg:space-y-4 lg:mb-20 justify-center items-center py-4 relative z-10 group">
 					{servicesGroup?.map((service, index) => {
 						return (
 							service?.thumbnailImage?.asset?.url && (
