@@ -43,7 +43,7 @@ export default function WhyUs() {
 						</Link>
 					</div>
 					<div className="mt-12 px-20 basis-1/2 hidden lg:block">
-						<div className=" bg-[url('/images/home/why-us/whyus-bg-shape.svg')] bg-cover">
+						<div className=" bg-[url('/images/home/why-us/whyus-bg-blob.svg')] bg-cover">
 							<Image
 								src={whyUsImage?.asset?.url || ''}
 								alt={whyUsImage?.asset?.altText || ''}
