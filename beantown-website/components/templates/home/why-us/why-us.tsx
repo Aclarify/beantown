@@ -7,8 +7,8 @@ import WhyUsCard from './why-us-card';
 import Image from 'next/image';
 import Button from 'components/atoms/button.atom';
 import Link from 'next/link';
-import topWave from 'public/why-us-wave.svg';
-import bottomWave from 'public/why-us-bottom-bg.svg';
+import topWave from 'public/images/home/why-us/why-us-wave.svg';
+import bottomWave from 'public/images/home/why-us/why-us-bottom-wave.svg';
 export default function WhyUs() {
 	const { pageContent } =
 		useContext<GlobalContextProps<HomePageContentProps>>(GlobalContext);
@@ -43,16 +43,17 @@ export default function WhyUs() {
 						</Link>
 					</div>
 					<div className="mt-12 px-20 basis-1/2 hidden lg:block">
-						<div className=" bg-[url('/whyus-bg-shape.svg')] bg-cover">
+						<div className=" bg-[url('/images/home/why-us/whyus-bg-blob.svg')] bg-cover">
 							<Image
 								src={whyUsImage?.asset?.url || ''}
 								alt={whyUsImage?.asset?.altText || ''}
 								width="1000"
 								height="1000"
 								style={{
-									WebkitMaskImage: "url('./why-us-mask.svg')",
+									WebkitMaskImage:
+										"url('./images/home/why-us/why-us-blob.svg')",
 									WebkitMaskSize: 'cover',
-									maskImage: "url('./why-us-mask.svg')",
+									maskImage: "url('./images/home/why-us/why-us-blob.svg')",
 									maskSize: 'cover',
 								}}
 								className=""
@@ -60,16 +61,17 @@ export default function WhyUs() {
 						</div>
 					</div>
 					<div className=" block lg:hidden mt-10 mb-8 ">
-						<div className=" bg-[url('/whyus-bg-shape.svg')] bg-cover">
+						<div className=" bg-[url('/images/home/why-us/whyus-bg-blob.svg')] bg-cover">
 							<Image
 								src={whyUsImage?.asset?.url || ''}
 								alt={whyUsImage?.asset?.altText || ''}
 								width="500"
 								height="500"
 								style={{
-									WebkitMaskImage: "url('./why-us-mask.svg')",
+									WebkitMaskImage:
+										"url('./images/home/why-us/why-us-blob.svg')",
 									WebkitMaskSize: 'cover',
-									maskImage: "url('./why-us-mask.svg')",
+									maskImage: "url('./images/home/why-us/why-us-blob.svg')",
 									maskSize: 'cover',
 								}}
 							/>

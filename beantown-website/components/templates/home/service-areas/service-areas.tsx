@@ -18,7 +18,7 @@ export default function ServiceAreas() {
 		serviceAreaImage,
 	} = homeData;
 	return (
-		<section id="serviceAreas" className="bg-[#FCFDFC] mt-20">
+		<section id="serviceAreas" className="bg-primary-white-shade-1 mt-20">
 			<div className="p-6 lg:px-10 mt-20">
 				<div className="lg:flex lg:mt-40 mt-20 pb-6">
 					<div className="lg:border-r-2 lg:w-1/2">
@@ -62,7 +62,7 @@ export default function ServiceAreas() {
 											className="py-2 w-32 md:w-56 my-2 mr-2 lg:w-56 justify-center flex  space-x-2 bg-secondary-shade-3 para-6 lg:para-2 rounded-md align-middle items-center"
 										>
 											<Image
-												src={'/images/home_page/location-icon.svg'}
+												src={'/images/home/location-icon.svg'}
 												alt={serviceAreaImage?.asset?.altText || ''}
 												width="24"
 												height="20"
