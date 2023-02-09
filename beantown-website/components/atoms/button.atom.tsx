@@ -8,7 +8,7 @@ const Button: React.FC<Props> = (props) => {
 	return (
 		<>
 			<button
-				className={`${props.fontColor} py-2 px-6 my-6 w-32 lg:w-36 rounded-md  tracking-wide lg:tracking-wider para-3  ${props.bgColor}`}
+				className={`${props.fontColor} py-2 px-8  w-32 lg:w-36  rounded-md  tracking-wide lg:tracking-wider para-3  ${props.bgColor}`}
 			>
 				{props.children}
 			</button>

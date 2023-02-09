@@ -35,40 +35,37 @@ export default function Nav() {
 
 	return (
 		<>
-			<section className="absolute w-full lg:px-10">
+			<section className="absolute w-full lg:px-20">
 				<Popover className="relative z-30">
-					<div className=" flex justify-between items-center  mx-auto px-4 py-6 lg:p-0 text-white">
-						<div className="hidden lg:flex align-middle ">
-							<Image
-								alt={logo?.asset?.altText || ''}
-								width={200}
-								height={300}
-								src={logo?.asset?.url || ''}
-							/>
-						</div>
-						<div className="flex align-middle lg:hidden">
-							<Image
-								alt={logo?.asset?.altText || ''}
-								width={100}
-								height={100}
-								src={logo?.asset?.url || ''}
-							/>
-						</div>
-						<div className="-my-2  lg:hidden">
-							<Popover.Button
-								className="inline-flex rounded-md p-2 "
-								aria-label="menu for navigation"
-							>
-								<Bars3Icon className="h-6 w-6" aria-hidden="true" />
-							</Popover.Button>
-						</div>
-						<div className="hidden lg:justify-center lg:flex lg:flex-grow  items-center para-4 lg:para-3  ">
+					<div className=" flex items-center  justify-between px-4 py-2 text-white lg:p-2">
+						<Image
+							alt={logo?.asset?.altText || ''}
+							width={200}
+							height={200}
+							src={logo?.asset?.url || ''}
+							className="hidden w-auto h-14 sm:h-16  lg:flex"
+						/>
+						<Image
+							alt={logo?.asset?.altText || ''}
+							width={100}
+							height={100}
+							src={logo?.asset?.url || ''}
+							className="flex lg:hidden"
+						/>
+						<Popover.Button
+							className="-my-2 inline-flex rounded-md p-4  lg:hidden"
+							aria-label="menu for navigation"
+						>
+							<Bars3Icon className="h-6 w-6" aria-hidden="true" />
+						</Popover.Button>
+
+						<div className="para-4 lg:para-3 hidden items-center  lg:flex lg:flex-grow lg:justify-center  ">
 							{navLinks?.map((link, index) => {
 								return (
 									<Link
 										key={index}
 										href={link?.href || '/'}
-										className="p-8 group inline-block"
+										className="group inline-block "
 									>
 										{link?.linkText}
 									</Link>
@@ -77,17 +74,17 @@ export default function Nav() {
 
 							{navGroup?.map((linkGroup, index) => {
 								return (
-									<div key={index} className="group inline-block pl-8">
+									<div key={index} className="group inline-block pl-6">
 										<Link
 											href={'/'}
-											className="outline-none focus:outline-none  px-3 py-1  rounded-sm flex items-center min-w-32"
+											className="min-w-32 flex  items-center rounded-sm  outline-none focus:outline-none"
 										>
-											<span className="pr-1 flex-1 para-4 lg:para-3 ">
+											<span className="para-4 lg:para-3 flex-1 p-1 ">
 												{linkGroup?.groupTitle}
 											</span>
 											<span>
 												<svg
-													className="fill-current h-4 w-4 transform group-hover:-rotate-180 transition duration-150 ease-in-out"
+													className="h-4 w-4 transform fill-current transition duration-150 ease-in-out group-hover:-rotate-180"
 													xmlns="http://www.w3.org/2000/svg"
 													viewBox="0 0 20 20"
 												>
@@ -95,7 +92,7 @@ export default function Nav() {
 												</svg>
 											</span>
 										</Link>
-										<ul className="rounded-sm transform scale-0 group-hover:scale-100 absolute  transition duration-500 ease-in-out origin-top min-w-32">
+										<ul className="min-w-32 absolute origin-top scale-0 transform  rounded-sm transition duration-500 ease-in-out group-hover:scale-100">
 											{linkGroup?.links?.map((link, index) => {
 												return (
 													<Link
@@ -103,7 +100,7 @@ export default function Nav() {
 														href={link?.href || '/'}
 														aria-label={`Go to ${link?.linkText} page`}
 													>
-														<li className="rounded-sm px-3 py-1 para-4 lg:para-3 ">
+														<li className="para-4 lg:para-3 rounded-sm  p-1">
 															{link?.linkText}
 														</li>
 													</Link>
@@ -114,11 +111,14 @@ export default function Nav() {
 								);
 							})}
 						</div>
-						<div className=" hidden lg:justify-end lg:flex ">
-							<Button fontColor="text-primary-shade-1" bgColor="bg-white">
-								{headerButton?.text}
-							</Button>
-						</div>
+						
+						<Button
+							fontColor="text-primary-shade-1 hidden lg:flex lg:justify-end"
+							bgColor="bg-white"
+						>
+							{headerButton?.text}
+						</Button>
+				
 					</div>
 
 					<Transition
@@ -134,9 +134,9 @@ export default function Nav() {
 							focus
 							className="absolute inset-x-0 top-0 origin-top-right transform p-2 transition lg:hidden"
 						>
-							<div className="rounded-lg bg-primary-white-shade-1">
+							<div className="bg-primary-white-shade-1 rounded-lg">
 								<div className="px-5 pt-5 pb-6">
-									<div className="flex justify-end -mr-2">
+									<div className="-mr-2 flex justify-end">
 										<Popover.Button
 											className="inline-flex items-center justify-center rounded-md  p-2   "
 											aria-label="menu for close button"
@@ -152,7 +152,7 @@ export default function Nav() {
 													<Link
 														key={index}
 														href={link?.href || '/'}
-														className=" pr-2 group inline-block"
+														className=" group inline-block pr-2"
 													>
 														{link?.linkText}
 													</Link>
