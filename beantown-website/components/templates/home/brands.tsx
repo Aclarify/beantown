@@ -6,6 +6,7 @@ import { HomePageContentProps } from 'pages';
 import Image from 'next/image';
 import Carousel from 'react-multi-carousel';
 import 'react-multi-carousel/lib/styles.css';
+import topWave from 'public/images/home/brands/brand-top-wave.svg';
 
 export default function Brands() {
 	const { pageContent } =
@@ -39,91 +40,45 @@ export default function Brands() {
 		<>
 			<section
 				id="brand-desktop"
-				className="bg-primary-white-shade-1 hidden lg:block lg:pt-[2em] pb-[6em] h-[60vh] relative -top-[1em] "
-				style={{
-					WebkitMaskImage: "url('./brand-wave.svg')",
-					WebkitMaskSize: 'cover',
-					maskImage: "url('./brand-wave.svg')",
-					maskSize: 'cover',
-				}}
+				className="bg-primary-white-shade-1 relative  "
 			>
-				<div className="flex  justify-center pt-10">
-					<span className="title-6 lg:title-3 text-primary-black p-4 m-4">
-						{brandsTitle}
-					</span>
+				<div className="z-1 relative bottom-[7em] z-10 -mb-[7em] max-h-40 overflow-hidden">
+					<Image src={topWave} alt="faq wave bg" style={{ width: '100vw' }} />
 				</div>
-				<div>
-					<Carousel
-						responsive={responsive}
-						additionalTransfrom={0}
-						centerMode={false}
-						autoPlay={true}
-						infinite
-						autoPlaySpeed={2000}
-						removeArrowOnDeviceType={['tablet', 'desktop', 'mobile']}
-						className="lg:flex lg:justify-center"
-					>
-						{clientsLogo?.map((logo, index) => {
-							return (
-								logo &&
-								logo.image && (
-									<div key={index} className="flex justify-center">
-										<Image
-											alt={logo?.image?.asset?.altText || ''}
-											width={200}
-											height={300}
-											src={logo?.image?.asset?.url || ''}
-										/>
-									</div>
-								)
-							);
-						})}
-					</Carousel>
-				</div>
-			</section>
-			<section
-				id="brand-mobile"
-				className="bg-primary-white-shade-1 block lg:hidden md:pt-[4em]  h-[50vh] md:h-[45vh] relative -top-[1em]"
-				style={{
-					WebkitMaskImage: "url('./brand-wave-mobile.svg')",
-					WebkitMaskSize: 'cover',
-					maskImage: "url('./brand-wave-mobile.svg')",
-					maskSize: 'cover',
-				}}
-			>
-				<div className="flex  justify-center pt-10">
-					<span className="title-6 lg:title-3 text-primary-black p-4 m-4">
-						{brandsTitle}
-					</span>
-				</div>
-				<div>
-					<Carousel
-						responsive={responsive}
-						additionalTransfrom={0}
-						centerMode={false}
-						autoPlay={true}
-						infinite
-						autoPlaySpeed={2000}
-						removeArrowOnDeviceType={['tablet', 'desktop', 'mobile']}
-						className="lg:flex lg:justify-center"
-					>
-						{clientsLogo?.map((logo, index) => {
-							return (
-								logo &&
-								logo.image && (
-									<div key={index} className="flex justify-center px-6">
-										<Image
-											alt={logo?.image?.asset?.altText || ''}
-											width={200}
-											height={300}
-											src={logo?.image?.asset?.url || ''}
-										/>
-									</div>
-								)
-							);
-						})}
-						
-					</Carousel>
+				<div className=" relative bottom-[8em] z-20">
+					<div className="flex  justify-center pt-10">
+						<span className="title-6 lg:title-3 text-primary-black m-4 p-4">
+							{brandsTitle}
+						</span>
+					</div>
+					<div>
+						<Carousel
+							responsive={responsive}
+							additionalTransfrom={0}
+							centerMode={false}
+							autoPlay={true}
+							infinite
+							autoPlaySpeed={2000}
+							removeArrowOnDeviceType={['tablet', 'desktop', 'mobile']}
+							className="lg:flex lg:justify-center"
+						>
+							{clientsLogo?.map((logo, index) => {
+								return (
+									logo &&
+									logo.image && (
+										<div key={index} className="flex justify-center">
+											<Image
+												alt={logo?.image?.asset?.altText || ''}
+												width={200}
+												height={300}
+												src={logo?.image?.asset?.url || ''}
+											/>
+										</div>
+									)
+								);
+							})}
+						</Carousel>
+					</div>
 				</div>
 			</section>
 		</>
