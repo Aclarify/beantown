@@ -15,23 +15,23 @@ const ServiceCard: React.FC<Props> = (props) => {
 	return (
 		<div
 			id="card-container"
-			className="flex-col  bg-white rounded-xl rounded-t-3xl shadow-lg group-hover:blur-sm hover:!blur-none group-hover:scale-[1.05] hover:!scale-100 duration-200 "
+			className="flex-col  rounded-xl rounded-t-3xl shadow-lg group-hover:blur-sm hover:!blur-none group-hover:scale-[1.05] hover:!scale-100 duration-500 "
 		>
-			<div id="image-container" className="basis-3/4  ">
+			
 				<Image
 					src={props.thumbnailSrc}
 					alt={props.thumbnailAltText}
 					width="600"
 					height="350"
-					className="rounded-t-lg h-96 object-cover  "
+					className="rounded-t-lg w-96 h-72 object-cover  "
 				/>
-			</div>
+			
 			<div id="name-container" className=" basis-1/8">
-				<h1 className="p-4  title-5 lg:title-3 text-primary-shade-1 text-center  ">
+				<h1 className="p-4  title-5 md:title-5 lg:title-4 text-primary-shade-1 text-center  ">
 					{props.title}
 				</h1>
 			</div>
-			<div id="button-container" className="basis-1/8 text-center -mt-4 mb-4">
+			<div id="button-container" className="basis-1/8 text-center mt-4 mb-6">
 				<Link href={'/'}>
 					<Button fontColor="text-white" bgColor=" bg-primary-shade-1">
 						{props.buttonText}
