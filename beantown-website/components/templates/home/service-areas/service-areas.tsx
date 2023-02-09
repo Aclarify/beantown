@@ -24,7 +24,7 @@ export default function ServiceAreas() {
 		serviceAreaImage,
 	} = homeData;
 	return (
-		<section id="serviceAreas" className="bg-[#FCFDFC] mt-20">
+		<section id="serviceAreas" className="bg-primary-white-shade-1 mt-20">
 			<div className="p-6 lg:px-10 mt-20">
 				<div className="lg:flex lg:mt-40 mt-20 pb-6">
 					<div className="lg:border-r-2 lg:w-1/2">

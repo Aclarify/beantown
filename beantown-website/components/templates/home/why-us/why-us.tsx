@@ -49,9 +49,9 @@ export default function WhyUs() {
 							width="1000"
 							height="1000"
 							style={{
-								WebkitMaskImage: "url('./why-us-mask.svg')",
+								WebkitMaskImage: "url('./why-us-blob.svg')",
 								WebkitMaskSize: 'cover',
-								maskImage: "url('./why-us-mask.svg')",
+								maskImage: "url('./why-us-blob.svg')",
 								maskSize: 'cover',
 							}}
 						/>
@@ -63,9 +63,9 @@ export default function WhyUs() {
 							width="500"
 							height="500"
 							style={{
-								WebkitMaskImage: "url('./why-us-mask.svg')",
+								WebkitMaskImage: "url('./why-us-blob.svg')",
 								WebkitMaskSize: 'cover',
-								maskImage: "url('./why-us-mask.svg')",
+								maskImage: "url('./why-us-blob.svg')",
 								maskSize: 'cover',
 							}}
 						/>
