@@ -7,6 +7,8 @@ import WhyUsCard from './why-us-card';
 import Image from 'next/image';
 import Button from 'components/atoms/button.atom';
 import Link from 'next/link';
+import topWave from 'public/why-us-wave.svg';
+import bottomWave from 'public/why-us-bottom-bg.svg';
 export default function WhyUs() {
 	const { pageContent } =
 		useContext<GlobalContextProps<HomePageContentProps>>(GlobalContext);
@@ -17,24 +19,15 @@ export default function WhyUs() {
 	const { whyUsTitle, whyUsDescription, whyUsButton, whyUsCards, whyUsImage } =
 		homeData;
 	return (
-		<section
-			id="whyUs"
-			className="mt-30 bg-[url('../public/why-us-wave.svg')] bg-contain bg-no-repeat 2xl:bg-cover "
-			// className="mt-30"
-		>
-			{/* <div className="relative z-1 h-25 -mb-25 overflow-hidden">
-				<Image
-					src="/why-us-wave.svg"
-					alt="why us wave bg"
-					width="1729"
-					height="1430"
-				/>
-			</div> */}
+		<section id="whyUs" className="mt-30">
+			<div className="relative z-1 max-h-40 overflow-hidden">
+				<Image src={topWave} alt="why us wave bg" style={{ width: '100vw' }} />
+			</div>
 			<div
 				id="section-wrapper"
-				className="flex flex-col overflow-hidden relative z-40"
+				className="flex flex-col overflow-hidden relative z-40 bg-primary-white-shade-1"
 			>
-				<div className="p-6 lg:px-10 flex flex-col-reverse lg:flex lg:flex-row  items-center w-full mt-20">
+				<div className="p-6 lg:px-10 flex flex-col-reverse lg:flex lg:flex-row  items-center w-full">
 					<div className=" lg:pt-20  flex flex-col items-start text-justify basis-1/2 z-10 ">
 						<h1 className="title-5 lg:title-2 text-primary-black ">
 							{whyUsTitle}
@@ -78,11 +71,8 @@ export default function WhyUs() {
 						/>
 					</div>
 				</div>
-				<div
-					id="testimonial-card-bg-wrapper"
-					className="relative bg-secondary-shade-3"
-				>
-					<div className="py-6 grid grid-cols-1 lg:grid-cols-2 gap-2 lg:mt-2 relative z-10">
+				<div id="testimonial-card-bg-wrapper" className="relative">
+					<div className="py-6 grid grid-cols-1 lg:grid-cols-2 gap-2 lg:mt-2 relative z-10 ">
 						{whyUsCards?.map((ourValues, index) => {
 							return (
 								ourValues?.image && (
@@ -98,14 +88,13 @@ export default function WhyUs() {
 						})}
 					</div>
 				</div>
-				<div className="relative z-1 bottom-24 -mb-24 sm:bottom-40  sm:-mb-40 md:bottom-64 md:-mb-64">
-					<Image
-						src="/why-us-bottom-bg.svg"
-						alt="why us bottom bg"
-						width="1546"
-						height="578"
-					/>
-				</div>
+			</div>
+			<div className="relative z-1 bottom-24 -mb-24 sm:bottom-40  sm:-mb-40 md:bottom-64 md:-mb-64">
+				<Image
+					src={bottomWave}
+					alt="why us bottom bg"
+					style={{ width: '100vw' }}
+				/>
 			</div>
 		</section>
 	);
