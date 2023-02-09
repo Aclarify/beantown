@@ -40,11 +40,11 @@ export default function Services() {
 						height={500}
 					></Image>
 				</div>
-				<div className="flex flex-col items-center my-4 relative z-10">
+				<div className="flex flex-col items-center my-4 relative z-10  text-center">
 					<h1 className=" title-5 lg:title-2 mb-4 text-primary-black">
 						{servicesTitle}
 					</h1>
-					<div className="lg:para-2 para-4 text-center text-primary-shade-1 flex-wrap">
+					<div className="lg:para-2 para-4 text-center text-primary-shade-1 flex-wrap w-1/2 ">
 						<RichText value={servicesDescription?.contentRaw} />
 					</div>
 				</div>
@@ -81,8 +81,7 @@ export default function Services() {
 						height={850}
 					></Image>
 				</div>
-
-				<div className="flex flex-wrap lg:flex-nowrap lg:space-x-20 space-y-4 lg:space-y-0 lg:mb-20 justify-center py-4 relative z-10">
+				<div className="flex flex-wrap lg:flex-nowrap lg:space-x-10  space-y-8 lg:space-y-4 lg:mb-20 justify-center items-center py-4 relative z-10 group">
 					{servicesGroup?.map((service, index) => {
 						return (
 							service?.thumbnailImage?.asset?.url && (

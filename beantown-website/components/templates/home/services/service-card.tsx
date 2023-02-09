@@ -15,15 +15,15 @@ const ServiceCard: React.FC<Props> = (props) => {
 	return (
 		<div
 			id="card-container"
-			className="flex-col  bg-white rounded-lg shadow-lg  "
+			className="flex-col  bg-white rounded-xl rounded-t-3xl shadow-lg group-hover:blur-sm hover:!blur-none group-hover:scale-[1.05] hover:!scale-100 duration-200 "
 		>
-			<div id="image-container" className="basis-3/4 ">
+			<div id="image-container" className="basis-3/4  ">
 				<Image
 					src={props.thumbnailSrc}
 					alt={props.thumbnailAltText}
-					width="400"
+					width="600"
 					height="350"
-					className="rounded-t-lg h-72 object-cover"
+					className="rounded-t-lg h-96 object-cover  "
 				/>
 			</div>
 			<div id="name-container" className=" basis-1/8">

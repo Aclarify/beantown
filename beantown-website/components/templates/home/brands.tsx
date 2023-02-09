@@ -32,7 +32,7 @@ export default function Brands() {
 		},
 		mobile: {
 			breakpoint: { max: 464, min: 0 },
-			items: 1,
+			items: 2,
 		},
 	};
 	return (
@@ -122,6 +122,7 @@ export default function Brands() {
 								)
 							);
 						})}
+						
 					</Carousel>
 				</div>
 			</section>

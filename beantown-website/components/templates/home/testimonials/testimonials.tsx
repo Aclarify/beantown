@@ -103,7 +103,7 @@ export default function Testimonials() {
 				</div>
 				<div
 					id="left-blob-tab"
-					className="lg:hidden md:block hidden relative bottom-[12rem] right-[35em] h-0"
+					className=" lg:hidden md:block hidden relative bottom-[12rem] right-[35em] h-0"
 				>
 					<Image
 						src="/blob-shape-1.svg"

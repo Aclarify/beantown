@@ -43,50 +43,54 @@ export default function WhyUs() {
 						</Link>
 					</div>
 					<div className="mt-12 px-20 basis-1/2 hidden lg:block">
-						<Image
-							src={whyUsImage?.asset?.url || ''}
-							alt={whyUsImage?.asset?.altText || ''}
-							width="1000"
-							height="1000"
-							style={{
-								WebkitMaskImage: "url('./why-us-mask.svg')",
-								WebkitMaskSize: 'cover',
-								maskImage: "url('./why-us-mask.svg')",
-								maskSize: 'cover',
-							}}
-						/>
+						<div className=" bg-[url('/whyus-bg-shape.svg')] bg-cover">
+							<Image
+								src={whyUsImage?.asset?.url || ''}
+								alt={whyUsImage?.asset?.altText || ''}
+								width="1000"
+								height="1000"
+								style={{
+									WebkitMaskImage: "url('./why-us-mask.svg')",
+									WebkitMaskSize: 'cover',
+									maskImage: "url('./why-us-mask.svg')",
+									maskSize: 'cover',
+								}}
+								className=""
+							/>
+						</div>
 					</div>
-					<div className="block lg:hidden md:mt-10">
-						<Image
-							src={whyUsImage?.asset?.url || ''}
-							alt={whyUsImage?.asset?.altText || ''}
-							width="500"
-							height="500"
-							style={{
-								WebkitMaskImage: "url('./why-us-mask.svg')",
-								WebkitMaskSize: 'cover',
-								maskImage: "url('./why-us-mask.svg')",
-								maskSize: 'cover',
-							}}
-						/>
+					<div className=" block lg:hidden mt-10 mb-8 ">
+						<div className=" bg-[url('/whyus-bg-shape.svg')] bg-cover">
+							<Image
+								src={whyUsImage?.asset?.url || ''}
+								alt={whyUsImage?.asset?.altText || ''}
+								width="500"
+								height="500"
+								style={{
+									WebkitMaskImage: "url('./why-us-mask.svg')",
+									WebkitMaskSize: 'cover',
+									maskImage: "url('./why-us-mask.svg')",
+									maskSize: 'cover',
+								}}
+							/>
+						</div>
 					</div>
 				</div>
-				<div id="testimonial-card-bg-wrapper" className="relative">
-					<div className="py-6 grid grid-cols-1 lg:grid-cols-2 gap-2 lg:mt-2 relative z-10 ">
-						{whyUsCards?.map((ourValues, index) => {
-							return (
-								ourValues?.image && (
-									<WhyUsCard
-										key={index}
-										title={ourValues?.titleText || ''}
-										description={ourValues?.description?.contentRaw}
-										thumbnailSrc={ourValues.image?.asset?.url || ''}
-										thumbnailAltText={ourValues.image?.asset?.altText || ''}
-									/>
-								)
-							);
-						})}
-					</div>
+
+				<div className=" grid grid-cols-1 lg:grid-cols-2 gap-2 lg:mt-20 mt-0 ">
+					{whyUsCards?.map((ourValues, index) => {
+						return (
+							ourValues?.image && (
+								<WhyUsCard
+									key={index}
+									title={ourValues?.titleText || ''}
+									description={ourValues?.description?.contentRaw}
+									thumbnailSrc={ourValues.image?.asset?.url || ''}
+									thumbnailAltText={ourValues.image?.asset?.altText || ''}
+								/>
+							)
+						);
+					})}
 				</div>
 			</div>
 			<div className="relative z-1 bottom-24 -mb-24 sm:bottom-40  sm:-mb-40 md:bottom-64 md:-mb-64">
