@@ -26,7 +26,7 @@ export default function Faq() {
 	}
 	return (
 		<>
-			<section id="faq" className="relative mb-[5em] md:mb-[3em]">
+			<section id="faq" className="relative mb-[6em]">
 				<div className="z-1 relative bottom-[5em] z-10 -mb-[19em] max-h-40 overflow-hidden">
 					<Image src={topWave} alt="faq wave bg" style={{ width: '100vw' }} />
 				</div>
