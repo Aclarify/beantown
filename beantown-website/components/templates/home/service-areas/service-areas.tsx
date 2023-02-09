@@ -51,9 +51,9 @@ export default function ServiceAreas() {
 					>
 						<div
 							id="service-areas-inner-container"
-							className="bg-white pt-1 rounded-2xl shadow-md lg:p-1 translate-y-[-10px] lg:translate-y-0"
+							className="bg-white pt-1 rounded-2xl shadow-md  lg:p-1 translate-y-[-10px] lg:translate-y-0"
 						>
-							<h1 className="subtitle-6 lg:subtitle-3 text-primary-black pl-6 pb-2 mt-2">
+							<h1 className="subtitle-7 lg:subtitle-3 text-primary-black pl-6 pb-2 mt-2">
 								{serviceAreas?.title}
 							</h1>
 
