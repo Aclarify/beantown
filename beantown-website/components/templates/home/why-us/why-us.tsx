@@ -25,7 +25,7 @@ export default function WhyUs() {
 			</div>
 			<div
 				id="section-wrapper"
-				className="bg-primary-white-shade-1 relative z-40 flex flex-col overflow-hidden mx-8"
+				className="bg-primary-white-shade-1 relative z-40 flex flex-col overflow-hidden "
 			>
 				<div className="flex w-full flex-col-reverse items-center p-6 md:flex mx-8 md:flex-row lg:px-10">
 					<div className=" z-10  flex flex-col items-start text-justify sm:basis-1/2 lg:pt-20 ">
