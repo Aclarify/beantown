@@ -11,7 +11,7 @@ interface Props {
 const WhyUsCard: React.FC<Props> = (props) => {
 	return (
 		<>
-			<div className="mx-4 flex  items-center rounded-xl shadow-sm">
+			<div className="mx-4 flex  items-center rounded-lg shadow">
 				<div>
 					<Image
 						src={props.thumbnailSrc}
