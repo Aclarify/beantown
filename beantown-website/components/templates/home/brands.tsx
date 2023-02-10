@@ -33,7 +33,7 @@ export default function Brands() {
 		},
 		mobile: {
 			breakpoint: { max: 464, min: 0 },
-			items: 2,
+			items: 1,
 		},
 	};
 	return (
@@ -45,7 +45,7 @@ export default function Brands() {
 				<div className="z-1 relative bottom-[7em] z-10 -mb-[7em] max-h-40 overflow-hidden">
 					<Image src={topWave} alt="faq wave bg" style={{ width: '100vw' }} />
 				</div>
-				<div className=" relative bottom-[8em] z-20">
+				<div className=" bg-primary-white-shade-1 relative bottom-[8em] z-20">
 					<div className="flex  justify-center pt-10">
 						<span className="title-6 lg:title-3 text-primary-black m-4 p-4">
 							{brandsTitle}

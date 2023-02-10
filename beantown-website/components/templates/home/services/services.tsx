@@ -16,11 +16,11 @@ export default function Services() {
 
 	const { servicesTitle, servicesDescription, servicesGroup } = homeData;
 	return (
-		<section id="services" className="mt-10 lg:my-20  overflow-hidden ">
-			<div className="px-6 lg:px-10 bg-secondary-shade-3 ">
+		<section id="services" className="mt-10 overflow-hidden  lg:my-20 ">
+			<div className="bg-secondary-shade-3 px-6 lg:px-10 ">
 				<div
 					id="left-blob-mobile"
-					className="md:hidden block relative bottom-[0rem] right-[6em] h-0"
+					className="relative bottom-[0rem] right-[6em] block h-0 md:hidden"
 				>
 					<Image
 						src="/blob-shape-1.svg"
@@ -31,7 +31,7 @@ export default function Services() {
 				</div>
 				<div
 					id="left-blob-tab"
-					className="lg:hidden md:block hidden relative bottom-[2rem] right-[25em] h-0"
+					className="relative bottom-[2rem] right-[25em] hidden h-0 md:block lg:hidden"
 				>
 					<Image
 						src="/blob-shape-1.svg"
@@ -40,17 +40,17 @@ export default function Services() {
 						height={500}
 					></Image>
 				</div>
-				<div className="flex flex-col items-center my-4 relative z-10  text-center">
-					<h1 className=" title-5 lg:title-2 mb-4 text-primary-black">
+				<div className="relative z-10 my-4 flex flex-col items-center  text-center">
+					<h1 className=" title-5 lg:title-2 text-primary-black mb-4">
 						{servicesTitle}
 					</h1>
-					<div className="lg:para-2 para-4 text-center text-primary-shade-1 flex-wrap w-1/2 ">
+					<div className="lg:para-2 para-4 text-primary-shade-1 text-center md:w-1/2 md:flex-wrap ">
 						<RichText value={servicesDescription?.contentRaw} />
 					</div>
 				</div>
 				<div
 					id="right-blob-mobile"
-					className="md:hidden block relative bottom-[7rem] -right-[77%] h-0"
+					className="relative bottom-[7rem] -right-[77%] block h-0 md:hidden"
 				>
 					<Image
 						src="/blob-shape-1.svg"
@@ -61,7 +61,7 @@ export default function Services() {
 				</div>
 				<div
 					id="right-blob-tab"
-					className="lg:hidden md:block hidden relative bottom-[11rem] -right-[84%] h-0"
+					className="relative bottom-[11rem] -right-[84%] hidden h-0 md:block lg:hidden"
 				>
 					<Image
 						src="/blob-shape-1.svg"
@@ -72,7 +72,7 @@ export default function Services() {
 				</div>
 				<div
 					id="right-blob-desktop"
-					className="hidden lg:block relative bottom-[32rem] right-36 left-[88vw] h-0"
+					className="relative bottom-[32rem] right-36 left-[88vw] hidden h-0 lg:block"
 				>
 					<Image
 						src="/blob-shape-1.svg"
@@ -81,7 +81,7 @@ export default function Services() {
 						height={850}
 					></Image>
 				</div>
-				<div className="flex flex-wrap lg:flex-nowrap lg:space-x-10  space-y-8 lg:space-y-4 lg:mb-20 justify-center items-center py-4 relative z-10 group">
+				<div className="group relative z-10 flex  flex-wrap items-center justify-center space-y-8 py-4 lg:mb-20 lg:flex-nowrap lg:space-x-10 lg:space-y-4">
 					{servicesGroup?.map((service, index) => {
 						return (
 							service?.thumbnailImage?.asset?.url && (
@@ -101,7 +101,7 @@ export default function Services() {
 				</div>
 				<div
 					id="left-blob-desktop"
-					className="hidden lg:block relative bottom-[26rem] right-[34rem] h-0"
+					className="relative bottom-[26rem] right-[34rem] hidden h-0 lg:block"
 				>
 					<Image
 						src="/blob-shape-1.svg"
