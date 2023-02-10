@@ -36,7 +36,7 @@ export default function Faq() {
 							<h1 className=" title-5 lg:title-2 text-primary-black mt-10 ">
 								{faqTitle}
 							</h1>
-							<p className="para-4 lg:para-2 text-primary-shade-1 my-4 flex flex-wrap lg:w-2/3">
+							<p className="para-4 lg:para-2 text-primary-shade-1 my-4 flex flex-wrap justify-center lg:w-2/3">
 								{faqDescription}
 							</p>
 

@@ -20,31 +20,31 @@ export default function FooterCta() {
 		<>
 			<section
 				id="footerCtaDesktop"
-				className="hidden lg:block relative z-10 -top-[6em]"
-				style={{
-					WebkitMaskImage: "url('./footer-cta-wave.svg')",
-					WebkitMaskSize: 'cover',
-					maskImage: "url('./footer-cta-wave.svg')",
-					maskSize: 'cover',
-				}}
+				className="z-15 relative -top-[6em] hidden lg:block"
+				// style={{
+				// 	WebkitMaskImage: "url('./footer-cta-wave.svg')",
+				// 	WebkitMaskSize: 'cover',
+				// 	maskImage: "url('./footer-cta-wave.svg')",
+				// 	maskSize: 'cover',
+				// }}
 			>
 				<div className="flex  flex-row ">
 					<div
 						id="content"
-						className=" bg-gradient-to-r from-secondary-shade-1  to-secondary-shade-2 relative  basis-1/2 "
+						className=" from-secondary-shade-1 to-secondary-shade-2  relative basis-1/2  bg-gradient-to-r "
 					>
 						<Image
-							src="/images/home_page/footer_cta_theme/mask_group.svg"
-							className="object-fill animate-pulse object-center "
+							src="/images/home/footer-cta/cta-bg-spiral.svg"
+							className="animate-pulse object-fill object-center "
 							alt="Image mask"
 							height={600}
 							width={600}
 						/>
-						<div className="flex flex-col lg:text-left justify-center absolute inset-x-0 inset-y-4 px-10   ">
+						<div className="absolute inset-x-0 inset-y-4 flex flex-col justify-center px-10 lg:text-left   ">
 							<p className="title-5 lg:title-2 text-primary-black text-left">
 								{ctaTitle}
 							</p>
-							<div className="para-2 text-primary-shade-1 justify-start w-3/4 ">
+							<div className="para-2 text-primary-shade-1 w-3/4 justify-start ">
 								<RichText value={ctaDescription?.contentRaw} />
 							</div>
 							<div className="flex justify-start ">
@@ -57,7 +57,7 @@ export default function FooterCta() {
 						</div>
 					</div>
 					<div
-						className={`basis-1/2 h-[600px]`}
+						className={`h-[600px] basis-1/2`}
 						style={{
 							backgroundImage: `linear-gradient(
 							to right,
@@ -72,13 +72,13 @@ export default function FooterCta() {
 			</section>
 			<section
 				id="footerCtaMobile"
-				className="block lg:hidden   relative z-10 -top-[7em]"
-				style={{
-					WebkitMaskImage: "url('./footer-cta-mobile-wave.svg')",
-					WebkitMaskSize: 'cover',
-					maskImage: "url('./footer-cta-mobile-wave.svg')",
-					maskSize: 'cover',
-				}}
+				className="relative -top-[7em]   z-10 block lg:hidden"
+				// style={{
+				// 	WebkitMaskImage: "url('./footer-cta-mobile-wave.svg')",
+				// 	WebkitMaskSize: 'cover',
+				// 	maskImage: "url('./footer-cta-mobile-wave.svg')",
+				// 	maskSize: 'cover',
+				// }}
 			>
 				<div className="flex flex-col">
 					<div
@@ -102,13 +102,13 @@ export default function FooterCta() {
 						}}
 					>
 						<Image
-							src="/images/home_page/footer_cta_theme/mask_group.svg"
+							src="/images/home/footer-cta/cta-bg-spiral.svg"
 							alt="Book us image backdrop"
 							width={1052}
 							height={690}
 						/>
-						<div className="space-y-8 inset-y-20 absolute inset-x-0  px-6 ">
-							<div className="flex flex-col space-y-2 align-middle justify-center h-full ">
+						<div className="absolute inset-y-20 inset-x-0 space-y-8  px-6 ">
+							<div className="flex h-full flex-col justify-center space-y-2 align-middle ">
 								<div>
 									<p className="title-5 md:title-3  text-primary-black text-center ">
 										{ctaTitle}
