@@ -26,10 +26,10 @@ export default function Footer() {
 	} = footerData;
 	return (
 		<section id="footer">
-			<div className=" relative bottom-[11em] z-10 max-h-40 overflow-hidden md:bottom-[11em] md:-mb-[8em]  xl:-mb-[10em]">
+			<div className=" relative bottom-[9em] z-10 max-h-40 overflow-hidden md:bottom-[10em] md:-mb-[8em] lg:bottom-[11em] lg:-mb-[8em]  xl:-mb-[10em]">
 				<Image src={topWave} alt="footer wave bg" style={{ width: '100vw' }} />
 			</div>
-			<div className="relative bottom-[4em] z-20 -mb-[4em]">
+			<div className="relative bottom-[10em] z-20 -mb-[10em] md:bottom-[4em] md:-mb-[4em]">
 				<div
 					id="footerContainer"
 					className="bg-primary-shade-1 flex h-auto w-full flex-col px-6   lg:grid lg:grid-cols-5 lg:px-10"

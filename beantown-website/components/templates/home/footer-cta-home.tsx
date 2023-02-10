@@ -94,7 +94,7 @@ export default function FooterCta() {
 					></div>
 					<div
 						id="content"
-						className="relative  block h-[50vh] "
+						className="relative  block h-[50vh] md:h-[55vh] "
 						style={{
 							backgroundImage: `linear-gradient(
 							#F4F8FB,
@@ -117,7 +117,7 @@ export default function FooterCta() {
 								<div className="para-4 md:para-2  text-primary-shade-1 justify-center text-center ">
 									<RichText value={ctaDescription?.contentRaw} />
 								</div>
-								<div className="flex justify-center  ">
+								<div className="flex justify-center   ">
 									<Link href={'/'}>
 										<Button
 											fontColor="text-white"
