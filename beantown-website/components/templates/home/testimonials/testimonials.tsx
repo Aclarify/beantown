@@ -88,11 +88,11 @@ export default function Testimonials() {
 		<>
 			<section
 				id="testimonials-cards"
-				className=" lg:px-10  bg-secondary-shade-3 overflow-hidden"
+				className=" bg-secondary-shade-3  overflow-hidden lg:px-10"
 			>
 				<div
 					id="left-blob"
-					className="hidden lg:block relative bottom-[12rem] right-[35em] h-0"
+					className="relative bottom-[12rem] right-[35em] hidden h-0 lg:block"
 				>
 					<Image
 						src="/blob-shape-1.svg"
@@ -103,7 +103,7 @@ export default function Testimonials() {
 				</div>
 				<div
 					id="left-blob-tab"
-					className=" lg:hidden md:block hidden relative bottom-[12rem] right-[35em] h-0"
+					className=" relative bottom-[12rem] right-[35em] hidden h-0 md:block lg:hidden"
 				>
 					<Image
 						src="/blob-shape-1.svg"
@@ -114,7 +114,7 @@ export default function Testimonials() {
 				</div>
 				<div
 					id="right-blob-mobile"
-					className="hidden relative bottom-[4rem] -right-[66%] h-0 -z-1"
+					className="-z-1 relative bottom-[4rem] -right-[66%] hidden h-0"
 				>
 					<Image
 						src="/testimonial-right-half-blob.svg"
@@ -123,7 +123,7 @@ export default function Testimonials() {
 						height={150}
 					></Image>
 				</div>
-				<div className="lg:hidden relative ">
+				<div className="relative lg:hidden ">
 					<div className=" w-full flex-none  gap-5">
 						<div className="mt-20 ml-8 ">
 							<h1 className="para-4 text-primary-shade-1 ">
@@ -136,8 +136,8 @@ export default function Testimonials() {
 					</div>
 				</div>
 
-				<div className="flex flex-nowrap overflow-x-auto space-x-4  m-4 ">
-					<div className="hidden z-10 lg:flex flex-col items-center justify-center m-8   flex-none gap-15  ">
+				<div className="m-4 flex flex-nowrap space-x-4  overflow-x-auto ">
+					<div className="gap-15 z-10 m-8 hidden flex-none flex-col items-center   justify-center lg:flex  ">
 						<div className="flex-none  gap-5 ">
 							<h1 className=" text-light-1 text-primary-shade-1 ">
 								{testimonialTitle}
@@ -146,23 +146,12 @@ export default function Testimonials() {
 								{testimonialDescription}
 							</span>
 						</div>
-						<div className="hidden lg:flex lg:flex-col items-center justify-center m-4 ">
-							<div className="flex gap-4 m-4 ">
-								{testimonialCards?.map((cards, index) => {
-									return (
-										<span
-											key={index}
-											onClick={() => goToSlide(index)}
-											className="w-8 border rounded-lg h-2 bg-white hover:bg-primary-shade-1 "
-										></span>
-									);
-								})}
-							</div>
-							<div className="flex  pt-4 justify-center ">
+						<div className="m-4 hidden items-center justify-center lg:flex lg:flex-col ">
+							<div className="flex  justify-center pt-4 ">
 								<button
 									onClick={movePrevious}
 									disabled={isDisabled('prev')}
-									className="bg-primary-shade-1 rounded-full text-white w-24 h-full text-center  hover:opacity-100 disabled:bg-white disabled:text-black disabled:cursor-not-allowed z-10 p-2 m-1  transition-all ease-in-out duration-300"
+									className="bg-primary-shade-1 z-10 m-1 h-full w-24 rounded-full  p-2 text-center text-white transition-all duration-300 ease-in-out hover:opacity-100  disabled:cursor-not-allowed disabled:bg-white disabled:text-black"
 									aria-label="Button for moving left"
 								>
 									<FontAwesomeIcon icon={faArrowLeft} size="lg" />
@@ -170,7 +159,7 @@ export default function Testimonials() {
 								<button
 									onClick={moveNext}
 									disabled={isDisabled('next')}
-									className="bg-primary-shade-1 rounded-full text-white w-24  h-full text-center hover:opacity-100   disabled:bg-white disabled:text-black disabled:cursor-not-allowed z-10 p-2 m-1 transition-all ease-in-out duration-300"
+									className="bg-primary-shade-1 z-10 m-1 h-full  w-24 rounded-full p-2   text-center text-white transition-all duration-300 ease-in-out hover:opacity-100 disabled:cursor-not-allowed disabled:bg-white disabled:text-black"
 									aria-label="Button for moving right"
 								>
 									<FontAwesomeIcon icon={faArrowRight} size="lg" />
@@ -181,14 +170,14 @@ export default function Testimonials() {
 
 					<div
 						ref={carousel}
-						className="no-scrollbar flex gap-6 mt-16    overflow-x-scroll scroll-smooth snap-x snap-mandatory  z-0 group "
+						className="no-scrollbar group z-0 mt-16    flex snap-x snap-mandatory gap-6  overflow-x-scroll scroll-smooth "
 					>
 						{testimonialCards?.map((reviews, index) => {
 							return (
 								<div
 									// id="slider"
 									key={index}
-									className=" w-80 h-[70vh] max-h-[500px] snap-start items-center bg-[#FFFFFF] my-6 p-2 flex-none  border rounded-2xl "
+									className=" my-6 h-[70vh] max-h-[500px] w-80 flex-none snap-start items-center rounded-2xl border  bg-[#FFFFFF] p-2 "
 								>
 									<TestimonialCard
 										key={index}
@@ -204,12 +193,12 @@ export default function Testimonials() {
 				</div>
 
 				<div className="lg:hidden">
-					<div className="flex items-center justify-center ">
+					<div className="mr-8 flex items-center justify-end ">
 						<div className="flex justify-center pt-4 ">
 							<button
 								onClick={movePrevious}
 								disabled={isDisabled('prev')}
-								className="bg-primary-shade-1  rounded-full text-white w-16 h-full  text-center  hover:opacity-100   disabled:bg-white disabled:text-black disabled:cursor-not-allowed z-10 p-2 m-1 transition-all ease-in-out duration-300"
+								className="bg-primary-shade-1  z-10 m-1 h-full w-16  rounded-full  p-2   text-center text-white transition-all duration-300 ease-in-out hover:opacity-100 disabled:cursor-not-allowed disabled:bg-white disabled:text-black"
 								aria-label="Button for moving left"
 							>
 								<FontAwesomeIcon icon={faArrowLeft} />
@@ -218,7 +207,7 @@ export default function Testimonials() {
 								id="right"
 								onClick={moveNext}
 								disabled={isDisabled('next')}
-								className="bg-primary-shade-1 rounded-full text-white w-16  h-full text-center   hover:opacity-100  disabled:bg-white disabled:text-black disabled:cursor-not-allowed z-10 p-2 m-1 transition-all ease-in-out duration-300"
+								className="bg-primary-shade-1 z-10 m-1 h-full  w-16 rounded-full   p-2  text-center text-white transition-all duration-300 ease-in-out hover:opacity-100 disabled:cursor-not-allowed disabled:bg-white disabled:text-black"
 								aria-label="Button for moving right"
 							>
 								<FontAwesomeIcon icon={faArrowRight} />

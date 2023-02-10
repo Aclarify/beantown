@@ -20,15 +20,15 @@ export default function WhyUs() {
 		homeData;
 	return (
 		<section id="whyUs" className="mt-30">
-			<div className="relative z-1 max-h-40 overflow-hidden">
+			<div className="z-1 relative max-h-40 overflow-hidden">
 				<Image src={topWave} alt="why us wave bg" style={{ width: '100vw' }} />
 			</div>
 			<div
 				id="section-wrapper"
-				className="flex flex-col overflow-hidden relative z-40 bg-primary-white-shade-1"
+				className="bg-primary-white-shade-1 relative z-40 flex flex-col overflow-hidden"
 			>
-				<div className="p-6 lg:px-10 flex flex-col-reverse lg:flex lg:flex-row  items-center w-full">
-					<div className=" lg:pt-20  flex flex-col items-start text-justify basis-1/2 z-10 ">
+				<div className="flex w-full flex-col-reverse items-center p-6 lg:flex  lg:flex-row lg:px-10">
+					<div className=" z-10  flex basis-1/2 flex-col items-start text-justify lg:pt-20 ">
 						<h1 className="title-5 lg:title-2 text-primary-black ">
 							{whyUsTitle}
 						</h1>
@@ -42,7 +42,7 @@ export default function WhyUs() {
 							</Button>
 						</Link>
 					</div>
-					<div className="mt-12 px-20 basis-1/2 hidden lg:block">
+					<div className="mt-12 hidden basis-1/2 px-20 lg:block">
 						<div className=" bg-[url('/images/home/why-us/whyus-bg-blob.svg')] bg-cover">
 							<Image
 								src={whyUsImage?.asset?.url || ''}
@@ -60,7 +60,7 @@ export default function WhyUs() {
 							/>
 						</div>
 					</div>
-					<div className=" block lg:hidden mt-10 mb-8 ">
+					<div className=" mt-10 mb-8 block lg:hidden ">
 						<div className=" bg-[url('/images/home/why-us/whyus-bg-blob.svg')] bg-cover">
 							<Image
 								src={whyUsImage?.asset?.url || ''}
@@ -79,7 +79,7 @@ export default function WhyUs() {
 					</div>
 				</div>
 
-				<div className=" grid grid-cols-1 lg:grid-cols-2 gap-2 lg:mt-20 mt-0 ">
+				<div className=" mt-0 grid grid-cols-1 gap-2 lg:mt-20 lg:grid-cols-2 ">
 					{whyUsCards?.map((ourValues, index) => {
 						return (
 							ourValues?.image && (
@@ -95,7 +95,7 @@ export default function WhyUs() {
 					})}
 				</div>
 			</div>
-			<div className="relative z-1 bottom-24 -mb-24 sm:bottom-40  sm:-mb-40 md:bottom-64 md:-mb-64">
+			<div className="z-1 -mb-25 bottom-25 relative sm:bottom-40  sm:-mb-40 md:bottom-[11rem] md:-mb-[12rem]">
 				<Image
 					src={bottomWave}
 					alt="why us bottom bg"

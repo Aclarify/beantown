@@ -19,14 +19,14 @@ export default function ServiceAreas() {
 	} = homeData;
 	return (
 		<section id="serviceAreas" className="bg-primary-white-shade-1 mt-20">
-			<div className="p-6 lg:px-10 mt-20">
-				<div className="lg:flex lg:mt-40 mt-20 pb-6">
-					<div className="lg:border-r-2 lg:w-1/2">
-						<h1 className="title-5 lg:title-2  text-primary-black lg:pr-20 pl-2 lg:pl-6">
+			<div className="mt-20 p-6 lg:px-10">
+				<div className="mt-20 pb-6 lg:mt-40 lg:flex">
+					<div className="lg:w-1/2 lg:border-r-2">
+						<h1 className="title-5 lg:title-2  text-primary-black pl-2 lg:pr-20 lg:pl-6">
 							{serviceAreaTitle}
 						</h1>
 					</div>
-					<div className="pl-2 lg:pl-20 pt-4 w-full lg:w-1/2 para-4 lg:para-2 text-primary-shade-1 ">
+					<div className="para-4 lg:para-2 text-primary-shade-1 w-full pl-2 pt-4 lg:w-1/2 lg:pl-20 ">
 						<p>{serviceAreaDescription}</p>
 					</div>
 				</div>
@@ -41,25 +41,25 @@ export default function ServiceAreas() {
 					></Image>
 					<div
 						id="service-area-outer-container"
-						className="bg-primary-white-shade-1 relative top-[-20px] left-2 md:left-4 w-[95%] lg:absolute  lg:p-10 lg:inset-x-1/2 lg:top-[10%] lg:h-fit lg:w-1/2  lg:rounded-3xl "
+						className="bg-primary-white-shade-1 relative top-[-20px] left-2 w-[95%] md:left-4 lg:absolute  lg:inset-x-1/2 lg:top-[10%] lg:h-fit lg:w-1/2 lg:rounded-3xl  lg:p-10 "
 					>
 						<div
 							id="service-areas-inner-container"
-							className="bg-white pt-1 rounded-2xl shadow-md  lg:p-1 translate-y-[-10px] lg:translate-y-0"
+							className="translate-y-[-10px] rounded-2xl bg-white pt-1  shadow-md lg:translate-y-0 lg:p-1"
 						>
-							<h1 className="subtitle-7 lg:subtitle-3 text-primary-black pl-6 pb-2 mt-2">
+							<h1 className="subtitle-7 lg:subtitle-3 text-primary-black mt-2 pl-6 pb-2">
 								{serviceAreas?.title}
 							</h1>
 
 							<div
 								id="service-area-container"
-								className="grid grid-cols-2 mx-6 h-auto md:my-4 pb-2 place-items-center"
+								className="mx-6 grid h-auto grid-cols-2 place-items-center pb-2 md:my-4"
 							>
 								{serviceAreas?.listItem?.map((serviceArea, index) => {
 									return (
 										<div
 											key={index}
-											className="py-2 w-32 md:w-56 my-2 mr-2 lg:w-56 justify-center flex  space-x-2 bg-secondary-shade-3 para-6 lg:para-2 rounded-md align-middle items-center"
+											className="bg-secondary-shade-3 para-6 lg:para-2 my-2 mr-2 flex w-32 items-center  justify-center space-x-2 rounded-md py-2 align-middle md:w-56 lg:w-56"
 										>
 											<Image
 												src={'/images/home/location-icon.svg'}
@@ -75,7 +75,7 @@ export default function ServiceAreas() {
 
 								<div
 									id="right-blob-desktop"
-									className="hidden lg:block md:hidden absolute opacity-1 -right-[95%] top-[2em]  z-10 h-full w-full  "
+									className="opacity-1 absolute -right-[95%] top-[4em] z-10 hidden h-full  w-full md:hidden lg:block  "
 								>
 									<Image
 										src="/blue-blob-shape-2.svg"
