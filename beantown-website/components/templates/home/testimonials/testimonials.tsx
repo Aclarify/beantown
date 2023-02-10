@@ -92,7 +92,7 @@ export default function Testimonials() {
 			>
 				<div
 					id="left-blob"
-					className="hidden lg:block relative bottom-[12rem] right-[35em] h-0"
+					className="hidden lg:block relative bottom-[12rem] right-[35em] h-0 z-10"
 				>
 					<Image
 						src="/blob-shape-1.svg"
@@ -137,7 +137,7 @@ export default function Testimonials() {
 				</div>
 
 				<div className="flex flex-nowrap overflow-x-auto space-x-4  m-4 ">
-					<div className="hidden z-10 lg:flex flex-col items-center justify-center m-8   flex-none gap-15  ">
+					<div className=" hidden z-10 lg:flex flex-col items-center justify-center m-8   flex-none gap-15  ">
 						<div className="flex-none  gap-5 ">
 							<h1 className=" text-light-1 text-primary-shade-1 ">
 								{testimonialTitle}

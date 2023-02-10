@@ -25,7 +25,7 @@ export default function WhyUs() {
 			</div>
 			<div
 				id="section-wrapper"
-				className="bg-primary-white-shade-1 relative z-40 flex flex-col overflow-hidden "
+				className="bg-primary-white-shade-1 relative z-10 flex flex-col overflow-hidden "
 			>
 				<div className="flex w-full flex-col-reverse items-center p-6 md:flex mx-8 md:flex-row lg:px-10">
 					<div className=" z-10  flex flex-col items-start text-justify sm:basis-1/2 lg:pt-20 ">
@@ -36,7 +36,7 @@ export default function WhyUs() {
 							<RichText value={whyUsDescription?.contentRaw} />
 						</div>
 
-						<Link className='mt-2 mb-2' href={'/'}>
+						<Link className='mt-2' href={'/'}>
 							<Button fontColor="text-white" bgColor=" bg-primary-shade-1">
 								{whyUsButton?.text}
 							</Button>
@@ -62,7 +62,7 @@ export default function WhyUs() {
 					</div>
 				</div>
 
-				<div className=" mt-0 grid grid-cols-1 gap-y-4 lg:mt-20 mx-8  md:grid-cols-2 ">
+				<div className=" mt-0 grid grid-cols-1 gap-y-4 lg:mt-20 mx-8  md:grid-cols-2">
 					{whyUsCards?.map((ourValues, index) => {
 						return (
 							ourValues?.image && (
@@ -78,7 +78,7 @@ export default function WhyUs() {
 					})}
 				</div>
 			</div>
-			<div className="z-1 relative bottom-24 -mb-24 sm:bottom-40  sm:-mb-40 md:bottom-64 md:-mb-64">
+			<div className="z-1 relative bottom-24  -mb-23 sm:bottom-40  sm:-mb-40 md:bottom-40 md:-mb-64">
 				<Image
 					src={bottomWave}
 					alt="why us bottom bg"
