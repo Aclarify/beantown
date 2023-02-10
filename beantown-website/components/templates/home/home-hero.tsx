@@ -33,7 +33,7 @@ export default function HomeHero() {
 					width={4000}
 					height={1000}
 					priority={true}
-					className="h-auto w-full bg-gradient-to-t from-[#15284C] md:flex "
+					className="min-h-[365px] w-full bg-gradient-to-t from-[#15284C] md:flex "
 					src={heroImage?.asset?.url || ''}
 					style={{
 						WebkitMaskImage: "url('./home-hero-mask.svg')",
