@@ -22,6 +22,7 @@ export default function Services() {
 					id="left-blob-mobile"
 					className="relative bottom-[0rem] right-[6em] block h-0 md:hidden"
 				>
+					{/* TODO Remove width and height if blobs are from static imports */}
 					<Image
 						src="/blob-shape-1.svg"
 						alt="left-blob"

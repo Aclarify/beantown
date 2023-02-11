@@ -2,7 +2,7 @@ import React from 'react';
 import Image from 'next/image';
 import Nav from '../components/organisms/nav';
 import Brands from '../components/templates/home/brands';
-import Faq from '../components/templates/home/faq/faq';
+import Faq from '../components/templates/home/faq/faq.section';
 import Footer from '../components/organisms/footer';
 import Blogs from '../components/templates/home/blogs/blogs';
 import HeatingCoolingPageHero from '../components/templates/heating-and-cooling/heating-cooling-hero';

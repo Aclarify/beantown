@@ -15,6 +15,9 @@
 }
 
 @layer components {
+	.padding-for-section {
+		@apply px-[120px]
+	}
 	.title-1 {
 		@apply text-7xl;
 		@apply font-semibold;

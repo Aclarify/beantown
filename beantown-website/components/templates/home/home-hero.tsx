@@ -6,6 +6,7 @@ import RichText from 'components/molecules/rich-text.molecule';
 import Image from 'next/image';
 import Button from 'components/atoms/button.atom';
 import Link from 'next/link';
+import ContentWrapper from 'components/organisms/content-wrapper.organism';
 
 export default function HomeHero() {
 	const { pageContent } =
@@ -16,21 +17,8 @@ export default function HomeHero() {
 	const homeData = pageContent.home[0];
 	const { heroTitle, heroDescription, heroButton, heroImage } = homeData;
 	return (
-		<section id="home_page_hero ">
-			<div className="flex-shrink-0 flex flex-col justify-center">
-				<div className="space-y-2 absolute w-3/4 md:w-2/3 text-white px-6 md:px-10 align-middle z-10">
-					<h1 className="title-4 lg:title-1">{heroTitle}</h1>
-					<div className="para-4 lg:para-2">
-						<RichText value={heroDescription?.contentRaw} />
-					</div>
-
-					<Link href={'/'}>
-						<Button fontColor="text-primary-shade-1" bgColor="bg-white">
-							Book Now
-						</Button>
-					</Link>
-				</div>
-
+		<section id="home_page_hero" className="relative">
+			<div id="image-wrapper" className="z-0">
 				<Image
 					alt={heroImage?.asset?.altText || ''}
 					width={4000}
@@ -50,7 +38,7 @@ export default function HomeHero() {
 					width={428}
 					height={420}
 					priority={true}
-					className="block md:hidden h-[420px]"
+					className="block h-[420px] md:hidden"
 					src={heroImage?.asset?.url || ''}
 					style={{
 						WebkitMaskImage: "url('./home-hero-mobile-mask.svg')",
@@ -60,6 +48,28 @@ export default function HomeHero() {
 					}}
 				/>
 			</div>
+			<div
+				id="content-wrapper"
+				className="md:w-[40%[ z-1 padding-for-section absolute inset-y-0 flex w-3/4 items-center text-white"
+			>
+				<ContentWrapper>
+					<ContentWrapper.Title className="mb-[8px] lg:mb-[16px]">
+						<h1 className="title-4 lg:title-1">{heroTitle}</h1>
+					</ContentWrapper.Title>
+					<ContentWrapper.Description>
+						<RichText value={heroDescription?.contentRaw} />
+					</ContentWrapper.Description>
+					<ContentWrapper.CTA className="mt-[32px]">
+						<Button fontColor="text-primary-shade-1" bgColor="bg-white">
+							Book Now
+						</Button>
+					</ContentWrapper.CTA>
+				</ContentWrapper>
+			</div>
+
+			{/* </div> */}
+
+			{/* </div> */}
 		</section>
 	);
 }
