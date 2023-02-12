@@ -103,3 +103,13 @@
 		@apply font-light;
 	}
 }
+.slick-slide>div{
+	margin:0 10px;
+}
+
+/* .slick-slide {
+	margin-right: -10px;
+} 
+.slick-slide>div:nth-child(1){
+	margin-left:0;
+} */
