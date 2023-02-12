@@ -50,7 +50,7 @@ export default function HomeHero() {
 			</div>
 			<div
 				id="content-wrapper"
-				className="md:w-[40%[ z-1 padding-for-section absolute inset-y-0 flex w-3/4 items-center text-white"
+				className="z-1 lg:padding-for-section absolute inset-y-0 flex w-3/4 items-center px-4 text-white md:w-[40%]"
 			>
 				<ContentWrapper>
 					<ContentWrapper.Title className="mb-[8px] lg:mb-[16px]">

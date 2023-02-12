@@ -88,43 +88,10 @@ export default function Testimonials() {
 		<>
 			<section
 				id="testimonials-cards"
-				className=" bg-secondary-shade-3  overflow-hidden lg:px-10"
+				className=" bg-secondary-shade-3  overflow-hidden md:px-10"
 			>
-				<div
-					id="left-blob"
-					className="relative bottom-[12rem] right-[35em] hidden h-0 lg:block"
-				>
-					<Image
-						src="/blob-shape-1.svg"
-						alt="Left-blob"
-						width={700}
-						height={700}
-					></Image>
-				</div>
-				<div
-					id="left-blob-tab"
-					className=" relative bottom-[12rem] right-[35em] hidden h-0 md:block lg:hidden"
-				>
-					<Image
-						src="/blob-shape-1.svg"
-						alt="Left-blob"
-						width={700}
-						height={700}
-					></Image>
-				</div>
-				<div
-					id="right-blob-mobile"
-					className="-z-1 relative bottom-[4rem] -right-[66%] hidden h-0"
-				>
-					<Image
-						src="/testimonial-right-half-blob.svg"
-						alt="Right-blob"
-						width={150}
-						height={150}
-					></Image>
-				</div>
-				<div className="relative lg:hidden ">
-					<div className=" w-full flex-none  gap-5">
+				<div className="relative md:hidden ">
+					<div className="z-50 w-full flex-none  gap-5">
 						<div className="mt-20 ml-8 ">
 							<h1 className="para-4 text-primary-shade-1 ">
 								{testimonialTitle}
@@ -136,8 +103,8 @@ export default function Testimonials() {
 					</div>
 				</div>
 
-				<div className="m-4 flex flex-nowrap space-x-4  overflow-x-auto ">
-					<div className="gap-15 z-10 m-8 hidden flex-none flex-col items-center   justify-center lg:flex  ">
+				<div className="m-4 flex flex-nowrap  space-x-4 overflow-x-auto">
+					<div className="gap-15 z-40 m-8 hidden flex-none flex-col items-center   justify-center md:flex  ">
 						<div className="flex-none  gap-5 ">
 							<h1 className=" text-light-1 text-primary-shade-1 ">
 								{testimonialTitle}
@@ -146,7 +113,7 @@ export default function Testimonials() {
 								{testimonialDescription}
 							</span>
 						</div>
-						<div className="m-4 hidden items-center justify-center lg:flex lg:flex-col ">
+						<div className="m-4 hidden items-center justify-center md:flex md:flex-col ">
 							<div className="flex  justify-center pt-4 ">
 								<button
 									onClick={movePrevious}
@@ -192,7 +159,7 @@ export default function Testimonials() {
 					</div>
 				</div>
 
-				<div className="lg:hidden">
+				<div className="md:hidden">
 					<div className="mr-8 flex items-center justify-end ">
 						<div className="flex justify-center pt-4 ">
 							<button

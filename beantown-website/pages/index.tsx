@@ -52,7 +52,12 @@ const HomePage: React.FC = () => {
 			<HomeHero />
 			<Services />
 			<WhyUs />
-			<Testimonials />
+			<div
+				id="testimonial-section-wrapper"
+				className="relative bottom-[24rem] -mb-[24rem]"
+			>
+				<Testimonials />
+			</div>
 			<div
 				id="desktop-view"
 				className="hidden lg:block "

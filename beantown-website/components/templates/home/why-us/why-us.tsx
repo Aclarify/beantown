@@ -6,9 +6,7 @@ import { HomePageContentProps } from 'pages';
 import WhyUsCard from './why-us-card';
 import Image from 'next/image';
 import Button from 'components/atoms/button.atom';
-import Link from 'next/link';
-import topWave from 'public/images/home/why-us/why-us-wave.svg';
-import bottomWave from 'public/images/home/why-us/why-us-bottom-wave.svg';
+import ContentWrapper from 'components/organisms/content-wrapper.organism';
 export default function WhyUs() {
 	const { pageContent } =
 		useContext<GlobalContextProps<HomePageContentProps>>(GlobalContext);
@@ -19,30 +17,33 @@ export default function WhyUs() {
 	const { whyUsTitle, whyUsDescription, whyUsButton, whyUsCards, whyUsImage } =
 		homeData;
 	return (
-		<section id="whyUs" className="mt-30">
-			<div className="z-1 relative max-h-40 overflow-hidden">
-				<Image src={topWave} alt="why us wave bg" style={{ width: '100vw' }} />
-			</div>
+		<section
+			id="whyUs"
+			className="md:bg-fit-to-parent relative z-30 bg-[url('/images/home/why-us/why-us-bg-mobile.svg')]  bg-no-repeat py-[4rem] pb-[115vw] md:bg-[url('/images/home/why-us/why-us-bg-desktop.svg')] md:pt-[10vw] md:pb-[50%]"
+		>
 			<div
 				id="section-wrapper"
-				className="bg-primary-white-shade-1 relative z-40 flex flex-col overflow-hidden"
+				className="bg-primary-white-shade-1 z-1  flex flex-col overflow-hidden"
 			>
-				<div className="flex w-full flex-col-reverse items-center p-6 lg:flex  lg:flex-row lg:px-10">
+				<div className="flex w-full flex-col-reverse items-center px-6 md:flex  md:flex-row lg:px-10">
 					<div className=" z-10  flex basis-1/2 flex-col items-start text-justify lg:pt-20 ">
-						<h1 className="title-5 lg:title-2 text-primary-black ">
-							{whyUsTitle}
-						</h1>
-						<div className="lg:para-2 para-4 text-primary-shade-1 text-left lg:py-10">
-							<RichText value={whyUsDescription?.contentRaw} />
-						</div>
-
-						<Link href={'/'}>
-							<Button fontColor="text-white" bgColor=" bg-primary-shade-1">
-								{whyUsButton?.text}
-							</Button>
-						</Link>
+						<ContentWrapper>
+							<ContentWrapper.Title>
+								<h1 className="title-5 lg:title-2 text-primary-black ">
+									{whyUsTitle}
+								</h1>
+							</ContentWrapper.Title>
+							<ContentWrapper.Description>
+								<RichText value={whyUsDescription?.contentRaw} />
+							</ContentWrapper.Description>
+							<ContentWrapper.CTA className="mt-[16px] lg:mt-[32px]">
+								<Button fontColor="text-white" bgColor=" bg-primary-shade-1">
+									{whyUsButton?.text}
+								</Button>
+							</ContentWrapper.CTA>
+						</ContentWrapper>
 					</div>
-					<div className="mt-12 hidden basis-1/2 px-20 lg:block">
+					<div className="mt-12 hidden basis-1/2 px-20 md:block">
 						<div className=" bg-[url('/images/home/why-us/whyus-bg-blob.svg')] bg-cover">
 							<Image
 								src={whyUsImage?.asset?.url || ''}
@@ -60,7 +61,7 @@ export default function WhyUs() {
 							/>
 						</div>
 					</div>
-					<div className=" mt-10 mb-8 block lg:hidden ">
+					<div className="mb-8 block md:hidden ">
 						<div className=" bg-[url('/images/home/why-us/whyus-bg-blob.svg')] bg-cover">
 							<Image
 								src={whyUsImage?.asset?.url || ''}
@@ -79,7 +80,7 @@ export default function WhyUs() {
 					</div>
 				</div>
 
-				<div className=" mt-0 grid grid-cols-1 gap-2 lg:mt-20 lg:grid-cols-2 ">
+				<div className=" mt-0 grid grid-cols-1 gap-2 md:mt-20 md:grid-cols-2 ">
 					{whyUsCards?.map((ourValues, index) => {
 						return (
 							ourValues?.image && (
@@ -94,13 +95,6 @@ export default function WhyUs() {
 						);
 					})}
 				</div>
-			</div>
-			<div className="z-1 -mb-25 bottom-25 relative sm:bottom-40  sm:-mb-40 md:bottom-[11rem] md:-mb-[12rem]">
-				<Image
-					src={bottomWave}
-					alt="why us bottom bg"
-					style={{ width: '100vw' }}
-				/>
 			</div>
 		</section>
 	);
