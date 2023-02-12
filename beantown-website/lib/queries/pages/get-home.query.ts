@@ -3,7 +3,12 @@ import footerQuery from './get-footer.query';
 import navQuery from './get-nav.query';
 
 const homeQuery = ` allHome {
-    		logo{
+    		logoDesktop{
+				asset{
+					url
+				}
+			}
+			logoMobile{
 				asset{
 					url
 				}
@@ -59,9 +64,7 @@ const homeQuery = ` allHome {
 					url
 				}
 				}
-				description {
-					contentRaw
-				}
+				description 
 			}
 			testimonialTitle
 			testimonialDescription
@@ -94,9 +97,7 @@ const homeQuery = ` allHome {
 					text
 					href
 				}
-				description {
-					contentRaw
-				}
+				description 
 				image {
 					image {
 						asset {

@@ -13,7 +13,7 @@ export default function Footer() {
 		return null;
 	}
 	const homeData = pageContent.home[0];
-	const { logo } = homeData;
+	const { logoDesktop, logoMobile } = homeData;
 	const footerData = pageContent.footer[0];
 	const {
 		description,
@@ -92,10 +92,10 @@ export default function Footer() {
 						<div className="flex space-x-4 pt-8">
 							<div id="logoImage">
 								<Image
-									alt={logo?.asset?.altText || ''}
+									alt={logoDesktop?.asset?.altText || ''}
 									width={200}
 									height={300}
-									src={logo?.asset?.url || ''}
+									src={logoDesktop?.asset?.url || ''}
 								/>
 							</div>
 							<div

@@ -62,7 +62,7 @@ export default function Blogs() {
 								<BlogCard
 									blogName={blog?.name || ''}
 									buttonText={blog?.button?.text || ''}
-									blogDescription={blog?.description?.contentRaw || ''}
+									blogDescription={blog?.description || ''}
 									thumbnailSrc={blog?.image?.image?.asset?.url || ''}
 									thumbnailAltText={blog?.image?.altText || ''}
 								/>
