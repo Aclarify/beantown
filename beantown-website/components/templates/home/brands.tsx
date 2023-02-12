@@ -6,7 +6,6 @@ import { HomePageContentProps } from 'pages';
 import Image from 'next/image';
 import Carousel from 'react-multi-carousel';
 import 'react-multi-carousel/lib/styles.css';
-import topWave from 'public/images/home/brands/brand-top-wave.svg';
 
 export default function Brands() {
 	const { pageContent } =
@@ -40,13 +39,24 @@ export default function Brands() {
 		<>
 			<section
 				id="brand-desktop"
-				className="bg-primary-white-shade-1 relative  "
+				className=" 3xl:-mb-[6em] 4xl:-mb-[8em] relative top-[-5em] z-10 lg:-mb-[3em] xl:-mb-[6em]"
 			>
-				<div className="z-1 relative bottom-[7em] z-10 -mb-[7em] max-h-40 overflow-hidden">
-					<Image src={topWave} alt="faq wave bg" style={{ width: '100vw' }} />
+				<div
+					className="
+				h-0
+				w-full
+				bg-[url('../public/images/home/brands/brands-small-screen-bg.svg')]
+				bg-cover
+				bg-no-repeat
+				pt-[75%]
+				lg:bg-[url('../public/images/home/brands/brands-bg.svg')] lg:bg-contain
+				lg:pt-[35%]
+				"
+				>
+					{' '}
 				</div>
-				<div className=" bg-primary-white-shade-1 relative bottom-[8em] z-20">
-					<div className="flex  justify-center pt-10">
+				<div className=" bg-primary-white-shade-1 absolute top-1/2 left-1/2 z-20 w-full -translate-y-1/2 -translate-x-1/2 transform">
+					<div className="flex  justify-center md:pt-10">
 						<span className="title-6 lg:title-3 text-primary-black m-4 p-4">
 							{brandsTitle}
 						</span>
@@ -60,7 +70,7 @@ export default function Brands() {
 							infinite
 							autoPlaySpeed={2000}
 							removeArrowOnDeviceType={['tablet', 'desktop', 'mobile']}
-							className="lg:flex lg:justify-center"
+							className="lg:flex lg:justify-center "
 						>
 							{clientsLogo?.map((logo, index) => {
 								return (

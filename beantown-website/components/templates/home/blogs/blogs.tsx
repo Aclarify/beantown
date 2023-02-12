@@ -19,7 +19,7 @@ export default function Blogs() {
 	return (
 		<section
 			id="blogs"
-			className="bg-primary-white-shade-1 relative z-10 flex flex-col overflow-hidden pl-6 pb-20 lg:px-10 "
+			className="bg-primary-white-shade-1 relative z-[-1] flex flex-col overflow-hidden pl-6 pb-20 lg:px-10 "
 		>
 			<div
 				id="left-blob-desktop"
