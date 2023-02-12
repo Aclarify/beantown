@@ -16,11 +16,11 @@ export default function Services() {
 
 	const { servicesTitle, servicesDescription, servicesGroup } = homeData;
 	return (
-		<section id="services" className="mt-10 overflow-hidden  lg:my-20">
-			<div className="bg-secondary-shade-3 px-6 lg:px-10 lg:mx-4">
+		<section id="services" className="mt-10 overflow-hidden  lg:my-20 ">
+			<div className="bg-secondary-shade-3 px-6 lg:px-10 ">
 				<div
 					id="left-blob-mobile"
-					className="relative bottom-[0rem] right-[6em] mx-8 block h-0 md:hidden"
+					className="relative bottom-[0rem] right-[6em] block h-0 md:hidden"
 				>
 					<Image
 						src="/blob-shape-1.svg"
@@ -44,7 +44,7 @@ export default function Services() {
 					<h1 className=" title-5 lg:title-2 text-primary-black mb-4">
 						{servicesTitle}
 					</h1>
-					<div className="lg:para-2 para-4 text-primary-shade-1 w-1/2 flex-wrap text-center ">
+					<div className="lg:para-2 para-4 text-primary-shade-1 text-center md:w-1/2 md:flex-wrap ">
 						<RichText value={servicesDescription?.contentRaw} />
 					</div>
 				</div>
@@ -81,9 +81,7 @@ export default function Services() {
 						height={850}
 					></Image>
 				</div>
-				{/* <div className="group relative z-10 flex  flex-wrap items-center justify-center space-y-8 py-4 lg:mb-20 lg:flex-nowrap lg:space-x-10 lg:space-y-4"> */}
-
-				<div className="group relative z-10 grid grid-cols-1 sm:grid-cols-3 items-center justify-center space-y-8 py-4 lg:mb-20 lg:flex-nowrap lg:space-x-10 lg:space-y-4">
+				<div className="group relative z-10 flex  flex-wrap items-center justify-center space-y-8 py-4 lg:mb-20 lg:flex-nowrap lg:space-x-10 lg:space-y-4">
 					{servicesGroup?.map((service, index) => {
 						return (
 							service?.thumbnailImage?.asset?.url && (
