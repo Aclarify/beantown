@@ -10,7 +10,9 @@ import TestimonialCard from './testimonial-card';
 import TestimonialModal from './testimonial-modal';
 import Head from 'next/head';
 import Slider from 'react-slick';
+import 'slick-carousel/slick/slick.css';
 
+import 'slick-carousel/slick/slick-theme.css';
 
 export default function Testimonials() {
 	const [showTestimonialModel, setShowTestimonialModel] = useState(false);
@@ -33,7 +35,6 @@ export default function Testimonials() {
 		document.body.style.overflow = 'unset';
 	};
 
-	
 	const onTestimonialCardClick = (testimonial: any) => {
 		setSelectedTestimonial(testimonial);
 		setShowTestimonialModel(true);
@@ -42,17 +43,17 @@ export default function Testimonials() {
 			document.body.style.overflow = 'hidden';
 		}
 	};
-  
+
 	const next = () => {
-	slider.current.slickNext();
+		slider.current.slickNext();
 	};
 	const previous = () => {
-	slider.current.slickPrev();
-	}; 
+		slider.current.slickPrev();
+	};
 
 	var settings = {
 		infinite: true,
-		speed: 500,		
+		speed: 500,
 		slidesToShow: 3,
 		slidesToScroll: 3,
 		initialSlide: 0,
@@ -86,20 +87,6 @@ export default function Testimonials() {
 	};
 	return (
 		<>
-			<Head>
-				<link
-					rel="stylesheet"
-					type="text/css"
-					charSet="UTF-8"
-					href="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.6.0/slick.min.css"
-				/>
-				<link
-					rel="stylesheet"
-					type="text/css"
-					href="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.6.0/slick-theme.min.css"
-				/>
-			</Head>
-
 			<main
 				id="testimonials-cards"
 				className=" bg-secondary-shade-3  overflow-hidden md:px-10"
@@ -126,33 +113,32 @@ export default function Testimonials() {
 							{testimonialDescription}
 						</span>
 					</div>
-					<div className="hidden items-center justify-center lg:flex lg:flex-col ">						
-							<div className="z-50 flex w-full flex-col  gap-5 ">
-								<div className="flex justify-center">
-									<button
-										onClick={next}
-										className="bg-primary-shade-1  z-10 m-1 h-full w-16  rounded-full  p-2   text-center text-white transition-all duration-300 ease-in-out hover:opacity-100 disabled:cursor-not-allowed disabled:bg-white disabled:text-black"
-										aria-label="Button for moving left"
-									>
-										<FontAwesomeIcon icon={faArrowLeft} />
-									</button>
-									<button
-										id="right"
-										onClick={previous}
-										className="bg-primary-shade-1 z-10 m-1 h-full  w-16 rounded-full   p-2  text-center text-white transition-all duration-300 ease-in-out hover:opacity-100 disabled:cursor-not-allowed disabled:bg-white disabled:text-black"
-										aria-label="Button for moving right"
-									>
-										<FontAwesomeIcon icon={faArrowRight} />
-									</button>
-								</div>
+					<div className="hidden items-center justify-center lg:flex lg:flex-col ">
+						<div className="z-50 flex w-full flex-col  gap-5 ">
+							<div className="flex justify-center">
+								<button
+									onClick={next}
+									className="bg-primary-shade-1  z-10 m-1 h-full w-16  rounded-full  p-2   text-center text-white transition-all duration-300 ease-in-out hover:opacity-100 disabled:cursor-not-allowed disabled:bg-white disabled:text-black"
+									aria-label="Button for moving left"
+								>
+									<FontAwesomeIcon icon={faArrowLeft} />
+								</button>
+								<button
+									id="right"
+									onClick={previous}
+									className="bg-primary-shade-1 z-10 m-1 h-full  w-16 rounded-full   p-2  text-center text-white transition-all duration-300 ease-in-out hover:opacity-100 disabled:cursor-not-allowed disabled:bg-white disabled:text-black"
+									aria-label="Button for moving right"
+								>
+									<FontAwesomeIcon icon={faArrowRight} />
+								</button>
 							</div>
-						
+						</div>
 					</div>
 				</div>
 
 				{/* carousel code */}
 
-				<div className="relative">
+				<div className="">
 					<Slider ref={(current) => (slider.current = current)} {...settings}>
 						{testimonialCards?.map((reviews, index) => {
 							return (
