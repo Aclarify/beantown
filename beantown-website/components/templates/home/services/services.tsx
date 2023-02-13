@@ -25,7 +25,7 @@ export default function Services() {
 				>
 					{/* TODO Remove width and height if blobs are from static imports */}
 					<Image
-						src="/blob-shape-1.svg"
+						src="/images/home/blob-shape-1.svg"
 						alt="left-blob"
 						width={147}
 						height={134}
@@ -36,7 +36,7 @@ export default function Services() {
 					className="relative bottom-[2rem] right-[25em] hidden h-0 md:block lg:hidden"
 				>
 					<Image
-						src="/blob-shape-1.svg"
+						src="/images/home/blob-shape-1.svg"
 						alt="left-blob"
 						width={500}
 						height={500}
@@ -59,7 +59,7 @@ export default function Services() {
 					className="relative bottom-[7rem] -right-[77%] block h-0 md:hidden"
 				>
 					<Image
-						src="/blob-shape-1.svg"
+						src="/images/home/blob-shape-1.svg"
 						alt="right-blob"
 						width={202}
 						height={184}
@@ -70,7 +70,7 @@ export default function Services() {
 					className="relative bottom-[11rem] -right-[84%] hidden h-0 md:block lg:hidden"
 				>
 					<Image
-						src="/blob-shape-1.svg"
+						src="/images/home/blob-shape-1.svg"
 						alt="right-blob"
 						width={500}
 						height={500}
@@ -81,7 +81,7 @@ export default function Services() {
 					className="relative bottom-[32rem] right-36 left-[88vw] hidden h-0 lg:block"
 				>
 					<Image
-						src="/blob-shape-1.svg"
+						src="/images/home/blob-shape-1.svg"
 						alt="right-blob"
 						width={933}
 						height={850}
@@ -110,7 +110,7 @@ export default function Services() {
 					className="relative bottom-[26rem] right-[34rem] hidden h-0 lg:block"
 				>
 					<Image
-						src="/blob-shape-1.svg"
+						src="/images/home/blob-shape-1.svg"
 						alt="left-blob"
 						width={645}
 						height={548}

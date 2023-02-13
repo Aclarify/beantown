@@ -17,7 +17,7 @@ const TestimonialCard: React.FC<Props> = (props) => {
 						alt="An image for quotes in testimonial card"
 						width={40}
 						height={45}
-						src="/images/home/testimonialCardsImageUnionVector.svg"
+						src="/images/home/testimonials-quote.svg"
 					/>
 				</div>
 				<div className="flex flex-col items-center gap-2 pt-10 pb-6">
