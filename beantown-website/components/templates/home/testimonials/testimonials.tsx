@@ -52,7 +52,7 @@ export default function Testimonials() {
 
 	var settings = {
 		infinite: true,
-		speed: 500,
+		speed: 500,		
 		slidesToShow: 3,
 		slidesToScroll: 3,
 		initialSlide: 0,
@@ -126,52 +126,54 @@ export default function Testimonials() {
 							{testimonialDescription}
 						</span>
 					</div>
-					<div className="m-4 hidden items-center justify-center lg:flex lg:flex-col ">
-						<div className="flex  justify-center pt-4 ">
-							<button
-								onClick={next}
-								className="bg-primary-shade-1  z-10 m-1 h-full w-16  rounded-full  p-2   text-center text-white transition-all duration-300 ease-in-out hover:opacity-100 disabled:cursor-not-allowed disabled:bg-white disabled:text-black"
-								aria-label="Button for moving left"
-							>
-								<FontAwesomeIcon icon={faArrowLeft} />
-							</button>
-							<button
-								id="right"
-								onClick={previous}
-								className="bg-primary-shade-1 z-10 m-1 h-full  w-16 rounded-full   p-2  text-center text-white transition-all duration-300 ease-in-out hover:opacity-100 disabled:cursor-not-allowed disabled:bg-white disabled:text-black"
-								aria-label="Button for moving right"
-							>
-								<FontAwesomeIcon icon={faArrowRight} />
-							</button>
-						</div>
-					</div>
-				</div>
-				<div className="">
-					<div className="relative">
-						<Slider ref={(current) => (slider.current = current)} {...settings}>
-							{testimonialCards?.map((reviews, index) => {
-								return (
-								
-									<div
-										key={index}
-										className=" my-6 h-[70vh] max-h-[500px] w-80 flex-none snap-start items-center rounded-2xl border  bg-[#FFFFFF] p-2  "
+					<div className="hidden items-center justify-center lg:flex lg:flex-col ">						
+							<div className="z-50 flex w-full flex-col  gap-5 ">
+								<div className="flex justify-center">
+									<button
+										onClick={next}
+										className="bg-primary-shade-1  z-10 m-1 h-full w-16  rounded-full  p-2   text-center text-white transition-all duration-300 ease-in-out hover:opacity-100 disabled:cursor-not-allowed disabled:bg-white disabled:text-black"
+										aria-label="Button for moving left"
 									>
-										<TestimonialCard
-											key={index}
-											clientName={reviews?.titleText || ''}
-											clientDetails={reviews?.subText || ''}
-											reviewComments={reviews?.description || ''}
-											onShowMore={() => onTestimonialCardClick(reviews)}
-										/>
-									</div>
-								
-									
-								);
-							})}
-						</Slider>
+										<FontAwesomeIcon icon={faArrowLeft} />
+									</button>
+									<button
+										id="right"
+										onClick={previous}
+										className="bg-primary-shade-1 z-10 m-1 h-full  w-16 rounded-full   p-2  text-center text-white transition-all duration-300 ease-in-out hover:opacity-100 disabled:cursor-not-allowed disabled:bg-white disabled:text-black"
+										aria-label="Button for moving right"
+									>
+										<FontAwesomeIcon icon={faArrowRight} />
+									</button>
+								</div>
+							</div>
+						
 					</div>
 				</div>
 
+				{/* carousel code */}
+
+				<div className="relative">
+					<Slider ref={(current) => (slider.current = current)} {...settings}>
+						{testimonialCards?.map((reviews, index) => {
+							return (
+								<div
+									key={index}
+									className=" my-6 h-[70vh] max-h-[500px] w-80 flex-none snap-start items-center rounded-2xl border  bg-[#FFFFFF] p-2  "
+								>
+									<TestimonialCard
+										key={index}
+										clientName={reviews?.titleText || ''}
+										clientDetails={reviews?.subText || ''}
+										reviewComments={reviews?.description || ''}
+										onShowMore={() => onTestimonialCardClick(reviews)}
+									/>
+								</div>
+							);
+						})}
+					</Slider>
+				</div>
+
+				{/* mobile view button */}
 				<div className="flex items-center justify-center pt-10  lg:hidden">
 					<button
 						onClick={next}
