@@ -13,7 +13,7 @@ export default function Footer() {
 		return null;
 	}
 	const homeData = pageContent.home[0];
-	const { logo } = homeData;
+	const { logoDesktop, logoMobile } = homeData;
 	const footerData = pageContent.footer[0];
 	const {
 		description,
@@ -26,7 +26,7 @@ export default function Footer() {
 	} = footerData;
 	return (
 		<section id="footer">
-			<div className=" relative bottom-[9em] z-10 max-h-40 overflow-hidden md:bottom-[10em] md:-mb-[8em] lg:bottom-[11em] lg:-mb-[8em]  xl:-mb-[10em]">
+			<div className=" 3xl:-mb-[12em] 3xl:bottom-[13em] relative bottom-[9em] z-10 max-h-40 overflow-hidden md:bottom-[10em] md:-mb-[8em]  lg:bottom-[11em] lg:-mb-[8em] xl:-mb-[10em]">
 				<Image src={topWave} alt="footer wave bg" style={{ width: '100vw' }} />
 			</div>
 			<div className="relative bottom-[10em] z-20 -mb-[10em] md:bottom-[4em] md:-mb-[4em]">
@@ -92,10 +92,10 @@ export default function Footer() {
 						<div className="flex space-x-4 pt-8">
 							<div id="logoImage">
 								<Image
-									alt={logo?.asset?.altText || ''}
+									alt={logoDesktop?.asset?.altText || ''}
 									width={200}
 									height={300}
-									src={logo?.asset?.url || ''}
+									src={logoDesktop?.asset?.url || ''}
 								/>
 							</div>
 							<div

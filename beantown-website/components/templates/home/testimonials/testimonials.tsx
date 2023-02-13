@@ -102,43 +102,10 @@ export default function Testimonials() {
 
 			<main
 				id="testimonials-cards"
-				className=" bg-secondary-shade-3  overflow-hidden lg:px-10"
+				className=" bg-secondary-shade-3  overflow-hidden md:px-10"
 			>
-				<div
-					id="left-blob"
-					className="relative bottom-[12rem] right-[35em] hidden h-0 lg:block"
-				>
-					<Image
-						src="/blob-shape-1.svg"
-						alt="Left-blob"
-						width={700}
-						height={700}
-					></Image>
-				</div>
-				<div
-					id="left-blob-tab"
-					className=" relative bottom-[12rem] right-[35em] hidden h-0 md:block lg:hidden"
-				>
-					<Image
-						src="/blob-shape-1.svg"
-						alt="Left-blob"
-						width={700}
-						height={700}
-					></Image>
-				</div>
-				<div
-					id="right-blob-mobile"
-					className="-z-1 relative bottom-[4rem] -right-[66%] hidden h-0"
-				>
-					<Image
-						src="/testimonial-right-half-blob.svg"
-						alt="Right-blob"
-						width={150}
-						height={150}
-					></Image>
-				</div>
-				<div className="relative lg:hidden ">
-					<div className=" w-full flex-none  gap-5">
+				<div className="relative md:hidden ">
+					<div className="z-50 w-full flex-none  gap-5">
 						<div className="mt-20 ml-8 ">
 							<h1 className="para-4 text-primary-shade-1 ">
 								{testimonialTitle}

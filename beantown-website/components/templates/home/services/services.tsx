@@ -1,6 +1,7 @@
 import { GlobalContext } from '@contexts/global/global.context';
 import { GlobalContextProps } from '@typing/common/interfaces/contexts.interface';
 import RichText from 'components/molecules/rich-text.molecule';
+import ContentWrapper from 'components/organisms/content-wrapper.organism';
 import Image from 'next/image';
 import { HomePageContentProps } from 'pages';
 import React, { useContext } from 'react';
@@ -22,8 +23,9 @@ export default function Services() {
 					id="left-blob-mobile"
 					className="relative bottom-[0rem] right-[6em] block h-0 md:hidden"
 				>
+					{/* TODO Remove width and height if blobs are from static imports */}
 					<Image
-						src="/blob-shape-1.svg"
+						src="/images/home/blob-shape-1.svg"
 						alt="left-blob"
 						width={147}
 						height={134}
@@ -34,26 +36,30 @@ export default function Services() {
 					className="relative bottom-[2rem] right-[25em] hidden h-0 md:block lg:hidden"
 				>
 					<Image
-						src="/blob-shape-1.svg"
+						src="/images/home/blob-shape-1.svg"
 						alt="left-blob"
 						width={500}
 						height={500}
 					></Image>
 				</div>
 				<div className="relative z-10 my-4 flex flex-col items-center  text-center">
-					<h1 className=" title-5 lg:title-2 text-primary-black mb-4">
-						{servicesTitle}
-					</h1>
-					<div className="lg:para-2 para-4 text-primary-shade-1 text-center md:w-1/2 md:flex-wrap ">
-						<RichText value={servicesDescription?.contentRaw} />
-					</div>
+					<ContentWrapper>
+						<ContentWrapper.Title>
+							<h1 className="title-5 lg:title-2 text-primary-black mb-4">
+								{servicesTitle}
+							</h1>
+						</ContentWrapper.Title>
+						<ContentWrapper.Description>
+							<RichText value={servicesDescription?.contentRaw} />
+						</ContentWrapper.Description>
+					</ContentWrapper>
 				</div>
 				<div
 					id="right-blob-mobile"
 					className="relative bottom-[7rem] -right-[77%] block h-0 md:hidden"
 				>
 					<Image
-						src="/blob-shape-1.svg"
+						src="/images/home/blob-shape-1.svg"
 						alt="right-blob"
 						width={202}
 						height={184}
@@ -64,7 +70,7 @@ export default function Services() {
 					className="relative bottom-[11rem] -right-[84%] hidden h-0 md:block lg:hidden"
 				>
 					<Image
-						src="/blob-shape-1.svg"
+						src="/images/home/blob-shape-1.svg"
 						alt="right-blob"
 						width={500}
 						height={500}
@@ -75,7 +81,7 @@ export default function Services() {
 					className="relative bottom-[32rem] right-36 left-[88vw] hidden h-0 lg:block"
 				>
 					<Image
-						src="/blob-shape-1.svg"
+						src="/images/home/blob-shape-1.svg"
 						alt="right-blob"
 						width={933}
 						height={850}
@@ -104,7 +110,7 @@ export default function Services() {
 					className="relative bottom-[26rem] right-[34rem] hidden h-0 lg:block"
 				>
 					<Image
-						src="/blob-shape-1.svg"
+						src="/images/home/blob-shape-1.svg"
 						alt="left-blob"
 						width={645}
 						height={548}

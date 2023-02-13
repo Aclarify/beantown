@@ -2,7 +2,7 @@ import Head from 'next/head';
 
 import Header from '../components/organisms/nav';
 import Brands from '../components/templates/home/brands';
-import Faq from '../components/templates/home/faq/faq';
+import Faq from '../components/templates/home/faq/faq.section';
 import FooterComponent from '../components/organisms/footer';
 import FooterCta from '../components/templates/home/footer-cta-home';
 import Blogs from '../components/templates/home/blogs/blogs';
@@ -46,20 +46,25 @@ export { getStaticProps };
 
 const HomePage: React.FC = () => {
 	return (
-		<div className="overflow-hidden">
+		<>
 			<PageHead />
 			<Header />
 			<HomeHero />
 			<Services />
 			<WhyUs />
-			<Testimonials />
+			<div
+				id="testimonial-section-wrapper"
+				className="relative bottom-[24rem] -mb-[24rem]"
+			>
+				<Testimonials />
+			</div>
 			<div
 				id="desktop-view"
 				className="hidden lg:block "
 				style={{
-					WebkitMaskImage: "url('./service-area-wave.svg')",
+					WebkitMaskImage: "url('/images/home/service-area-wave.svg')",
 					WebkitMaskSize: 'cover',
-					maskImage: "url('./service-area-wave.svg')",
+					maskImage: "url('/images/home/service-area-wave.svg')",
 					maskSize: 'cover',
 				}}
 			>
@@ -70,9 +75,9 @@ const HomePage: React.FC = () => {
 				id="mobile-view"
 				className="block lg:hidden"
 				style={{
-					WebkitMaskImage: "url('./service-area-wave-mobile.svg')",
+					WebkitMaskImage: "url('/images/home/service-area-wave-mobile.svg')",
 					WebkitMaskSize: 'cover',
-					maskImage: "url('./service-area-wave-mobile.svg')",
+					maskImage: "url('/images/home/service-area-wave-mobile.svg')",
 					maskSize: 'cover',
 				}}
 			>
@@ -85,7 +90,7 @@ const HomePage: React.FC = () => {
 
 			<FooterCta />
 			<FooterComponent />
-		</div>
+		</>
 	);
 };
 

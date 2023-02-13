@@ -1,9 +1,10 @@
 import {defineField, defineType} from 'sanity'
 
 export default defineType({
-  name: 'home',
-  title: 'Home',
+  name: 'heatingAndCooling',
+  title: 'Heating & Cooling',
   type: 'document',
+
   fields: [
     defineField({
       name: 'name',
@@ -58,92 +59,82 @@ export default defineType({
       name: 'servicesGroup',
       title: 'Services Group',
       type: 'array',
-      of: [{type: 'textImageButtonGroup'}],
+      of: [{type: 'titleDescriptionImage'}],
     }),
     defineField({
-      name: 'whyUsTitle',
-      title: 'Why Us Title',
+      name: 'massSaveTitle',
+      title: 'Mass Save Section Title',
       type: 'string',
     }),
     defineField({
-      name: 'whyUsDescription',
-      title: 'Why Us Description',
+      name: 'massSaveDescription',
+      title: 'Mass Save Section Description',
       type: 'portableText',
     }),
     defineField({
-      name: 'whyUsButton',
-      title: 'Why Us Button',
+      name: 'massSaveButton',
+      title: 'Mass Save Section Button',
       type: 'reference',
       to: [{type: 'cta'}],
     }),
     defineField({
-      name: 'whyUsImage',
-      title: 'Why Us Image',
+      name: 'massSaveImage',
+      title: 'Mass Save Section Image',
       type: 'image',
       options: {
         hotspot: true,
       },
     }),
     defineField({
-      name: 'whyUsCards',
-      title: 'Why Us Cards',
+      name: 'productsTitle',
+      title: 'Products Title',
+      type: 'string',
+    }),
+    defineField({
+      name: 'productsDescription',
+      title: 'Products Description',
+      type: 'portableText',
+    }),
+    defineField({
+      name: 'productsGroup',
+      title: 'Products Group',
       type: 'array',
-      of: [
-        {
-          type: 'titleDescriptionImage',
-        },
-      ],
+      of: [{type: 'titleDescriptionImage'}],
     }),
     defineField({
-      name: 'testimonialTitle',
-      title: 'Testimonial Title',
+      name: 'ctaTitle',
+      title: 'CTA Title',
       type: 'string',
     }),
     defineField({
-      name: 'testimonialDescription',
-      title: 'Testimonial Description',
-      type: 'string',
+      name: 'ctaDescription',
+      title: 'CTA Description',
+      type: 'portableText',
     }),
     defineField({
-      name: 'testimonialCardIcon',
-      title: 'Testimonial Card Icon',
+      name: 'finalCtaButton',
+      title: 'Final CTA Button',
+      type: 'reference',
+      to: [{type: 'cta'}],
+    }),
+    defineField({
+      name: 'ctaImage',
+      title: 'Final CTA Image',
       type: 'image',
       options: {
         hotspot: true,
       },
     }),
     defineField({
-      name: 'testimonialCards',
-      title: 'Testimonial Cards',
+      name: 'brandsTitle',
+      title: 'Client Brands Title',
+      type: 'string',
+    }),
+    defineField({
+      name: 'clientsLogo',
+      title: 'Clients Logo',
       type: 'array',
-      of: [
-        {
-          type: 'titleDescription',
-        },
-      ],
-    }),
-    defineField({
-      name: 'serviceAreaTitle',
-      title: 'Service Area Title',
-      type: 'string',
-    }),
-    defineField({
-      name: 'serviceAreaDescription',
-      title: 'Service Area Description',
-      type: 'string',
-    }),
-    defineField({
-      name: 'serviceAreaImage',
-      title: 'Service Areas Image',
-      type: 'image',
-      options: {
-        hotspot: true,
-      },
-    }),
-    defineField({
-      name: 'serviceAreas',
-      title: 'Service Areas',
-      type: 'textList',
+      of: [{type: 'imageIcon'}],
     }),
     defineField({
       name: 'blogTitle',
@@ -188,41 +179,6 @@ export default defineType({
       title: 'FAQ List',
       type: 'array',
       of: [{type: 'titleDescription'}],
-    }),
-    defineField({
-      name: 'brandsTitle',
-      title: 'Client Brands Title',
-      type: 'string',
-    }),
-    defineField({
-      name: 'clientsLogo',
-      title: 'Clients Logo',
-      type: 'array',
-      of: [{type: 'imageIcon'}],
-    }),
-    defineField({
-      name: 'ctaTitle',
-      title: 'CTA Title',
-      type: 'string',
-    }),
-    defineField({
-      name: 'ctaDescription',
-      title: 'CTA Description',
-      type: 'portableText',
-    }),
-    defineField({
-      name: 'finalCtaButton',
-      title: 'Final CTA Button',
-      type: 'reference',
-      to: [{type: 'cta'}],
-    }),
-    defineField({
-      name: 'ctaImage',
-      title: 'Final CTA Image',
-      type: 'image',
-      options: {
-        hotspot: true,
-      },
     }),
   ],
 })

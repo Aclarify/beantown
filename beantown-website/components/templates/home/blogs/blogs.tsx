@@ -19,14 +19,14 @@ export default function Blogs() {
 	return (
 		<section
 			id="blogs"
-			className="bg-primary-white-shade-1 relative z-10 flex flex-col overflow-hidden pl-6 pb-20 lg:px-10 "
+			className="bg-primary-white-shade-1 relative z-[-1] flex flex-col overflow-hidden pl-6 pb-20 lg:px-10 "
 		>
 			<div
 				id="left-blob-desktop"
 				className="relative bottom-[2rem] right-[16em] hidden h-0 sm:block"
 			>
 				<Image
-					src="/blue-blob-shape-1.svg"
+					src="/images/home/blue-blob-shape-1.svg"
 					alt="Left-blob"
 					width={400}
 					height={400}
@@ -37,7 +37,7 @@ export default function Blogs() {
 				className="relative bottom-[-3rem] right-[8em] block h-0 sm:hidden"
 			>
 				<Image
-					src="/blue-blob-shape-1-mobile.svg"
+					src="/images/home/blue-blob-shape-1-mobile.svg"
 					alt="Left-blob"
 					width={200}
 					height={200}
@@ -62,7 +62,7 @@ export default function Blogs() {
 								<BlogCard
 									blogName={blog?.name || ''}
 									buttonText={blog?.button?.text || ''}
-									blogDescription={blog?.description?.contentRaw || ''}
+									blogDescription={blog?.description || ''}
 									thumbnailSrc={blog?.image?.image?.asset?.url || ''}
 									thumbnailAltText={blog?.image?.altText || ''}
 								/>

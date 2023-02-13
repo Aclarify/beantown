@@ -19,7 +19,7 @@ export default function Nav() {
 		return null;
 	}
 	const homeData = pageContent.home[0];
-	const { logo } = homeData;
+	const { logoDesktop, logoMobile } = homeData;
 	const navData = pageContent.header[0];
 	const { navLinks, navGroup, headerButton } = navData;
 	const childLinks = navGroup?.map((nav) => nav?.links).flat();
@@ -35,37 +35,40 @@ export default function Nav() {
 
 	return (
 		<>
-			<section className="absolute w-full lg:px-14">
+			<section className="lg:padding-for-section absolute w-full">
 				<Popover className="relative z-30">
-					<div className=" flex items-center  justify-between px-4 py-2 text-white lg:p-2">
-						<Image
-							alt={logo?.asset?.altText || ''}
-							width={200}
-							height={200}
-							src={logo?.asset?.url || ''}
-							className="hidden w-auto h-14 sm:h-16  lg:flex"
-						/>
-						<Image
-							alt={logo?.asset?.altText || ''}
-							width={100}
-							height={100}
-							src={logo?.asset?.url || ''}
-							className="flex lg:hidden"
-						/>
-						<Popover.Button
-							className="-my-2 inline-flex rounded-md p-4  lg:hidden"
-							aria-label="menu for navigation"
-						>
-							<Bars3Icon className="h-6 w-6" aria-hidden="true" />
-						</Popover.Button>
-
+					<div className=" mx-auto flex items-center  justify-between px-4 py-6 text-white lg:p-0">
+						<div className="hidden align-middle lg:flex ">
+							<Image
+								alt={logoDesktop?.asset?.altText || ''}
+								width={200}
+								height={300}
+								src={logoDesktop?.asset?.url || ''}
+							/>
+						</div>
+						<div className="flex align-middle lg:hidden">
+							<Image
+								alt={logoMobile?.asset?.altText || ''}
+								width={100}
+								height={100}
+								src={logoMobile?.asset?.url || ''}
+							/>
+						</div>
+						<div className="-my-2  lg:hidden">
+							<Popover.Button
+								className="inline-flex rounded-md p-2 "
+								aria-label="menu for navigation"
+							>
+								<Bars3Icon className="h-6 w-6" aria-hidden="true" />
+							</Popover.Button>
+						</div>
 						<div className="para-4 lg:para-3 hidden items-center  lg:flex lg:flex-grow lg:justify-center  ">
 							{navLinks?.map((link, index) => {
 								return (
 									<Link
 										key={index}
 										href={link?.href || '/'}
-										className="group inline-block "
+										className="group inline-block p-8"
 									>
 										{link?.linkText}
 									</Link>
@@ -77,9 +80,9 @@ export default function Nav() {
 									<div key={index} className="group inline-block pl-6">
 										<Link
 											href={'/'}
-											className="min-w-32 flex  items-center rounded-sm  outline-none focus:outline-none"
+											className="min-w-32 flex  items-center rounded-sm  px-3 py-1 outline-none focus:outline-none"
 										>
-											<span className="para-4 lg:para-3 flex-1 p-1 ">
+											<span className="para-4 lg:para-3 flex-1 pr-1 ">
 												{linkGroup?.groupTitle}
 											</span>
 											<span>
@@ -100,7 +103,7 @@ export default function Nav() {
 														href={link?.href || '/'}
 														aria-label={`Go to ${link?.linkText} page`}
 													>
-														<li className="para-4 lg:para-3 rounded-sm  p-1">
+														<li className="para-4 lg:para-3 rounded-sm px-3 py-1 ">
 															{link?.linkText}
 														</li>
 													</Link>
@@ -111,14 +114,11 @@ export default function Nav() {
 								);
 							})}
 						</div>
-						
-						<Button
-							fontColor="text-primary-shade-1 hidden lg:flex lg:justify-end"
-							bgColor="bg-white"
-						>
-							{headerButton?.text}
-						</Button>
-				
+						<div className=" hidden lg:flex lg:justify-end ">
+							<Button fontColor="text-primary-shade-1" bgColor="bg-white">
+								{headerButton?.text}
+							</Button>
+						</div>
 					</div>
 
 					<Transition

@@ -6,6 +6,7 @@ import RichText from 'components/molecules/rich-text.molecule';
 import Image from 'next/image';
 import Button from 'components/atoms/button.atom';
 import Link from 'next/link';
+import ContentWrapper from 'components/organisms/content-wrapper.organism';
 
 export default function HomeHero() {
 	const { pageContent } =
@@ -16,33 +17,60 @@ export default function HomeHero() {
 	const homeData = pageContent.home[0];
 	const { heroTitle, heroDescription, heroButton, heroImage } = homeData;
 	return (
-		<section id="home_page_hero ">
-			<div className="flex flex-shrink-0 flex-col justify-center ">
-				<div className="para-6  md:para-2 lg:para-2 absolute z-10 w-3/4 space-y-1 px-6 align-middle text-white md:w-1/2 md:space-y-2 md:px-8 lg:m-10 lg:space-y-4">
-					<h1 className="title-4 lg:title-1">{heroTitle}</h1>
-
-					<RichText value={heroDescription?.contentRaw} />
-
-					<Button fontColor="text-primary-shade-1 " bgColor="bg-white">
-						<Link href={'/'}>Book Now</Link>
-					</Button>
-				</div>
-
+		<section id="home_page_hero" className="relative">
+			<div id="image-wrapper" className="z-0">
 				<Image
 					alt={heroImage?.asset?.altText || ''}
 					width={4000}
 					height={1000}
 					priority={true}
-					className="min-h-[365px] w-full bg-gradient-to-t from-[#15284C] md:flex "
+					className="hidden sm:flex"
 					src={heroImage?.asset?.url || ''}
 					style={{
-						WebkitMaskImage: "url('./home-hero-mask.svg')",
+						WebkitMaskImage: "url('/images/home/home-hero-mask.svg')",
 						WebkitMaskSize: 'cover',
-						maskImage: "url('./home-hero-mask.svg')",
+						maskImage: "url('/images/home/home-hero-mask.svg')",
 						maskSize: 'cover',
 					}}
 				/>
+				<Image
+					alt={heroImage?.asset?.altText || ''}
+					width={428}
+					height={420}
+					priority={true}
+					className="block h-[420px] sm:hidden"
+					src={heroImage?.asset?.url || ''}
+					style={{
+						WebkitMaskImage: "url('/images/home/home-hero-mobile-mask.svg')",
+						WebkitMaskSize: 'cover',
+						maskImage: "url('/images/home/home-hero-mobile-mask.svg')",
+						maskSize: 'cover',
+						width: '100%',
+					}}
+				/>
 			</div>
+			<div
+				id="content-wrapper"
+				className="z-1 lg:padding-for-section absolute inset-y-0 flex w-3/4 items-center px-4 text-white md:w-[40%]"
+			>
+				<ContentWrapper>
+					<ContentWrapper.Title className="mb-[8px] lg:mb-[16px]">
+						<h1 className="title-4 lg:title-1">{heroTitle}</h1>
+					</ContentWrapper.Title>
+					<ContentWrapper.Description>
+						<RichText value={heroDescription?.contentRaw} />
+					</ContentWrapper.Description>
+					<ContentWrapper.CTA className="mt-[32px]">
+						<Button fontColor="text-primary-shade-1" bgColor="bg-white">
+							Book Now
+						</Button>
+					</ContentWrapper.CTA>
+				</ContentWrapper>
+			</div>
+
+			{/* </div> */}
+
+			{/* </div> */}
 		</section>
 	);
 }

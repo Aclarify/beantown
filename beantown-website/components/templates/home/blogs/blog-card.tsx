@@ -1,7 +1,5 @@
 import React from 'react';
 import Image from 'next/image';
-import { PortableText } from '@typing/gql/graphql';
-import RichText from 'components/molecules/rich-text.molecule';
 
 interface Props {
 	blogName: string;
@@ -13,33 +11,35 @@ interface Props {
 const BlogCard: React.FC<Props> = (props) => {
 	return (
 		<>
-			<div className="flex-col justify-center cursor-pointer">
-				<div>
+			<div className="cursor-pointer flex-col justify-center border-none">
+				<div className="flex justify-center ">
 					<Image
 						src={props.thumbnailSrc}
 						alt={props.thumbnailAltText}
 						width="600"
 						height="600"
-						className="  border-2 rounded-3xl"
+						className="w-full rounded-3xl border-2"
 					/>
 				</div>
-				<p className="py-4 title-7 lg:title-5 text-primary-black">
-					{props.blogName}
-				</p>
-				<div className="para-4 lg:para-2 mb-4 text-primary-shade-1">
-					<RichText value={props.blogDescription} />
-				</div>
-				<div className="lg:py-6 flex justify-between align-middle">
-					<button className="para-4 lg:para-2 text-primary-black underline ">
-						{props.buttonText}
-					</button>
+				<div className="pl-2">
+					<p className="title-7 lg:title-5 text-primary-black py-4">
+						{props.blogName}
+					</p>
+					<div className="para-4 lg:para-2 text-primary-shade-1 mb-4">
+						<p> {props.blogDescription} </p>
+					</div>
+					<div className="flex justify-between align-middle lg:py-6">
+						<button className="para-4 lg:para-2 text-primary-black underline ">
+							{props.buttonText}
+						</button>
 
-					<Image
-						src="/images/home/blog-arrow.svg"
-						width="75"
-						height="20"
-						alt="Blog Arrow"
-					/>
+						<Image
+							src="/images/home/blog-arrow.svg"
+							width="75"
+							height="20"
+							alt="Blog Arrow"
+						/>
+					</div>
 				</div>
 			</div>
 		</>

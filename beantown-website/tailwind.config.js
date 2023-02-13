@@ -7,6 +7,10 @@ module.exports = {
 	],
 	theme: {
 		extend: {
+			screens: {
+				'3xl': '2500px',
+				'4xl': '3000px',
+			},
 			fontFamily: {
 				neuePlak: ['var(--font-neue-plak)'],
 			},
@@ -35,6 +39,9 @@ module.exports = {
 			letterSpacing: {
 				wide: '1px',
 				wider: '1.5px',
+			},
+			backgroundSize: {
+				'fit-to-parent': '100% 100%',
 			},
 		},
 	},

@@ -21,12 +21,6 @@ export default function FooterCta() {
 			<section
 				id="footerCtaDesktop"
 				className="z-15 relative -top-[6em] hidden lg:block"
-				// style={{
-				// 	WebkitMaskImage: "url('./footer-cta-wave.svg')",
-				// 	WebkitMaskSize: 'cover',
-				// 	maskImage: "url('./footer-cta-wave.svg')",
-				// 	maskSize: 'cover',
-				// }}
 			>
 				<div className="flex  flex-row ">
 					<div
@@ -72,15 +66,9 @@ export default function FooterCta() {
 			</section>
 			<section
 				id="footerCtaMobile"
-				className="relative -top-[7em]   z-10 block lg:hidden"
-				// style={{
-				// 	WebkitMaskImage: "url('./footer-cta-mobile-wave.svg')",
-				// 	WebkitMaskSize: 'cover',
-				// 	maskImage: "url('./footer-cta-mobile-wave.svg')",
-				// 	maskSize: 'cover',
-				// }}
+				className="relative -top-[7em]   z-[2] block lg:hidden"
 			>
-				<div className="flex flex-col">
+				<div className="relative -z-[10] flex flex-col">
 					<div
 						className={`block h-[50vh] md:h-[56vh]`}
 						style={{
