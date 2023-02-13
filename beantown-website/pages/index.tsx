@@ -62,9 +62,9 @@ const HomePage: React.FC = () => {
 				id="desktop-view"
 				className="hidden lg:block "
 				style={{
-					WebkitMaskImage: "url('./service-area-wave.svg')",
+					WebkitMaskImage: "url('/images/home/service-area-wave.svg')",
 					WebkitMaskSize: 'cover',
-					maskImage: "url('./service-area-wave.svg')",
+					maskImage: "url('/images/home/service-area-wave.svg')",
 					maskSize: 'cover',
 				}}
 			>
@@ -75,9 +75,9 @@ const HomePage: React.FC = () => {
 				id="mobile-view"
 				className="block lg:hidden"
 				style={{
-					WebkitMaskImage: "url('./service-area-wave-mobile.svg')",
+					WebkitMaskImage: "url('/images/home/service-area-wave-mobile.svg')",
 					WebkitMaskSize: 'cover',
-					maskImage: "url('./service-area-wave-mobile.svg')",
+					maskImage: "url('/images/home/service-area-wave-mobile.svg')",
 					maskSize: 'cover',
 				}}
 			>
