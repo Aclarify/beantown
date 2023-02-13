@@ -11,8 +11,8 @@ interface Props {
 const WhyUsCard: React.FC<Props> = (props) => {
 	return (
 		<>
-			<div className=" shadow-sm flex  rounded-xl bg-white items-center lg:m-4  ">
-				<div className=" py-4 pl-4 flex-none">
+			<div className=" flex items-center  rounded-xl bg-white shadow-sm lg:m-4  ">
+				<div className=" flex-none py-4 pl-4">
 					<Image
 						src={props.thumbnailSrc}
 						alt={props.thumbnailAltText}
@@ -20,12 +20,12 @@ const WhyUsCard: React.FC<Props> = (props) => {
 						height="100"
 					/>
 				</div>
-				<div className=" pl-4 flex-1">
-					<h1 className="subtitle-5 lg:subtitle-2 font-semibold text-primary-black ">
+				<div className=" flex-1 pl-4">
+					<h1 className="subtitle-5 lg:subtitle-2 text-primary-black font-semibold ">
 						{props.title}
 					</h1>
 					<div className="lg:para-2 para-4  text-gray-shade-1 pt-2">
-						<RichText value={props.description} />
+						<p>{props.description} </p>
 					</div>
 				</div>
 			</div>

@@ -1,7 +1,5 @@
 import React from 'react';
 import Image from 'next/image';
-import { PortableText } from '@typing/gql/graphql';
-import RichText from 'components/molecules/rich-text.molecule';
 
 interface Props {
 	blogName: string;
@@ -28,7 +26,7 @@ const BlogCard: React.FC<Props> = (props) => {
 						{props.blogName}
 					</p>
 					<div className="para-4 lg:para-2 text-primary-shade-1 mb-4">
-						<RichText value={props.blogDescription} />
+						<p> {props.blogDescription} </p>
 					</div>
 					<div className="flex justify-between align-middle lg:py-6">
 						<button className="para-4 lg:para-2 text-primary-black underline ">
