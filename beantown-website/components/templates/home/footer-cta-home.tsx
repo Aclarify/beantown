@@ -4,8 +4,8 @@ import { GlobalContextProps } from '@typing/common/interfaces/contexts.interface
 import { HomePageContentProps } from 'pages';
 import RichText from 'components/molecules/rich-text.molecule';
 import Button from 'components/atoms/button.atom';
-import Link from 'next/link';
-import Image from 'next/image';
+import CTAWithImage from 'components/organisms/cta-with-image.organism';
+import ContentWrapper from 'components/organisms/content-wrapper.organism';
 
 export default function FooterCta() {
 	const { pageContent } =
@@ -20,9 +20,33 @@ export default function FooterCta() {
 		<>
 			<section
 				id="footerCtaDesktop"
-				className="z-15 relative -top-[6em] hidden lg:block"
+				className="z-15 left-padding-for-section relative -top-[3em]"
 			>
-				<div className="flex  flex-row ">
+				<CTAWithImage
+					heroImageURL={imagePath || ''}
+					heroImageAltText={ctaImage?.asset?.altText || ''}
+					textContentBGImage={'/images/home/footer-cta/cta-bg-spiral.svg'}
+					textContentBGImageForSmallScreen={
+						'/images/home/footer-cta/cta-bg-spiral.svg'
+					}
+					heroImagePosition="right"
+				>
+					<ContentWrapper>
+						<ContentWrapper.Title>
+							<h1 className="title-4 lg:title-1">{ctaTitle}</h1>
+						</ContentWrapper.Title>
+						<ContentWrapper.Description>
+							<RichText value={ctaDescription?.contentRaw} />
+						</ContentWrapper.Description>
+						<ContentWrapper.CTA className="mt-[32px]">
+							<Button fontColor="text-white" bgColor=" bg-primary-shade-1">
+								{finalCtaButton?.text}
+							</Button>
+						</ContentWrapper.CTA>
+					</ContentWrapper>
+				</CTAWithImage>
+
+				{/* <div className="flex  flex-row ">
 					<div
 						id="content"
 						className=" from-secondary-shade-1 to-secondary-shade-2  relative basis-1/2  bg-gradient-to-r "
@@ -62,9 +86,9 @@ export default function FooterCta() {
 							backgroundRepeat: 'no-repeat',
 						}}
 					></div>
-				</div>
+				</div> */}
 			</section>
-			<section
+			{/* <section
 				id="footerCtaMobile"
 				className="relative -top-[7em]   z-[2] block lg:hidden"
 			>
@@ -119,7 +143,7 @@ export default function FooterCta() {
 						</div>
 					</div>
 				</div>
-			</section>
+			</section> */}
 		</>
 	);
 }

@@ -18,6 +18,9 @@
 	.padding-for-section {
 		@apply px-[120px]
 	}
+	.left-padding-for-section {
+		@apply pl-[120px]
+	}
 	.title-1 {
 		@apply text-7xl;
 		@apply font-semibold;
