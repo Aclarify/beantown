@@ -6,24 +6,28 @@ interface IProps extends React.HTMLAttributes<HTMLDivElement> {
 	imgAltText: string;
 	width: number;
 	height: number;
-	maskImg: any;
+	maskImg: string;
 	bgImg: string;
 }
 const MaskedImageWithBackgroundVector: React.FC<IProps> = (props) => {
 	return (
-		<div className={`bg-[url(${props.bgImg})] bg-cover`}>
+		<div
+			className={'bg-cover'}
+			style={{
+				backgroundImage: `url(${props.bgImg})`,
+			}}
+		>
 			<Image
 				src={props.imageURL || ''}
 				alt={props.imgAltText || ''}
 				width={props.width}
 				height={props.height}
-				// style={{
-				// 	WebkitMaskImage: "url('./images/home/why-us/why-us-blob.svg')",
-				// 	WebkitMaskSize: 'cover',
-				// 	maskImage: "url('./images/home/why-us/why-us-blob.svg')",
-				// 	maskSize: 'cover',
-				// }}
-				className={`[mask-image: ${props.maskImg} mask-size: cover]`}
+				style={{
+					WebkitMaskImage: `url(${props.maskImg})`,
+					WebkitMaskSize: 'cover',
+					maskImage: `url(${props.maskImg})`,
+					maskSize: 'cover',
+				}}
 			/>
 		</div>
 	);
