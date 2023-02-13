@@ -12,7 +12,7 @@ export default defineType({
     defineField({
       name: 'description',
       title: 'Description',
-      type: 'portableText',
+      type: 'string',
     }),
     defineField({
       name: 'image',

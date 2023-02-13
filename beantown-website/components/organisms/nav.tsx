@@ -19,7 +19,7 @@ export default function Nav() {
 		return null;
 	}
 	const homeData = pageContent.home[0];
-	const { logo } = homeData;
+	const { logoDesktop, logoMobile } = homeData;
 	const navData = pageContent.header[0];
 	const { navLinks, navGroup, headerButton } = navData;
 	const childLinks = navGroup?.map((nav) => nav?.links).flat();
@@ -40,18 +40,18 @@ export default function Nav() {
 					<div className=" mx-auto flex items-center  justify-between px-4 py-6 text-white lg:p-0">
 						<div className="hidden align-middle lg:flex ">
 							<Image
-								alt={logo?.asset?.altText || ''}
+								alt={logoDesktop?.asset?.altText || ''}
 								width={200}
 								height={300}
-								src={logo?.asset?.url || ''}
+								src={logoDesktop?.asset?.url || ''}
 							/>
 						</div>
 						<div className="flex align-middle lg:hidden">
 							<Image
-								alt={logo?.asset?.altText || ''}
+								alt={logoMobile?.asset?.altText || ''}
 								width={100}
 								height={100}
-								src={logo?.asset?.url || ''}
+								src={logoMobile?.asset?.url || ''}
 							/>
 						</div>
 						<div className="-my-2  lg:hidden">

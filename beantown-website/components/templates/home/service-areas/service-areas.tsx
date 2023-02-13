@@ -20,7 +20,7 @@ export default function ServiceAreas() {
 	return (
 		<section id="serviceAreas" className="bg-primary-white-shade-1 mt-20">
 			<div className="mt-20 p-6 lg:px-10">
-				<div className="mt-20 pb-6 lg:mt-40 lg:flex">
+				<div className="mt-20 pb-6 lg:mt-40 lg:flex 2xl:pt-16">
 					<div className="lg:w-1/2 lg:border-r-2">
 						<h1 className="title-5 lg:title-2  text-primary-black pl-2 lg:pr-20 lg:pl-6">
 							{serviceAreaTitle}
@@ -47,7 +47,7 @@ export default function ServiceAreas() {
 							id="service-areas-inner-container"
 							className="translate-y-[-10px] rounded-2xl bg-white pt-1  shadow-md lg:translate-y-0 lg:p-1"
 						>
-							<h1 className="subtitle-7 lg:subtitle-3 text-primary-black mt-2 pl-6 pb-2">
+							<h1 className="subtitle-7 lg:subtitle-3 text-primary-black mt-2 pl-6 pb-2 ">
 								{serviceAreas?.title}
 							</h1>
 

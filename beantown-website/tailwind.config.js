@@ -7,6 +7,10 @@ module.exports = {
 	],
 	theme: {
 		extend: {
+			screens: {
+				'3xl': '2500px',
+				'4xl': '3000px',
+			},
 			fontFamily: {
 				neuePlak: ['var(--font-neue-plak)'],
 			},

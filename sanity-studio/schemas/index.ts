@@ -22,11 +22,13 @@ import textList from './molecules/textList'
 import imageDescriptionButtonGroup from './organism/imageDescriptionButtonGroup'
 import nav from './layouts/nav'
 import titleDescriptionImage from './molecules/titleDescriptionImage'
+import heatingAndCooling from './pages/heating-and-cooling'
 
 export const schemaTypes = [
   //Document Types
-  aboutUs,
+  //aboutUs,
   home,
+  heatingAndCooling,
   nav,
   footer,
   //Other Types

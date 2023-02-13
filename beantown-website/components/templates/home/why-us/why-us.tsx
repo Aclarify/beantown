@@ -87,7 +87,7 @@ export default function WhyUs() {
 								<WhyUsCard
 									key={index}
 									title={ourValues?.titleText || ''}
-									description={ourValues?.description?.contentRaw}
+									description={ourValues?.description || ''}
 									thumbnailSrc={ourValues.image?.asset?.url || ''}
 									thumbnailAltText={ourValues.image?.asset?.altText || ''}
 								/>

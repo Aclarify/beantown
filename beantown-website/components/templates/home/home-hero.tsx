@@ -24,7 +24,7 @@ export default function HomeHero() {
 					width={4000}
 					height={1000}
 					priority={true}
-					className="hidden md:flex"
+					className="hidden sm:flex"
 					src={heroImage?.asset?.url || ''}
 					style={{
 						WebkitMaskImage: "url('./home-hero-mask.svg')",
@@ -38,13 +38,14 @@ export default function HomeHero() {
 					width={428}
 					height={420}
 					priority={true}
-					className="block h-[420px] md:hidden"
+					className="block h-[420px] sm:hidden"
 					src={heroImage?.asset?.url || ''}
 					style={{
 						WebkitMaskImage: "url('./home-hero-mobile-mask.svg')",
 						WebkitMaskSize: 'cover',
 						maskImage: "url('./home-hero-mobile-mask.svg')",
 						maskSize: 'cover',
+						width: '100%',
 					}}
 				/>
 			</div>
