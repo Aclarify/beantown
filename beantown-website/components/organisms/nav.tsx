@@ -35,7 +35,7 @@ export default function Nav() {
 
 	return (
 		<>
-			<section className="absolute w-full lg:px-10">
+			<section className="lg:padding-for-section absolute w-full">
 				<Popover className="relative z-30">
 					<div className=" mx-auto flex items-center  justify-between px-4 py-6 text-white lg:p-0">
 						<div className="hidden align-middle lg:flex ">

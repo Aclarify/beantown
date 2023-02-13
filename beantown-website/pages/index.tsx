@@ -2,7 +2,7 @@ import Head from 'next/head';
 
 import Header from '../components/organisms/nav';
 import Brands from '../components/templates/home/brands';
-import Faq from '../components/templates/home/faq/faq';
+import Faq from '../components/templates/home/faq/faq.section';
 import FooterComponent from '../components/organisms/footer';
 import FooterCta from '../components/templates/home/footer-cta-home';
 import Blogs from '../components/templates/home/blogs/blogs';
@@ -46,13 +46,18 @@ export { getStaticProps };
 
 const HomePage: React.FC = () => {
 	return (
-		<div className="overflow-hidden">
+		<>
 			<PageHead />
 			<Header />
 			<HomeHero />
 			<Services />
 			<WhyUs />
-			<Testimonials />
+			<div
+				id="testimonial-section-wrapper"
+				className="relative bottom-[24rem] -mb-[24rem]"
+			>
+				<Testimonials />
+			</div>
 			<div
 				id="desktop-view"
 				className="hidden lg:block "
@@ -85,7 +90,7 @@ const HomePage: React.FC = () => {
 
 			<FooterCta />
 			<FooterComponent />
-		</div>
+		</>
 	);
 };
 

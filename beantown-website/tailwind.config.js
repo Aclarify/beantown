@@ -40,6 +40,9 @@ module.exports = {
 				wide: '1px',
 				wider: '1.5px',
 			},
+			backgroundSize: {
+				'fit-to-parent': '100% 100%',
+			},
 		},
 	},
 	plugins: [],
