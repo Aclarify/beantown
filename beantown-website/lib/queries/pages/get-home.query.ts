@@ -149,7 +149,7 @@ const homeQuery = ` allHome {
 
 export default gql`
 	query {
-		home: ${homeQuery}
+		page: ${homeQuery}
 		header: ${navQuery}
 		footer: ${footerQuery}
 	}

@@ -13,7 +13,7 @@ export default function Services() {
 	if (!pageContent) {
 		return null;
 	}
-	const homeData = pageContent.home[0];
+	const homeData = pageContent.page[0];
 
 	const { servicesTitle, servicesDescription, servicesGroup } = homeData;
 	return (
