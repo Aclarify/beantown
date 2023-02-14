@@ -14,7 +14,6 @@ export default function HeatingCoolingPageHero() {
 		return null;
 	}
 	const pageData = pageContent.page[0];
-	// console.log(pageContent);
 	const { heroImage, heroTitle, heroDescription, heroButton } = pageData;
 	return (
 		<section id="cooling-and-heating-hero" className="">
@@ -66,11 +65,11 @@ export default function HeatingCoolingPageHero() {
 					className="z-1 absolute top-0 right-0  basis-1/3"
 				>
 					<Image
-						alt={'hero wave mask'}
+						alt={heroImage?.asset?.altText || ''}
 						width={1080}
 						height={600}
 						priority={true}
-						src="/images/heating-cooling/hero/hc-hero-image.svg"
+						src={heroImage?.asset?.url || ''}
 					/>
 				</div>
 			</div>
