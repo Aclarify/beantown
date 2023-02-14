@@ -19,7 +19,7 @@ export default function HeatingCoolingProductsCards() {
 	const pageData = pageContent.page[0];
 	const { productsTitle, productsDescription, productsGroup } = pageData;
 
-	 const slider = React.useRef<Slider>();
+	 const slider = React.useRef<Slider| null>(null);
 		const previous = () => {
 			if(slider.current){
 				slider.current.slickNext();
@@ -91,7 +91,7 @@ export default function HeatingCoolingProductsCards() {
 
 			<div>
 				<Slider
-					ref={(c) => (slider.current = c)}
+					ref={slider}
 					{...settings}
 					className="mx-8"
 				>
