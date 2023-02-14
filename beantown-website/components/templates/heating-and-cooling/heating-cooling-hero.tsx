@@ -14,7 +14,6 @@ export default function HeatingCoolingPageHero() {
 		return null;
 	}
 	const pageData = pageContent.page[0];
-	// console.log(pageContent);
 	const { heroImage, heroTitle, heroDescription, heroButton } = pageData;
 	return (
 		<section id="cooling-and-heating-hero">

@@ -39,40 +39,32 @@ const CTAWithImage: React.FC<IProps> = ({
 					'flex-row-reverse': heroImagePosition === 'right',
 				})}
 			>
-				<div
-					id="hero-image-wrapper"
-					// Below for pseudo with image approach
-					// className="after:width-full after:height-full after:from-secondary-shade-2 relative w-full after:absolute after:top-0 after:left-0 after:z-10 after:bg-gradient-to-r after:content-[''] lg:w-2/3"
-					className="w-full lg:w-1/2"
-					style={{
-						backgroundImage: `linear-gradient(${
-							heroImagePosition === 'right' ? 'to right' : 'to left'
-						}, ${gradientToColor}, transparent 20%),url(${heroImageURL})`,
-						backgroundSize: '100% auto', // Auto or 100%
-						backgroundRepeat: 'no-repeat',
-					}}
-				>
-					{/* TODO Need for pseudo */}
-					{/* <Image
-					src={heroImageURL}
-					alt="Image mask"
-					height={2000}
-					width={2000}
-					style={{
-						width: '100%',
-					}}
-				/> */}
+				<div id="hero-image-wrapper" className="z-0 w-full lg:w-1/2">
+					<Image
+						src={heroImageURL}
+						alt="Image mask"
+						height={2000}
+						width={2000}
+						style={{
+							width: '100%',
+							height: 'auto',
+						}}
+					/>
 				</div>
 				<div
 					id="content-wrapper"
 					style={{
-						backgroundImage: `url(${bgImage}), linear-gradient(${
-							heroImagePosition === 'right' ? 'to right' : 'to left'
-						}, ${gradientFromColor}, ${gradientToColor})`,
-						backgroundSize: '100% auto',
-						backgroundPosition: 'center',
+						backgroundImage: `url(${bgImage})`,
+						backgroundColor: gradientToColor,
+						position: 'relative',
 					}}
-					className="flex w-full items-center justify-center py-4 lg:w-1/2"
+					className={clsx(
+						`relative flex bg-[${gradientToColor}] w-full items-center justify-center py-4 lg:w-1/2`,
+						heroImagePosition === 'right' &&
+							`after:from-[${gradientToColor}] after:absolute after:top-0 after:bottom-0 after:right-[-121px] after:z-[1] after:w-[170px] after:bg-gradient-to-r`,
+						heroImagePosition === 'left' &&
+							`before:from-[${gradientToColor}] before:absolute before:left-[-181px] before:top-0 before:bottom-0 before:z-[1] before:w-[182px] before:bg-gradient-to-l`
+					)}
 				>
 					{children}
 				</div>
@@ -96,7 +88,7 @@ const CTAWithImage: React.FC<IProps> = ({
 						backgroundRepeat: 'no-repeat',
 						backgroundSize: '100% 100%',
 					}}
-					className="flex h-[40vh] w-full items-center justify-center"
+					className="relative flex h-[40vh] w-full items-center justify-center"
 				>
 					{children}
 				</div>
