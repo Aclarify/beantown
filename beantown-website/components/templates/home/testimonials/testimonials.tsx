@@ -15,6 +15,7 @@ import 'slick-carousel/slick/slick.css';
 import 'slick-carousel/slick/slick-theme.css';
 
 export default function Testimonials() {
+	const slider = useRef<Slider | null>(null);
 	const [showTestimonialModel, setShowTestimonialModel] = useState(false);
 	const [selectedTestimonial, setSelectedTestimonial] = useState<any>(null);
 
@@ -44,19 +45,21 @@ export default function Testimonials() {
 		}
 	};
 
- const slider = React.useRef<Slider | null>(null);
+ 
  const previous = () => {
-		if (slider.current) {
-			slider.current.slickNext();
+		if (!slider.current) {
+			return
 		}
+		slider.current.slickNext();
  };
  const next = () => {
-		if (slider.current) {
-			slider.current.slickPrev();
+		if (!slider.current) {
+		return
 		}
+			slider.current.slickPrev();
  };
 
-	let settings = {
+	const settings = {
 		infinite: true,
 		speed: 500,
 		slidesToShow: 3,

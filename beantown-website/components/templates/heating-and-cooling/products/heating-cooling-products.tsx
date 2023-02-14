@@ -10,6 +10,7 @@ import 'slick-carousel/slick/slick.css';
 import 'slick-carousel/slick/slick-theme.css';
 
 export default function HeatingCoolingProductsCards() {
+	const slider = React.useRef<Slider | null>(null);
 	const { pageContent } =
 		useContext<GlobalContextProps<HeatingCoolingContentProps>>(GlobalContext);
 	if (!pageContent) {
@@ -18,7 +19,7 @@ export default function HeatingCoolingProductsCards() {
 	const pageData = pageContent.page[0];
 	const { productsTitle, productsDescription, productsGroup } = pageData;
 
-	const slider = React.useRef<Slider | null>(null);
+	
 	const previous = () => {
 		if (slider.current) {
 			slider.current.slickNext();
@@ -29,7 +30,7 @@ export default function HeatingCoolingProductsCards() {
 			slider.current.slickPrev();
 		}
 	};
-	let settings = {
+	const settings = {
 		speed: 500,
 		slidesToShow: 3,
 		slidesToScroll: 1,

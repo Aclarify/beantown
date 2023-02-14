@@ -23,6 +23,7 @@ const WhyUsCard: React.FC<Props> = (props) => {
 				</div>
 				<div className=" flex-1 pl-4">
 					<div className="lg:para-2 para-4  text-gray-shade-1 pt-2">
+						<p>{props.description}</p>
 					</div>
 				</div>
 			</div>
