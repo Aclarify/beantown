@@ -36,7 +36,7 @@ export { getStaticProps };
 
 const HeatingAndCoolingServices: React.FC = (props) => {
 	return (
-		<>
+		<section className="bg-primary-white-shade-1">
 			<HeatingCoolingPageHero />
 			<MassSave />
 			{/* <HeatingCoolingServiceCard />
@@ -46,7 +46,7 @@ const HeatingAndCoolingServices: React.FC = (props) => {
 			<Brands />
 			<Blogs />
 			<Faq /> */}
-		</>
+		</section>
 	);
 };
 

@@ -56,7 +56,7 @@ export default function App({ Component, pageProps }: AppProps) {
 		<>
 			<ApolloProvider client={graphQLClient}>
 				<main
-					className={`${neuePlak.className} bg-secondary-shade-3 overflow-hidden tracking-wide lg:tracking-wider`}
+					className={`${neuePlak.className}  overflow-hidden tracking-wide lg:tracking-wider`}
 				>
 					{pageProps.globalContext && (
 						<Nav

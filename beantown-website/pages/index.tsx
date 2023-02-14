@@ -44,7 +44,7 @@ export { getStaticProps };
 
 const HomePage: React.FC = () => {
 	return (
-		<>
+		<section className="bg-secondary-shade-3">
 			<PageHead />
 			<HomeHero />
 			<Services />
@@ -86,7 +86,7 @@ const HomePage: React.FC = () => {
 			<Brands />
 
 			<FooterCta />
-		</>
+		</section>
 	);
 };
 

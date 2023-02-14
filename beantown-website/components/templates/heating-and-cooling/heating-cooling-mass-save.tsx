@@ -23,13 +23,10 @@ export default function MassSave() {
 		<section
 			id="massSave"
 			className="relative z-30
-			py-[4rem] pb-[115vw] 
-			md:pt-[10vw] md:pb-[50%]"
+			py-[25rem] pb-[50vw] 
+			md:pt-[10vw] md:pb-[25%]"
 		>
-			<div
-				id="section-wrapper"
-				className="bg-primary-white-shade-1 z-1  flex flex-col overflow-hidden"
-			>
+			<div id="section-wrapper" className=" z-1  flex flex-col overflow-hidden">
 				<div
 					id="content-image-wrapper"
 					className="flex w-full flex-col-reverse items-center px-6 md:flex  md:flex-row lg:px-10"
