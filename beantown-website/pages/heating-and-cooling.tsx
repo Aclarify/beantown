@@ -1,6 +1,6 @@
 import React from 'react';
-import HeatingCoolingServiceCard from '../components/templates/heating-and-cooling/heating-cooling-service-cards';
-import HeatingCoolingProductsCards from '../components/templates/heating-and-cooling/heating-cooling-product-cards';
+import HeatingCoolingServiceCard from '../components/templates/heating-and-cooling/services/heating-cooling-services';
+import HeatingCoolingProductsCards from '../components/templates/heating-and-cooling/products/heating-cooling-products';
 import { HeatingAndCooling, Nav, Footer } from '@typing/gql/graphql';
 import Head from 'next/head';
 import pageQuery from '@lib/queries/pages/get-heating-and-cooling.query';
