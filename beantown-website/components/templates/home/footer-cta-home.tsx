@@ -13,7 +13,7 @@ export default function FooterCta() {
 	if (!pageContent) {
 		return null;
 	}
-	const homeData = pageContent.home[0];
+	const homeData = pageContent.page[0];
 	const { ctaTitle, ctaDescription, finalCtaButton, ctaImage } = homeData;
 	const imagePath = ctaImage?.asset?.url;
 	return (

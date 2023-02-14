@@ -15,7 +15,7 @@ export default function Faq() {
 	if (!pageContent) {
 		return null;
 	}
-	const homeData = pageContent.home[0];
+	const homeData = pageContent.page[0];
 	const { faqTitle, faqDescription, faqButton, faqList } = homeData;
 	function handleFaqClick(index: number) {
 		if (index == indexToBeOpen) {

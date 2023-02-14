@@ -16,7 +16,7 @@ export default function WhyUs() {
 	if (!pageContent) {
 		return null;
 	}
-	const homeData = pageContent.home[0];
+	const homeData = pageContent.page[0];
 	const { whyUsTitle, whyUsDescription, whyUsButton, whyUsCards, whyUsImage } =
 		homeData;
 

@@ -7,28 +7,27 @@ import {
 	XMarkIcon,
 } from '@heroicons/react/24/outline';
 import { GlobalContext } from '@contexts/global/global.context';
-import { GlobalContextProps } from '@typing/common/interfaces/contexts.interface';
-import { HomePageContentProps } from 'pages';
+import { Nav } from '@typing/gql/graphql';
+
 import Image from 'next/image';
 import Button from 'components/atoms/button.atom';
 
-export default function Nav() {
-	const { pageContent } =
-		useContext<GlobalContextProps<HomePageContentProps>>(GlobalContext);
-	if (!pageContent) {
-		return null;
-	}
-	const homeData = pageContent.home[0];
-	const { logoDesktop, logoMobile } = homeData;
-	const navData = pageContent.header[0];
-	const { navLinks, navGroup, headerButton } = navData;
+interface IProps {
+	logoDesktop: any;
+	logoMobile: any;
+	content: Nav;
+}
+export default function Header(props: IProps) {
+	console.log('props content in header', props);
+	const { navLinks, navGroup, headerButton } = props.content;
 	const childLinks = navGroup?.map((nav) => nav?.links).flat();
 
 	const allNavLinks = [
 		...(navLinks ? navLinks : []),
 		...(childLinks ? childLinks : []),
 	];
-
+	const { logoDesktop, logoMobile } = props;
+	console.log('logoDesktop:::', logoDesktop);
 	const childNavLinks = allNavLinks.filter((element) => {
 		return element !== null;
 	});
