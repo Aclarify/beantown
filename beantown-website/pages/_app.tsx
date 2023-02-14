@@ -58,21 +58,29 @@ export default function App({ Component, pageProps }: AppProps) {
 				<main
 					className={`${neuePlak.className} bg-secondary-shade-3 overflow-hidden tracking-wide lg:tracking-wider`}
 				>
-					<Nav
-						logoDesktop={
-							pageProps.globalContext.pageContent.page[0]?.logoDesktop
-						}
-						logoMobile={pageProps.globalContext.pageContent.page[0]?.logoMobile}
-						content={pageProps.globalContext.pageContent.header[0]}
-					/>
+					{pageProps.globalContext && (
+						<Nav
+							logoDesktop={
+								pageProps.globalContext.pageContent.page[0]?.logoDesktop
+							}
+							logoMobile={
+								pageProps.globalContext.pageContent.page[0]?.logoMobile
+							}
+							content={pageProps.globalContext.pageContent.header[0]}
+						/>
+					)}
 					<Component {...pageProps} />
-					<Footer
-						logoDesktop={
-							pageProps.globalContext.pageContent.page[0]?.logoDesktop
-						}
-						logoMobile={pageProps.globalContext.pageContent.page[0]?.logoMobile}
-						content={pageProps.globalContext.pageContent.footer[0]}
-					/>
+					{pageProps.globalContext && (
+						<Footer
+							logoDesktop={
+								pageProps.globalContext.pageContent.page[0]?.logoDesktop
+							}
+							logoMobile={
+								pageProps.globalContext.pageContent.page[0]?.logoMobile
+							}
+							content={pageProps.globalContext.pageContent.footer[0]}
+						/>
+					)}
 				</main>
 			</ApolloProvider>
 		</>
