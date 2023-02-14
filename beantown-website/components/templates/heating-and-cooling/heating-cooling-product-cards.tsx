@@ -23,8 +23,7 @@ export default function HeatingCoolingProductsCards() {
 			<div>
 				<div className="flex flex-nowrap overflow-x-auto  mx-8 px-8 items-center space-y-5 lg:space-x-5 ">
 					<div className="flex-none w-[250px] p-4 bg-[FCF7F7]  text-center space-y-2   items-center  shadow-[rgba(7,_65,_210,_0.1)_0px_9px_30px]">
-						{/* <Image src={cardImg1} alt={'card Image'}  width={100}
-                  height={100}/> */}
+						
 						<div className="ml-20 lg:ml-16  p-4 FFFFFF">
 							<img src="images/cooling-and-heating-service-page/products/products1.svg"></img>
 						</div>
