@@ -20,8 +20,17 @@ export default function HeatingCoolingProductsCards() {
 	const { productsTitle, productsDescription, productsGroup } = pageData;
 
 	 const slider = React.useRef<Slider>();
-		const next = () => slider.current.slickPrev();
-		const previous = () => slider.current.slickNext();
+		const previous = () => {
+			if(slider.current){
+				slider.current.slickNext();
+			}
+			
+		};
+		const next = () => {
+				if(slider.current){
+					slider.current.slickPrev();
+				}
+		};
 	var settings = {
 		speed: 500,
 		slidesToShow: 3,
