@@ -45,7 +45,7 @@ export default function MassSave() {
 								<RichText value={massSaveDescription?.contentRaw} />
 							</ContentWrapper.Description>
 							<ContentWrapper.CTA className="mt-[16px] lg:mt-[32px]">
-								<Button fontColor="text-white" bgColor=" bg-primary-shade-1">
+								<Button fontColor="text-white" bgColor=" bg-[#BC3B39]">
 									{massSaveButton?.text}
 								</Button>
 							</ContentWrapper.CTA>
