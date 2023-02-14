@@ -43,12 +43,12 @@ const CTAWithImage: React.FC<IProps> = ({
 					id="hero-image-wrapper"
 					// Below for pseudo with image approach
 					// className="after:width-full after:height-full after:from-secondary-shade-2 relative w-full after:absolute after:top-0 after:left-0 after:z-10 after:bg-gradient-to-r after:content-[''] lg:w-2/3"
-					className="w-full lg:w-2/3"
+					className="w-full lg:w-1/2"
 					style={{
 						backgroundImage: `linear-gradient(${
 							heroImagePosition === 'right' ? 'to right' : 'to left'
 						}, ${gradientToColor}, transparent 20%),url(${heroImageURL})`,
-						backgroundSize: '100% 100%',
+						backgroundSize: '100% auto', // Auto or 100%
 						backgroundRepeat: 'no-repeat',
 					}}
 				>
