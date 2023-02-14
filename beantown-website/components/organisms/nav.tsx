@@ -1,12 +1,11 @@
 import Link from 'next/link';
-import React, { useContext, Fragment } from 'react';
+import React, { Fragment } from 'react';
 import { Popover, Transition } from '@headlessui/react';
 import {
 	Bars3Icon,
 	ChevronDownIcon,
 	XMarkIcon,
 } from '@heroicons/react/24/outline';
-import { GlobalContext } from '@contexts/global/global.context';
 import { Nav } from '@typing/gql/graphql';
 
 import Image from 'next/image';
@@ -18,7 +17,6 @@ interface IProps {
 	content: Nav;
 }
 export default function Header(props: IProps) {
-	console.log('props content in header', props);
 	const { navLinks, navGroup, headerButton } = props.content;
 	const childLinks = navGroup?.map((nav) => nav?.links).flat();
 
@@ -27,7 +25,6 @@ export default function Header(props: IProps) {
 		...(childLinks ? childLinks : []),
 	];
 	const { logoDesktop, logoMobile } = props;
-	console.log('logoDesktop:::', logoDesktop);
 	const childNavLinks = allNavLinks.filter((element) => {
 		return element !== null;
 	});
