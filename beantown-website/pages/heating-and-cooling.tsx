@@ -1,6 +1,6 @@
 import React from 'react';
 import { HeatingAndCooling, Nav, Footer } from '@typing/gql/graphql';
-import { Head } from 'next/document';
+import Head from 'next/head';
 import pageQuery from '@lib/queries/pages/get-heating-and-cooling.query';
 import WithGlobalContent, {
 	generateGetStaticProps,
