@@ -62,7 +62,7 @@ export default function HomeHero() {
 					</ContentWrapper.Description>
 					<ContentWrapper.CTA className="mt-[32px]">
 						<Button fontColor="text-primary-shade-1" bgColor="bg-white">
-							Book Now
+							{heroButton?.text}
 						</Button>
 					</ContentWrapper.CTA>
 				</ContentWrapper>

@@ -8,7 +8,7 @@ import Link from 'next/link';
 import Image from 'next/image';
 import topWave from 'public/images/home/faq/faq-top-wave.svg';
 
-export default function Faq() {
+export default function HomeFaq() {
 	const [indexToBeOpen, setIndexToBeOpen] = useState(0);
 	const { pageContent } =
 		useContext<GlobalContextProps<HomePageContentProps>>(GlobalContext);
