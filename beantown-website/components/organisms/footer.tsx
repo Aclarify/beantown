@@ -1,20 +1,17 @@
-import React, { useContext } from 'react';
+import React from 'react';
 import Link from 'next/link';
-import { GlobalContext } from '@contexts/global/global.context';
-import { GlobalContextProps } from '@typing/common/interfaces/contexts.interface';
-import { HomePageContentProps } from 'pages';
 import Image from 'next/image';
 import topWave from 'public/images/home/footer-top-wave.svg';
+import { Footer as FooterType } from '@typing/gql/graphql';
 
-export default function Footer() {
-	const { pageContent } =
-		useContext<GlobalContextProps<HomePageContentProps>>(GlobalContext);
-	if (!pageContent) {
-		return null;
-	}
-	const homeData = pageContent.home[0];
-	const { logoDesktop, logoMobile } = homeData;
-	const footerData = pageContent.footer[0];
+interface IProps {
+	logoDesktop: any;
+	logoMobile: any;
+	content: FooterType;
+}
+export default function Footer(props: IProps) {
+	const { logoDesktop, logoMobile } = props;
+	const footerData = props.content;
 	const {
 		description,
 		socialMediaIcons,

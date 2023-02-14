@@ -14,7 +14,7 @@ export default function Blogs() {
 	if (!pageContent) {
 		return null;
 	}
-	const homeData = pageContent.home[0];
+	const homeData = pageContent.page[0];
 	const { blogTitle, blogDescription, blogCards, blogButton } = homeData;
 	return (
 		<section
@@ -26,7 +26,7 @@ export default function Blogs() {
 				className="relative bottom-[2rem] right-[16em] hidden h-0 sm:block"
 			>
 				<Image
-					src="/blue-blob-shape-1.svg"
+					src="/images/home/blue-blob-shape-1.svg"
 					alt="Left-blob"
 					width={400}
 					height={400}
@@ -37,7 +37,7 @@ export default function Blogs() {
 				className="relative bottom-[-3rem] right-[8em] block h-0 sm:hidden"
 			>
 				<Image
-					src="/blue-blob-shape-1-mobile.svg"
+					src="/images/home/blue-blob-shape-1-mobile.svg"
 					alt="Left-blob"
 					width={200}
 					height={200}

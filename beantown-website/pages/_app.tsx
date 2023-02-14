@@ -6,6 +6,8 @@ import '@fortawesome/fontawesome-svg-core/styles.css';
 config.autoAddCss = false;
 import localFont from '@next/font/local';
 import { graphQLClient } from '@lib/clients/apollo/apollo.client';
+import Nav from '../components/organisms/nav';
+import Footer from 'components/organisms/footer';
 
 const neuePlak = localFont({
 	display: 'swap',
@@ -56,7 +58,29 @@ export default function App({ Component, pageProps }: AppProps) {
 				<main
 					className={`${neuePlak.className} bg-secondary-shade-3 overflow-hidden tracking-wide lg:tracking-wider`}
 				>
+					{pageProps.globalContext && (
+						<Nav
+							logoDesktop={
+								pageProps.globalContext.pageContent.page[0]?.logoDesktop
+							}
+							logoMobile={
+								pageProps.globalContext.pageContent.page[0]?.logoMobile
+							}
+							content={pageProps.globalContext.pageContent.header[0]}
+						/>
+					)}
 					<Component {...pageProps} />
+					{pageProps.globalContext && (
+						<Footer
+							logoDesktop={
+								pageProps.globalContext.pageContent.page[0]?.logoDesktop
+							}
+							logoMobile={
+								pageProps.globalContext.pageContent.page[0]?.logoMobile
+							}
+							content={pageProps.globalContext.pageContent.footer[0]}
+						/>
+					)}
 				</main>
 			</ApolloProvider>
 		</>

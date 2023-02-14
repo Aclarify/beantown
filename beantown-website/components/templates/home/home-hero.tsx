@@ -14,7 +14,7 @@ export default function HomeHero() {
 	if (!pageContent) {
 		return null;
 	}
-	const homeData = pageContent.home[0];
+	const homeData = pageContent.page[0];
 	const { heroTitle, heroDescription, heroButton, heroImage } = homeData;
 	return (
 		<section id="home_page_hero" className="relative">
@@ -27,9 +27,9 @@ export default function HomeHero() {
 					className="hidden sm:flex"
 					src={heroImage?.asset?.url || ''}
 					style={{
-						WebkitMaskImage: "url('./home-hero-mask.svg')",
+						WebkitMaskImage: "url('/images/home/home-hero-mask.svg')",
 						WebkitMaskSize: 'cover',
-						maskImage: "url('./home-hero-mask.svg')",
+						maskImage: "url('/images/home/home-hero-mask.svg')",
 						maskSize: 'cover',
 					}}
 				/>
@@ -41,9 +41,9 @@ export default function HomeHero() {
 					className="block h-[420px] sm:hidden"
 					src={heroImage?.asset?.url || ''}
 					style={{
-						WebkitMaskImage: "url('./home-hero-mobile-mask.svg')",
+						WebkitMaskImage: "url('/images/home/home-hero-mobile-mask.svg')",
 						WebkitMaskSize: 'cover',
-						maskImage: "url('./home-hero-mobile-mask.svg')",
+						maskImage: "url('/images/home/home-hero-mobile-mask.svg')",
 						maskSize: 'cover',
 						width: '100%',
 					}}

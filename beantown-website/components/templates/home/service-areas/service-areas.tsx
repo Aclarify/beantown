@@ -10,7 +10,7 @@ export default function ServiceAreas() {
 	if (!pageContent) {
 		return null;
 	}
-	const homeData = pageContent.home[0];
+	const homeData = pageContent.page[0];
 	const {
 		serviceAreaTitle,
 		serviceAreaDescription,
@@ -78,7 +78,7 @@ export default function ServiceAreas() {
 									className="opacity-1 absolute -right-[95%] top-[4em] z-10 hidden h-full  w-full md:hidden lg:block  "
 								>
 									<Image
-										src="/blue-blob-shape-2.svg"
+										src="/images/home/blue-blob-shape-2.svg"
 										alt="Right-blob"
 										width={500}
 										height={500}
@@ -89,7 +89,7 @@ export default function ServiceAreas() {
 									className="block  lg:hidden absolute opacity-1 -right-[90%] top-[10em] h-full w-full  overflow-hidden"
 								>
 									<Image
-										src="/blue-blob-shape-2-mobile.svg"
+										src="/images/home/blue-blob-shape-2-mobile.svg"
 										alt="Right-blob"
 										width={200}
 										height={200}
