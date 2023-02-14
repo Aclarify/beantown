@@ -20,12 +20,10 @@ export default function Brands() {
 	const { clientsLogo, brandsTitle } = homeData;
 
 	 const settings = {
-			
 			infinite: true,
 			slidesToShow: 3,
 			slidesToScroll: 1,
-			autoplay: true,
-			speed: 2000,
+			autoplay: true,			
 			autoplaySpeed: 2000,
 			cssEase: 'linear',
 		};

@@ -44,10 +44,10 @@ export default function Testimonials() {
 		}
 	};
 
-	const next = () => {
+	const previous = () => {
 		slider.current.slickNext();
 	};
-	const previous = () => {
+	const next = () => {
 		slider.current.slickPrev();
 	};
 
@@ -59,13 +59,14 @@ export default function Testimonials() {
 		initialSlide: 0,
 		arrows: false,
 		dots: true,
+
 		responsive: [
 			{
 				breakpoint: 1024,
 				settings: {
 					slidesToShow: 3,
 					slidesToScroll: 3,
-					infinite: true,
+					infinite: true,				
 				},
 			},
 			{
@@ -74,6 +75,7 @@ export default function Testimonials() {
 					slidesToShow: 2,
 					slidesToScroll: 2,
 					initialSlide: 2,
+					centerMode: true,
 				},
 			},
 			{
@@ -103,7 +105,7 @@ export default function Testimonials() {
 						</div>
 					</div>
 				</div>
-
+				
 				<div className="gap-15 z-10 m-8 hidden flex-none flex-col items-center   justify-center lg:flex  ">
 					<div className="flex-none  gap-5 ">
 						<h1 className=" text-light-1 text-primary-shade-1 ">
