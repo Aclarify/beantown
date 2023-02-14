@@ -1,9 +1,7 @@
 import Head from 'next/head';
 
-import Header from '../components/organisms/nav';
 import Brands from '../components/templates/home/brands';
 import Faq from '../components/templates/home/faq/faq.section';
-import FooterComponent from '../components/organisms/footer';
 import FooterCta from '../components/templates/home/footer-cta-home';
 import Blogs from '../components/templates/home/blogs/blogs';
 import React from 'react';
@@ -20,7 +18,7 @@ import WithGlobalContent, {
 import { PageNames } from '@configs/client/pages/pages.config';
 
 export interface HomePageContentProps {
-	home: Home[];
+	page: Home[];
 	header: Nav[];
 	footer: Footer[];
 }
@@ -48,7 +46,6 @@ const HomePage: React.FC = () => {
 	return (
 		<>
 			<PageHead />
-			<Header />
 			<HomeHero />
 			<Services />
 			<WhyUs />
@@ -89,7 +86,6 @@ const HomePage: React.FC = () => {
 			<Brands />
 
 			<FooterCta />
-			<FooterComponent />
 		</>
 	);
 };
