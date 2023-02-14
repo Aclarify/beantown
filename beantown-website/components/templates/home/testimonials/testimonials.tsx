@@ -56,7 +56,7 @@ export default function Testimonials() {
 		}
  };
 
-	var settings = {
+	let settings = {
 		infinite: true,
 		speed: 500,
 		slidesToShow: 3,

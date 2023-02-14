@@ -1,4 +1,4 @@
-import React, {  useContext, useEffect} from 'react';
+import React, { useContext, useEffect } from 'react';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faArrowRight, faArrowLeft } from '@fortawesome/free-solid-svg-icons';
 import { GlobalContext } from '@contexts/global/global.context';
@@ -10,7 +10,6 @@ import 'slick-carousel/slick/slick.css';
 import 'slick-carousel/slick/slick-theme.css';
 
 export default function HeatingCoolingProductsCards() {
-
 	const { pageContent } =
 		useContext<GlobalContextProps<HeatingCoolingContentProps>>(GlobalContext);
 	if (!pageContent) {
@@ -19,19 +18,18 @@ export default function HeatingCoolingProductsCards() {
 	const pageData = pageContent.page[0];
 	const { productsTitle, productsDescription, productsGroup } = pageData;
 
-	 const slider = React.useRef<Slider| null>(null);
-		const previous = () => {
-			if(slider.current){
-				slider.current.slickNext();
-			}
-			
-		};
-		const next = () => {
-				if(slider.current){
-					slider.current.slickPrev();
-				}
-		};
-	var settings = {
+	const slider = React.useRef<Slider | null>(null);
+	const previous = () => {
+		if (slider.current) {
+			slider.current.slickNext();
+		}
+	};
+	const next = () => {
+		if (slider.current) {
+			slider.current.slickPrev();
+		}
+	};
+	let settings = {
 		speed: 500,
 		slidesToShow: 3,
 		slidesToScroll: 1,
@@ -43,7 +41,6 @@ export default function HeatingCoolingProductsCards() {
 				settings: {
 					slidesToShow: 3,
 					slidesToScroll: 3,
-					
 				},
 			},
 			{
@@ -51,7 +48,6 @@ export default function HeatingCoolingProductsCards() {
 				settings: {
 					slidesToShow: 2,
 					slidesToScroll: 2,
-					
 				},
 			},
 			{
@@ -64,10 +60,7 @@ export default function HeatingCoolingProductsCards() {
 		],
 	};
 	return (
-		<section
-			id="heatingCoolingProductsCards"
-			className="mb-40 "
-		>
+		<section id="heatingCoolingProductsCards" className="mb-40 ">
 			<div className=" mx-8  flex items-center justify-between">
 				<div>
 					<p className="text-2xl font-bold">{productsTitle}</p>
@@ -90,11 +83,7 @@ export default function HeatingCoolingProductsCards() {
 			</div>
 
 			<div>
-				<Slider
-					ref={slider}
-					{...settings}
-					className="mx-8"
-				>
+				<Slider ref={slider} {...settings} className="mx-8">
 					{productsGroup?.map((productInfo, index) => {
 						return (
 							<ProductCard
