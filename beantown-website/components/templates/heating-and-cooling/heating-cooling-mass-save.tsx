@@ -7,6 +7,7 @@ import Button from 'components/atoms/button.atom';
 import ContentWrapper from 'components/organisms/content-wrapper.organism';
 import MaskedImageWithBackgroundVector from 'components/organisms/masked-image-with-blob.organism';
 import useWindowDimensions from '@lib/hooks/use-window-dimensions.hook';
+import WaveWrapper from 'components/molecules/wave-wrapper.molecule';
 export default function MassSave() {
 	const { pageContent } =
 		useContext<GlobalContextProps<HeatingCoolingContentProps>>(GlobalContext);
@@ -22,11 +23,14 @@ export default function MassSave() {
 	return (
 		<section
 			id="massSave"
-			className="relative z-30
+			className="z-5 relative
 			py-[25rem] pb-[50vw] 
 			md:pt-[10vw] md:pb-[25%]"
 		>
-			<div id="section-wrapper" className=" z-1  flex flex-col overflow-hidden">
+			<div
+				id="section-wrapper"
+				className=" z-1  flex flex-col overflow-hidden pb-[5em]"
+			>
 				<div
 					id="content-image-wrapper"
 					className="flex w-full flex-col-reverse items-center px-6 md:flex  md:flex-row lg:px-10"
@@ -62,18 +66,21 @@ export default function MassSave() {
 							height={width > 768 ? 1000 : 500}
 							maskImg={
 								width > 768
-									? './images/heating-cooling/mass-save/mass-save-blob.svg'
-									: './images/heating-cooling/mass-save/mass-save-bg-blob.svg'
+									? './images/heating-cooling/mass-save/hc-mass-save-blob.svg'
+									: './images/heating-cooling/mass-save/hc-mass-save-bg-blob.svg'
 							}
 							bgImg={
 								width > 768
-									? './images/heating-cooling/mass-save/mass-save-bg-blob.svg'
-									: './images/heating-cooling/mass-save/mass-save-blob.svg'
+									? './images/heating-cooling/mass-save/hc-mass-save-bg-blob.svg'
+									: './images/heating-cooling/mass-save/hc-mass-save-blob.svg'
 							}
 						/>
 					</div>
 				</div>
 			</div>
+			{/* <div id="waveContainer">
+				<WaveWrapper waveURL="/images/heating-cooling/mass-save/hc-mass-save-bottom-wave.svg"></WaveWrapper>
+			</div> */}
 		</section>
 	);
 }
