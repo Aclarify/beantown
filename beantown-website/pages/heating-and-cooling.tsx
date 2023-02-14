@@ -7,6 +7,10 @@ import WithGlobalContent, {
 } from '../components/containers/global-content/global-content.container';
 import { PageNames } from '@configs/client/pages/pages.config';
 import HeatingCoolingPageHero from 'components/templates/heating-and-cooling/heating-cooling-hero';
+import MassSave from 'components/templates/heating-and-cooling/heating-cooling-mass-save';
+import HeatingCoolingBlogs from 'components/templates/heating-and-cooling/heating-cooling-blogs';
+import FAQ from 'components/organisms/faq.organism';
+import HeatingCoolingFaq from 'components/templates/heating-and-cooling/heating-cooling-faqs';
 
 export interface HeatingCoolingContentProps {
 	page: HeatingAndCooling[];
@@ -35,16 +39,19 @@ export { getStaticProps };
 
 const HeatingAndCoolingServices: React.FC = (props) => {
 	return (
-		<>
+		<section className="bg-primary-white-shade-1">
 			<HeatingCoolingPageHero />
+			<MassSave />
+			<HeatingCoolingBlogs />
+			<HeatingCoolingFaq />
 			{/* <HeatingCoolingServiceCard />
 			<HeatingCoolingProductsCards />
-			<MassSave />
+			
 			<FooterCtaHeatingCooling />
 			<Brands />
 			<Blogs />
 			<Faq /> */}
-		</>
+		</section>
 	);
 };
 

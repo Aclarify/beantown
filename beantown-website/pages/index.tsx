@@ -1,9 +1,8 @@
 import Head from 'next/head';
 
 import Brands from '../components/templates/home/brands';
-import Faq from '../components/templates/home/faq/faq.section';
+import HomeFaq from '../components/templates/home/faq/faq.section';
 import FooterCta from '../components/templates/home/footer-cta-home';
-import Blogs from '../components/templates/home/blogs/blogs';
 import React from 'react';
 import ServiceAreas from '../components/templates/home/service-areas/service-areas';
 import Testimonials from '../components/templates/home/testimonials/testimonials';
@@ -16,6 +15,7 @@ import WithGlobalContent, {
 	generateGetStaticProps,
 } from '../components/containers/global-content/global-content.container';
 import { PageNames } from '@configs/client/pages/pages.config';
+import HomeBlogs from '../components/templates/home/blogs/blogs';
 
 export interface HomePageContentProps {
 	page: Home[];
@@ -44,7 +44,7 @@ export { getStaticProps };
 
 const HomePage: React.FC = () => {
 	return (
-		<>
+		<section className="bg-secondary-shade-3">
 			<PageHead />
 			<HomeHero />
 			<Services />
@@ -66,7 +66,7 @@ const HomePage: React.FC = () => {
 				}}
 			>
 				<ServiceAreas />
-				<Blogs />
+				<HomeBlogs />
 			</div>
 			<div
 				id="mobile-view"
@@ -79,14 +79,14 @@ const HomePage: React.FC = () => {
 				}}
 			>
 				<ServiceAreas />
-				<Blogs />
+				<HomeBlogs />
 			</div>
-			<Faq></Faq>
+			<HomeFaq />
 
 			<Brands />
 
 			<FooterCta />
-		</>
+		</section>
 	);
 };
 
