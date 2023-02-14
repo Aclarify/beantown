@@ -16,7 +16,7 @@ const TestimonialCard: React.FC<Props> = (props) => {
 					<Image
 						alt="An image for quotes in testimonial card"
 						width={40}
-						height={45}
+						height={45}					
 						src="/images/home/testimonials-quote.svg"
 					/>
 				</div>

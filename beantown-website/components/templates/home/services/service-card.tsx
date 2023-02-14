@@ -32,11 +32,13 @@ const ServiceCard: React.FC<Props> = (props) => {
 				</h1>
 			</div>
 			<div id="button-container" className="basis-1/8 -mt-4 mb-4 text-center">
-				<Link href={'/'}>
+				
 					<Button fontColor="text-white" bgColor=" bg-primary-shade-1">
-						{props.buttonText}
-					</Button>
-				</Link>
+						<Link href={'/'}>
+							{props.buttonText}
+						</Link>
+				</Button>
+		
 			</div>
 		</div>
 	);

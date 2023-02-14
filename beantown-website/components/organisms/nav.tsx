@@ -76,7 +76,7 @@ export default function Header(props: IProps) {
 
 							{navGroup?.map((linkGroup, index) => {
 								return (
-									<div key={index} className="group inline-block pl-8">
+									<div key={index} className="group inline-block pl-6">
 										<Link
 											href={'/'}
 											className="min-w-32 flex  items-center rounded-sm  px-3 py-1 outline-none focus:outline-none"

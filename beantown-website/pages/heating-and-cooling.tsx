@@ -1,4 +1,6 @@
 import React from 'react';
+import HeatingCoolingServiceCard from '../components/templates/heating-and-cooling/services/heating-cooling-services';
+import HeatingCoolingProductsCards from '../components/templates/heating-and-cooling/products/heating-cooling-products';
 import { HeatingAndCooling, Nav, Footer } from '@typing/gql/graphql';
 import Head from 'next/head';
 import pageQuery from '@lib/queries/pages/get-heating-and-cooling.query';
@@ -41,13 +43,13 @@ const HeatingAndCoolingServices: React.FC = (props) => {
 	return (
 		<section className="bg-primary-white-shade-1">
 			<HeatingCoolingPageHero />
+			<HeatingCoolingServiceCard />
+			<HeatingCoolingProductsCards />
 			<MassSave />
 			<HeatingCoolingBlogs />
 			<HeatingCoolingFaq />
-			{/* <HeatingCoolingServiceCard />
-			<HeatingCoolingProductsCards />
-			
-			<FooterCtaHeatingCooling />
+
+			{/*<FooterCtaHeatingCooling />
 			<Brands />
 			<Blogs />
 			<Faq /> */}
