@@ -8,7 +8,7 @@ import Button from 'components/atoms/button.atom';
 import ContentWrapper from 'components/organisms/content-wrapper.organism';
 import MaskedImageWithBackgroundVector from 'components/organisms/masked-image-with-blob.organism';
 import useWindowDimensions from '@lib/hooks/use-window-dimensions.hook';
-import Image from 'next/image';
+import WaveWrapper from 'components/molecules/wave-wrapper.molecule';
 export default function WhyUs() {
 	const { pageContent } =
 		useContext<GlobalContextProps<HomePageContentProps>>(GlobalContext);
@@ -24,18 +24,9 @@ export default function WhyUs() {
 	return (
 		<section
 			id="whyUs"
-			className="md:bg-fit-to-parent relative z-30  bg-no-repeat py-[4rem] pb-[115vw]  md:pt-[10vw] md:pb-[50%]"
+			className="md:bg-fit-to-parent relative z-30  bg-no-repeat py-[4rem] pb-[25em]  md:pt-[10vw] "
 		>
-			<Image
-				alt="Why us top wave"
-				height={1000}
-				width={1000}
-				style={{
-					width: '100%',
-					height: 'auto',
-				}}
-				src="/images/home/why-us/top-wave.svg"
-			></Image>
+			<WaveWrapper waveURL="/images/home/why-us/top-wave.svg" />
 			<div
 				id="section-wrapper"
 				className="bg-primary-white-shade-1 z-1  flex flex-col overflow-hidden"
@@ -98,16 +89,7 @@ export default function WhyUs() {
 					})}
 				</div>
 			</div>
-			<Image
-				alt="Bottom wave"
-				height={1000}
-				width={1000}
-				style={{
-					width: '100%',
-					height: 'auto',
-				}}
-				src="/images/home/why-us/bottom-wave.svg"
-			></Image>
+			<WaveWrapper waveURL="/images/home/why-us/bottom-wave.svg" />
 		</section>
 	);
 }
