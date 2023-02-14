@@ -1,39 +1,92 @@
-import React, { useContext } from 'react';
+import React, {  useContext, useEffect} from 'react';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faArrowRight, faArrowLeft } from '@fortawesome/free-solid-svg-icons';
 import { GlobalContext } from '@contexts/global/global.context';
 import { GlobalContextProps } from '@typing/common/interfaces/contexts.interface';
 import { HeatingCoolingContentProps } from 'pages/heating-and-cooling';
 import ProductCard from './heating-cooling-product-card';
+import Slider from 'react-slick';
+import 'slick-carousel/slick/slick.css';
+import 'slick-carousel/slick/slick-theme.css';
 
 export default function HeatingCoolingProductsCards() {
+
 	const { pageContent } =
 		useContext<GlobalContextProps<HeatingCoolingContentProps>>(GlobalContext);
 	if (!pageContent) {
 		return null;
 	}
 	const pageData = pageContent.page[0];
-	const { productsTitle,productsDescription,productsGroup } = pageData;
+	const { productsTitle, productsDescription, productsGroup } = pageData;
+
+	 const slider = React.useRef<Slider>();
+		const next = () => slider.current.slickPrev();
+		const previous = () => slider.current.slickNext();
+	var settings = {
+		speed: 500,
+		slidesToShow: 3,
+		slidesToScroll: 1,
+		initialSlide: 0,
+		arrows: false,
+		responsive: [
+			{
+				breakpoint: 1024,
+				settings: {
+					slidesToShow: 3,
+					slidesToScroll: 3,
+					
+				},
+			},
+			{
+				breakpoint: 600,
+				settings: {
+					slidesToShow: 2,
+					slidesToScroll: 2,
+					
+				},
+			},
+			{
+				breakpoint: 480,
+				settings: {
+					slidesToShow: 1,
+					slidesToScroll: 1,
+				},
+			},
+		],
+	};
 	return (
-		<section id="heatingCoolingProductsCards">
-			<div className="flex  items-center justify-between mx-16">
+		<section
+			id="heatingCoolingProductsCards"
+			className="mb-40 "
+		>
+			<div className=" mx-8  flex items-center justify-between">
 				<div>
 					<p className="text-2xl font-bold">{productsTitle}</p>
 				</div>
 
-				<div className="hidden  lg:flex gap-4 pt-4 ">
-					<button className="bg-red-100 py-2 px-4 rounded-full w-16 ">
+				<div className="hidden  justify-center  gap-4 pt-4 sm:flex  ">
+					<button
+						onClick={next}
+						className="w-20 rounded-full bg-red-100 py-4 px-6 text-lg"
+					>
 						<FontAwesomeIcon icon={faArrowLeft} />
 					</button>
-					<button className=" py-2 px-4 rounded-full w-16 text-white bg-red-900">
+					<button
+						onClick={previous}
+						className=" w-20 rounded-full bg-red-900 py-4 px-6 text-lg text-white"
+					>
 						<FontAwesomeIcon icon={faArrowRight} />
 					</button>
 				</div>
 			</div>
 
 			<div>
-				<div className=" flex flex-nowrap overflow-x-auto  mx-8 px-8 items-center space-y-5 lg:space-x-5 ">
-					{productsGroup?.map((productInfo ,index)=>{
+				<Slider
+					ref={(c) => (slider.current = c)}
+					{...settings}
+					className="mx-8"
+				>
+					{productsGroup?.map((productInfo, index) => {
 						return (
 							<ProductCard
 								key={index}
@@ -44,17 +97,26 @@ export default function HeatingCoolingProductsCards() {
 							/>
 						);
 					})}
-				</div>
+				</Slider>
 			</div>
 
-			<div className="lg:hidden flex justify-center gap-4 pt-4 ">
-				<button className="bg-red-100 py-2 px-4 rounded-full w-16">
+			<div className="flex justify-center gap-4 pt-4 lg:hidden ">
+				<button
+					onClick={next}
+					className="w-16 rounded-full bg-red-100 py-2 px-4"
+				>
 					<FontAwesomeIcon icon={faArrowLeft} />
 				</button>
-				<button className=" py-2 px-4 rounded-full w-16 text-white bg-red-900">
+				<button
+					onClick={previous}
+					className=" w-16 rounded-full bg-red-900 py-2 px-4 text-white"
+				>
 					<FontAwesomeIcon icon={faArrowRight} />
 				</button>
 			</div>
 		</section>
 	);
+}
+function useRef() {
+	throw new Error('Function not implemented.');
 }

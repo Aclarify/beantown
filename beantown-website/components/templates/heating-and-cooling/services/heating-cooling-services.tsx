@@ -30,7 +30,7 @@ const { servicesTitle, servicesDescription, servicesGroup } = pageData;
 					</ContentWrapper.Description>
 				</ContentWrapper>
 			</div>
-			<div className=" grid grid-cols-1 items-center  gap-2 mt-12 rounded-lg bg-[FFFFFF] sm:gap-24  sm:grid-cols-4 ">
+			<div className=" grid grid-cols-1 items-center  mt-12 rounded-lg bg-[FFFFFF]  sm:grid-cols-4 ">
 				{servicesGroup?.map((content, index) => {
 					return (
 						<HeatingCoolingServiceCard

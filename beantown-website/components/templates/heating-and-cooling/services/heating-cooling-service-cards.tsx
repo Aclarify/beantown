@@ -13,8 +13,8 @@ const HeatingCoolingServiceCard: React.FC<Props> = (props) => {
 
 	return (
 		<>
-			<div className=" sm:m-8  flex  flex-col items-center justify-center  space-y-4  p-8 text-center shadow-[rgba(7,_65,_210,_0.1)_0px_9px_30px]   sm:h-[448px] sm:w-[354px] ">
-				<div>
+			<div className=" flex flex-col   space-y-2  p-8 m-8  shadow-[rgba(7,_65,_210,_0.1)_0px_9px_30px]  sm:h-[448px] sm:w-[354px] ">
+				<div className="sm:h-80 sm:w-80">
 					<Image
 						src={props.thumbnailSrc}
 						alt={props.thumbnailAltText}
@@ -22,11 +22,11 @@ const HeatingCoolingServiceCard: React.FC<Props> = (props) => {
 						height={80}
 					></Image>
 				</div>
-				<div>
+				<div className="sm:w-148 sm:h-60  text-center ">
 					<p className="subtitle-1">{props.title}</p>
 				</div>
 
-				<div className="sm:h-[180px] sm:w-[284px]">
+				<div className="text-center sm:h-[180px]  sm:w-[284px]">
 					<p>{props.content}</p>
 				</div>
 			</div>

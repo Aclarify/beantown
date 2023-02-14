@@ -9,7 +9,7 @@ interface Props {
 const ProductCard: React.FC<Props> = (props) => {
 	return (
 		<>
-			<div className="bg-[#FCF7F7]">
+			<div >
 				<div className="mt-4 flex justify-center">
 					<Image
 						alt="An image for quotes in testimonial card"
