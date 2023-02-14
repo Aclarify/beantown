@@ -1,7 +1,10 @@
 import React from 'react';
 import Button from 'components/atoms/button.atom';
 import Link from 'next/link';
-import { ImageDescriptionButtonGroup as Blogs } from '@typing/gql/graphql';
+import {
+	ImageDescriptionButtonGroup as Blogs,
+	Maybe,
+} from '@typing/gql/graphql';
 import BlogCard from './blog-card.organism';
 
 interface IProps extends React.HTMLAttributes<HTMLDivElement> {
@@ -10,7 +13,7 @@ interface IProps extends React.HTMLAttributes<HTMLDivElement> {
 	blogsButtonText: string;
 	blogsButtonTextColour: string;
 	blogsButtonBgColour: string;
-	blogCards: Blogs[];
+	blogCards: Maybe<Array<Maybe<Blogs>>>;
 }
 
 const Blogs: React.FC<IProps> = (props) => {
@@ -23,7 +26,7 @@ const Blogs: React.FC<IProps> = (props) => {
 				<p>{props.blogsDescription}</p>
 			</div>
 			<div className=" no-scrollbar flex snap-x snap-mandatory flex-nowrap gap-4 overflow-x-auto  pb-4 lg:pr-14  lg:pl-14 ">
-				{props.blogCards.map((blog, index) => {
+				{props.blogCards?.map((blog, index) => {
 					return (
 						<div
 							key={index}

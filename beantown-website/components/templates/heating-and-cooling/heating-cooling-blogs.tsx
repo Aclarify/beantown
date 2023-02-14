@@ -23,7 +23,7 @@ export default function HeatingCoolingBlogs() {
 				blogsButtonText={blogButton?.text || ''}
 				blogsButtonTextColour="text-white"
 				blogsButtonBgColour="bg-[#BC3B39]"
-				blogCards={blogCards}
+				blogCards={blogCards || []}
 			></Blogs>
 		</section>
 	);

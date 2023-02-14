@@ -52,7 +52,7 @@ export default function HomeBlogs() {
 					blogsButtonText={blogButton?.text || ''}
 					blogsButtonTextColour="text-white"
 					blogsButtonBgColour="bg-[#BC3B39]"
-					blogCards={homeData.blogCards}
+					blogCards={homeData.blogCards || []}
 				></Blogs>
 			</div>
 		</section>

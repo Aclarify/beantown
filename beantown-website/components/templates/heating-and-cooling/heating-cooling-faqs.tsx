@@ -10,7 +10,7 @@ export default function HeatingCoolingFaq() {
 	const [indexToBeOpen, setIndexToBeOpen] = useState(0);
 	const { pageContent } =
 		useContext<GlobalContextProps<HeatingCoolingContentProps>>(GlobalContext);
-	if (!pageContent) {
+	if (!pageContent || !pageContent.page || !pageContent.page[0]) {
 		return null;
 	}
 	const pageData = pageContent.page[0];
@@ -28,15 +28,17 @@ export default function HeatingCoolingFaq() {
 				{/* <div className="z-1 relative bottom-[5em] z-10 -mb-[19em] max-h-40 overflow-hidden">
 					<Image src={topWave} alt="faq wave bg" style={{ width: '100vw' }} />
 				</div> */}
-				<FAQ
-					backgroundImage="/images/heating-cooling/faq/hc-faq-bg-thumbprint.svg"
-					faqTitle={faqTitle || ''}
-					faqDescription={faqDescription || ''}
-					faqButtonText={faqButton?.text || ''}
-					faqsButtonTextColour="text-white"
-					faqsButtonBgColour="bg-[#BC3B39]"
-					faqList={faqList}
-				></FAQ>
+				{faqList && (
+					<FAQ
+						backgroundImage="/images/heating-cooling/faq/hc-faq-bg-thumbprint.svg"
+						faqTitle={faqTitle || ''}
+						faqDescription={faqDescription || ''}
+						faqButtonText={faqButton?.text || ''}
+						faqsButtonTextColour="text-white"
+						faqsButtonBgColour="bg-[#BC3B39]"
+						faqList={faqList || []}
+					></FAQ>
+				)}
 			</section>
 		</>
 	);

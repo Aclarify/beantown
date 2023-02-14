@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import Button from 'components/atoms/button.atom';
-import { TitleDescription as FAQs } from '@typing/gql/graphql';
+import { Maybe, TitleDescription } from '@typing/gql/graphql';
 import FAQDisclosure from './faq-disclosure.organism';
 import ContentWrapper from './content-wrapper.organism';
 
@@ -11,7 +11,7 @@ interface IProps extends React.HTMLAttributes<HTMLDivElement> {
 	faqButtonText: string;
 	faqsButtonTextColour: string;
 	faqsButtonBgColour: string;
-	faqList: FAQs[];
+	faqList: Maybe<Array<Maybe<TitleDescription>>>;
 }
 
 const FAQ: React.FC<IProps> = (props) => {
