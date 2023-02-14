@@ -18,7 +18,7 @@ export default function Testimonials() {
 	const [showTestimonialModel, setShowTestimonialModel] = useState(false);
 	const [selectedTestimonial, setSelectedTestimonial] = useState<any>(null);
 
-	const slider = useRef();
+	
 	const { pageContent } =
 		useContext<GlobalContextProps<HomePageContentProps>>(GlobalContext);
 
@@ -44,12 +44,17 @@ export default function Testimonials() {
 		}
 	};
 
-	const previous = () => {
-		slider.current.slickNext();
-	};
-	const next = () => {
-		slider.current.slickPrev();
-	};
+ const slider = React.useRef<Slider | null>(null);
+ const previous = () => {
+		if (slider.current) {
+			slider.current.slickNext();
+		}
+ };
+ const next = () => {
+		if (slider.current) {
+			slider.current.slickPrev();
+		}
+ };
 
 	var settings = {
 		infinite: true,
