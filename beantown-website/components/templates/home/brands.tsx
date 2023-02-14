@@ -4,8 +4,11 @@ import { GlobalContext } from '@contexts/global/global.context';
 import { GlobalContextProps } from '@typing/common/interfaces/contexts.interface';
 import { HomePageContentProps } from 'pages';
 import Image from 'next/image';
-import Carousel from 'react-multi-carousel';
-import 'react-multi-carousel/lib/styles.css';
+import Slider from 'react-slick';
+import 'slick-carousel/slick/slick.css';
+
+import 'slick-carousel/slick/slick-theme.css';
+
 
 export default function Brands() {
 	const { pageContent } =
@@ -16,25 +19,14 @@ export default function Brands() {
 	const homeData = pageContent.page[0];
 	const { clientsLogo, brandsTitle } = homeData;
 
-	const responsive = {
-		superLargeDesktop: {
-			// the naming can be any, depends on you.
-			breakpoint: { max: 4000, min: 3000 },
-			items: 5,
-		},
-		desktop: {
-			breakpoint: { max: 3000, min: 1024 },
-			items: 5,
-		},
-		tablet: {
-			breakpoint: { max: 1024, min: 464 },
-			items: 3,
-		},
-		mobile: {
-			breakpoint: { max: 464, min: 0 },
-			items: 1,
-		},
-	};
+	 const settings = {
+			infinite: true,
+			slidesToShow: 3,
+			slidesToScroll: 1,
+			autoplay: true,			
+			autoplaySpeed: 2000,
+			cssEase: 'linear',
+		};
 	return (
 		<>
 			<section
@@ -61,17 +53,8 @@ export default function Brands() {
 							{brandsTitle}
 						</span>
 					</div>
-					<div>
-						<Carousel
-							responsive={responsive}
-							additionalTransfrom={0}
-							centerMode={false}
-							autoPlay={true}
-							infinite
-							autoPlaySpeed={2000}
-							removeArrowOnDeviceType={['tablet', 'desktop', 'mobile']}
-							className="lg:flex lg:justify-center "
-						>
+					<div >
+						   <Slider {...settings}>
 							{clientsLogo?.map((logo, index) => {
 								return (
 									logo &&
@@ -87,7 +70,7 @@ export default function Brands() {
 									)
 								);
 							})}
-						</Carousel>
+						</Slider>
 					</div>
 				</div>
 			</section>
