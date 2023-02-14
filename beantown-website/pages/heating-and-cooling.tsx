@@ -8,6 +8,9 @@ import WithGlobalContent, {
 import { PageNames } from '@configs/client/pages/pages.config';
 import HeatingCoolingPageHero from 'components/templates/heating-and-cooling/heating-cooling-hero';
 import MassSave from 'components/templates/heating-and-cooling/heating-cooling-mass-save';
+import HeatingCoolingBlogs from 'components/templates/heating-and-cooling/heating-cooling-blogs';
+import FAQ from 'components/organisms/faq.organism';
+import HeatingCoolingFaq from 'components/templates/heating-and-cooling/heating-cooling-faqs';
 
 export interface HeatingCoolingContentProps {
 	page: HeatingAndCooling[];
@@ -39,6 +42,8 @@ const HeatingAndCoolingServices: React.FC = (props) => {
 		<section className="bg-primary-white-shade-1">
 			<HeatingCoolingPageHero />
 			<MassSave />
+			<HeatingCoolingBlogs />
+			<HeatingCoolingFaq />
 			{/* <HeatingCoolingServiceCard />
 			<HeatingCoolingProductsCards />
 			
