@@ -3,6 +3,7 @@ import { GlobalContext } from '@contexts/global/global.context';
 import { GlobalContextProps } from '@typing/common/interfaces/contexts.interface';
 import { HomePageContentProps } from 'pages';
 import Blogs from 'components/organisms/blogs.organism';
+import WaveWrapper from 'components/molecules/wave-wrapper.molecule';
 
 export default function HeatingCoolingBlogs() {
 	const { pageContent } =
@@ -17,6 +18,9 @@ export default function HeatingCoolingBlogs() {
 			id="blogs"
 			className=" flex flex-col overflow-hidden bg-[#FCF7F7] pl-6 pb-[10rem] lg:px-10 "
 		>
+			<div id="topWave" className="relative z-20">
+				<WaveWrapper waveURL="/images/heating-cooling/blogs/hc-blogs-top-wave.svg"></WaveWrapper>
+			</div>
 			<Blogs
 				blogsTitle={blogTitle || ''}
 				blogsDescription={blogDescription || ''}
@@ -25,6 +29,9 @@ export default function HeatingCoolingBlogs() {
 				blogsButtonBgColour="bg-[#BC3B39]"
 				blogCards={blogCards || []}
 			></Blogs>
+			<div id="bottomWave" className="relative z-20">
+				<WaveWrapper waveURL="/images/heating-cooling/blogs/hc-blogs-bottom-wave.svg"></WaveWrapper>
+			</div>
 		</section>
 	);
 }

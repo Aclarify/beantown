@@ -3,18 +3,17 @@ import Image from 'next/image';
 import Link from 'next/link';
 import Button from 'components/atoms/button.atom';
 interface Props {
-	title: string;	
+	title: string;
 	thumbnailSrc: string;
 	thumbnailAltText: string;
-	content:string;
+	content: string;
 }
 
 const HeatingCoolingServiceCard: React.FC<Props> = (props) => {
-
 	return (
 		<>
-			<div className=" flex flex-col   space-y-2  p-8 m-8  shadow-[rgba(7,_65,_210,_0.1)_0px_9px_30px]  sm:h-[448px] sm:w-[354px] ">
-				<div className="sm:h-80 sm:w-80">
+			<div className=" m-8 flex   flex-col justify-center  space-y-2 p-8  shadow-[rgba(29,_39,_87,_0.04)_0px_4px_8px]  sm:h-[448px] sm:w-[354px] ">
+				<div className="flex justify-center sm:h-80 sm:w-80">
 					<Image
 						src={props.thumbnailSrc}
 						alt={props.thumbnailAltText}
@@ -22,7 +21,7 @@ const HeatingCoolingServiceCard: React.FC<Props> = (props) => {
 						height={80}
 					></Image>
 				</div>
-				<div className="sm:w-148 sm:h-60  text-center ">
+				<div className="sm:w-148 text-center  sm:h-60 ">
 					<p className="subtitle-1">{props.title}</p>
 				</div>
 
@@ -33,4 +32,4 @@ const HeatingCoolingServiceCard: React.FC<Props> = (props) => {
 		</>
 	);
 };
-export default HeatingCoolingServiceCard
+export default HeatingCoolingServiceCard;
