@@ -15,7 +15,7 @@ export default function HeatingCoolingPageCTA() {
 	const pageData = pageContent.page[0];
 	const { ctaImage, ctaTitle, finalCtaButton } = pageData;
 	return (
-		<section id="cooling-and-heating-hero">
+		<section id="cooling-and-heating-cta">
 			<CTAWithImage
 				heroImageURL={ctaImage?.asset?.url || ''}
 				heroImageAltText={'Hero image'}
@@ -30,11 +30,14 @@ export default function HeatingCoolingPageCTA() {
 				gradientToColorForMobile="#BC3B39"
 			>
 				<ContentWrapper className="lg:padding-for-section px-10 py-20 text-center lg:text-left">
-					<ContentWrapper.Title className="mb-[8px] lg:mb-[16px]">
-						<h1 className="title-4 lg:title-1">{ctaTitle}</h1>
+					<ContentWrapper.Title className="mb-[8px]   lg:mb-[16px]">
+						<h1 className="title-4 lg:title-1 text-white">{ctaTitle}</h1>
 					</ContentWrapper.Title>
 					<ContentWrapper.CTA className="mt-[32px]">
-						<Button fontColor="text-white" bgColor="bg-primary-shade-1">
+						<Button
+							fontColor="lg:text-service-red text-primary-black"
+							bgColor="bg-white"
+						>
 							{finalCtaButton?.text}
 						</Button>
 					</ContentWrapper.CTA>

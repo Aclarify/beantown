@@ -18,7 +18,7 @@ interface IProps extends React.HTMLAttributes<HTMLDivElement> {
 
 const Blogs: React.FC<IProps> = (props) => {
 	return (
-		<section className="lg:padding-for-section  pb-[1px] ">
+		<section className="  pb-[1px] ">
 			<div>
 				<div className="title-5 lg:title-2 text-primary-black text-center">
 					<h1>{props.blogsTitle}</h1>
@@ -32,7 +32,7 @@ const Blogs: React.FC<IProps> = (props) => {
 					return (
 						<div
 							key={index}
-							className="w-[250px] flex-none   snap-start   snap-always lg:w-1/3  "
+							className="w-[250px] flex-none  snap-start  snap-always md:w-[32%]  "
 						>
 							<BlogCard
 								blogName={blog?.name || ''}

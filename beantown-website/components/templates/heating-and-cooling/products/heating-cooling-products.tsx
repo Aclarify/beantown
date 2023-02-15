@@ -19,7 +19,6 @@ export default function HeatingCoolingProductsCards() {
 	const pageData = pageContent.page[0];
 	const { productsTitle, productsDescription, productsGroup } = pageData;
 
-	
 	const previous = () => {
 		if (slider.current) {
 			slider.current.slickNext();
@@ -61,10 +60,13 @@ export default function HeatingCoolingProductsCards() {
 		],
 	};
 	return (
-		<section id="heatingCoolingProductsCards" className="mb-40 ">
+		<section
+			id="heatingCoolingProductsCards"
+			className="lg:padding-for-section mb-40 px-[20px] "
+		>
 			<div className=" mx-8  flex items-center justify-between">
 				<div>
-					<p className="text-2xl font-bold">{productsTitle}</p>
+					<p className="title-6 lg:title-3">{productsTitle}</p>
 				</div>
 
 				<div className="hidden  justify-center  gap-4 pt-4 sm:flex  ">

@@ -20,7 +20,7 @@ export default function HeatingCoolingBrands() {
 
 	const settings = {
 		infinite: true,
-		slidesToShow: 3,
+		slidesToShow: 2,
 		slidesToScroll: 1,
 		autoplay: true,
 		autoplaySpeed: 2000,
@@ -31,7 +31,7 @@ export default function HeatingCoolingBrands() {
 			<section
 				id="brand-desktop"
 				className="  relative  z-10 
-				-mt-[1em] mb-[12em] sm:mt-[1em] md:mt-[4em] lg:-mt-[3em] 2xl:-mt-[4em]"
+				-mt-[1em] mb-[12em]  md:-mt-[2em] lg:-mt-[3em] 2xl:-mt-[4em]"
 			>
 				<WaveWrapper waveURL="/images/heating-cooling/brands/hc-brands-top-wave.svg"></WaveWrapper>
 				<div className="  absolute top-1/2 left-1/2 z-20 w-full -translate-y-1/2 -translate-x-1/2 transform">

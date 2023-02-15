@@ -29,7 +29,7 @@ export default function Footer(props: IProps) {
 			<div className="relative bottom-[10em] z-20 -mb-[10em] md:bottom-[4em] md:-mb-[4em]">
 				<div
 					id="footerContainer"
-					className="bg-primary-shade-1 flex h-auto w-full flex-col px-6   lg:grid lg:grid-cols-5 lg:px-10"
+					className="bg-primary-shade-1 lg:padding-for-section flex h-auto w-full   flex-col px-[20px] lg:grid lg:grid-cols-5"
 				>
 					<div
 						id="linkSection"
