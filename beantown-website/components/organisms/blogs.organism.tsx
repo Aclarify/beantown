@@ -32,7 +32,7 @@ const Blogs: React.FC<IProps> = (props) => {
 					return (
 						<div
 							key={index}
-							className="w-[250px] flex-none   snap-start   snap-always lg:w-1/3  "
+							className="w-[250px] flex-none  snap-start  snap-always md:w-[32%]  "
 						>
 							<BlogCard
 								blogName={blog?.name || ''}
