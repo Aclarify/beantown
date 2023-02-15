@@ -18,14 +18,16 @@ interface IProps extends React.HTMLAttributes<HTMLDivElement> {
 
 const Blogs: React.FC<IProps> = (props) => {
 	return (
-		<>
-			<div className="title-5 lg:title-2 text-primary-black text-center">
-				<h1>{props.blogsTitle}</h1>
+		<section className="lg:padding-for-section  pb-[1px] ">
+			<div>
+				<div className="title-5 lg:title-2 text-primary-black text-center">
+					<h1>{props.blogsTitle}</h1>
+				</div>
+				<div className="para-4 lg:para-2 text-primary-shade-1 pt-4 pb-6 text-center">
+					<p>{props.blogsDescription}</p>
+				</div>
 			</div>
-			<div className="para-4 lg:para-2 text-primary-shade-1 pt-4 pb-6 text-center">
-				<p>{props.blogsDescription}</p>
-			</div>
-			<div className=" no-scrollbar flex snap-x snap-mandatory flex-nowrap gap-4 overflow-x-auto  pb-4 lg:pr-14  lg:pl-14 ">
+			<div className=" no-scrollbar flex snap-x snap-mandatory flex-nowrap gap-4 overflow-x-auto pb-4  ">
 				{props.blogCards?.map((blog, index) => {
 					return (
 						<div
@@ -53,7 +55,7 @@ const Blogs: React.FC<IProps> = (props) => {
 					</Button>
 				</Link>
 			</div>
-		</>
+		</section>
 	);
 };
 

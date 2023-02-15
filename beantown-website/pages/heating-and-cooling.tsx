@@ -13,6 +13,8 @@ import MassSave from 'components/templates/heating-and-cooling/heating-cooling-m
 import HeatingCoolingBlogs from 'components/templates/heating-and-cooling/heating-cooling-blogs';
 import FAQ from 'components/organisms/faq.organism';
 import HeatingCoolingFaq from 'components/templates/heating-and-cooling/heating-cooling-faqs';
+import HeatingCoolingPageCTA from 'components/templates/heating-and-cooling/heating-cooling-cta';
+import HeatingCoolingBrands from 'components/templates/heating-and-cooling/heating-cooling-brands';
 
 export interface HeatingCoolingContentProps {
 	page: HeatingAndCooling[];
@@ -46,13 +48,10 @@ const HeatingAndCoolingServices: React.FC = (props) => {
 			<HeatingCoolingServiceCard />
 			<HeatingCoolingProductsCards />
 			<MassSave />
+			<HeatingCoolingPageCTA />
+			<HeatingCoolingBrands />
 			<HeatingCoolingBlogs />
 			<HeatingCoolingFaq />
-
-			{/*<FooterCtaHeatingCooling />
-			<Brands />
-			<Blogs />
-			<Faq /> */}
 		</section>
 	);
 };

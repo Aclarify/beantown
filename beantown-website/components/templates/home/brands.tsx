@@ -9,7 +9,6 @@ import 'slick-carousel/slick/slick.css';
 
 import 'slick-carousel/slick/slick-theme.css';
 
-
 export default function Brands() {
 	const { pageContent } =
 		useContext<GlobalContextProps<HomePageContentProps>>(GlobalContext);
@@ -19,14 +18,14 @@ export default function Brands() {
 	const homeData = pageContent.page[0];
 	const { clientsLogo, brandsTitle } = homeData;
 
-	 const settings = {
-			infinite: true,
-			slidesToShow: 3,
-			slidesToScroll: 1,
-			autoplay: true,			
-			autoplaySpeed: 2000,
-			cssEase: 'linear',
-		};
+	const settings = {
+		infinite: true,
+		slidesToShow: 3,
+		slidesToScroll: 1,
+		autoplay: true,
+		autoplaySpeed: 2000,
+		cssEase: 'linear',
+	};
 	return (
 		<>
 			<section
@@ -53,8 +52,8 @@ export default function Brands() {
 							{brandsTitle}
 						</span>
 					</div>
-					<div >
-						   <Slider {...settings}>
+					<div>
+						<Slider {...settings}>
 							{clientsLogo?.map((logo, index) => {
 								return (
 									logo &&
