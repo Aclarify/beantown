@@ -17,32 +17,52 @@ export default function HeatingCoolingServices() {
 
 const { servicesTitle, servicesDescription, servicesGroup } = pageData;
 	return (
-		<section id="heatingCard ">
-			<div className="mt-20 flex flex-col items-center text-center ">
-				<ContentWrapper>
-					<ContentWrapper.Title>
-						<h1 className="title-5 lg:title-2 text-primary-black mb-4">
-							{servicesTitle}
-						</h1>
-					</ContentWrapper.Title>
-					<ContentWrapper.Description>
-						<RichText value={servicesDescription?.contentRaw} />
-					</ContentWrapper.Description>
-				</ContentWrapper>
-			</div>
-			<div className="container mx-auto">
-				<div className="grid grid-cols-1 gap-6 items-center rounded-lg bg-[FFFFFF]   md:grid-cols-2 lg:grid-cols-4 ">
-					{servicesGroup?.map((content, index) => {
-						return (
-							<HeatingCoolingServiceCard
-								key={index}
-								title={content?.titleText || ''}
-								content={content?.description || ''}
-								thumbnailSrc={content?.image?.asset?.url || ''}
-								thumbnailAltText={''}
-							/>
-						);
-					})}
+		<section id="heatingCard">
+			<div className="container relative mx-auto w-full">
+				<div className="absolute  -left-1/4 -top-40  h-[500px] w-[500px]">
+					<Image
+						id="hc-services-blob"
+						src={'/images/heating-cooling/services/hc-services-blob.svg'}
+						alt={'blob vector shape Image'}
+						width={500}
+						height={500}
+					></Image>
+				</div>
+				<div className="mt-20 flex flex-col items-center text-center  ">
+					<ContentWrapper>
+						<ContentWrapper.Title>
+							<h1 className="title-2 lg:title-1 text-primary-black mb-4">
+								{servicesTitle}
+							</h1>
+						</ContentWrapper.Title>
+						<ContentWrapper.Description className="para-2 lg:para-1">
+							<RichText value={servicesDescription?.contentRaw} />
+						</ContentWrapper.Description>
+					</ContentWrapper>
+				</div>
+				<div className="container mx-auto ">
+					<div className="grid grid-cols-1  items-center gap-6 rounded-lg bg-[FFFFFF]   md:grid-cols-2 lg:grid-cols-4 ">
+						{servicesGroup?.map((content, index) => {
+							return (
+								<HeatingCoolingServiceCard
+									key={index}
+									title={content?.titleText || ''}
+									content={content?.description || ''}
+									thumbnailSrc={content?.image?.asset?.url || ''}
+									thumbnailAltText={''}
+								/>
+							);
+						})}
+					</div>
+				</div>
+				<div className="absolute -right-1/4 bottom-0 h-[500px] w-[500px]">
+					<Image
+						id="hc-services-blob"
+						src={'/images/heating-cooling/services/hc-services-blob.svg'}
+						alt={'blob vector shape Image'}
+						width={500}
+						height={500}
+					></Image>
 				</div>
 			</div>
 		</section>
