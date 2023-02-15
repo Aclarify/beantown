@@ -20,12 +20,10 @@ export default function HeatingCoolingServices() {
 	return (
 		<section
 			id="heatingServices"
-			className="z-2 -md:[2em] relative -mt-[1em] lg:-mt-[5em] "
+			className="z-2 relative -mt-[1em] md:-mt-[2em] lg:-mt-[5em] "
 		>
-			<div id="waveContainer">
-				<WaveWrapper waveURL="/images/heating-cooling/services/hc-services-top-wave.svg"></WaveWrapper>
-			</div>
-			<div className=" mt-20 flex flex-col items-center text-center ">
+			<WaveWrapper waveURL="/images/heating-cooling/services/hc-services-top-wave.svg"></WaveWrapper>
+			<div className="  flex flex-col items-center text-center ">
 				<ContentWrapper>
 					<ContentWrapper.Title>
 						<h1 className="title-5 lg:title-2 text-primary-black mb-4">
@@ -37,7 +35,7 @@ export default function HeatingCoolingServices() {
 					</ContentWrapper.Description>
 				</ContentWrapper>
 			</div>
-			<div className=" mt-12 grid grid-cols-1  items-center rounded-lg bg-[FFFFFF]  sm:grid-cols-4 ">
+			<div className="  grid grid-cols-1  items-center rounded-lg bg-[FFFFFF]  sm:grid-cols-4 ">
 				{servicesGroup?.map((content, index) => {
 					return (
 						<HeatingCoolingServiceCard
