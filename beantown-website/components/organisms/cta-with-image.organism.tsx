@@ -29,13 +29,13 @@ const CTAWithImage: React.FC<IProps> = ({
 }) => {
 	const { width } = useWindowDimensions();
 	const bgImage =
-		width > SCREEN_BREAKPOINTS.MD
+		width > SCREEN_BREAKPOINTS.LG
 			? textContentBGImage
 			: textContentBGImageForSmallScreen;
 	return (
 		<>
 			<div
-				className={clsx('hidden md:flex', {
+				className={clsx('hidden lg:flex', {
 					'flex-row-reverse': heroImagePosition === 'right',
 				})}
 			>
@@ -70,23 +70,33 @@ const CTAWithImage: React.FC<IProps> = ({
 				</div>
 			</div>
 
-			<div className="flex flex-col md:hidden">
+			<div id="wrapper-mobile" className="flex flex-col lg:hidden">
 				<div
 					id="hero-image-wrapper"
 					className="h-[40vh] w-full"
 					style={{
-						backgroundImage: `linear-gradient(transparent 20%, ${gradientFromColorForMobile}),url(${heroImageURL})`,
+						backgroundImage: `linear-gradient(transparent 20%, ${gradientFromColorForMobile})`,
 						backgroundSize: '100% 100%',
 						backgroundRepeat: 'no-repeat',
 					}}
-				></div>
+				>
+					<Image
+						src={heroImageURL}
+						alt="Image mask"
+						height={2000}
+						width={2000}
+						style={{
+							width: '100%',
+							height: 'auto',
+						}}
+					/>
+				</div>
 				<div
 					id="content-wrapper"
 					style={{
 						backgroundImage: `url(${bgImage}), linear-gradient(${gradientFromColorForMobile}, ${gradientToColorForMobile})`,
 						backgroundPosition: 'center',
 						backgroundRepeat: 'no-repeat',
-						backgroundSize: '100% 100%',
 					}}
 					className="relative flex h-[40vh] w-full items-center justify-center"
 				>
