@@ -16,7 +16,7 @@ export default function HeatingCoolingBlogs() {
 	return (
 		<section id="blogs" className="relative z-10 -mb-[11em]  ">
 			<WaveWrapper waveURL="/images/heating-cooling/blogs/hc-blogs-top-wave.svg"></WaveWrapper>
-			<div className=" bg-[#FCF7F7] ">
+			<div className=" lg:padding-for-section bg-[#FCF7F7] ">
 				<Blogs
 					blogsTitle={blogTitle || ''}
 					blogsDescription={blogDescription || ''}
