@@ -47,7 +47,8 @@ const CTAWithImage: React.FC<IProps> = ({
 						width={2000}
 						style={{
 							width: '100%',
-							height: 'auto',
+							height: '100%',
+							objectFit: 'cover',
 						}}
 					/>
 				</div>
@@ -73,7 +74,7 @@ const CTAWithImage: React.FC<IProps> = ({
 			<div id="wrapper-mobile" className="flex flex-col lg:hidden">
 				<div
 					id="hero-image-wrapper"
-					className="h-[40vh] w-full"
+					className="w-full"
 					style={{
 						backgroundImage: `linear-gradient(transparent 20%, ${gradientFromColorForMobile})`,
 						backgroundSize: '100% 100%',
@@ -98,7 +99,7 @@ const CTAWithImage: React.FC<IProps> = ({
 						backgroundPosition: 'center',
 						backgroundRepeat: 'no-repeat',
 					}}
-					className="relative flex h-[40vh] w-full items-center justify-center"
+					className="relative flex w-full items-center justify-center"
 				>
 					{children}
 				</div>
