@@ -45,7 +45,7 @@ export default function HomeBlogs() {
 				></Image>
 			</div>
 
-			<div className="relative z-10">
+			<div className="lg:padding-for-section relative z-10 px-[20px]">
 				<Blogs
 					blogsTitle={blogTitle || ''}
 					blogsDescription={blogDescription || ''}
