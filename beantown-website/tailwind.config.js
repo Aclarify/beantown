@@ -33,6 +33,7 @@ module.exports = {
 				'gray-shade-4': '#0000000',
 				'gray-shade-5': '#2C305829',
 				'service-red': '#BC3B39',
+				'service-red-bg': '#FCF7F7',
 				'service-yellow': '#F4DE00',
 				'service-green': '#008340',
 			},
@@ -42,6 +43,15 @@ module.exports = {
 			},
 			backgroundSize: {
 				'fit-to-parent': '100% 100%',
+			},
+			zIndex: {
+				'-1': '-1',
+				0: '0',
+				1: '1',
+				2: '2',
+				3: '3',
+				4: '4',
+				5: '5',
 			},
 		},
 	},

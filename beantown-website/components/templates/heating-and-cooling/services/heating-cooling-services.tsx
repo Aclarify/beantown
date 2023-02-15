@@ -20,7 +20,7 @@ export default function HeatingCoolingServices() {
 	return (
 		<section
 			id="heatingServices"
-			className="z-2 relative -mt-[1em] md:-mt-[2em] lg:-mt-[5em] "
+			className="z-5 relative -mt-[1em] md:-mt-[2em] lg:-mt-[5em] "
 		>
 			<WaveWrapper waveURL="/images/heating-cooling/services/hc-services-top-wave.svg"></WaveWrapper>
 			<div className="  flex flex-col items-center text-center ">
