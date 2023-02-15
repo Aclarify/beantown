@@ -23,30 +23,32 @@ export default function HeatingCoolingServices() {
 			className="z-5 relative -mt-[1em] md:-mt-[2em] lg:-mt-[5em] "
 		>
 			<WaveWrapper waveURL="/images/heating-cooling/services/hc-services-top-wave.svg"></WaveWrapper>
-			<div className="  flex flex-col items-center text-center ">
-				<ContentWrapper>
-					<ContentWrapper.Title>
-						<h1 className="title-5 lg:title-2 text-primary-black mb-4">
-							{servicesTitle}
-						</h1>
-					</ContentWrapper.Title>
-					<ContentWrapper.Description>
-						<RichText value={servicesDescription?.contentRaw} />
-					</ContentWrapper.Description>
-				</ContentWrapper>
-			</div>
-			<div className="  grid grid-cols-1  items-center rounded-lg bg-[FFFFFF]  sm:grid-cols-4 ">
-				{servicesGroup?.map((content, index) => {
-					return (
-						<HeatingCoolingServiceCard
-							key={index}
-							title={content?.titleText || ''}
-							content={content?.description || ''}
-							thumbnailSrc={content?.image?.asset?.url || ''}
-							thumbnailAltText={''}
-						/>
-					);
-				})}
+			<div className="lg:padding-for-section px-[20px] ">
+				<div className="  flex flex-col items-center text-center ">
+					<ContentWrapper>
+						<ContentWrapper.Title>
+							<h1 className="title-5 lg:title-2 text-primary-black mb-4">
+								{servicesTitle}
+							</h1>
+						</ContentWrapper.Title>
+						<ContentWrapper.Description>
+							<RichText value={servicesDescription?.contentRaw} />
+						</ContentWrapper.Description>
+					</ContentWrapper>
+				</div>
+				<div className=" grid grid-cols-1  items-center rounded-lg bg-[FFFFFF] lg:grid-cols-2 2xl:grid-cols-4 ">
+					{servicesGroup?.map((content, index) => {
+						return (
+							<HeatingCoolingServiceCard
+								key={index}
+								title={content?.titleText || ''}
+								content={content?.description || ''}
+								thumbnailSrc={content?.image?.asset?.url || ''}
+								thumbnailAltText={''}
+							/>
+						);
+					})}
+				</div>
 			</div>
 		</section>
 	);
