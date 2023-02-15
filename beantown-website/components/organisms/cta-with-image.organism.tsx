@@ -13,8 +13,6 @@ interface IProps {
 	heroImageAltText?: string;
 	gradientFromColor: string;
 	gradientToColor: string;
-	gradientFromColorForMobile: string;
-	gradientToColorForMobile: string;
 }
 const CTAWithImage: React.FC<IProps> = ({
 	heroImagePosition,
@@ -24,8 +22,6 @@ const CTAWithImage: React.FC<IProps> = ({
 	heroImageURL,
 	gradientFromColor,
 	gradientToColor,
-	gradientFromColorForMobile,
-	gradientToColorForMobile,
 }) => {
 	const { width } = useWindowDimensions();
 	const bgImage =
@@ -56,11 +52,12 @@ const CTAWithImage: React.FC<IProps> = ({
 					id="content-wrapper"
 					style={{
 						backgroundImage: `url(${bgImage})`,
-						backgroundColor: gradientToColor,
 						position: 'relative',
 					}}
 					className={clsx(
-						`relative flex bg-[${gradientToColor}] w-full items-center justify-center py-4 lg:w-1/2`,
+						`relative flex w-full items-center justify-center py-4 lg:w-1/2`,
+						gradientFromColor,
+						gradientToColor,
 						heroImagePosition === 'right' &&
 							`after:from-[${gradientToColor}] after:absolute after:top-0 after:bottom-0 after:right-[-121px] after:z-[1] after:w-[170px] after:bg-gradient-to-r`,
 						heroImagePosition === 'left' &&
@@ -72,15 +69,7 @@ const CTAWithImage: React.FC<IProps> = ({
 			</div>
 
 			<div id="wrapper-mobile" className="flex flex-col lg:hidden">
-				<div
-					id="hero-image-wrapper"
-					className="w-full"
-					style={{
-						backgroundImage: `linear-gradient(transparent 20%, ${gradientFromColorForMobile})`,
-						backgroundSize: '100% 100%',
-						backgroundRepeat: 'no-repeat',
-					}}
-				>
+				<div id="hero-image-wrapper" className="w-full">
 					<Image
 						src={heroImageURL}
 						alt="Image mask"
@@ -95,11 +84,16 @@ const CTAWithImage: React.FC<IProps> = ({
 				<div
 					id="content-wrapper"
 					style={{
-						backgroundImage: `url(${bgImage}), linear-gradient(${gradientFromColorForMobile}, ${gradientToColorForMobile})`,
+						backgroundImage: `url(${bgImage})`,
 						backgroundPosition: 'center',
 						backgroundRepeat: 'no-repeat',
 					}}
-					className="relative flex w-full items-center justify-center"
+					className={clsx(
+						'relative flex w-full items-center justify-center bg-gradient-to-t',
+						gradientFromColor,
+						gradientToColor,
+						`before:absolute before:left-0 before:top-[-160px] before:bottom-0 before:z-[1] before:h-[182px] before:w-full before:bg-gradient-to-t`
+					)}
 				>
 					{children}
 				</div>

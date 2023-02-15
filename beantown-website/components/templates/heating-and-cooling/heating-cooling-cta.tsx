@@ -24,10 +24,8 @@ export default function HeatingCoolingPageCTA() {
 					'/images/heating-cooling/hero/hc-hero-vector.svg'
 				}
 				heroImagePosition="left"
-				gradientFromColor="#BC3B39"
-				gradientToColor="#B55856"
-				gradientFromColorForMobile="#B55856"
-				gradientToColorForMobile="#BC3B39"
+				gradientFromColor="from-service-red"
+				gradientToColor="bg-service-red"
 			>
 				<ContentWrapper className="lg:padding-for-section px-10 py-20 text-center lg:text-left">
 					<ContentWrapper.Title className="mb-[8px]   lg:mb-[16px]">
