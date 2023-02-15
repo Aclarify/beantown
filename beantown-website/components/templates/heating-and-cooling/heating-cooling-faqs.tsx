@@ -24,10 +24,10 @@ export default function HeatingCoolingFaq() {
 	}
 	return (
 		<>
-			<section id="faq" className="relative mb-[9em]">
-				{/* <div className="z-1 relative bottom-[5em] z-10 -mb-[19em] max-h-40 overflow-hidden">
-					<Image src={topWave} alt="faq wave bg" style={{ width: '100vw' }} />
-				</div> */}
+			<section
+				id="faq"
+				className="z-5 relative mb-[9em] pb-[2em] pt-[60px] lg:pt-0"
+			>
 				{faqList && (
 					<FAQ
 						backgroundImage="/images/heating-cooling/faq/hc-faq-bg-thumbprint.svg"

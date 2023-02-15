@@ -14,24 +14,19 @@ export default function HeatingCoolingBlogs() {
 	const homeData = pageContent.page[0];
 	const { blogTitle, blogDescription, blogButton, blogCards } = homeData;
 	return (
-		<section
-			id="blogs"
-			className=" flex flex-col overflow-hidden bg-[#FCF7F7] pl-6 pb-[10rem] lg:px-10 "
-		>
-			<div id="topWave" className="relative z-20">
-				<WaveWrapper waveURL="/images/heating-cooling/blogs/hc-blogs-top-wave.svg"></WaveWrapper>
+		<section id="blogs" className="relative z-10 -mb-[11em]  ">
+			<WaveWrapper waveURL="/images/heating-cooling/blogs/hc-blogs-top-wave.svg"></WaveWrapper>
+			<div className=" bg-[#FCF7F7] ">
+				<Blogs
+					blogsTitle={blogTitle || ''}
+					blogsDescription={blogDescription || ''}
+					blogsButtonText={blogButton?.text || ''}
+					blogsButtonTextColour="text-white"
+					blogsButtonBgColour="bg-[#BC3B39]"
+					blogCards={blogCards || []}
+				></Blogs>
 			</div>
-			<Blogs
-				blogsTitle={blogTitle || ''}
-				blogsDescription={blogDescription || ''}
-				blogsButtonText={blogButton?.text || ''}
-				blogsButtonTextColour="text-white"
-				blogsButtonBgColour="bg-[#BC3B39]"
-				blogCards={blogCards || []}
-			></Blogs>
-			<div id="bottomWave" className="relative z-20">
-				<WaveWrapper waveURL="/images/heating-cooling/blogs/hc-blogs-bottom-wave.svg"></WaveWrapper>
-			</div>
+			<WaveWrapper waveURL="/images/heating-cooling/blogs/hc-blogs-bottom-wave.svg"></WaveWrapper>
 		</section>
 	);
 }

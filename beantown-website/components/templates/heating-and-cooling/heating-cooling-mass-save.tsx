@@ -23,13 +23,11 @@ export default function MassSave() {
 	return (
 		<section
 			id="massSave"
-			className="z-5 relative
-			py-[25rem] pb-[50vw] 
-			md:pt-[10vw] md:pb-[25%]"
+			className="relative z-10 -mb-[1em] md:-mb-[2em] lg:-mb-[4em] 2xl:-mb-[6em]"
 		>
 			<div
 				id="section-wrapper"
-				className=" z-1  flex flex-col overflow-hidden pb-[5em]"
+				className=" z-10  flex flex-col overflow-hidden pb-[5em]"
 			>
 				<div
 					id="content-image-wrapper"
@@ -78,9 +76,7 @@ export default function MassSave() {
 					</div>
 				</div>
 			</div>
-			{/* <div id="waveContainer">
-				<WaveWrapper waveURL="/images/heating-cooling/mass-save/hc-mass-save-bottom-wave.svg"></WaveWrapper>
-			</div> */}
+			<WaveWrapper waveURL="/images/heating-cooling/mass-save/hc-mass-save-bottom-wave.svg"></WaveWrapper>
 		</section>
 	);
 }

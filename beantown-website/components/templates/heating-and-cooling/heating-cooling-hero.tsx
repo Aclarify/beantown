@@ -16,7 +16,7 @@ export default function HeatingCoolingPageHero() {
 	const pageData = pageContent.page[0];
 	const { heroImage, heroTitle, heroDescription, heroButton } = pageData;
 	return (
-		<section id="cooling-and-heating-hero">
+		<section id="cooling-and-heating-hero" className="z-5 relative">
 			<CTAWithImage
 				heroImageURL={heroImage?.asset?.url || ''}
 				heroImageAltText={'Hero image'}

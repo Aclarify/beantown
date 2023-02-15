@@ -11,7 +11,7 @@ interface Props {
 const BlogCard: React.FC<Props> = (props) => {
 	return (
 		<>
-			<div className="cursor-pointer flex-col justify-center border-none">
+			<div className=" cursor-pointer flex-col justify-center border-none ">
 				<div className="flex justify-center ">
 					<Image
 						src={props.thumbnailSrc}
@@ -21,7 +21,7 @@ const BlogCard: React.FC<Props> = (props) => {
 						className="w-full rounded-3xl border-2"
 					/>
 				</div>
-				<div className="pl-2">
+				<div>
 					<p className="title-7 lg:title-5 text-primary-black py-4">
 						{props.blogName}
 					</p>
