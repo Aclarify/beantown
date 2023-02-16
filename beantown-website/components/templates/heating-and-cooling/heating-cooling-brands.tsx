@@ -17,15 +17,76 @@ export default function HeatingCoolingBrands() {
 	}
 	const pageData = pageContent.page[0];
 	const { clientsLogo, brandsTitle } = pageData;
-
 	const settings = {
+		dots: false,
 		infinite: true,
-		slidesToShow: 2,
-		slidesToScroll: 1,
-		autoplay: true,
+		speed: 2000,
 		autoplaySpeed: 2000,
 		cssEase: 'linear',
+		autoplay: true,
+		slidesToShow: 3,
+		slidesToScroll: 1,
+		pauseOnHover: false,
+		responsive: [
+			{
+				breakpoint: 1800,
+				settings: {
+					slidesToShow: 4,
+					slidesToScroll: 1,
+					infinite: true,
+					dots: false,
+				},
+			},
+			{
+				breakpoint: 1500,
+				settings: {
+					slidesToShow: 4,
+					slidesToScroll: 1,
+					infinite: true,
+					dots: false,
+				},
+			},
+			{
+				breakpoint: 1200,
+				settings: {
+					slidesToShow: 4,
+					slidesToScroll: 1,
+					infinite: true,
+					dots: false,
+				},
+			},
+			{
+				breakpoint: 1024,
+				settings: {
+					slidesToShow: 4,
+					slidesToScroll: 1,
+					infinite: true,
+					dots: false,
+				},
+			},
+			{
+				breakpoint: 600,
+				settings: {
+					slidesToShow: 3,
+					slidesToScroll: 1,
+					initialSlide: 1,
+					infinite: true,
+				},
+			},
+			{
+				breakpoint: 480,
+				settings: {
+					slidesToShow: 2,
+					slidesToScroll: 1,
+					infinite: true,
+				},
+			},
+		],
 	};
+	let clonedLogoArray = clientsLogo ? [...clientsLogo] : [];
+	if (clientsLogo && clientsLogo?.length < 5) {
+		clonedLogoArray = [...clientsLogo, ...clientsLogo];
+	}
 	return (
 		<>
 			<section
@@ -42,11 +103,14 @@ export default function HeatingCoolingBrands() {
 					</div>
 					<div>
 						<Slider {...settings}>
-							{clientsLogo?.map((logo, index) => {
+							{clonedLogoArray?.map((logo, index) => {
 								return (
 									logo &&
 									logo.image && (
-										<div key={index} className="flex justify-center">
+										<div
+											key={index}
+											className="grid grid-cols-1 sm:grid-cols-4	"
+										>
 											<Image
 												alt={logo?.image?.asset?.altText || ''}
 												width={200}
