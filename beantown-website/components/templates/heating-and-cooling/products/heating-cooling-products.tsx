@@ -72,13 +72,13 @@ export default function HeatingCoolingProductsCards() {
 				<div className="hidden  justify-center  gap-4 pt-4 sm:flex  ">
 					<button
 						onClick={next}
-						className="lg:text-service-red text-primary-shade-1 bg-secondary-shade-3 w-20 rounded-full py-4 px-6 text-lg"
+						className="lg:text-service-red text-primary-shade-1 bg-secondary-shade-3 w-28 rounded-full py-4 px-6 text-lg"
 					>
 						<FontAwesomeIcon icon={faArrowLeft} />
 					</button>
 					<button
 						onClick={previous}
-						className=" bg-service-red w-20 rounded-full py-4 px-6 text-lg text-white"
+						className=" bg-service-red w-28 rounded-full py-4 px-6 text-lg text-white"
 					>
 						<FontAwesomeIcon icon={faArrowRight} />
 					</button>
@@ -104,13 +104,13 @@ export default function HeatingCoolingProductsCards() {
 			<div className="flex justify-center gap-4 pt-4 lg:hidden ">
 				<button
 					onClick={next}
-					className="lg:text-service-red text-primary-shade-1 bg-secondary-shade-3 w-16 rounded-full py-2 px-4"
+					className="lg:text-service-red text-primary-shade-1 bg-secondary-shade-3 w-20  rounded-full py-2 px-4"
 				>
 					<FontAwesomeIcon icon={faArrowLeft} />
 				</button>
 				<button
 					onClick={previous}
-					className=" bg-service-red w-16 rounded-full py-2 px-4 text-white"
+					className=" bg-service-red w-20 rounded-full py-2 px-4 text-white"
 				>
 					<FontAwesomeIcon icon={faArrowRight} />
 				</button>

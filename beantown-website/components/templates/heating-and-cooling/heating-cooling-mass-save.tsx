@@ -31,7 +31,7 @@ export default function MassSave() {
 			>
 				<div
 					id="content-image-wrapper"
-					className="flex w-full flex-col-reverse items-center  md:flex  md:flex-row "
+					className="flex w-full flex-col-reverse items-center  lg:flex  lg:flex-row "
 				>
 					<div
 						id="content-wrapper"
