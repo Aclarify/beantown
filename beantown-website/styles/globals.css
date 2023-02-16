@@ -16,7 +16,7 @@
 
 @layer components {
 	.padding-for-section {
-		@apply px-[120px]
+		@apply px-[120px];
 	}
 	.title-1 {
 		@apply text-7xl;
@@ -106,13 +106,10 @@
 		@apply font-light;
 	}
 }
-.slick-slide>div{
-	margin:0 10px;
+.slick-slide > div {
+	margin: 0 10px;
 }
 
- /* .slick-slide {
-	margin-right: -10px;
-} 
-.slick-slide>div:nth-child(1){
-	margin-left:0;
-}  */
+.slick-slide:not(.slick-active) {
+	opacity: 0.5;
+}

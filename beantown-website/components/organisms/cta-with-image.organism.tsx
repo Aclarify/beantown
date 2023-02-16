@@ -59,7 +59,7 @@ const CTAWithImage: React.FC<IProps> = ({
 						gradientFromColor,
 						gradientToColor,
 						heroImagePosition === 'right' &&
-							`after:from-[${gradientToColor}] after:absolute after:top-0 after:bottom-0 after:right-[-121px] after:z-[1] after:w-[170px] after:bg-gradient-to-r`,
+							`after:from-[${gradientToColor}] after:absolute after:top-0 after:bottom-0 after:right-[-121px] after:z-[1] after:w-[126px] after:bg-gradient-to-r`,
 						heroImagePosition === 'left' &&
 							`before:from-[${gradientToColor}] before:absolute before:left-[-181px] before:top-0 before:bottom-0 before:z-[1] before:w-[182px] before:bg-gradient-to-l`
 					)}
@@ -92,7 +92,7 @@ const CTAWithImage: React.FC<IProps> = ({
 						'relative flex w-full items-center justify-center bg-gradient-to-t',
 						gradientFromColor,
 						gradientToColor,
-						`before:absolute before:left-0 before:top-[-160px] before:bottom-0 before:z-[1] before:h-[182px] before:w-full before:bg-gradient-to-t`
+						`before:absolute before:left-0 before:top-[-160px] before:bottom-0 before:z-[1] before:h-[163px] before:w-full before:bg-gradient-to-t`
 					)}
 				>
 					{children}

@@ -36,7 +36,7 @@ export default function HeatingCoolingServices() {
 						</ContentWrapper.Description>
 					</ContentWrapper>
 				</div>
-				<div className=" grid grid-cols-1  items-center rounded-lg bg-[FFFFFF] lg:grid-cols-2 2xl:grid-cols-4 ">
+				<div className="  -mx-4 flex flex-wrap rounded-lg bg-[FFFFFF] ">
 					{servicesGroup?.map((content, index) => {
 						return (
 							<HeatingCoolingServiceCard

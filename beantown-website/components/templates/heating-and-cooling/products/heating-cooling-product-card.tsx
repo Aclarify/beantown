@@ -18,12 +18,12 @@ const ProductCard: React.FC<Props> = (props) => {
 						src={props.thumbnailSrc}
 					/>
 				</div>
-				<div className="flex flex-col items-start gap-2 px-4 pt-10 pb-6 lg:px-6">
-					<h1 className="title-6 md:title-3 text-primary-black">
+				<div className="flex flex-col items-start gap-2 px-2 pt-10 pb-6 lg:px-4">
+					<h1 className="title-6 md:title-3 text-primary-black pb-4">
 						{props.title}
 					</h1>
 
-					<div className="para-4 md:para-3 text-primary-black pt-2 text-left  lg:pt-6 ">
+					<div className="para-4 md:para-3 text-gray-shade-1  text-left   ">
 						<p>{props.description}</p>
 					</div>
 				</div>

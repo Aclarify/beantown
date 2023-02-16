@@ -10,6 +10,7 @@ import { Nav } from '@typing/gql/graphql';
 
 import Image from 'next/image';
 import Button from 'components/atoms/button.atom';
+import CtaWrapper from 'components/molecules/cta-wrapper.molecule';
 
 interface IProps {
 	logoDesktop: any;
@@ -111,9 +112,9 @@ export default function Header(props: IProps) {
 							})}
 						</div>
 						<div className=" hidden lg:flex lg:justify-end ">
-							<Button fontColor="text-primary-shade-1" bgColor="bg-white">
-								{headerButton?.text}
-							</Button>
+							<CtaWrapper.CTA className="text-primary-shade-1 para-3 h-[48px] w-[139px] rounded-lg bg-white py-1 px-4  tracking-wide  md:py-2 md:px-8 lg:tracking-wider ">
+								<p>{headerButton?.text}</p>
+							</CtaWrapper.CTA>
 						</div>
 					</div>
 
