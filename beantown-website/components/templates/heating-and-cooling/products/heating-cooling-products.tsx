@@ -69,7 +69,7 @@ export default function HeatingCoolingProductsCards() {
 					<p className="title-6 lg:title-2">{productsTitle}</p>
 				</div>
 
-				<div className="hidden  justify-center  gap-4 pt-4 sm:flex  ">
+				<div className="hidden  justify-center  gap-4 pt-4 lg:flex  ">
 					<button
 						onClick={next}
 						className="lg:text-service-red text-primary-shade-1 bg-secondary-shade-3 w-28 rounded-full py-4 px-6 text-lg"
