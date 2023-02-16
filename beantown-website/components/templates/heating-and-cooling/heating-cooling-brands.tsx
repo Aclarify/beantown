@@ -17,50 +17,128 @@ export default function HeatingCoolingBrands() {
 	}
 	const pageData = pageContent.page[0];
 	const { clientsLogo, brandsTitle } = pageData;
-
-	const settings = {
-		infinite: true,
-		slidesToShow: 2,
-		slidesToScroll: 1,
-		autoplay: true,
-		autoplaySpeed: 2000,
-		cssEase: 'linear',
-	};
-	return (
-		<>
-			<section
-				id="brand-desktop"
-				className="  relative  z-10 
+	 const settings = {
+			dots: false,
+			infinite: true,
+			speed: 2000,
+			autoplaySpeed: 2000,
+			cssEase: 'linear',
+			autoplay: true,
+			slidesToShow: 3,
+			slidesToScroll: 1,
+			pauseOnHover: false,		
+			responsive: [
+				{
+					breakpoint: 1800,
+					settings: {
+						slidesToShow: 4,
+						slidesToScroll: 1,
+						infinite: true,
+						dots: false,
+					},
+				},
+				{
+					breakpoint: 1500,
+					settings: {
+						slidesToShow: 4,
+						slidesToScroll: 1,
+						infinite: true,
+						dots: false,
+					},
+				},
+				{
+					breakpoint: 1200,
+					settings: {
+						slidesToShow: 4,
+						slidesToScroll: 1,
+						infinite: true,
+						dots: false,
+					},
+				},
+				{
+					breakpoint: 1024,
+					settings: {
+						slidesToShow: 4,
+						slidesToScroll: 1,
+						infinite: true,
+						dots: false,
+					},
+				},
+				{
+					breakpoint: 600,
+					settings: {
+						slidesToShow: 3,
+						slidesToScroll: 1,
+						initialSlide: 1,
+						infinite: true,
+					},
+				},
+				{
+					breakpoint: 480,
+					settings: {
+						slidesToShow: 2,
+						slidesToScroll: 1,
+						infinite: true,
+					},
+				},
+			],
+		};
+		return (
+			<>
+				<section
+					id="brand-desktop"
+					className="  relative  z-10 
 				-mt-[1em] mb-[12em]  md:-mt-[2em] lg:-mt-[3em] 2xl:-mt-[4em]"
-			>
-				<WaveWrapper waveURL="/images/heating-cooling/brands/hc-brands-top-wave.svg"></WaveWrapper>
-				<div className="  absolute top-1/2 left-1/2 z-20 w-full -translate-y-1/2 -translate-x-1/2 transform">
-					<div className="flex  justify-center pt-[10em]">
-						<span className="title-6 lg:title-3 text-primary-black m-4 p-4">
-							{brandsTitle}
-						</span>
+				>
+					<WaveWrapper waveURL="/images/heating-cooling/brands/hc-brands-top-wave.svg"></WaveWrapper>
+					<div className="  absolute top-1/2 left-1/2 z-20 w-full -translate-y-1/2 -translate-x-1/2 transform">
+						<div className="flex  justify-center pt-[10em]">
+							<span className="title-6 lg:title-3 text-primary-black m-4 p-4">
+								{brandsTitle}
+							</span>
+						</div>
+						<div>
+							<Slider {...settings}>
+								{clientsLogo?.map((logo, index) => {
+									return (
+										logo &&
+										logo.image && (
+											<div
+												key={index}
+												className="grid grid-cols-1 sm:grid-cols-4	"
+											>
+												<Image
+													alt={logo?.image?.asset?.altText || ''}
+													width={200}
+													height={300}
+													src={logo?.image?.asset?.url || ''}
+												/>
+											</div>
+										)
+									);
+								})}
+								{clientsLogo?.map((logo, index) => {
+									return (
+										logo &&
+										logo.image && (
+											<div
+												key={index}
+												className="grid grid-cols-1 sm:grid-cols-4	"
+											>
+												<Image
+													alt={logo?.image?.asset?.altText || ''}
+													width={200}
+													height={300}
+													src={logo?.image?.asset?.url || ''}
+												/>
+											</div>
+										)
+									);
+								})}
+							</Slider>
+						</div>
 					</div>
-					<div>
-						<Slider {...settings}>
-							{clientsLogo?.map((logo, index) => {
-								return (
-									logo &&
-									logo.image && (
-										<div key={index} className="flex justify-center">
-											<Image
-												alt={logo?.image?.asset?.altText || ''}
-												width={200}
-												height={300}
-												src={logo?.image?.asset?.url || ''}
-											/>
-										</div>
-									)
-								);
-							})}
-						</Slider>
-					</div>
-				</div>
-			</section>
-		</>
-	);
+				</section>
+			</>
+		);
 }

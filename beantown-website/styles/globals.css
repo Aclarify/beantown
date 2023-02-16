@@ -116,3 +116,6 @@
 .slick-slide>div:nth-child(1){
 	margin-left:0;
 }  */
+.slick-slide:not(.slick-active) {
+	opacity: 0.5;
+}
