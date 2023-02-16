@@ -26,7 +26,7 @@ export default function HeatingCoolingFaq() {
 		<>
 			<section
 				id="faq"
-				className="z-5 relative mb-[9em] pb-[2em] pt-[60px] lg:pt-0"
+				className="lg:padding-for-section z-5 relative mb-[9em] px-[20px] pb-[2em] pt-[60px] lg:pt-0"
 			>
 				{faqList && (
 					<FAQ

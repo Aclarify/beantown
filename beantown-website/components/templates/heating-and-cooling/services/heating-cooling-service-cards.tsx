@@ -22,7 +22,6 @@ const HeatingCoolingServiceCard: React.FC<Props> = (props) => {
 				></Image>
 				<div className="flex flex-col  space-y-6 text-center">
 					<p className="title-5 md:title-3">{props.title}</p>
-
 					<p className="para-2 md:para-1 ">{props.content}</p>
 				</div>
 			</div>

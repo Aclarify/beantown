@@ -23,15 +23,15 @@ export default function MassSave() {
 	return (
 		<section
 			id="massSave"
-			className="relative z-10 -mb-[1em] md:-mb-[2em] lg:-mb-[4em] 2xl:-mb-[6em]"
+			className=" relative z-10 -mb-[1em] md:-mb-[2em] lg:-mb-[4em] 2xl:-mb-[6em]"
 		>
 			<div
 				id="section-wrapper"
-				className=" z-10  flex flex-col overflow-hidden pb-[5em]"
+				className="md:padding-for-section z-10 flex  flex-col overflow-hidden px-[20px] pb-[5em]"
 			>
 				<div
 					id="content-image-wrapper"
-					className="flex w-full flex-col-reverse items-center px-6 md:flex  md:flex-row lg:px-10"
+					className="flex w-full flex-col-reverse items-center  md:flex  md:flex-row "
 				>
 					<div
 						id="content-wrapper"
