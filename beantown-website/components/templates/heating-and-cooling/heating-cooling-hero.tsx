@@ -4,8 +4,8 @@ import { GlobalContextProps } from '@typing/common/interfaces/contexts.interface
 import { HeatingCoolingContentProps } from 'pages/heating-and-cooling';
 import RichText from 'components/molecules/rich-text.molecule';
 import ContentWrapper from 'components/organisms/content-wrapper.organism';
-import Button from 'components/atoms/button.atom';
 import CTAWithImage from 'components/organisms/cta-with-image.organism';
+import CtaWrapper from 'components/molecules/cta-wrapper.molecule';
 
 export default function HeatingCoolingPageHero() {
 	const { pageContent } =
@@ -36,9 +36,9 @@ export default function HeatingCoolingPageHero() {
 						<RichText value={heroDescription?.contentRaw} />
 					</ContentWrapper.Description>
 					<ContentWrapper.CTA className="mt-[32px]">
-						<Button fontColor="text-white" bgColor="bg-primary-shade-1">
-							{heroButton?.text}
-						</Button>
+						<CtaWrapper.CTA className="bg-primary-shade-1 para-3 lg:para-2 h-[64px] w-[182px] rounded-lg py-1 px-4  tracking-wide text-white md:py-2 md:px-8 lg:tracking-wider ">
+							<p>{heroButton?.text}</p>
+						</CtaWrapper.CTA>
 					</ContentWrapper.CTA>
 				</ContentWrapper>
 			</CTAWithImage>

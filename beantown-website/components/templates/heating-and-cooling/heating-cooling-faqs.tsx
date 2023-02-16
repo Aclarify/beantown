@@ -35,7 +35,7 @@ export default function HeatingCoolingFaq() {
 						faqDescription={faqDescription || ''}
 						faqButtonText={faqButton?.text || ''}
 						faqsButtonTextColour="text-white"
-						faqsButtonBgColour="bg-[#BC3B39]"
+						faqsButtonBgColour="bg-service-red"
 						faqList={faqList || []}
 					></FAQ>
 				)}

@@ -8,6 +8,7 @@ import ContentWrapper from 'components/organisms/content-wrapper.organism';
 import MaskedImageWithBackgroundVector from 'components/organisms/masked-image-with-blob.organism';
 import useWindowDimensions from '@lib/hooks/use-window-dimensions.hook';
 import WaveWrapper from 'components/molecules/wave-wrapper.molecule';
+import CtaWrapper from 'components/molecules/cta-wrapper.molecule';
 export default function MassSave() {
 	const { pageContent } =
 		useContext<GlobalContextProps<HeatingCoolingContentProps>>(GlobalContext);
@@ -47,9 +48,9 @@ export default function MassSave() {
 								<RichText value={massSaveDescription?.contentRaw} />
 							</ContentWrapper.Description>
 							<ContentWrapper.CTA className="mt-[16px] lg:mt-[32px]">
-								<Button fontColor="text-white" bgColor=" bg-[#BC3B39]">
-									{massSaveButton?.text}
-								</Button>
+								<CtaWrapper.CTA className="bg-service-red para-3 lg:para-2 h-[40px] w-[110px] rounded-lg py-1 px-4 tracking-wide text-white md:py-2  md:px-8  lg:h-[64px] lg:w-[210px] lg:tracking-wider ">
+									<p>{massSaveButton?.text}</p>
+								</CtaWrapper.CTA>
 							</ContentWrapper.CTA>
 						</ContentWrapper>
 					</div>
