@@ -1,5 +1,4 @@
 import React, { useState } from 'react';
-import Button from 'components/atoms/button.atom';
 import { Maybe, TitleDescription } from '@typing/gql/graphql';
 import FAQDisclosure from './faq-disclosure.organism';
 import ContentWrapper from './content-wrapper.organism';
