@@ -20,10 +20,17 @@ export default function HeatingCoolingServices() {
 	return (
 		<section
 			id="heatingServices"
-			className="z-5 relative -mt-[1em] md:-mt-[2em] lg:-mt-[5em] "
+			className="z-5 relative -mt-[1em] md:-mt-[2em] lg:-mt-[5em]  "
 		>
 			<WaveWrapper waveURL="/images/heating-cooling/services/hc-services-top-wave.svg"></WaveWrapper>
-			<div className="lg:padding-for-section px-[20px] ">
+			<Image
+				src={'/images/heating-cooling/services/hc-services-blob.svg'}
+				height={600}
+				width={500}
+				alt="Blob"
+				className="absolute left-0 -translate-x-[40%] transform"
+			/>
+			<div className="lg:padding-for-section relative px-[20px]">
 				<div className="  flex flex-col items-center text-center ">
 					<ContentWrapper>
 						<ContentWrapper.Title>
@@ -50,6 +57,13 @@ export default function HeatingCoolingServices() {
 					})}
 				</div>
 			</div>
+			<Image
+				src={'/images/heating-cooling/services/hc-services-blob.svg'}
+				height={600}
+				width={500}
+				alt="Blob"
+				className="absolute right-0 bottom-0 z-[-1] translate-x-[40%] translate-y-[30%] transform"
+			/>
 		</section>
 	);
 }
