@@ -3,12 +3,12 @@ import { GlobalContext } from '@contexts/global/global.context';
 import { GlobalContextProps } from '@typing/common/interfaces/contexts.interface';
 import RichText from 'components/molecules/rich-text.molecule';
 import { HeatingCoolingContentProps } from 'pages/heating-and-cooling';
-import Button from 'components/atoms/button.atom';
 import ContentWrapper from 'components/organisms/content-wrapper.organism';
 import MaskedImageWithBackgroundVector from 'components/organisms/masked-image-with-blob.organism';
 import useWindowDimensions from '@lib/hooks/use-window-dimensions.hook';
 import WaveWrapper from 'components/molecules/wave-wrapper.molecule';
 import CtaWrapper from 'components/molecules/cta-wrapper.molecule';
+import Image from 'next/image';
 export default function MassSave() {
 	const { pageContent } =
 		useContext<GlobalContextProps<HeatingCoolingContentProps>>(GlobalContext);
@@ -77,6 +77,13 @@ export default function MassSave() {
 					</div>
 				</div>
 			</div>
+			<Image
+				src={'/images/heating-cooling/hc-blob.svg'}
+				height={180}
+				width={200}
+				alt="Right Blob Mobile"
+				className="absolute right-0 bottom-0 z-[-1] translate-x-[38%]  -translate-y-[87%] transform md:hidden"
+			/>
 			<WaveWrapper waveURL="/images/heating-cooling/mass-save/hc-mass-save-bottom-wave.svg"></WaveWrapper>
 		</section>
 	);
