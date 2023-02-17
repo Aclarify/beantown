@@ -8,6 +8,7 @@ import Button from 'components/atoms/button.atom';
 import ContentWrapper from 'components/organisms/content-wrapper.organism';
 import MaskedImageWithBackgroundVector from 'components/organisms/masked-image-with-blob.organism';
 import useWindowDimensions from '@lib/hooks/use-window-dimensions.hook';
+import WaveWrapper from 'components/molecules/wave-wrapper.molecule';
 export default function WhyUs() {
 	const { pageContent } =
 		useContext<GlobalContextProps<HomePageContentProps>>(GlobalContext);
@@ -16,22 +17,23 @@ export default function WhyUs() {
 	if (!pageContent) {
 		return null;
 	}
-	const homeData = pageContent.home[0];
+	const homeData = pageContent.page[0];
 	const { whyUsTitle, whyUsDescription, whyUsButton, whyUsCards, whyUsImage } =
 		homeData;
 
 	return (
 		<section
 			id="whyUs"
-			className="md:bg-fit-to-parent relative z-30 bg-[url('/images/home/why-us/why-us-bg-mobile.svg')]  bg-no-repeat py-[4rem] pb-[115vw] md:bg-[url('/images/home/why-us/why-us-bg-desktop.svg')] md:pt-[10vw] md:pb-[50%]"
+			className="md:bg-fit-to-parent relative z-30  bg-no-repeat py-[4rem] pb-[25em]  md:pt-[10vw] "
 		>
+			<WaveWrapper waveURL="/images/home/why-us/top-wave.svg" />
 			<div
 				id="section-wrapper"
 				className="bg-primary-white-shade-1 z-1  flex flex-col overflow-hidden"
 			>
 				<div
 					id="content-image-wrapper"
-					className="flex w-full flex-col-reverse items-center px-6 md:flex  md:flex-row lg:px-10"
+					className="flex w-full flex-col-reverse items-center px-6 lg:flex  lg:flex-row lg:px-10"
 				>
 					<div
 						id="content-wrapper"
@@ -70,7 +72,7 @@ export default function WhyUs() {
 
 				<div
 					id="cards-wrapper"
-					className=" mt-0 grid grid-cols-1 gap-2 md:mt-20 md:grid-cols-2 "
+					className=" mt-0 grid grid-cols-1 gap-2 md:mt-20 md:mb-20 md:grid-cols-2"
 				>
 					{whyUsCards?.map((ourValues, index) => {
 						return (
@@ -87,6 +89,7 @@ export default function WhyUs() {
 					})}
 				</div>
 			</div>
+			<WaveWrapper waveURL="/images/home/why-us/bottom-wave.svg" />
 		</section>
 	);
 }

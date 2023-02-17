@@ -1,34 +1,26 @@
 import Link from 'next/link';
-import React, { useContext, Fragment } from 'react';
+import React, { Fragment } from 'react';
 import { Popover, Transition } from '@headlessui/react';
-import {
-	Bars3Icon,
-	ChevronDownIcon,
-	XMarkIcon,
-} from '@heroicons/react/24/outline';
-import { GlobalContext } from '@contexts/global/global.context';
-import { GlobalContextProps } from '@typing/common/interfaces/contexts.interface';
-import { HomePageContentProps } from 'pages';
-import Image from 'next/image';
-import Button from 'components/atoms/button.atom';
+import { Bars3Icon, XMarkIcon } from '@heroicons/react/24/outline';
+import { Nav } from '@typing/gql/graphql';
 
-export default function Nav() {
-	const { pageContent } =
-		useContext<GlobalContextProps<HomePageContentProps>>(GlobalContext);
-	if (!pageContent) {
-		return null;
-	}
-	const homeData = pageContent.home[0];
-	const { logoDesktop, logoMobile } = homeData;
-	const navData = pageContent.header[0];
-	const { navLinks, navGroup, headerButton } = navData;
+import Image from 'next/image';
+import CtaWrapper from 'components/molecules/cta-wrapper.molecule';
+
+interface IProps {
+	logoDesktop: any;
+	logoMobile: any;
+	content: Nav;
+}
+export default function Header(props: IProps) {
+	const { navLinks, navGroup, headerButton } = props.content;
 	const childLinks = navGroup?.map((nav) => nav?.links).flat();
 
 	const allNavLinks = [
 		...(navLinks ? navLinks : []),
 		...(childLinks ? childLinks : []),
 	];
-
+	const { logoDesktop, logoMobile } = props;
 	const childNavLinks = allNavLinks.filter((element) => {
 		return element !== null;
 	});
@@ -77,9 +69,9 @@ export default function Nav() {
 
 							{navGroup?.map((linkGroup, index) => {
 								return (
-									<div key={index} className="group inline-block pl-8">
+									<div key={index} className="group inline-block pl-6">
 										<Link
-											href={'/'}
+											href={''}
 											className="min-w-32 flex  items-center rounded-sm  px-3 py-1 outline-none focus:outline-none"
 										>
 											<span className="para-4 lg:para-3 flex-1 pr-1 ">
@@ -115,9 +107,9 @@ export default function Nav() {
 							})}
 						</div>
 						<div className=" hidden lg:flex lg:justify-end ">
-							<Button fontColor="text-primary-shade-1" bgColor="bg-white">
-								{headerButton?.text}
-							</Button>
+							<CtaWrapper.CTA className="text-primary-shade-1 para-3 h-[48px] w-[139px] rounded-lg bg-white py-1 px-4  tracking-wide  md:py-2 md:px-8 lg:tracking-wider ">
+								<p>{headerButton?.text}</p>
+							</CtaWrapper.CTA>
 						</div>
 					</div>
 

@@ -33,7 +33,7 @@ export default function Testimonials() {
 	if (!pageContent) {
 		return null;
 	}
-	const homeData = pageContent.home[0];
+	const homeData = pageContent.page[0];
 	const { testimonialTitle, testimonialDescription, testimonialCards } =
 		homeData;
 

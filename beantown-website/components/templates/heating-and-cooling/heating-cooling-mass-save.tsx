@@ -1,32 +1,90 @@
-import React from 'react';
-
+import React, { useContext } from 'react';
+import { GlobalContext } from '@contexts/global/global.context';
+import { GlobalContextProps } from '@typing/common/interfaces/contexts.interface';
+import RichText from 'components/molecules/rich-text.molecule';
+import { HeatingCoolingContentProps } from 'pages/heating-and-cooling';
+import ContentWrapper from 'components/organisms/content-wrapper.organism';
+import MaskedImageWithBackgroundVector from 'components/organisms/masked-image-with-blob.organism';
+import useWindowDimensions from '@lib/hooks/use-window-dimensions.hook';
+import WaveWrapper from 'components/molecules/wave-wrapper.molecule';
+import CtaWrapper from 'components/molecules/cta-wrapper.molecule';
+import Image from 'next/image';
 export default function MassSave() {
-	return (
-		<section id="massSave" className="pt-32 flex flex-col ">
-			<div className="flex flex-col-reverse lg:flex lg:flex-row  items-center">
-				<div className="p-8 m-8 space-y-4 flex flex-col items-center w-full  lg:w-1/2">
-					<p className="text-4xl font-bold">
-						Mass Save: Proudly Doing Our Part to Help the South Shore Go Green
-					</p>
-					<p>
-						Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
-						eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim
-						ad minim venias. Lorem ipsum dolor sit amet, consectetur adipiscing
-						elit, sed do eiusmod tempor incididunt ut labore et dolore magna
-						aliqua. Ut enim ad minim veniam
-					</p>
+	const { pageContent } =
+		useContext<GlobalContextProps<HeatingCoolingContentProps>>(GlobalContext);
+	const { width } = useWindowDimensions();
 
-					<button className="border rounded-lg text-white text-sm  bg-red-700 p-4 ">
-						Know More
-					</button>
-				</div>
-				<div className="group">
-					<img
-						className="group-hover:scale-110 transition-transform duration-200 ease-in-out"
-						src=" images/cooling-and-heating-service-page/mass-save-blob.svg"
-					/>
+	if (!pageContent) {
+		return null;
+	}
+	const pageData = pageContent.page[0];
+	const { massSaveTitle, massSaveDescription, massSaveButton, massSaveImage } =
+		pageData;
+
+	return (
+		<section
+			id="massSave"
+			className=" relative z-10 -mb-[1em] md:-mb-[2em] lg:-mb-[4em] 2xl:-mb-[6em]"
+		>
+			<div
+				id="section-wrapper"
+				className="md:padding-for-section z-10 flex  flex-col overflow-hidden px-[20px] pb-[5em]"
+			>
+				<div
+					id="content-image-wrapper"
+					className="flex w-full flex-col-reverse items-center  lg:flex  lg:flex-row "
+				>
+					<div
+						id="content-wrapper"
+						className="z-10 flex basis-1/2 flex-col items-start text-justify lg:pt-20 "
+					>
+						<ContentWrapper>
+							<ContentWrapper.Title>
+								<h1 className="title-5 lg:title-2 text-primary-black ">
+									{massSaveTitle}
+								</h1>
+							</ContentWrapper.Title>
+							<ContentWrapper.Description>
+								<RichText value={massSaveDescription?.contentRaw} />
+							</ContentWrapper.Description>
+							<ContentWrapper.CTA className="mt-[16px] lg:mt-[32px]">
+								<CtaWrapper.CTA className="bg-service-red para-3 lg:para-2 h-[40px] w-[110px] rounded-lg py-1 px-4 tracking-wide text-white md:py-2  md:px-8  lg:h-[64px] lg:w-[210px] lg:tracking-wider ">
+									<p>{massSaveButton?.text}</p>
+								</CtaWrapper.CTA>
+							</ContentWrapper.CTA>
+						</ContentWrapper>
+					</div>
+					<div
+						id="image-wrapper"
+						className="mb-8 md:mt-12  md:basis-1/2 md:px-20 lg:px-10  "
+					>
+						<MaskedImageWithBackgroundVector
+							imageURL={massSaveImage?.asset?.url || ''}
+							imgAltText={massSaveImage?.asset?.altText || ''}
+							width={width > 768 ? 1000 : 500}
+							height={width > 768 ? 1000 : 500}
+							maskImg={
+								width > 768
+									? './images/heating-cooling/mass-save/hc-mass-save-blob.svg'
+									: './images/heating-cooling/mass-save/hc-mass-save-bg-blob.svg'
+							}
+							bgImg={
+								width > 768
+									? './images/heating-cooling/mass-save/hc-mass-save-bg-blob.svg'
+									: './images/heating-cooling/mass-save/hc-mass-save-blob.svg'
+							}
+						/>
+					</div>
 				</div>
 			</div>
+			<Image
+				src={'/images/heating-cooling/hc-blob.svg'}
+				height={180}
+				width={200}
+				alt="Right Blob Mobile"
+				className="absolute right-0 bottom-0 z-[-1] translate-x-[38%]  -translate-y-[87%] transform md:hidden"
+			/>
+			<WaveWrapper waveURL="/images/heating-cooling/mass-save/hc-mass-save-bottom-wave.svg"></WaveWrapper>
 		</section>
 	);
 }

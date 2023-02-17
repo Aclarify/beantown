@@ -14,7 +14,7 @@ export default function HomeHero() {
 	if (!pageContent) {
 		return null;
 	}
-	const homeData = pageContent.home[0];
+	const homeData = pageContent.page[0];
 	const { heroTitle, heroDescription, heroButton, heroImage } = homeData;
 	return (
 		<section id="home_page_hero" className="relative">
@@ -62,7 +62,7 @@ export default function HomeHero() {
 					</ContentWrapper.Description>
 					<ContentWrapper.CTA className="mt-[32px]">
 						<Button fontColor="text-primary-shade-1" bgColor="bg-white">
-							Book Now
+							{heroButton?.text}
 						</Button>
 					</ContentWrapper.CTA>
 				</ContentWrapper>

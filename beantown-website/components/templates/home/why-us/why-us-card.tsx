@@ -16,16 +16,14 @@ const WhyUsCard: React.FC<Props> = (props) => {
 					<Image
 						src={props.thumbnailSrc}
 						alt={props.thumbnailAltText}
-						width="100"
-						height="100"
+						width="150"
+						height="150"
+						className="flex-none py-4 pl-4 md:w-32 md:h-44 w-24 h-32 "
 					/>
 				</div>
 				<div className=" flex-1 pl-4">
-					<h1 className="subtitle-5 lg:subtitle-2 text-primary-black font-semibold ">
-						{props.title}
-					</h1>
 					<div className="lg:para-2 para-4  text-gray-shade-1 pt-2">
-						<p>{props.description} </p>
+						<p>{props.description}</p>
 					</div>
 				</div>
 			</div>

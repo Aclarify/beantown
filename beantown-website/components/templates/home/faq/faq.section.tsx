@@ -8,14 +8,14 @@ import Link from 'next/link';
 import Image from 'next/image';
 import topWave from 'public/images/home/faq/faq-top-wave.svg';
 
-export default function Faq() {
+export default function HomeFaq() {
 	const [indexToBeOpen, setIndexToBeOpen] = useState(0);
 	const { pageContent } =
 		useContext<GlobalContextProps<HomePageContentProps>>(GlobalContext);
 	if (!pageContent) {
 		return null;
 	}
-	const homeData = pageContent.home[0];
+	const homeData = pageContent.page[0];
 	const { faqTitle, faqDescription, faqButton, faqList } = homeData;
 	function handleFaqClick(index: number) {
 		if (index == indexToBeOpen) {

@@ -12,9 +12,11 @@ interface IProps extends React.HTMLAttributes<HTMLDivElement> {
 const MaskedImageWithBackgroundVector: React.FC<IProps> = (props) => {
 	return (
 		<div
-			className={'bg-cover'}
 			style={{
 				backgroundImage: `url(${props.bgImg})`,
+				backgroundSize: 'contain',
+				backgroundRepeat: 'no-repeat',
+				backgroundPosition: 'inherit',
 			}}
 		>
 			<Image
@@ -24,9 +26,11 @@ const MaskedImageWithBackgroundVector: React.FC<IProps> = (props) => {
 				height={props.height}
 				style={{
 					WebkitMaskImage: `url(${props.maskImg})`,
-					WebkitMaskSize: 'cover',
+					WebkitMaskSize: 'contain',
+					WebkitMaskRepeat: 'no-repeat',
 					maskImage: `url(${props.maskImg})`,
-					maskSize: 'cover',
+					maskSize: 'contain',
+					maskRepeat: 'no-repeat',
 				}}
 			/>
 		</div>
