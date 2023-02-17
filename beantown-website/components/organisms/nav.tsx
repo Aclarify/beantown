@@ -1,15 +1,10 @@
 import Link from 'next/link';
 import React, { Fragment } from 'react';
 import { Popover, Transition } from '@headlessui/react';
-import {
-	Bars3Icon,
-	ChevronDownIcon,
-	XMarkIcon,
-} from '@heroicons/react/24/outline';
+import { Bars3Icon, XMarkIcon } from '@heroicons/react/24/outline';
 import { Nav } from '@typing/gql/graphql';
 
 import Image from 'next/image';
-import Button from 'components/atoms/button.atom';
 import CtaWrapper from 'components/molecules/cta-wrapper.molecule';
 
 interface IProps {
@@ -76,7 +71,7 @@ export default function Header(props: IProps) {
 								return (
 									<div key={index} className="group inline-block pl-6">
 										<Link
-											href={'/'}
+											href={''}
 											className="min-w-32 flex  items-center rounded-sm  px-3 py-1 outline-none focus:outline-none"
 										>
 											<span className="para-4 lg:para-3 flex-1 pr-1 ">
