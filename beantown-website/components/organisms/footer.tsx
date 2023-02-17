@@ -29,7 +29,7 @@ export default function Footer(props: IProps) {
 			<div className="relative bottom-[10em] z-20 -mb-[10em] md:bottom-[4em] md:-mb-[4em]">
 				<div
 					id="footerContainer"
-					className="bg-primary-shade-1 lg:padding-for-section flex h-auto w-full   flex-col px-[20px] lg:grid lg:grid-cols-5"
+					className="bg-primary-shade-1 lg:padding-for-section flex h-auto w-full flex-col px-[20px]  pt-[2em] lg:grid lg:grid-cols-5 lg:pt-0"
 				>
 					<div
 						id="linkSection"
@@ -45,7 +45,7 @@ export default function Footer(props: IProps) {
 										{linkGroup?.links?.map((link, index) => {
 											return (
 												link && (
-													<div key={index} className="pt-2 pr-4  ">
+													<div key={index} className="pt-2 pr-6  ">
 														<Link
 															className="para-4 lg:para-3 text-gray-300 "
 															href={link?.href || '/'}
@@ -85,7 +85,7 @@ export default function Footer(props: IProps) {
 							})}
 						</div>
 					</div>
-					<div id="logoSection" className="basis-1/4">
+					<div id="logoSection" className="basis-1/4 pb-[16px]">
 						<div className="flex space-x-4 pt-8">
 							<div id="logoImage">
 								<Image
