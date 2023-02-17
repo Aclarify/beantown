@@ -32,7 +32,7 @@ const FAQ: React.FC<IProps> = (props) => {
 				backgroundPosition: 'center',
 			}}
 		>
-			<div className="lg:flex">
+			<div className="lg:padding-for-section px-[20px] lg:flex">
 				<div className="flex  flex-col justify-center text-center lg:text-left ">
 					<ContentWrapper>
 						<ContentWrapper.Title className="mb-[8px] lg:mb-[16px]">
