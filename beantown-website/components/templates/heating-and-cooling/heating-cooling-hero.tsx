@@ -36,7 +36,7 @@ export default function HeatingCoolingPageHero() {
 						<RichText value={heroDescription?.contentRaw} />
 					</ContentWrapper.Description>
 					<ContentWrapper.CTA className="mt-[32px]">
-						<CtaWrapper.CTA className="bg-primary-shade-1 para-3 lg:para-2 h-[64px] w-[182px] rounded-lg py-1 px-4  tracking-wide text-white md:py-2 md:px-8 lg:tracking-wider ">
+						<CtaWrapper.CTA className="bg-primary-shade-1 para-3 lg:para-2 h-[52px] w-[184px] rounded-lg py-1 px-4 tracking-wide text-white  md:py-2 md:px-8 lg:h-[64px] lg:w-[182px] lg:tracking-wider ">
 							<p>{heroButton?.text}</p>
 						</CtaWrapper.CTA>
 					</ContentWrapper.CTA>
