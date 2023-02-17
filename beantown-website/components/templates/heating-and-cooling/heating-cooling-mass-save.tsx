@@ -56,7 +56,7 @@ export default function MassSave() {
 					</div>
 					<div
 						id="image-wrapper"
-						className="mb-8 md:mt-12  md:basis-1/2 md:px-20"
+						className="mb-8 md:mt-12  md:basis-1/2 md:px-20 lg:px-10  "
 					>
 						<MaskedImageWithBackgroundVector
 							imageURL={massSaveImage?.asset?.url || ''}

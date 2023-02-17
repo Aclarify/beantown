@@ -100,7 +100,7 @@ export default function Brands() {
 				</div>
 				<div className=" bg-primary-white-shade-1 absolute top-1/2 left-1/2 z-20 w-full -translate-y-1/2 -translate-x-1/2 transform">
 					<div className="flex  justify-center md:pt-10">
-						<span className="title-6 lg:title-3 text-primary-black m-4 p-4">
+						<span className="title-5 lg:title-2 text-primary-black m-4 p-4">
 							{brandsTitle}
 						</span>
 					</div>

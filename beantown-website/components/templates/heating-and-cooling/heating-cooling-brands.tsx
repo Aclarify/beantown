@@ -58,26 +58,27 @@ export default function HeatingCoolingBrands() {
 			{
 				breakpoint: 1024,
 				settings: {
-					slidesToShow: 4,
+					slidesToShow: 3,
 					slidesToScroll: 1,
 					infinite: true,
 					dots: false,
 				},
 			},
 			{
-				breakpoint: 600,
+				breakpoint: 768,
 				settings: {
-					slidesToShow: 3,
+					slidesToShow: 2,
 					slidesToScroll: 1,
 					initialSlide: 1,
 					infinite: true,
 				},
 			},
 			{
-				breakpoint: 480,
+				breakpoint: 600,
 				settings: {
-					slidesToShow: 2,
+					slidesToShow: 1,
 					slidesToScroll: 1,
+					initialSlide: 1,
 					infinite: true,
 				},
 			},
@@ -95,9 +96,9 @@ export default function HeatingCoolingBrands() {
 				-mt-[1em] mb-[12em]  md:-mt-[2em] lg:-mt-[3em] 2xl:-mt-[4em]"
 			>
 				<WaveWrapper waveURL="/images/heating-cooling/brands/hc-brands-top-wave.svg"></WaveWrapper>
-				<div className="  absolute top-1/2 left-1/2 z-20 w-full -translate-y-1/2 -translate-x-1/2 transform">
+				<div className="  absolute top-1/2 left-1/2 z-20 w-full -translate-y-[43%] -translate-x-1/2 transform">
 					<div className="flex  justify-center pt-[10em]">
-						<span className="title-6 lg:title-3 text-primary-black m-4 p-4">
+						<span className="title-5 lg:title-2 text-primary-black m-4 p-4">
 							{brandsTitle}
 						</span>
 					</div>
