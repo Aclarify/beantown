@@ -8,6 +8,7 @@ import 'slick-carousel/slick/slick-theme.css';
 interface IProps extends React.HTMLAttributes<HTMLDivElement> {
 	brandsTitle: string;
 	logoArray: Maybe<Array<Maybe<ImageIcon>>>;
+	brandsBgColour: string;
 }
 
 const settings = {
@@ -80,7 +81,7 @@ const settings = {
 
 const Brands: React.FC<IProps> = (props) => {
 	return (
-		<div className="  w-full ">
+		<div className={`${props.brandsBgColour} w-full`}>
 			<div className="flex  justify-center ">
 				<span className="title-5 lg:title-2 text-primary-black m-4 p-4">
 					{props.brandsTitle}

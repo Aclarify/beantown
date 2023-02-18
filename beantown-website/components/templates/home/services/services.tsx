@@ -58,6 +58,8 @@ export default function Services() {
 					</ContentWrapper>
 				</div>
 				<div className="mt-14 flex flex-wrap justify-center space-y-4 rounded-lg lg:space-x-6 xl:space-x-10 ">
+					{/* <div className="container my-12 mx-auto px-4 md:px-12">
+					<div className="-mx-1 flex flex-wrap lg:-mx-4"> */}
 					{servicesGroup?.map((service, index) => {
 						return (
 							service?.thumbnailImage?.asset?.url && (
@@ -74,6 +76,7 @@ export default function Services() {
 							)
 						);
 					})}
+					{/* </div> */}
 				</div>
 			</div>
 			<Image

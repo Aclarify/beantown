@@ -6,6 +6,9 @@ import RichText from 'components/molecules/rich-text.molecule';
 import Button from 'components/atoms/button.atom';
 import Link from 'next/link';
 import Image from 'next/image';
+import CTAWithImage from 'components/organisms/cta-with-image.organism';
+import ContentWrapper from 'components/organisms/content-wrapper.organism';
+import CtaWrapper from 'components/molecules/cta-wrapper.molecule';
 
 export default function FooterCta() {
 	const { pageContent } =
@@ -19,106 +22,37 @@ export default function FooterCta() {
 	return (
 		<>
 			<section
-				id="footerCtaDesktop"
-				className="z-15 relative -top-[6em] hidden lg:block"
+				id="home-cta"
+				className="z-15 3xl:-top-[10em] 3xl:-mb-[4em] relative -top-[1em] mb-[6em] sm:-top-[2em] sm:mb-[5em] md:-top-[3em]
+				md:mb-[5em] lg:-top-[3em] lg:mb-[4em] xl:-top-[5em] 2xl:-top-[6em] 2xl:mb-[0em]"
 			>
-				<div className="flex  flex-row ">
-					<div
-						id="content"
-						className=" from-secondary-shade-1 to-secondary-shade-2  relative basis-1/2  bg-gradient-to-r "
-					>
-						<Image
-							src="/images/home/footer-cta/cta-bg-spiral.svg"
-							className="animate-pulse object-fill object-center "
-							alt="Image mask"
-							height={600}
-							width={600}
-						/>
-						<div className="absolute inset-x-0 inset-y-4 flex flex-col justify-center px-10 lg:text-left   ">
-							<p className="title-5 lg:title-2 text-primary-black text-left">
+				<CTAWithImage
+					heroImageURL={ctaImage?.asset?.url || ''}
+					heroImageAltText={'Hero image'}
+					textContentBGImage={'/images/home/footer-cta/home-cta-spiral.svg'}
+					textContentBGImageForSmallScreen={
+						'/images/home/footer-cta/home-cta-spiral-mobile.svg'
+					}
+					heroImagePosition="right"
+					gradientFromColor="from-secondary-shade-2"
+					gradientToColor="bg-secondary-shade-2"
+				>
+					<ContentWrapper className="lg:padding-for-section px-10 pt-[2em] pb-[4em] text-center md:px-[10em] md:py-[12em] lg:py-[6em] lg:text-left">
+						<ContentWrapper.Title className="mb-[8px]   lg:mb-[16px]">
+							<h1 className="title-5 lg:title-2 text-primary-shade-1">
 								{ctaTitle}
-							</p>
-							<div className="para-2 text-primary-shade-1 w-3/4 justify-start ">
-								<RichText value={ctaDescription?.contentRaw} />
-							</div>
-							<div className="flex justify-start ">
-								<Link href={'/'}>
-									<Button fontColor="text-white" bgColor=" bg-primary-shade-1">
-										{finalCtaButton?.text}
-									</Button>
-								</Link>
-							</div>
-						</div>
-					</div>
-					<div
-						className={`h-[600px] basis-1/2`}
-						style={{
-							backgroundImage: `linear-gradient(
-							to right,
-							#CADEED,
-							transparent 20%
-						), url('${imagePath}')`,
-							backgroundSize: 'cover',
-							backgroundRepeat: 'no-repeat',
-						}}
-					></div>
-				</div>
-			</section>
-			<section
-				id="footerCtaMobile"
-				className="relative -top-[7em]   z-[2] block lg:hidden"
-			>
-				<div className="relative -z-[10] flex flex-col">
-					<div
-						className={`block h-[50vh] md:h-[56vh]`}
-						style={{
-							backgroundImage: `linear-gradient(
-							transparent 20%,
-							#F4F8FB
-						), url('${imagePath}')`,
-							backgroundSize: 'cover',
-							backgroundRepeat: 'no-repeat',
-						}}
-					></div>
-					<div
-						id="content"
-						className="relative  block h-[50vh] md:h-[55vh] "
-						style={{
-							backgroundImage: `linear-gradient(
-							#F4F8FB,
-							#7AADD3)`,
-						}}
-					>
-						<Image
-							src="/images/home/footer-cta/cta-bg-spiral.svg"
-							alt="Book us image backdrop"
-							width={1052}
-							height={690}
-						/>
-						<div className="absolute inset-y-20 inset-x-0 space-y-8  px-6 ">
-							<div className="flex h-full flex-col justify-center space-y-2 align-middle ">
-								<div>
-									<p className="title-5 md:title-3  text-primary-black text-center ">
-										{ctaTitle}
-									</p>
-								</div>
-								<div className="para-4 md:para-2  text-primary-shade-1 justify-center text-center ">
-									<RichText value={ctaDescription?.contentRaw} />
-								</div>
-								<div className="flex justify-center   ">
-									<Link href={'/'}>
-										<Button
-											fontColor="text-white"
-											bgColor=" bg-primary-shade-1"
-										>
-											{finalCtaButton?.text}
-										</Button>
-									</Link>
-								</div>
-							</div>
-						</div>
-					</div>
-				</div>
+							</h1>
+						</ContentWrapper.Title>
+						<ContentWrapper.Description>
+							<RichText value={ctaDescription?.contentRaw} />
+						</ContentWrapper.Description>
+						<ContentWrapper.CTA className="mt-[32px]">
+							<CtaWrapper.CTA className="para-3 lg:para-2 bg-primary-shade-1 h-[52px] w-[184px] rounded-lg py-1 px-4 tracking-wide text-white  md:py-2  md:px-8  lg:h-[64px] lg:w-[198px] lg:tracking-wider ">
+								<p>{finalCtaButton?.text}</p>
+							</CtaWrapper.CTA>
+						</ContentWrapper.CTA>
+					</ContentWrapper>
+				</CTAWithImage>
 			</section>
 		</>
 	);

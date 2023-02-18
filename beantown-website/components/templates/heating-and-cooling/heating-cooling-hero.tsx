@@ -28,7 +28,7 @@ export default function HeatingCoolingPageHero() {
 				gradientFromColor="from-service-red"
 				gradientToColor="bg-service-red"
 			>
-				<ContentWrapper className="lg:padding-for-section px-10 py-20 text-center lg:text-left">
+				<ContentWrapper className="lg:padding-for-section px-10 pt-[2em] pb-[4em] text-center md:px-[10em] md:py-[12em] lg:py-[6em] lg:text-left">
 					<ContentWrapper.Title className="mb-[8px] lg:mb-[16px]">
 						<h1 className="title-4 lg:title-1">{heroTitle}</h1>
 					</ContentWrapper.Title>

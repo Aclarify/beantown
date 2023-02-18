@@ -4,6 +4,7 @@ import { GlobalContext } from '@contexts/global/global.context';
 import { GlobalContextProps } from '@typing/common/interfaces/contexts.interface';
 import { HomePageContentProps } from 'pages';
 import Brands from 'components/organisms/brands.organism';
+import WaveWrapper from 'components/molecules/wave-wrapper.molecule';
 
 export default function HomeBrands() {
 	const { pageContent } =
@@ -20,17 +21,18 @@ export default function HomeBrands() {
 	}
 	return (
 		<>
-			<section
-				id="brand-desktop"
-				//		className=" 3xl:-mb-[6em] 4xl:-mb-[8em] relative top-[-5em] z-10 lg:-mb-[3em] xl:-mb-[6em]"
-				className="  relative  z-10 "
-			>
-				{clonedLogoArray && (
-					<Brands
-						brandsTitle={brandsTitle || ''}
-						logoArray={clonedLogoArray || []}
-					></Brands>
-				)}
+			<section id="brand-desktop" className="  relative  z-10 -mt-[6em] ">
+				<WaveWrapper waveURL="/images/home/brands/home-brands-top-wave.svg"></WaveWrapper>
+				<div className="lg:-mb-[1em]">
+					{clonedLogoArray && (
+						<Brands
+							brandsTitle={brandsTitle || ''}
+							logoArray={clonedLogoArray || []}
+							brandsBgColour={'bg-primary-white-shade-1' || ''}
+						></Brands>
+					)}
+				</div>
+				<WaveWrapper waveURL="/images/home/brands/home-brands-bottom-wave.svg"></WaveWrapper>
 			</section>
 		</>
 	);
