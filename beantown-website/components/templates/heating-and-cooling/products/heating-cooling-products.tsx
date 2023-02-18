@@ -62,23 +62,23 @@ export default function HeatingCoolingProductsCards() {
 	return (
 		<section
 			id="heatingCoolingProductsCards"
-			className="lg:padding-for-section mb-40 px-[20px] "
+			className="lg:padding-for-section mb-40 mt-20 px-[20px] pt-20 "
 		>
-			<div className=" mx-8  flex items-center justify-between">
+			<div className=" flex items-center justify-between">
 				<div>
-					<p className="title-6 lg:title-3">{productsTitle}</p>
+					<p className="title-6 lg:title-2">{productsTitle}</p>
 				</div>
 
-				<div className="hidden  justify-center  gap-4 pt-4 sm:flex  ">
+				<div className="hidden  justify-center  gap-4 pt-4 lg:flex  ">
 					<button
 						onClick={next}
-						className="w-20 rounded-full bg-red-100 py-4 px-6 text-lg"
+						className="lg:text-service-red text-primary-shade-1 bg-secondary-shade-3 w-28 rounded-full py-4 px-6 text-lg"
 					>
 						<FontAwesomeIcon icon={faArrowLeft} />
 					</button>
 					<button
 						onClick={previous}
-						className=" w-20 rounded-full bg-red-900 py-4 px-6 text-lg text-white"
+						className=" bg-service-red w-28 rounded-full py-4 px-6 text-lg text-white"
 					>
 						<FontAwesomeIcon icon={faArrowRight} />
 					</button>
@@ -86,7 +86,7 @@ export default function HeatingCoolingProductsCards() {
 			</div>
 
 			<div>
-				<Slider ref={slider} {...settings} className="mx-8">
+				<Slider ref={slider} {...settings} className="">
 					{productsGroup?.map((productInfo, index) => {
 						return (
 							<ProductCard
@@ -104,13 +104,13 @@ export default function HeatingCoolingProductsCards() {
 			<div className="flex justify-center gap-4 pt-4 lg:hidden ">
 				<button
 					onClick={next}
-					className="w-16 rounded-full bg-red-100 py-2 px-4"
+					className="lg:text-service-red text-primary-shade-1 bg-secondary-shade-3 w-20  rounded-full py-2 px-4"
 				>
 					<FontAwesomeIcon icon={faArrowLeft} />
 				</button>
 				<button
 					onClick={previous}
-					className=" w-16 rounded-full bg-red-900 py-2 px-4 text-white"
+					className=" bg-service-red w-20 rounded-full py-2 px-4 text-white"
 				>
 					<FontAwesomeIcon icon={faArrowRight} />
 				</button>

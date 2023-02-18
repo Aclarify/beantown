@@ -33,7 +33,7 @@ export default function WhyUs() {
 			>
 				<div
 					id="content-image-wrapper"
-					className="flex w-full flex-col-reverse items-center px-6 md:flex  md:flex-row lg:px-10"
+					className="flex w-full flex-col-reverse items-center px-6 lg:flex  lg:flex-row lg:px-10"
 				>
 					<div
 						id="content-wrapper"

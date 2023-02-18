@@ -1,15 +1,11 @@
 import Link from 'next/link';
 import React, { Fragment } from 'react';
 import { Popover, Transition } from '@headlessui/react';
-import {
-	Bars3Icon,
-	ChevronDownIcon,
-	XMarkIcon,
-} from '@heroicons/react/24/outline';
+import { Bars3Icon, XMarkIcon } from '@heroicons/react/24/outline';
 import { Nav } from '@typing/gql/graphql';
 
 import Image from 'next/image';
-import Button from 'components/atoms/button.atom';
+import CtaWrapper from 'components/molecules/cta-wrapper.molecule';
 
 interface IProps {
 	logoDesktop: any;
@@ -75,7 +71,7 @@ export default function Header(props: IProps) {
 								return (
 									<div key={index} className="group inline-block pl-6">
 										<Link
-											href={'/'}
+											href={''}
 											className="min-w-32 flex  items-center rounded-sm  px-3 py-1 outline-none focus:outline-none"
 										>
 											<span className="para-4 lg:para-3 flex-1 pr-1 ">
@@ -111,9 +107,9 @@ export default function Header(props: IProps) {
 							})}
 						</div>
 						<div className=" hidden lg:flex lg:justify-end ">
-							<Button fontColor="text-primary-shade-1" bgColor="bg-white">
-								{headerButton?.text}
-							</Button>
+							<CtaWrapper.CTA className="text-primary-shade-1 para-3 h-[48px] w-[139px] rounded-lg bg-white py-1 px-4  tracking-wide  md:py-2 md:px-8 lg:tracking-wider ">
+								<p>{headerButton?.text}</p>
+							</CtaWrapper.CTA>
 						</div>
 					</div>
 

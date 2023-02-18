@@ -3,6 +3,7 @@ import Button from 'components/atoms/button.atom';
 import { Maybe, TitleDescription } from '@typing/gql/graphql';
 import FAQDisclosure from './faq-disclosure.organism';
 import ContentWrapper from './content-wrapper.organism';
+import CtaWrapper from 'components/molecules/cta-wrapper.molecule';
 
 interface IProps extends React.HTMLAttributes<HTMLDivElement> {
 	backgroundImage: string;
@@ -31,7 +32,7 @@ const FAQ: React.FC<IProps> = (props) => {
 				backgroundPosition: 'center',
 			}}
 		>
-			<div className="lg:flex">
+			<div className="lg:padding-for-section px-[20px] lg:flex">
 				<div className="flex  flex-col justify-center text-center lg:text-left ">
 					<ContentWrapper>
 						<ContentWrapper.Title className="mb-[8px] lg:mb-[16px]">
@@ -45,12 +46,12 @@ const FAQ: React.FC<IProps> = (props) => {
 							</p>
 						</ContentWrapper.Description>
 						<ContentWrapper.CTA className="mt-[32px]">
-							<Button
-								fontColor={props.faqsButtonTextColour}
-								bgColor={props.faqsButtonBgColour}
+							<CtaWrapper.CTA
+								className={`${props.faqsButtonTextColour} ${props.faqsButtonBgColour} 
+					para-3 lg:para-2 h-[52px] w-[184px] rounded-lg py-1 px-4 tracking-wide md:py-2  md:px-8  lg:h-[64px] lg:w-[210px] lg:tracking-wider`}
 							>
-								{props.faqButtonText}
-							</Button>
+								<p>{props.faqButtonText}</p>
+							</CtaWrapper.CTA>
 						</ContentWrapper.CTA>
 					</ContentWrapper>
 				</div>

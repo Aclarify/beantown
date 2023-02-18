@@ -3,11 +3,12 @@ import { GlobalContext } from '@contexts/global/global.context';
 import { GlobalContextProps } from '@typing/common/interfaces/contexts.interface';
 import RichText from 'components/molecules/rich-text.molecule';
 import { HeatingCoolingContentProps } from 'pages/heating-and-cooling';
-import Button from 'components/atoms/button.atom';
 import ContentWrapper from 'components/organisms/content-wrapper.organism';
 import MaskedImageWithBackgroundVector from 'components/organisms/masked-image-with-blob.organism';
 import useWindowDimensions from '@lib/hooks/use-window-dimensions.hook';
 import WaveWrapper from 'components/molecules/wave-wrapper.molecule';
+import CtaWrapper from 'components/molecules/cta-wrapper.molecule';
+import Image from 'next/image';
 export default function MassSave() {
 	const { pageContent } =
 		useContext<GlobalContextProps<HeatingCoolingContentProps>>(GlobalContext);
@@ -31,7 +32,7 @@ export default function MassSave() {
 			>
 				<div
 					id="content-image-wrapper"
-					className="flex w-full flex-col-reverse items-center  md:flex  md:flex-row "
+					className="flex w-full flex-col-reverse items-center  lg:flex  lg:flex-row "
 				>
 					<div
 						id="content-wrapper"
@@ -47,15 +48,15 @@ export default function MassSave() {
 								<RichText value={massSaveDescription?.contentRaw} />
 							</ContentWrapper.Description>
 							<ContentWrapper.CTA className="mt-[16px] lg:mt-[32px]">
-								<Button fontColor="text-white" bgColor=" bg-[#BC3B39]">
-									{massSaveButton?.text}
-								</Button>
+								<CtaWrapper.CTA className="bg-service-red para-3 lg:para-2 h-[40px] w-[110px] rounded-lg py-1 px-4 tracking-wide text-white md:py-2  md:px-8  lg:h-[64px] lg:w-[210px] lg:tracking-wider ">
+									<p>{massSaveButton?.text}</p>
+								</CtaWrapper.CTA>
 							</ContentWrapper.CTA>
 						</ContentWrapper>
 					</div>
 					<div
 						id="image-wrapper"
-						className="mb-8 md:mt-12  md:basis-1/2 md:px-20"
+						className="mb-8 md:mt-12  md:basis-1/2 md:px-20 lg:px-10  "
 					>
 						<MaskedImageWithBackgroundVector
 							imageURL={massSaveImage?.asset?.url || ''}
@@ -76,6 +77,13 @@ export default function MassSave() {
 					</div>
 				</div>
 			</div>
+			<Image
+				src={'/images/heating-cooling/hc-blob.svg'}
+				height={180}
+				width={200}
+				alt="Right Blob Mobile"
+				className="absolute right-0 bottom-0 z-[-1] translate-x-[38%]  -translate-y-[87%] transform md:hidden"
+			/>
 			<WaveWrapper waveURL="/images/heating-cooling/mass-save/hc-mass-save-bottom-wave.svg"></WaveWrapper>
 		</section>
 	);
