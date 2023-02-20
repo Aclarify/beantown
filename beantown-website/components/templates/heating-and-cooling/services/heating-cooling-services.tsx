@@ -16,7 +16,7 @@ export default function HeatingCoolingServices() {
 		return null;
 	}
 	const pageData = pageContent.page[0];
-	const { width } = useWindowDimensions();
+	// const { width } = useWindowDimensions();
 	const { servicesTitle, servicesDescription, servicesGroup } = pageData;
 	return (
 		<section
