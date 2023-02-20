@@ -23,9 +23,9 @@ export default function HomeBlogs() {
 			<Image
 				src="/images/home/blue-blob-shape-1.svg"
 				alt="Left-blob"
-				width={750}
-				height={400}
-				className=" z-1 absolute left-0  hidden -translate-x-[59%] -translate-y-[15%] transform lg:block"
+				width={590}
+				height={650}
+				className=" z-1 absolute left-0  hidden -translate-x-[60%] -translate-y-[1%] transform lg:block"
 			></Image>
 
 			<Image
@@ -33,10 +33,10 @@ export default function HomeBlogs() {
 				alt="Left-blob-mobile"
 				width={450}
 				height={300}
-				className=" z-1 absolute left-0 -translate-x-[75%] -translate-y-[33%] transform lg:hidden"
+				className=" z-1 -lg:translate-y-[33%] absolute left-0 -translate-x-[75%] translate-y-[12%] transform lg:hidden"
 			></Image>
 
-			<div className="bg-primary-white-shade-1 lg:padding-for-section relative  px-[20px] pb-[2em]">
+			<div className="bg-primary-white-shade-1 lg:padding-for-section relative  pl-5 pb-[2em] pt-32">
 				<Blogs
 					blogsTitle={blogTitle || ''}
 					blogsDescription={blogDescription || ''}
