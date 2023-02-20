@@ -1,6 +1,4 @@
 import Head from 'next/head';
-
-import Brands from '../components/templates/home/brands';
 import HomeFaq from '../components/templates/home/faq/faq.section';
 import FooterCta from '../components/templates/home/footer-cta-home';
 import React from 'react';
@@ -16,6 +14,7 @@ import WithGlobalContent, {
 } from '../components/containers/global-content/global-content.container';
 import { PageNames } from '@configs/client/pages/pages.config';
 import HomeBlogs from '../components/templates/home/blogs/blogs';
+import HomeBrands from '../components/templates/home/brands';
 
 export interface HomePageContentProps {
 	page: Home[];
@@ -55,36 +54,10 @@ const HomePage: React.FC = () => {
 			>
 				<Testimonials />
 			</div>
-			<div
-				id="desktop-view"
-				className="hidden lg:block "
-				style={{
-					WebkitMaskImage: "url('/images/home/service-area-wave.svg')",
-					WebkitMaskSize: 'cover',
-					maskImage: "url('/images/home/service-area-wave.svg')",
-					maskSize: 'cover',
-				}}
-			>
-				<ServiceAreas />
-				<HomeBlogs />
-			</div>
-			<div
-				id="mobile-view"
-				className="block lg:hidden"
-				style={{
-					WebkitMaskImage: "url('/images/home/service-area-wave-mobile.svg')",
-					WebkitMaskSize: 'cover',
-					maskImage: "url('/images/home/service-area-wave-mobile.svg')",
-					maskSize: 'cover',
-				}}
-			>
-				<ServiceAreas />
-				<HomeBlogs />
-			</div>
+			<ServiceAreas />
+			<HomeBlogs />
 			<HomeFaq />
-
-			<Brands />
-
+			<HomeBrands />
 			<FooterCta />
 		</section>
 	);
