@@ -44,9 +44,9 @@ export default function HeatingCoolingProductsCards() {
 				},
 			},
 			{
-				breakpoint: 600,
+				breakpoint: 768,
 				settings: {
-					slidesToShow: 1,
+					slidesToShow: 2,
 					slidesToScroll: 1,
 				},
 			},
@@ -72,13 +72,13 @@ export default function HeatingCoolingProductsCards() {
 				<div className="hidden  justify-center  gap-4 pt-4 lg:flex  ">
 					<button
 						onClick={next}
-						className="lg:text-service-red text-primary-shade-1 bg-secondary-shade-3 h-16 w-32 rounded-full py-4 px-6 text-lg"
+						className="lg:text-service-red text-primary-shade-1 bg-secondary-shade-3 h-16 w-32 rounded-full py-4 px-6 text-xl"
 					>
 						<FontAwesomeIcon icon={faArrowLeft} />
 					</button>
 					<button
 						onClick={previous}
-						className=" bg-service-red h-16  w-32 rounded-full py-4 px-6 text-lg text-white"
+						className=" bg-service-red h-16  w-32 rounded-full py-4 px-6 text-xl text-white"
 					>
 						<FontAwesomeIcon icon={faArrowRight} />
 					</button>

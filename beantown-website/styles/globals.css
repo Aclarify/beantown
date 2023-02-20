@@ -109,12 +109,10 @@
 .slick-slide > div {
 	margin: 0 10px;
 }
-/* .slick-list {
-	padding: 0 10% 0 0 !important;
-} */
-/* .slick-list .slick-track {
-	padding-left: '12.5%';
-} */
+
+.slick-list {
+	padding: 0 20% 0 0 !important;
+}
 
 .slick-slide:not(.slick-active) {
 	opacity: 0.5;

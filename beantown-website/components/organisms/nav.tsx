@@ -41,7 +41,7 @@ export default function Header(props: IProps) {
 						<div className="flex align-middle lg:hidden">
 							<Image
 								alt={logoMobile?.asset?.altText || ''}
-								width={100}
+								width={150}
 								height={100}
 								src={logoMobile?.asset?.url || ''}
 							/>
@@ -51,7 +51,7 @@ export default function Header(props: IProps) {
 								className="inline-flex rounded-md p-2 "
 								aria-label="menu for navigation"
 							>
-								<Bars3Icon className="h-6 w-6" aria-hidden="true" />
+								<Bars3Icon className="h-8 w-8 " aria-hidden="true" />
 							</Popover.Button>
 						</div>
 						<div className="para-4 lg:para-3 hidden items-center  lg:flex lg:flex-grow lg:justify-center  ">

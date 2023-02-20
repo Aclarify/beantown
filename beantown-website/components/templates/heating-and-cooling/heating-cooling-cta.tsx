@@ -19,9 +19,9 @@ export default function HeatingCoolingPageCTA() {
 			<CTAWithImage
 				heroImageURL={ctaImage?.asset?.url || ''}
 				heroImageAltText={'Hero image'}
-				textContentBGImage={'/images/heating-cooling/hero/hc-hero-vector.svg'}
+				textContentBGImage={'/images/heating-cooling/cta/hc-cta-bg-vector.svg'}
 				textContentBGImageForSmallScreen={
-					'/images/heating-cooling/hero/hc-hero-vector.svg'
+					'/images/heating-cooling/cta/hc-cta-bg-vector-mobile.svg'
 				}
 				heroImagePosition="left"
 				gradientFromColor="from-service-red"
