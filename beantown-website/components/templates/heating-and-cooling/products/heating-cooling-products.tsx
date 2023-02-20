@@ -40,14 +40,14 @@ export default function HeatingCoolingProductsCards() {
 				breakpoint: 1024,
 				settings: {
 					slidesToShow: 3,
-					slidesToScroll: 3,
+					slidesToScroll: 1,
 				},
 			},
 			{
-				breakpoint: 600,
+				breakpoint: 768,
 				settings: {
 					slidesToShow: 2,
-					slidesToScroll: 2,
+					slidesToScroll: 1,
 				},
 			},
 			{
@@ -72,13 +72,13 @@ export default function HeatingCoolingProductsCards() {
 				<div className="hidden  justify-center  gap-4 pt-4 lg:flex  ">
 					<button
 						onClick={next}
-						className="lg:text-service-red text-primary-shade-1 bg-secondary-shade-3 w-28 rounded-full py-4 px-6 text-lg"
+						className="lg:text-service-red text-primary-shade-1 bg-secondary-shade-3 h-16 w-32 rounded-full py-4 px-6 text-xl"
 					>
 						<FontAwesomeIcon icon={faArrowLeft} />
 					</button>
 					<button
 						onClick={previous}
-						className=" bg-service-red w-28 rounded-full py-4 px-6 text-lg text-white"
+						className=" bg-service-red h-16  w-32 rounded-full py-4 px-6 text-xl text-white"
 					>
 						<FontAwesomeIcon icon={faArrowRight} />
 					</button>
@@ -104,13 +104,13 @@ export default function HeatingCoolingProductsCards() {
 			<div className="flex justify-center gap-4 pt-4 lg:hidden ">
 				<button
 					onClick={next}
-					className="lg:text-service-red text-primary-shade-1 bg-secondary-shade-3 w-20  rounded-full py-2 px-4"
+					className="lg:text-service-red text-primary-shade-1 bg-secondary-shade-3 h-12 w-20  rounded-full py-2 px-4"
 				>
 					<FontAwesomeIcon icon={faArrowLeft} />
 				</button>
 				<button
 					onClick={previous}
-					className=" bg-service-red w-20 rounded-full py-2 px-4 text-white"
+					className=" bg-service-red h-12 w-20 rounded-full py-2 px-4 text-white"
 				>
 					<FontAwesomeIcon icon={faArrowRight} />
 				</button>

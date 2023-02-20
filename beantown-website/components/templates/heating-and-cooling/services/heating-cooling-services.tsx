@@ -7,6 +7,7 @@ import { GlobalContext } from '@contexts/global/global.context';
 import { GlobalContextProps } from '@typing/common/interfaces/contexts.interface';
 import { HeatingCoolingContentProps } from 'pages/heating-and-cooling';
 import WaveWrapper from 'components/molecules/wave-wrapper.molecule';
+import useWindowDimensions from '@lib/hooks/use-window-dimensions.hook';
 
 export default function HeatingCoolingServices() {
 	const { pageContent } =
@@ -15,14 +16,22 @@ export default function HeatingCoolingServices() {
 		return null;
 	}
 	const pageData = pageContent.page[0];
-
+	// const { width } = useWindowDimensions();
 	const { servicesTitle, servicesDescription, servicesGroup } = pageData;
 	return (
 		<section
 			id="heatingServices"
 			className="z-5 relative -mt-[1em] md:-mt-[2em] lg:-mt-[5em]  "
 		>
-			<WaveWrapper waveURL="/images/heating-cooling/services/hc-services-top-wave.svg"></WaveWrapper>
+			<WaveWrapper
+				waveURL="/images/heating-cooling/services/hc-services-top-wave.svg"
+				// waveURL={
+				// 	width > 768
+				// 		? '/images/heating-cooling/services/hc-services-top-wave.svg'
+				// 		: '/images/heating-cooling/services/hc-services-top-wave-mobile.svg'
+				// }
+			></WaveWrapper>
+
 			<Image
 				src={'/images/heating-cooling/hc-blob.svg'}
 				height={600}
@@ -38,7 +47,7 @@ export default function HeatingCoolingServices() {
 				className=" absolute left-0 translate-y-[61%] -translate-x-[38%] transform md:hidden"
 			/>
 
-			<div className="lg:padding-for-section relative px-[20px]">
+			<div className="lg:padding-for-section relative px-5 pt-14">
 				<div className="  flex flex-col items-center text-center ">
 					<ContentWrapper>
 						<ContentWrapper.Title>

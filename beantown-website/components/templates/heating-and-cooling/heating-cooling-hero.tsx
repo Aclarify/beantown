@@ -22,7 +22,7 @@ export default function HeatingCoolingPageHero() {
 				heroImageAltText={'Hero image'}
 				textContentBGImage={'/images/heating-cooling/hero/hc-hero-vector.svg'}
 				textContentBGImageForSmallScreen={
-					'/images/heating-cooling/hero/hc-hero-vector.svg'
+					'/images/heating-cooling/hero/hc-hero-bg-wave-mobile.svg'
 				}
 				heroImagePosition="right"
 				gradientFromColor="from-service-red"
@@ -30,9 +30,9 @@ export default function HeatingCoolingPageHero() {
 			>
 				<ContentWrapper className="lg:padding-for-section px-10 pt-[2em] pb-[4em] text-center md:px-[10em] md:py-[12em] lg:py-[6em] lg:text-left">
 					<ContentWrapper.Title className="mb-[8px] lg:mb-[16px]">
-						<h1 className="title-4 lg:title-1">{heroTitle}</h1>
+						<h1 className="title-4 lg:title-1 text-white">{heroTitle}</h1>
 					</ContentWrapper.Title>
-					<ContentWrapper.Description>
+					<ContentWrapper.Description className="text-white">
 						<RichText value={heroDescription?.contentRaw} />
 					</ContentWrapper.Description>
 					<ContentWrapper.CTA className="mt-[32px]">

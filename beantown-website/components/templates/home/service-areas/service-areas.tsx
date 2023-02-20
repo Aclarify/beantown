@@ -3,6 +3,7 @@ import { GlobalContext } from '@contexts/global/global.context';
 import { GlobalContextProps } from '@typing/common/interfaces/contexts.interface';
 import { HomePageContentProps } from 'pages';
 import Image from 'next/image';
+import WaveWrapper from 'components/molecules/wave-wrapper.molecule';
 
 const LocationCard = ({ text }: { text: string }) => {
 	return (
@@ -39,9 +40,10 @@ export default function ServiceAreas() {
 		serviceAreaImage,
 	} = homeData;
 	return (
-		<section id="serviceAreas" className="bg-primary-white-shade-1 mt-20">
-			<div className="mt-20 p-6 lg:px-10">
-				<div className="mt-20 pb-6 lg:mt-40 lg:flex 2xl:pt-16">
+		<section id="serviceAreas" className=" mt-36 ">
+			<WaveWrapper waveURL="/images/home/service-area/home-service-area-top-wave.svg"></WaveWrapper>
+			<div className=" z-1 bg-primary-white-shade-1 lg:padding-for-section p-5">
+				<div className=" pb-6  lg:flex 2xl:pt-16">
 					<div className="lg:w-1/2 lg:border-r-2">
 						<h1 className="title-5 lg:title-2  text-primary-black pl-2 lg:pr-20 lg:pl-6">
 							{serviceAreaTitle}
@@ -103,6 +105,20 @@ export default function ServiceAreas() {
 					</div>
 				</div>
 			</div>
+			<Image
+				src={'/images/home/blue-blob-shape-2.svg'}
+				height={590}
+				width={650}
+				alt="Right Blob  "
+				className="absolute bottom-0 right-0 z-20 hidden translate-x-[78%] translate-y-[30%]  transform  lg:block "
+			/>
+			<Image
+				src={'/images/home/blue-blob-shape-2-mobile.svg'}
+				height={250}
+				width={250}
+				alt="Right Blob mobile"
+				className="absolute  bottom-0 right-0 z-20 translate-x-[75%] translate-y-[50%] transform lg:hidden"
+			/>
 		</section>
 	);
 }
