@@ -6,7 +6,7 @@ import Image from 'next/image';
 
 const LocationCard = ({ text }: { text: string }) => {
 	return (
-		<div className="location-card flex  h-[32px] w-[154px] items-center py-2 pl-[20px] lg:min-h-[54px] lg:min-w-[315px]">
+		<div className="location-card flex  h-[32px] w-[154px] items-center py-2 pl-4 lg:min-h-[54px] lg:min-w-[315px]">
 			<div className="icon-image-wrapper h-[12px] w-[12px] lg:h-[24px] lg:w-[24px]">
 				<Image
 					src={'/images/home/location-icon.svg'}
