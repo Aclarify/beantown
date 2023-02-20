@@ -20,7 +20,10 @@ export default function HomeHero() {
 		homeData;
 	return (
 		<section id="home_page_hero" className="relative">
-			<div id="image-wrapper-desktop" className="z-0 hidden sm:block">
+			<div
+				id="image-wrapper-desktop"
+				className="after:z-1 after:from-home-hero-gradient-start after:to-home-hero-gradient-end relative z-0 hidden after:absolute after:top-0 after:left-0 after:h-full after:w-full after:bg-gradient-to-b sm:block"
+			>
 				<Image
 					alt={heroImage?.asset?.altText || ''}
 					width={4000}
@@ -35,7 +38,11 @@ export default function HomeHero() {
 					}}
 				/>
 			</div>
-			<div id="image-wrapper-mobile" className="z-0 sm:hidden">
+			<div
+				id="image-wrapper-mobile"
+				className="after:z-1 after:from-home-hero-gradient-start after:to-home-hero-gradient-end z-0
+				after:absolute after:top-0 after:left-0 after:h-full after:w-full after:bg-gradient-to-b sm:hidden"
+			>
 				<Image
 					alt={heroImageMobile?.asset?.altText || ''}
 					width={1000}
