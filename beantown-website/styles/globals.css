@@ -110,18 +110,6 @@
 	margin: 0 10px;
 }
 
-<<<<<<< HEAD
- /* .slick-slide {
-	margin-right: -10px;
-} 
-.slick-slide>div:nth-child(1){
-	margin-left:0;
-}  */
 .slick-slide:not(.slick-active) {
 	opacity: 0.5;
 }
-=======
-.slick-slide:not(.slick-active) {
-	opacity: 0.5;
-}
->>>>>>> 166a0add123ec7fc4416656c16ee044ef252b233
