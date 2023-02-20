@@ -5,8 +5,8 @@ import { HomePageContentProps } from 'pages';
 import RichText from 'components/molecules/rich-text.molecule';
 import Image from 'next/image';
 import Button from 'components/atoms/button.atom';
-import Link from 'next/link';
 import ContentWrapper from 'components/organisms/content-wrapper.organism';
+import CtaWrapper from 'components/molecules/cta-wrapper.molecule';
 
 export default function HomeHero() {
 	const { pageContent } =
@@ -24,28 +24,12 @@ export default function HomeHero() {
 					width={4000}
 					height={1000}
 					priority={true}
-					className="hidden sm:flex"
 					src={heroImage?.asset?.url || ''}
 					style={{
-						WebkitMaskImage: "url('/images/home/home-hero-mask.svg')",
-						WebkitMaskSize: 'cover',
-						maskImage: "url('/images/home/home-hero-mask.svg')",
-						maskSize: 'cover',
-					}}
-				/>
-				<Image
-					alt={heroImage?.asset?.altText || ''}
-					width={428}
-					height={420}
-					priority={true}
-					className="block h-[420px] sm:hidden"
-					src={heroImage?.asset?.url || ''}
-					style={{
-						WebkitMaskImage: "url('/images/home/home-hero-mobile-mask.svg')",
-						WebkitMaskSize: 'cover',
-						maskImage: "url('/images/home/home-hero-mobile-mask.svg')",
-						maskSize: 'cover',
+						zIndex: '0',
 						width: '100%',
+						height: 'auto',
+						maxWidth: '100%',
 					}}
 				/>
 			</div>
@@ -60,17 +44,13 @@ export default function HomeHero() {
 					<ContentWrapper.Description>
 						<RichText value={heroDescription?.contentRaw} />
 					</ContentWrapper.Description>
-					<ContentWrapper.CTA className="mt-[32px]">
-						<Button fontColor="text-primary-shade-1" bgColor="bg-white">
-							{heroButton?.text}
-						</Button>
+					<ContentWrapper.CTA className="mt-[16px] lg:mt-[32px]">
+						<CtaWrapper.CTA className="text-primary-shade-1 para-3 lg:para-2 h-[52px] w-[184px] rounded-lg bg-white py-1 px-4 tracking-wide  md:py-2 md:px-8 lg:h-[64px] lg:w-[182px] lg:tracking-wider ">
+							<p>{heroButton?.text}</p>
+						</CtaWrapper.CTA>
 					</ContentWrapper.CTA>
 				</ContentWrapper>
 			</div>
-
-			{/* </div> */}
-
-			{/* </div> */}
 		</section>
 	);
 }

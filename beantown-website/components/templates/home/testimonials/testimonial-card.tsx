@@ -11,16 +11,16 @@ interface Props {
 const TestimonialCard: React.FC<Props> = (props) => {
 	return (
 		<section id="testimonialCard">
-			<div className="">
-				<div className="mt-4 flex justify-center">
+			<div className="bg-white">
+				<div className="flex justify-center pt-4">
 					<Image
 						alt="An image for quotes in testimonial card"
 						width={40}
-						height={45}					
+						height={45}
 						src="/images/home/testimonials-quote.svg"
 					/>
 				</div>
-				<div className="flex flex-col items-center gap-2 pt-10 pb-6">
+				<div className="flex flex-col items-center gap-2 p-10 ">
 					<h1 className="subtitle-2 md:subtitle-4 text-primary-black">
 						{props.clientName}
 					</h1>

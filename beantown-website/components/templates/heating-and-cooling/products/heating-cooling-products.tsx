@@ -17,7 +17,7 @@ export default function HeatingCoolingProductsCards() {
 		return null;
 	}
 	const pageData = pageContent.page[0];
-	const { productsTitle, productsDescription, productsGroup } = pageData;
+	const { productsTitle, productsGroup } = pageData;
 
 	const previous = () => {
 		if (slider.current) {

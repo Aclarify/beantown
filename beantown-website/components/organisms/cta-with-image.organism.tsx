@@ -52,7 +52,9 @@ const CTAWithImage: React.FC<IProps> = ({
 					id="content-wrapper"
 					style={{
 						backgroundImage: `url(${bgImage})`,
-						position: 'relative',
+						backgroundPosition: 'center',
+						backgroundSize: 'cover',
+						backgroundRepeat: 'no-repeat',
 					}}
 					className={clsx(
 						`relative flex w-full items-center justify-center py-4 lg:w-1/2`,
@@ -86,6 +88,7 @@ const CTAWithImage: React.FC<IProps> = ({
 					style={{
 						backgroundImage: `url(${bgImage})`,
 						backgroundPosition: 'center',
+						backgroundSize: 'cover',
 						backgroundRepeat: 'no-repeat',
 					}}
 					className={clsx(

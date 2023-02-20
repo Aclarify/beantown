@@ -8,8 +8,12 @@ import { HomePageContentProps } from 'pages';
 import Image from 'next/image';
 import TestimonialCard from './testimonial-card';
 import TestimonialModal from './testimonial-modal';
+import Slider from 'react-slick';
+import 'slick-carousel/slick/slick.css';
+import 'slick-carousel/slick/slick-theme.css';
 
 export default function Testimonials() {
+	const slider = React.useRef<Slider | null>(null);
 	const [showTestimonialModel, setShowTestimonialModel] = useState(false);
 	const [selectedTestimonial, setSelectedTestimonial] = useState<any>(null);
 	const [currentIndex, setCurrentIndex] = useState(0);
@@ -37,44 +41,51 @@ export default function Testimonials() {
 	const { testimonialTitle, testimonialDescription, testimonialCards } =
 		homeData;
 
+	const previous = () => {
+		if (slider.current) {
+			slider.current.slickNext();
+		}
+	};
+	const next = () => {
+		if (slider.current) {
+			slider.current.slickPrev();
+		}
+	};
+	const settings = {
+		speed: 500,
+		slidesToShow: 3,
+		slidesToScroll: 1,
+		initialSlide: 0,
+		arrows: false,
+		responsive: [
+			{
+				breakpoint: 1024,
+				settings: {
+					slidesToShow: 3,
+					slidesToScroll: 3,
+				},
+			},
+			{
+				breakpoint: 600,
+				settings: {
+					slidesToShow: 2,
+					slidesToScroll: 2,
+				},
+			},
+			{
+				breakpoint: 480,
+				settings: {
+					slidesToShow: 1,
+					slidesToScroll: 1,
+				},
+			},
+		],
+	};
 	const handleOnClose = () => {
 		setShowTestimonialModel(false);
 		// Unsets Background Scrolling to use when SideDrawer/Modal is closed
 		document.body.style.overflow = 'unset';
 	};
-
-	const movePrevious = () => {
-		if (currentIndex > 0) {
-			setCurrentIndex((previousState) => previousState - 1);
-		}
-	};
-	const moveNext = () => {
-		if (
-			carousel.current !== null &&
-			carousel.current.offsetWidth * currentIndex <= maxScrollWidth.current
-		) {
-			setCurrentIndex((previousState) => previousState + 1);
-		}
-	};
-
-	const isDisabled = (direction: any) => {
-		if (direction === 'prev') {
-			return currentIndex <= 0;
-		}
-
-		if (direction === 'next' && carousel.current !== null) {
-			return (
-				carousel.current.offsetWidth * currentIndex >= maxScrollWidth.current
-			);
-		}
-
-		return false;
-	};
-
-	const goToSlide = (slideIndex: number) => {
-		setCurrentIndex(slideIndex);
-	};
-
 	const onTestimonialCardClick = (testimonial: any) => {
 		setSelectedTestimonial(testimonial);
 		setShowTestimonialModel(true);
@@ -113,73 +124,54 @@ export default function Testimonials() {
 								{testimonialDescription}
 							</span>
 						</div>
-						<div className="m-4 hidden items-center justify-center md:flex md:flex-col ">
-							<div className="flex  justify-center pt-4 ">
-								<button
-									onClick={movePrevious}
-									disabled={isDisabled('prev')}
-									className="bg-primary-shade-1 z-10 m-1 h-full w-24 rounded-full  p-2 text-center text-white transition-all duration-300 ease-in-out hover:opacity-100  disabled:cursor-not-allowed disabled:bg-white disabled:text-black"
-									aria-label="Button for moving left"
-								>
-									<FontAwesomeIcon icon={faArrowLeft} size="lg" />
-								</button>
-								<button
-									onClick={moveNext}
-									disabled={isDisabled('next')}
-									className="bg-primary-shade-1 z-10 m-1 h-full  w-24 rounded-full p-2   text-center text-white transition-all duration-300 ease-in-out hover:opacity-100 disabled:cursor-not-allowed disabled:bg-white disabled:text-black"
-									aria-label="Button for moving right"
-								>
-									<FontAwesomeIcon icon={faArrowRight} size="lg" />
-								</button>
-							</div>
-						</div>
-					</div>
-
-					<div
-						ref={carousel}
-						className="no-scrollbar group z-0 mt-16    flex snap-x snap-mandatory gap-6  overflow-x-scroll scroll-smooth "
-					>
-						{testimonialCards?.map((reviews, index) => {
-							return (
-								<div
-									// id="slider"
-									key={index}
-									className=" my-6 h-[70vh] max-h-[500px] w-80 flex-none snap-start items-center rounded-2xl border  bg-[#FFFFFF] p-2 "
-								>
-									<TestimonialCard
-										key={index}
-										clientName={reviews?.titleText || ''}
-										clientDetails={reviews?.subText || ''}
-										reviewComments={reviews?.description || ''}
-										onShowMore={() => onTestimonialCardClick(reviews)}
-									/>
-								</div>
-							);
-						})}
-					</div>
-				</div>
-
-				<div className="md:hidden">
-					<div className="mr-8 flex items-center justify-end ">
-						<div className="flex justify-center pt-4 ">
+						<div className="hidden  justify-center  gap-4 pt-4 lg:flex  ">
 							<button
-								onClick={movePrevious}
-								disabled={isDisabled('prev')}
-								className="bg-primary-shade-1  z-10 m-1 h-full w-16  rounded-full  p-2   text-center text-white transition-all duration-300 ease-in-out hover:opacity-100 disabled:cursor-not-allowed disabled:bg-white disabled:text-black"
-								aria-label="Button for moving left"
+								onClick={next}
+								className="text-primary-shade-1 bg-primary-shade-1 w-28 rounded-full py-4 px-6 text-lg lg:text-white"
 							>
 								<FontAwesomeIcon icon={faArrowLeft} />
 							</button>
 							<button
-								id="right"
-								onClick={moveNext}
-								disabled={isDisabled('next')}
-								className="bg-primary-shade-1 z-10 m-1 h-full  w-16 rounded-full   p-2  text-center text-white transition-all duration-300 ease-in-out hover:opacity-100 disabled:cursor-not-allowed disabled:bg-white disabled:text-black"
-								aria-label="Button for moving right"
+								onClick={previous}
+								className=" text-primary-shade-1 w-28 rounded-full bg-white py-4 px-6 text-lg"
 							>
 								<FontAwesomeIcon icon={faArrowRight} />
 							</button>
 						</div>
+					</div>
+					̊
+				</div>
+
+				<div>
+					<Slider ref={slider} {...settings} className="">
+						{testimonialCards?.map((reviews, index) => {
+							return (
+								<TestimonialCard
+									key={index}
+									clientName={reviews?.titleText || ''}
+									clientDetails={reviews?.subText || ''}
+									reviewComments={reviews?.description || ''}
+									onShowMore={() => onTestimonialCardClick(reviews)}
+								/>
+							);
+						})}
+					</Slider>
+				</div>
+
+				<div className="md:hidden">
+					<div className="flex justify-center gap-4 pt-4 lg:hidden ">
+						<button
+							onClick={next}
+							className="text-primary-shade-1  w-20 rounded-full  bg-white py-2 px-4"
+						>
+							<FontAwesomeIcon icon={faArrowLeft} />
+						</button>
+						<button
+							onClick={previous}
+							className=" text-primary-shade-1 w-20 rounded-full bg-white py-2 px-4"
+						>
+							<FontAwesomeIcon icon={faArrowRight} />
+						</button>
 					</div>
 				</div>
 				<TestimonialModal
@@ -189,22 +181,6 @@ export default function Testimonials() {
 					clientDetails={selectedTestimonial?.subText || ''}
 					reviewComments={selectedTestimonial?.description || ''}
 				/>
-
-				{/* <Modal
-					isOpen={showTestimonialModel}
-					// onAfterOpen={afterOpenModal}
-					onRequestClose={handleOnClose}
-					// style={customStyles}
-					contentLabel="Example Modal"
-				>
-					<TestimonialCard
-						key={1}
-						clientName={selectedTestimonial?.titleText || ''}
-						clientDetails={selectedTestimonial?.subText || ''}
-						reviewComments={selectedTestimonial?.description || ''}
-					/>
-				/>
-				</Modal> */}
 			</section>
 		</>
 	);
