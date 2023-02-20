@@ -4,6 +4,27 @@ import { GlobalContextProps } from '@typing/common/interfaces/contexts.interface
 import { HomePageContentProps } from 'pages';
 import Image from 'next/image';
 
+const LocationCard = ({ text }: { text: string }) => {
+	return (
+		<div className="location-card flex  h-[32px] w-[154px] items-center py-2 pl-[20px] lg:min-h-[54px] lg:min-w-[315px]">
+			<div className="icon-image-wrapper h-[12px] w-[12px] lg:h-[24px] lg:w-[24px]">
+				<Image
+					src={'/images/home/location-icon.svg'}
+					alt="location icon"
+					width="100"
+					height="100"
+					style={{
+						width: '100%',
+					}}
+				></Image>
+			</div>
+			<div className="text-container para-6 lg:para-2 pl-[10px]">
+				<span>{text}</span>
+			</div>
+		</div>
+	);
+};
+
 export default function ServiceAreas() {
 	const { pageContent } =
 		useContext<GlobalContextProps<HomePageContentProps>>(GlobalContext);
@@ -31,70 +52,52 @@ export default function ServiceAreas() {
 					</div>
 				</div>
 
-				<div className="relative text-left ">
-					<Image
-						src={serviceAreaImage?.asset?.url || ''}
-						alt={serviceAreaImage?.asset?.altText || ''}
-						width="1000"
-						height="600"
-						className="lg:w-3/4"
-					></Image>
-					<div
-						id="service-area-outer-container"
-						className="bg-primary-white-shade-1 relative top-[-20px] left-2 w-[95%] md:left-4 lg:absolute  lg:inset-x-1/2 lg:top-[10%] lg:h-fit lg:w-1/2 lg:rounded-3xl  lg:p-10 "
-					>
+				<div className="flex flex-col lg:flex-row">
+					<div className="image-wrapper rounded-2xl lg:w-3/4">
+						<Image
+							src={serviceAreaImage?.asset?.url || ''}
+							alt={serviceAreaImage?.asset?.altText || ''}
+							width="2000"
+							height="1200"
+							style={{
+								width: '100%',
+								height: '100%',
+								objectFit: 'cover',
+							}}
+						></Image>
+					</div>
+					<div className="service-area-padding-container lg:py-20">
 						<div
-							id="service-areas-inner-container"
-							className="translate-y-[-10px] rounded-2xl bg-white pt-1  shadow-md lg:translate-y-0 lg:p-1"
+							id="service-area-outer-container"
+							className="bg-primary-white-shade-1 -mt-8 rounded-3xl p-4 lg:-ml-[25%] lg:mt-0 lg:p-6"
 						>
-							<h1 className="subtitle-7 lg:subtitle-3 text-primary-black mt-2 pl-6 pb-2 ">
-								{serviceAreas?.title}
-							</h1>
-
 							<div
-								id="service-area-container"
-								className="mx-6 grid h-auto grid-cols-2 place-items-center pb-2 md:my-4"
+								id="service-areas-inner-container"
+								className="rounded-lg bg-white px-4  pt-2 pb-4 shadow-md lg:rounded-2xl lg:py-4 lg:pt-1"
 							>
-								{serviceAreas?.listItem?.map((serviceArea, index) => {
-									return (
-										<div
-											key={index}
-											className="bg-secondary-shade-3 para-6 lg:para-2 my-2 mr-2 flex w-32 items-center  justify-center space-x-2 rounded-md py-2 align-middle md:w-56 lg:w-56"
-										>
-											<Image
-												src={'/images/home/location-icon.svg'}
-												alt={serviceAreaImage?.asset?.altText || ''}
-												width="24"
-												height="20"
-											></Image>
-
-											<span>{serviceArea?.split(',').join(', ')}</span>
-										</div>
-									);
-								})}
+								<h1 className="subtitle-7 lg:subtitle-3 text-primary-black mt-2 pb-2 lg:pl-6 ">
+									{serviceAreas?.title || 'Service Areas'}
+								</h1>
 
 								<div
-									id="right-blob-desktop"
-									className="opacity-1 absolute -right-[95%] top-[4em] z-10 hidden h-full  w-full md:hidden lg:block  "
+									id="service-area-container"
+									className="grid grid-cols-2 gap-x-4 gap-y-1 lg:gap-4 lg:pl-6"
 								>
-									<Image
-										src="/images/home/blue-blob-shape-2.svg"
-										alt="Right-blob"
-										width={500}
-										height={500}
-									></Image>
+									{serviceAreas?.listItem?.map((serviceArea, index) => {
+										return (
+											<div
+												key={index}
+												className="bg-secondary-shade-3 rounded lg:rounded-lg"
+											>
+												<LocationCard
+													text={
+														serviceArea ? serviceArea.split(',').join(', ') : ''
+													}
+												/>
+											</div>
+										);
+									})}
 								</div>
-								{/* <div
-									id="right-blob-mobile"
-									className="block  lg:hidden absolute opacity-1 -right-[90%] top-[10em] h-full w-full  overflow-hidden"
-								>
-									<Image
-										src="/images/home/blue-blob-shape-2-mobile.svg"
-										alt="Right-blob"
-										width={200}
-										height={200}
-									></Image>
-								</div> */}
 							</div>
 						</div>
 					</div>
