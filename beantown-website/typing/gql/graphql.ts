@@ -414,6 +414,7 @@ export type Home = Document & {
   heroButton?: Maybe<Cta>;
   heroDescription?: Maybe<PortableText>;
   heroImage?: Maybe<Image>;
+  heroImageMobile?: Maybe<Image>;
   heroTitle?: Maybe<Scalars['String']>;
   logoDesktop?: Maybe<Image>;
   logoMobile?: Maybe<Image>;
@@ -459,6 +460,7 @@ export type HomeFilter = {
   heroButton?: InputMaybe<CtaFilter>;
   heroDescription?: InputMaybe<PortableTextFilter>;
   heroImage?: InputMaybe<ImageFilter>;
+  heroImageMobile?: InputMaybe<ImageFilter>;
   heroTitle?: InputMaybe<StringFilter>;
   logoDesktop?: InputMaybe<ImageFilter>;
   logoMobile?: InputMaybe<ImageFilter>;
@@ -495,6 +497,7 @@ export type HomeSorting = {
   faqTitle?: InputMaybe<SortOrder>;
   heroDescription?: InputMaybe<PortableTextSorting>;
   heroImage?: InputMaybe<ImageSorting>;
+  heroImageMobile?: InputMaybe<ImageSorting>;
   heroTitle?: InputMaybe<SortOrder>;
   logoDesktop?: InputMaybe<ImageSorting>;
   logoMobile?: InputMaybe<ImageSorting>;
