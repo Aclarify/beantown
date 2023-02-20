@@ -17,7 +17,7 @@ export default function HomeBlogs() {
 		return null;
 	}
 	const homeData = pageContent.page[0];
-	const { blogTitle, blogDescription, blogCards, blogButton } = homeData;
+	const { blogTitle, blogDescription, blogButton } = homeData;
 	return (
 		<section id="blogs" className=" relative  z-10 -mb-[9em] flex flex-col  ">
 			<Image
@@ -25,7 +25,7 @@ export default function HomeBlogs() {
 				alt="Left-blob"
 				width={750}
 				height={400}
-				className=" absolute left-0  hidden -translate-x-[59%] -translate-y-[15%] transform lg:block"
+				className=" z-1 absolute left-0  hidden -translate-x-[59%] -translate-y-[15%] transform lg:block"
 			></Image>
 
 			<Image
@@ -33,7 +33,7 @@ export default function HomeBlogs() {
 				alt="Left-blob-mobile"
 				width={450}
 				height={300}
-				className=" absolute left-0  -translate-x-[75%] -translate-y-[20%] transform lg:hidden"
+				className=" z-1 absolute left-0 -translate-x-[75%] -translate-y-[33%] transform lg:hidden"
 			></Image>
 
 			<div className="bg-primary-white-shade-1 lg:padding-for-section relative  px-[20px] pb-[2em]">

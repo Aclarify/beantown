@@ -1,6 +1,5 @@
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faArrowRight, faArrowLeft } from '@fortawesome/free-solid-svg-icons';
-
 import React, { useState, useContext, useEffect, useRef } from 'react';
 import { GlobalContext } from '@contexts/global/global.context';
 import { GlobalContextProps } from '@typing/common/interfaces/contexts.interface';
@@ -44,6 +43,7 @@ export default function Testimonials() {
 	const previous = () => {
 		if (slider.current) {
 			slider.current.slickNext();
+			console.log('nextClicked');
 		}
 	};
 	const next = () => {
@@ -57,19 +57,24 @@ export default function Testimonials() {
 		slidesToScroll: 1,
 		initialSlide: 0,
 		arrows: false,
+		swipeToSlide: true,
 		responsive: [
 			{
 				breakpoint: 1024,
 				settings: {
 					slidesToShow: 3,
 					slidesToScroll: 3,
+					infinite: true,
+					swipeToSlide: true,
 				},
 			},
 			{
-				breakpoint: 600,
+				breakpoint: 768,
 				settings: {
 					slidesToShow: 2,
 					slidesToScroll: 2,
+					infinite: true,
+					swipeToSlide: true,
 				},
 			},
 			{
@@ -77,6 +82,8 @@ export default function Testimonials() {
 				settings: {
 					slidesToShow: 1,
 					slidesToScroll: 1,
+					infinite: true,
+					swipeToSlide: true,
 				},
 			},
 		],
@@ -113,37 +120,35 @@ export default function Testimonials() {
 						</div>
 					</div>
 				</div>
-
-				<div className="m-4 flex flex-nowrap  space-x-4 overflow-x-auto">
-					<div className="gap-15 z-40 m-8 hidden flex-none flex-col items-center   justify-center md:flex  ">
-						<div className="flex-none  gap-5 ">
-							<h1 className=" text-light-1 text-primary-shade-1 ">
-								{testimonialTitle}
-							</h1>
-							<span className=" title-2 text-primary-black">
-								{testimonialDescription}
-							</span>
-						</div>
-						<div className="hidden  justify-center  gap-4 pt-4 lg:flex  ">
-							<button
-								onClick={next}
-								className="text-primary-shade-1 bg-primary-shade-1 w-28 rounded-full py-4 px-6 text-lg lg:text-white"
-							>
-								<FontAwesomeIcon icon={faArrowLeft} />
-							</button>
-							<button
-								onClick={previous}
-								className=" text-primary-shade-1 w-28 rounded-full bg-white py-4 px-6 text-lg"
-							>
-								<FontAwesomeIcon icon={faArrowRight} />
-							</button>
+				<div className="lg:padding-for-section flex px-5">
+					<div className="m-4 flex flex-nowrap  space-x-4 overflow-x-auto">
+						<div className="   hidden flex-none flex-col items-center   justify-center md:flex  ">
+							<div className="flex-none   ">
+								<h1 className=" text-light-1 text-primary-shade-1 ">
+									{testimonialTitle}
+								</h1>
+								<span className=" title-2 text-primary-black">
+									{testimonialDescription}
+								</span>
+							</div>
+							<div className="hidden gap-4   pt-4 lg:flex  ">
+								<button
+									onClick={next}
+									className="text-primary-shade-1 bg-primary-shade-1 w-28 rounded-full py-4  text-lg lg:text-white"
+								>
+									<FontAwesomeIcon icon={faArrowLeft} />
+								</button>
+								<button
+									onClick={previous}
+									className=" text-primary-shade-1 w-28 rounded-full bg-white py-4  text-lg"
+								>
+									<FontAwesomeIcon icon={faArrowRight} />
+								</button>
+							</div>
 						</div>
 					</div>
-					̊
-				</div>
 
-				<div>
-					<Slider ref={slider} {...settings} className="">
+					<Slider ref={slider} {...settings} className="w-2/3">
 						{testimonialCards?.map((reviews, index) => {
 							return (
 								<TestimonialCard
@@ -157,7 +162,6 @@ export default function Testimonials() {
 						})}
 					</Slider>
 				</div>
-
 				<div className="md:hidden">
 					<div className="flex justify-center gap-4 pt-4 lg:hidden ">
 						<button
