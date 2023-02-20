@@ -1,7 +1,5 @@
 import React from 'react';
 import Image from 'next/image';
-import Link from 'next/link';
-import Button from 'components/atoms/button.atom';
 import CtaWrapper from 'components/molecules/cta-wrapper.molecule';
 
 interface Props {
@@ -15,13 +13,16 @@ interface Props {
 const ServiceCard: React.FC<Props> = (props) => {
 	return (
 		<>
-			<div className="w-full rounded-xl rounded-t-3xl bg-white shadow-lg sm:w-[60%] lg:w-1/3">
+			<div className="flex w-full flex-col rounded-xl rounded-t-3xl bg-white shadow-lg">
 				<div className="basis-3/4 ">
 					<Image
 						src={props.thumbnailSrc}
 						alt={props.thumbnailAltText}
-						width="600"
-						height="350"
+						width="2000"
+						height="1000"
+						style={{
+							width: '100%',
+						}}
 						className=" h-72 w-full rounded-t-lg object-cover md:h-96 "
 					/>
 					<div className=" basis-1/4   pb-7 text-center  lg:pb-9 ">
