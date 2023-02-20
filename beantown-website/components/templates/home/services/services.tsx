@@ -52,7 +52,7 @@ export default function Services() {
 								{servicesTitle}
 							</h1>
 						</ContentWrapper.Title>
-						<ContentWrapper.Description>
+						<ContentWrapper.Description className="para-4 lg:para-2 px-12 lg:px-20">
 							<RichText value={servicesDescription?.contentRaw} />
 						</ContentWrapper.Description>
 					</ContentWrapper>
@@ -63,7 +63,7 @@ export default function Services() {
 					{servicesGroup?.map((service, index) => {
 						return (
 							service?.thumbnailImage?.asset?.url && (
-								<div className="service-card-wrapper mb-5 mr-4 w-full max-w-[440px] lg:mr-0 lg:mb-0 lg:w-1/3 lg:min-w-[480px] lg:max-w-none lg:space-x-6 lg:pr-6 lg:pb-5">
+								<div className="service-card-wrapper mb-5 w-full max-w-[440px] px-4 lg:mr-0 lg:mb-0  lg:min-w-[480px]  lg:space-x-6 lg:pr-6 lg:pb-5">
 									<ServiceCard
 										key={index}
 										title={service?.text || ''}
