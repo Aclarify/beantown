@@ -3,7 +3,7 @@ import ElectricalServicesList from "components/templates/electrical/electrical-s
 
 const ElectricalServices: React.FC = (props) => {
 	return (
-		<main className="">
+		<main className="bg-primary-white-shade-1">
 			<ElectricalServicesList />
 		</main>
 	);

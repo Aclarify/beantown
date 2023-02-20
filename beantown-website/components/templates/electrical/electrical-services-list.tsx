@@ -4,12 +4,12 @@ import Image from 'next/image';
 function ElectricalServicesList() {
   return (
 		<section id="electrical-services-list" className="mt-20 ">
-			<div className="container mx-auto h-auto w-full rounded-3xl bg-[#FFFFFF]    shadow-[rgba(29,_39,_87,_0.04)_0px_6px_10px]  ">
+			<div className="container mx-auto h-auto w-full rounded-3xl  bg-[#FFFFFF]    shadow-[rgba(29,_39,_87,_0.04)_0px_6px_10px]  ">								
 				<p className="title-6 md:title-3 text-primary-black pb-4  sm:pb-8">
 					{'Repairs, Installation, Upgrades and More:'}
 				</p>
 				<div id="list-container" className="">
-					<div className="grid  grid-cols-1  sm:grid-cols-2 sm:gap-2 md:grid-cols-3  lg:grid-cols-4 ">
+					<div className="grid  grid-cols-1  sm:grid-cols-2 sm:gap-2 md:grid-cols-3 w-full ">
 						{/* list of Electrical services from cms */}
 						<div id="list-items" className="flex">
 							<div>
