@@ -28,7 +28,7 @@ export default function HeatingCoolingPageHero() {
 				gradientFromColor="from-service-red"
 				gradientToColor="bg-service-red"
 			>
-				<ContentWrapper className="lg:padding-for-section px-10 py-20 text-center lg:text-left">
+				<ContentWrapper className="lg:padding-for-section px-10 pt-[2em] pb-[4em] text-center md:px-[10em] md:py-[12em] lg:py-[6em] lg:text-left">
 					<ContentWrapper.Title className="mb-[8px] lg:mb-[16px]">
 						<h1 className="title-4 lg:title-1">{heroTitle}</h1>
 					</ContentWrapper.Title>
@@ -36,7 +36,7 @@ export default function HeatingCoolingPageHero() {
 						<RichText value={heroDescription?.contentRaw} />
 					</ContentWrapper.Description>
 					<ContentWrapper.CTA className="mt-[32px]">
-						<CtaWrapper.CTA className="bg-primary-shade-1 para-3 lg:para-2 h-[64px] w-[182px] rounded-lg py-1 px-4  tracking-wide text-white md:py-2 md:px-8 lg:tracking-wider ">
+						<CtaWrapper.CTA className="bg-primary-shade-1 para-3 lg:para-2 h-[52px] w-[184px] rounded-lg py-1 px-4 tracking-wide text-white  md:py-2 md:px-8 lg:h-[64px] lg:w-[182px] lg:tracking-wider ">
 							<p>{heroButton?.text}</p>
 						</CtaWrapper.CTA>
 					</ContentWrapper.CTA>

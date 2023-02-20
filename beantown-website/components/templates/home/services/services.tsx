@@ -6,6 +6,7 @@ import Image from 'next/image';
 import { HomePageContentProps } from 'pages';
 import React, { useContext } from 'react';
 import ServiceCard from './service-card';
+import WaveWrapper from 'components/molecules/wave-wrapper.molecule';
 
 export default function Services() {
 	const { pageContent } =
@@ -17,32 +18,34 @@ export default function Services() {
 
 	const { servicesTitle, servicesDescription, servicesGroup } = homeData;
 	return (
-		<section id="services" className="mt-10 overflow-hidden  lg:my-20 ">
-			<div className="bg-secondary-shade-3 px-6 lg:px-10 ">
-				<div
-					id="left-blob-mobile"
-					className="relative bottom-[0rem] right-[6em] block h-0 md:hidden"
-				>
-					{/* TODO Remove width and height if blobs are from static imports */}
-					<Image
-						src="/images/home/blob-shape-1.svg"
-						alt="left-blob"
-						width={147}
-						height={134}
-					></Image>
-				</div>
-				<div
-					id="left-blob-tab"
-					className="relative bottom-[2rem] right-[25em] hidden h-0 md:block lg:hidden"
-				>
-					<Image
-						src="/images/home/blob-shape-1.svg"
-						alt="left-blob"
-						width={500}
-						height={500}
-					></Image>
-				</div>
-				<div className="relative z-10 my-4 flex flex-col items-center  text-center">
+		<section
+			id="services"
+			className="z-1 relative mt-[-2rem] sm:mt-[-3rem] md:mt-[-5rem]  lg:mt-[-6rem] xl:mt-[-8rem] 2xl:mt-[-9rem] "
+		>
+			<WaveWrapper waveURL="/images/home/services/home-services-top-wave.svg"></WaveWrapper>
+			<Image
+				src={'/images/home/blob-shape-1.svg'}
+				height={590}
+				width={650}
+				alt="Right Blob"
+				className="absolute right-0 top-0 z-[-1] hidden translate-x-[59%] translate-y-[19%] transform md:block"
+			/>
+			<Image
+				src={'/images/home/blob-shape-1.svg'}
+				height={150}
+				width={180}
+				alt="Left Blob Mobile"
+				className="absolute  top-0 left-0 z-[-1] -translate-x-[61%] translate-y-[25%] transform md:hidden "
+			/>
+			<Image
+				src={'/images/home/blob-shape-1.svg'}
+				height={180}
+				width={200}
+				alt="Right Blob Mobile"
+				className="absolute right-0 top-0 z-[-1] translate-x-[55%] translate-y-[40%] transform md:hidden "
+			/>
+			<div className="lg:padding-for-section relative  px-5">
+				<div className="flex flex-col items-center  text-center">
 					<ContentWrapper>
 						<ContentWrapper.Title>
 							<h1 className="title-5 lg:title-2 text-primary-black mb-4">
@@ -54,40 +57,9 @@ export default function Services() {
 						</ContentWrapper.Description>
 					</ContentWrapper>
 				</div>
-				<div
-					id="right-blob-mobile"
-					className="relative bottom-[7rem] -right-[77%] block h-0 md:hidden"
-				>
-					<Image
-						src="/images/home/blob-shape-1.svg"
-						alt="right-blob"
-						width={202}
-						height={184}
-					></Image>
-				</div>
-				<div
-					id="right-blob-tab"
-					className="relative bottom-[11rem] -right-[84%] hidden h-0 md:block lg:hidden"
-				>
-					<Image
-						src="/images/home/blob-shape-1.svg"
-						alt="right-blob"
-						width={500}
-						height={500}
-					></Image>
-				</div>
-				<div
-					id="right-blob-desktop"
-					className="relative bottom-[32rem] right-36 left-[88vw] hidden h-0 lg:block"
-				>
-					<Image
-						src="/images/home/blob-shape-1.svg"
-						alt="right-blob"
-						width={933}
-						height={850}
-					></Image>
-				</div>
-				<div className="group relative z-10 flex  flex-wrap items-center justify-center space-y-8 py-4 lg:mb-20 lg:flex-nowrap lg:space-x-10 lg:space-y-4">
+				<div className="mt-14 flex flex-wrap justify-center space-y-4 rounded-lg lg:space-x-6 xl:space-x-10 ">
+					{/* <div className="container my-12 mx-auto px-4 md:px-12">
+					<div className="-mx-1 flex flex-wrap lg:-mx-4"> */}
 					{servicesGroup?.map((service, index) => {
 						return (
 							service?.thumbnailImage?.asset?.url && (
@@ -104,19 +76,16 @@ export default function Services() {
 							)
 						);
 					})}
-				</div>
-				<div
-					id="left-blob-desktop"
-					className="relative bottom-[26rem] right-[34rem] hidden h-0 lg:block"
-				>
-					<Image
-						src="/images/home/blob-shape-1.svg"
-						alt="left-blob"
-						width={645}
-						height={548}
-					></Image>
+					{/* </div> */}
 				</div>
 			</div>
+			<Image
+				src={'/images/home/blob-shape-1.svg'}
+				height={590}
+				width={650}
+				alt="Left Blob "
+				className="absolute  bottom-0 left-0 z-[-1] hidden -translate-x-[61%] transform md:block md:translate-y-[6%] lg:translate-y-[25%]"
+			/>
 		</section>
 	);
 }

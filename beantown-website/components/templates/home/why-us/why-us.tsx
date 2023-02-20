@@ -9,6 +9,7 @@ import ContentWrapper from 'components/organisms/content-wrapper.organism';
 import MaskedImageWithBackgroundVector from 'components/organisms/masked-image-with-blob.organism';
 import useWindowDimensions from '@lib/hooks/use-window-dimensions.hook';
 import WaveWrapper from 'components/molecules/wave-wrapper.molecule';
+import CtaWrapper from 'components/molecules/cta-wrapper.molecule';
 export default function WhyUs() {
 	const { pageContent } =
 		useContext<GlobalContextProps<HomePageContentProps>>(GlobalContext);
@@ -24,16 +25,17 @@ export default function WhyUs() {
 	return (
 		<section
 			id="whyUs"
-			className="md:bg-fit-to-parent relative z-30  bg-no-repeat py-[4rem] pb-[25em]  md:pt-[10vw] "
+			//className=" relative z-30  py-[4rem] pb-[25em] md:mt-[6em] md:pt-[10vw] xl:mt-[1em]"
+			className=" relative z-30  py-[4rem] pb-[25em] md:mt-[6em] md:pt-[10vw] xl:mt-[1em]"
 		>
 			<WaveWrapper waveURL="/images/home/why-us/top-wave.svg" />
 			<div
 				id="section-wrapper"
-				className="bg-primary-white-shade-1 z-1  flex flex-col overflow-hidden"
+				className="bg-primary-white-shade-1 lg:padding-for-section z-1 flex  flex-col overflow-hidden px-5 pb-14 md:pb-0"
 			>
 				<div
 					id="content-image-wrapper"
-					className="flex w-full flex-col-reverse items-center px-6 lg:flex  lg:flex-row lg:px-10"
+					className="mb-8 flex w-full flex-col-reverse items-center px-6 pt-[3em]  md:pt-0 lg:mb-4 lg:flex lg:flex-row lg:px-10"
 				>
 					<div
 						id="content-wrapper"
@@ -49,9 +51,9 @@ export default function WhyUs() {
 								<RichText value={whyUsDescription?.contentRaw} />
 							</ContentWrapper.Description>
 							<ContentWrapper.CTA className="mt-[16px] lg:mt-[32px]">
-								<Button fontColor="text-white" bgColor=" bg-primary-shade-1">
-									{whyUsButton?.text}
-								</Button>
+								<CtaWrapper.CTA className="bg-primary-shade-1 para-3 lg:para-2 h-[52px] w-[184px] rounded-lg py-1 px-4 tracking-wide text-white md:py-2  md:px-8  lg:h-[64px] lg:w-[210px] lg:tracking-wider ">
+									<p>{whyUsButton?.text}</p>
+								</CtaWrapper.CTA>
 							</ContentWrapper.CTA>
 						</ContentWrapper>
 					</div>

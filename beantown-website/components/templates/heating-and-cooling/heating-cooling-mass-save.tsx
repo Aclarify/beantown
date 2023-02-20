@@ -28,7 +28,7 @@ export default function MassSave() {
 		>
 			<div
 				id="section-wrapper"
-				className="md:padding-for-section z-10 flex  flex-col overflow-hidden px-[20px] pb-[5em]"
+				className="md:padding-for-section z-10 flex  flex-col overflow-hidden  px-5 pb-[5em]"
 			>
 				<div
 					id="content-image-wrapper"

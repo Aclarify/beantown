@@ -1,5 +1,4 @@
 import React, { useState } from 'react';
-import Button from 'components/atoms/button.atom';
 import { Maybe, TitleDescription } from '@typing/gql/graphql';
 import FAQDisclosure from './faq-disclosure.organism';
 import ContentWrapper from './content-wrapper.organism';
@@ -26,13 +25,13 @@ const FAQ: React.FC<IProps> = (props) => {
 	}
 	return (
 		<div
-			className="relative  mt-16 flex  items-center  align-middle   "
+			className="relative  mt-16 flex  items-center  pt-[4em] align-middle   "
 			style={{
 				backgroundImage: `url(${props.backgroundImage})`,
 				backgroundPosition: 'center',
 			}}
 		>
-			<div className="lg:padding-for-section px-[20px] lg:flex">
+			<div className="lg:padding-for-section px-[20px] pb-[4em] lg:flex">
 				<div className="flex  flex-col justify-center text-center lg:text-left ">
 					<ContentWrapper>
 						<ContentWrapper.Title className="mb-[8px] lg:mb-[16px]">
