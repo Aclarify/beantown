@@ -30,6 +30,7 @@ export default function HeatingCoolingBrands() {
 					<Brands
 						brandsTitle={brandsTitle || ''}
 						logoArray={clonedLogoArray || []}
+						brandsBgColour={'bg-primary-white-shade-1' || ''}
 					></Brands>
 				)}
 			</section>
