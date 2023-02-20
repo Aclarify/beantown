@@ -31,30 +31,31 @@ export default function HeatingCoolingProductsCards() {
 	};
 	const settings = {
 		speed: 500,
-		slidesToShow: 3,
+		slidesToShow: 3.1,
 		slidesToScroll: 1,
 		initialSlide: 0,
-		arrows: false,
-		responsive: [
+		arrows: false,	
+		responsive: [		
 			{
 				breakpoint: 1024,
 				settings: {
-					slidesToShow: 3,
-					slidesToScroll: 3,
+					slidesToShow: 3.1,
+					slidesToScroll: 1,
 				},
 			},
 			{
-				breakpoint: 600,
+				breakpoint: 800,
 				settings: {
-					slidesToShow: 2,
-					slidesToScroll: 2,
+					slidesToShow: 2.1,
+					slidesToScroll: 1,
 				},
 			},
 			{
 				breakpoint: 480,
 				settings: {
-					slidesToShow: 1,
+					slidesToShow: 1.1,
 					slidesToScroll: 1,
+
 				},
 			},
 		],
@@ -64,9 +65,9 @@ export default function HeatingCoolingProductsCards() {
 			id="heatingCoolingProductsCards"
 			className="lg:padding-for-section mb-40 mt-20 px-[20px] pt-20 "
 		>
-			<div className=" flex items-center justify-between">
+			<div className=" flex items-center justify-between ">
 				<div>
-					<p className="title-6 lg:title-2">{productsTitle}</p>
+					<p className="title-6 lg:title-2 ">{productsTitle}</p>
 				</div>
 
 				<div className="hidden  justify-center  gap-4 pt-4 lg:flex  ">

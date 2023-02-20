@@ -113,3 +113,6 @@
 .slick-slide:not(.slick-active) {
 	opacity: 0.5;
 }
+.slick-list {
+	padding: 0 20% 0 0 !important;
+}
