@@ -9,7 +9,7 @@ const HeatingCoolingHeroServicesSection = () => {
 	return (
 		<section
 			id="cooling-and-heating-services"
-			className="z-5 -sm:mt-[6em] 3xl:-mt-[7em] relative -mt-[5em] md:-mt-[9em]  lg:-mt-[4em] "
+			className="z-5 -sm:mt-[6em] 3xl:-mt-[7em] relative -mt-[5em] mb-[3em]  md:-mt-[9em] lg:-mt-[4em] "
 		>
 			<WaveWrapper
 				waveURL={
