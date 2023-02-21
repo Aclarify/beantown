@@ -63,7 +63,10 @@ export default function Services() {
 					{servicesGroup?.map((service, index) => {
 						return (
 							service?.thumbnailImage?.asset?.url && (
-								<div className="service-card-wrapper mb-5 w-full px-4 sm:px-10 md:basis-1/2 md:px-4 lg:mr-0 lg:mb-0 lg:space-x-6   lg:pr-6 lg:pb-5 xl:basis-1/3">
+								<div
+									key={index}
+									className="service-card-wrapper mb-5 w-full px-4 sm:px-10 md:basis-1/2 md:px-4 lg:mr-0 lg:mb-0 lg:space-x-6   lg:pr-6 lg:pb-5 xl:basis-1/3"
+								>
 									<ServiceCard
 										key={index}
 										title={service?.text || ''}
