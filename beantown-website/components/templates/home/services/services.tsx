@@ -44,7 +44,7 @@ export default function Services() {
 				alt="Right Blob Mobile"
 				className="absolute right-0 top-0 z-[-1] translate-x-[55%] translate-y-[40%] transform md:hidden "
 			/>
-			<div className="lg:padding-for-section relative">
+			<div className="2xl:padding-for-section relative">
 				<div className="flex flex-col items-center  text-center">
 					<ContentWrapper>
 						<ContentWrapper.Title>
@@ -63,7 +63,7 @@ export default function Services() {
 					{servicesGroup?.map((service, index) => {
 						return (
 							service?.thumbnailImage?.asset?.url && (
-								<div className="service-card-wrapper mb-5 w-full max-w-[440px] px-4 lg:mr-0 lg:mb-0  lg:min-w-[480px]  lg:space-x-6 lg:pr-6 lg:pb-5">
+								<div className="service-card-wrapper mb-5 w-full px-4 sm:px-10 md:basis-1/2 md:px-4 lg:mr-0 lg:mb-0 lg:space-x-6   lg:pr-6 lg:pb-5 xl:basis-1/3">
 									<ServiceCard
 										key={index}
 										title={service?.text || ''}
