@@ -5,11 +5,13 @@ import HeatingCoolingBlogsContent from './heating-cooling-blogs.content';
 
 const HeatingCoolingBlogsSection = () => {
 	return (
-		<section id="blogs" className="relative z-10 -mb-[11em]">
+		<section id="blogs" className="relative z-10 -mb-[11em] ">
 			<WaveWrapper waveURL="/images/heating-cooling/blogs/hc-blogs-top-wave.svg"></WaveWrapper>
-			<SectionContentWrapper>
-				<HeatingCoolingBlogsContent />
-			</SectionContentWrapper>
+			<div className="bg-service-red-bg">
+				<SectionContentWrapper>
+					<HeatingCoolingBlogsContent />
+				</SectionContentWrapper>
+			</div>
 			<WaveWrapper waveURL="/images/heating-cooling/blogs/hc-blogs-bottom-wave.svg"></WaveWrapper>
 		</section>
 	);

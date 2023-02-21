@@ -27,9 +27,9 @@ export default function Header(props: IProps) {
 
 	return (
 		<>
-			<section className="lg:padding-for-section absolute w-full">
+			<section className="2xl:padding-for-section absolute w-full px-5">
 				<Popover className="relative z-30">
-					<div className=" mx-auto flex items-center  justify-between px-4 py-6 text-white lg:p-0">
+					<div className="  flex items-center  justify-between py-6 text-white lg:p-0">
 						<div className="hidden align-middle lg:flex ">
 							<Image
 								alt={logoDesktop?.asset?.altText || ''}

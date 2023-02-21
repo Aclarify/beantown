@@ -30,7 +30,7 @@ export default function WhyUs() {
 			<WaveWrapper waveURL="/images/home/why-us/top-wave.svg" />
 			<div
 				id="section-wrapper"
-				className="bg-primary-white-shade-1 lg:padding-for-section z-1 flex  flex-col overflow-hidden px-5 pb-14 md:pb-0"
+				className="bg-primary-white-shade-1 2xl:padding-for-section z-1 flex  flex-col overflow-hidden px-5 pb-14 md:pb-0"
 			>
 				<div
 					id="content-image-wrapper"

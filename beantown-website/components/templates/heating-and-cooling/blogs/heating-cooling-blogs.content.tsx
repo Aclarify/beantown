@@ -13,16 +13,14 @@ const HeatingCoolingBlogsContent = () => {
 	const homeData = pageContent.page[0];
 	const { blogTitle, blogDescription, blogButton, blogCards } = homeData;
 	return (
-		<div className="bg-[#FCF7F7] px-[20px] ">
-			<Blogs
-				blogsTitle={blogTitle || ''}
-				blogsDescription={blogDescription || ''}
-				blogsButtonText={blogButton?.text || ''}
-				blogsButtonTextColour="text-white"
-				blogsButtonBgColour="bg-[#BC3B39]"
-				blogCards={blogCards || []}
-			></Blogs>
-		</div>
+		<Blogs
+			blogsTitle={blogTitle || ''}
+			blogsDescription={blogDescription || ''}
+			blogsButtonText={blogButton?.text || ''}
+			blogsButtonTextColour="text-white"
+			blogsButtonBgColour="bg-service-red"
+			blogCards={blogCards || []}
+		></Blogs>
 	);
 };
 
