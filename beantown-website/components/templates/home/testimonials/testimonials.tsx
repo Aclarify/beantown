@@ -61,14 +61,7 @@ export default function Testimonials() {
 			{
 				breakpoint: 1024,
 				settings: {
-					slidesToShow: 3,
-					slidesToScroll: 1,
-				},
-			},
-			{
-				breakpoint: 768,
-				settings: {
-					slidesToShow: 1,
+					slidesToShow: 2,
 					slidesToScroll: 1,
 				},
 			},
@@ -137,7 +130,7 @@ export default function Testimonials() {
 					</div>
 
 					<div className=" flex space-x-6">
-						<div className="gap-15 z-40 ml-28 mr-16 hidden flex-none flex-col items-center   justify-center md:flex  ">
+						<div className="gap-15 z-40 ml-28 mr-16 hidden flex-none flex-col items-center   justify-center lg:flex  ">
 							<div className="flex-none  gap-5 ">
 								<h1 className=" text-light-1 text-primary-shade-1 ">
 									{testimonialTitle}
@@ -145,30 +138,27 @@ export default function Testimonials() {
 								<span className=" title-2 text-primary-black">
 									{testimonialDescription}
 								</span>
-							</div>
-							<div className="hidden  justify-center  gap-4 pt-4 lg:flex  ">
-								<button
-									onClick={next}
-									className="text-primary-shade-1 bg-primary-shade-1 w-28 rounded-full py-4 px-6 text-lg lg:text-white"
-								>
-									<FontAwesomeIcon icon={faArrowLeft} />
-								</button>
-								<button
-									onClick={previous}
-									className=" text-primary-shade-1 w-28 rounded-full bg-white py-4 px-6 text-lg"
-								>
-									<FontAwesomeIcon icon={faArrowRight} />
-								</button>
+								<div className="mt-14 flex space-x-6">
+									<button
+										onClick={next}
+										className=" text-primary-shade-1 h-16 w-32 rounded-full bg-white py-4 px-6 text-lg"
+									>
+										<FontAwesomeIcon icon={faArrowLeft} />
+									</button>
+									<button
+										onClick={previous}
+										className="text-primary-shade-1 bg-primary-shade-1 h-16 w-32 rounded-full py-4 px-6 text-lg md:text-white"
+									>
+										<FontAwesomeIcon icon={faArrowRight} />
+									</button>
+								</div>
 							</div>
 						</div>
 						<div className="slider-wrapper w-full lg:w-3/4  ">
 							<Slider ref={slider} {...settings} className="">
 								{testimonialCards?.map((reviews, index) => {
 									return (
-										<div
-											className="testimonial-card-wrapper "
-											key={index}
-										>
+										<div className="testimonial-card-wrapper " key={index}>
 											<TestimonialCard
 												key={index}
 												clientName={reviews?.titleText || ''}
@@ -184,7 +174,7 @@ export default function Testimonials() {
 						̊
 					</div>
 
-					<div className="flex justify-center gap-4 pt-4 lg:hidden ">
+					<div className="mt-2 flex justify-end gap-4 pt-4 pr-4 lg:hidden ">
 						<button
 							onClick={next}
 							className="text-primary-shade-1 h-12 w-20 rounded-full  bg-white py-2 px-4"
