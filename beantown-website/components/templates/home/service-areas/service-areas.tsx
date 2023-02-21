@@ -19,7 +19,7 @@ const LocationCard = ({ text }: { text: string }) => {
 					}}
 				></Image>
 			</div>
-			<div className="text-container para-6 lg:para-3 pl-[10px]">
+			<div className="text-container para-6 lg:para-2 pl-[10px]">
 				<span>{text}</span>
 			</div>
 		</div>
