@@ -28,7 +28,7 @@
 	}
 	.title-3 {
 		@apply text-[40px];
-		@apply font-semibold;
+		@apply font-normal;
 	}
 	.title-4 {
 		@apply text-4xl;
@@ -83,11 +83,11 @@
 
 	.para-1 {
 		@apply text-[28px];
-		@apply font-light;
+		@apply font-thin;
 	}
 	.para-2 {
 		@apply text-2xl;
-		@apply font-light;
+		@apply font-thin;
 	}
 	.para-3 {
 		@apply text-xl;
