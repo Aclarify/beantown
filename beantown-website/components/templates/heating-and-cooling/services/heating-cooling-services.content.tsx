@@ -18,29 +18,36 @@ const HeatingCoolingServicesContent = () => {
 	const { servicesTitle, servicesDescription, servicesGroup } = pageData;
 	return (
 		<SectionContentWrapper>
-			<div className="relative px-5 pt-14">
-				<div className="flex flex-col items-center text-center ">
+			<div className="relative px-5 lg:pt-14">
+				<div className="text-center flex flex-col items-center pb-8">
 					<ContentWrapper>
 						<ContentWrapper.Title>
 							<h1 className="title-5 lg:title-2 text-primary-black mb-4">
 								{servicesTitle}
 							</h1>
 						</ContentWrapper.Title>
-						<ContentWrapper.Description>
-							<RichText value={servicesDescription?.contentRaw} />
+						<ContentWrapper.Description className="lg:flex lg:justify-center">
+							<div className="text-wrapper lg:w-3/4 ">
+								<RichText value={servicesDescription?.contentRaw} />
+							</div>
 						</ContentWrapper.Description>
 					</ContentWrapper>
 				</div>
-				<div className="  mx-4 flex flex-wrap rounded-lg bg-[FFFFFF] md:-mx-4 ">
+				<div className="flex flex-wrap bg-[FFFFFF]">
 					{servicesGroup?.map((content, index) => {
 						return (
-							<HeatingCoolingServiceCard
+							<div
 								key={index}
-								title={content?.titleText || ''}
-								content={content?.description || ''}
-								thumbnailSrc={content?.image?.asset?.url || ''}
-								thumbnailAltText={''}
-							/>
+								className="card-wrapper mb-4 px-3 md:basis-1/2 xl:basis-1/4 "
+							>
+								<HeatingCoolingServiceCard
+									key={index}
+									title={content?.titleText || ''}
+									content={content?.description || ''}
+									thumbnailSrc={content?.image?.asset?.url || ''}
+									thumbnailAltText={''}
+								/>
+							</div>
 						);
 					})}
 				</div>
