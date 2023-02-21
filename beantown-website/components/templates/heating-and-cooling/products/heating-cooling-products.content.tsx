@@ -56,7 +56,7 @@ const HeatingCoolingProductsCardContent = () => {
 		<>
 			<div className=" flex items-center justify-between">
 				<div>
-					<p className="title-6 lg:title-2 ">{productsTitle}</p>
+					<p className="title-5 lg:title-2 ">{productsTitle}</p>
 				</div>
 
 				<div className="hidden  justify-center  gap-4 pt-4 lg:flex  ">
