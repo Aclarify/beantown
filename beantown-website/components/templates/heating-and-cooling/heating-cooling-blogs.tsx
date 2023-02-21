@@ -4,6 +4,7 @@ import { GlobalContextProps } from '@typing/common/interfaces/contexts.interface
 import { HomePageContentProps } from 'pages';
 import Blogs from 'components/organisms/blogs.organism';
 import WaveWrapper from 'components/molecules/wave-wrapper.molecule';
+import useWindowDimensions from '@lib/hooks/use-window-dimensions.hook';
 
 export default function HeatingCoolingBlogs() {
 	const { pageContent } =

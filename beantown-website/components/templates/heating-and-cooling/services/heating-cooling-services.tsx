@@ -12,24 +12,24 @@ import useWindowDimensions from '@lib/hooks/use-window-dimensions.hook';
 export default function HeatingCoolingServices() {
 	const { pageContent } =
 		useContext<GlobalContextProps<HeatingCoolingContentProps>>(GlobalContext);
+	const { width } = useWindowDimensions();
 	if (!pageContent) {
 		return null;
 	}
 	const pageData = pageContent.page[0];
-	// const { width } = useWindowDimensions();
+
 	const { servicesTitle, servicesDescription, servicesGroup } = pageData;
 	return (
 		<section
 			id="heatingServices"
-			className="z-5 relative -mt-[1em] md:-mt-[2em] lg:-mt-[5em]  "
+			className="z-5 -sm:mt-[6em] 3xl:-mt-[7em] relative -mt-[5em] md:-mt-[9em]  lg:-mt-[4em] "
 		>
 			<WaveWrapper
-				waveURL="/images/heating-cooling/services/hc-services-top-wave.svg"
-				// waveURL={
-				// 	width > 768
-				// 		? '/images/heating-cooling/services/hc-services-top-wave.svg'
-				// 		: '/images/heating-cooling/services/hc-services-top-wave-mobile.svg'
-				// }
+				waveURL={
+					width > 1023
+						? '/images/heating-cooling/services/hc-services-top-wave.svg'
+						: '/images/services/services-hero-mobile-wave.svg'
+				}
 			></WaveWrapper>
 
 			<Image
