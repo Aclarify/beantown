@@ -16,6 +16,7 @@ const ProductCard: React.FC<Props> = (props) => {
 						width={1000}
 						height={700}
 						src={props.thumbnailSrc}
+						
 					/>
 				</div>
 				<div className="flex flex-col items-start gap-2 px-2 pt-4 pb-6 lg:px-4 lg:pt-8">
@@ -23,7 +24,7 @@ const ProductCard: React.FC<Props> = (props) => {
 						{props.title}
 					</h1>
 
-					<div className="para-4 md:para-3 text-gray-shade-1  text-left   ">
+					<div className="para-4 md:para-3 text-gray-shade-1  text-left mx-2  ">
 						<p>{props.description}</p>
 					</div>
 				</div>

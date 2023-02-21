@@ -3,7 +3,6 @@
 @tailwind utilities;
 
 @layer utilities {
-
 	/* hide for chrome,safari and opera */
 	.no-scrollbar::-webkit-scrollbar {
 		display: none;
@@ -127,7 +126,7 @@
 	}
 }
 
-.slick-slide>div {
+.slick-slide > div {
 	margin: 0 10px;
 }
 
@@ -137,4 +136,7 @@
 
 .slick-slide:not(.slick-active) {
 	opacity: 0.5;
+}
+.slick-list {
+	padding: 0 20% 0 0 !important;
 }
