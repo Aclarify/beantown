@@ -48,12 +48,7 @@ const HomePage: React.FC = () => {
 			<HomeHero />
 			<Services />
 			<WhyUs />
-			<div
-				id="testimonial-section-wrapper"
-				className="relative bottom-[24rem] -mb-[24rem]"
-			>
-				<Testimonials />
-			</div>
+			<Testimonials />
 			<ServiceAreas />
 			<HomeBlogs />
 			<HomeFaq />

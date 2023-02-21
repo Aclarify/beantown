@@ -24,7 +24,7 @@ export default function MassSave() {
 	return (
 		<section
 			id="massSave"
-			className=" relative z-10 -mb-[1em] md:-mb-[2em] lg:-mb-[4em] 2xl:-mb-[6em]"
+			className=" relative z-10 -mb-[2em] sm:-mb-[2em] md:-mb-[3em] lg:-mb-[4em] 2xl:-mb-[6em]"
 		>
 			<div
 				id="section-wrapper"
@@ -84,7 +84,13 @@ export default function MassSave() {
 				alt="Right Blob Mobile"
 				className="absolute right-0 bottom-0 z-[-1] translate-x-[38%]  -translate-y-[87%] transform md:hidden"
 			/>
-			<WaveWrapper waveURL="/images/heating-cooling/mass-save/hc-mass-save-bottom-wave.svg"></WaveWrapper>
+			<WaveWrapper
+				waveURL={
+					width > 1023
+						? '/images/heating-cooling/mass-save/hc-mass-save-bottom-wave.svg'
+						: '/images/heating-cooling/mass-save/hc-mass-save-bottom-wave-mobile.svg'
+				}
+			></WaveWrapper>
 		</section>
 	);
 }

@@ -14,10 +14,7 @@ export default function HeatingCoolingFaq() {
 	const { faqTitle, faqDescription, faqButton, faqList } = pageData;
 	return (
 		<>
-			<section
-				id="faq"
-				className=" z-5 relative mb-[9em]  pb-[2em] pt-[60px] lg:pt-0"
-			>
+			<section id="faq" className=" z-5 relative mb-[9em] pt-[60px] lg:pt-0">
 				{faqList && (
 					<FAQ
 						backgroundImage="/images/heating-cooling/faq/hc-faq-bg-thumbprint.svg"

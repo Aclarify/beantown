@@ -44,7 +44,7 @@ export default function Services() {
 				alt="Right Blob Mobile"
 				className="absolute right-0 top-0 z-[-1] translate-x-[55%] translate-y-[40%] transform md:hidden "
 			/>
-			<div className="lg:padding-for-section relative  px-5">
+			<div className="2xl:padding-for-section relative">
 				<div className="flex flex-col items-center  text-center">
 					<ContentWrapper>
 						<ContentWrapper.Title>
@@ -52,27 +52,29 @@ export default function Services() {
 								{servicesTitle}
 							</h1>
 						</ContentWrapper.Title>
-						<ContentWrapper.Description>
+						<ContentWrapper.Description className="para-4 lg:para-2 px-12 lg:px-20">
 							<RichText value={servicesDescription?.contentRaw} />
 						</ContentWrapper.Description>
 					</ContentWrapper>
 				</div>
-				<div className="mt-14 flex flex-wrap justify-center space-y-4 rounded-lg lg:space-x-6 xl:space-x-10 ">
+				<div className="mt-14 flex flex-wrap justify-center rounded-lg">
 					{/* <div className="container my-12 mx-auto px-4 md:px-12">
 					<div className="-mx-1 flex flex-wrap lg:-mx-4"> */}
 					{servicesGroup?.map((service, index) => {
 						return (
 							service?.thumbnailImage?.asset?.url && (
-								<ServiceCard
-									key={index}
-									title={service?.text || ''}
-									buttonText={service?.button?.text || ''}
-									hRef={service?.button?.href || ''}
-									thumbnailSrc={service.thumbnailImage?.asset?.url || ''}
-									thumbnailAltText={
-										service.thumbnailImage?.asset?.altText || ''
-									}
-								/>
+								<div className="service-card-wrapper mb-5 w-full px-4 sm:px-10 md:basis-1/2 md:px-4 lg:mr-0 lg:mb-0 lg:space-x-6   lg:pr-6 lg:pb-5 xl:basis-1/3">
+									<ServiceCard
+										key={index}
+										title={service?.text || ''}
+										buttonText={service?.button?.text || ''}
+										hRef={service?.button?.href || ''}
+										thumbnailSrc={service.thumbnailImage?.asset?.url || ''}
+										thumbnailAltText={
+											service.thumbnailImage?.asset?.altText || ''
+										}
+									/>
+								</div>
 							)
 						);
 					})}

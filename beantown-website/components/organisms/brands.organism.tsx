@@ -70,7 +70,7 @@ const settings = {
 		{
 			breakpoint: 600,
 			settings: {
-				slidesToShow: 1,
+				slidesToShow: 2,
 				slidesToScroll: 1,
 				initialSlide: 1,
 				infinite: true,
@@ -81,7 +81,7 @@ const settings = {
 
 const Brands: React.FC<IProps> = (props) => {
 	return (
-		<div className={`${props.brandsBgColour} w-full`}>
+		<div className={`${props.brandsBgColour} w-full pt-5 lg:pt-0`}>
 			<div className="flex  justify-center ">
 				<span className="title-5 lg:title-2 text-primary-black m-4 p-4">
 					{props.brandsTitle}

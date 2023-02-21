@@ -7,10 +7,12 @@ import { GlobalContext } from '@contexts/global/global.context';
 import { GlobalContextProps } from '@typing/common/interfaces/contexts.interface';
 import { HeatingCoolingContentProps } from 'pages/heating-and-cooling';
 import WaveWrapper from 'components/molecules/wave-wrapper.molecule';
+import useWindowDimensions from '@lib/hooks/use-window-dimensions.hook';
 
 export default function HeatingCoolingServices() {
 	const { pageContent } =
 		useContext<GlobalContextProps<HeatingCoolingContentProps>>(GlobalContext);
+	const { width } = useWindowDimensions();
 	if (!pageContent) {
 		return null;
 	}
@@ -20,9 +22,16 @@ const { servicesTitle, servicesDescription, servicesGroup } = pageData;
 	return (
 		<section
 			id="heatingServices"
-			className="z-5 relative -mt-[1em] md:-mt-[2em] lg:-mt-[5em]  "
+			className="z-5 -sm:mt-[6em] 3xl:-mt-[7em] relative -mt-[5em] md:-mt-[9em]  lg:-mt-[4em] "
 		>
-			<WaveWrapper waveURL="/images/heating-cooling/services/hc-services-top-wave.svg"></WaveWrapper>
+			<WaveWrapper
+				waveURL={
+					width > 1023
+						? '/images/heating-cooling/services/hc-services-top-wave.svg'
+						: '/images/services/services-hero-mobile-wave.svg'
+				}
+			></WaveWrapper>
+
 			<Image
 				src={'/images/heating-cooling/hc-blob.svg'}
 				height={600}
@@ -38,7 +47,7 @@ const { servicesTitle, servicesDescription, servicesGroup } = pageData;
 				className=" absolute left-0 translate-y-[61%] -translate-x-[38%] transform md:hidden"
 			/>
 
-			<div className="lg:padding-for-section relative px-[20px]">
+			<div className="lg:padding-for-section relative px-5 pt-14">
 				<div className="  flex flex-col items-center text-center ">
 					<ContentWrapper>
 						<ContentWrapper.Title>
