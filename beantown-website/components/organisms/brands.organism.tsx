@@ -81,13 +81,15 @@ const settings = {
 
 const Brands: React.FC<IProps> = (props) => {
 	return (
-		<div className={`${props.brandsBgColour} w-full pt-5 lg:pt-0`}>
+		<div
+			className={`${props.brandsBgColour} flex w-full flex-col pt-5 lg:pt-0 space-y-5 `}
+		>
 			<div className="flex  justify-center ">
-				<span className="title-5 lg:title-2 text-primary-black m-4 p-4">
+				<span className="title-5 lg:title-2 text-primary-black">
 					{props.brandsTitle}
 				</span>
 			</div>
-			<div>
+			<div className="slider-wrapper m-2">
 				<Slider {...settings}>
 					{props.logoArray?.map((logo, index) => {
 						return (
