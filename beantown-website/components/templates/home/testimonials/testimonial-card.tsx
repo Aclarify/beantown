@@ -12,7 +12,7 @@ const TestimonialCard: React.FC<Props> = (props) => {
 	return (
 		<section
 			id="testimonialCard"
-			className="flex flex-col rounded-2xl bg-white lg:min-h-[550px] lg:max-w-[370px] lg:rounded-3xl"
+			className="flex min-h-[358px] flex-col rounded-2xl bg-white p-6  lg:max-w-[370px] lg:rounded-3xl lg:px-2"
 		>
 			<div className="flex  justify-center pt-6 lg:py-5">
 				<Image
@@ -29,10 +29,10 @@ const TestimonialCard: React.FC<Props> = (props) => {
 				<h4 className="md:para-3 para-4 text-gray-shade-2">
 					{props.clientDetails}
 				</h4>
-				<div className="para-4 md:para-3 text-primary-black px-6  pt-6 text-center lg:px-10 ">
+				<div className="para-4 md:para-3 text-primary-black pt-6 pb-6 pl-6 text-center leading-6 lg:px-10 lg:leading-8">
 					<ReadMore
 						content={props.reviewComments}
-						limit={250}
+						limit={225}
 						onShowMore={props.onShowMore}
 					/>
 				</div>
