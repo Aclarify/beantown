@@ -7,16 +7,29 @@ import { HomePageContentProps } from 'pages';
 import React, { useContext } from 'react';
 import ServiceCard from './service-card';
 import WaveWrapper from 'components/molecules/wave-wrapper.molecule';
+import useIsMobileDevice from '@lib/hooks/is-mobile-device.hook';
 
 export default function Services() {
 	const { pageContent } =
 		useContext<GlobalContextProps<HomePageContentProps>>(GlobalContext);
+	const isMobile = useIsMobileDevice();
 	if (!pageContent) {
 		return null;
 	}
+
 	const homeData = pageContent.page[0];
 
 	const { servicesTitle, servicesDescription, servicesGroup } = homeData;
+	let clonedServicesGroup = servicesGroup ? [...servicesGroup] : [];
+
+	if (isMobile && servicesGroup && servicesGroup.length > 0) {
+		// Create a new array from servicesGroup by making the second element as the first element and add the first and last element
+		clonedServicesGroup = [
+			servicesGroup[1],
+			servicesGroup[0],
+			servicesGroup[servicesGroup.length - 1],
+		];
+	}
 	return (
 		<section
 			id="services"
@@ -60,7 +73,7 @@ export default function Services() {
 				<div className="mt-14 flex flex-wrap justify-center rounded-lg">
 					{/* <div className="container my-12 mx-auto px-4 md:px-12">
 					<div className="-mx-1 flex flex-wrap lg:-mx-4"> */}
-					{servicesGroup?.map((service, index) => {
+					{clonedServicesGroup?.map((service, index) => {
 						return (
 							service?.thumbnailImage?.asset?.url && (
 								<div
