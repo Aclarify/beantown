@@ -39,19 +39,12 @@ const HeatingCoolingProductsCardContent = () => {
 			{
 				breakpoint: 1024,
 				settings: {
-					slidesToShow: 3,
-					slidesToScroll: 1,
-				},
-			},
-			{
-				breakpoint: 768,
-				settings: {
 					slidesToShow: 2,
 					slidesToScroll: 1,
 				},
 			},
 			{
-				breakpoint: 480,
+				breakpoint: 768,
 				settings: {
 					slidesToShow: 1,
 					slidesToScroll: 1,
@@ -98,7 +91,7 @@ const HeatingCoolingProductsCardContent = () => {
 				</Slider>
 			</div>
 
-			<div className="flex justify-center gap-4 pt-4 lg:hidden ">
+			<div className="flex justify-center gap-4 pt-8 lg:hidden ">
 				<button
 					onClick={next}
 					className="lg:text-service-red text-primary-shade-1 bg-secondary-shade-3 h-12 w-20  rounded-full py-2 px-4"

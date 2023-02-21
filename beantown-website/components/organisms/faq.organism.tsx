@@ -40,7 +40,7 @@ const FAQ: React.FC<IProps> = (props) => {
 							</h1>
 						</ContentWrapper.Title>
 						<ContentWrapper.Description>
-							<p className="para-4 lg:para-2 text-primary-shade-1 my-4 flex flex-wrap justify-center lg:w-2/3">
+							<p className="para-4 lg:subtitle-4 text-primary-shade-1 my-4 flex flex-wrap justify-center lg:w-2/3">
 								{props.faqDescription}
 							</p>
 						</ContentWrapper.Description>
