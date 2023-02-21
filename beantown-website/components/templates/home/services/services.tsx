@@ -45,7 +45,7 @@ export default function Services() {
 				className="absolute right-0 top-0 z-[-1] translate-x-[55%] translate-y-[40%] transform md:hidden "
 			/>
 			<div className="2xl:padding-for-section relative">
-				<div className="flex flex-col items-center  text-center">
+				<div className="text-center flex flex-col  items-center pt-[4em] lg:pt-0">
 					<ContentWrapper>
 						<ContentWrapper.Title>
 							<h1 className="title-5 lg:title-2 text-primary-black mb-4">
