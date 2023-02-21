@@ -4,7 +4,7 @@ import HeatingCoolingProductsCardContent from './heating-cooling-products.conten
 
 const HeatingCoolingProductsSection = () => {
 	return (
-		<section id="heatingCoolingProductsCards" className="mb-40">
+		<section id="heatingCoolingProductsCards" className="mb-40 md:mt-40">
 			<SectionContentWrapper>
 				<HeatingCoolingProductsCardContent />
 			</SectionContentWrapper>
