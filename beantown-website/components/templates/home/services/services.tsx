@@ -52,7 +52,7 @@ export default function Services() {
 								{servicesTitle}
 							</h1>
 						</ContentWrapper.Title>
-						<ContentWrapper.Description className="para-4 lg:para-2 px-12 lg:px-20">
+						<ContentWrapper.Description className="para-4 lg:para-2 px-10 sm:px-20  lg:px-80 ">
 							<RichText value={servicesDescription?.contentRaw} />
 						</ContentWrapper.Description>
 					</ContentWrapper>
