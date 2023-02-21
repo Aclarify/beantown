@@ -29,7 +29,7 @@ export default function HomeBlogs() {
 				alt="Left-blob-mobile"
 				width={450}
 				height={300}
-				className=" z-1 -md:translate-y-[33%] absolute left-0 -translate-x-[77%] -translate-y-[55%] transform lg:hidden"
+				className=" z-1 -md:translate-y-[33%] absolute left-0 -translate-x-[77%] -translate-y-[15%] transform lg:hidden"
 			></Image>
 
 			<div className="bg-primary-white-shade-1 2xl:padding-for-section relative  pl-5 pb-[0em] pt-[0rem] lg:pt-[12rem]">
