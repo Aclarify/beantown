@@ -6,8 +6,9 @@ import RichText from 'components/molecules/rich-text.molecule';
 import ContentWrapper from 'components/organisms/content-wrapper.organism';
 import CTAWithImage from 'components/organisms/cta-with-image.organism';
 import CtaWrapper from 'components/molecules/cta-wrapper.molecule';
+import SectionContentWrapper from 'components/molecules/section-content-wrapper.molecule';
 
-export default function HeatingCoolingPageHero() {
+const HeatingCoolingHeroContent = () => {
 	const { pageContent } =
 		useContext<GlobalContextProps<HeatingCoolingContentProps>>(GlobalContext);
 	if (!pageContent) {
@@ -16,19 +17,19 @@ export default function HeatingCoolingPageHero() {
 	const pageData = pageContent.page[0];
 	const { heroImage, heroTitle, heroDescription, heroButton } = pageData;
 	return (
-		<section id="cooling-and-heating-hero" className="z-5 relative">
-			<CTAWithImage
-				heroImageURL={heroImage?.asset?.url || ''}
-				heroImageAltText={'Hero image'}
-				textContentBGImage={'/images/heating-cooling/hero/hc-hero-vector.svg'}
-				textContentBGImageForSmallScreen={
-					'/images/heating-cooling/hero/hc-hero-bg-wave-mobile.svg'
-				}
-				heroImagePosition="right"
-				gradientFromColor="from-service-red"
-				gradientToColor="bg-service-red"
-			>
-				<ContentWrapper className="lg:padding-for-section px-10 pt-[2em] pb-[4em] text-center md:px-[10em] md:py-[12em] lg:py-[6em] lg:text-left">
+		<CTAWithImage
+			heroImageURL={heroImage?.asset?.url || ''}
+			heroImageAltText={'Hero image'}
+			textContentBGImage={'/images/heating-cooling/hero/hc-hero-vector.svg'}
+			textContentBGImageForSmallScreen={
+				'/images/heating-cooling/hero/hc-hero-bg-wave-mobile.svg'
+			}
+			heroImagePosition="right"
+			gradientFromColor="from-service-red"
+			gradientToColor="bg-service-red"
+		>
+			<SectionContentWrapper>
+				<ContentWrapper className="pt-[2em] pb-[4em] text-center md:py-[12em]  lg:py-[6em] lg:text-left">
 					<ContentWrapper.Title className="mb-[8px] lg:mb-[16px]">
 						<h1 className="title-4 lg:title-1 text-white">{heroTitle}</h1>
 					</ContentWrapper.Title>
@@ -41,7 +42,9 @@ export default function HeatingCoolingPageHero() {
 						</CtaWrapper.CTA>
 					</ContentWrapper.CTA>
 				</ContentWrapper>
-			</CTAWithImage>
-		</section>
+			</SectionContentWrapper>
+		</CTAWithImage>
 	);
-}
+};
+
+export default HeatingCoolingHeroContent;

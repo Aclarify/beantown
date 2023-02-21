@@ -9,7 +9,7 @@ import Slider from 'react-slick';
 import 'slick-carousel/slick/slick.css';
 import 'slick-carousel/slick/slick-theme.css';
 
-export default function HeatingCoolingProductsCards() {
+const HeatingCoolingProductsCardContent = () => {
 	const slider = React.useRef<Slider | null>(null);
 	const { pageContent } =
 		useContext<GlobalContextProps<HeatingCoolingContentProps>>(GlobalContext);
@@ -61,11 +61,8 @@ export default function HeatingCoolingProductsCards() {
 		],
 	};
 	return (
-		<section
-			id="heatingCoolingProductsCards"
-			className="lg:padding-for-section mb-40 mt-20 px-[20px] pt-20 "
-		>
-			<div className=" flex items-center justify-between ">
+		<>
+			<div className=" flex items-center justify-between">
 				<div>
 					<p className="title-6 lg:title-2 ">{productsTitle}</p>
 				</div>
@@ -116,9 +113,8 @@ export default function HeatingCoolingProductsCards() {
 					<FontAwesomeIcon icon={faArrowRight} />
 				</button>
 			</div>
-		</section>
+		</>
 	);
-}
-function useRef() {
-	throw new Error('Function not implemented.');
-}
+};
+
+export default HeatingCoolingProductsCardContent;
