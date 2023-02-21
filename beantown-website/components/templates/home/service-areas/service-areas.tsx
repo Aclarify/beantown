@@ -40,7 +40,7 @@ export default function ServiceAreas() {
 		serviceAreaImage,
 	} = homeData;
 	return (
-		<section id="serviceAreas" className="relative mt-36 ">
+		<section id="serviceAreas" className="relative mt-20 ">
 			<WaveWrapper waveURL="/images/home/service-area/home-service-area-top-wave.svg"></WaveWrapper>
 			<div className=" z-1 bg-primary-white-shade-1 2xl:padding-for-section p-5 pr-2 md:pr-4 lg:pr-6">
 				<div className=" pb-6  lg:flex 2xl:pt-16">
