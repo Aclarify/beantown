@@ -27,12 +27,12 @@ const HeatingCoolingPageCTAContent = () => {
 			gradientFromColor="from-service-red"
 			gradientToColor="bg-service-red"
 		>
-			<ContentWrapper className="lg:padding-for-section px-10 pt-[2em] pb-[4em] text-center md:px-[10em] md:py-[12em] lg:py-[6em] lg:text-left">
-				<ContentWrapper.Title className="mb-[8px]   lg:mb-[16px]">
+			<ContentWrapper className="2xl:padding-for-section px-10 pt-[2em] pb-[4em] text-center md:px-[10em] md:py-[12em] lg:py-[6em] lg:text-left">
+				<ContentWrapper.Title className=" mb-2 lg:mb-4">
 					<h1 className="title-5 lg:title-2 text-white">{ctaTitle}</h1>
 				</ContentWrapper.Title>
-				<ContentWrapper.CTA className="mt-[32px]">
-					<CtaWrapper.CTA className="para-3 lg:para-2 lg:text-service-red text-primary-black h-[52px] w-[184px] rounded-lg bg-white py-1 px-4 tracking-wide md:py-2  md:px-8  lg:h-[64px] lg:w-[198px] lg:tracking-wider ">
+				<ContentWrapper.CTA className=" mt-8 pb-[1em] lg:pb-0">
+					<CtaWrapper.CTA className="para-3 lg:para-2 lg:text-service-red text-primary-black h-[52px] w-[184px] rounded-lg bg-white py-1 px-4  tracking-wide  md:py-2  md:px-8 lg:h-[64px] lg:w-[198px]  lg:tracking-wider ">
 						<p>{finalCtaButton?.text}</p>
 					</CtaWrapper.CTA>
 				</ContentWrapper.CTA>
