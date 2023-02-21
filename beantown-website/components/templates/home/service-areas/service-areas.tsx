@@ -117,7 +117,7 @@ export default function ServiceAreas() {
 				height={250}
 				width={250}
 				alt="Right Blob mobile"
-				className="absolute  bottom-0 right-0 z-20 translate-x-[75%] translate-y-[50%] transform lg:hidden"
+				className="absolute  bottom-0 right-0 z-20 translate-x-[78%] translate-y-[25%] transform lg:hidden"
 			/>
 		</section>
 	);

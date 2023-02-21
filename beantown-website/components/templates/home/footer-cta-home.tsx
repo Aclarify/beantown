@@ -24,7 +24,7 @@ export default function FooterCta() {
 			<section
 				id="home-cta"
 				className="z-15 3xl:-top-[10em] 3xl:-mb-[4em] relative -top-[1em] mb-[6em] sm:-top-[2em] sm:mb-[5em] md:-top-[3em]
-				md:mb-[5em] lg:-top-[3em] lg:mb-[4em] xl:-top-[5em] 2xl:-top-[6em] 2xl:mb-[0em]"
+				md:mb-[5em] lg:-top-[3em] lg:mb-[3em] xl:-top-[5em] 2xl:-top-[6em] 2xl:mb-[0em]"
 			>
 				<CTAWithImage
 					heroImageURL={ctaImage?.asset?.url || ''}
@@ -37,7 +37,7 @@ export default function FooterCta() {
 					gradientFromColor="from-secondary-shade-2"
 					gradientToColor="bg-secondary-shade-2"
 				>
-					<ContentWrapper className="2xl:padding-for-section px-10 pt-[2em] pb-[4em] text-center md:px-[10em] md:py-[12em] lg:py-[6em] lg:text-left">
+					<ContentWrapper className="2xl:padding-for-section text-center px-10 pt-[2em] pb-[4em] md:px-[10em] md:py-[12em] lg:px-10 lg:py-[6em] lg:text-left">
 						<ContentWrapper.Title className="mb-[8px]   lg:mb-[16px]">
 							<h1 className="title-5 lg:title-2 text-primary-shade-1">
 								{ctaTitle}
