@@ -12,9 +12,9 @@ const TestimonialCard: React.FC<Props> = (props) => {
 	return (
 		<section
 			id="testimonialCard"
-			className="rounded-2xl bg-white lg:min-h-[550px] lg:max-w-[370px] lg:rounded-3xl"
+			className="flex flex-col rounded-2xl bg-white lg:min-h-[550px] lg:max-w-[370px] lg:rounded-3xl"
 		>
-			<div className="flex justify-center pt-4 lg:py-10">
+			<div className="flex  justify-center pt-6 lg:py-5">
 				<Image
 					alt="An image for quotes in testimonial card"
 					width={40}
@@ -22,7 +22,7 @@ const TestimonialCard: React.FC<Props> = (props) => {
 					src="/images/home/testimonials-quote.svg"
 				/>
 			</div>
-			<div className="flex flex-col items-center gap-2 py-10 ">
+			<div className="flex flex-col items-center gap-1 py-5 ">
 				<h1 className="subtitle-2 md:subtitle-4 text-primary-black">
 					{props.clientName}
 				</h1>

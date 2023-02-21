@@ -68,14 +68,14 @@ export default function Testimonials() {
 			{
 				breakpoint: 768,
 				settings: {
-					slidesToShow: 2,
+					slidesToShow: 1,
 					slidesToScroll: 1,
 				},
 			},
 			{
 				breakpoint: 480,
 				settings: {
-					slidesToShow: 1,
+					slidesToShow: 1.1,
 					slidesToScroll: 1,
 				},
 			},
@@ -125,7 +125,7 @@ export default function Testimonials() {
 				<div>
 					<div className="relative lg:hidden ">
 						<div className=" w-full flex-none  gap-5">
-							<div className="  ">
+							<div className="m-10  ">
 								<h1 className="para-4 text-primary-shade-1 ">
 									{testimonialTitle}
 								</h1>
@@ -136,8 +136,8 @@ export default function Testimonials() {
 						</div>
 					</div>
 
-					<div className="flex space-x-6">
-						<div className="gap-15 z-40 m-8 hidden flex-none flex-col items-center   justify-center md:flex  ">
+					<div className=" flex space-x-6">
+						<div className="gap-15 z-40 ml-28 mr-16 hidden flex-none flex-col items-center   justify-center md:flex  ">
 							<div className="flex-none  gap-5 ">
 								<h1 className=" text-light-1 text-primary-shade-1 ">
 									{testimonialTitle}
@@ -161,11 +161,14 @@ export default function Testimonials() {
 								</button>
 							</div>
 						</div>
-						<div className="slider-wrapper w-3/4">
+						<div className="slider-wrapper w-full lg:w-3/4  ">
 							<Slider ref={slider} {...settings} className="">
 								{testimonialCards?.map((reviews, index) => {
 									return (
-										<div className="testimonial-card-wrapper " key={index}>
+										<div
+											className="testimonial-card-wrapper "
+											key={index}
+										>
 											<TestimonialCard
 												key={index}
 												clientName={reviews?.titleText || ''}
