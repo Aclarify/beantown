@@ -30,7 +30,7 @@ const HeatingCoolingMassSaveContent = () => {
 			>
 				<div
 					id="content-wrapper"
-					className="z-10 flex basis-1/2 flex-col items-start text-justify lg:pt-20 "
+					className="z-10 flex basis-1/2 flex-col items-start text-left lg:pt-20 "
 				>
 					<ContentWrapper>
 						<ContentWrapper.Title>
