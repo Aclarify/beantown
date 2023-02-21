@@ -26,6 +26,11 @@ const homeQuery = ` allHome {
 				url
 			}
 			}
+			heroImageMobile{
+			asset{
+				url
+			}
+			}
 			servicesTitle
 			servicesDescription {
 				contentRaw

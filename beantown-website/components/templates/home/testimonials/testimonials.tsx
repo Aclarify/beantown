@@ -1,6 +1,5 @@
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faArrowRight, faArrowLeft } from '@fortawesome/free-solid-svg-icons';
-
 import React, { useState, useContext, useEffect, useRef } from 'react';
 import { GlobalContext } from '@contexts/global/global.context';
 import { GlobalContextProps } from '@typing/common/interfaces/contexts.interface';
@@ -8,8 +7,12 @@ import { HomePageContentProps } from 'pages';
 import Image from 'next/image';
 import TestimonialCard from './testimonial-card';
 import TestimonialModal from './testimonial-modal';
+import Slider from 'react-slick';
+import 'slick-carousel/slick/slick.css';
+import 'slick-carousel/slick/slick-theme.css';
 
 export default function Testimonials() {
+	const slider = React.useRef<Slider | null>(null);
 	const [showTestimonialModel, setShowTestimonialModel] = useState(false);
 	const [selectedTestimonial, setSelectedTestimonial] = useState<any>(null);
 	const [currentIndex, setCurrentIndex] = useState(0);
@@ -37,44 +40,45 @@ export default function Testimonials() {
 	const { testimonialTitle, testimonialDescription, testimonialCards } =
 		homeData;
 
+	const previous = () => {
+		if (slider.current) {
+			slider.current.slickNext();
+			console.log('nextClicked');
+		}
+	};
+	const next = () => {
+		if (slider.current) {
+			slider.current.slickPrev();
+		}
+	};
+	const settings = {
+		speed: 500,
+		slidesToShow: 3,
+		slidesToScroll: 1,
+		initialSlide: 0,
+		arrows: false,
+		responsive: [
+			{
+				breakpoint: 1024,
+				settings: {
+					slidesToShow: 2,
+					slidesToScroll: 1,
+				},
+			},
+			{
+				breakpoint: 480,
+				settings: {
+					slidesToShow: 1.1,
+					slidesToScroll: 1,
+				},
+			},
+		],
+	};
 	const handleOnClose = () => {
 		setShowTestimonialModel(false);
 		// Unsets Background Scrolling to use when SideDrawer/Modal is closed
 		document.body.style.overflow = 'unset';
 	};
-
-	const movePrevious = () => {
-		if (currentIndex > 0) {
-			setCurrentIndex((previousState) => previousState - 1);
-		}
-	};
-	const moveNext = () => {
-		if (
-			carousel.current !== null &&
-			carousel.current.offsetWidth * currentIndex <= maxScrollWidth.current
-		) {
-			setCurrentIndex((previousState) => previousState + 1);
-		}
-	};
-
-	const isDisabled = (direction: any) => {
-		if (direction === 'prev') {
-			return currentIndex <= 0;
-		}
-
-		if (direction === 'next' && carousel.current !== null) {
-			return (
-				carousel.current.offsetWidth * currentIndex >= maxScrollWidth.current
-			);
-		}
-
-		return false;
-	};
-
-	const goToSlide = (slideIndex: number) => {
-		setCurrentIndex(slideIndex);
-	};
-
 	const onTestimonialCardClick = (testimonial: any) => {
 		setSelectedTestimonial(testimonial);
 		setShowTestimonialModel(true);
@@ -88,123 +92,110 @@ export default function Testimonials() {
 		<>
 			<section
 				id="testimonials-cards"
-				className=" bg-secondary-shade-3  overflow-hidden md:px-10"
+				className=" bg-secondary-shade-3  relative bottom-[24rem] -mb-[24rem]  "
 			>
-				<div className="relative md:hidden ">
-					<div className="z-50 w-full flex-none  gap-5">
-						<div className="mt-20 ml-8 ">
-							<h1 className="para-4 text-primary-shade-1 ">
-								{testimonialTitle}
-							</h1>
-							<span className="title-5 text-primary-black">
-								{testimonialDescription}
-							</span>
-						</div>
-					</div>
-				</div>
-
-				<div className="m-4 flex flex-nowrap  space-x-4 overflow-x-auto">
-					<div className="gap-15 z-40 m-8 hidden flex-none flex-col items-center   justify-center md:flex  ">
-						<div className="flex-none  gap-5 ">
-							<h1 className=" text-light-1 text-primary-shade-1 ">
-								{testimonialTitle}
-							</h1>
-							<span className=" title-2 text-primary-black">
-								{testimonialDescription}
-							</span>
-						</div>
-						<div className="m-4 hidden items-center justify-center md:flex md:flex-col ">
-							<div className="flex  justify-center pt-4 ">
-								<button
-									onClick={movePrevious}
-									disabled={isDisabled('prev')}
-									className="bg-primary-shade-1 z-10 m-1 h-full w-24 rounded-full  p-2 text-center text-white transition-all duration-300 ease-in-out hover:opacity-100  disabled:cursor-not-allowed disabled:bg-white disabled:text-black"
-									aria-label="Button for moving left"
-								>
-									<FontAwesomeIcon icon={faArrowLeft} size="lg" />
-								</button>
-								<button
-									onClick={moveNext}
-									disabled={isDisabled('next')}
-									className="bg-primary-shade-1 z-10 m-1 h-full  w-24 rounded-full p-2   text-center text-white transition-all duration-300 ease-in-out hover:opacity-100 disabled:cursor-not-allowed disabled:bg-white disabled:text-black"
-									aria-label="Button for moving right"
-								>
-									<FontAwesomeIcon icon={faArrowRight} size="lg" />
-								</button>
+				<Image
+					src={'/images/home/testimonials/home-testimonial-left-blob.svg'}
+					height={590}
+					width={650}
+					alt="Left Blob "
+					className="z-1  absolute top-0 left-0 hidden -translate-x-[55%] transform lg:block lg:-translate-y-[45%] "
+				/>
+				<Image
+					src={'/images/home/testimonials/home-testimonial-right-blob.svg'}
+					height={390}
+					width={450}
+					alt="Right Blob tab "
+					className="z-1  absolute top-0 right-0 hidden translate-x-[50%] -translate-y-[70%] transform md:block lg:hidden"
+				/>
+				<Image
+					src={'/images/home/testimonials/home-testimonial-right-blob.svg'}
+					height={250}
+					width={250}
+					alt="Right Blob mobile"
+					className="z-1  absolute top-0 right-0 translate-x-[48%] -translate-y-[70%] transform md:hidden"
+				/>
+				<div>
+					<div className="relative lg:hidden ">
+						<div className=" w-full flex-none  gap-5">
+							<div className="m-10  ">
+								<h1 className="para-4 text-primary-shade-1 ">
+									{testimonialTitle}
+								</h1>
+								<span className="title-5 text-primary-black">
+									{testimonialDescription}
+								</span>
 							</div>
 						</div>
 					</div>
 
-					<div
-						ref={carousel}
-						className="no-scrollbar group z-0 mt-16    flex snap-x snap-mandatory gap-6  overflow-x-scroll scroll-smooth "
-					>
-						{testimonialCards?.map((reviews, index) => {
-							return (
-								<div
-									// id="slider"
-									key={index}
-									className=" my-6 h-[70vh] max-h-[500px] w-80 flex-none snap-start items-center rounded-2xl border  bg-[#FFFFFF] p-2 "
-								>
-									<TestimonialCard
-										key={index}
-										clientName={reviews?.titleText || ''}
-										clientDetails={reviews?.subText || ''}
-										reviewComments={reviews?.description || ''}
-										onShowMore={() => onTestimonialCardClick(reviews)}
-									/>
+					<div className=" flex space-x-6">
+						<div className="gap-15 z-40 ml-28 mr-16 hidden flex-none flex-col items-center   justify-center lg:flex  ">
+							<div className="flex-none  gap-5 ">
+								<h1 className=" text-light-1 text-primary-shade-1 ">
+									{testimonialTitle}
+								</h1>
+								<span className=" title-2 text-primary-black">
+									{testimonialDescription}
+								</span>
+								<div className="mt-14 flex space-x-6">
+									<button
+										onClick={next}
+										className=" text-primary-shade-1 h-16 w-32 rounded-full bg-white py-4 px-6 text-lg"
+									>
+										<FontAwesomeIcon icon={faArrowLeft} />
+									</button>
+									<button
+										onClick={previous}
+										className="text-primary-shade-1 bg-primary-shade-1 h-16 w-32 rounded-full py-4 px-6 text-lg md:text-white"
+									>
+										<FontAwesomeIcon icon={faArrowRight} />
+									</button>
 								</div>
-							);
-						})}
-					</div>
-				</div>
-
-				<div className="md:hidden">
-					<div className="mr-8 flex items-center justify-end ">
-						<div className="flex justify-center pt-4 ">
-							<button
-								onClick={movePrevious}
-								disabled={isDisabled('prev')}
-								className="bg-primary-shade-1  z-10 m-1 h-full w-16  rounded-full  p-2   text-center text-white transition-all duration-300 ease-in-out hover:opacity-100 disabled:cursor-not-allowed disabled:bg-white disabled:text-black"
-								aria-label="Button for moving left"
-							>
-								<FontAwesomeIcon icon={faArrowLeft} />
-							</button>
-							<button
-								id="right"
-								onClick={moveNext}
-								disabled={isDisabled('next')}
-								className="bg-primary-shade-1 z-10 m-1 h-full  w-16 rounded-full   p-2  text-center text-white transition-all duration-300 ease-in-out hover:opacity-100 disabled:cursor-not-allowed disabled:bg-white disabled:text-black"
-								aria-label="Button for moving right"
-							>
-								<FontAwesomeIcon icon={faArrowRight} />
-							</button>
+							</div>
 						</div>
+						<div className="slider-wrapper w-full lg:w-3/4  ">
+							<Slider ref={slider} {...settings} className="">
+								{testimonialCards?.map((reviews, index) => {
+									return (
+										<div className="testimonial-card-wrapper " key={index}>
+											<TestimonialCard
+												key={index}
+												clientName={reviews?.titleText || ''}
+												clientDetails={reviews?.subText || ''}
+												reviewComments={reviews?.description || ''}
+												onShowMore={() => onTestimonialCardClick(reviews)}
+											/>
+										</div>
+									);
+								})}
+							</Slider>
+						</div>
+						̊
 					</div>
-				</div>
-				<TestimonialModal
-					onClose={handleOnClose}
-					visible={showTestimonialModel}
-					clientName={selectedTestimonial?.titleText || ''}
-					clientDetails={selectedTestimonial?.subText || ''}
-					reviewComments={selectedTestimonial?.description || ''}
-				/>
 
-				{/* <Modal
-					isOpen={showTestimonialModel}
-					// onAfterOpen={afterOpenModal}
-					onRequestClose={handleOnClose}
-					// style={customStyles}
-					contentLabel="Example Modal"
-				>
-					<TestimonialCard
-						key={1}
+					<div className="mt-2 flex justify-end gap-4 pt-4 pr-4 lg:hidden ">
+						<button
+							onClick={next}
+							className="text-primary-shade-1 h-12 w-20 rounded-full  bg-white py-2 px-4"
+						>
+							<FontAwesomeIcon icon={faArrowLeft} />
+						</button>
+						<button
+							onClick={previous}
+							className=" bg-primary-shade-1 h-12 w-20 rounded-full py-2 px-4 text-white"
+						>
+							<FontAwesomeIcon icon={faArrowRight} />
+						</button>
+					</div>
+					<TestimonialModal
+						onClose={handleOnClose}
+						visible={showTestimonialModel}
 						clientName={selectedTestimonial?.titleText || ''}
 						clientDetails={selectedTestimonial?.subText || ''}
 						reviewComments={selectedTestimonial?.description || ''}
 					/>
-				/>
-				</Modal> */}
+				</div>
 			</section>
 		</>
 	);

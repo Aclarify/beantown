@@ -1,6 +1,4 @@
 import React from 'react';
-import HeatingCoolingServiceCard from '../components/templates/heating-and-cooling/services/heating-cooling-services';
-import HeatingCoolingProductsCards from '../components/templates/heating-and-cooling/products/heating-cooling-products';
 import { HeatingAndCooling, Nav, Footer } from '@typing/gql/graphql';
 import Head from 'next/head';
 import pageQuery from '@lib/queries/pages/get-heating-and-cooling.query';
@@ -8,13 +6,14 @@ import WithGlobalContent, {
 	generateGetStaticProps,
 } from '../components/containers/global-content/global-content.container';
 import { PageNames } from '@configs/client/pages/pages.config';
-import HeatingCoolingPageHero from 'components/templates/heating-and-cooling/heating-cooling-hero';
-import MassSave from 'components/templates/heating-and-cooling/heating-cooling-mass-save';
-import HeatingCoolingBlogs from 'components/templates/heating-and-cooling/heating-cooling-blogs';
-import FAQ from 'components/organisms/faq.organism';
-import HeatingCoolingFaq from 'components/templates/heating-and-cooling/heating-cooling-faqs';
-import HeatingCoolingPageCTA from 'components/templates/heating-and-cooling/heating-cooling-cta';
-import HeatingCoolingBrands from 'components/templates/heating-and-cooling/heating-cooling-brands';
+import HeatingCoolingHeroSection from 'components/templates/heating-and-cooling/hero/heating-cooling-hero.section';
+import HeatingCoolingHeroServicesSection from 'components/templates/heating-and-cooling/services/heating-cooling-services.section';
+import HeatingCoolingProductsSection from 'components/templates/heating-and-cooling/products/heating-cooling-products.section';
+import HeatingCoolingBlogsSection from 'components/templates/heating-and-cooling/blogs/heating-cooling-blogs.section';
+import HeatingCoolingMassSaveSection from 'components/templates/heating-and-cooling/mass-save/heating-cooling-mass-save.section';
+import HeatingCoolingBrandsSection from 'components/templates/heating-and-cooling/brands/heating-cooling-brands.section';
+import HeatingCoolingPageCTASection from 'components/templates/heating-and-cooling/cta/heating-cooling-cta.section';
+import HeatingCoolingFaqSection from 'components/templates/heating-and-cooling/faq/heating-cooling-faqs.section';
 
 export interface HeatingCoolingContentProps {
 	page: HeatingAndCooling[];
@@ -26,7 +25,7 @@ const PageHead = () => {
 	return (
 		<Head>
 			{/* TODO to fetch from CMS */}
-			<title>Heating &amp; Cooling Services</title>
+			<title>Heating and Cooling Services</title>
 			<meta
 				name="description"
 				content="Beantown Services is a full-service cleaning company that provides residential and commercial cleaning services in the Boston area."
@@ -41,21 +40,22 @@ const getStaticProps = generateGetStaticProps<HeatingCoolingContentProps>(
 );
 export { getStaticProps };
 
-const HeatingAndCoolingServices: React.FC = (props) => {
+const PlumbingServicePage: React.FC = (props) => {
 	return (
-		<section className="bg-primary-white-shade-1">
-			<HeatingCoolingPageHero />
-			<HeatingCoolingServiceCard />
-			<HeatingCoolingProductsCards />
-			<MassSave />
-			<HeatingCoolingPageCTA />
-			<HeatingCoolingBrands />
-			<HeatingCoolingBlogs />
-			<HeatingCoolingFaq />
-		</section>
+		<div id="heating-services" className="bg-primary-white-shade-1">
+			<PageHead />
+			<HeatingCoolingHeroSection />
+			<HeatingCoolingHeroServicesSection />
+			<HeatingCoolingProductsSection />
+			<HeatingCoolingMassSaveSection />
+			<HeatingCoolingPageCTASection />
+			<HeatingCoolingBrandsSection />
+			<HeatingCoolingBlogsSection />
+			<HeatingCoolingFaqSection />
+		</div>
 	);
 };
 
 export default WithGlobalContent<HeatingCoolingContentProps>(
-	HeatingAndCoolingServices
+	PlumbingServicePage
 );

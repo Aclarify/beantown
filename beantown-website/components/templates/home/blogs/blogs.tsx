@@ -2,12 +2,9 @@ import React, { useContext } from 'react';
 import { GlobalContext } from '@contexts/global/global.context';
 import { GlobalContextProps } from '@typing/common/interfaces/contexts.interface';
 import { HomePageContentProps } from 'pages';
-import RichText from 'components/molecules/rich-text.molecule';
 import Image from 'next/image';
-import BlogCard from './blog-card';
-import Button from 'components/atoms/button.atom';
-import Link from 'next/link';
 import Blogs from 'components/organisms/blogs.organism';
+import WaveWrapper from 'components/molecules/wave-wrapper.molecule';
 
 export default function HomeBlogs() {
 	const { pageContent } =
@@ -16,36 +13,26 @@ export default function HomeBlogs() {
 		return null;
 	}
 	const homeData = pageContent.page[0];
-	const { blogTitle, blogDescription, blogCards, blogButton } = homeData;
+	const { blogTitle, blogDescription, blogButton } = homeData;
 	return (
-		<section
-			id="blogs"
-			className="bg-primary-white-shade-1 relative z-[-1] flex flex-col overflow-hidden pl-6 pb-20 lg:px-10 "
-		>
-			<div
-				id="left-blob-desktop"
-				className="relative bottom-[2rem] right-[16em] hidden h-0 sm:block"
-			>
-				<Image
-					src="/images/home/blue-blob-shape-1.svg"
-					alt="Left-blob"
-					width={400}
-					height={400}
-				></Image>
-			</div>
-			<div
-				id="left-blob-mobile"
-				className="relative bottom-[-3rem] right-[8em] block h-0 sm:hidden"
-			>
-				<Image
-					src="/images/home/blue-blob-shape-1-mobile.svg"
-					alt="Left-blob"
-					width={200}
-					height={200}
-				></Image>
-			</div>
+		<section id="blogs" className=" relative  z-10 -mb-[9em] flex flex-col  ">
+			<Image
+				src="/images/home/blue-blob-shape-1.svg"
+				alt="Left-blob"
+				width={590}
+				height={650}
+				className=" z-1 absolute left-0  hidden -translate-x-[55%] translate-y-[12%] transform lg:block"
+			></Image>
 
-			<div className="lg:padding-for-section relative z-10 px-[20px]">
+			<Image
+				src="/images/home/blue-blob-shape-1-mobile.svg"
+				alt="Left-blob-mobile"
+				width={450}
+				height={300}
+				className=" z-1 -md:translate-y-[33%] absolute left-0 -translate-x-[77%] -translate-y-[15%] transform lg:hidden"
+			></Image>
+
+			<div className="bg-primary-white-shade-1 2xl:padding-for-section relative  pl-5 pb-[0em] pt-[0rem] lg:pt-[12rem]">
 				<Blogs
 					blogsTitle={blogTitle || ''}
 					blogsDescription={blogDescription || ''}
@@ -55,6 +42,7 @@ export default function HomeBlogs() {
 					blogCards={homeData.blogCards || []}
 				></Blogs>
 			</div>
+			<WaveWrapper waveURL="/images/home/blogs/home-blogs-bottom-wave.svg"></WaveWrapper>
 		</section>
 	);
 }

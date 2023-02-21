@@ -27,6 +27,8 @@ module.exports = {
 				'secondary-shade-2': '#CADEED',
 				'secondary-shade-3': '#F4F8FB',
 				'secondary-shade-4': '#D9D9D9',
+				'home-hero-gradient-start': 'rgba(21, 40, 76, 0.4)',
+				'home-hero-gradient-end': 'rgba(21, 40, 76, 0)',
 				'gray-shade-1': '#47515F',
 				'gray-shade-2': '#8B98AB',
 				'gray-shade-3': '#E3E5EA',

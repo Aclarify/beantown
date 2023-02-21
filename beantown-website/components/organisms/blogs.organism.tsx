@@ -19,9 +19,9 @@ interface IProps extends React.HTMLAttributes<HTMLDivElement> {
 
 const Blogs: React.FC<IProps> = (props) => {
 	return (
-		<section className="  pb-[1px] ">
+		<section className="  relative z-10 pb-[3rem] lg:pb-1 ">
 			<div>
-				<div className="title-5 lg:title-2 text-primary-black text-center">
+				<div className="title-5 lg:title-2 text-primary-black pt-[2em] text-center lg:pt-0">
 					<h1>{props.blogsTitle}</h1>
 				</div>
 				<div className="para-4 lg:para-2 text-primary-shade-1 pt-4 pb-6 text-center">

@@ -25,6 +25,7 @@ const MaskedImageWithBackgroundVector: React.FC<IProps> = (props) => {
 				width={props.width}
 				height={props.height}
 				style={{
+					width: '100%',
 					WebkitMaskImage: `url(${props.maskImg})`,
 					WebkitMaskSize: 'contain',
 					WebkitMaskRepeat: 'no-repeat',

@@ -6,4 +6,4 @@ echo "Exporting develop DB"
 sanity dataset export develop ./exports/develop-$(date +%Y-%m-%d).tar.gz
 # Import the file to the production dataset
 echo "Import develop DB to production"
-sanity dataset import ./exports/develop-$(date +%Y-%m-%d).tar.gz production 
+sanity dataset import ./exports/develop-$(date +%Y-%m-%d).tar.gz production --replace
