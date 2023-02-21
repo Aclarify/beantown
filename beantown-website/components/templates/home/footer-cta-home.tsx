@@ -37,7 +37,7 @@ export default function FooterCta() {
 					gradientFromColor="from-secondary-shade-2"
 					gradientToColor="bg-secondary-shade-2"
 				>
-					<ContentWrapper className="lg:padding-for-section px-10 pt-[2em] pb-[4em] text-center md:px-[10em] md:py-[12em] lg:py-[6em] lg:text-left">
+					<ContentWrapper className="2xl:padding-for-section px-10 pt-[2em] pb-[4em] text-center md:px-[10em] md:py-[12em] lg:py-[6em] lg:text-left">
 						<ContentWrapper.Title className="mb-[8px]   lg:mb-[16px]">
 							<h1 className="title-5 lg:title-2 text-primary-shade-1">
 								{ctaTitle}

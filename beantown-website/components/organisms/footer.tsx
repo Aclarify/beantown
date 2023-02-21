@@ -26,10 +26,10 @@ export default function Footer(props: IProps) {
 			<div className=" 3xl:-mb-[12em] 3xl:bottom-[13em] relative bottom-[9em] z-10 max-h-40 overflow-hidden md:bottom-[10em] md:-mb-[8em]  lg:bottom-[11em] lg:-mb-[8em] xl:-mb-[10em]">
 				<Image src={topWave} alt="footer wave bg" style={{ width: '100vw' }} />
 			</div>
-			<div className="relative bottom-[10em] z-20 -mb-[10em] md:bottom-[4em] md:-mb-[4em]">
+			<div className=" relative bottom-[10em] z-20 -mb-[10em]  md:bottom-[4em] md:-mb-[4em]">
 				<div
 					id="footerContainer"
-					className="bg-primary-shade-1 lg:padding-for-section flex h-auto w-full flex-col px-[20px]  pt-[2em] lg:grid lg:grid-cols-5 lg:pt-0"
+					className="bg-primary-shade-1 2xl:padding-for-section flex h-auto w-full flex-col px-5   pt-[2em] lg:grid lg:grid-cols-5 lg:pt-0"
 				>
 					<div
 						id="linkSection"
@@ -137,22 +137,24 @@ export default function Footer(props: IProps) {
 						</div>
 					</div>
 				</div>
-				<div
-					id="copyWrite"
-					className="border-gray-shade-2 para-5 lg:para-3 flex justify-center border-t-2 bg-[#15284C] py-6 text-gray-300"
-				>
-					<span className="">{copyright} </span>
+				<div className="2xl:padding-for-section bg-primary-shade-1 px-5">
+					<div
+						id="copyWrite"
+						className="border-gray-shade-2 para-5 lg:para-3  flex justify-center border-t-2  py-6  text-gray-300"
+					>
+						<span className="">{copyright} </span>
 
-					{navLinks?.map((link, index) => {
-						return (
-							link && (
-								<div className="" key={index}>
-									<span className="px-2"> . </span>
-									<Link href={link?.href || '/'}>{link?.linkText}</Link>
-								</div>
-							)
-						);
-					})}
+						{navLinks?.map((link, index) => {
+							return (
+								link && (
+									<div className="" key={index}>
+										<span className="px-2"> . </span>
+										<Link href={link?.href || '/'}>{link?.linkText}</Link>
+									</div>
+								)
+							);
+						})}
+					</div>
 				</div>
 			</div>
 		</section>

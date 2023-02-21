@@ -38,7 +38,7 @@ const HeatingCoolingMassSaveContent = () => {
 								{massSaveTitle}
 							</h1>
 						</ContentWrapper.Title>
-						<ContentWrapper.Description>
+						<ContentWrapper.Description className="para-4 lg:para-2 text-left">
 							<RichText value={massSaveDescription?.contentRaw} />
 						</ContentWrapper.Description>
 						<ContentWrapper.CTA className="mt-[16px] lg:mt-[32px]">

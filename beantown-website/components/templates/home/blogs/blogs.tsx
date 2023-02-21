@@ -36,7 +36,7 @@ export default function HomeBlogs() {
 				className=" z-1 -lg:translate-y-[33%] absolute left-0 -translate-x-[75%] translate-y-[12%] transform lg:hidden"
 			></Image>
 
-			<div className="bg-primary-white-shade-1 lg:padding-for-section relative  pl-5 pb-[2em] pt-32">
+			<div className="bg-primary-white-shade-1 2xl:padding-for-section relative  pl-5 pb-[2em] pt-32">
 				<Blogs
 					blogsTitle={blogTitle || ''}
 					blogsDescription={blogDescription || ''}

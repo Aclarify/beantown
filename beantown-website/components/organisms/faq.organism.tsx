@@ -31,10 +31,10 @@ const FAQ: React.FC<IProps> = (props) => {
 				backgroundPosition: 'center',
 			}}
 		>
-			<div className="lg:padding-for-section 3xl:pb-[10em] px-[20px] pb-[4em] pt-8 sm:pb-[5em] md:pb-[6em] lg:flex lg:pb-[7em]">
+			<div className="2xl:padding-for-section 3xl:pb-[10em] px-[20px] pb-[4em] pt-8 sm:pb-[5em] md:pb-[6em] lg:flex lg:pb-[7em]">
 				<div className="flex  flex-col justify-center text-center lg:text-left ">
 					<ContentWrapper>
-						<ContentWrapper.Title className="mb-[8px] lg:mb-[16px]">
+						<ContentWrapper.Title className=" mb-3 lg:mb-4">
 							<h1 className="title-5 lg:title-2 text-primary-black mt-10">
 								{props.faqTitle}
 							</h1>
