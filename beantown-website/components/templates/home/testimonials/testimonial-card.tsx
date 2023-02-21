@@ -10,7 +10,10 @@ interface Props {
 
 const TestimonialCard: React.FC<Props> = (props) => {
 	return (
-		<section id="testimonialCard" className="bg-white lg:min-h-[550px]">
+		<section
+			id="testimonialCard"
+			className="rounded-2xl bg-white lg:min-h-[550px] lg:max-w-[370px] lg:rounded-3xl"
+		>
 			<div className="flex justify-center pt-4 lg:py-10">
 				<Image
 					alt="An image for quotes in testimonial card"
@@ -26,7 +29,7 @@ const TestimonialCard: React.FC<Props> = (props) => {
 				<h4 className="md:para-3 para-4 text-gray-shade-2">
 					{props.clientDetails}
 				</h4>
-				<div className="para-4 md:para-3 text-primary-black pt-6  text-center lg:px-10 ">
+				<div className="para-4 md:para-3 text-primary-black px-6  pt-6 text-center lg:px-10 ">
 					<ReadMore
 						content={props.reviewComments}
 						limit={250}
