@@ -40,7 +40,7 @@ const getStaticProps = generateGetStaticProps<HeatingCoolingContentProps>(
 );
 export { getStaticProps };
 
-const PlumbingServicePage: React.FC = (props) => {
+const HeatingCoolingServicePage: React.FC = (props) => {
 	return (
 		<div id="heating-services" className="bg-primary-white-shade-1">
 			<PageHead />
@@ -57,5 +57,5 @@ const PlumbingServicePage: React.FC = (props) => {
 };
 
 export default WithGlobalContent<HeatingCoolingContentProps>(
-	PlumbingServicePage
+	HeatingCoolingServicePage
 );
