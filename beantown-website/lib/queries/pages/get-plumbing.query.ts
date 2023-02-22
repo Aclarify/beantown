@@ -2,7 +2,7 @@ import { gql } from '@apollo/client';
 import footerQuery from './get-footer.query';
 import navQuery from './get-nav.query';
 
-const electricalQuery = ` allOtherServices(where: {name: {eq: "Electrical"}}) {
+const electricalQuery = ` allOtherServices(where: {name: {eq: "Plumbing"}}) {
 		logoDesktop{
       image{
 				asset{
