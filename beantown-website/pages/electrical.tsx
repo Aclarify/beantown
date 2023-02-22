@@ -10,6 +10,7 @@ import ElectricalRepairsInstallationUpgradesSection from 'components/templates/e
 import ElectricalRIUMoreSection from 'components/templates/electrical/services/electrical-RIU-more.section';
 import ElectricalPageCTASection from 'components/templates/electrical/cta/electrical-cta.section';
 import ElectricalBlogsSection from 'components/templates/electrical/blog/electrical-blogs.section';
+import ElectricalFaqSection from 'components/templates/electrical/faq/electrical-faqs.section';
 
 export interface ElectricalContentProps {
 	page: Electrical[];
@@ -43,6 +44,7 @@ const ElectricalServicesPage: React.FC = (props) => {
 			<ElectricalRIUMoreSection />
 			<ElectricalPageCTASection />
 			<ElectricalBlogsSection/>
+			<ElectricalFaqSection/>
 		</section>
 	);
 };

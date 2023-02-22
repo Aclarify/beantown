@@ -3,7 +3,7 @@ import ElectricalPageCTAContent from './electrical-cta.content';
 
 const ElectricalPageCTASection = () => {
 	return (
-		<section id="electrical-cta">
+		<section id="electrical-cta" className="relative z-10 -mb-[6em] ">
 			<ElectricalPageCTAContent />
 		</section>
 	);

@@ -6,11 +6,12 @@ import RichText from "components/molecules/rich-text.molecule";
 import ContentWrapper from "components/organisms/content-wrapper.organism";
 import MaskedImageWithBackgroundVector from "components/organisms/masked-image-with-blob.organism";
 import { ElectricalContentProps } from "pages/electrical";
+import { HeatingCoolingContentProps } from "pages/heating-and-cooling";
 import { useContext } from "react";
 
 const ElectricalRepairsInstallationUpgradesContent = ()=>{
    const {pageContent} =
-   useContext<GlobalContextProps<ElectricalContentProps>>(GlobalContext);
+   useContext<GlobalContextProps<HeatingCoolingContentProps>>(GlobalContext);
    const { width } = useWindowDimensions();
    if (!pageContent) {
 		return null;
