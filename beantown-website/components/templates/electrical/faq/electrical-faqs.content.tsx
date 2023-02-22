@@ -20,8 +20,8 @@ const ElectricalFaqContent = () => {
 					faqTitle={faqTitle || ''}
 					faqDescription={faqDescription || ''}
 					faqButtonText={faqButton?.text || ''}
-					faqsButtonTextColour="text-white"
-					faqsButtonBgColour="bg-service-red"
+					faqsButtonTextColour="text-black"
+					faqsButtonBgColour="bg-service-yellow"
 					faqList={faqList || []}
 				></FAQ>
 			)}
