@@ -2,7 +2,7 @@ import { gql } from '@apollo/client';
 import footerQuery from './get-footer.query';
 import navQuery from './get-nav.query';
 
-const electricalQuery = ` allHeatingAndCooling {
+const electricalQuery = `allHeatingAndCooling {
     		logoDesktop{
 				asset{
 					url
@@ -122,96 +122,10 @@ const electricalQuery = ` allHeatingAndCooling {
 			}
 			faqList {
 				titleText
-				subText# Write your query or mutation here
- query {
-  allElectrical {
-		logoDesktop{
-      image{
-				asset{
-					url
-						}
-     		 }
-      href
+				subText
+				description
 			}
-	  logoMobile{
-      image{
-				asset{
-					url
-						}
-     		 }
-      href
-			}
-    heroTitle
-    heroDescription{
-      contentRaw
-    }
-    heroButton{
-      text
-    	href
-    }
-    heroImage{
-      asset{
-        url
-      	altText
-      }
-    }
-    aboutTheServiceTitle
-    aboutTheServiceDescription{
-      contentRaw
-    }
-    aboutTheServiceImage{
-      asset{url}
-    }
-    contactUsButton{
-      href
-      text
-    }
-    servicesListTitle
-    servicesList
-    ctaTitle
-    ctaButton{
-      href
-    }
-    ctaImage{
-      	asset{
-        	url
-      	}
-    	}
-    blogsTitle
-		blogsDescription
-			blogCards {
-        title
-        description
-        blogImage{
-          image{
-            asset{
-              url
-            }
-          }
-        	href
-        }
-        button{
-          href
-        	text
-        }
-      }
-			blogButton {
-				text
-				href
-			}
-			faqTitle
-			faqDescription
-			faqButton {
-				text
-				href
-			}
-			faqList {
-				question
-        answer
-			}
-}
-}
-  `;
+}`;
 
 export default gql`
 	query {

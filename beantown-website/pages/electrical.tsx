@@ -1,16 +1,18 @@
-import { PageNames } from "@configs/client/pages/pages.config";
-import { Nav, Footer, HeatingAndCooling } from "@typing/gql/graphql";
-import WithGlobalContent, { generateGetStaticProps } from "components/containers/global-content/global-content.container";
-import Head from "next/head"
-import { FC } from "react";
-import { HeatingCoolingContentProps } from "./heating-and-cooling";
+import { PageNames } from '@configs/client/pages/pages.config';
+import { Nav, Footer, Electrical } from '@typing/gql/graphql';
+import WithGlobalContent, {
+	generateGetStaticProps,
+} from 'components/containers/global-content/global-content.container';
+import Head from 'next/head';
 import pageQuery from '@lib/queries/pages/get-electrical.query';
-import ElectricalHeroSection from "components/templates/electrical/hero/electrical-hero.section";
-import ElectricalRepairsInstallationUpgradesSection from "components/templates/electrical/repairs-installation-upgrades/electrical-repairs-installation-upgrades.section";
-import ElectricalRIUList from "components/templates/electrical/services/electrical-RIU-more.content";
+import ElectricalHeroSection from 'components/templates/electrical/hero/electrical-hero.section';
+import ElectricalRepairsInstallationUpgradesSection from 'components/templates/electrical/repairs-installation-upgrades/electrical-repairs-installation-upgrades.section';
+import ElectricalRIUMoreSection from 'components/templates/electrical/services/electrical-RIU-more.section';
+import ElectricalPageCTASection from 'components/templates/electrical/cta/electrical-cta.section';
+import ElectricalBlogsSection from 'components/templates/electrical/blog/electrical-blogs.section';
 
 export interface ElectricalContentProps {
-	page: HeatingAndCooling[];  
+	page: Electrical[];
 	header: Nav[];
 	footer: Footer[];
 }
@@ -19,7 +21,7 @@ const getStaticProps = generateGetStaticProps<ElectricalContentProps>(
 	PageNames.ELECTRICAL
 );
 export { getStaticProps };
-const PageHead =()=>{
+const PageHead = () => {
 	return (
 		<Head>
 			<title>Electrical Services</title>
@@ -27,10 +29,10 @@ const PageHead =()=>{
 				name="description"
 				content="Beantown Services is a full-service cleaning company that provides residential and commercial cleaning services in the Boston area."
 			/>
-			<link rel="icon" href="/favicon.ico"/>
+			<link rel="icon" href="/favicon.ico" />
 		</Head>
 	);
-}
+};
 
 const ElectricalServicesPage: React.FC = (props) => {
 	return (
@@ -38,14 +40,12 @@ const ElectricalServicesPage: React.FC = (props) => {
 			<PageHead />
 			<ElectricalHeroSection />
 			<ElectricalRepairsInstallationUpgradesSection />
-			<ElectricalRIUList />
+			<ElectricalRIUMoreSection />
+			<ElectricalPageCTASection />
+			<ElectricalBlogsSection/>
 		</section>
 	);
-}
-    export default WithGlobalContent<HeatingCoolingContentProps>(
-			ElectricalServicesPage
-		);
-	 ;
-
-
-
+};
+export default WithGlobalContent<ElectricalContentProps>(
+	ElectricalServicesPage
+);
