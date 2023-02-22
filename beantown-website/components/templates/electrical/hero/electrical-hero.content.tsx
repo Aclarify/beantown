@@ -1,16 +1,16 @@
 import React, { useContext } from 'react';
 import { GlobalContext } from "@contexts/global/global.context";
 import { GlobalContextProps } from "@typing/common/interfaces/contexts.interface";
-import { HeatingCoolingContentProps } from "pages/heating-and-cooling";
 import CtaWrapper from 'components/molecules/cta-wrapper.molecule';
 import RichText from 'components/molecules/rich-text.molecule';
 import SectionContentWrapper from 'components/molecules/section-content-wrapper.molecule';
 import ContentWrapper from 'components/organisms/content-wrapper.organism';
 import CTAWithImage from 'components/organisms/cta-with-image.organism';
+import { ElectricalContentProps } from 'pages/electrical';
 
 const ElectricalHeroContent =()=>{
-    const {pageContent} =
-   useContext<GlobalContextProps<HeatingCoolingContentProps>>(GlobalContext);
+   const {pageContent} =
+   useContext<GlobalContextProps<ElectricalContentProps>>(GlobalContext);
    if (!pageContent) {
 		return null;
 	}

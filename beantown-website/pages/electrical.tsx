@@ -7,6 +7,7 @@ import { FC } from "react";
 import { HeatingCoolingContentProps } from "./heating-and-cooling";
 import pageQuery from '@lib/queries/pages/get-electrical.query';
 import ElectricalHeroSection from "components/templates/electrical/hero/electrical-hero.section";
+import ElectricalRepairsInstallationUpgradesSection from "components/templates/electrical/repairs-installation-upgrades/electrical-repairs-installation-upgrades.section";
 
 export interface ElectricalContentProps {
 	page: HeatingAndCooling[];  
@@ -33,11 +34,12 @@ const PageHead =()=>{
 
 const ElectricalServicesPage: React.FC = (props) => {
 	return (
-		<main id="electrical-services"  className="bg-primary-white-shade-1">
-			<PageHead/>
-			<ElectricalHeroSection/>
+		<section id="electrical-services" className="bg-primary-white-shade-1">
+			<PageHead />
+			<ElectricalHeroSection />
+			<ElectricalRepairsInstallationUpgradesSection />
 			<ElectricalServicesList />
-		</main>
+		</section>
 	);
 }
     export default WithGlobalContent<HeatingCoolingContentProps>(
