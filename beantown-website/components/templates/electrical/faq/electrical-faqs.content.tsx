@@ -2,11 +2,11 @@ import React, { useContext } from 'react';
 import { GlobalContext } from '@contexts/global/global.context';
 import { GlobalContextProps } from '@typing/common/interfaces/contexts.interface';
 import FAQ from 'components/organisms/faq.organism';
-import { HeatingCoolingContentProps } from 'pages/heating-and-cooling';
+import { ElectricalContentProps } from 'pages/electrical';
 
 const ElectricalFaqContent = () => {
 	const { pageContent } =
-		useContext<GlobalContextProps<HeatingCoolingContentProps>>(GlobalContext);
+		useContext<GlobalContextProps<ElectricalContentProps>>(GlobalContext);
 	if (!pageContent || !pageContent.page || !pageContent.page[0]) {
 		return null;
 	}

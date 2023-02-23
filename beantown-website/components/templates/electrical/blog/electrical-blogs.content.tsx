@@ -3,10 +3,11 @@ import { GlobalContext } from '@contexts/global/global.context';
 import { GlobalContextProps } from '@typing/common/interfaces/contexts.interface';
 import { HomePageContentProps } from 'pages';
 import Blogs from 'components/organisms/blogs.organism';
+import { ElectricalContentProps } from 'pages/electrical';
 
 const ElectricalBlogsContent = () => {
 	const { pageContent } =
-		useContext<GlobalContextProps<HomePageContentProps>>(GlobalContext);
+		useContext<GlobalContextProps<ElectricalContentProps>>(GlobalContext);
 	if (!pageContent) {
 		return null;
 	}

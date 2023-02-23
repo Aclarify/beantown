@@ -1,15 +1,15 @@
 import React, { useContext } from 'react';
 import { GlobalContext } from '@contexts/global/global.context';
 import { GlobalContextProps } from '@typing/common/interfaces/contexts.interface';
-import { HeatingCoolingContentProps } from 'pages/heating-and-cooling';
 import ContentWrapper from 'components/organisms/content-wrapper.organism';
 import CTAWithImage from 'components/organisms/cta-with-image.organism';
 import CtaWrapper from 'components/molecules/cta-wrapper.molecule';
 import SectionContentWrapper from 'components/molecules/section-content-wrapper.molecule';
+import { ElectricalContentProps } from 'pages/electrical';
 
 const ElectricalPageCTAContent = () => {
 	const { pageContent } =
-		useContext<GlobalContextProps<HeatingCoolingContentProps>>(GlobalContext);
+		useContext<GlobalContextProps<ElectricalContentProps>>(GlobalContext);
 	if (!pageContent) {
 		return null;
 	}
@@ -17,7 +17,7 @@ const ElectricalPageCTAContent = () => {
 	const { ctaImage, ctaTitle, finalCtaButton } = pageData;
 	return (
 		<CTAWithImage
-			heroImageURL={'/images/electrical/cta/electrical-cta-image.svg'}
+			heroImageURL={ctaImage?.asset?.url || ''}
 			heroImageAltText={'Hero image'}
 			textContentBGImage={'/images/electrical/cta/electrical-cta-bg-vector.svg'}
 			textContentBGImageForSmallScreen={
@@ -27,7 +27,7 @@ const ElectricalPageCTAContent = () => {
 			gradientFromColor="from-service-yellow"
 			gradientToColor="bg-service-yellow"
 		>
-			<ContentWrapper className="2xl:padding-for-section text-center px-10 pt-[2em] pb-[4em] md:px-[10em] md:py-[12em] lg:px-[2em] lg:py-[6em] lg:text-left">
+			<ContentWrapper className="2xl:padding-for-section px-10 pt-[2em] pb-[4em] text-center md:px-[10em] md:py-[12em] lg:px-[2em] lg:py-[6em] lg:text-left">
 				<ContentWrapper.Title className=" mb-2 lg:mb-4">
 					<h1 className="title-5 lg:title-2 text-black lg:leading-[70px]">
 						{ctaTitle}
