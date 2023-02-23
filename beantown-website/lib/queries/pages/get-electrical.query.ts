@@ -88,7 +88,6 @@ const electricalQuery = ` allOtherServices(where: {name: {eq: "Electrical"}}) {
         answer
 			}
 }
-}
   `;
 
 export default gql`

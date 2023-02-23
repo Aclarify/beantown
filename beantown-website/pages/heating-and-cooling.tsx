@@ -25,7 +25,7 @@ const PageHead = () => {
 	return (
 		<Head>
 			{/* TODO to fetch from CMS */}
-			<title>Heating and Cooling Services</title>
+			<title>Heating &amp; Cooling Services</title>
 			<meta
 				name="description"
 				content="Beantown Services is a full-service cleaning company that provides residential and commercial cleaning services in the Boston area."
@@ -40,7 +40,7 @@ const getStaticProps = generateGetStaticProps<HeatingCoolingContentProps>(
 );
 export { getStaticProps };
 
-const PlumbingServicePage: React.FC = (props) => {
+const HeatingCoolingServicePage: React.FC = (props) => {
 	return (
 		<div id="heating-services" className="bg-primary-white-shade-1">
 			<PageHead />
@@ -57,5 +57,5 @@ const PlumbingServicePage: React.FC = (props) => {
 };
 
 export default WithGlobalContent<HeatingCoolingContentProps>(
-	PlumbingServicePage
+	HeatingCoolingServicePage
 );
