@@ -52,10 +52,14 @@ const neuePlak = localFont({
 });
 
 export default function App({ Component, pageProps }: AppProps) {
-	const logoDesktop =
-		pageProps.globalContext?.pageContent?.page[0]?.logoDesktop?.image;
-	const logoMobile =
-		pageProps.globalContext?.pageContent?.page[0]?.logoMobile?.image;
+	let logoDesktop = null;
+	let logoMobile = null;
+	if (pageProps) {
+		logoDesktop =
+			pageProps.globalContext?.pageContent?.page[0]?.logoDesktop?.image;
+		logoMobile =
+			pageProps.globalContext?.pageContent?.page[0]?.logoMobile?.image;
+	}
 	return (
 		<>
 			<ApolloProvider client={graphQLClient}>
@@ -66,7 +70,7 @@ export default function App({ Component, pageProps }: AppProps) {
 						<Nav
 							logoDesktop={logoDesktop}
 							logoMobile={logoMobile}
-							content={pageProps.globalContext.pageContent.header[0]}
+							content={pageProps.globalContext?.pageContent?.header[0]}
 						/>
 					)}
 					<Component {...pageProps} />
@@ -74,7 +78,7 @@ export default function App({ Component, pageProps }: AppProps) {
 						<Footer
 							logoDesktop={logoDesktop}
 							logoMobile={logoMobile}
-							content={pageProps.globalContext.pageContent.footer[0]}
+							content={pageProps.globalContext?.pageContent?.footer[0]}
 						/>
 					)}
 				</main>
