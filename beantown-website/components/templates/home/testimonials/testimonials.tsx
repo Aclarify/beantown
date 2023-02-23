@@ -43,7 +43,6 @@ export default function Testimonials() {
 	const previous = () => {
 		if (slider.current) {
 			slider.current.slickNext();
-			console.log('nextClicked');
 		}
 	};
 	const next = () => {
