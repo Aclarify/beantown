@@ -7,6 +7,8 @@ import WithGlobalContent, {
 } from '../components/containers/global-content/global-content.container';
 import { PageNames } from '@configs/client/pages/pages.config';
 import PlumbingServicesList from 'components/templates/plumbing/plumbing-services-list';
+import PlumbingHeroContent from 'components/templates/plumbing/hero/plumbing-hero.content';
+import AboutPlumbingServiceSection from 'components/templates/plumbing/about-the-service/plumbing-about.section';
 
 export interface PlumbingContentProps {
 	page: OtherServices[];
@@ -36,7 +38,9 @@ export { getStaticProps };
 const PlumbingServicesPage: React.FC = (props) => {
 	return (
 		<div id="plumbing-services" className="bg-primary-white-shade-1">
-			<PlumbingServicesList />
+			<PageHead />
+			<PlumbingHeroContent />
+			<AboutPlumbingServiceSection />
 		</div>
 	);
 };

@@ -1,9 +1,25 @@
-import React from 'react'
+import React, { useContext } from 'react';
 import Image from 'next/image';
+import { GlobalContextProps } from '@typing/common/interfaces/contexts.interface';
+import { PlumbingContentProps } from 'pages/plumbing';
+import { GlobalContext } from '@contexts/global/global.context';
 
-function PlumbingServicesList() {
-  return (
-		<section id="plumbing-services-list" className="mt-20 ">
+const PlumbingServicesList = () => {
+	const { pageContent } =
+		useContext<GlobalContextProps<PlumbingContentProps>>(GlobalContext);
+
+	if (!pageContent) {
+		return null;
+	}
+	const pageData = pageContent.page[0];
+	const {
+		aboutTheServiceTitle,
+		aboutTheServiceDescription,
+		aboutTheServiceImage,
+		contactUsButton,
+	} = pageData;
+	return (
+		<section id="plumbing-services-list" className=" ">
 			<div className="container mx-auto h-auto w-full rounded-3xl bg-[#FFFFFF]    shadow-[rgba(29,_39,_87,_0.04)_0px_6px_10px]  ">
 				<p className="title-6 md:title-3 text-primary-black pb-4  sm:pb-8">
 					{'Services, Repairs and More:'}
@@ -64,12 +80,11 @@ function PlumbingServicesList() {
 								<p>{'Leak Repairs'}</p>
 							</div>
 						</div>
-
 					</div>
 				</div>
 			</div>
 		</section>
 	);
-}
+};
 
 export default PlumbingServicesList;

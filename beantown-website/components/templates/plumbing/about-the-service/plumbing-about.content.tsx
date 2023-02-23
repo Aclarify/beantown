@@ -7,17 +7,22 @@ import ContentWrapper from 'components/organisms/content-wrapper.organism';
 import MaskedImageWithBackgroundVector from 'components/organisms/masked-image-with-blob.organism';
 import useWindowDimensions from '@lib/hooks/use-window-dimensions.hook';
 import CtaWrapper from 'components/molecules/cta-wrapper.molecule';
-const HeatingCoolingMassSaveContent = () => {
+import { PlumbingContentProps } from 'pages/plumbing';
+const AboutPlumbingServiceContent = () => {
 	const { pageContent } =
-		useContext<GlobalContextProps<HeatingCoolingContentProps>>(GlobalContext);
+		useContext<GlobalContextProps<PlumbingContentProps>>(GlobalContext);
 	const { width } = useWindowDimensions();
 
 	if (!pageContent) {
 		return null;
 	}
 	const pageData = pageContent.page[0];
-	const { massSaveTitle, massSaveDescription, massSaveButton, massSaveImage } =
-		pageData;
+	const {
+		aboutTheServiceTitle,
+		aboutTheServiceDescription,
+		aboutTheServiceImage,
+		contactUsButton,
+	} = pageData;
 
 	return (
 		<div
@@ -35,15 +40,15 @@ const HeatingCoolingMassSaveContent = () => {
 					<ContentWrapper>
 						<ContentWrapper.Title>
 							<h1 className="title-5 lg:title-2 text-primary-black ">
-								{massSaveTitle}
+								{aboutTheServiceTitle}
 							</h1>
 						</ContentWrapper.Title>
 						<ContentWrapper.Description className="para-4 lg:para-2 text-left">
-							<RichText value={massSaveDescription?.contentRaw} />
+							<RichText value={aboutTheServiceDescription?.contentRaw} />
 						</ContentWrapper.Description>
 						<ContentWrapper.CTA className="mt-[16px] lg:mt-[32px]">
 							<CtaWrapper.CTA className="bg-service-red para-3 lg:para-2 h-[40px] w-[110px] rounded-lg py-1 px-4 tracking-wide text-white md:py-2  md:px-8  lg:h-[64px] lg:w-[210px] lg:tracking-wider ">
-								<p>{massSaveButton?.text}</p>
+								<p>{contactUsButton?.text}</p>
 							</CtaWrapper.CTA>
 						</ContentWrapper.CTA>
 					</ContentWrapper>
@@ -53,19 +58,19 @@ const HeatingCoolingMassSaveContent = () => {
 					className="mb-8 md:mt-12  md:basis-1/2 md:px-20 lg:px-10  "
 				>
 					<MaskedImageWithBackgroundVector
-						imageURL={massSaveImage?.asset?.url || ''}
-						imgAltText={massSaveImage?.asset?.altText || ''}
+						imageURL={aboutTheServiceImage?.asset?.url || ''}
+						imgAltText={aboutTheServiceImage?.asset?.altText || ''}
 						width={width > 768 ? 1000 : 500}
 						height={width > 768 ? 1000 : 500}
 						maskImg={
 							width > 768
-								? './images/heating-cooling/mass-save/hc-mass-save-blob.svg'
-								: './images/heating-cooling/mass-save/hc-mass-save-bg-blob.svg'
+								? './images/plumbing/about/plumbing-services-blob-mask.svg'
+								: './images/plumbing/about/plumbing-services-blob-mask-mobile.svg'
 						}
 						bgImg={
 							width > 768
-								? './images/heating-cooling/mass-save/hc-mass-save-bg-blob.svg'
-								: './images/heating-cooling/mass-save/hc-mass-save-blob.svg'
+								? './images/plumbing/about/plumbing-services-bg-blob.svg'
+								: './images/plumbing/about/plumbing-services-bg-blob-mobile.svg'
 						}
 					/>
 				</div>
@@ -74,4 +79,4 @@ const HeatingCoolingMassSaveContent = () => {
 	);
 };
 
-export default HeatingCoolingMassSaveContent;
+export default AboutPlumbingServiceContent;
