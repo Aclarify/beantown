@@ -6,20 +6,24 @@ import RichText from "components/molecules/rich-text.molecule";
 import ContentWrapper from "components/organisms/content-wrapper.organism";
 import MaskedImageWithBackgroundVector from "components/organisms/masked-image-with-blob.organism";
 import { ElectricalContentProps } from "pages/electrical";
-import { HeatingCoolingContentProps } from "pages/heating-and-cooling";
 import { useContext } from "react";
 
 const ElectricalRepairsInstallationUpgradesContent = ()=>{
-   const {pageContent} =
-   useContext<GlobalContextProps<HeatingCoolingContentProps>>(GlobalContext);
+   const { pageContent } =
+			useContext<GlobalContextProps<ElectricalContentProps>>(GlobalContext);
    const { width } = useWindowDimensions();
    if (!pageContent) {
 		return null;
 	}
    
     const pageData = pageContent.page[0];
-    const { massSaveTitle, massSaveDescription, massSaveButton, massSaveImage } =
-		pageData;
+	console.log(pageData)
+    const {
+			aboutTheServiceTitle,
+			aboutTheServiceDescription,
+			aboutTheServiceButton,
+			aboutTheServiceImage,
+		} = pageData;
     return (
 			<div
 				id="section-wrapper"
@@ -34,10 +38,8 @@ const ElectricalRepairsInstallationUpgradesContent = ()=>{
 						className="mb-8 md:mt-12  md:basis-1/2 md:px-20 lg:px-10  "
 					>
 						<MaskedImageWithBackgroundVector
-							imageURL={
-								'/images/electrical/repairs-installation-upgrades/electrical-RIU-main-image.svg'
-							}
-							imgAltText={massSaveImage?.asset?.altText || ''}
+							imageURL={aboutTheServiceImage?.asset?.url || ''}
+							imgAltText={aboutTheServiceImage?.asset?.altText || ''}
 							width={width > 768 ? 1000 : 500}
 							height={width > 768 ? 1000 : 500}
 							maskImg={
@@ -59,15 +61,15 @@ const ElectricalRepairsInstallationUpgradesContent = ()=>{
 						<ContentWrapper>
 							<ContentWrapper.Title>
 								<h1 className="title-5 lg:title-2 text-primary-black ">
-									{massSaveTitle}
+									{aboutTheServiceTitle}
 								</h1>
 							</ContentWrapper.Title>
 							<ContentWrapper.Description className="para-4 lg:para-2 text-left">
-								<RichText value={massSaveDescription?.contentRaw} />
+								<RichText value={aboutTheServiceDescription?.contentRaw} />
 							</ContentWrapper.Description>
 							<ContentWrapper.CTA className="mt-[16px] lg:mt-[32px]">
 								<CtaWrapper.CTA className="bg-service-yellow para-3 lg:para-2 h-[40px] w-[110px] rounded-lg py-1 px-4 tracking-wide text-white md:py-2  md:px-8  lg:h-[64px] lg:w-[210px] lg:tracking-wider ">
-									<p>{massSaveButton?.text}</p>
+									<p>{aboutTheServiceButton?.text}</p>
 								</CtaWrapper.CTA>
 							</ContentWrapper.CTA>
 						</ContentWrapper>

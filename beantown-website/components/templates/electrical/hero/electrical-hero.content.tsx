@@ -19,8 +19,8 @@ const ElectricalHeroContent =()=>{
 	
     return (
 			<CTAWithImage
-				heroImageURL={'/images/electrical/hero/electrical-hero-image.svg'}
-				heroImageAltText={'Hero image'}
+				heroImageURL={heroImage?.asset?.url || ''}
+				heroImageAltText={heroImage?.asset?.altText || ''}
 				textContentBGImage={
 					'/images/electrical/hero/electrical-hero-vector.svg'
 				}
