@@ -52,7 +52,7 @@ export default function Testimonials() {
 	};
 	const settings = {
 		speed: 500,
-		slidesToShow: 3,
+		slidesToShow: 3.1,
 		slidesToScroll: 1,
 		initialSlide: 0,
 		arrows: false,
@@ -60,7 +60,7 @@ export default function Testimonials() {
 			{
 				breakpoint: 1024,
 				settings: {
-					slidesToShow: 2,
+					slidesToShow: 2.1,
 					slidesToScroll: 1,
 				},
 			},
