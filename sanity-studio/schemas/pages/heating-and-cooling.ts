@@ -14,12 +14,14 @@ export default defineType({
     defineField({
       name: 'logoDesktop',
       title: 'Logo Desktop',
-      type: 'image',
+      type: 'reference',
+      to: [{type: 'imageIcon'}],
     }),
     defineField({
       name: 'logoMobile',
       title: 'Logo Mobile',
-      type: 'image',
+      type: 'reference',
+      to: [{type: 'imageIcon'}],
     }),
     defineField({
       name: 'heroTitle',

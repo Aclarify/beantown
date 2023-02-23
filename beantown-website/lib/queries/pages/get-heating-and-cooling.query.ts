@@ -4,14 +4,20 @@ import navQuery from './get-nav.query';
 
 const heatingCoolingQuery = ` allHeatingAndCooling {
     		logoDesktop{
+      image{
 				asset{
 					url
-				}
+						}
+     		 }
+      href
 			}
 	  logoMobile{
+      image{
 				asset{
 					url
-				}
+						}
+     		 }
+      href
 			}
     heroTitle
     heroDescription{
