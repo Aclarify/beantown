@@ -48,6 +48,7 @@ const plumbingQuery = ` allOtherServices(where: {name: {eq: "Plumbing"}}) {
     servicesList
     ctaTitle
     ctaButton{
+      text
       href
     }
     ctaImage{

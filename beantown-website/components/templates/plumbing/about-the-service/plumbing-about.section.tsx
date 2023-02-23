@@ -10,7 +10,7 @@ const AboutPlumbingServiceSection = () => {
 	return (
 		<section
 			id="PlumbingRepairs"
-			className=" 3xl:top-[-8em] lg:top[-4em] relative top-[-5em] z-10 sm:top-[-6em] md:top-[-8em] 2xl:top-[-6em] "
+			className="3xl-[-8em] relative z-10 mt-[-5em] sm:mt-[-7em] md:mt-[-9em] lg:mt-[-4em] 2xl:mt-[-6em] "
 		>
 			<WaveWrapper
 				waveURL={
@@ -24,7 +24,7 @@ const AboutPlumbingServiceSection = () => {
 				height={600}
 				width={500}
 				alt="Left Blob "
-				className="absolute left-0 hidden -translate-x-[40%] translate-y-[25%] transform md:block"
+				className="absolute left-0 hidden -translate-x-[40%] translate-y-[25%] transform lg:block"
 			/>
 			<SectionContentWrapper>
 				<AboutPlumbingServiceContent />
@@ -32,11 +32,18 @@ const AboutPlumbingServiceSection = () => {
 			</SectionContentWrapper>
 			<Image
 				src={'/images/plumbing/about/plumbing-green-blob-mobile.svg'}
-				height={180}
-				width={200}
+				height={280}
+				width={300}
 				alt="Right Blob Mobile"
-				className="absolute right-0 bottom-0 z-[-1] translate-x-[38%]  translate-y-[8%] transform md:hidden"
+				className="absolute right-0 bottom-0 z-[-1]   translate-x-[40%] translate-y-[-55%] transform lg:hidden"
 			/>
+			<WaveWrapper
+				waveURL={
+					width > 1023
+						? '/images/plumbing/about/plumbing-about-bottom-wave.svg'
+						: '/images/plumbing/about/plumbing-about-bottom-wave-mobile.svg'
+				}
+			></WaveWrapper>
 		</section>
 	);
 };

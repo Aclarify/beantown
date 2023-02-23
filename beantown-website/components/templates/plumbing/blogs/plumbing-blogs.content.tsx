@@ -1,0 +1,28 @@
+import React, { useContext } from 'react';
+import { GlobalContext } from '@contexts/global/global.context';
+import { GlobalContextProps } from '@typing/common/interfaces/contexts.interface';
+import Blogs from 'components/organisms/blogs.organism';
+import { PlumbingContentProps } from 'pages/plumbing';
+import BlogsOther from 'components/organisms/blogs-other-services.organism';
+
+const PlumbingBlogsContent = () => {
+	const { pageContent } =
+		useContext<GlobalContextProps<PlumbingContentProps>>(GlobalContext);
+	if (!pageContent) {
+		return null;
+	}
+	const homeData = pageContent.page[0];
+	const { blogsTitle, blogsDescription, blogButton, blogCards } = homeData;
+	return (
+		<BlogsOther
+			blogsTitle={blogsTitle || ''}
+			blogsDescription={blogsDescription || ''}
+			blogsButtonText={blogButton?.text || ''}
+			blogsButtonTextColour="text-white"
+			blogsButtonBgColour="bg-service-green"
+			blogCards={blogCards || []}
+		></BlogsOther>
+	);
+};
+
+export default PlumbingBlogsContent;
