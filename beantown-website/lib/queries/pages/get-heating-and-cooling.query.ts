@@ -3,22 +3,24 @@ import footerQuery from './get-footer.query';
 import navQuery from './get-nav.query';
 
 const heatingCoolingQuery = ` allHeatingAndCooling {
-    		logoDesktop{
-      image{
-				asset{
-					url
+    			logoDesktop{
+				image{
+					asset
+						{
+							url
 						}
-     		 }
-      href
-			}
-	  logoMobile{
-      image{
-				asset{
-					url
+					}
+					href
+				}
+	  		logoMobile{
+				image{
+					asset
+						{
+							url
 						}
-     		 }
-      href
-			}
+        			}
+					href
+				}
     heroTitle
     heroDescription{
       contentRaw
