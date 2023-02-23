@@ -13,7 +13,6 @@ interface IProps {
 	content: Nav;
 }
 export default function Header(props: IProps) {
-	console.log('props in header::', props);
 	const { navLinks, navGroup, headerButton } = props.content;
 	const childLinks = navGroup?.map((nav) => nav?.links).flat();
 
