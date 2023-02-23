@@ -395,8 +395,8 @@ export type HeatingAndCooling = Document & {
   heroDescription?: Maybe<PortableText>;
   heroImage?: Maybe<Image>;
   heroTitle?: Maybe<Scalars['String']>;
-  logoDesktop?: Maybe<Image>;
-  logoMobile?: Maybe<Image>;
+  logoDesktop?: Maybe<ImageIcon>;
+  logoMobile?: Maybe<ImageIcon>;
   massSaveButton?: Maybe<Cta>;
   massSaveDescription?: Maybe<PortableText>;
   massSaveImage?: Maybe<Image>;
@@ -434,8 +434,8 @@ export type HeatingAndCoolingFilter = {
   heroDescription?: InputMaybe<PortableTextFilter>;
   heroImage?: InputMaybe<ImageFilter>;
   heroTitle?: InputMaybe<StringFilter>;
-  logoDesktop?: InputMaybe<ImageFilter>;
-  logoMobile?: InputMaybe<ImageFilter>;
+  logoDesktop?: InputMaybe<ImageIconFilter>;
+  logoMobile?: InputMaybe<ImageIconFilter>;
   massSaveButton?: InputMaybe<CtaFilter>;
   massSaveDescription?: InputMaybe<PortableTextFilter>;
   massSaveImage?: InputMaybe<ImageFilter>;
@@ -465,8 +465,6 @@ export type HeatingAndCoolingSorting = {
   heroDescription?: InputMaybe<PortableTextSorting>;
   heroImage?: InputMaybe<ImageSorting>;
   heroTitle?: InputMaybe<SortOrder>;
-  logoDesktop?: InputMaybe<ImageSorting>;
-  logoMobile?: InputMaybe<ImageSorting>;
   massSaveDescription?: InputMaybe<PortableTextSorting>;
   massSaveImage?: InputMaybe<ImageSorting>;
   massSaveTitle?: InputMaybe<SortOrder>;
@@ -509,8 +507,8 @@ export type Home = Document & {
   heroImage?: Maybe<Image>;
   heroImageMobile?: Maybe<Image>;
   heroTitle?: Maybe<Scalars['String']>;
-  logoDesktop?: Maybe<Image>;
-  logoMobile?: Maybe<Image>;
+  logoDesktop?: Maybe<ImageIcon>;
+  logoMobile?: Maybe<ImageIcon>;
   name?: Maybe<Scalars['String']>;
   serviceAreaDescription?: Maybe<Scalars['String']>;
   serviceAreaImage?: Maybe<Image>;
@@ -555,8 +553,8 @@ export type HomeFilter = {
   heroImage?: InputMaybe<ImageFilter>;
   heroImageMobile?: InputMaybe<ImageFilter>;
   heroTitle?: InputMaybe<StringFilter>;
-  logoDesktop?: InputMaybe<ImageFilter>;
-  logoMobile?: InputMaybe<ImageFilter>;
+  logoDesktop?: InputMaybe<ImageIconFilter>;
+  logoMobile?: InputMaybe<ImageIconFilter>;
   name?: InputMaybe<StringFilter>;
   serviceAreaDescription?: InputMaybe<StringFilter>;
   serviceAreaImage?: InputMaybe<ImageFilter>;
@@ -592,8 +590,6 @@ export type HomeSorting = {
   heroImage?: InputMaybe<ImageSorting>;
   heroImageMobile?: InputMaybe<ImageSorting>;
   heroTitle?: InputMaybe<SortOrder>;
-  logoDesktop?: InputMaybe<ImageSorting>;
-  logoMobile?: InputMaybe<ImageSorting>;
   name?: InputMaybe<SortOrder>;
   serviceAreaDescription?: InputMaybe<SortOrder>;
   serviceAreaImage?: InputMaybe<ImageSorting>;
