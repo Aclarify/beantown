@@ -1,8 +1,8 @@
 import {defineField, defineType} from 'sanity'
 
 export default defineType({
-  name: 'electrical',
-  title: 'Electrical Page',
+  name: 'other-services',
+  title: 'Other Services Page',
   type: 'document',
 
   fields: [

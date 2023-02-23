@@ -1,6 +1,8 @@
 export enum PageNames {
 	HOME = 'home',
 	HEATINGCOOLING = 'heatingAndCooling',
+	ELECTRICAL = 'electrical',
+	PLUMBING = 'plumbing',
 	ABOUT = 'about',
 	BLOG = 'blog',
 	CAREERS = 'careers',
