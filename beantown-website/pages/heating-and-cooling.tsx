@@ -25,7 +25,7 @@ const PageHead = () => {
 	return (
 		<Head>
 			{/* TODO to fetch from CMS */}
-			<title>Heating and Cooling Services</title>
+			<title>Heating &amp; Cooling Services</title>
 			<meta
 				name="description"
 				content="Beantown Services is a full-service cleaning company that provides residential and commercial cleaning services in the Boston area."

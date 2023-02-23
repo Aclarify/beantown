@@ -2,7 +2,7 @@ import { gql } from '@apollo/client';
 import footerQuery from './get-footer.query';
 import navQuery from './get-nav.query';
 
-const electricalQuery = ` allOtherServices(where: {name: {eq: "Electrical"}}) {
+const plumbingQuery = ` allOtherServices(where: {name: {eq: "Plumbing"}}) {
 		logoDesktop{
       image{
 				asset{
@@ -92,7 +92,7 @@ const electricalQuery = ` allOtherServices(where: {name: {eq: "Electrical"}}) {
 
 export default gql`
 	query {
-		page: ${electricalQuery}
+		page: ${plumbingQuery}
 		header: ${navQuery}
 		footer: ${footerQuery}
 	}
