@@ -9,7 +9,7 @@ const PlumbingBlogsSection = () => {
 	return (
 		<section
 			id="blogs"
-			className="3xl:mt-[-6em] relative z-10 mt-[-2em] md:mt-[-3em] 2xl:mt-[-4em]   "
+			className="3xl:mt-[-6em] relative z-10 mt-[-2em] md:mt-[-3em] 2xl:mt-[-4em]"
 		>
 			<WaveWrapper
 				waveURL={

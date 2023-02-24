@@ -22,7 +22,7 @@ const PlumbingFaqContent = () => {
 					faqDescription={faqDescription || ''}
 					faqButtonText={faqButton?.text || ''}
 					faqsButtonTextColour="text-white"
-					faqsButtonBgColour="bg-service-red"
+					faqsButtonBgColour="bg-service-green"
 					faqList={faqList || []}
 				></FAQOther>
 			)}
