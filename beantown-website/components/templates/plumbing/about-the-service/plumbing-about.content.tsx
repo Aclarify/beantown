@@ -47,7 +47,7 @@ const AboutPlumbingServiceContent = () => {
 							<RichText value={aboutTheServiceDescription?.contentRaw} />
 						</ContentWrapper.Description>
 						<ContentWrapper.CTA className="mt-[16px] lg:mt-[32px]">
-							<CtaWrapper.CTA className="bg-service-red para-3 lg:para-2 h-[40px] w-[110px] rounded-lg py-1 px-4 tracking-wide text-white md:py-2  md:px-8  lg:h-[64px] lg:w-[210px] lg:tracking-wider ">
+							<CtaWrapper.CTA className="bg-service-green para-3 lg:para-2 h-[40px] w-[110px] rounded-lg py-1 px-4 tracking-wide text-white md:py-2  md:px-8  lg:h-[64px] lg:w-[210px] lg:tracking-wider ">
 								<p>{contactUsButton?.text}</p>
 							</CtaWrapper.CTA>
 						</ContentWrapper.CTA>

@@ -7,10 +7,11 @@ import Head from 'next/head';
 import pageQuery from '@lib/queries/pages/get-electrical.query';
 import ElectricalHeroSection from 'components/templates/electrical/hero/electrical-hero.section';
 import ElectricalRepairsInstallationUpgradesSection from 'components/templates/electrical/repairs-installation-upgrades/electrical-repairs-installation-upgrades.section';
-import ElectricalRIUMoreSection from 'components/templates/electrical/services/electrical-RIU-more.section';
 import ElectricalPageCTASection from 'components/templates/electrical/cta/electrical-cta.section';
 import ElectricalBlogsSection from 'components/templates/electrical/blog/electrical-blogs.section';
 import ElectricalFaqSection from 'components/templates/electrical/faq/electrical-faqs.section';
+import ElectricalRIUMoreSection from 'components/templates/electrical/services/electrical-RIU-more.section';
+import AboutPlumbingServiceSection from 'components/templates/electrical/about-the-service/electrical-about.section';
 
 export interface ElectricalContentProps {
 	page: Electrical[];
@@ -40,11 +41,10 @@ const ElectricalServicesPage: React.FC = (props) => {
 		<section id="electrical-services" className="bg-primary-white-shade-1">
 			<PageHead />
 			<ElectricalHeroSection />
-			<ElectricalRepairsInstallationUpgradesSection />
-			<ElectricalRIUMoreSection />
+			<AboutPlumbingServiceSection/>
 			<ElectricalPageCTASection />
-			<ElectricalBlogsSection/>
-			<ElectricalFaqSection/>
+			<ElectricalBlogsSection />
+			<ElectricalFaqSection />
 		</section>
 	);
 };

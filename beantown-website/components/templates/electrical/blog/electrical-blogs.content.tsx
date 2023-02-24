@@ -12,12 +12,12 @@ const ElectricalBlogsContent = () => {
 		return null;
 	}
 	const homeData = pageContent.page[0];
-	const { blogTitle, blogDescription, blogButton, blogCards } = homeData;
-	console.log('array of data'+ blogCards)
+	const { blogsTitle, blogsDescription, blogButton, blogCards } = homeData;
+	
 	return (
 		<BlogsOther
-			blogsTitle={blogTitle || ''}
-			blogsDescription={blogDescription || ''}
+			blogsTitle={blogsTitle || ''}
+			blogsDescription={blogsDescription || ''}
 			blogsButtonText={blogButton?.text || ''}
 			blogsButtonTextColour="text-white"
 			blogsButtonBgColour="bg-service-yellow"
