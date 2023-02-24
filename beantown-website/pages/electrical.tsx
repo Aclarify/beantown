@@ -1,20 +1,18 @@
 import { PageNames } from '@configs/client/pages/pages.config';
-import { Nav, Footer, Electrical } from '@typing/gql/graphql';
+import { Nav, Footer, OtherServices } from '@typing/gql/graphql';
 import WithGlobalContent, {
 	generateGetStaticProps,
 } from 'components/containers/global-content/global-content.container';
 import Head from 'next/head';
 import pageQuery from '@lib/queries/pages/get-electrical.query';
 import ElectricalHeroSection from 'components/templates/electrical/hero/electrical-hero.section';
-import ElectricalRepairsInstallationUpgradesSection from 'components/templates/electrical/repairs-installation-upgrades/electrical-repairs-installation-upgrades.section';
 import ElectricalPageCTASection from 'components/templates/electrical/cta/electrical-cta.section';
 import ElectricalBlogsSection from 'components/templates/electrical/blog/electrical-blogs.section';
 import ElectricalFaqSection from 'components/templates/electrical/faq/electrical-faqs.section';
-import ElectricalRIUMoreSection from 'components/templates/electrical/services/electrical-RIU-more.section';
 import AboutPlumbingServiceSection from 'components/templates/electrical/about-the-service/electrical-about.section';
 
 export interface ElectricalContentProps {
-	page: Electrical[];
+	page: OtherServices[];
 	header: Nav[];
 	footer: Footer[];
 }
