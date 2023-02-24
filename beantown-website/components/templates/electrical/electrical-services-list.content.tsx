@@ -22,8 +22,7 @@ function ElectricalServicesList() {
 				</p>
 				<div id="list-container" className="">
 					<div className="grid   w-full  grid-cols-1 sm:grid-cols-2  md:grid-cols-3 ">
-						{/* <div className="grid   w-full  grid-cols-1 sm:grid-cols-2  md:grid-cols-3 "> */}
-						{/* list of Electrical services from cms */}
+						
 						{servicesList?.map((item: any, index: number) => {
 							return (
 								<div
