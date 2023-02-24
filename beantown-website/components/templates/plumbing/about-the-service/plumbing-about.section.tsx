@@ -24,7 +24,7 @@ const AboutPlumbingServiceSection = () => {
 				height={600}
 				width={500}
 				alt="Left Blob "
-				className="absolute left-0 hidden -translate-x-[40%] translate-y-[25%] transform lg:block"
+				className="absolute left-0 hidden -translate-x-[40%] translate-y-[45%] transform lg:block"
 			/>
 			<SectionContentWrapper>
 				<AboutPlumbingServiceContent />
