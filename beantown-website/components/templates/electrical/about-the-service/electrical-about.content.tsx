@@ -1,12 +1,12 @@
-import { GlobalContext } from "@contexts/global/global.context";
-import useWindowDimensions from "@lib/hooks/use-window-dimensions.hook";
-import { GlobalContextProps } from "@typing/common/interfaces/contexts.interface";
-import CtaWrapper from "components/molecules/cta-wrapper.molecule";
-import RichText from "components/molecules/rich-text.molecule";
-import ContentWrapper from "components/organisms/content-wrapper.organism";
-import MaskedImageWithBackgroundVector from "components/organisms/masked-image-with-blob.organism";
-import { ElectricalContentProps } from "pages/electrical";
-import { useContext } from "react";
+import { GlobalContext } from '@contexts/global/global.context';
+import useWindowDimensions from '@lib/hooks/use-window-dimensions.hook';
+import { GlobalContextProps } from '@typing/common/interfaces/contexts.interface';
+import CtaWrapper from 'components/molecules/cta-wrapper.molecule';
+import RichText from 'components/molecules/rich-text.molecule';
+import ContentWrapper from 'components/organisms/content-wrapper.organism';
+import MaskedImageWithBackgroundVector from 'components/organisms/masked-image-with-blob.organism';
+import { ElectricalContentProps } from 'pages/electrical';
+import { useContext } from 'react';
 
 const AboutElectricalServiceContent = () => {
 	const { pageContent } =
@@ -68,7 +68,7 @@ const AboutElectricalServiceContent = () => {
 							<RichText value={aboutTheServiceDescription?.contentRaw} />
 						</ContentWrapper.Description>
 						<ContentWrapper.CTA className="mt-[16px] lg:mt-[32px]">
-							<CtaWrapper.CTA className="bg-service-yellow para-3 lg:para-2 h-[40px] w-[110px] rounded-lg py-1 px-4 tracking-wide text-black md:py-2  md:px-8  lg:h-[64px] lg:w-[210px] lg:tracking-wider ">
+							<CtaWrapper.CTA className="bg-service-yellow para-3 lg:para-2 h-[52px] w-[184px] rounded-lg py-1 px-4 tracking-wide text-black md:py-2  md:px-8  lg:h-[64px] lg:w-[210px] lg:tracking-wider ">
 								<p>{contactUsButton?.text}</p>
 							</CtaWrapper.CTA>
 						</ContentWrapper.CTA>
@@ -79,5 +79,3 @@ const AboutElectricalServiceContent = () => {
 	);
 };
 export default AboutElectricalServiceContent;
-
-

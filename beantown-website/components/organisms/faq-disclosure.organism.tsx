@@ -16,7 +16,7 @@ const FAQDisclosure: React.FC<Props> = (props) => {
 						<div
 							className={`${
 								open && props.isOpen
-									? 'shadow-[0 0 5px 5px #2C3058] rounded-lg bg-white shadow-xl'
+									? ' rounded-lg bg-white shadow-[rgba(44,_48,_88,_0.16)_0px_8px_200px] '
 									: 'rounded-lg border bg-transparent '
 							} `}
 						>

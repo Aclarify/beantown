@@ -3,9 +3,11 @@ import { Faq, Maybe } from '@typing/gql/graphql';
 import FAQDisclosure from './faq-disclosure.organism';
 import ContentWrapper from './content-wrapper.organism';
 import CtaWrapper from 'components/molecules/cta-wrapper.molecule';
-
+import { SCREEN_BREAKPOINTS } from '@typing/common/interfaces/devices.interface';
+import useWindowDimensions from '@lib/hooks/use-window-dimensions.hook';
 interface IProps extends React.HTMLAttributes<HTMLDivElement> {
 	backgroundImage: string;
+	// backgroundImageSmallScreen: string;
 	faqTitle: string;
 	faqDescription: string;
 	faqButtonText: string;
@@ -23,6 +25,11 @@ const FAQOther: React.FC<IProps> = (props) => {
 			setIndexToBeOpen(index);
 		}
 	}
+	// const { width } = useWindowDimensions();
+	// const bgImage =
+	// 	width > SCREEN_BREAKPOINTS.MD
+	// 		? props.backgroundImage
+	// 		: props.backgroundImageSmallScreen;
 	return (
 		<div
 			className="relative  mt-16 flex  items-center  pt-[4em] align-middle   "
