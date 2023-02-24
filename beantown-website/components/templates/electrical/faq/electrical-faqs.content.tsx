@@ -3,6 +3,7 @@ import { GlobalContext } from '@contexts/global/global.context';
 import { GlobalContextProps } from '@typing/common/interfaces/contexts.interface';
 import FAQ from 'components/organisms/faq.organism';
 import { ElectricalContentProps } from 'pages/electrical';
+import FAQOther from 'components/organisms/faq-other-services.organism';
 
 const ElectricalFaqContent = () => {
 	const { pageContent } =
@@ -15,7 +16,7 @@ const ElectricalFaqContent = () => {
 	return (
 		<>
 			{faqList && (
-				<FAQ
+				<FAQOther
 					backgroundImage="/images/heating-cooling/faq/hc-faq-bg-thumbprint.svg"
 					faqTitle={faqTitle || ''}
 					faqDescription={faqDescription || ''}
@@ -23,7 +24,7 @@ const ElectricalFaqContent = () => {
 					faqsButtonTextColour="text-black"
 					faqsButtonBgColour="bg-service-yellow"
 					faqList={faqList || []}
-				></FAQ>
+				></FAQOther>
 			)}
 		</>
 	);

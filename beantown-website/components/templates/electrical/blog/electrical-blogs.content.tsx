@@ -3,6 +3,7 @@ import { GlobalContext } from '@contexts/global/global.context';
 import { GlobalContextProps } from '@typing/common/interfaces/contexts.interface';
 import Blogs from 'components/organisms/blogs.organism';
 import { ElectricalContentProps } from 'pages/electrical';
+import BlogsOther from 'components/organisms/blogs-other-services.organism';
 
 const ElectricalBlogsContent = () => {
 	const { pageContent } =
@@ -14,14 +15,14 @@ const ElectricalBlogsContent = () => {
 	const { blogTitle, blogDescription, blogButton, blogCards } = homeData;
 	console.log('array of data'+ blogCards)
 	return (
-		<Blogs
+		<BlogsOther
 			blogsTitle={blogTitle || ''}
 			blogsDescription={blogDescription || ''}
 			blogsButtonText={blogButton?.text || ''}
 			blogsButtonTextColour="text-white"
 			blogsButtonBgColour="bg-service-yellow"
 			blogCards={blogCards || []}
-		></Blogs>
+		></BlogsOther>
 	);
 };
 
