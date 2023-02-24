@@ -13,8 +13,7 @@ function ElectricalServicesList() {
 	}
 
 	const pageData = pageContent.page[0];
-	const { servicesList, servicesListTitle } = pageData;
-	console.log(servicesList[0]);
+	const { servicesList, servicesListTitle } = pageData;	
 	return (
 		<section id="electrical-services-list" className=" mb-80  mt-28	">
 			<div className=" container  mx-auto h-auto w-full rounded-3xl bg-[#FFFFFF]  p-8    shadow-[rgba(29,_39,_87,_0.04)_0px_6px_10px]  ">
@@ -25,7 +24,7 @@ function ElectricalServicesList() {
 					<div className="grid   w-full  grid-cols-1 sm:grid-cols-2  md:grid-cols-3 ">
 						{/* <div className="grid   w-full  grid-cols-1 sm:grid-cols-2  md:grid-cols-3 "> */}
 						{/* list of Electrical services from cms */}
-						{servicesList.map((item: any, index: number) => {
+						{servicesList?.map((item: any, index: number) => {
 							return (
 								<div
 									key={index}

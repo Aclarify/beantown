@@ -14,7 +14,7 @@ const ElectricalPageCTAContent = () => {
 		return null;
 	}
 	const pageData = pageContent.page[0];
-	const { ctaImage, ctaTitle, finalCtaButton } = pageData;
+	const { ctaImage, ctaTitle, ctaButton } = pageData;
 	return (
 		<CTAWithImage
 			heroImageURL={ctaImage?.asset?.url || ''}
@@ -35,7 +35,7 @@ const ElectricalPageCTAContent = () => {
 				</ContentWrapper.Title>
 				<ContentWrapper.CTA className=" mt-8 pb-[1em] lg:pb-0">
 					<CtaWrapper.CTA className="para-3 lg:para-2  text-primary-black h-[52px] w-[184px] rounded-lg bg-white py-1 px-4  tracking-wide  md:py-2  md:px-8 lg:h-[64px] lg:w-[198px]  lg:tracking-wider ">
-						<p>{finalCtaButton?.text}</p>
+						<p>{ctaButton?.text}</p>
 					</CtaWrapper.CTA>
 				</ContentWrapper.CTA>
 			</ContentWrapper>
