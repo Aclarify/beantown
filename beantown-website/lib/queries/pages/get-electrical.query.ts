@@ -48,6 +48,7 @@ const electricalQuery = ` allOtherServices(where: {name: {eq: "Electrical"}}) {
     servicesList
     ctaTitle
     ctaButton{
+      text
       href
     }
     ctaImage{
