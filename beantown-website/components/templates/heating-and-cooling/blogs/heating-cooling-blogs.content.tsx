@@ -4,6 +4,7 @@ import { GlobalContextProps } from '@typing/common/interfaces/contexts.interface
 import { HeatingCoolingContentProps } from 'pages/heating-and-cooling';
 import Blogs from 'components/organisms/blogs.organism';
 
+
 const HeatingCoolingBlogsContent = () => {
 	const { pageContent } =
 		useContext<GlobalContextProps<HeatingCoolingContentProps>>(GlobalContext);

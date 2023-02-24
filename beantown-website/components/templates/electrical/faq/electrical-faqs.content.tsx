@@ -2,30 +2,32 @@ import React, { useContext } from 'react';
 import { GlobalContext } from '@contexts/global/global.context';
 import { GlobalContextProps } from '@typing/common/interfaces/contexts.interface';
 import FAQ from 'components/organisms/faq.organism';
-import { HeatingCoolingContentProps } from 'pages/heating-and-cooling';
+import { ElectricalContentProps } from 'pages/electrical';
+import FAQOther from 'components/organisms/faq-other-services.organism';
 
-const HeatingCoolingFaqContent = () => {
+const ElectricalFaqContent = () => {
 	const { pageContent } =
-		useContext<GlobalContextProps<HeatingCoolingContentProps>>(GlobalContext);
+		useContext<GlobalContextProps<ElectricalContentProps>>(GlobalContext);
 	if (!pageContent || !pageContent.page || !pageContent.page[0]) {
 		return null;
 	}
 	const pageData = pageContent.page[0];
-	const { faqTitle, faqDescription, faqButton, faqList } = pageData;	return (
+	const { faqTitle, faqDescription, faqButton, faqList } = pageData;
+	return (
 		<>
 			{faqList && (
-				<FAQ
+				<FAQOther
 					backgroundImage="/images/heating-cooling/faq/hc-faq-bg-thumbprint.svg"
 					faqTitle={faqTitle || ''}
 					faqDescription={faqDescription || ''}
 					faqButtonText={faqButton?.text || ''}
-					faqsButtonTextColour="text-white"
-					faqsButtonBgColour="bg-service-red"
+					faqsButtonTextColour="text-black"
+					faqsButtonBgColour="bg-service-yellow"
 					faqList={faqList || []}
-				></FAQ>
+				></FAQOther>
 			)}
 		</>
 	);
 };
 
-export default HeatingCoolingFaqContent;
+export default ElectricalFaqContent;

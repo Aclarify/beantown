@@ -76,7 +76,7 @@ export default function App({ Component, pageProps }: AppProps) {
 					<Component {...pageProps} />
 					{pageProps.globalContext && (
 						<Footer
-							logoDesktop={logoDesktop}
+							logoDesktop={logoMobile}
 							logoMobile={logoMobile}
 							content={pageProps.globalContext?.pageContent?.footer[0]}
 						/>
