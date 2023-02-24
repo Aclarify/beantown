@@ -1,8 +1,9 @@
 import React, { useContext } from 'react';
 import { GlobalContext } from '@contexts/global/global.context';
 import { GlobalContextProps } from '@typing/common/interfaces/contexts.interface';
-import Blogs from 'components/organisms/blogs.organism';
 import { HeatingCoolingContentProps } from 'pages/heating-and-cooling';
+import Blogs from 'components/organisms/blogs.organism';
+
 
 const HeatingCoolingBlogsContent = () => {
 	const { pageContent } =

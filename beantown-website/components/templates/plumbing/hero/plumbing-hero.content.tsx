@@ -15,7 +15,6 @@ const PlumbingHeroContent = () => {
 		return null;
 	}
 	const pageData = pageContent.page[0];
-	console.log(pageData);
 	const { heroImage, heroTitle, heroDescription, heroButton } = pageData;
 	return (
 		<CTAWithImage
@@ -26,8 +25,8 @@ const PlumbingHeroContent = () => {
 				'/images/plumbing/hero/plumbing-hero-bg-vector-mobile.svg'
 			}
 			heroImagePosition="right"
-			gradientFromColor="from-service-yellow"
-			gradientToColor="bg-service-yellow"
+			gradientFromColor="from-service-green"
+			gradientToColor="bg-service-green"
 		>
 			<SectionContentWrapper>
 				<ContentWrapper className="pt-[2em] pb-[4em] text-center md:py-[12em]  lg:py-[6em] lg:text-left">
