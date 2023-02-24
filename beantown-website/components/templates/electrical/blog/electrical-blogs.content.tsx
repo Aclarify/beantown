@@ -13,13 +13,13 @@ const ElectricalBlogsContent = () => {
 	}
 	const homeData = pageContent.page[0];
 	const { blogsTitle, blogsDescription, blogButton, blogCards } = homeData;
-	
+
 	return (
 		<BlogsOther
 			blogsTitle={blogsTitle || ''}
 			blogsDescription={blogsDescription || ''}
 			blogsButtonText={blogButton?.text || ''}
-			blogsButtonTextColour="text-white"
+			blogsButtonTextColour="text-primary-black"
 			blogsButtonBgColour="bg-service-yellow"
 			blogCards={blogCards || []}
 		></BlogsOther>

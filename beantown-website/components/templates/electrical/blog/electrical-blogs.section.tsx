@@ -10,7 +10,7 @@ const ElectricalBlogsSection = () => {
 	return (
 		<section
 			id="electrical-blogs"
-			className="3xl:mt-[-6em] relative z-10 mt-[-2em] md:mt-[-3em] 2xl:mt-[-4em]   "
+			className="3xl:mt-[-6em] relative z-10 mt-[4em]  md:mt-[-3em] 2xl:mt-[-4em]  "
 		>
 			<WaveWrapper
 				waveURL={
@@ -19,7 +19,7 @@ const ElectricalBlogsSection = () => {
 						: '/images/electrical/blogs/electrical-blogs-top-wave-mobile.svg'
 				}
 			></WaveWrapper>
-			<div className="bg-service-yellow-bg">
+			<div className="bg-service-yellow-bg  md:mt-[-2em]  lg:mt-[-1em] 2xl:mt-0">
 				<SectionContentWrapper>
 					<ElectricalBlogsContent />
 				</SectionContentWrapper>

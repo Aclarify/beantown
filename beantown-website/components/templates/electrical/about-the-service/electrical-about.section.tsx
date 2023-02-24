@@ -39,7 +39,7 @@ const AboutElectricalServiceSection = () => {
 				height={180}
 				width={200}
 				alt="Left Blob Mobile"
-				className="absolute left-0 top-0 z-[-1] translate-x-[-35%] translate-y-[-20%] transform md:translate-y-[19%] lg:hidden"
+				className="absolute left-0 top-0 z-[-1] translate-x-[-35%] translate-y-[92%] transform md:translate-y-[110%] lg:hidden"
 			/>
 			<WaveWrapper
 				waveURL={
