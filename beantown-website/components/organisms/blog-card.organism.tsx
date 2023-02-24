@@ -28,7 +28,7 @@ const BlogCard: React.FC<Props> = (props) => {
 					<div className="para-4 lg:para-2 text-primary-shade-1 mb-4">
 						<p> {props.blogDescription} </p>
 					</div>
-					<div className="flex justify-between align-middle lg:py-6">
+					<div className="flex justify-between align-middle lg:py-2">
 						<button className="para-4 lg:para-2 text-primary-black underline ">
 							{props.buttonText}
 						</button>
