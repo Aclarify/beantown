@@ -1,4 +1,4 @@
-import React, { useContext } from 'react'
+import React, { useContext } from 'react';
 import Image from 'next/image';
 import { GlobalContext } from '@contexts/global/global.context';
 import { GlobalContextProps } from '@typing/common/interfaces/contexts.interface';
@@ -13,16 +13,15 @@ function ElectricalServicesList() {
 	}
 
 	const pageData = pageContent.page[0];
-	const { servicesList, servicesListTitle } = pageData;	
+	const { servicesList, servicesListTitle } = pageData;
 	return (
-		<section id="electrical-services-list" className=" mb-80  mt-28	">
-			<div className=" container  mx-auto h-auto w-full rounded-3xl bg-[#FFFFFF]  p-8    shadow-[rgba(29,_39,_87,_0.04)_0px_6px_10px]  ">
+		<section id="electrical-services-list" className=" mb-[5em] mt-[-1em]	">
+			<div className="    container mx-auto h-auto w-full rounded-3xl bg-white p-8 shadow-[rgba(29,_39,_87,_0.08)_4px_8px_60px] ">
 				<p className="title-6 md:title-3 text-primary-black pb-4  sm:pb-8">
 					{servicesListTitle}
 				</p>
 				<div id="list-container" className="">
-					<div className="grid   w-full  grid-cols-1 sm:grid-cols-2  md:grid-cols-3 ">
-						
+					<div className="3xl:grid-cols-4   grid  w-full  grid-cols-1 lg:grid-cols-3  ">
 						{servicesList?.map((item: any, index: number) => {
 							return (
 								<div
