@@ -25,7 +25,7 @@ const FAQOther: React.FC<IProps> = (props) => {
 	}
 	return (
 		<div
-			className="relative  mt-4 flex  items-center  pt-[4em] align-middle   "
+			className="relative  mt-4 md:mt-10 flex  items-center  pt-[4em] align-middle   "
 			style={{
 				backgroundImage: `url(${props.backgroundImage})`,
 				backgroundPosition: 'center',
