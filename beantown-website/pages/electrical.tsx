@@ -10,6 +10,11 @@ import ElectricalPageCTASection from 'components/templates/electrical/cta/electr
 import ElectricalBlogsSection from 'components/templates/electrical/blog/electrical-blogs.section';
 import ElectricalFaqSection from 'components/templates/electrical/faq/electrical-faqs.section';
 import AboutPlumbingServiceSection from 'components/templates/electrical/about-the-service/electrical-about.section';
+import Header from 'components/organisms/nav';
+import FooterSection from 'components/organisms/footer';
+import { useContext } from 'react';
+import { GlobalContextProps } from '@typing/common/interfaces/contexts.interface';
+import { GlobalContext } from '@contexts/global/global.context';
 
 export interface ElectricalContentProps {
 	page: OtherServices[];
@@ -35,14 +40,36 @@ const PageHead = () => {
 };
 
 const ElectricalServicesPage: React.FC = (props) => {
+	const { pageContent } =
+		useContext<GlobalContextProps<ElectricalContentProps>>(GlobalContext);
+
+	if (!pageContent) {
+		return null;
+	}
+	const pageData = pageContent.page[0];
+	const headerData = pageContent.header[0];
+	const footerData = pageContent.footer[0];
+
+	const { logoDesktop, logoMobile } = pageData;
 	return (
 		<section id="electrical-services" className="bg-primary-white-shade-1">
 			<PageHead />
+			<Header
+				fontColor="text-black"
+				logoDesktop={logoDesktop?.image}
+				logoMobile={logoMobile?.image}
+				content={headerData}
+			/>
 			<ElectricalHeroSection />
-			<AboutPlumbingServiceSection/>
+			<AboutPlumbingServiceSection />
 			<ElectricalPageCTASection />
 			<ElectricalBlogsSection />
 			<ElectricalFaqSection />
+			<FooterSection
+				logoDesktop={logoDesktop?.image}
+				logoMobile={logoMobile?.image}
+				content={footerData}
+			/>
 		</section>
 	);
 };

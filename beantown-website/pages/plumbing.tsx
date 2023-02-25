@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useContext } from 'react';
 import { OtherServices, Nav, Footer } from '@typing/gql/graphql';
 import Head from 'next/head';
 import pageQuery from '@lib/queries/pages/get-plumbing.query';
@@ -11,6 +11,11 @@ import AboutPlumbingServiceSection from 'components/templates/plumbing/about-the
 import PlumbingCTASection from 'components/templates/plumbing/cta/plumbing-cta.section';
 import PlumbingBlogsSection from 'components/templates/plumbing/blogs/plumbing-blogs.section';
 import PlumbingFaqSection from 'components/templates/plumbing/faq/plumbing-faq.section';
+import Header from 'components/organisms/nav';
+import FooterSection from 'components/organisms/footer';
+
+import { GlobalContextProps } from '@typing/common/interfaces/contexts.interface';
+import { GlobalContext } from '@contexts/global/global.context';
 
 export interface PlumbingContentProps {
 	page: OtherServices[];
@@ -38,14 +43,35 @@ const getStaticProps = generateGetStaticProps<PlumbingContentProps>(
 export { getStaticProps };
 
 const PlumbingServicesPage: React.FC = (props) => {
+	const { pageContent } =
+		useContext<GlobalContextProps<PlumbingContentProps>>(GlobalContext);
+
+	if (!pageContent) {
+		return null;
+	}
+	const pageData = pageContent.page[0];
+	const headerData = pageContent.header[0];
+	const footerData = pageContent.footer[0];
+	const { logoDesktop, logoMobile } = pageData;
 	return (
 		<div id="plumbing-services" className="bg-primary-white-shade-1">
 			<PageHead />
+			<Header
+				fontColor="text-white"
+				logoDesktop={logoDesktop?.image}
+				logoMobile={logoMobile?.image}
+				content={headerData}
+			/>
 			<PlumbingHeroContent />
 			<AboutPlumbingServiceSection />
 			<PlumbingCTASection />
 			<PlumbingBlogsSection />
 			<PlumbingFaqSection />
+			<FooterSection
+				logoDesktop={logoDesktop?.image}
+				logoMobile={logoMobile?.image}
+				content={footerData}
+			/>
 		</div>
 	);
 };

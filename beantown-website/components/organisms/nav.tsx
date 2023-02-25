@@ -6,9 +6,10 @@ import { Nav } from '@typing/gql/graphql';
 
 import Image from 'next/image';
 import CtaWrapper from 'components/molecules/cta-wrapper.molecule';
+import clsx from 'clsx';
 
 interface IProps {
-	istextDark: boolean;
+	fontColor?: string;
 	logoDesktop: any;
 	logoMobile: any;
 	content: Nav;
@@ -26,16 +27,16 @@ export default function Header(props: IProps) {
 		return element !== null;
 	});
 
-	const textColour = props.istextDark ? 'text-white' : 'text-primary-shade-1';
-	const btnBackground = props.istextDark ? 'bg-primary-shade-1' : 'bg-white';
-	const btnTextColour = props.istextDark
-		? 'text-white'
-		: 'text-primary-shade-1';
 	return (
 		<>
 			<section className="2xl:padding-for-section absolute w-full px-5">
 				<Popover className="relative z-30">
-					<div className="  flex items-center  justify-between py-6 text-white lg:p-0">
+					<div
+						className={clsx(
+							'flex items-center  justify-between py-6 lg:p-0',
+							props.fontColor
+						)}
+					>
 						<div className="hidden align-middle lg:flex ">
 							<Image
 								alt={logoDesktop?.asset?.altText || ''}
