@@ -16,7 +16,7 @@ const PlumbingServicesList = () => {
 	return (
 		<section
 			id="plumbing-services-list"
-			className=" mt-[-2em] sm:mt-[10em]  mb-[5em] h-auto w-full rounded-3xl bg-white shadow-[rgba(29,_39,_87,_0.08)_4px_8px_60px]"
+			className=" mt-[-2em] sm:mt-[0em]  mb-[5em] h-auto w-full rounded-3xl bg-white shadow-[rgba(29,_39,_87,_0.08)_4px_8px_60px]"
 		>
 			<div className="container px-2 py-4  lg:p-[44px]  ">
 				<p className="title-6 md:title-4 text-primary-black pb-4  sm:pb-8">
