@@ -19,16 +19,16 @@ interface IProps extends React.HTMLAttributes<HTMLDivElement> {
 
 const BlogsOther: React.FC<IProps> = (props) => {
 	return (
-		<section className="relative z-10 pb-[3rem] lg:pb-1 ">
-			<div className=" flex flex-col justify-center text-center align-middle  ">
-				<div className=" title-5 lg:title-2 text-primary-shade-1 pt-[2em] text-center md:mx-40 lg:pt-0">
+		<section className="relative z-10 pb-[3rem] lg:pb-1 -mt-4">
+			<div className=" flex flex-col justify-center text-center align-middle md:mx-48">
+				<div className=" title-5 lg:title-2 text-primary-shade-1 pt-[2em] text-center lg:pt-0 ">
 					<h1>{props.blogsTitle}</h1>
 				</div>
-				<div className="md:mx-52 para-4 lg:para-2 text-primary-shade-1 pt-4 pb-6 text-center">
+				<div className=" para-4 lg:para-2 text-primary-shade-1 pt-4 pb-6 text-center px-4 ">
 					<p>{props.blogsDescription}</p>
 				</div>
 			</div>
-			<div className=" mt-10 no-scrollbar flex snap-x snap-mandatory flex-nowrap gap-4 overflow-x-auto pb-4  ">
+			<div className=" mt-2 no-scrollbar flex snap-x snap-mandatory flex-nowrap gap-4 overflow-x-auto pb-4  ">
 				{props.blogCards?.map((blog, index) => {
 					return (
 						<div

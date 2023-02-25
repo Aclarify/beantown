@@ -27,7 +27,7 @@ const AboutPlumbingServiceContent = () => {
 	return (
 		<div
 			id="section-wrapper"
-			className="z-10 mb-[6em]  flex flex-col  overflow-hidden px-5  "
+			className="z-10 mb-[6em]  flex flex-col  overflow-hidden "
 		>
 			<div
 				id="content-image-wrapper"
