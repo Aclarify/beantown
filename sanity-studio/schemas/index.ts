@@ -23,6 +23,9 @@ import imageDescriptionButtonGroup from './organism/imageDescriptionButtonGroup'
 import nav from './layouts/nav'
 import titleDescriptionImage from './molecules/titleDescriptionImage'
 import heatingAndCooling from './pages/heating-and-cooling'
+import blog from './organism/blog'
+import faq from './organism/faq'
+import otherServices from './pages/other-services'
 
 export const schemaTypes = [
   //Document Types
@@ -31,6 +34,9 @@ export const schemaTypes = [
   heatingAndCooling,
   nav,
   footer,
+  otherServices,
+  blog,
+  faq,
   //Other Types
   breakType,
   cta,

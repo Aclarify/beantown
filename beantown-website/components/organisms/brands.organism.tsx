@@ -14,13 +14,14 @@ interface IProps extends React.HTMLAttributes<HTMLDivElement> {
 const settings = {
 	dots: false,
 	infinite: true,
-	speed: 2000,
-	autoplaySpeed: 2000,
-	cssEase: 'linear',
+	speed: 6000,
 	autoplay: true,
+	autoplaySpeed: 0,
+	cssEase: 'linear',
 	slidesToShow: 3,
 	slidesToScroll: 1,
 	pauseOnHover: false,
+
 	responsive: [
 		{
 			breakpoint: 1800,

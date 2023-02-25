@@ -10,6 +10,7 @@ import TestimonialModal from './testimonial-modal';
 import Slider from 'react-slick';
 import 'slick-carousel/slick/slick.css';
 import 'slick-carousel/slick/slick-theme.css';
+import { SCREEN_BREAKPOINTS } from '@typing/common/interfaces/devices.interface';
 
 export default function Testimonials() {
 	const slider = React.useRef<Slider | null>(null);
@@ -43,7 +44,6 @@ export default function Testimonials() {
 	const previous = () => {
 		if (slider.current) {
 			slider.current.slickNext();
-			console.log('nextClicked');
 		}
 	};
 	const next = () => {
@@ -53,22 +53,22 @@ export default function Testimonials() {
 	};
 	const settings = {
 		speed: 500,
-		slidesToShow: 3,
+		slidesToShow: 3.1,
 		slidesToScroll: 1,
 		initialSlide: 0,
 		arrows: false,
 		responsive: [
 			{
-				breakpoint: 1024,
+				breakpoint: SCREEN_BREAKPOINTS.LG,
 				settings: {
-					slidesToShow: 2,
+					slidesToShow: 2.16,
 					slidesToScroll: 1,
 				},
 			},
 			{
 				breakpoint: 480,
 				settings: {
-					slidesToShow: 1.1,
+					slidesToShow: 1.2,
 					slidesToScroll: 1,
 				},
 			},
@@ -158,7 +158,10 @@ export default function Testimonials() {
 							<Slider ref={slider} {...settings} className="">
 								{testimonialCards?.map((reviews, index) => {
 									return (
-										<div className="testimonial-card-wrapper " key={index}>
+										<div
+											className="testimonial-card-wrapper min-w-[280px] px-2 lg:min-w-[378px] lg:px-2 xl:px-5"
+											key={index}
+										>
 											<TestimonialCard
 												key={index}
 												clientName={reviews?.titleText || ''}

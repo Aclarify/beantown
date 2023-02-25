@@ -14,8 +14,8 @@ const HeatingCoolingHeroServicesSection = () => {
 			<WaveWrapper
 				waveURL={
 					width > 1023
-						? '/images/heating-cooling/services/hc-services-top-wave.svg'
-						: '/images/services/services-hero-mobile-wave.svg'
+						? '/images/services/services-hero-bottom-wave.svg'
+						: '/images/services/services-hero-bottom-wave-mobile.svg'
 				}
 			></WaveWrapper>
 

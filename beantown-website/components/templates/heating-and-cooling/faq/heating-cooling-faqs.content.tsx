@@ -11,8 +11,7 @@ const HeatingCoolingFaqContent = () => {
 		return null;
 	}
 	const pageData = pageContent.page[0];
-	const { faqTitle, faqDescription, faqButton, faqList } = pageData;
-	return (
+	const { faqTitle, faqDescription, faqButton, faqList } = pageData;	return (
 		<>
 			{faqList && (
 				<FAQ

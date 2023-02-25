@@ -36,8 +36,11 @@ module.exports = {
 				'gray-shade-5': '#2C305829',
 				'service-red': '#BC3B39',
 				'service-red-bg': '#FCF7F7',
+				'service-yellow-bg': '#FEFCE6',
 				'service-yellow': '#F4DE00',
+				'service-yellow-bg': '#FEFCE6',
 				'service-green': '#008340',
+				'service-green-bg': '#F0FAF5',
 			},
 			letterSpacing: {
 				wide: '1px',

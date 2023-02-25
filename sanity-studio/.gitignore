@@ -28,6 +28,7 @@
 
 # Environmental variable files
 .env.*
+.env
 
 
 # Exported Sanity assets

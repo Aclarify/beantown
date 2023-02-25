@@ -4,15 +4,23 @@ import navQuery from './get-nav.query';
 
 const homeQuery = ` allHome {
     		logoDesktop{
-				asset{
-					url
+				image{
+					asset
+						{
+							url
+						}
+					}
+					href
 				}
-			}
-			logoMobile{
-				asset{
-					url
+	  		logoMobile{
+				image{
+					asset
+						{
+							url
+						}
+        			}
+					href
 				}
-			}
 			heroTitle
 			heroDescription {
 				contentRaw
