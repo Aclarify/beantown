@@ -7,7 +7,6 @@ import { SCREEN_BREAKPOINTS } from '@typing/common/interfaces/devices.interface'
 import useWindowDimensions from '@lib/hooks/use-window-dimensions.hook';
 interface IProps extends React.HTMLAttributes<HTMLDivElement> {
 	backgroundImage: string;
-	// backgroundImageSmallScreen: string;
 	faqTitle: string;
 	faqDescription: string;
 	faqButtonText: string;
@@ -25,14 +24,9 @@ const FAQOther: React.FC<IProps> = (props) => {
 			setIndexToBeOpen(index);
 		}
 	}
-	// const { width } = useWindowDimensions();
-	// const bgImage =
-	// 	width > SCREEN_BREAKPOINTS.MD
-	// 		? props.backgroundImage
-	// 		: props.backgroundImageSmallScreen;
 	return (
 		<div
-			className="relative  mt-4 md:mt-10 flex  items-center  pt-[4em] align-middle   "
+			className="relative  mt-4 flex items-center  pt-[4em]  align-middle md:mt-10   "
 			style={{
 				backgroundImage: `url(${props.backgroundImage})`,
 				backgroundPosition: 'center',

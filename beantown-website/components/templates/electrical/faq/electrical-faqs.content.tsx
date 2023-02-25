@@ -18,7 +18,6 @@ const ElectricalFaqContent = () => {
 			{faqList && (
 				<FAQOther
 					backgroundImage="/images/electrical/faq/electrical-faq-bg-thumbprint.svg"
-					//	backgroundImageSmallScreen="/images/electrical/faq/electrical-faq-bg-thumbprint-mobile.svg"
 					faqTitle={faqTitle || ''}
 					faqDescription={faqDescription || ''}
 					faqButtonText={faqButton?.text || ''}

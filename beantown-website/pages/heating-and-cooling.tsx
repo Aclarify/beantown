@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useContext } from 'react';
 import { HeatingAndCooling, Nav, Footer } from '@typing/gql/graphql';
 import Head from 'next/head';
 import pageQuery from '@lib/queries/pages/get-heating-and-cooling.query';
@@ -14,6 +14,11 @@ import HeatingCoolingMassSaveSection from 'components/templates/heating-and-cool
 import HeatingCoolingBrandsSection from 'components/templates/heating-and-cooling/brands/heating-cooling-brands.section';
 import HeatingCoolingPageCTASection from 'components/templates/heating-and-cooling/cta/heating-cooling-cta.section';
 import HeatingCoolingFaqSection from 'components/templates/heating-and-cooling/faq/heating-cooling-faqs.section';
+import { GlobalContextProps } from '@typing/common/interfaces/contexts.interface';
+import { GlobalContext } from '@contexts/global/global.context';
+import Header from 'components/organisms/nav';
+import FooterSection from 'components/organisms/footer';
+import CtaWrapper from 'components/molecules/cta-wrapper.molecule';
 
 export interface HeatingCoolingContentProps {
 	page: HeatingAndCooling[];
@@ -41,9 +46,31 @@ const getStaticProps = generateGetStaticProps<HeatingCoolingContentProps>(
 export { getStaticProps };
 
 const HeatingCoolingServicePage: React.FC = (props) => {
+	const { pageContent } =
+		useContext<GlobalContextProps<HeatingCoolingContentProps>>(GlobalContext);
+
+	if (!pageContent) {
+		return null;
+	}
+	const pageData = pageContent.page[0];
+	const headerData = pageContent.header[0];
+	const footerData = pageContent.footer[0];
+	const { logoDesktop, logoMobile } = pageData;
 	return (
 		<div id="heating-services" className="bg-primary-white-shade-1">
 			<PageHead />
+			<Header
+				fontColor="text-white"
+				logoDesktop={logoDesktop?.image}
+				logoMobile={logoMobile?.image}
+				content={headerData}
+			>
+				<div className=" hidden lg:flex lg:justify-end ">
+					<CtaWrapper.CTA className="text-primary-shade-1 para-3 h-[48px] w-[139px] rounded-lg bg-white py-1 px-4  tracking-wide  md:py-2 md:px-8 lg:tracking-wider ">
+						<p>{headerData.headerButton?.text}</p>
+					</CtaWrapper.CTA>
+				</div>
+			</Header>
 			<HeatingCoolingHeroSection />
 			<HeatingCoolingHeroServicesSection />
 			<HeatingCoolingProductsSection />
@@ -52,6 +79,11 @@ const HeatingCoolingServicePage: React.FC = (props) => {
 			<HeatingCoolingBrandsSection />
 			<HeatingCoolingBlogsSection />
 			<HeatingCoolingFaqSection />
+			<FooterSection
+				logoDesktop={logoDesktop?.image}
+				logoMobile={logoMobile?.image}
+				content={footerData}
+			/>
 		</div>
 	);
 };

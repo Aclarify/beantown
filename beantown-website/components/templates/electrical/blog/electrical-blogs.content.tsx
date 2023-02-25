@@ -1,7 +1,6 @@
 import React, { useContext } from 'react';
 import { GlobalContext } from '@contexts/global/global.context';
 import { GlobalContextProps } from '@typing/common/interfaces/contexts.interface';
-import Blogs from 'components/organisms/blogs.organism';
 import { ElectricalContentProps } from 'pages/electrical';
 import BlogsOther from 'components/organisms/blogs-other-services.organism';
 

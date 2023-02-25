@@ -6,11 +6,14 @@ import { Nav } from '@typing/gql/graphql';
 
 import Image from 'next/image';
 import CtaWrapper from 'components/molecules/cta-wrapper.molecule';
+import clsx from 'clsx';
 
 interface IProps {
+	fontColor?: string;
 	logoDesktop: any;
 	logoMobile: any;
 	content: Nav;
+	children: React.ReactNode;
 }
 export default function Header(props: IProps) {
 	const { navLinks, navGroup, headerButton } = props.content;
@@ -29,7 +32,12 @@ export default function Header(props: IProps) {
 		<>
 			<section className="2xl:padding-for-section absolute w-full px-5">
 				<Popover className="relative z-30">
-					<div className="  flex items-center  justify-between py-6 text-white lg:p-0">
+					<div
+						className={clsx(
+							'flex items-center  justify-between py-6 lg:p-0',
+							props.fontColor
+						)}
+					>
 						<div className="hidden align-middle lg:flex ">
 							<Image
 								alt={logoDesktop?.asset?.altText || ''}
@@ -46,7 +54,7 @@ export default function Header(props: IProps) {
 								src={logoMobile?.asset?.url || ''}
 							/>
 						</div>
-						<div className="-my-2  lg:hidden">
+						<div className="-my-2  text-white lg:hidden">
 							<Popover.Button
 								className="inline-flex rounded-md p-2 "
 								aria-label="menu for navigation"
@@ -106,11 +114,7 @@ export default function Header(props: IProps) {
 								);
 							})}
 						</div>
-						<div className=" hidden lg:flex lg:justify-end ">
-							<CtaWrapper.CTA className="text-primary-shade-1 para-3 h-[48px] w-[139px] rounded-lg bg-white py-1 px-4  tracking-wide  md:py-2 md:px-8 lg:tracking-wider ">
-								<p>{headerButton?.text}</p>
-							</CtaWrapper.CTA>
-						</div>
+						{props.children}
 					</div>
 
 					<Transition

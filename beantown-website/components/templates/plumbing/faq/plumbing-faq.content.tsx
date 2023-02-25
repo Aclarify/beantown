@@ -18,7 +18,6 @@ const PlumbingFaqContent = () => {
 			{faqList && (
 				<FAQOther
 					backgroundImage="/images/plumbing/faq/plumbing-faq-bg-thumbprint.svg"
-					//backgroundImageSmallScreen="/images/plumbing/faq/plumbing-faq-bg-thumbprint-mobile.svg"
 					faqTitle={faqTitle || ''}
 					faqDescription={faqDescription || ''}
 					faqButtonText={faqButton?.text || ''}

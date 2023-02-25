@@ -89,10 +89,10 @@ export default function Footer(props: IProps) {
 						<div className="flex space-x-4 pt-8">
 							<div id="logoImage">
 								<Image
-									alt={logoDesktop?.asset?.altText || ''}
+									alt={logoMobile?.asset?.altText || ''}
 									width={200}
 									height={300}
-									src={logoDesktop?.asset?.url || ''}
+									src={logoMobile?.asset?.url || ''}
 								/>
 							</div>
 							<div

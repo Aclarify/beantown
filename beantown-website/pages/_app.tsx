@@ -52,35 +52,13 @@ const neuePlak = localFont({
 });
 
 export default function App({ Component, pageProps }: AppProps) {
-	let logoDesktop = null;
-	let logoMobile = null;
-	if (pageProps) {
-		logoDesktop =
-			pageProps.globalContext?.pageContent?.page[0]?.logoDesktop?.image;
-		logoMobile =
-			pageProps.globalContext?.pageContent?.page[0]?.logoMobile?.image;
-	}
 	return (
 		<>
 			<ApolloProvider client={graphQLClient}>
 				<main
 					className={`${neuePlak.className}  overflow-hidden tracking-wide lg:tracking-wider`}
 				>
-					{pageProps.globalContext && (
-						<Nav
-							logoDesktop={logoDesktop}
-							logoMobile={logoMobile}
-							content={pageProps.globalContext?.pageContent?.header[0]}
-						/>
-					)}
 					<Component {...pageProps} />
-					{pageProps.globalContext && (
-						<Footer
-							logoDesktop={logoMobile}
-							logoMobile={logoMobile}
-							content={pageProps.globalContext?.pageContent?.footer[0]}
-						/>
-					)}
 				</main>
 			</ApolloProvider>
 		</>

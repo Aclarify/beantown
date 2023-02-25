@@ -35,7 +35,7 @@ const FAQ: React.FC<IProps> = (props) => {
 				<div className="flex  flex-col justify-center text-center lg:text-left ">
 					<ContentWrapper>
 						<ContentWrapper.Title className=" mb-3 lg:mb-4">
-							<h1 className="title-5 lg:title-2 text-primary-black mt-10">
+							<h1 className="title-5 lg:title-2 text-primary-black lg:mt-10">
 								{props.faqTitle}
 							</h1>
 						</ContentWrapper.Title>
