@@ -54,7 +54,7 @@ export default function Header(props: IProps) {
 								src={logoMobile?.asset?.url || ''}
 							/>
 						</div>
-						<div className="-my-2  lg:hidden">
+						<div className="-my-2  text-white lg:hidden">
 							<Popover.Button
 								className="inline-flex rounded-md p-2 "
 								aria-label="menu for navigation"

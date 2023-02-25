@@ -56,7 +56,7 @@ const ElectricalServicesPage: React.FC = (props) => {
 		<section id="electrical-services" className="bg-primary-white-shade-1">
 			<PageHead />
 			<Header
-				fontColor="text-black"
+				fontColor="text-primary-shade-1"
 				logoDesktop={logoDesktop?.image}
 				logoMobile={logoMobile?.image}
 				content={headerData}
