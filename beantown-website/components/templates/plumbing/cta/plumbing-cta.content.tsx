@@ -28,8 +28,8 @@ const PlumbingCTAContent = () => {
 			gradientFromColor="from-service-green"
 			gradientToColor="bg-service-green"
 		>
-			<ContentWrapper className="2xl:padding-for-section  pt-[2em] pb-[4em] text-center md:px-[10em] md:py-[12em] lg:px-[2em] lg:py-[6em] lg:text-left  flex flex-col justify-between ">
-				<ContentWrapper.Title className="  mb-2 lg:mb-4">
+			<ContentWrapper className="2xl:padding-for-section px-8  pt-[1em] pb-[4em] text-center md:px-[10em] md:py-[12em] lg:px-[2em] lg:py-[6em] lg:text-left  flex flex-col justify-between ">
+				<ContentWrapper.Title className=" mb-2 lg:mb-4">
 					<h1 className="title-5 lg:title-2 text-white lg:leading-[70px]">
 						{ctaTitle}
 					</h1>
