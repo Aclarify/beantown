@@ -60,6 +60,7 @@ export default function App({ Component, pageProps }: AppProps) {
 		logoMobile =
 			pageProps.globalContext?.pageContent?.page[0]?.logoMobile?.image;
 	}
+	const istextDark = false;
 	return (
 		<>
 			<ApolloProvider client={graphQLClient}>
@@ -68,6 +69,7 @@ export default function App({ Component, pageProps }: AppProps) {
 				>
 					{pageProps.globalContext && (
 						<Nav
+							istextDark={istextDark}
 							logoDesktop={logoDesktop}
 							logoMobile={logoMobile}
 							content={pageProps.globalContext?.pageContent?.header[0]}

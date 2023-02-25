@@ -8,6 +8,7 @@ import Image from 'next/image';
 import CtaWrapper from 'components/molecules/cta-wrapper.molecule';
 
 interface IProps {
+	istextDark: boolean;
 	logoDesktop: any;
 	logoMobile: any;
 	content: Nav;
@@ -25,6 +26,11 @@ export default function Header(props: IProps) {
 		return element !== null;
 	});
 
+	const textColour = props.istextDark ? 'text-white' : 'text-primary-shade-1';
+	const btnBackground = props.istextDark ? 'bg-primary-shade-1' : 'bg-white';
+	const btnTextColour = props.istextDark
+		? 'text-white'
+		: 'text-primary-shade-1';
 	return (
 		<>
 			<section className="2xl:padding-for-section absolute w-full px-5">
