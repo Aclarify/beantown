@@ -13,6 +13,7 @@ interface IProps {
 	logoDesktop: any;
 	logoMobile: any;
 	content: Nav;
+	children: React.ReactNode;
 }
 export default function Header(props: IProps) {
 	const { navLinks, navGroup, headerButton } = props.content;
@@ -113,11 +114,7 @@ export default function Header(props: IProps) {
 								);
 							})}
 						</div>
-						<div className=" hidden lg:flex lg:justify-end ">
-							<CtaWrapper.CTA className="text-primary-shade-1 para-3 h-[48px] w-[139px] rounded-lg bg-white py-1 px-4  tracking-wide  md:py-2 md:px-8 lg:tracking-wider ">
-								<p>{headerButton?.text}</p>
-							</CtaWrapper.CTA>
-						</div>
+						{props.children}
 					</div>
 
 					<Transition

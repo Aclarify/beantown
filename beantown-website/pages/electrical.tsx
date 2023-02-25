@@ -15,6 +15,7 @@ import FooterSection from 'components/organisms/footer';
 import { useContext } from 'react';
 import { GlobalContextProps } from '@typing/common/interfaces/contexts.interface';
 import { GlobalContext } from '@contexts/global/global.context';
+import CtaWrapper from 'components/molecules/cta-wrapper.molecule';
 
 export interface ElectricalContentProps {
 	page: OtherServices[];
@@ -59,7 +60,13 @@ const ElectricalServicesPage: React.FC = (props) => {
 				logoDesktop={logoDesktop?.image}
 				logoMobile={logoMobile?.image}
 				content={headerData}
-			/>
+			>
+				<div className=" hidden lg:flex lg:justify-end ">
+					<CtaWrapper.CTA className="para-3 bg-primary-shade-1 h-[48px] w-[139px] rounded-lg py-1 px-4 tracking-wide  text-white  md:py-2 md:px-8 lg:tracking-wider ">
+						<p>{headerData.headerButton?.text}</p>
+					</CtaWrapper.CTA>
+				</div>
+			</Header>
 			<ElectricalHeroSection />
 			<AboutPlumbingServiceSection />
 			<ElectricalPageCTASection />
