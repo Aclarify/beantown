@@ -27,8 +27,10 @@ const PlumbingHeroContent = () => {
 			heroImagePosition="right"
 			gradientFromColor="from-service-green"
 			gradientToColor="bg-service-green"
+			bgColor="var(--services-green-color-rgb)"
+			isImageToBePrefetched={true}
 		>
-			<SectionContentWrapper >
+			<SectionContentWrapper>
 				<ContentWrapper className="pt-[4em] pb-[4em] text-center md:py-[12em]  lg:py-[10em] lg:text-left">
 					<ContentWrapper.Title className="mb-[8px] lg:mb-[16px] ">
 						<h1 className="title-4 lg:title-1 text-white">{heroTitle}</h1>
