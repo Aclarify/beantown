@@ -17,7 +17,7 @@ const ElectricalFaqContent = () => {
 		<>
 			{faqList && (
 				<FAQOther
-					backgroundImage="/images/heating-cooling/faq/hc-faq-bg-thumbprint.svg"
+					backgroundImage="/images/electrical/faq/electrical-faq-bg-thumbprint.svg"
 					faqTitle={faqTitle || ''}
 					faqDescription={faqDescription || ''}
 					faqButtonText={faqButton?.text || ''}

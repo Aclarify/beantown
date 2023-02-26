@@ -3,7 +3,8 @@ import { Faq, Maybe } from '@typing/gql/graphql';
 import FAQDisclosure from './faq-disclosure.organism';
 import ContentWrapper from './content-wrapper.organism';
 import CtaWrapper from 'components/molecules/cta-wrapper.molecule';
-
+import { SCREEN_BREAKPOINTS } from '@typing/common/interfaces/devices.interface';
+import useWindowDimensions from '@lib/hooks/use-window-dimensions.hook';
 interface IProps extends React.HTMLAttributes<HTMLDivElement> {
 	backgroundImage: string;
 	faqTitle: string;
@@ -25,7 +26,7 @@ const FAQOther: React.FC<IProps> = (props) => {
 	}
 	return (
 		<div
-			className="relative  mt-4 md:mt-10 flex  items-center  pt-[4em] align-middle   "
+			className="relative  mt-4 flex items-center  pt-[4em]  align-middle md:mt-10   "
 			style={{
 				backgroundImage: `url(${props.backgroundImage})`,
 				backgroundPosition: 'center',
