@@ -33,7 +33,7 @@ const HeatingCoolingProductsCardContent = () => {
 	};
 	const settings = {
 		speed: 500,
-		slidesToShow: 3.1,
+		slidesToShow: 4.1,
 		slidesToScroll: 1,
 		initialSlide: 0,
 		arrows: false,
@@ -62,14 +62,14 @@ const HeatingCoolingProductsCardContent = () => {
 			{
 				breakpoint: 1024,
 				settings: {
-					slidesToShow: 2.1,
+					slidesToShow: 3.1,
 					slidesToScroll: 1,
 				},
 			},
 			{
 				breakpoint: SCREEN_BREAKPOINTS.SM,
 				settings: {
-					slidesToShow: 1.5,
+					slidesToShow: 2.1,
 					slidesToScroll: 1,
 				},
 			},
