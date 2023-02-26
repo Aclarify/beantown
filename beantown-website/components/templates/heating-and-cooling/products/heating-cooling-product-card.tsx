@@ -13,9 +13,13 @@ const ProductCard: React.FC<Props> = (props) => {
 				<div className=" flex h-2/3 justify-center rounded-3xl bg-white px-[30px]  py-[20px] md:px-[50px] md:py-[43px]">
 					<Image
 						alt="An image for quotes in testimonial card"
-						width={1000}
-						height={700}
+						width={313}
+						height={246}
 						src={props.thumbnailSrc}
+						// style={{
+						// 	width: '100%',
+						// }}
+						className="  object-cover "
 					/>
 				</div>
 				<div className="flex flex-col items-start gap-2 px-2 pt-4 pb-8 lg:px-4 lg:pt-8">

@@ -27,8 +27,8 @@ const HeatingCoolingPageCTAContent = () => {
 			gradientFromColor="from-service-red"
 			gradientToColor="bg-service-red"
 		>
-			<ContentWrapper className="2xl:padding-for-section text-center px-10 pt-[2em] pb-[4em] md:px-[10em] md:py-[12em] lg:px-[2em] lg:py-[6em] lg:text-left">
-				<ContentWrapper.Title className=" mb-2 lg:mb-4">
+			<ContentWrapper className="2xl:padding-for-section 3xl:py-[20em]  flex flex-col justify-between px-[4em] pt-[2em] pb-[4em] text-center sm:px-[12em] md:px-[9em] md:py-[12em] lg:px-[2em] lg:py-[6em] lg:text-left xl:py-[9em] 2xl:py-[14em] ">
+				<ContentWrapper.Title className=" mb-2 px-2 md:px-[9rem] lg:mb-4 lg:px-0">
 					<h1 className="title-5 lg:title-2 text-white lg:leading-[70px]">
 						{ctaTitle}
 					</h1>
