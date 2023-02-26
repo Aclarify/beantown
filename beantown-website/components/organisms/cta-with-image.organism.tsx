@@ -11,9 +11,7 @@ interface IProps {
 	textContentBGImageForSmallScreen: string;
 	heroImagePosition?: 'left' | 'right';
 	heroImageAltText?: string;
-	gradientFromColor: string;
-	gradientToColor: string;
-	bgColor?: string;
+	bgColor: string;
 	isImageToBePrefetched?: boolean;
 }
 const CTAWithImage: React.FC<IProps> = ({
@@ -22,8 +20,6 @@ const CTAWithImage: React.FC<IProps> = ({
 	textContentBGImage,
 	textContentBGImageForSmallScreen,
 	heroImageURL,
-	gradientFromColor,
-	gradientToColor,
 	bgColor,
 	isImageToBePrefetched = false,
 }) => {
@@ -35,13 +31,12 @@ const CTAWithImage: React.FC<IProps> = ({
 	return (
 		<>
 			<div
-				className={clsx(
-					'hidden lg:flex',
-					{
-						'flex-row-reverse': heroImagePosition === 'right',
-					},
-					gradientToColor
-				)}
+				style={{
+					backgroundColor: `rgba(${bgColor},1)`,
+				}}
+				className={clsx('hidden lg:flex', {
+					'flex-row-reverse': heroImagePosition === 'right',
+				})}
 			>
 				<div
 					id="hero-image-wrapper"
@@ -74,11 +69,8 @@ const CTAWithImage: React.FC<IProps> = ({
 					}}
 					className={clsx(
 						`relative flex w-full items-center justify-center py-4 lg:w-[60%]`
-						// heroImagePosition === 'left' &&
-						// 	`before:from-[${gradientToColor}] before:absolute before:left-[-181px] before:top-0 before:bottom-0 before:z-[1] before:w-[182px] before:bg-gradient-to-l`
 					)}
 				>
-					{/* linear-gradient(to right, rgb(188 59 57 /50%), rgb(188 59 57 /30%), rgb(188 59 57),transparent); */}
 					<div className="z-4">{children}</div>
 					{heroImagePosition === 'right' && (
 						<div
@@ -113,7 +105,13 @@ const CTAWithImage: React.FC<IProps> = ({
 				</div>
 			</div>
 
-			<div id="wrapper-mobile" className="flex flex-col lg:hidden">
+			<div
+				id="wrapper-mobile"
+				className="flex flex-col lg:hidden"
+				style={{
+					backgroundColor: `rgba(${bgColor},1)`,
+				}}
+			>
 				<div id="hero-image-wrapper" className="w-full">
 					<Image
 						src={heroImageURL}
@@ -136,13 +134,23 @@ const CTAWithImage: React.FC<IProps> = ({
 						backgroundRepeat: 'no-repeat',
 					}}
 					className={clsx(
-						'relative flex w-full items-center justify-center bg-gradient-to-t',
-						gradientFromColor,
-						gradientToColor,
-						`before:absolute before:left-0 before:top-[-160px] before:bottom-0 before:z-[1] before:h-[163px] before:w-full before:bg-gradient-to-t`
+						'relative flex w-full items-center justify-center bg-gradient-to-t'
 					)}
 				>
-					{children}
+					<div className="z-4">{children}</div>
+					<div
+						id="gradient-block-mobile"
+						style={{
+							position: 'absolute',
+							left: 0,
+							top: '-122px',
+							height: '363px',
+							bottom: 0,
+							width: '100%',
+							backgroundImage: `linear-gradient(to top, rgba(${bgColor},0.5), rgba(${bgColor},0.3), rgba(${bgColor},1),transparent)`,
+							zIndex: 1,
+						}}
+					></div>
 				</div>
 			</div>
 		</>

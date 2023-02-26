@@ -25,8 +25,6 @@ const HeatingCoolingHeroContent = () => {
 				'/images/heating-cooling/hero/hc-hero-bg-wave-mobile.svg'
 			}
 			heroImagePosition="right"
-			gradientFromColor="from-service-red"
-			gradientToColor="bg-service-red"
 			bgColor="var(--services-red-color-rgb)"
 			isImageToBePrefetched={true}
 		>

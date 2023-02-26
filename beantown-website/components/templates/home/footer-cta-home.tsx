@@ -3,9 +3,6 @@ import { GlobalContext } from '@contexts/global/global.context';
 import { GlobalContextProps } from '@typing/common/interfaces/contexts.interface';
 import { HomePageContentProps } from 'pages';
 import RichText from 'components/molecules/rich-text.molecule';
-import Button from 'components/atoms/button.atom';
-import Link from 'next/link';
-import Image from 'next/image';
 import CTAWithImage from 'components/organisms/cta-with-image.organism';
 import ContentWrapper from 'components/organisms/content-wrapper.organism';
 import CtaWrapper from 'components/molecules/cta-wrapper.molecule';
@@ -18,7 +15,6 @@ export default function FooterCta() {
 	}
 	const homeData = pageContent.page[0];
 	const { ctaTitle, ctaDescription, finalCtaButton, ctaImage } = homeData;
-	const imagePath = ctaImage?.asset?.url;
 	return (
 		<>
 			<section
@@ -34,8 +30,6 @@ export default function FooterCta() {
 						'/images/home/footer-cta/home-cta-spiral-mobile.svg'
 					}
 					heroImagePosition="right"
-					gradientFromColor="from-secondary-shade-2"
-					gradientToColor="bg-secondary-shade-2"
 					bgColor="var(--secondary-color-shade-2-rgb)"
 				>
 					<ContentWrapper className="2xl:padding-for-section px-10 pt-[2em] pb-[4em] text-center md:px-[10em] md:py-[12em] lg:px-10 lg:py-[6em] lg:text-left">

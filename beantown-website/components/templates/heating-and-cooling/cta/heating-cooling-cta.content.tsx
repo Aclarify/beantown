@@ -24,8 +24,6 @@ const HeatingCoolingPageCTAContent = () => {
 				'/images/heating-cooling/cta/hc-cta-bg-vector-mobile.svg'
 			}
 			heroImagePosition="left"
-			gradientFromColor="from-service-red"
-			gradientToColor="bg-service-red"
 			bgColor="var(--services-red-color-rgb)"
 		>
 			<SectionContentWrapper>

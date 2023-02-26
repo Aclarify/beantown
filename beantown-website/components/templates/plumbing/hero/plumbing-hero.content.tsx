@@ -25,8 +25,6 @@ const PlumbingHeroContent = () => {
 				'/images/plumbing/hero/plumbing-hero-bg-vector-mobile.svg'
 			}
 			heroImagePosition="right"
-			gradientFromColor="from-service-green"
-			gradientToColor="bg-service-green"
 			bgColor="var(--services-green-color-rgb)"
 			isImageToBePrefetched={true}
 		>
