@@ -1,9 +1,8 @@
 import React, { useContext } from 'react';
 import { GlobalContext } from '@contexts/global/global.context';
 import { GlobalContextProps } from '@typing/common/interfaces/contexts.interface';
-import FAQ from 'components/organisms/faq.organism';
 import { PlumbingContentProps } from 'pages/plumbing';
-import FAQOther from 'components/organisms/faq-other-services.organism';
+import FAQ from 'components/organisms/faq.organism';
 
 const PlumbingFaqContent = () => {
 	const { pageContent } =
@@ -16,7 +15,7 @@ const PlumbingFaqContent = () => {
 	return (
 		<>
 			{faqList && (
-				<FAQOther
+				<FAQ
 					backgroundImage="/images/plumbing/faq/plumbing-faq-bg-thumbprint.svg"
 					faqTitle={faqTitle || ''}
 					faqDescription={faqDescription || ''}
@@ -24,7 +23,7 @@ const PlumbingFaqContent = () => {
 					faqsButtonTextColour="text-white"
 					faqsButtonBgColour="bg-service-green"
 					faqList={faqList || []}
-				></FAQOther>
+				></FAQ>
 			)}
 		</>
 	);

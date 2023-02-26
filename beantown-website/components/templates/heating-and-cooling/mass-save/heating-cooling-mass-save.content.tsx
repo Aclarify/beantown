@@ -38,10 +38,10 @@ const HeatingCoolingMassSaveContent = () => {
 								{massSaveTitle}
 							</h1>
 						</ContentWrapper.Title>
-						<ContentWrapper.Description className="para-4 lg:para-2 text-left">
+						<ContentWrapper.Description className="para-4 lg:para-2 text-gray-shade-1 text-left">
 							<RichText value={massSaveDescription?.contentRaw} />
 						</ContentWrapper.Description>
-						<ContentWrapper.CTA className="mt-[16px] lg:mt-[32px]">
+						<ContentWrapper.CTA className=" mt-4 lg:mt-8">
 							<CtaWrapper.CTA className="bg-service-red para-3 lg:para-2 h-[40px] w-[110px] rounded-lg py-1 px-4 tracking-wide text-white md:py-2  md:px-8  lg:h-[64px] lg:w-[210px] lg:tracking-wider ">
 								<p>{massSaveButton?.text}</p>
 							</CtaWrapper.CTA>

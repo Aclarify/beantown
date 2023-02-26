@@ -1,9 +1,10 @@
 import React, { useState } from 'react';
-import { Maybe, TitleDescription } from '@typing/gql/graphql';
+import { Faq, Maybe } from '@typing/gql/graphql';
 import FAQDisclosure from './faq-disclosure.organism';
 import ContentWrapper from './content-wrapper.organism';
 import CtaWrapper from 'components/molecules/cta-wrapper.molecule';
-
+import { SCREEN_BREAKPOINTS } from '@typing/common/interfaces/devices.interface';
+import useWindowDimensions from '@lib/hooks/use-window-dimensions.hook';
 interface IProps extends React.HTMLAttributes<HTMLDivElement> {
 	backgroundImage: string;
 	faqTitle: string;
@@ -11,10 +12,10 @@ interface IProps extends React.HTMLAttributes<HTMLDivElement> {
 	faqButtonText: string;
 	faqsButtonTextColour: string;
 	faqsButtonBgColour: string;
-	faqList: Maybe<Array<Maybe<TitleDescription>>>;
+	faqList: Maybe<Array<Maybe<Faq>>>;
 }
 
-const FAQ: React.FC<IProps> = (props) => {
+const FAQOther: React.FC<IProps> = (props) => {
 	const [indexToBeOpen, setIndexToBeOpen] = useState(0);
 	function handleFaqClick(index: number) {
 		if (index == indexToBeOpen) {
@@ -25,7 +26,7 @@ const FAQ: React.FC<IProps> = (props) => {
 	}
 	return (
 		<div
-			className="relative  mt-16 flex  items-center  pt-[4em] align-middle   "
+			className="relative  mt-4 flex items-center  pt-[4em]  align-middle md:mt-10   "
 			style={{
 				backgroundImage: `url(${props.backgroundImage})`,
 				backgroundPosition: 'center',
@@ -35,7 +36,7 @@ const FAQ: React.FC<IProps> = (props) => {
 				<div className="flex  flex-col justify-center text-center lg:text-left ">
 					<ContentWrapper>
 						<ContentWrapper.Title className=" mb-3 lg:mb-4">
-							<h1 className="title-5 lg:title-2 text-primary-black lg:mt-10">
+							<h1 className="title-5 lg:title-2 text-primary-shade-1 mt-10">
 								{props.faqTitle}
 							</h1>
 						</ContentWrapper.Title>
@@ -61,8 +62,8 @@ const FAQ: React.FC<IProps> = (props) => {
 							<div key={index} className="w-full rounded-2xl p-2">
 								<FAQDisclosure
 									isOpen={index === indexToBeOpen}
-									faq={faqs?.titleText || ''}
-									faqAnswer={faqs?.description || ''}
+									faq={faqs?.question || ''}
+									faqAnswer={faqs?.answer || ''}
 									handleClick={() => handleFaqClick(index)}
 								/>
 							</div>
@@ -74,4 +75,4 @@ const FAQ: React.FC<IProps> = (props) => {
 	);
 };
 
-export default FAQ;
+export default FAQOther;
