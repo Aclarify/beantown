@@ -139,24 +139,29 @@ export default defineType({
       of: [{type: 'imageIcon'}],
     }),
     defineField({
-      name: 'blogTitle',
-      title: 'Blog Title',
+      name: 'blogsTitle',
+      title: 'Blog Section Title',
       type: 'string',
     }),
     defineField({
-      name: 'blogDescription',
-      title: 'Blog Description',
+      name: 'blogsDescription',
+      title: 'Blog Section Description',
       type: 'string',
     }),
     defineField({
       name: 'blogCards',
       title: 'Blog Cards',
       type: 'array',
-      of: [{type: 'imageDescriptionButtonGroup'}],
+      of: [
+        {
+          type: 'reference',
+          to: [{type: 'blog'}],
+        },
+      ],
     }),
     defineField({
       name: 'blogButton',
-      title: 'Blog Button',
+      title: 'Blog Page Button',
       type: 'reference',
       to: [{type: 'cta'}],
     }),
@@ -180,7 +185,12 @@ export default defineType({
       name: 'faqList',
       title: 'FAQ List',
       type: 'array',
-      of: [{type: 'titleDescription'}],
+      of: [
+        {
+          type: 'reference',
+          to: [{type: 'faq'}],
+        },
+      ],
     }),
   ],
 })
