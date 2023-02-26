@@ -26,8 +26,8 @@ const ElectricalHeroContent = () => {
 				'/images/electrical/hero/electrical-hero-bg-vector-mobile.svg'
 			}
 			heroImagePosition="right"
-			gradientFromColor="from-service-yellow"
-			gradientToColor="bg-service-yellow"
+			bgColor="var(--services-yellow-color-rgb)"
+			isImageToBePrefetched={true}
 		>
 			<SectionContentWrapper>
 				<ContentWrapper className="px-3 pt-[2em] pb-[4em] text-center  md:py-[12em] lg:py-[6em] lg:px-0 lg:text-left">

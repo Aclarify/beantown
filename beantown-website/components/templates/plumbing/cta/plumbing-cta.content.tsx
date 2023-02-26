@@ -4,7 +4,6 @@ import { GlobalContextProps } from '@typing/common/interfaces/contexts.interface
 import ContentWrapper from 'components/organisms/content-wrapper.organism';
 import CTAWithImage from 'components/organisms/cta-with-image.organism';
 import CtaWrapper from 'components/molecules/cta-wrapper.molecule';
-import SectionContentWrapper from 'components/molecules/section-content-wrapper.molecule';
 import { PlumbingContentProps } from 'pages/plumbing';
 
 const PlumbingCTAContent = () => {
@@ -25,8 +24,7 @@ const PlumbingCTAContent = () => {
 				'/images/plumbing/cta/plumbing-cta-bg-vector-mobile.svg'
 			}
 			heroImagePosition="left"
-			gradientFromColor="from-service-green"
-			gradientToColor="bg-service-green"
+			bgColor="var(--services-green-color-rgb)"
 		>
 			<ContentWrapper className="2xl:padding-for-section 3xl:py-[20em]  flex flex-col justify-between px-[5em] pt-[2em] pb-[4em] text-center sm:px-[12em] md:px-[9em] md:py-[12em] lg:px-[2em] lg:py-[6em] lg:text-left xl:py-[9em] 2xl:py-[14em] ">
 				<ContentWrapper.Title className="  mb-2 px-2 md:px-[9rem] lg:mb-4 lg:px-0">
