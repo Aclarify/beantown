@@ -2,7 +2,7 @@ import React, { useContext } from 'react';
 import { GlobalContext } from '@contexts/global/global.context';
 import { GlobalContextProps } from '@typing/common/interfaces/contexts.interface';
 import { ElectricalContentProps } from 'pages/electrical';
-import BlogsOther from 'components/organisms/blogs-other-services.organism';
+import Blogs from 'components/organisms/blogs.organism';
 
 const ElectricalBlogsContent = () => {
 	const { pageContent } =
@@ -14,14 +14,14 @@ const ElectricalBlogsContent = () => {
 	const { blogsTitle, blogsDescription, blogButton, blogCards } = homeData;
 
 	return (
-		<BlogsOther
+		<Blogs
 			blogsTitle={blogsTitle || ''}
 			blogsDescription={blogsDescription || ''}
 			blogsButtonText={blogButton?.text || ''}
 			blogsButtonTextColour="text-primary-black"
 			blogsButtonBgColour="bg-service-yellow"
 			blogCards={blogCards || []}
-		></BlogsOther>
+		></Blogs>
 	);
 };
 

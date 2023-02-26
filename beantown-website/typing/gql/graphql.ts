@@ -378,9 +378,9 @@ export type HeatingAndCooling = Document & {
   /** Date the document was last modified */
   _updatedAt?: Maybe<Scalars['DateTime']>;
   blogButton?: Maybe<Cta>;
-  blogCards?: Maybe<Array<Maybe<ImageDescriptionButtonGroup>>>;
-  blogDescription?: Maybe<Scalars['String']>;
-  blogTitle?: Maybe<Scalars['String']>;
+  blogCards?: Maybe<Array<Maybe<Blog>>>;
+  blogsDescription?: Maybe<Scalars['String']>;
+  blogsTitle?: Maybe<Scalars['String']>;
   brandsTitle?: Maybe<Scalars['String']>;
   clientsLogo?: Maybe<Array<Maybe<ImageIcon>>>;
   ctaDescription?: Maybe<PortableText>;
@@ -388,7 +388,7 @@ export type HeatingAndCooling = Document & {
   ctaTitle?: Maybe<Scalars['String']>;
   faqButton?: Maybe<Cta>;
   faqDescription?: Maybe<Scalars['String']>;
-  faqList?: Maybe<Array<Maybe<TitleDescription>>>;
+  faqList?: Maybe<Array<Maybe<Faq>>>;
   faqTitle?: Maybe<Scalars['String']>;
   finalCtaButton?: Maybe<Cta>;
   heroButton?: Maybe<Cta>;
@@ -420,8 +420,8 @@ export type HeatingAndCoolingFilter = {
   _type?: InputMaybe<StringFilter>;
   _updatedAt?: InputMaybe<DatetimeFilter>;
   blogButton?: InputMaybe<CtaFilter>;
-  blogDescription?: InputMaybe<StringFilter>;
-  blogTitle?: InputMaybe<StringFilter>;
+  blogsDescription?: InputMaybe<StringFilter>;
+  blogsTitle?: InputMaybe<StringFilter>;
   brandsTitle?: InputMaybe<StringFilter>;
   ctaDescription?: InputMaybe<PortableTextFilter>;
   ctaImage?: InputMaybe<ImageFilter>;
@@ -454,8 +454,8 @@ export type HeatingAndCoolingSorting = {
   _rev?: InputMaybe<SortOrder>;
   _type?: InputMaybe<SortOrder>;
   _updatedAt?: InputMaybe<SortOrder>;
-  blogDescription?: InputMaybe<SortOrder>;
-  blogTitle?: InputMaybe<SortOrder>;
+  blogsDescription?: InputMaybe<SortOrder>;
+  blogsTitle?: InputMaybe<SortOrder>;
   brandsTitle?: InputMaybe<SortOrder>;
   ctaDescription?: InputMaybe<PortableTextSorting>;
   ctaImage?: InputMaybe<ImageSorting>;
@@ -489,9 +489,9 @@ export type Home = Document & {
   /** Date the document was last modified */
   _updatedAt?: Maybe<Scalars['DateTime']>;
   blogButton?: Maybe<Cta>;
-  blogCards?: Maybe<Array<Maybe<ImageDescriptionButtonGroup>>>;
-  blogDescription?: Maybe<Scalars['String']>;
-  blogTitle?: Maybe<Scalars['String']>;
+  blogCards?: Maybe<Array<Maybe<Blog>>>;
+  blogsDescription?: Maybe<Scalars['String']>;
+  blogsTitle?: Maybe<Scalars['String']>;
   brandsTitle?: Maybe<Scalars['String']>;
   clientsLogo?: Maybe<Array<Maybe<ImageIcon>>>;
   ctaDescription?: Maybe<PortableText>;
@@ -499,7 +499,7 @@ export type Home = Document & {
   ctaTitle?: Maybe<Scalars['String']>;
   faqButton?: Maybe<Cta>;
   faqDescription?: Maybe<Scalars['String']>;
-  faqList?: Maybe<Array<Maybe<TitleDescription>>>;
+  faqList?: Maybe<Array<Maybe<Faq>>>;
   faqTitle?: Maybe<Scalars['String']>;
   finalCtaButton?: Maybe<Cta>;
   heroButton?: Maybe<Cta>;
@@ -538,8 +538,8 @@ export type HomeFilter = {
   _type?: InputMaybe<StringFilter>;
   _updatedAt?: InputMaybe<DatetimeFilter>;
   blogButton?: InputMaybe<CtaFilter>;
-  blogDescription?: InputMaybe<StringFilter>;
-  blogTitle?: InputMaybe<StringFilter>;
+  blogsDescription?: InputMaybe<StringFilter>;
+  blogsTitle?: InputMaybe<StringFilter>;
   brandsTitle?: InputMaybe<StringFilter>;
   ctaDescription?: InputMaybe<PortableTextFilter>;
   ctaImage?: InputMaybe<ImageFilter>;
@@ -578,8 +578,8 @@ export type HomeSorting = {
   _rev?: InputMaybe<SortOrder>;
   _type?: InputMaybe<SortOrder>;
   _updatedAt?: InputMaybe<SortOrder>;
-  blogDescription?: InputMaybe<SortOrder>;
-  blogTitle?: InputMaybe<SortOrder>;
+  blogsDescription?: InputMaybe<SortOrder>;
+  blogsTitle?: InputMaybe<SortOrder>;
   brandsTitle?: InputMaybe<SortOrder>;
   ctaDescription?: InputMaybe<PortableTextSorting>;
   ctaImage?: InputMaybe<ImageSorting>;

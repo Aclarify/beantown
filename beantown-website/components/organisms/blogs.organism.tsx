@@ -1,7 +1,7 @@
 import React from 'react';
-import Button from 'components/atoms/button.atom';
-import Link from 'next/link';
+
 import {
+	Blog,
 	ImageDescriptionButtonGroup as Blogs,
 	Maybe,
 } from '@typing/gql/graphql';
@@ -14,12 +14,12 @@ interface IProps extends React.HTMLAttributes<HTMLDivElement> {
 	blogsButtonText: string;
 	blogsButtonTextColour: string;
 	blogsButtonBgColour: string;
-	blogCards: Maybe<Array<Maybe<Blogs>>>;
+	blogCards: Maybe<Array<Maybe<Blog>>>;
 }
 
-const Blogs: React.FC<IProps> = (props) => {
+const BlogsOther: React.FC<IProps> = (props) => {
 	return (
-		<section className="  relative z-10 pb-[3rem] lg:pb-1 lg:pt-[3em] ">
+		<section className="relative z-10 pb-[3rem] lg:pb-1 lg:pt-[3em] ">
 			<div className=" flex flex-col justify-center text-center align-middle  ">
 				<div className=" title-5 lg:title-2 text-primary-shade-1 pt-[2em] text-center md:mx-40 lg:px-[1em] lg:pt-0 xl:px-[2em] 2xl:px-[4em]">
 					<h1>{props.blogsTitle}</h1>
@@ -28,7 +28,7 @@ const Blogs: React.FC<IProps> = (props) => {
 					<p>{props.blogsDescription}</p>
 				</div>
 			</div>
-			<div className=" no-scrollbar flex snap-x snap-mandatory flex-nowrap gap-4 overflow-x-auto pb-4  ">
+			<div className=" no-scrollbar mt-10 flex snap-x snap-mandatory flex-nowrap gap-4 overflow-x-auto pb-4  ">
 				{props.blogCards?.map((blog, index) => {
 					return (
 						<div
@@ -36,11 +36,11 @@ const Blogs: React.FC<IProps> = (props) => {
 							className="w-[250px] flex-none  snap-start  snap-always md:w-[32%]  "
 						>
 							<BlogCard
-								blogName={blog?.name || ''}
+								blogName={blog?.blogTitle || ''}
 								buttonText={blog?.button?.text || ''}
 								blogDescription={blog?.description || ''}
-								thumbnailSrc={blog?.image?.image?.asset?.url || ''}
-								thumbnailAltText={blog?.image?.altText || ''}
+								thumbnailSrc={blog?.blogImage?.image?.asset?.url || ''}
+								thumbnailAltText={blog?.blogImage?.altText || ''}
 							/>
 						</div>
 					);
@@ -58,4 +58,4 @@ const Blogs: React.FC<IProps> = (props) => {
 	);
 };
 
-export default Blogs;
+export default BlogsOther;
