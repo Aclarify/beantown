@@ -199,7 +199,6 @@ export default function Testimonials() {
 								{testimonialCards?.map((reviews, index) => {
 									return (
 										<div
-											// className="testimonial-card-wrapper min-w-[280px] px-2 lg:min-w-[378px] lg:px-2 xl:px-5"
 											className="testimonial-card-wrapper  px-2 lg:px-2 xl:px-5"
 											key={index}
 										>
