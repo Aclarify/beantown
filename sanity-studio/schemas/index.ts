@@ -26,10 +26,13 @@ import heatingAndCooling from './pages/heating-and-cooling'
 import blog from './organism/blog'
 import faq from './organism/faq'
 import otherServices from './pages/other-services'
+import serviceAreas from './organism/serviceAreas'
+import testimonials from './organism/testimonials'
+import teamMembers from './organism/teamMembers'
 
 export const schemaTypes = [
   //Document Types
-  //aboutUs,
+  aboutUs,
   home,
   heatingAndCooling,
   nav,
@@ -37,12 +40,15 @@ export const schemaTypes = [
   otherServices,
   blog,
   faq,
+  serviceAreas,
+  testimonials,
   //Other Types
   breakType,
   cta,
   imageIcon,
   link,
   textTitle,
+  teamMembers,
   titleDescription,
   titleDescriptionImage,
   textImageContent,
