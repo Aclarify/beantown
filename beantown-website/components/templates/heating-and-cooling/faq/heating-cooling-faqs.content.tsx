@@ -1,8 +1,8 @@
 import React, { useContext } from 'react';
 import { GlobalContext } from '@contexts/global/global.context';
 import { GlobalContextProps } from '@typing/common/interfaces/contexts.interface';
-import FAQ from 'components/organisms/faq.organism';
 import { HeatingCoolingContentProps } from 'pages/heating-and-cooling';
+import FAQ from 'components/organisms/faq.organism';
 
 const HeatingCoolingFaqContent = () => {
 	const { pageContent } =
@@ -11,7 +11,8 @@ const HeatingCoolingFaqContent = () => {
 		return null;
 	}
 	const pageData = pageContent.page[0];
-	const { faqTitle, faqDescription, faqButton, faqList } = pageData;	return (
+	const { faqTitle, faqDescription, faqButton, faqList } = pageData;
+	return (
 		<>
 			{faqList && (
 				<FAQ

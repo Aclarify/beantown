@@ -3,8 +3,8 @@ import { GlobalContext } from '@contexts/global/global.context';
 import { GlobalContextProps } from '@typing/common/interfaces/contexts.interface';
 import { HomePageContentProps } from 'pages';
 import Image from 'next/image';
-import Blogs from 'components/organisms/blogs.organism';
 import WaveWrapper from 'components/molecules/wave-wrapper.molecule';
+import Blogs from 'components/organisms/blogs.organism';
 
 export default function HomeBlogs() {
 	const { pageContent } =
@@ -13,7 +13,7 @@ export default function HomeBlogs() {
 		return null;
 	}
 	const homeData = pageContent.page[0];
-	const { blogTitle, blogDescription, blogButton } = homeData;
+	const { blogsTitle, blogsDescription, blogButton, blogCards } = homeData;
 	return (
 		<section id="blogs" className=" relative  z-10 -mb-[9em] flex flex-col  ">
 			<Image
@@ -34,12 +34,12 @@ export default function HomeBlogs() {
 
 			<div className="bg-primary-white-shade-1 2xl:padding-for-section relative  pl-5 pb-[0em] pt-[0rem] lg:pt-[12rem]">
 				<Blogs
-					blogsTitle={blogTitle || ''}
-					blogsDescription={blogDescription || ''}
+					blogsTitle={blogsTitle || ''}
+					blogsDescription={blogsDescription || ''}
 					blogsButtonText={blogButton?.text || ''}
 					blogsButtonTextColour="text-white"
 					blogsButtonBgColour="bg-primary-shade-1"
-					blogCards={homeData.blogCards || []}
+					blogCards={blogCards || []}
 				></Blogs>
 			</div>
 			<WaveWrapper waveURL="/images/home/blogs/home-blogs-bottom-wave.svg"></WaveWrapper>

@@ -58,6 +58,8 @@ const heatingCoolingQuery = ` allHeatingAndCooling {
         asset{
           url
           altText
+            _id
+            _key
         }
       }
       titleText
@@ -98,26 +100,24 @@ const heatingCoolingQuery = ` allHeatingAndCooling {
 					}
 				}
 			}
-    blogTitle
-			blogDescription
+    blogsTitle
+		blogsDescription
 			blogCards {
-				name
-				button {
-					text
-					href
-				}
-				description 
-				image {
-					image {
-						asset {
-							url
-						}
-					}
-					text
-					altText
-					href
-				}
-			}
+        blogTitle
+        description
+        blogImage{
+          image{
+            asset{
+              url
+            }
+          }
+        	href
+        }
+        button{
+          href
+        	text
+        }
+      }
 			blogButton {
 				text
 				href
@@ -129,9 +129,8 @@ const heatingCoolingQuery = ` allHeatingAndCooling {
 				href
 			}
 			faqList {
-				titleText
-				subText
-				description
+				question
+        answer
 			}
 }`;
 
