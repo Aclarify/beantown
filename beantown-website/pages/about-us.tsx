@@ -1,7 +1,7 @@
 import SectionContentWrapper from "components/molecules/section-content-wrapper.molecule";
 import MeetOurTeam from "components/templates/about-us/meet-our-team";
 import OurValuesCards from "components/templates/about-us/our-values-card";
-import { Head } from "next/document";
+import Head from "next/head"
 
 const PageHead = () => {
 	return (
