@@ -68,7 +68,7 @@ export default function Testimonials() {
 			{
 				breakpoint: 480,
 				settings: {
-					slidesToShow: 1.2,
+					slidesToShow: 1.1,
 					slidesToScroll: 1,
 				},
 			},
@@ -159,7 +159,7 @@ export default function Testimonials() {
 								{testimonialCards?.map((reviews, index) => {
 									return (
 										<div
-											className="testimonial-card-wrapper min-w-[280px] px-2 lg:min-w-[378px] lg:px-2 xl:px-5"
+											className="testimonial-card-wrapper h-[358px] w-[280px]  px-2 lg:h-[556px] lg:w-[378px] lg:px-2 xl:px-5"
 											key={index}
 										>
 											<TestimonialCard
