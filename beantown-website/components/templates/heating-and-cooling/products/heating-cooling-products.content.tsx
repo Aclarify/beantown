@@ -113,7 +113,7 @@ const HeatingCoolingProductsCardContent = () => {
 						{productsGroup?.map((productInfo, index) => {
 							return (
 								<div
-									className="product-card-wrapper  !flex justify-center px-2 xl:px-2"
+									className="product-card-wrapper  !flex justify-center px-1 xl:px-2"
 									key={index}
 								>
 									<ProductCard
