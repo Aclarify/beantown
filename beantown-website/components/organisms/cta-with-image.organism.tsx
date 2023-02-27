@@ -38,14 +38,7 @@ const CTAWithImage: React.FC<IProps> = ({
 					'flex-row-reverse': heroImagePosition === 'right',
 				})}
 			>
-				<div
-					id="hero-image-wrapper"
-					className={clsx(
-						'z-0 w-full lg:w-1/2',
-						heroImagePosition === 'left' && '-mr-24',
-						heroImagePosition === 'right' && '-ml-24'
-					)}
-				>
+				<div id="hero-image-wrapper" className={clsx('z-0 w-full lg:w-1/2')}>
 					<Image
 						src={heroImageURL}
 						alt="Image mask"
@@ -79,10 +72,10 @@ const CTAWithImage: React.FC<IProps> = ({
 								position: 'absolute',
 								top: 0,
 								bottom: 0,
-								width: '592px',
-								right: '-107px',
+								width: '600px',
+								right: '-296px',
 								height: '100%',
-								backgroundImage: `linear-gradient(to right, rgba(${bgColor},0.5), rgba(${bgColor},0.3), rgba(${bgColor},1),transparent)`,
+								backgroundImage: `linear-gradient(to right, transparent, rgba(${bgColor},0.3), rgba(${bgColor},0.5), rgba(${bgColor},1),rgba(${bgColor},0.5), rgba(${bgColor},0.3),transparent)`,
 								zIndex: 1,
 							}}
 						></div>
@@ -94,10 +87,11 @@ const CTAWithImage: React.FC<IProps> = ({
 								position: 'absolute',
 								top: 0,
 								bottom: 0,
-								width: '592px',
-								left: '-107px',
+								width: '600px',
+								left: '-296px',
 								height: '100%',
-								backgroundImage: `linear-gradient(to left, rgba(${bgColor},0.5), rgba(${bgColor},0.3), rgba(${bgColor},1),transparent)`,
+								backgroundImage: `linear-gradient(to left, transparent, rgba(${bgColor},0.3), rgba(${bgColor},0.5), rgba(${bgColor},1),rgba(${bgColor},0.5), rgba(${bgColor},0.3),transparent)`,
+
 								zIndex: 1,
 							}}
 						></div>

@@ -12,7 +12,7 @@ const HeatingCoolingServiceCard: React.FC<Props> = (props) => {
 		<>
 			<div className="w-full">
 				<div
-					className="rounded-3xl bg-[#FFFFFF] px-4 py-6
+					className="rounded-3xl bg-white px-4 py-6
 			shadow-[rgba(29,_39,_87,_0.04)_0px_6px_10px] lg:px-2 xl:px-6 
 			"
 				>
@@ -31,7 +31,7 @@ const HeatingCoolingServiceCard: React.FC<Props> = (props) => {
 						<p className="title-5 md:title-3 text-primary-black pb-4">
 							{props.title}
 						</p>
-						<p className="para-2 md:para-1 text-gray-shade-1 font-thin ">
+						<p className="para-2 md:para-1 text-gray-shade-1 !font-thin  ">
 							{props.content}
 						</p>
 					</div>

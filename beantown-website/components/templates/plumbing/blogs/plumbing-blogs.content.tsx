@@ -1,9 +1,8 @@
 import React, { useContext } from 'react';
 import { GlobalContext } from '@contexts/global/global.context';
 import { GlobalContextProps } from '@typing/common/interfaces/contexts.interface';
-import Blogs from 'components/organisms/blogs.organism';
 import { PlumbingContentProps } from 'pages/plumbing';
-import BlogsOther from 'components/organisms/blogs-other-services.organism';
+import Blogs from 'components/organisms/blogs.organism';
 
 const PlumbingBlogsContent = () => {
 	const { pageContent } =
@@ -14,14 +13,14 @@ const PlumbingBlogsContent = () => {
 	const homeData = pageContent.page[0];
 	const { blogsTitle, blogsDescription, blogButton, blogCards } = homeData;
 	return (
-		<BlogsOther
+		<Blogs
 			blogsTitle={blogsTitle || ''}
 			blogsDescription={blogsDescription || ''}
 			blogsButtonText={blogButton?.text || ''}
 			blogsButtonTextColour="text-white"
 			blogsButtonBgColour="bg-service-green"
 			blogCards={blogCards || []}
-		></BlogsOther>
+		></Blogs>
 	);
 };
 
