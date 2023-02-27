@@ -161,7 +161,7 @@
 	padding: 0 20% 0 0 !important;
 }
 
-.slick-slide.slick-active.slick-current {
+/* .slick-slide.slick-active.slick-current {
 	margin-left: 40px !important;
 }
 
@@ -175,7 +175,7 @@
 	.slick-slide.slick-active.slick-current {
 		margin-left: 20px !important;
 	}
-}
+} */
 
 /* .slick-slide:not(.slick-active) {
 	opacity: 0.5;
