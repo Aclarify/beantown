@@ -119,7 +119,7 @@ const HeatingCoolingProductsCardContent = () => {
 									<ProductCard
 										key={index}
 										title={productInfo?.titleText || ''}
-										thumbnailSrc={productInfo?.image?.asset?.url || ''}
+										image={productInfo?.image || null}
 										thumbnailAltText={'Heating and Cooling Product Images'}
 										description={productInfo?.description || ''}
 									/>

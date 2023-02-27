@@ -58,6 +58,8 @@ const heatingCoolingQuery = ` allHeatingAndCooling {
         asset{
           url
           altText
+            _id
+            _key
         }
       }
       titleText
