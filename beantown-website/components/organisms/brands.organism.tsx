@@ -64,7 +64,7 @@ const settings = {
 			settings: {
 				slidesToShow: 2,
 				slidesToScroll: 1,
-				initialSlide: 1,
+				//initialSlide: 1,
 				infinite: true,
 			},
 		},
@@ -73,7 +73,7 @@ const settings = {
 			settings: {
 				slidesToShow: 2,
 				slidesToScroll: 1,
-				initialSlide: 1,
+				//initialSlide: 1,
 				infinite: true,
 			},
 		},
