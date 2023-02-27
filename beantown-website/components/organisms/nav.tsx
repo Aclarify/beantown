@@ -43,6 +43,7 @@ export default function Header(props: IProps) {
 								alt={logoDesktop?.asset?.altText || ''}
 								width={200}
 								height={300}
+								priority={true}
 								src={logoDesktop?.asset?.url || ''}
 							/>
 						</div>
@@ -51,6 +52,7 @@ export default function Header(props: IProps) {
 								alt={logoMobile?.asset?.altText || ''}
 								width={150}
 								height={100}
+								priority={true}
 								src={logoMobile?.asset?.url || ''}
 							/>
 						</div>
