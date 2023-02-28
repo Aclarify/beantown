@@ -19,4 +19,23 @@ export default defineConfig({
   schema: {
     types: schemaTypes,
   },
+  __experimental_spaces: [
+    {
+      name: 'development',
+      title: 'Dev',
+      default: true,
+      api: {
+        projectId: process.env.SANITY_STUDIO_PROJECT_ID || '',
+        dataset: 'develop',
+      },
+    },
+    {
+      name: 'staging',
+      title: 'Staging',
+      api: {
+        projectId: process.env.SANITY_STUDIO_PROJECT_ID || '',
+        dataset: 'production',
+      },
+    },
+  ],
 })

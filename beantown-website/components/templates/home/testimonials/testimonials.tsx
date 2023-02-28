@@ -55,19 +55,63 @@ export default function Testimonials() {
 		speed: 500,
 		slidesToShow: 3.1,
 		slidesToScroll: 1,
-		initialSlide: 0,
 		arrows: false,
 		responsive: [
 			{
-				breakpoint: SCREEN_BREAKPOINTS.LG,
+				breakpoint: SCREEN_BREAKPOINTS.XL,
 				settings: {
 					slidesToShow: 2.16,
 					slidesToScroll: 1,
 				},
 			},
 			{
-				breakpoint: 480,
+				breakpoint: SCREEN_BREAKPOINTS.LG,
 				settings: {
+<<<<<<< HEAD
+=======
+					slidesToShow: 1.6,
+					slidesToScroll: 1,
+				},
+			},
+			{
+				breakpoint: SCREEN_BREAKPOINTS.MD,
+				settings: {
+					slidesToShow: 3.1,
+					slidesToScroll: 1,
+				},
+			},
+			{
+				breakpoint: 992,
+				settings: {
+					slidesToShow: 2.5,
+					slidesToScroll: 1,
+				},
+			},
+			{
+				breakpoint: SCREEN_BREAKPOINTS.SM,
+				settings: {
+					slidesToShow: 2.1,
+					slidesToScroll: 1,
+				},
+			},
+			{
+				breakpoint: 620,
+				settings: {
+					slidesToShow: 1.8,
+					slidesToScroll: 1,
+				},
+			},
+			{
+				breakpoint: 520,
+				settings: {
+					slidesToShow: 1.3,
+					slidesToScroll: 1,
+				},
+			},
+			{
+				breakpoint: 420,
+				settings: {
+>>>>>>> 6d1457f85681539b281cf3f8395920a2c712f8a0
 					slidesToShow: 1.1,
 					slidesToScroll: 1,
 				},
@@ -128,7 +172,6 @@ export default function Testimonials() {
 							</div>
 						</div>
 					</div>
-
 					<div className=" flex space-x-6">
 						<div className="gap-15 z-40 ml-28 mr-16 hidden flex-none flex-col items-center   justify-center lg:flex  ">
 							<div className="flex-none  gap-5 ">
@@ -154,12 +197,16 @@ export default function Testimonials() {
 								</div>
 							</div>
 						</div>
-						<div className="slider-wrapper w-full lg:w-3/4  ">
+						<div className="slider-wrapper w-full lg:w-3/4 ">
 							<Slider ref={slider} {...settings} className="">
 								{testimonialCards?.map((reviews, index) => {
 									return (
 										<div
+<<<<<<< HEAD
 											className="testimonial-card-wrapper h-[358px] w-[280px]  px-2 lg:h-[556px] lg:w-[378px] lg:px-2 xl:px-5"
+=======
+											className="testimonial-card-wrapper  px-2 lg:px-2 xl:px-5"
+>>>>>>> 6d1457f85681539b281cf3f8395920a2c712f8a0
 											key={index}
 										>
 											<TestimonialCard
@@ -174,7 +221,6 @@ export default function Testimonials() {
 								})}
 							</Slider>
 						</div>
-						̊
 					</div>
 
 					<div className="mt-2 flex justify-end gap-4 pt-4 pr-4 lg:hidden ">
