@@ -40,7 +40,7 @@ export default function HomeHero() {
 			</div>
 			<div
 				id="image-wrapper-mobile"
-				className="after:z-1 after:from-home-hero-gradient-start after:to-home-hero-gradient-end relative z-0
+				className="after:z-1 after:from-home-hero-gradient-start after:to-home-hero-gradient-end  z-0
 				after:absolute after:top-0 after:left-0 after:h-full after:w-full after:bg-gradient-to-b sm:hidden"
 			>
 				<Image
@@ -63,7 +63,9 @@ export default function HomeHero() {
 			>
 				<ContentWrapper className="">
 					<ContentWrapper.Title className=" mb-2  lg:mb-4">
-						<h1 className="title-5 lg:title-1 leading-[36px]">{heroTitle}</h1>
+						<h1 className="title-5 lg:title-1 leading-[36px] lg:leading-[90px]">
+							{heroTitle}
+						</h1>
 					</ContentWrapper.Title>
 					<ContentWrapper.Description className="para-4 lg:para-2">
 						<RichText value={heroDescription?.contentRaw} />
