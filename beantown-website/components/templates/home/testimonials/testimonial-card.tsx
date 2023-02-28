@@ -1,7 +1,7 @@
 import ReadMore from 'components/molecules/read-more.molecule';
-import Image from 'next/image';
 import React from 'react';
 import testimonialQuoteImg from 'public/images/home/testimonials-quote.svg';
+import StaticImageWrapper from 'components/molecules/static-image-wrapper.molecule';
 interface Props {
 	clientName: string;
 	clientDetails: string;
@@ -17,13 +17,9 @@ const TestimonialCard: React.FC<Props> = (props) => {
 		>
 			<div className="flex justify-center py-6 lg:py-10">
 				<div className="image-wrapper w-[30px]  lg:h-[56px] lg:w-[60px]">
-					<Image
-						alt="An image for quotes in testimonial card"
+					<StaticImageWrapper
+						altText="An image for quotes in testimonial card"
 						src={testimonialQuoteImg}
-						style={{
-							width: '100%',
-							height: '100%',
-						}}
 					/>
 				</div>
 			</div>
