@@ -1,10 +1,6 @@
 import React from 'react';
 
-import {
-	Blog,
-	ImageDescriptionButtonGroup as Blogs,
-	Maybe,
-} from '@typing/gql/graphql';
+import { Blog, Maybe } from '@typing/gql/graphql';
 import BlogCard from './blog-card.organism';
 import CtaWrapper from 'components/molecules/cta-wrapper.molecule';
 
