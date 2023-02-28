@@ -22,7 +22,7 @@ export default function HomeFaq() {
 	}
 	return (
 		<>
-			<section id="faq" className="z-5 relative mb-[6em]">
+			<section id="faq" className="z-5 relative mb-[6em] ">
 				{faqList && (
 					<FAQ
 						backgroundImage="/images/home/faq/home-faq-bg-thumbprint.svg"

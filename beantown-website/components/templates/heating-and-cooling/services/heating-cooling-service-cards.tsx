@@ -27,11 +27,11 @@ const HeatingCoolingServiceCard: React.FC<Props> = (props) => {
 							}}
 						></Image>
 					</div>
-					<div className="text-center md:pt-8">
-						<p className="title-5 md:title-3 text-primary-black pb-4">
+					<div className="text-center lg:pt-8">
+						<p className="title-5 lg:title-3 text-primary-black pb-4">
 							{props.title}
 						</p>
-						<p className="para-2 md:para-1 text-gray-shade-1 !font-thin  ">
+						<p className="para-4 lg:para-2 text-gray-shade-1 !font-thin  ">
 							{props.content}
 						</p>
 					</div>

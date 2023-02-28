@@ -7,7 +7,7 @@ import WaveWrapper from 'components/molecules/wave-wrapper.molecule';
 
 const LocationCard = ({ text }: { text: string }) => {
 	return (
-		<div className="location-card flex  h-[32px] w-[154px] items-center py-2 pl-4 lg:min-h-[54px] lg:min-w-[315px]">
+		<div className="location-card flex  h-[32px] w-[154px] items-center py-2 pl-[6px]  lg:min-h-[54px] lg:min-w-[315px]">
 			<div className=" icon-image-wrapper h-[12px] w-[12px] lg:h-[24px] lg:w-[24px]">
 				<Image
 					src={'/images/home/location-icon.svg'}
@@ -42,14 +42,14 @@ export default function ServiceAreas() {
 	return (
 		<section id="serviceAreas" className="relative mt-20 ">
 			<WaveWrapper waveURL="/images/home/service-area/home-service-area-top-wave.svg"></WaveWrapper>
-			<div className=" z-1 bg-primary-white-shade-1 2xl:padding-for-section p-5 pr-2 md:pr-4 lg:pr-6">
+			<div className=" z-1 bg-primary-white-shade-1 2xl:padding-for-section p-5   lg:pr-6">
 				<div className=" pb-6  lg:flex 2xl:pt-16">
 					<div className="lg:w-1/2 lg:border-r-2">
-						<h1 className="title-5 lg:title-2  text-primary-black pl-2 lg:pr-20 lg:pl-6">
+						<h1 className="title-5 lg:title-2  text-primary-black  lg:pr-20 lg:pl-6">
 							{serviceAreaTitle}
 						</h1>
 					</div>
-					<div className=" para-4 lg:para-2 text-primary-shade-1 w-full pl-4 pt-4 md:pl-6 lg:w-[60%] lg:pl-20 ">
+					<div className=" para-4 lg:para-2 text-primary-shade-1 w-full  pt-4  lg:w-[60%] lg:pl-20 ">
 						<p>{serviceAreaDescription}</p>
 					</div>
 				</div>
@@ -83,7 +83,7 @@ export default function ServiceAreas() {
 
 								<div
 									id="service-area-container"
-									className="grid grid-cols-2 gap-x-4 gap-y-1 lg:gap-4 lg:pl-6"
+									className="grid grid-cols-2 gap-x-2 gap-y-1 sm:gap-x-4 lg:gap-4 lg:pl-6"
 								>
 									{serviceAreas?.listItem?.map((serviceArea, index) => {
 										return (
@@ -111,13 +111,6 @@ export default function ServiceAreas() {
 				width={650}
 				alt="Right Blob  "
 				className="absolute bottom-0 right-0 z-20 hidden translate-x-[78%] translate-y-[30%]  transform  lg:block "
-			/>
-			<Image
-				src={'/images/home/blue-blob-shape-2-mobile.svg'}
-				height={250}
-				width={250}
-				alt="Right Blob mobile"
-				className="absolute  bottom-0 right-0 z-20 translate-x-[78%] translate-y-[25%] transform lg:hidden"
 			/>
 		</section>
 	);
