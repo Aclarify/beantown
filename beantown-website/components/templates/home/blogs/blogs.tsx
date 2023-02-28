@@ -36,10 +36,10 @@ export default function HomeBlogs() {
 				height={250}
 				width={250}
 				alt="Right Blob mobile"
-				className="absolute  top-0 right-0 z-10 translate-x-[78%] translate-y-[-60%] transform lg:hidden"
+				className="absolute  top-0 right-0 z-10 translate-x-[75%] translate-y-[-70%] transform lg:hidden"
 			/>
 
-			<div className="bg-primary-white-shade-1 2xl:padding-for-section relative   pb-[0em] pt-[0rem] lg:pt-[12rem]">
+			<div className="bg-primary-white-shade-1 2xl:padding-for-section relative   pb-[0em] pt-[-1rem] lg:pt-[8em]">
 				<Blogs
 					blogsTitle={blogsTitle || ''}
 					blogsDescription={blogsDescription || ''}
