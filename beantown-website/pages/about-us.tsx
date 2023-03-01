@@ -12,6 +12,7 @@ import FooterSection from 'components/organisms/footer';
 import { GlobalContextProps } from '@typing/common/interfaces/contexts.interface';
 import { GlobalContext } from '@contexts/global/global.context';
 import CtaWrapper from 'components/molecules/cta-wrapper.molecule';
+import AboutUsHeroContent from 'components/templates/about-us/hero/about-us-hero.content';
 export interface AboutUsContentProps {
 	page: AboutUs[];
 	header: Nav[];
@@ -32,7 +33,7 @@ const PageHead = () => {
 };
 const getStaticProps = generateGetStaticProps<AboutUsContentProps>(
 	pageQuery,
-	PageNames.ABOUT
+	PageNames.ABOUTUS
 );
 export { getStaticProps };
 const AboutUsPage: React.FC = (props) => {
@@ -61,7 +62,7 @@ const AboutUsPage: React.FC = (props) => {
 					</CtaWrapper.CTA>
 				</div>
 			</Header>
-
+			<AboutUsHeroContent />
 			<FooterSection
 				logoDesktop={logoDesktop?.image}
 				logoMobile={logoMobile?.image}

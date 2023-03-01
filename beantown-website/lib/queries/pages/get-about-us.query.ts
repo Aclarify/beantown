@@ -1,8 +1,8 @@
 import { gql } from '@apollo/client';
+import footerQuery from './get-footer.query';
+import navQuery from './get-nav.query';
 
-export default gql`
-	query {
-		allAboutUs {
+const aboutUsQuery = `allAboutUs {
 			logoDesktop {
 				image {
 					asset {
@@ -123,5 +123,12 @@ export default gql`
 				href
 			}
 		}
+	}`;
+
+export default gql`
+	query {
+		page: ${aboutUsQuery}
+		header: ${navQuery}
+		footer: ${footerQuery}
 	}
 `;
