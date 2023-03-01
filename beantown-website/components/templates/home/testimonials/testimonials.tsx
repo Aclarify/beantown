@@ -67,8 +67,6 @@ export default function Testimonials() {
 			{
 				breakpoint: SCREEN_BREAKPOINTS.LG,
 				settings: {
-<<<<<<< HEAD
-=======
 					slidesToShow: 1.6,
 					slidesToScroll: 1,
 				},
@@ -111,7 +109,6 @@ export default function Testimonials() {
 			{
 				breakpoint: 420,
 				settings: {
->>>>>>> 6d1457f85681539b281cf3f8395920a2c712f8a0
 					slidesToShow: 1.1,
 					slidesToScroll: 1,
 				},
@@ -202,11 +199,7 @@ export default function Testimonials() {
 								{testimonialCards?.map((reviews, index) => {
 									return (
 										<div
-<<<<<<< HEAD
 											className="testimonial-card-wrapper h-[358px] w-[280px]  px-2 lg:h-[556px] lg:w-[378px] lg:px-2 xl:px-5"
-=======
-											className="testimonial-card-wrapper  px-2 lg:px-2 xl:px-5"
->>>>>>> 6d1457f85681539b281cf3f8395920a2c712f8a0
 											key={index}
 										>
 											<TestimonialCard
