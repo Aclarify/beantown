@@ -43,13 +43,14 @@ export default function Testimonials() {
 
 	const previous = () => {
 		if (slider.current) {
-			slider.current.slickNext();
+			slider.current.slickPrev();
 		}
 	};
 	const next = () => {
 		if (slider.current) {
-			slider.current.slickPrev();
+			slider.current.slickNext();
 		}
+		
 	};
 	 const settings = {
 			dots: false,
@@ -58,64 +59,80 @@ export default function Testimonials() {
 			slidesToShow: 3,
 			slidesToScroll: 1,
 			initialSlide: 0,
-			rtl: true,
 			responsive: [
 				{
-					breakpoint: 420,
+					breakpoint: 320,
 					settings: {
-						slidesToShow: 1.2,
+						slidesToShow: 1,
+						slidesToScroll: 1,
+						
 					},
 				},
 				{
-					breakpoint: 520,
+					breakpoint: 450,
 					settings: {
-						slidesToShow: 1.5,
+						slidesToShow: 1.2,
+						slidesToScroll: 1,						
+						
 					},
 				},
 
 				{
 					breakpoint: 720,
 					settings: {
-						slidesToShow: 1.8,
+						slidesToShow: 2,
+						slidesToScroll: 1,
+						
 					},
 				},
 				{
 					breakpoint: 820,
 					settings: {
-						slidesToShow: 2.3,
+						slidesToShow: 2,
+						slidesToScroll: 1,
+						
 					},
 				},
 				{
 					breakpoint: 920,
 					settings: {
-						slidesToShow: 2.8,
+						slidesToShow: 3,
+						slidesToScroll: 1,
+						
 					},
 				},
 				// 3 slide but square shape
 				{
 					breakpoint: 1000,
 					settings: {
-						slidesToShow: 3.1,
+						slidesToShow: 3,
+						slidesToScroll: 1,
+						
 					},
 				},
 
 				{
 					breakpoint: 1200,
 					settings: {
-						slidesToShow: 1.8,
+						slidesToShow: 2,
+						slidesToScroll: 1,
+						
 					},
 				},
 				{
-					breakpoint: 1500,
+					breakpoint: 1600,
 					settings: {
-						slidesToShow: 2.2,
+						slidesToShow: 2,
+						slidesToScroll: 1,
+						
 					},
 				},
 				{
 					breakpoint: 1900,
 					settings: {
-						slidesToShow: 2.5,
+						slidesToShow: 3,
 						slidesToScroll: 1,
+						
 					},
 				},
 			],
@@ -273,20 +290,19 @@ export default function Testimonials() {
 							<Slider ref={slider} {...settings} >
 								{testimonialCards?.map((reviews, index) => {
 									return (
-									
-											<div
-												className="testimonial-card-wrapper "
+										<div
+											className="testimonial-card-wrapper  "
+											key={index}
+											
+										>
+											<TestimonialCard
 												key={index}
-											>
-												<TestimonialCard
-													key={index}
-													clientName={reviews?.titleText || ''}
-													clientDetails={reviews?.subText || ''}
-													reviewComments={reviews?.description || ''}
-													onShowMore={() => onTestimonialCardClick(reviews)}
-												/>
-											</div>
-										
+												clientName={reviews?.titleText || ''}
+												clientDetails={reviews?.subText || ''}
+												reviewComments={reviews?.description || ''}
+												onShowMore={() => onTestimonialCardClick(reviews)}
+											/>
+										</div>
 									);
 								})}
 							</Slider>
