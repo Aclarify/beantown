@@ -11,7 +11,7 @@ export default defineType({
     }),
     defineField({
       name: 'memberDesignation',
-      title: 'memberDesignation',
+      title: 'Member Designation',
       type: 'string',
     }),
     defineField({
@@ -25,7 +25,7 @@ export default defineType({
       type: 'array',
       of: [
         {
-          type: 'imageIcon',
+          type: 'socialMediaIcon',
         },
       ],
     }),

@@ -12,7 +12,7 @@ export default defineType({
     defineField({
       name: 'iconImage',
       title: 'Icon or Image',
-      type: 'imageIcon',
+      type: 'image',
     }),
     defineField({
       name: 'text',
