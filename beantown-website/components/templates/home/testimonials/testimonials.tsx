@@ -51,70 +51,137 @@ export default function Testimonials() {
 			slider.current.slickPrev();
 		}
 	};
-	const settings = {
-		speed: 500,
-		slidesToShow: 3.1,
-		slidesToScroll: 1,
-		arrows: false,
-		responsive: [
-			{
-				breakpoint: SCREEN_BREAKPOINTS.XL,
-				settings: {
-					slidesToShow: 2.16,
-					slidesToScroll: 1,
+	 var settings = {
+			dots: false,
+			infinite: false,
+			speed: 500,
+			slidesToShow: 3.4,
+			slidesToScroll: 1,
+			initialSlide: 0,
+			responsive: [
+				{
+					breakpoint: 420,
+					settings: {
+						slidesToShow: 1.2,
+					},
 				},
-			},
-			{
-				breakpoint: SCREEN_BREAKPOINTS.LG,
-				settings: {
-					slidesToShow: 1.6,
-					slidesToScroll: 1,
+				{
+					breakpoint: 520,
+					settings: {
+						slidesToShow: 1.5,
+					},
 				},
-			},
-			{
-				breakpoint: SCREEN_BREAKPOINTS.MD,
-				settings: {
-					slidesToShow: 3.1,
-					slidesToScroll: 1,
+
+				{
+					breakpoint: 720,
+					settings: {
+						slidesToShow: 1.8,
+					},
 				},
-			},
-			{
-				breakpoint: 992,
-				settings: {
-					slidesToShow: 2.5,
-					slidesToScroll: 1,
+				{
+					breakpoint: 820,
+					settings: {
+						slidesToShow: 2.3,
+					},
 				},
-			},
-			{
-				breakpoint: SCREEN_BREAKPOINTS.SM,
-				settings: {
-					slidesToShow: 2.1,
-					slidesToScroll: 1,
+				{
+					breakpoint: 920,
+					settings: {
+						slidesToShow: 2.8,
+					},
 				},
-			},
-			{
-				breakpoint: 620,
-				settings: {
-					slidesToShow: 1.8,
-					slidesToScroll: 1,
+				// 3 slide but square shape
+				{
+					breakpoint: 1020,
+					settings: {
+					 slidesToShow: 3.1,    
+					},
 				},
-			},
-			{
-				breakpoint: 520,
-				settings: {
-					slidesToShow: 1.3,
-					slidesToScroll: 1,
+
+				{
+					breakpoint: 1400,
+					settings: {
+						slidesToShow: 2.1,
+					},
 				},
-			},
-			{
-				breakpoint: 420,
-				settings: {
-					slidesToShow: 1.1,
-					slidesToScroll: 1,
+				{
+					breakpoint: 1900,
+					settings: {
+						slidesToShow: 2.5,
+					},
 				},
-			},
-		],
-	};
+			],
+		};
+
+
+
+
+	// const settings = {
+	// 	speed: 500,
+	// 	slidesToShow: 2.5,
+	// 	slidesToScroll: 1,
+	// 	arrows: false,
+	// 	responsive: [
+	// 		{
+	// 			breakpoint: SCREEN_BREAKPOINTS.XL,
+	// 			settings: {
+	// 				slidesToShow: 2.16,
+	// 				slidesToScroll: 1,
+	// 			},
+	// 		},
+	// 		{
+	// 			breakpoint: SCREEN_BREAKPOINTS.LG,
+	// 			settings: {
+	// 				slidesToShow: 2,
+	// 				slidesToScroll: 1,
+	// 			},
+	// 		},
+	// 		{
+	// 			breakpoint: SCREEN_BREAKPOINTS.MD,
+	// 			settings: {
+	// 				slidesToShow: 3.1,
+	// 				slidesToScroll: 1,
+	// 			},
+	// 		},
+	// 		{
+	// 			breakpoint: 992,
+	// 			settings: {
+	// 				slidesToShow: 2.5,
+	// 				slidesToScroll: 1,
+	// 			},
+	// 		},
+	// 		{
+	// 			breakpoint: SCREEN_BREAKPOINTS.SM,
+	// 			settings: {
+	// 				slidesToShow: 3.1,
+	// 				slidesToScroll: 1,
+					
+	// 			},
+				
+	// 		},
+	// 		{
+	// 			breakpoint: 620,
+	// 			settings: {
+	// 				slidesToShow: 1.8,
+	// 				slidesToScroll: 1,
+	// 			},
+	// 		},
+	// 		{
+	// 			breakpoint: 520,
+	// 			settings: {
+	// 				slidesToShow: 2,
+	// 				slidesToScroll: 1,
+	// 			},
+	// 		},
+	// 		{
+	// 			breakpoint: 420,
+	// 			settings: {
+	// 				slidesToShow: 1.2,
+	// 				slidesToScroll: 1,
+	// 			},
+	// 		},
+	// 	],
+	// };
 	const handleOnClose = () => {
 		setShowTestimonialModel(false);
 		// Unsets Background Scrolling to use when SideDrawer/Modal is closed
@@ -195,21 +262,23 @@ export default function Testimonials() {
 							</div>
 						</div>
 						<div className="slider-wrapper w-full lg:w-3/4 ">
-							<Slider ref={slider} {...settings} className="">
+							<Slider ref={slider} {...settings} >
 								{testimonialCards?.map((reviews, index) => {
 									return (
-										<div
-											className="testimonial-card-wrapper  px-2 lg:px-2 xl:px-5"
-											key={index}
-										>
-											<TestimonialCard
+									
+											<div
+												className="testimonial-card-wrapper "
 												key={index}
-												clientName={reviews?.titleText || ''}
-												clientDetails={reviews?.subText || ''}
-												reviewComments={reviews?.description || ''}
-												onShowMore={() => onTestimonialCardClick(reviews)}
-											/>
-										</div>
+											>
+												<TestimonialCard
+													key={index}
+													clientName={reviews?.titleText || ''}
+													clientDetails={reviews?.subText || ''}
+													reviewComments={reviews?.description || ''}
+													onShowMore={() => onTestimonialCardClick(reviews)}
+												/>
+											</div>
+										
 									);
 								})}
 							</Slider>

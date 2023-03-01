@@ -14,14 +14,13 @@ interface IProps extends React.HTMLAttributes<HTMLDivElement> {
 const settings = {
 	dots: false,
 	infinite: true,
-	speed: 6000,
+	speed: 8000,
 	autoplay: true,
 	autoplaySpeed: 0,
 	cssEase: 'linear',
-	slidesToShow: 3,
+	slidesToShow: 4,
 	slidesToScroll: 1,
 	pauseOnHover: false,
-
 	responsive: [
 		{
 			breakpoint: 1800,
@@ -29,7 +28,7 @@ const settings = {
 				slidesToShow: 4,
 				slidesToScroll: 1,
 				infinite: true,
-				dots: false,
+				
 			},
 		},
 		{
@@ -38,7 +37,7 @@ const settings = {
 				slidesToShow: 4,
 				slidesToScroll: 1,
 				infinite: true,
-				dots: false,
+				
 			},
 		},
 		{
@@ -47,7 +46,7 @@ const settings = {
 				slidesToShow: 4,
 				slidesToScroll: 1,
 				infinite: true,
-				dots: false,
+				
 			},
 		},
 		{
@@ -56,7 +55,7 @@ const settings = {
 				slidesToShow: 3,
 				slidesToScroll: 1,
 				infinite: true,
-				dots: false,
+				
 			},
 		},
 		{
@@ -68,7 +67,7 @@ const settings = {
 			},
 		},
 		{
-			breakpoint: 600,
+			breakpoint: 400,
 			settings: {
 				slidesToShow: 2,
 				slidesToScroll: 1,
@@ -88,18 +87,23 @@ const Brands: React.FC<IProps> = (props) => {
 					{props.brandsTitle}
 				</span>
 			</div>
-			<div className="slider-wrapper m-2" id="brands-slider">
+			<div className="slider-wrapper " id="brands-slider">
 				<Slider {...settings}>
 					{props.logoArray?.map((logo, index) => {
 						return (
 							logo &&
 							logo.image && (
-								<div key={index} className="grid grid-cols-1 sm:grid-cols-4	">
+								<div
+									key={index}
+									className="h-[92px] w-[182px] md:h-[180px] md:w-[354px]"
+								>
 									<Image
 										alt={logo?.image?.asset?.altText || ''}
-										width={200}
-										height={100}
+										width={350}
+										height={180}
 										src={logo?.image?.asset?.url || ''}
+										style={{ padding: '24px' }}
+										
 									/>
 								</div>
 							)
