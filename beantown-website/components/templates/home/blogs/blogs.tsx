@@ -31,8 +31,15 @@ export default function HomeBlogs() {
 				height={300}
 				className=" z-1 -md:translate-y-[33%] absolute left-0 -translate-x-[77%] -translate-y-[15%] transform lg:hidden"
 			></Image>
+			<Image
+				src={'/images/home/blue-blob-shape-2-mobile.svg'}
+				height={250}
+				width={250}
+				alt="Right Blob mobile"
+				className="absolute  top-0 right-0 z-10 translate-x-[75%] translate-y-[-70%] transform lg:hidden"
+			/>
 
-			<div className="bg-primary-white-shade-1 2xl:padding-for-section relative  pl-5 pb-[0em] pt-[0rem] lg:pt-[12rem]">
+			<div className="bg-primary-white-shade-1 2xl:padding-for-section relative   pb-[0em] pt-[-1rem] lg:pt-[8em]">
 				<Blogs
 					blogsTitle={blogsTitle || ''}
 					blogsDescription={blogsDescription || ''}
