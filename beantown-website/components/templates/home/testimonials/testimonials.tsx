@@ -53,11 +53,12 @@ export default function Testimonials() {
 	};
 	 const settings = {
 			dots: false,
-			infinite: false,
-			speed: 500,
-			slidesToShow: 3.4,
+			infinite: true,
+			speed: 2000,
+			slidesToShow: 3,
 			slidesToScroll: 1,
 			initialSlide: 0,
+			rtl: true,
 			responsive: [
 				{
 					breakpoint: 420,
@@ -92,22 +93,29 @@ export default function Testimonials() {
 				},
 				// 3 slide but square shape
 				{
-					breakpoint: 1020,
+					breakpoint: 1000,
 					settings: {
-					 slidesToShow: 3.1,    
+						slidesToShow: 3.1,
 					},
 				},
 
 				{
-					breakpoint: 1400,
+					breakpoint: 1200,
 					settings: {
-						slidesToShow: 2.1,
+						slidesToShow: 1.8,
+					},
+				},
+				{
+					breakpoint: 1500,
+					settings: {
+						slidesToShow: 2.2,
 					},
 				},
 				{
 					breakpoint: 1900,
 					settings: {
 						slidesToShow: 2.5,
+						slidesToScroll: 1,
 					},
 				},
 			],
