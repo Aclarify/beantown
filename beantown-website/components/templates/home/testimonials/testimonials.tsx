@@ -51,7 +51,7 @@ export default function Testimonials() {
 			slider.current.slickPrev();
 		}
 	};
-	 var settings = {
+	 const settings = {
 			dots: false,
 			infinite: false,
 			speed: 500,
