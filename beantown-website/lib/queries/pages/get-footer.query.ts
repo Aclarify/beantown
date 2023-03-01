@@ -26,13 +26,12 @@ const footerQuery = `
 			contactUsTitle
 			contactUs {
 				text
-				iconImage {
-					image {
-						asset {
-							url
-						}
-					}
-				}
+				iconImage{
+        		 asset
+          			{
+            		url
+          			}
+        		}
 			}
 			copyright
 		}
