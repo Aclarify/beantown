@@ -208,6 +208,34 @@ export type BreakTypeSorting = {
   style?: InputMaybe<SortOrder>;
 };
 
+export type CrossDatasetReference = {
+  __typename?: 'CrossDatasetReference';
+  _dataset?: Maybe<Scalars['String']>;
+  _key?: Maybe<Scalars['String']>;
+  _projectId?: Maybe<Scalars['String']>;
+  _ref?: Maybe<Scalars['String']>;
+  _type?: Maybe<Scalars['String']>;
+  _weak?: Maybe<Scalars['Boolean']>;
+};
+
+export type CrossDatasetReferenceFilter = {
+  _dataset?: InputMaybe<StringFilter>;
+  _key?: InputMaybe<StringFilter>;
+  _projectId?: InputMaybe<StringFilter>;
+  _ref?: InputMaybe<StringFilter>;
+  _type?: InputMaybe<StringFilter>;
+  _weak?: InputMaybe<BooleanFilter>;
+};
+
+export type CrossDatasetReferenceSorting = {
+  _dataset?: InputMaybe<SortOrder>;
+  _key?: InputMaybe<SortOrder>;
+  _projectId?: InputMaybe<SortOrder>;
+  _ref?: InputMaybe<SortOrder>;
+  _type?: InputMaybe<SortOrder>;
+  _weak?: InputMaybe<SortOrder>;
+};
+
 export type Cta = Document & {
   __typename?: 'Cta';
   /** Date the document was created */
@@ -851,7 +879,7 @@ export type ImageText = {
   Name?: Maybe<Scalars['String']>;
   _key?: Maybe<Scalars['String']>;
   _type?: Maybe<Scalars['String']>;
-  iconImage?: Maybe<ImageIcon>;
+  iconImage?: Maybe<Image>;
   text?: Maybe<Scalars['String']>;
 };
 
@@ -859,7 +887,7 @@ export type ImageTextFilter = {
   Name?: InputMaybe<StringFilter>;
   _key?: InputMaybe<StringFilter>;
   _type?: InputMaybe<StringFilter>;
-  iconImage?: InputMaybe<ImageIconFilter>;
+  iconImage?: InputMaybe<ImageFilter>;
   text?: InputMaybe<StringFilter>;
 };
 
@@ -890,8 +918,49 @@ export type ImageTextSorting = {
   Name?: InputMaybe<SortOrder>;
   _key?: InputMaybe<SortOrder>;
   _type?: InputMaybe<SortOrder>;
-  iconImage?: InputMaybe<ImageIconSorting>;
+  iconImage?: InputMaybe<ImageSorting>;
   text?: InputMaybe<SortOrder>;
+};
+
+export type Images = Document & {
+  __typename?: 'Images';
+  /** Date the document was created */
+  _createdAt?: Maybe<Scalars['DateTime']>;
+  /** Document ID */
+  _id?: Maybe<Scalars['ID']>;
+  _key?: Maybe<Scalars['String']>;
+  /** Current document revision */
+  _rev?: Maybe<Scalars['String']>;
+  /** Document type */
+  _type?: Maybe<Scalars['String']>;
+  /** Date the document was last modified */
+  _updatedAt?: Maybe<Scalars['DateTime']>;
+  image?: Maybe<Image>;
+  name?: Maybe<Scalars['String']>;
+};
+
+export type ImagesFilter = {
+  /** Apply filters on document level */
+  _?: InputMaybe<Sanity_DocumentFilter>;
+  _createdAt?: InputMaybe<DatetimeFilter>;
+  _id?: InputMaybe<IdFilter>;
+  _key?: InputMaybe<StringFilter>;
+  _rev?: InputMaybe<StringFilter>;
+  _type?: InputMaybe<StringFilter>;
+  _updatedAt?: InputMaybe<DatetimeFilter>;
+  image?: InputMaybe<ImageFilter>;
+  name?: InputMaybe<StringFilter>;
+};
+
+export type ImagesSorting = {
+  _createdAt?: InputMaybe<SortOrder>;
+  _id?: InputMaybe<SortOrder>;
+  _key?: InputMaybe<SortOrder>;
+  _rev?: InputMaybe<SortOrder>;
+  _type?: InputMaybe<SortOrder>;
+  _updatedAt?: InputMaybe<SortOrder>;
+  image?: InputMaybe<ImageSorting>;
+  name?: InputMaybe<SortOrder>;
 };
 
 export type IntFilter = {
@@ -1167,6 +1236,7 @@ export type RootQuery = {
   HeatingAndCooling?: Maybe<HeatingAndCooling>;
   Home?: Maybe<Home>;
   ImageIcon?: Maybe<ImageIcon>;
+  Images?: Maybe<Images>;
   Link?: Maybe<Link>;
   Nav?: Maybe<Nav>;
   OtherServices?: Maybe<OtherServices>;
@@ -1183,6 +1253,7 @@ export type RootQuery = {
   allHeatingAndCooling: Array<HeatingAndCooling>;
   allHome: Array<Home>;
   allImageIcon: Array<ImageIcon>;
+  allImages: Array<Images>;
   allLink: Array<Link>;
   allNav: Array<Nav>;
   allOtherServices: Array<OtherServices>;
@@ -1234,6 +1305,11 @@ export type RootQueryHomeArgs = {
 
 
 export type RootQueryImageIconArgs = {
+  id: Scalars['ID'];
+};
+
+
+export type RootQueryImagesArgs = {
   id: Scalars['ID'];
 };
 
@@ -1342,6 +1418,14 @@ export type RootQueryAllImageIconArgs = {
   offset?: InputMaybe<Scalars['Int']>;
   sort?: InputMaybe<Array<ImageIconSorting>>;
   where?: InputMaybe<ImageIconFilter>;
+};
+
+
+export type RootQueryAllImagesArgs = {
+  limit?: InputMaybe<Scalars['Int']>;
+  offset?: InputMaybe<Scalars['Int']>;
+  sort?: InputMaybe<Array<ImagesSorting>>;
+  where?: InputMaybe<ImagesFilter>;
 };
 
 
@@ -1841,6 +1925,33 @@ export type SlugSorting = {
   source?: InputMaybe<SortOrder>;
 };
 
+export type SocialMediaIcon = {
+  __typename?: 'SocialMediaIcon';
+  _key?: Maybe<Scalars['String']>;
+  _type?: Maybe<Scalars['String']>;
+  altText?: Maybe<Scalars['String']>;
+  href?: Maybe<Scalars['String']>;
+  image?: Maybe<Images>;
+  newWindow?: Maybe<Scalars['Boolean']>;
+};
+
+export type SocialMediaIconFilter = {
+  _key?: InputMaybe<StringFilter>;
+  _type?: InputMaybe<StringFilter>;
+  altText?: InputMaybe<StringFilter>;
+  href?: InputMaybe<StringFilter>;
+  image?: InputMaybe<ImagesFilter>;
+  newWindow?: InputMaybe<BooleanFilter>;
+};
+
+export type SocialMediaIconSorting = {
+  _key?: InputMaybe<SortOrder>;
+  _type?: InputMaybe<SortOrder>;
+  altText?: InputMaybe<SortOrder>;
+  href?: InputMaybe<SortOrder>;
+  newWindow?: InputMaybe<SortOrder>;
+};
+
 export enum SortOrder {
   /** Sorts on the value in ascending order. */
   Asc = 'ASC',
@@ -1874,7 +1985,7 @@ export type TeamMembers = {
   memberDesignation?: Maybe<Scalars['String']>;
   memberName?: Maybe<Scalars['String']>;
   profilePicture?: Maybe<Image>;
-  socialMediaDetails?: Maybe<Array<Maybe<ImageIcon>>>;
+  socialMediaDetails?: Maybe<Array<Maybe<SocialMediaIcon>>>;
 };
 
 export type TeamMembersFilter = {
