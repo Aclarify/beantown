@@ -73,10 +73,10 @@ export default function Footer(props: IProps) {
 											className="para-4 lg:para-3 flex justify-start space-x-2 pt-2 text-gray-300"
 										>
 											<Image
-												alt={contactDtl.iconImage?.image?.asset?.altText || ''}
+												alt={contactDtl.iconImage?.asset?.altText || ''}
 												width={15}
 												height={15}
-												src={contactDtl.iconImage?.image?.asset?.url || ''}
+												src={contactDtl.iconImage?.asset?.url || ''}
 											/>
 											<span>{contactDtl.text}</span>
 										</div>
