@@ -1,9 +1,9 @@
 import React from 'react';
 import { ImageIcon, Maybe } from '@typing/gql/graphql';
-import Image from 'next/image';
 import Slider from 'react-slick';
 import 'slick-carousel/slick/slick.css';
 import 'slick-carousel/slick/slick-theme.css';
+import CMSImageWrapper from 'components/molecules/cms-image-wrapper.molecule';
 
 interface IProps extends React.HTMLAttributes<HTMLDivElement> {
 	brandsTitle: string;
@@ -83,7 +83,7 @@ const Brands: React.FC<IProps> = (props) => {
 					{props.brandsTitle}
 				</span>
 			</div>
-			<div className="slider-wrapper w-full pt-10" id="brands-slider">
+			<div className="slider-wrapper w-full pt-6" id="brands-slider">
 				<Slider {...settings}>
 					{props.logoArray?.map((logo, index) => {
 						return (
@@ -91,15 +91,14 @@ const Brands: React.FC<IProps> = (props) => {
 							logo.image && (
 								<div
 									key={index}
-									className="h-[92px] w-[182px] px-2 py-4 lg:mx-4 lg:h-[180px] lg:w-[354px] lg:py-10 lg:px-6"
+									className="h-[92px] w-[182px] px-2 py-4 lg:h-[180px] lg:w-[354px] lg:py-10 lg:px-10"
 								>
-									<Image
-										alt={logo?.image?.asset?.altText || ''}
-										width={350}
-										height={180}
-										src={logo?.image?.asset?.url || ''}
-										style={{ height: '100%' }}
-									/>
+									<div className="flex h-full items-center">
+										<CMSImageWrapper
+											altText={logo?.image?.asset?.altText || ''}
+											image={logo?.image || null}
+										/>
+									</div>
 								</div>
 							)
 						);
