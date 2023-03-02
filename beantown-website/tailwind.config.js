@@ -10,6 +10,7 @@ module.exports = {
 			screens: {
 				'3xl': '2500px',
 				'4xl': '3000px',
+				'5xl': '3740px',
 			},
 			fontFamily: {
 				neuePlak: ['var(--font-neue-plak)'],
