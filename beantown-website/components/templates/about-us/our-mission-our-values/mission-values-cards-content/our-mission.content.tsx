@@ -34,18 +34,10 @@ const OurMissionContent = () => {
 					<MaskedImageWithBackgroundVector
 						imageURL={missionImage?.asset?.url || ''}
 						imgAltText={missionImage?.asset?.altText || ''}
+						maskImg="./images/about-us/mission/about-us-mission-mask-blob.svg"
+						bgImg="./images/about-us/mission/about-us-mission-bg-blob.svg"
 						width={width > 768 ? 1000 : 500}
 						height={width > 768 ? 1000 : 500}
-						maskImg={
-							width > 768
-								? './images/about-us/mission/about-us-mission-mask-blob.svg'
-								: './images/about-us/mission/about-us-mission-mask-blob.svg'
-						}
-						bgImg={
-							width > 768
-								? './images/about-us/mission/about-us-mission-bg-blob.svg'
-								: './images/about-us/mission/about-us-mission-mask-blob.svg'
-						}
 					/>
 				</div>
 				<div

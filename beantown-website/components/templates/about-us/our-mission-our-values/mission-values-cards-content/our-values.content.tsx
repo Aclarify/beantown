@@ -56,16 +56,8 @@ const OurValuesContent = () => {
 						imgAltText={valuesImage?.asset?.altText || ''}
 						width={width > 768 ? 1000 : 500}
 						height={width > 768 ? 1000 : 500}
-						maskImg={
-							width > 768
-								? './images/about-us/values/about-us-values-mask-blob.svg'
-								: './images/about-us/values/about-us-values-mask-blob.svg'
-						}
-						bgImg={
-							width > 768
-								? './images/about-us/values/about-us-values-bg-blob.svg'
-								: './images/about-us/values/about-us-values-bg-blob.svg'
-						}
+						maskImg="./images/about-us/values/about-us-values-mask-blob.svg"
+						bgImg="./images/about-us/values/about-us-values-bg-blob.svg"
 					/>
 				</div>
 			</div>

@@ -27,7 +27,7 @@ const OurValuesCards = () => {
 									className="bg-secondary-shade-3  h-[140px] w-[120px] rounded-lg "
 								>
 									<Image
-										alt={'Transparency icon'}
+										alt={cardInfo?.iconImage?.asset?.altText || ''}
 										width={80}
 										height={80}
 										src={cardInfo?.iconImage?.asset?.url || ''}
