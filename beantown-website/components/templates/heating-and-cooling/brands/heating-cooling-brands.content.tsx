@@ -18,7 +18,7 @@ const HeatingCoolingBrandsContent = () => {
 		clonedLogoArray = [...clientsLogo, ...clientsLogo];
 	}
 	return (
-		<div className="3xl:py-[4em] lg:-mb-[1em] lg:py-[3em]">
+		<div className=" lg:-mb-[1em] lg:py-[2em] 2xl:py-[3em]">
 			{clonedLogoArray && (
 				<Brands
 					brandsTitle={brandsTitle || ''}
