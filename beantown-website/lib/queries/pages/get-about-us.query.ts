@@ -124,17 +124,9 @@ const aboutUsQuery = `allAboutUs {
 			}
 		}`;
 export default gql`
-<<<<<<< HEAD
-  query {
-   page: ${aboutUsQuery}
-		header: ${navQuery}
-		footer: ${footerQuery}
-  }
-=======
 	query {
 		page: ${aboutUsQuery}
 		header: ${navQuery}
 		footer: ${footerQuery}
 	}
->>>>>>> 62346547c57da57aa8cfe53b01a7cc542b1cb7bc
 `;
