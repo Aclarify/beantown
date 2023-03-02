@@ -13,8 +13,7 @@ export default function HomeTestimonials() {
 		return null;
 	}
 	const homeData = pageContent.page[0];
-	const { testimonialTitle, testimonialDescription, testimonialCards } =
-		homeData;
+	const { testimonialSection } = homeData;
 
 	return (
 		<section
@@ -43,9 +42,11 @@ export default function HomeTestimonials() {
 				className="z-1  absolute top-0 right-0 translate-x-[48%] -translate-y-[70%] transform md:hidden"
 			/>
 			<Testimonials
-				testimonialTitle={testimonialTitle || ''}
-				testimonialDescription={testimonialDescription || ''}
-				testimonialCards={testimonialCards || []}
+				testimonialTitle={testimonialSection?.testimonialTitle || ''}
+				testimonialDescription={
+					testimonialSection?.testimonialDescription || ''
+				}
+				testimonialCards={testimonialSection?.testimonialCards || []}
 			/>
 		</section>
 	);

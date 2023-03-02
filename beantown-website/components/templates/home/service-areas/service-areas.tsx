@@ -13,22 +13,23 @@ export default function HomeServiceAreas() {
 		return null;
 	}
 	const homeData = pageContent.page[0];
-	const {
-		serviceAreaTitle,
-		serviceAreaDescription,
-		serviceAreas,
-		serviceAreaImage,
-	} = homeData;
+	const { serviceAreaSection } = homeData;
 	return (
 		<section id="serviceAreas" className="relative mt-20 ">
 			<WaveWrapper waveURL="/images/home/service-area/home-service-area-top-wave.svg"></WaveWrapper>
 			<ServiceAreas
-				serviceAreaSectionTitle={serviceAreaTitle || ''}
-				serviceAreaDescription={serviceAreaDescription || ''}
-				serviceAreaImageSrc={serviceAreaImage?.asset?.url || ''}
-				serviceAreaImageAltText={serviceAreaImage?.asset?.altText || ''}
-				serviceAreaList={serviceAreas || null}
-				serviceAreaListTitle={serviceAreas?.title || ''}
+				serviceAreaSectionTitle={serviceAreaSection?.serviceAreaTitle || ''}
+				serviceAreaDescription={
+					serviceAreaSection?.serviceAreaDescription || ''
+				}
+				serviceAreaImageSrc={
+					serviceAreaSection?.serviceAreaImage?.asset?.url || ''
+				}
+				serviceAreaImageAltText={
+					serviceAreaSection?.serviceAreaImage?.asset?.altText || ''
+				}
+				serviceAreaList={serviceAreaSection?.serviceAreas || null}
+				serviceAreaListTitle={serviceAreaSection?.serviceAreas?.title || ''}
 			/>
 			<Image
 				src={'/images/home/blue-blob-shape-2.svg'}
