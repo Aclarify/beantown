@@ -1,12 +1,11 @@
 import useWindowDimensions from '@lib/hooks/use-window-dimensions.hook';
-import WaveWrapper from 'components/molecules/wave-wrapper.molecule';
 import React from 'react';
 import AboutUSFooterCTAContent from './about-us-footer-cta.content';
 
 
 
 const FooterCTASection = () => {
-	const { width } = useWindowDimensions();
+	
 	return (
 		<section
 			id="plumbing-cta"
