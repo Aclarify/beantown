@@ -91,9 +91,9 @@ const Brands: React.FC<IProps> = (props) => {
 							logo.image && (
 								<div
 									key={index}
-									className="h-[92px] w-[182px] px-2 py-4 lg:h-[180px] lg:w-[354px] lg:py-10 lg:px-10"
+									className="3xl:px-[10rem] 4xl:px-[13rem] 5xl:px-[18rem]  h-[92px] w-[182px] px-8 py-4 sm:px-[5rem] lg:h-[180px] lg:w-[354px] lg:p-10 2xl:px-[5rem] "
 								>
-									<div className="flex h-full items-center">
+									<div className="flex h-full items-center py-4">
 										<CMSImageWrapper
 											altText={logo?.image?.asset?.altText || ''}
 											image={logo?.image || null}
