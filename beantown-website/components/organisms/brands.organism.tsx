@@ -28,7 +28,6 @@ const settings = {
 				slidesToShow: 4,
 				slidesToScroll: 1,
 				infinite: true,
-				
 			},
 		},
 		{
@@ -37,7 +36,6 @@ const settings = {
 				slidesToShow: 4,
 				slidesToScroll: 1,
 				infinite: true,
-				
 			},
 		},
 		{
@@ -46,7 +44,6 @@ const settings = {
 				slidesToShow: 4,
 				slidesToScroll: 1,
 				infinite: true,
-				
 			},
 		},
 		{
@@ -55,7 +52,6 @@ const settings = {
 				slidesToShow: 3,
 				slidesToScroll: 1,
 				infinite: true,
-				
 			},
 		},
 		{
@@ -80,14 +76,14 @@ const settings = {
 const Brands: React.FC<IProps> = (props) => {
 	return (
 		<div
-			className={`${props.brandsBgColour} flex w-full flex-col space-y-5 pt-5 lg:pt-0 `}
+			className={`${props.brandsBgColour} flex w-full flex-col space-y-5 pt-5 pb-4 lg:pt-0 `}
 		>
 			<div className="flex  justify-center ">
 				<span className="title-5 lg:title-2 text-primary-black">
 					{props.brandsTitle}
 				</span>
 			</div>
-			<div className="slider-wrapper " id="brands-slider">
+			<div className="slider-wrapper w-full pt-10" id="brands-slider">
 				<Slider {...settings}>
 					{props.logoArray?.map((logo, index) => {
 						return (
@@ -95,15 +91,14 @@ const Brands: React.FC<IProps> = (props) => {
 							logo.image && (
 								<div
 									key={index}
-									className="h-[92px] w-[182px] md:h-[180px] md:w-[354px]"
+									className="h-[92px] w-[182px] px-2 py-4 lg:mx-4 lg:h-[180px] lg:w-[354px] lg:py-10 lg:px-6"
 								>
 									<Image
 										alt={logo?.image?.asset?.altText || ''}
 										width={350}
 										height={180}
 										src={logo?.image?.asset?.url || ''}
-										style={{ padding: '24px' }}
-										
+										style={{ height: '100%' }}
 									/>
 								</div>
 							)
