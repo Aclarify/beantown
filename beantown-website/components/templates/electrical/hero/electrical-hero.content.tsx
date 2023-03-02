@@ -30,7 +30,7 @@ const ElectricalHeroContent = () => {
 			isImageToBePrefetched={true}
 		>
 			<SectionContentWrapper>
-				<ContentWrapper className="px-3 pt-[2em] pb-[4em] text-center  md:py-[12em] lg:py-[6em] lg:px-0 lg:text-left">
+				<ContentWrapper className="px-3 text-center  lg:px-0 lg:text-left">
 					<ContentWrapper.Title className="mb-[8px] lg:mb-[16px]">
 						<h1 className="title-4 lg:title-1 text-black">{heroTitle}</h1>
 					</ContentWrapper.Title>
