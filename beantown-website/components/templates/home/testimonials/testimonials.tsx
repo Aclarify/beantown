@@ -43,78 +43,91 @@ export default function Testimonials() {
 
 	const previous = () => {
 		if (slider.current) {
-			slider.current.slickNext();
+			slider.current.slickPrev();
 		}
 	};
 	const next = () => {
 		if (slider.current) {
-			slider.current.slickPrev();
+			slider.current.slickNext();
 		}
 	};
 	const settings = {
-		speed: 500,
-		slidesToShow: 3.1,
+		dots: false,
+		infinite: true,
+		speed: 2000,
+		slidesToShow: 3,
 		slidesToScroll: 1,
-		arrows: false,
+		initialSlide: 0,
 		responsive: [
 			{
-				breakpoint: SCREEN_BREAKPOINTS.XL,
+				breakpoint: 320,
 				settings: {
-					slidesToShow: 2.16,
+					slidesToShow: 1,
 					slidesToScroll: 1,
 				},
 			},
 			{
-				breakpoint: SCREEN_BREAKPOINTS.LG,
+				breakpoint: 450,
 				settings: {
-					slidesToShow: 1.6,
+					slidesToShow: 1,
+					slidesToScroll: 1,
+				},
+			},
+
+			{
+				breakpoint: 720,
+				settings: {
+					slidesToShow: 2,
 					slidesToScroll: 1,
 				},
 			},
 			{
-				breakpoint: SCREEN_BREAKPOINTS.MD,
+				breakpoint: 820,
 				settings: {
-					slidesToShow: 3.1,
+					slidesToShow: 2,
 					slidesToScroll: 1,
 				},
 			},
 			{
-				breakpoint: 992,
+				breakpoint: 920,
 				settings: {
-					slidesToShow: 2.5,
+					slidesToShow: 3,
+					slidesToScroll: 1,
+				},
+			},
+			// 3 slide but square shape
+			{
+				breakpoint: 1000,
+				settings: {
+					slidesToShow: 3,
+					slidesToScroll: 1,
+				},
+			},
+
+			{
+				breakpoint: 1200,
+				settings: {
+					slidesToShow: 2,
 					slidesToScroll: 1,
 				},
 			},
 			{
-				breakpoint: SCREEN_BREAKPOINTS.SM,
+				breakpoint: 1600,
 				settings: {
-					slidesToShow: 2.1,
+					slidesToShow: 2,
 					slidesToScroll: 1,
 				},
 			},
 			{
-				breakpoint: 620,
+				breakpoint: 1900,
 				settings: {
-					slidesToShow: 1.8,
-					slidesToScroll: 1,
-				},
-			},
-			{
-				breakpoint: 520,
-				settings: {
-					slidesToShow: 1.3,
-					slidesToScroll: 1,
-				},
-			},
-			{
-				breakpoint: 420,
-				settings: {
-					slidesToShow: 1.1,
+					slidesToShow: 3,
 					slidesToScroll: 1,
 				},
 			},
 		],
 	};
+
 	const handleOnClose = () => {
 		setShowTestimonialModel(false);
 		// Unsets Background Scrolling to use when SideDrawer/Modal is closed
@@ -180,13 +193,13 @@ export default function Testimonials() {
 								</span>
 								<div className="mt-14 flex space-x-6">
 									<button
-										onClick={next}
+										onClick={previous}
 										className=" text-primary-shade-1 h-16 w-32 rounded-full bg-white py-4 px-6 text-lg"
 									>
 										<FontAwesomeIcon icon={faArrowLeft} />
 									</button>
 									<button
-										onClick={previous}
+										onClick={next}
 										className="text-primary-shade-1 bg-primary-shade-1 h-16 w-32 rounded-full py-4 px-6 text-lg md:text-white"
 									>
 										<FontAwesomeIcon icon={faArrowRight} />
@@ -195,13 +208,10 @@ export default function Testimonials() {
 							</div>
 						</div>
 						<div className="slider-wrapper w-full lg:w-3/4 ">
-							<Slider ref={slider} {...settings} className="">
+							<Slider ref={slider} {...settings}>
 								{testimonialCards?.map((reviews, index) => {
 									return (
-										<div
-											className="testimonial-card-wrapper h-[358px] w-[280px]  px-2 lg:h-[556px] lg:w-[378px] lg:px-2 xl:px-5"
-											key={index}
-										>
+										<div className="testimonial-card-wrapper  " key={index}>
 											<TestimonialCard
 												key={index}
 												clientName={reviews?.titleText || ''}
@@ -218,13 +228,13 @@ export default function Testimonials() {
 
 					<div className="mt-2 flex justify-end gap-4 pt-4 pr-4 lg:hidden ">
 						<button
-							onClick={next}
+							onClick={previous}
 							className="text-primary-shade-1 h-12 w-20 rounded-full  bg-white py-2 px-4"
 						>
 							<FontAwesomeIcon icon={faArrowLeft} />
 						</button>
 						<button
-							onClick={previous}
+							onClick={next}
 							className=" bg-primary-shade-1 h-12 w-20 rounded-full py-2 px-4 text-white"
 						>
 							<FontAwesomeIcon icon={faArrowRight} />

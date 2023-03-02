@@ -150,33 +150,8 @@
 	}
 }
 
-/* .slick-slide > div {
-	margin: 0 25px;
-} */
-.slick-list {
-	margin: 0 -25px;
-}
 
-.slick-list {
-	padding: 0 20% 0 0 !important;
-}
 
-/* .slick-slide.slick-active.slick-current {
-	margin-left: 40px !important;
-}
 
-@media screen and (min-width: 768px) {
-	.slick-slide.slick-active.slick-current {
-		margin-left: 40px !important;
-	}
-}
 
-@media screen and (min-width: 1280px) {
-	.slick-slide.slick-active.slick-current {
-		margin-left: 20px !important;
-	}
-} */
 
-/* .slick-slide:not(.slick-active) {
-	opacity: 0.5;
-} */

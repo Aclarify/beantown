@@ -143,6 +143,8 @@ const homeQuery = ` allHome {
 				image {
 					asset {
 						url
+						_id
+            			_key
 					}
 				}
 			}
