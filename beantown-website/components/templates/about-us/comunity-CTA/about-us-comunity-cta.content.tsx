@@ -19,9 +19,11 @@ const ComunityCTAContent = () => {
 		<CTAWithImage
 			heroImageURL={communityctaImage?.asset?.url || ''}
 			heroImageAltText={'Hero image'}
-			textContentBGImage={'/images/plumbing/cta/plumbing-cta-bg-vector.svg'}
+			textContentBGImage={
+				'/images/about-us/footer-CTA/footer-cta-bg-vector.svg'
+			}
 			textContentBGImageForSmallScreen={
-				'/images/plumbing/cta/plumbing-cta-bg-vector-mobile.svg'
+				'/images/about-us/footer-CTA/footer-cta-bg-vector-mobile.svg'
 			}
 			heroImagePosition="left"
 			bgColor="var(--primary-color-shade-2-rgb)"
