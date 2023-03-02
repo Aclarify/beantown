@@ -5,7 +5,7 @@ import AboutUSFooterCTAContent from './about-us-footer-cta.content';
 
 
 
-const AboutUSFooterCTASection = () => {
+const FooterCTASection = () => {
 	const { width } = useWindowDimensions();
 	return (
 		<section
@@ -19,4 +19,4 @@ const AboutUSFooterCTASection = () => {
 		</section>
 	);
 };
-export default AboutUSFooterCTASection;
+export default FooterCTASection;

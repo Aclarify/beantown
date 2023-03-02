@@ -74,23 +74,22 @@ const MeetOurTeam =()=>{
 											<div id="Designation">
 												<span>{content?.memberDesignation}</span>
 											</div>
-											{content.socialMediaDetails?.map((details, index) => {
-												return (
-													<div id="socialMediaIconGroupicons" className="flex">
-														<div
-															key={index}
-															className=""
-														>
-															<Image
-																alt={details?.image?.name || ''}
-																width={26}
-																height={26}
-																src={details?.image?.image?.asset?.url || ''}
-															/>
+											<div className="flex">
+												{content.socialMediaDetails?.map((details, index) => {
+													return (
+														<div id="socialMediaIconGroupicons" key={index}>
+															<div>
+																<Image
+																	alt={details?.image?.name || ''}
+																	width={26}
+																	height={26}
+																	src={details?.image?.image?.asset?.url || ''}
+																/>
+															</div>
 														</div>
-													</div>
-												);
-											})}
+													);
+												})}
+											</div>
 										</div>
 									</div>
 								)

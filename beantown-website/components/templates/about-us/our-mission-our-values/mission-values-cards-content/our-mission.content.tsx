@@ -25,7 +25,7 @@ const OurMissionContent = () => {
 		>
 			<div
 				id="content-image-wrapper"
-				className="flex w-full flex-col-reverse items-center  lg:flex  lg:flex-row "
+				className="flex w-full flex-col items-center  lg:flex  lg:flex-row "
 			>
 				<div
 					id="image-wrapper"
@@ -38,13 +38,13 @@ const OurMissionContent = () => {
 						height={width > 768 ? 1000 : 500}
 						maskImg={
 							width > 768
-								? './images/plumbing/about/plumbing-services-blob-mask.svg'
-								: './images/plumbing/about/plumbing-services-blob-mask-mobile.svg'
+								? './images/about-us/mission/about-us-mission-mask-blob.svg'
+								: './images/about-us/mission/about-us-mission-mask-blob.svg'
 						}
 						bgImg={
 							width > 768
-								? './images/plumbing/about/plumbing-services-bg-blob.svg'
-								: './images/plumbing/about/plumbing-services-bg-blob-mobile.svg'
+								? './images/about-us/mission/about-us-mission-bg-blob.svg'
+								: './images/about-us/mission/about-us-mission-mask-blob.svg'
 						}
 					/>
 				</div>

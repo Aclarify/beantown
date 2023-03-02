@@ -6,7 +6,7 @@ import CTAWithImage from 'components/organisms/cta-with-image.organism';
 import CtaWrapper from 'components/molecules/cta-wrapper.molecule';
 import { AboutUsContentProps } from 'pages/about-us';
 
-const AboutUSComunityCTAContent = () => {
+const ComunityCTAContent = () => {
 	const { pageContent } =
 		useContext<GlobalContextProps<AboutUsContentProps>>(GlobalContext);
 	if (!pageContent) {
@@ -42,4 +42,4 @@ const AboutUSComunityCTAContent = () => {
 	);
 };
 
-export default AboutUSComunityCTAContent;
+export default ComunityCTAContent;

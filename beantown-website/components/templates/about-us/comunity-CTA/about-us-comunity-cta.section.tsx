@@ -1,10 +1,9 @@
 import useWindowDimensions from '@lib/hooks/use-window-dimensions.hook';
-import WaveWrapper from 'components/molecules/wave-wrapper.molecule';
 import React from 'react';
-import AboutUSComunityCTAContent from './about-us-comunity-cta.content';
+import ComunityCTAContent from './about-us-comunity-cta.content';
 
 
-const AboutUSComunityCTASection = () => {
+const ComunityCTASection = () => {
 	const { width } = useWindowDimensions();
 	return (
 		<section
@@ -13,9 +12,8 @@ const AboutUSComunityCTASection = () => {
 			//className=" 3xl:mt-[-14em] relative mt-[-7em] sm:mt-[-8em] md:mt-[-11em] xl:mt-[-10em] 2xl:mt-[-12em] "
 		>
 			
-			<AboutUSComunityCTAContent />
-		
+			<ComunityCTAContent />		
 		</section>
 	);
 };
-export default AboutUSComunityCTASection;
+export default ComunityCTASection;
