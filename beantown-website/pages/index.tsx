@@ -3,7 +3,6 @@ import HomeFaq from '../components/templates/home/faq/faq.section';
 import FooterCta from '../components/templates/home/footer-cta-home';
 import React, { useContext } from 'react';
 import ServiceAreas from '../components/templates/home/service-areas/service-areas';
-import Testimonials from '../components/templates/home/testimonials/testimonials';
 import WhyUs from '../components/templates/home/why-us/why-us';
 import Services from '../components/templates/home/services/services';
 import HomeHero from '../components/templates/home/home-hero';
@@ -20,6 +19,7 @@ import { GlobalContext } from '@contexts/global/global.context';
 import Header from 'components/organisms/nav';
 import FooterSection from 'components/organisms/footer';
 import CtaWrapper from 'components/molecules/cta-wrapper.molecule';
+import HomeTestimonials from '../components/templates/home/testimonials/testimonials';
 
 export interface HomePageContentProps {
 	page: Home[];
@@ -76,7 +76,7 @@ const HomePage: React.FC = (props) => {
 			<HomeHero />
 			<Services />
 			<WhyUs />
-			<Testimonials />
+			<HomeTestimonials />
 			<ServiceAreas />
 			<HomeBlogs />
 			<HomeFaq />
