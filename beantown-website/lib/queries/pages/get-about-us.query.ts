@@ -122,9 +122,7 @@ const aboutUsQuery = `allAboutUs {
 				text
 				href
 			}
-		}
-	}`;
-
+		}`;
 export default gql`
 	query {
 		page: ${aboutUsQuery}

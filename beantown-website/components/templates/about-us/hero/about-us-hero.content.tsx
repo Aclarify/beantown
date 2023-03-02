@@ -2,10 +2,8 @@ import React, { useContext } from 'react';
 import { GlobalContext } from '@contexts/global/global.context';
 import { GlobalContextProps } from '@typing/common/interfaces/contexts.interface';
 import { AboutUsContentProps } from 'pages/about-us';
-import RichText from 'components/molecules/rich-text.molecule';
 import ContentWrapper from 'components/organisms/content-wrapper.organism';
 import Image from 'next/image';
-import CtaWrapper from 'components/molecules/cta-wrapper.molecule';
 
 const AboutUsHeroContent = () => {
 	const { pageContent } =
@@ -27,8 +25,8 @@ const AboutUsHeroContent = () => {
 							{heroTitle}
 						</h1>
 					</ContentWrapper.Title>
-					<ContentWrapper.Description className="para-4 lg:para-2">
-						<RichText value={heroDescription} />
+					<ContentWrapper.Description>
+						<span className="para-4 lg:para-2">{heroDescription}</span>
 					</ContentWrapper.Description>
 				</ContentWrapper>
 			</div>
