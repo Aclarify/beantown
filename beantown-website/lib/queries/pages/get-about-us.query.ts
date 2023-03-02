@@ -87,7 +87,7 @@ const aboutUsQuery = `allAboutUs {
 					altText
 				}
 			}
-			serviceAreas {
+			serviceAreaSection {
 				serviceAreaTitle
 				serviceAreaDescription
 				serviceAreaImage {
@@ -100,7 +100,7 @@ const aboutUsQuery = `allAboutUs {
 					listItem
 				}
 			}
-			testimonials {
+			testimonialSection {
 				testimonialTitle
 				testimonialDescription
 				testimonialCards {
@@ -122,6 +122,7 @@ const aboutUsQuery = `allAboutUs {
 				text
 				href
 			}
+		
 		}`;
 export default gql`
 	query {
