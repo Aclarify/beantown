@@ -1,9 +1,7 @@
-import useWindowDimensions from '@lib/hooks/use-window-dimensions.hook';
 import React from 'react';
 import CommunityCTAContent from './about-us-community-cta.content';
 
 const CommunityCTASection = () => {
-	const { width } = useWindowDimensions();
 	return (
 		<section
 			id="plumbing-cta"
