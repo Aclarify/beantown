@@ -32,16 +32,16 @@ export default function FooterCta() {
 					heroImagePosition="right"
 					bgColor="var(--secondary-color-shade-2-rgb)"
 				>
-					<ContentWrapper className="2xl:padding-for-section px-10 pt-[2em] pb-[4em] text-center md:px-[10em] md:py-[12em] lg:px-10 lg:py-[10em] lg:text-left xl:py-[12em] 2xl:py-[18em]">
-						<ContentWrapper.Title className="mb-[8px]   lg:mb-[16px]">
-							<h1 className="title-5 lg:title-2 text-primary-shade-1">
+					<ContentWrapper className="2xl:padding-for-section flex flex-col justify-between px-[5em] text-center sm:px-[12em] md:px-[9em] lg:px-[2em]  lg:text-left">
+						<ContentWrapper.Title className="mb-2 px-2 md:px-[9rem] lg:mb-4 lg:px-0">
+							<h1 className="title-5 lg:title-2 text-primary-shade-1 lg:leading-[70px]">
 								{ctaTitle}
 							</h1>
 						</ContentWrapper.Title>
 						<ContentWrapper.Description>
 							<RichText value={ctaDescription?.contentRaw} />
 						</ContentWrapper.Description>
-						<ContentWrapper.CTA className="mt-[32px]">
+						<ContentWrapper.CTA className="mt-8 pb-[1em] lg:pb-0">
 							<CtaWrapper.CTA className="para-3 lg:para-2 bg-primary-shade-1 h-[52px] w-[184px] rounded-lg py-1 px-4 tracking-wide text-white  md:py-2  md:px-8  lg:h-[64px] lg:w-[198px] lg:tracking-wider ">
 								<p>{finalCtaButton?.text}</p>
 							</CtaWrapper.CTA>

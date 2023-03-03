@@ -10,7 +10,7 @@ const AboutElectricalServiceSection = () => {
 	return (
 		<section
 			id="repairs-installation-upgrades"
-			className=" 3xl:mt-[-10em] relative z-10 mt-[-4em] sm:mt-[-6em] md:mt-[-9em] lg:mt-[-4em] 2xl:mt-[-6em] "
+			className=" 3xl:mt-[-10em] xs:mt-[-4em] relative z-10 mt-[-5em] sm:mt-[-6em] md:mt-[-9em] lg:mt-[-4em] 2xl:mt-[-6em] "
 		>
 			<WaveWrapper
 				waveURL={

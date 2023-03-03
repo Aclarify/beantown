@@ -26,12 +26,14 @@ const PlumbingCTAContent = () => {
 			heroImagePosition="left"
 			bgColor="var(--services-green-color-rgb)"
 		>
-			<ContentWrapper>
-				<ContentWrapper.Title>
-					<h1 className="title-5 lg:title-2 text-white">{ctaTitle}</h1>
+			<ContentWrapper className="2xl:padding-for-section flex flex-col justify-between px-[5em] text-center sm:px-[12em] md:px-[9em] lg:px-[2em]  lg:text-left">
+				<ContentWrapper.Title className="  mb-2 px-2 md:px-[9rem] lg:mb-4 lg:px-0">
+					<h1 className="title-5 lg:title-2 text-white lg:leading-[70px]">
+						{ctaTitle}
+					</h1>
 				</ContentWrapper.Title>
-				<ContentWrapper.CTA>
-					<CtaWrapper.CTA className="text-service-green bg-white ">
+				<ContentWrapper.CTA className="mt-8 pb-[1em] lg:pb-0">
+					<CtaWrapper.CTA className="para-3 lg:para-2 text-service-green h-[52px] w-[184px] rounded-lg bg-white py-1 px-4  tracking-wide  md:py-2  md:px-8 lg:h-[64px] lg:w-[198px]  lg:tracking-wider ">
 						<p>{ctaButton?.text}</p>
 					</CtaWrapper.CTA>
 				</ContentWrapper.CTA>

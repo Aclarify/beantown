@@ -36,7 +36,7 @@ const PlumbingHeroContent = () => {
 					<ContentWrapper.Description className="text-white">
 						<RichText value={heroDescription?.contentRaw} />
 					</ContentWrapper.Description>
-					<ContentWrapper.CTA className="mt-[28px] pb-[2em] lg:pb-10">
+					<ContentWrapper.CTA className=" mt-4 pb-[2em] lg:mt-8 lg:pb-10">
 						<CtaWrapper.CTA className="bg-primary-shade-1 para-3 lg:para-2 h-[52px] w-[184px] rounded-lg py-1 px-4 tracking-wide text-white  md:py-2 md:px-8 lg:h-[64px] lg:w-[182px] lg:tracking-wider">
 							<p>{heroButton?.text}</p>
 						</CtaWrapper.CTA>
