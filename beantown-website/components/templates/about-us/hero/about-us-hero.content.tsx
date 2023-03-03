@@ -17,9 +17,9 @@ const AboutUsHeroContent = () => {
 		<section id="home_page_hero" className="relative">
 			<div
 				id="content-wrapper"
-				className="z-1 2xl:padding-for-section flex w-3/4 items-center px-6  text-white lg:w-[50%] "
+				className="z-1 2xl:padding-for-section flex w-full items-center justify-center px-6  text-white  "
 			>
-				<ContentWrapper className="relative z-[2] pt-28 pb-20 md:pt-48 md:pb-48 xl:pt-80 xl:pb-80">
+				<ContentWrapper className="relative z-[2] pt-28 pb-20 text-center md:py-48 lg:w-1/2  xl:py-80">
 					<ContentWrapper.Title className=" mb-2  lg:mb-4">
 						<h1 className="title-5 xl:title-1 leading-[36px] xl:leading-[90px]">
 							{heroTitle}
@@ -32,7 +32,7 @@ const AboutUsHeroContent = () => {
 			</div>
 			<div
 				id="image-wrapper-desktop"
-				className="after:z-1 after:from-home-hero-gradient-start after:to-home-hero-gradient-end absolute top-0 z-0 hidden h-full w-full after:absolute after:top-0 after:left-0 after:h-full after:w-full after:bg-gradient-to-b sm:block"
+				className="after:z-1 after:from-aboutUs-hero-gradient-start after:to-aboutUs-hero-gradient-end absolute top-0 z-0 hidden h-full w-full after:absolute after:top-0 after:left-0 after:h-full after:w-full after:bg-gradient-to-b sm:block"
 			>
 				<Image
 					alt={heroImage?.asset?.altText || ''}

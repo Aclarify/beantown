@@ -7,7 +7,7 @@ import MaskedImageWithBackgroundVector from 'components/organisms/masked-image-w
 import useWindowDimensions from '@lib/hooks/use-window-dimensions.hook';
 
 import { AboutUsContentProps } from 'pages/about-us';
-const OurMissionContent = () => {
+const ValuesContent = () => {
 	const { pageContent } =
 		useContext<GlobalContextProps<AboutUsContentProps>>(GlobalContext);
 	const { width } = useWindowDimensions();
@@ -16,7 +16,7 @@ const OurMissionContent = () => {
 		return null;
 	}
 	const pageData = pageContent.page[0];
-	const { missionTitle, missionDescription, missionImage } = pageData;
+	const { valuesTitle, valuesDescription, valuesImage } = pageData;
 
 	return (
 		<div
@@ -25,21 +25,8 @@ const OurMissionContent = () => {
 		>
 			<div
 				id="content-image-wrapper"
-				className="flex w-full flex-col items-center  lg:flex  lg:flex-row "
+				className="flex w-full flex-col-reverse items-center  lg:flex  lg:flex-row "
 			>
-				<div
-					id="image-wrapper"
-					className="mb-8 md:mt-12  md:basis-1/2 md:px-20 lg:px-10  "
-				>
-					<MaskedImageWithBackgroundVector
-						imageURL={missionImage?.asset?.url || ''}
-						imgAltText={missionImage?.asset?.altText || ''}
-						maskImg="./images/about-us/mission/about-us-mission-mask-blob.svg"
-						bgImg="./images/about-us/mission/about-us-mission-bg-blob.svg"
-						width={width > 768 ? 1000 : 500}
-						height={width > 768 ? 1000 : 500}
-					/>
-				</div>
 				<div
 					id="content-wrapper"
 					className="z-10 flex basis-1/2 flex-col items-start text-left lg:pt-20 "
@@ -47,17 +34,30 @@ const OurMissionContent = () => {
 					<ContentWrapper>
 						<ContentWrapper.Title>
 							<h1 className="title-5 lg:title-2 text-primary-black ">
-								{missionTitle}
+								{valuesTitle}
 							</h1>
 						</ContentWrapper.Title>
 						<ContentWrapper.Description className="para-4 lg:para-2 text-left !font-thin">
-							<RichText value={missionDescription?.contentRaw} />
+							<RichText value={valuesDescription?.contentRaw} />
 						</ContentWrapper.Description>
 					</ContentWrapper>
+				</div>
+				<div
+					id="image-wrapper"
+					className="mb-8 md:mt-12  md:basis-1/2 md:px-20 lg:px-10  "
+				>
+					<MaskedImageWithBackgroundVector
+						imageURL={valuesImage?.asset?.url || ''}
+						imgAltText={valuesImage?.asset?.altText || ''}
+						width={width > 768 ? 1000 : 500}
+						height={width > 768 ? 1000 : 500}
+						maskImg="./images/about-us/values/about-us-values-mask-blob.svg"
+						bgImg="./images/about-us/values/about-us-values-bg-blob.svg"
+					/>
 				</div>
 			</div>
 		</div>
 	);
 };
 
-export default OurMissionContent;
+export default ValuesContent;

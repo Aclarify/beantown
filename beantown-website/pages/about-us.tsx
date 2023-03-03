@@ -13,9 +13,11 @@ import { GlobalContext } from '@contexts/global/global.context';
 import CtaWrapper from 'components/molecules/cta-wrapper.molecule';
 import TeamSection from 'components/templates/about-us/team/meet-our-team.section';
 import AboutUsHeroSection from 'components/templates/about-us/hero/about-us-hero.section';
-import OurMissionOurValuesSection from 'components/templates/about-us/our-mission-our-values/our-mission-our-values.section';
-import FooterCTASection from 'components/templates/about-us/footer-CTA/about-us-footer-cta.section';
-import ComunityCTASection from 'components/templates/about-us/comunity-CTA/about-us-comunity-cta.section';
+import CTASection from 'components/templates/about-us/cta/about-us-cta.section';
+import CommunityCTASection from 'components/templates/about-us/community-cta/about-us-community-cta.section';
+import MissionValuesSection from 'components/templates/about-us/mission/mission.section';
+import AboutUsTestimonials from 'components/templates/about-us/testimonials/about-us-testimonials';
+import AboutUsServiceAreas from 'components/templates/about-us/service-areas/service-areas';
 export interface AboutUsContentProps {
 	page: AboutUs[];
 	header: Nav[];
@@ -66,10 +68,12 @@ const AboutUsPage: React.FC = (props) => {
 				</div>
 			</Header>
 			<AboutUsHeroSection />
-			<OurMissionOurValuesSection />
-			<ComunityCTASection />
+			<MissionValuesSection />
+			<CommunityCTASection />
 			<TeamSection />
-			<FooterCTASection />
+			<AboutUsServiceAreas />
+			<AboutUsTestimonials />
+			<CTASection />
 			<FooterSection
 				logoDesktop={logoDesktop?.image}
 				logoMobile={logoMobile?.image}
