@@ -15,10 +15,7 @@ export default function AboutUsTestimonials() {
 	const { testimonialSection } = pageData;
 
 	return (
-		<section
-			id="testimonialSection"
-			className=" bg-secondary-shade-3  relative bottom-[24rem] -mb-[24rem]  "
-		>
+		<section id="testimonialSection" className=" bg-secondary-shade-3     ">
 			<Testimonials
 				testimonialTitle={testimonialSection?.testimonialTitle || ''}
 				testimonialDescription={
