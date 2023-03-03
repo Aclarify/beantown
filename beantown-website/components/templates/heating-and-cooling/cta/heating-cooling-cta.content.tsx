@@ -28,7 +28,7 @@ const HeatingCoolingPageCTAContent = () => {
 		>
 			<ContentWrapper>
 				<ContentWrapper.Title>
-					<h1 className=" text-white">{ctaTitle}</h1>
+					<h1 className="title-5 lg:title-2 text-white">{ctaTitle}</h1>
 				</ContentWrapper.Title>
 				<ContentWrapper.CTA>
 					<CtaWrapper.CTA className=" lg:text-service-red text-primary-black bg-white  ">

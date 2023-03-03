@@ -10,7 +10,7 @@ const Title: React.FC<TitleProps> = (props) => {
 	return (
 		<div
 			className={clsx(
-				'title-5 lg:title-2 mb-2 px-2 md:px-[9rem] lg:mb-4 lg:px-0 lg:leading-[70px]',
+				' mb-2 px-2 md:px-[9rem] lg:mb-4 lg:px-0 lg:leading-[70px]',
 				props.className
 			)}
 		>

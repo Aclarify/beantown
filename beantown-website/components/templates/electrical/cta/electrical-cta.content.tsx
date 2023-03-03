@@ -27,7 +27,7 @@ const ElectricalPageCTAContent = () => {
 		>
 			<ContentWrapper>
 				<ContentWrapper.Title>
-					<h1 className="text-black">{ctaTitle}</h1>
+					<h1 className="title-5 lg:title-2 text-black">{ctaTitle}</h1>
 				</ContentWrapper.Title>
 				<ContentWrapper.CTA>
 					<CtaWrapper.CTA className="  text-primary-black  bg-white ">

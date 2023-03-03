@@ -133,7 +133,7 @@ const CTAWithImage: React.FC<IProps> = ({
 						'relative flex w-full items-center justify-center bg-gradient-to-t'
 					)}
 				>
-					<div className="z-4  flex flex-col  justify-between px-[4em] pt-[2em] pb-[4em] text-center sm:px-[10em] md:py-48 md:px-[7em]">
+					<div className="z-4  xs:px-[3em] flex  flex-col justify-between px-[4em] pt-[2em] pb-[4em] text-center sm:px-[15em] md:py-48 md:px-[7em]">
 						{children}
 					</div>
 					<div
