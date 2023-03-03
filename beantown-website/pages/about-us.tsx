@@ -17,7 +17,7 @@ import CTASection from 'components/templates/about-us/cta/about-us-cta.section';
 import MissionValuesSection from 'components/templates/about-us/mission/mission.section';
 import AboutUsTestimonials from 'components/templates/about-us/testimonials/about-us-testimonials';
 import AboutUsServiceAreas from 'components/templates/about-us/service-areas/service-areas';
-import CommunityCTASection from 'components/templates/about-us/community-CTA/about-us-community-cta.section';
+import CommunityCTASection from 'components/templates/about-us/community-cta/about-us-community-cta.section';
 export interface AboutUsContentProps {
 	page: AboutUs[];
 	header: Nav[];
