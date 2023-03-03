@@ -22,21 +22,7 @@ const Testimonials: React.FC<IProps> = (props) => {
 	const slider = React.useRef<Slider | null>(null);
 	const [showTestimonialModel, setShowTestimonialModel] = useState(false);
 	const [selectedTestimonial, setSelectedTestimonial] = useState<any>(null);
-	const [currentIndex, setCurrentIndex] = useState(0);
-	const maxScrollWidth = useRef(0);
-	const carousel = useRef<any>(null);
-
-	useEffect(() => {
-		maxScrollWidth.current = carousel.current
-			? carousel.current.scrollWidth - carousel.current.offsetWidth
-			: 0;
-	}, []);
-	useEffect(() => {
-		if (carousel !== null && carousel.current !== null) {
-			carousel.current.scrollLeft = carousel.current.offsetWidth * currentIndex;
-		}
-	}, [currentIndex]);
-
+	
 	const previous = () => {
 		if (slider.current) {
 			slider.current.slickPrev();

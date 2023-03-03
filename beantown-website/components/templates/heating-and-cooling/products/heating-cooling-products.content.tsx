@@ -23,40 +23,47 @@ const HeatingCoolingProductsCardContent = () => {
 
 	const previous = () => {
 		if (slider.current) {
-			slider.current.slickNext();
+			slider.current.slickPrev();
 		}
 	};
 	const next = () => {
 		if (slider.current) {
-			slider.current.slickPrev();
+			slider.current.slickNext();
 		}
 	};
 	const settings = {
-		speed: 500,
-		slidesToShow: 4.1,
+		dots: false,
+		infinite: true,
+		speed: 2000,
+		slidesToShow: 4,
 		slidesToScroll: 1,
-		initialSlide: 0,
 		arrows: false,
+		initialSlide: 0,
+		focusOnSelect: true,
+		variableWidth: true,
 		responsive: [
 			{
 				breakpoint: SCREEN_BREAKPOINTS.XXL,
 				settings: {
 					slidesToShow: 4.05,
 					slidesToScroll: 1,
+					variableWidth: true,
 				},
 			},
 			{
 				breakpoint: SCREEN_BREAKPOINTS.XL,
 				settings: {
-					slidesToShow: 3.05,
+					slidesToShow: 3.5,
 					slidesToScroll: 1,
+					variableWidth: true,
 				},
 			},
 			{
 				breakpoint: SCREEN_BREAKPOINTS.LG,
 				settings: {
-					slidesToShow: 2.1,
+					slidesToShow: 3.5,
 					slidesToScroll: 1,
+					variableWidth: true,
 				},
 			},
 			{
@@ -64,20 +71,23 @@ const HeatingCoolingProductsCardContent = () => {
 				settings: {
 					slidesToShow: 3.1,
 					slidesToScroll: 1,
+					variableWidth: true,
 				},
 			},
 			{
 				breakpoint: SCREEN_BREAKPOINTS.SM,
 				settings: {
-					slidesToShow: 2.1,
+					slidesToShow: 2.5,
 					slidesToScroll: 1,
+					variableWidth: true,
 				},
 			},
 			{
 				breakpoint: SCREEN_BREAKPOINTS.XS,
 				settings: {
-					slidesToShow: 1.1,
+					slidesToShow: 1.5,
 					slidesToScroll: 1,
+					variableWidth: true,
 				},
 			},
 		],
@@ -105,45 +115,43 @@ const HeatingCoolingProductsCardContent = () => {
 						</button>
 					</div>
 				</div>
-			</SectionContentWrapper>
-
-			<div>
-				<div className="w-full pt-8 lg:pl-12 xl:pl-16 2xl:pl-[120px]">
-					<Slider ref={slider} {...settings} className="">
-						{productsGroup?.map((productInfo, index) => {
-							return (
-								<div
-									className="product-card-wrapper  !flex justify-center px-1 xl:px-2"
-									key={index}
-								>
-									<ProductCard
+				<div>
+					<div className="w-full pt-8 ">
+						<Slider ref={slider} {...settings} className="">
+							{productsGroup?.map((productInfo, index) => {
+								return (
+									<div
+										className="product-card-wrapper  !flex justify-center px-1 xl:px-2"
 										key={index}
-										title={productInfo?.titleText || ''}
-										image={productInfo?.image || null}
-										thumbnailAltText={'Heating and Cooling Product Images'}
-										description={productInfo?.description || ''}
-									/>
-								</div>
-							);
-						})}
-					</Slider>
+									>
+										<ProductCard
+											key={index}
+											title={productInfo?.titleText || ''}
+											image={productInfo?.image || null}
+											thumbnailAltText={'Heating and Cooling Product Images'}
+											description={productInfo?.description || ''}
+										/>
+									</div>
+								);
+							})}
+						</Slider>
+					</div>
 				</div>
-			</div>
-
-			<div className="flex justify-center gap-4 pt-8 lg:hidden ">
-				<button
-					onClick={next}
-					className="lg:text-service-red text-primary-shade-1 bg-secondary-shade-3 h-12 w-20  rounded-full py-2 px-4"
-				>
-					<FontAwesomeIcon icon={faArrowLeft} />
-				</button>
-				<button
-					onClick={previous}
-					className=" bg-service-red h-12 w-20 rounded-full py-2 px-4 text-white"
-				>
-					<FontAwesomeIcon icon={faArrowRight} />
-				</button>
-			</div>
+				<div className="-mt-96 relative flex justify-center gap-4  lg:hidden ">
+					<button						
+						onClick={previous}					
+						className="lg:text-service-red text-primary-shade-1 bg-secondary-shade-3 h-12 w-20  rounded-full py-2 px-4"
+					>
+						<FontAwesomeIcon icon={faArrowLeft} />
+					</button>
+					<button						
+						onClick={next}
+						className=" bg-service-red h-12 w-20 rounded-full py-2 px-4 text-white"
+					>
+						<FontAwesomeIcon icon={faArrowRight} />
+					</button>
+				</div>
+			</SectionContentWrapper>
 		</>
 	);
 };
