@@ -47,7 +47,7 @@ const MeetOurTeam =()=>{
 										key={index}
 										id="card"
 										// className="flex h-[240]   w-[182px] flex-col space-x-4 rounded-lg bg-white shadow-[rgba(29,_39,_87,_0.08)_4px_8px_60px] md:flex md:h-[298px] md:w-[480px] md:flex-row "
-										className="flex flex-col sm:space-x-2 p-1  sm:p-2 rounded-lg bg-white shadow-[rgba(29,_39,_87,_0.08)_4px_8px_60px] sm:flex  sm:flex-row "
+										className="flex flex-col   p-1  sm:p-2 rounded-lg bg-white shadow-[rgba(29,_39,_87,_0.08)_4px_8px_60px] sm:flex  sm:flex-row "
 									>
 										{/* <div className="flex h-full items-center">
 											<CMSImageWrapper
@@ -58,7 +58,7 @@ const MeetOurTeam =()=>{
 										
 										<div
 											id="profileInfo-wrapper"
-											className="sm:flex sm:justify-between "
+											className="sm:flex justify-between sm:space-x-5 "
 										>
 											<div className="h-[150px] w-[150px]   rounded-lg fill-current md:h-[200px] md:w-[200px] ">
 												<Image
