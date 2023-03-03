@@ -1,6 +1,6 @@
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faArrowRight, faArrowLeft } from '@fortawesome/free-solid-svg-icons';
-import React, { useState, useContext, useEffect, useRef } from 'react';
+import React, { useState, useEffect, useRef } from 'react';
 import {
 	TitleDescription as TestimonialCards,
 	Maybe,
@@ -182,7 +182,10 @@ const Testimonials: React.FC<IProps> = (props) => {
 						<Slider ref={slider} {...settings}>
 							{props.testimonialCards?.map((reviews, index) => {
 								return (
-									<div className="testimonial-card-wrapper  " key={index}>
+									<div
+										className="testimonial-card-wrapper outline-none"
+										key={index}
+									>
 										<TestimonialCard
 											key={index}
 											clientName={reviews?.titleText || ''}
