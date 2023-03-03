@@ -50,31 +50,36 @@ const Testimonials: React.FC<IProps> = (props) => {
 		dots: false,
 		infinite: true,
 		speed: 2000,
-		slidesToShow: 3,
+		slidesToShow: 4,
 		slidesToScroll: 1,
 		arrows: false,
 		initialSlide: 0,
+		focusOnSelect: true,
+		variableWidth: true,
 		responsive: [
 			{
 				breakpoint: 320,
 				settings: {
-					slidesToShow: 1,
+					slidesToShow: 1.2,
 					slidesToScroll: 1,
+					variableWidth: true,
 				},
 			},
 			{
 				breakpoint: 450,
 				settings: {
-					slidesToShow: 1,
+					slidesToShow: 1.2,
 					slidesToScroll: 1,
+					variableWidth: true,
 				},
 			},
 
 			{
 				breakpoint: 720,
 				settings: {
-					slidesToShow: 2,
+					slidesToShow: 2.5,
 					slidesToScroll: 1,
+					variableWidth: true,
 				},
 			},
 			{
@@ -82,6 +87,7 @@ const Testimonials: React.FC<IProps> = (props) => {
 				settings: {
 					slidesToShow: 2,
 					slidesToScroll: 1,
+					variableWidth: true,
 				},
 			},
 			{
@@ -89,6 +95,7 @@ const Testimonials: React.FC<IProps> = (props) => {
 				settings: {
 					slidesToShow: 3,
 					slidesToScroll: 1,
+					variableWidth: true,
 				},
 			},
 			// 3 slide but square shape
@@ -97,6 +104,7 @@ const Testimonials: React.FC<IProps> = (props) => {
 				settings: {
 					slidesToShow: 3,
 					slidesToScroll: 1,
+					variableWidth: true,
 				},
 			},
 
@@ -105,6 +113,7 @@ const Testimonials: React.FC<IProps> = (props) => {
 				settings: {
 					slidesToShow: 2,
 					slidesToScroll: 1,
+					variableWidth: true,
 				},
 			},
 			{
@@ -112,13 +121,15 @@ const Testimonials: React.FC<IProps> = (props) => {
 				settings: {
 					slidesToShow: 2,
 					slidesToScroll: 1,
+					variableWidth: true,
 				},
 			},
 			{
 				breakpoint: 1900,
 				settings: {
-					slidesToShow: 3,
+					slidesToShow: 3.1,
 					slidesToScroll: 1,
+					variableWidth: true,
 				},
 			},
 		],
@@ -154,7 +165,7 @@ const Testimonials: React.FC<IProps> = (props) => {
 					</div>
 				</div>
 				<div className=" flex space-x-6">
-					<div className="gap-15 z-40 ml-28 mr-16 hidden flex-none flex-col items-center   justify-center lg:flex  ">
+					<div className="gap-15 z-40 ml-28 mr-16 hidden flex-none -mt-96 flex-col items-center   justify-center lg:flex  ">
 						<div className="flex-none  gap-5 ">
 							<h1 className=" text-light-1 text-primary-shade-1 ">
 								{props.testimonialTitle}
@@ -162,7 +173,7 @@ const Testimonials: React.FC<IProps> = (props) => {
 							<span className=" title-2 text-primary-black">
 								{props.testimonialDescription}
 							</span>
-							<div className="mt-14 flex space-x-6">
+							<div className="mt-8 flex space-x-6">
 								<button
 									onClick={previous}
 									className=" text-primary-shade-1 h-16 w-32 rounded-full bg-white py-4 px-6 text-lg"
@@ -179,11 +190,11 @@ const Testimonials: React.FC<IProps> = (props) => {
 						</div>
 					</div>
 					<div className="slider-wrapper w-full lg:w-3/4 ">
-						<Slider ref={slider} {...settings}>
+						<Slider ref={slider} {...settings} >
 							{props.testimonialCards?.map((reviews, index) => {
 								return (
 									<div
-										className="testimonial-card-wrapper outline-none"
+										className="testimonial-card-wrapper slick-item outline-none"
 										key={index}
 									>
 										<TestimonialCard
