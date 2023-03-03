@@ -10,7 +10,7 @@ const AboutPlumbingServiceSection = () => {
 	return (
 		<section
 			id="PlumbingRepairs"
-			className="3xl-[-8em] relative z-10 mt-[-5em] sm:mt-[-7em] md:mt-[-9em] lg:mt-[-4em] 2xl:mt-[-6em] "
+			className="3xl-[-8em] xs:mt-[-4em] relative z-10 mt-[-5em] sm:mt-[-7em] md:mt-[-9em] lg:mt-[-4em] 2xl:mt-[-6em] "
 		>
 			<WaveWrapper
 				waveURL={

@@ -8,7 +8,7 @@ import {
 interface TitleProps extends PropsWithStyles, PropsWithChildren {}
 const Title: React.FC<TitleProps> = (props) => {
 	return (
-		<div className={clsx('mb-[12px] lg:mb-[16px]', props.className)}>
+		<div className={clsx('mb-3 lg:mb-4', props.className)}>
 			{props.children}
 		</div>
 	);
@@ -26,7 +26,7 @@ const Description: React.FC<DescriptionProps> = (props) => {
 interface DescriptionProps extends PropsWithStyles, PropsWithChildren {}
 const CTA: React.FC<DescriptionProps> = (props) => {
 	return (
-		<div className={clsx('mt-[20px] lg:mt-[40px]', props.className)}>
+		<div className={clsx('mt-5 lg:mt-10', props.className)}>
 			{props.children}
 		</div>
 	);
