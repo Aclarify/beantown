@@ -10,6 +10,7 @@ import 'slick-carousel/slick/slick.css';
 import 'slick-carousel/slick/slick-theme.css';
 import TestimonialCard from './testimonial-card.organism';
 import TestimonialModal from './testimonial-modal.organism';
+import SectionContentWrapper from 'components/molecules/section-content-wrapper.molecule';
 
 interface IProps extends React.HTMLAttributes<HTMLDivElement> {
 	testimonialTitle: string;
@@ -153,8 +154,8 @@ const Testimonials: React.FC<IProps> = (props) => {
 		<>
 			<div>
 				<div className="relative lg:hidden ">
-					<div className=" w-full flex-none  gap-5">
-						<div className="m-10  ">
+					<div className=" w-full flex-none">
+						<div className="ml-8">
 							<h1 className="para-4 text-primary-shade-1 ">
 								{props.testimonialTitle}
 							</h1>
@@ -165,7 +166,7 @@ const Testimonials: React.FC<IProps> = (props) => {
 					</div>
 				</div>
 				<div className=" flex space-x-6">
-					<div className="gap-15 z-40 ml-28 mr-16 hidden flex-none -mt-96 flex-col items-center   justify-center lg:flex  ">
+					<div className="gap-15 z-40 ml-28 mr-16 hidden flex-none   flex-col  items-center justify-center lg:-mt-96   lg:flex xl:mt-32 2xl:-mt-96 ">
 						<div className="flex-none  gap-5 ">
 							<h1 className=" text-light-1 text-primary-shade-1 ">
 								{props.testimonialTitle}
@@ -190,7 +191,7 @@ const Testimonials: React.FC<IProps> = (props) => {
 						</div>
 					</div>
 					<div className="slider-wrapper w-full lg:w-3/4 ">
-						<Slider ref={slider} {...settings} >
+						<Slider ref={slider} {...settings}>
 							{props.testimonialCards?.map((reviews, index) => {
 								return (
 									<div
