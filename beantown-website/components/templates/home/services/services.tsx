@@ -58,7 +58,7 @@ export default function Services() {
 				className="absolute right-0 top-0 z-[-1] translate-x-[55%] translate-y-[40%] transform md:hidden "
 			/>
 			<div className="2xl:padding-for-section relative">
-				<div className="text-center flex flex-col  items-center pt-[4em] lg:pt-0">
+				<div className="flex flex-col items-center  pt-[4em] text-center lg:pt-0">
 					<ContentWrapper>
 						<ContentWrapper.Title>
 							<h1 className="title-5 lg:title-2 text-primary-black mb-4">
@@ -71,8 +71,6 @@ export default function Services() {
 					</ContentWrapper>
 				</div>
 				<div className="mt-14 flex flex-wrap justify-center rounded-lg">
-					{/* <div className="container my-12 mx-auto px-4 md:px-12">
-					<div className="-mx-1 flex flex-wrap lg:-mx-4"> */}
 					{clonedServicesGroup?.map((service, index) => {
 						return (
 							service?.thumbnailImage?.asset?.url && (
@@ -82,7 +80,7 @@ export default function Services() {
 								>
 									<ServiceCard
 										key={index}
-										title={service?.text || ''}
+										title={service?.name || ''}
 										buttonText={service?.button?.text || ''}
 										hRef={service?.button?.href || ''}
 										thumbnailSrc={service.thumbnailImage?.asset?.url || ''}
@@ -94,7 +92,6 @@ export default function Services() {
 							)
 						);
 					})}
-					{/* </div> */}
 				</div>
 			</div>
 			<Image

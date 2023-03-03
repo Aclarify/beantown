@@ -135,13 +135,13 @@ export default defineType({
       ],
     }),
     defineField({
-      name: 'serviceAreas',
+      name: 'serviceAreaSection',
       title: 'Service Area Section',
       type: 'reference',
       to: [{type: 'serviceAreas'}],
     }),
     defineField({
-      name: 'testimonials',
+      name: 'testimonialSection',
       title: 'Testimonials Section',
       type: 'reference',
       to: [{type: 'testimonials'}],

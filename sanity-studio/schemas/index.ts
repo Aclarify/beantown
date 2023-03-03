@@ -17,7 +17,6 @@ import {breakType} from './molecules/breakType'
 import footer from './layouts/footer'
 import home from './pages/home'
 import titleDescriptionImageGroup from './organism/titleDescriptionImageGroup'
-import textImageButtonGroup from './organism/textImageButtonGroup'
 import textList from './molecules/textList'
 import imageDescriptionButtonGroup from './organism/imageDescriptionButtonGroup'
 import nav from './layouts/nav'
@@ -31,6 +30,7 @@ import testimonials from './organism/testimonials'
 import teamMembers from './organism/teamMembers'
 import images from './molecules/images'
 import socialMediaIcons from './molecules/socialMediaIcons'
+import servicesCards from './organism/servicesCards'
 
 export const schemaTypes = [
   //Document Types
@@ -60,7 +60,7 @@ export const schemaTypes = [
   imageIconGroup,
   imageText,
   imageTextGroup,
-  textImageButtonGroup,
+  servicesCards,
   imageDescriptionButtonGroup,
   linkGroup,
   textList,

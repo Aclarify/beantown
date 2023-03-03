@@ -64,7 +64,7 @@ const CTAWithImage: React.FC<IProps> = ({
 						`relative flex w-full items-center justify-center py-4 lg:w-[60%]`
 					)}
 				>
-					<div className="z-4">{children}</div>
+					<div className="z-4 py-24 xl:py-48">{children}</div>
 					{heroImagePosition === 'right' && (
 						<div
 							id="gradient-block"
@@ -131,7 +131,9 @@ const CTAWithImage: React.FC<IProps> = ({
 						'relative flex w-full items-center justify-center bg-gradient-to-t'
 					)}
 				>
-					<div className="z-4">{children}</div>
+					<div className="z-4 px-16 pt-[2em] pb-[4em] sm:px-48 md:py-48">
+						{children}
+					</div>
 					<div
 						id="gradient-block-mobile"
 						style={{
