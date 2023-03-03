@@ -3,12 +3,11 @@ import useWindowDimensions from '@lib/hooks/use-window-dimensions.hook';
 import WaveWrapper from 'components/molecules/wave-wrapper.molecule';
 import Image from 'next/image';
 import SectionContentWrapper from 'components/molecules/section-content-wrapper.molecule';
-import OurMissionContent from './mission-values-cards-content/our-mission.content';
-import OurValuesCards from './mission-values-cards-content/our-values-card.content';
-import OurValuesContent from './mission-values-cards-content/our-values.content';
+import MissionContent from './mission.content';
+import ValuesContent from '../values/values.content';
+import ValuesCards from '../values/values-card.content';
 
-
-const OurMissionOurValuesSection = () => {
+const MissionValuesSection = () => {
 	const { width } = useWindowDimensions();
 	return (
 		<section
@@ -24,9 +23,9 @@ const OurMissionOurValuesSection = () => {
 			></WaveWrapper>
 
 			<SectionContentWrapper>
-				<OurMissionContent />
-				<OurValuesContent />
-				<OurValuesCards />
+				<MissionContent />
+				<ValuesContent />
+				<ValuesCards />
 			</SectionContentWrapper>
 			<Image
 				src={'/images/about-us/mission/about-us-right-blob-mobile.svg'}
@@ -39,4 +38,4 @@ const OurMissionOurValuesSection = () => {
 	);
 };
 
-export default OurMissionOurValuesSection;
+export default MissionValuesSection;

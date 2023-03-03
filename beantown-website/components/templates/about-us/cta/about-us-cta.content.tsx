@@ -6,15 +6,15 @@ import CTAWithImage from 'components/organisms/cta-with-image.organism';
 import CtaWrapper from 'components/molecules/cta-wrapper.molecule';
 import { AboutUsContentProps } from 'pages/about-us';
 
-const AboutUSFooterCTAContent = () => {
+const AboutUSCTAContent = () => {
 	const { pageContent } =
 		useContext<GlobalContextProps<AboutUsContentProps>>(GlobalContext);
 	if (!pageContent) {
 		return null;
 	}
 	const pageData = pageContent.page[0];
-	const {  ctaButton, ctaImage, ctaTitle} = pageData;
-	
+	const { ctaButton, ctaImage, ctaTitle } = pageData;
+
 	return (
 		<CTAWithImage
 			heroImageURL={ctaImage?.asset?.url || ''}
@@ -42,4 +42,4 @@ const AboutUSFooterCTAContent = () => {
 	);
 };
 
-export default AboutUSFooterCTAContent;
+export default AboutUSCTAContent;
