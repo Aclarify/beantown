@@ -15,7 +15,7 @@ const ProductCard: React.FC<Props> = (props) => {
 				<div className=" flex h-[209px] justify-center rounded-3xl bg-white px-[30px] py-[20px] md:px-[50px]  md:py-[43px] lg:h-[360px] lg:max-h-full">
 					<CMSImageWrapper image={props.image} altText="A product image" />
 				</div>
-				<div className="flex flex-col items-start gap-2 px-2 py-4 pb-8 lg:px-4 lg:pt-8">
+				<div className="flex flex-col items-start gap-2 px-2 py-4 pb-8 lg:px-4 lg:pt-8 ">
 					<h1 className="title-6 md:title-3 text-primary-black pb-2 lg:pb-4">
 						{props.title}
 					</h1>

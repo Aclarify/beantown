@@ -8,11 +8,14 @@ import WithGlobalContent, {
 import { PageNames } from '@configs/client/pages/pages.config';
 import Header from 'components/organisms/nav';
 import FooterSection from 'components/organisms/footer';
-
 import { GlobalContextProps } from '@typing/common/interfaces/contexts.interface';
 import { GlobalContext } from '@contexts/global/global.context';
 import CtaWrapper from 'components/molecules/cta-wrapper.molecule';
-import AboutUsHeroContent from 'components/templates/about-us/hero/about-us-hero.content';
+import TeamSection from 'components/templates/about-us/team/meet-our-team.section';
+import AboutUsHeroSection from 'components/templates/about-us/hero/about-us-hero.section';
+import OurMissionOurValuesSection from 'components/templates/about-us/our-mission-our-values/our-mission-our-values.section';
+import FooterCTASection from 'components/templates/about-us/footer-CTA/about-us-footer-cta.section';
+import ComunityCTASection from 'components/templates/about-us/comunity-CTA/about-us-comunity-cta.section';
 export interface AboutUsContentProps {
 	page: AboutUs[];
 	header: Nav[];
@@ -48,7 +51,7 @@ const AboutUsPage: React.FC = (props) => {
 	const footerData = pageContent.footer[0];
 	const { logoDesktop, logoMobile } = pageData;
 	return (
-		<div id="about-us" className="bg-primary-white-shade-1">
+		<div id="about-us" className="bg-secondary-shade-3">
 			<PageHead />
 			<Header
 				fontColor="text-white"
@@ -62,7 +65,11 @@ const AboutUsPage: React.FC = (props) => {
 					</CtaWrapper.CTA>
 				</div>
 			</Header>
-			<AboutUsHeroContent />
+			<AboutUsHeroSection />
+			<OurMissionOurValuesSection />
+			<ComunityCTASection />
+			<TeamSection />
+			<FooterCTASection />
 			<FooterSection
 				logoDesktop={logoDesktop?.image}
 				logoMobile={logoMobile?.image}
