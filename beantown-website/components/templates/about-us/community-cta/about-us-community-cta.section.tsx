@@ -1,21 +1,17 @@
 import useWindowDimensions from '@lib/hooks/use-window-dimensions.hook';
 import React from 'react';
-import AboutUSFooterCTAContent from './about-us-footer-cta.content';
+import CommunityCTAContent from './about-us-community-cta.content';
 
-
-
-const FooterCTASection = () => {
-	
+const CommunityCTASection = () => {
+	const { width } = useWindowDimensions();
 	return (
 		<section
 			id="plumbing-cta"
 			className=" 3xl:mt-[-7em] relative mt-[-1em] text-center sm:mt-[-2em] md:mt-[-3em] xl:mt-[-4em] 2xl:mt-[-5em]  "
 			//className=" 3xl:mt-[-14em] relative mt-[-7em] sm:mt-[-8em] md:mt-[-11em] xl:mt-[-10em] 2xl:mt-[-12em] "
 		>
-			
-			<AboutUSFooterCTAContent />
-		
+			<CommunityCTAContent />
 		</section>
 	);
 };
-export default FooterCTASection;
+export default CommunityCTASection;

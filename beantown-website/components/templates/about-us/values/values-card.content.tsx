@@ -4,7 +4,7 @@ import { GlobalContextProps } from '@typing/common/interfaces/contexts.interface
 import Image from 'next/image';
 import { AboutUsContentProps } from 'pages/about-us';
 import { useContext } from 'react';
-const OurValuesCards = () => {
+const ValuesCards = () => {
 	const { pageContent } =
 		useContext<GlobalContextProps<AboutUsContentProps>>(GlobalContext);
 	const { width } = useWindowDimensions();
@@ -49,4 +49,4 @@ const OurValuesCards = () => {
 		</>
 	);
 };
-export default OurValuesCards;
+export default ValuesCards;
