@@ -14,14 +14,18 @@ const OurValuesCards = () => {
 	}
 	const pageData = pageContent.page[0];
 	const { valuesCards } = pageData;
-	
+
 	return (
 		<>
 			<div id="card-container" className="flex justify-center gap-4 p-2">
 				{valuesCards?.map((cardInfo, index) => {
 					return (
 						cardInfo && (
-							<div id="card-item" className="flex items-center  space-x-2">
+							<div
+								id="card-item"
+								className="flex items-center  space-x-2 "
+								key={index}
+							>
 								<div
 									key={index}
 									className="bg-secondary-shade-3  h-[140px] w-[120px] rounded-lg "
