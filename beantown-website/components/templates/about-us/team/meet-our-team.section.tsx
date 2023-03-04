@@ -18,7 +18,7 @@ const TeamSection = () => {
 						: '/images/about-us/team/about-us-team-top-wave-mobile.svg'
 				}
 			></WaveWrapper>
-			<div className="bg-secondary-shade-3 xs:mt-[-5em] 3xl:mt-[-30em] 4xl:mt-[-35em] xs:mb-[2em] 3xl:mb-[-13em] relative z-10 sm:mt-[-8em] md:mt-[-12em] lg:-mb-[6em] xl:mt-[-14em] 2xl:mt-[-20em] 2xl:mb-[-9em]">
+			<div className="bg-secondary-shade-3 xs:mt-[-5em] 3xl:mt-[-30em] 4xl:mt-[-35em] xs:mb-[2em] 3xl:mb-[-13em] relative z-10 mt-[-2em] sm:mt-[-8em] md:mt-[-12em] lg:-mb-[6em] xl:mt-[-14em] 2xl:mt-[-20em] 2xl:mb-[-9em]">
 				<SectionContentWrapper>
 					<MeetOurTeam />
 				</SectionContentWrapper>
