@@ -47,7 +47,7 @@ const MeetOurTeam =()=>{
 										key={index}
 										id="card"
 										// className="flex h-[240]   w-[182px] flex-col space-x-4 rounded-lg bg-white shadow-[rgba(29,_39,_87,_0.08)_4px_8px_60px] md:flex md:h-[298px] md:w-[480px] md:flex-row "
-										className="flex flex-col   p-1  sm:p-2 rounded-lg bg-white shadow-[rgba(29,_39,_87,_0.08)_4px_8px_60px] sm:flex  sm:flex-row "
+										className="flex flex-col place-items-center  rounded-lg  bg-white p-1 shadow-[rgba(29,_39,_87,_0.08)_4px_8px_60px] sm:flex sm:flex-row  sm:p-2 "
 									>
 										{/* <div className="flex h-full items-center">
 											<CMSImageWrapper
@@ -55,10 +55,10 @@ const MeetOurTeam =()=>{
 												image={content.profilePicture || null}
 											/>
 										</div> */}
-										
+
 										<div
 											id="profileInfo-wrapper"
-											className="sm:flex justify-between sm:space-x-5 "
+											className="place-content-center justify-between sm:flex  sm:space-x-5 "
 										>
 											<div className="h-[150px] w-[150px]   rounded-lg fill-current md:h-[200px] md:w-[200px] ">
 												<Image
@@ -74,7 +74,7 @@ const MeetOurTeam =()=>{
 												className=" mb-4 flex flex-col items-center  justify-between  "
 											>
 												<div id="name" className="flex flex-col ">
-													<h1 className=" lg:title-4  mt-4 sm:mt-10 text-center text-black">
+													<h1 className=" lg:title-4  mt-4 text-center text-black sm:mt-10">
 														{content?.memberName}
 													</h1>
 												</div>
