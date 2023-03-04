@@ -35,7 +35,7 @@ export default function HomeTestimonials() {
 				className="z-1  absolute top-0 right-0 hidden translate-x-[50%] -translate-y-[70%] transform md:block lg:hidden"
 			/>
 			<Image
-				src={'/images/home/testimonials/home-testimonial-right-blob.svg'}
+				src={'/images/home/testimonials/home-testimonial-.svg'}
 				height={250}
 				width={250}
 				alt="Right Blob mobile"
