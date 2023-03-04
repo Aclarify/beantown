@@ -43,7 +43,7 @@ const MeetOurTeam = () => {
 								<div
 									key={index}
 									id="card"
-									className="m-2 w-[160px] rounded-lg bg-white  px-3 shadow-[rgba(29,_39,_87,_0.08)_4px_8px_60px]  lg:w-auto lg:px-4 "
+									className="m-2 w-[160px] rounded-lg bg-white  px-3 shadow-[rgba(29,_39,_87,_0.08)_4px_8px_60px]  lg:w-full lg:px-4 "
 								>
 									<div
 										id="profileInfo-wrapper"
@@ -58,12 +58,12 @@ const MeetOurTeam = () => {
 
 										<div
 											id="profile-Info"
-											className="  flex flex-col items-center justify-center pb-2 lg:items-start lg:justify-evenly lg:py-8 lg:pl-8"
+											className="flex flex-col items-center justify-center pb-2 lg:items-start lg:justify-evenly lg:py-8 lg:pl-8"
 										>
-											<h1 className="title-6 lg:title-3   text-primary-black">
+											<h1 className="title-6 lg:title-3 text-primary-black ">
 												{content?.memberName}
 											</h1>
-											<span className="subtitle-5 md:subtitle-4 text-gray-shade-1 block !font-thin">
+											<span className="subtitle-5 lg:subtitle-4 text-gray-shade-1 block !font-thin">
 												{content?.memberDesignation}
 											</span>
 											<div className="flex">
