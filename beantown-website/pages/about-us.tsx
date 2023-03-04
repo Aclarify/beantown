@@ -53,7 +53,7 @@ const AboutUsPage: React.FC = (props) => {
 	const footerData = pageContent.footer[0];
 	const { logoDesktop, logoMobile } = pageData;
 	return (
-		<div id="about-us" className="bg-secondary-shade-3">
+		<div id="about-us" className="bg-primary-white-shade-1">
 			<PageHead />
 			<Header
 				fontColor="text-white"

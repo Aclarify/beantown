@@ -17,18 +17,21 @@ const ValuesCards = () => {
 
 	return (
 		<>
-			<div id="card-container" className="flex justify-center gap-4 p-2">
+			<div
+				id="card-container"
+				className="text-primary-black flex justify-center gap-4 p-2"
+			>
 				{valuesCards?.map((cardInfo, index) => {
 					return (
 						cardInfo && (
 							<div
 								id="card-item"
-								className="flex items-center  space-x-2 "
+								className="flex min-w-[354px]  items-center space-x-2 rounded-2xl bg-white p-3 shadow-sm"
 								key={index}
 							>
 								<div
 									key={index}
-									className="bg-secondary-shade-3  h-[140px] w-[120px] rounded-lg "
+									className="bg-secondary-shade-3  h-[140px] w-[120px] rounded-2xl  "
 								>
 									<Image
 										alt={cardInfo?.iconImage?.asset?.altText || ''}
@@ -39,7 +42,7 @@ const ValuesCards = () => {
 									/>
 								</div>
 								<div>
-									<span>{cardInfo?.text}</span>
+									<span className="subtitle-2">{cardInfo?.text}</span>
 								</div>
 							</div>
 						)

@@ -12,7 +12,7 @@ const MissionValuesSection = () => {
 	return (
 		<section
 			id="ourMissionOurValues"
-			className="bg-secondary-shade-3  3xl-[-8em] lg:mt-4em] relative z-10 mt-[-5em] sm:mt-[-7em] md:mt-[-12em] 2xl:mt-[-12em] "
+			className="  xs:-mt-[2em] 3xl:-mt-[12em] 4xl:-mt-[16em] relative z-10 -mt-[3em] sm:-mt-[3em] md:-mt-[5em] xl:-mt-[7em] 2xl:-mt-[9em]"
 		>
 			<WaveWrapper
 				waveURL={
@@ -27,13 +27,13 @@ const MissionValuesSection = () => {
 				<ValuesContent />
 				<ValuesCards />
 			</SectionContentWrapper>
-			<Image
-				src={'/images/about-us/mission/about-us-right-blob-mobile.svg'}
-				height={280}
-				width={300}
-				alt="Right Blob Mobile"
-				className="absolute right-0 bottom-0 z-[-1]   translate-x-[40%] translate-y-[-55%] transform lg:hidden"
-			/>
+			<WaveWrapper
+				waveURL={
+					width > 1023
+						? '/images/about-us/values/about-us-values-bottom-wave.svg'
+						: '/images/about-us/values/about-us-values-bottom-wave-mobile.svg'
+				}
+			></WaveWrapper>
 		</section>
 	);
 };
