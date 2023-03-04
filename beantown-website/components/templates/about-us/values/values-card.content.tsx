@@ -17,29 +17,31 @@ const ValuesCards = () => {
 
 	return (
 		<>
-			<div id="card-container" className="flex justify-center gap-4 p-2">
+			<div
+				id="card-container"
+				className="text-primary-black flex flex-wrap justify-evenly gap-4 p-2"
+			>
 				{valuesCards?.map((cardInfo, index) => {
 					return (
 						cardInfo && (
 							<div
 								id="card-item"
-								className="flex items-center  space-x-2 "
+								className="flex w-[354px] items-center space-x-2 rounded-2xl bg-white p-3 shadow-sm"
 								key={index}
 							>
 								<div
 									key={index}
-									className="bg-secondary-shade-3  h-[140px] w-[120px] rounded-lg "
+									className="bg-secondary-shade-3 flex  h-[140px] w-1/3 items-center justify-center rounded-2xl  "
 								>
 									<Image
 										alt={cardInfo?.iconImage?.asset?.altText || ''}
 										width={80}
 										height={80}
 										src={cardInfo?.iconImage?.asset?.url || ''}
-										className=" mx-auto mt-8 place-items-center"
 									/>
 								</div>
-								<div>
-									<span>{cardInfo?.text}</span>
+								<div className="w-2/3 pl-6">
+									<span className="subtitle-2">{cardInfo?.text}</span>
 								</div>
 							</div>
 						)

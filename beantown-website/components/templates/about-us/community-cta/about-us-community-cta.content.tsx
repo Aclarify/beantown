@@ -21,10 +21,10 @@ const CommunityCTAContent = () => {
 			heroImageURL={communityctaImage?.asset?.url || ''}
 			heroImageAltText={'Hero image'}
 			textContentBGImage={
-				'/images/about-us/footer-CTA/footer-cta-bg-vector.svg'
+				'/images/about-us/community-CTA/community-cta-bg-vector.svg'
 			}
 			textContentBGImageForSmallScreen={
-				'/images/about-us/footer-CTA/footer-cta-bg-vector-mobile.svg'
+				'/images/about-us/community-CTA/community-cta-bg-vector.svg'
 			}
 			heroImagePosition="left"
 			bgColor="var(--primary-color-shade-2-rgb)"
