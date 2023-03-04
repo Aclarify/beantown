@@ -21,7 +21,7 @@ export default function AboutUsTestimonials() {
 					'/images/about-us/testimonials/about-us-testimonial-top-wave.svg'
 				}
 			></WaveWrapper>
-			<div className=" bg-secondary-shade-3">
+			<div className=" bg-secondary-shade-3 3xl:mt-[-25em] xs:mt-[-2em] mt-[-4em] md:mt-[-10em] lg:mt-[-12em] xl:mt-[-15em] 2xl:mt-[-20em]">
 				<Testimonials
 					testimonialTitle={testimonialSection?.testimonialTitle || ''}
 					testimonialDescription={
