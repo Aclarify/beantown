@@ -46,7 +46,8 @@ const MeetOurTeam =()=>{
 									<div
 										key={index}
 										id="card"
-										className="flex h-[240] w-[480] flex-col space-x-4 rounded-lg bg-white shadow-[rgba(29,_39,_87,_0.08)_4px_8px_60px] md:flex md:flex-row "
+										// className="flex h-[240]   w-[182px] flex-col space-x-4 rounded-lg bg-white shadow-[rgba(29,_39,_87,_0.08)_4px_8px_60px] md:flex md:h-[298px] md:w-[480px] md:flex-row "
+										className="flex flex-col   p-1  sm:p-2 rounded-lg bg-white shadow-[rgba(29,_39,_87,_0.08)_4px_8px_60px] sm:flex  sm:flex-row "
 									>
 										{/* <div className="flex h-full items-center">
 											<CMSImageWrapper
@@ -54,41 +55,52 @@ const MeetOurTeam =()=>{
 												image={content.profilePicture || null}
 											/>
 										</div> */}
-										<div>
-											<Image
-												src={content.profilePicture?.asset?.url || ''}
-												height={'200'}
-												width={'200'}
-												alt={content.profilePicture?.asset?.altText || ''}
-												className=" rounded-lg "
-											/>
-										</div>
-
+										
 										<div
-											id="profile-Info"
-											className=" flex flex-col items-center justify-center space-y-2 md:space-y-10"
+											id="profileInfo-wrapper"
+											className="sm:flex justify-between sm:space-x-5 "
 										>
-											<div id="name" className="flex flex-col">
-												<span>{content?.memberName}</span>
+											<div className="h-[150px] w-[150px]   rounded-lg fill-current md:h-[200px] md:w-[200px] ">
+												<Image
+													src={content.profilePicture?.asset?.url || ''}
+													height={'200'}
+													width={'200'}
+													alt={content.profilePicture?.asset?.altText || ''}
+												/>
 											</div>
-											<div id="Designation">
-												<span>{content?.memberDesignation}</span>
-											</div>
-											<div className="flex">
-												{content.socialMediaDetails?.map((details, index) => {
-													return (
-														<div id="socialMediaIconGroupicons" key={index}>
-															<div>
-																<Image
-																	alt={details?.image?.name || ''}
-																	width={26}
-																	height={26}
-																	src={details?.image?.image?.asset?.url || ''}
-																/>
+
+											<div
+												id="profile-Info"
+												className=" mb-4 flex flex-col items-center  justify-between  "
+											>
+												<div id="name" className="flex flex-col ">
+													<h1 className=" lg:title-4  mt-4 sm:mt-10 text-center text-black">
+														{content?.memberName}
+													</h1>
+												</div>
+												<div id="Designation">
+													<span className=" text-primary-color-shade-2">
+														{content?.memberDesignation}
+													</span>
+												</div>
+												<div className="flex">
+													{content.socialMediaDetails?.map((details, index) => {
+														return (
+															<div id="socialMediaIconGroupicons" key={index}>
+																<div className=" fill-current ">
+																	<Image
+																		alt={details?.image?.name || ''}
+																		width={32}
+																		height={32}
+																		src={
+																			details?.image?.image?.asset?.url || ''
+																		}
+																	/>
+																</div>
 															</div>
-														</div>
-													);
-												})}
+														);
+													})}
+												</div>
 											</div>
 										</div>
 									</div>

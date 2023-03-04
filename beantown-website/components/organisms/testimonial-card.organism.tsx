@@ -42,7 +42,7 @@ export const TestimonialCard: React.FC<Props> = (props) => {
 					{props.onShowMore && (
 						<ReadMore
 							content={props.reviewComments}
-							limit={200}
+							limit={230}
 							onShowMore={props.onShowMore}
 						/>
 					)}
