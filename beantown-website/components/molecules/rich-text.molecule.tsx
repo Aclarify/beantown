@@ -7,7 +7,7 @@ interface Props {
 const RichText: React.FC<Props> = (props) => {
 	const components = {
 		types: {
-			break: (props: any) => {
+			breakType: (props: any) => {
 				const { style } = props.value;
 				if (style === 'lineBreak') {
 					return <br className="lineBreak" />;

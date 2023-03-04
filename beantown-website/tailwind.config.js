@@ -8,8 +8,10 @@ module.exports = {
 	theme: {
 		extend: {
 			screens: {
+				xs: { max: '400px' },
 				'3xl': '2500px',
 				'4xl': '3000px',
+				'5xl': '3740px',
 			},
 			fontFamily: {
 				neuePlak: ['var(--font-neue-plak)'],
@@ -29,6 +31,8 @@ module.exports = {
 				'secondary-shade-4': '#D9D9D9',
 				'home-hero-gradient-start': 'rgba(21, 40, 76, 0.4)',
 				'home-hero-gradient-end': 'rgba(21, 40, 76, 0)',
+				'aboutUs-hero-gradient-start': 'rgba(21, 40, 76, 0.6)',
+				'aboutUs-hero-gradient-end': 'rgba(21, 40, 76, 0)',
 				'gray-shade-1': '#47515F',
 				'gray-shade-2': '#8B98AB',
 				'gray-shade-3': '#E3E5EA',
@@ -41,6 +45,7 @@ module.exports = {
 				'service-yellow-bg': '#FEFCE6',
 				'service-green': 'var(--services-green-color-hex)',
 				'service-green-bg': '#F0FAF5',
+				'primary-white-shade-2': '#F5F5F5',
 			},
 			letterSpacing: {
 				wide: '1px',

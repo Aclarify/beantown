@@ -10,7 +10,7 @@ interface IProps {
 	content: FooterType;
 }
 export default function Footer(props: IProps) {
-	const { logoDesktop, logoMobile } = props;
+	const { logoMobile } = props;
 	const footerData = props.content;
 	const {
 		description,
@@ -73,10 +73,10 @@ export default function Footer(props: IProps) {
 											className="para-4 lg:para-3 flex justify-start space-x-2 pt-2 text-gray-300"
 										>
 											<Image
-												alt={contactDtl.iconImage?.image?.asset?.altText || ''}
+												alt={contactDtl.iconImage?.asset?.altText || ''}
 												width={15}
 												height={15}
-												src={contactDtl.iconImage?.image?.asset?.url || ''}
+												src={contactDtl.iconImage?.asset?.url || ''}
 											/>
 											<span>{contactDtl.text}</span>
 										</div>
@@ -88,12 +88,14 @@ export default function Footer(props: IProps) {
 					<div id="logoSection" className="basis-1/4 pb-[16px]">
 						<div className="flex space-x-4 pt-8">
 							<div id="logoImage">
-								<Image
-									alt={logoMobile?.asset?.altText || ''}
-									width={200}
-									height={300}
-									src={logoMobile?.asset?.url || ''}
-								/>
+								<Link href={'/'}>
+									<Image
+										alt={logoMobile?.asset?.altText || ''}
+										width={200}
+										height={300}
+										src={logoMobile?.asset?.url || ''}
+									/>
+								</Link>
 							</div>
 							<div
 								id="socialMediaIconGroupMobile"

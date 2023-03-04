@@ -23,12 +23,14 @@ export default function Services() {
 	let clonedServicesGroup = servicesGroup ? [...servicesGroup] : [];
 
 	if (isMobile && servicesGroup && servicesGroup.length > 0) {
-		// Create a new array from servicesGroup by making the second element as the first element and add the first and last element
-		clonedServicesGroup = [
-			servicesGroup[1],
-			servicesGroup[0],
-			servicesGroup[servicesGroup.length - 1],
-		];
+		// Find the service which is marked as main service and make it the first element
+		const mainServiceIndex = servicesGroup.findIndex(
+			(service) => service?.isMainService
+		);
+		if (mainServiceIndex !== -1) {
+			const mainService = clonedServicesGroup.splice(mainServiceIndex, 1);
+			clonedServicesGroup = [...mainService, ...clonedServicesGroup];
+		}
 	}
 	return (
 		<section
@@ -58,7 +60,7 @@ export default function Services() {
 				className="absolute right-0 top-0 z-[-1] translate-x-[55%] translate-y-[40%] transform md:hidden "
 			/>
 			<div className="2xl:padding-for-section relative">
-				<div className="text-center flex flex-col  items-center pt-[4em] lg:pt-0">
+				<div className="flex flex-col items-center  pt-[4em] text-center lg:pt-0">
 					<ContentWrapper>
 						<ContentWrapper.Title>
 							<h1 className="title-5 lg:title-2 text-primary-black mb-4">
@@ -71,8 +73,6 @@ export default function Services() {
 					</ContentWrapper>
 				</div>
 				<div className="mt-14 flex flex-wrap justify-center rounded-lg">
-					{/* <div className="container my-12 mx-auto px-4 md:px-12">
-					<div className="-mx-1 flex flex-wrap lg:-mx-4"> */}
 					{clonedServicesGroup?.map((service, index) => {
 						return (
 							service?.thumbnailImage?.asset?.url && (
@@ -82,7 +82,7 @@ export default function Services() {
 								>
 									<ServiceCard
 										key={index}
-										title={service?.text || ''}
+										title={service?.name || ''}
 										buttonText={service?.button?.text || ''}
 										hRef={service?.button?.href || ''}
 										thumbnailSrc={service.thumbnailImage?.asset?.url || ''}
@@ -94,7 +94,6 @@ export default function Services() {
 							)
 						);
 					})}
-					{/* </div> */}
 				</div>
 			</div>
 			<Image
@@ -102,7 +101,7 @@ export default function Services() {
 				height={590}
 				width={650}
 				alt="Left Blob "
-				className="absolute  bottom-0 left-0 z-[-1] hidden -translate-x-[61%] transform md:block md:translate-y-[6%] lg:translate-y-[25%]"
+				className="absolute  bottom-0 left-0 z-[-1] hidden -translate-x-[65%] transform md:block md:translate-y-[6%] lg:translate-y-[45%]"
 			/>
 		</section>
 	);

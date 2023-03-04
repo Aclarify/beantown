@@ -3,7 +3,7 @@ export enum PageNames {
 	HEATINGCOOLING = 'heatingAndCooling',
 	ELECTRICAL = 'electrical',
 	PLUMBING = 'plumbing',
-	ABOUT = 'about',
+	ABOUTUS = 'aboutUs',
 	BLOG = 'blog',
 	CAREERS = 'careers',
 	CONTACTUS = 'contactUs',

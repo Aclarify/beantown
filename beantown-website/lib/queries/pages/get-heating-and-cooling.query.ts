@@ -97,6 +97,8 @@ const heatingCoolingQuery = ` allHeatingAndCooling {
 				image {
 					asset {
 						url
+            _id
+            _key
 					}
 				}
 			}

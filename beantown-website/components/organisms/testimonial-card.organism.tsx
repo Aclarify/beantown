@@ -1,29 +1,33 @@
 import ReadMore from 'components/molecules/read-more.molecule';
-import Image from 'next/image';
 import React from 'react';
 import testimonialQuoteImg from 'public/images/home/testimonials-quote.svg';
+import StaticImageWrapper from 'components/molecules/static-image-wrapper.molecule';
 interface Props {
 	clientName: string;
 	clientDetails: string;
 	reviewComments: string;
-	onShowMore: () => void;
+	onShowMore?: () => void;
 }
 
-const TestimonialCard: React.FC<Props> = (props) => {
+const TestimonialCardWrapper: React.FC<Props> = (props) => {
 	return (
 		<section
 			id="testimonialCard"
 			className="flex h-[358px]  w-[280px] flex-col rounded-2xl bg-white px-6 lg:h-[556px] lg:w-[378px]  lg:rounded-3xl"
 		>
+			<TestimonialCard {...props} />
+		</section>
+	);
+};
+
+export const TestimonialCard: React.FC<Props> = (props) => {
+	return (
+		<>
 			<div className="flex justify-center py-6 lg:py-10">
 				<div className="image-wrapper w-[30px]  lg:h-[56px] lg:w-[60px]">
-					<Image
-						alt="An image for quotes in testimonial card"
+					<StaticImageWrapper
+						altText="An image for quotes in testimonial card"
 						src={testimonialQuoteImg}
-						style={{
-							width: '100%',
-							height: '100%',
-						}}
 					/>
 				</div>
 			</div>
@@ -35,14 +39,21 @@ const TestimonialCard: React.FC<Props> = (props) => {
 					{props.clientDetails}
 				</h4>
 				<div className="para-4 lg:para-3 text-primary-black pt-6 pb-2 text-center leading-6 lg:px-10 lg:leading-9">
-					<ReadMore
-						content={props.reviewComments}
-						limit={230}
-						onShowMore={props.onShowMore}
-					/>
+					{props.onShowMore && (
+						<ReadMore
+							content={props.reviewComments}
+							limit={230}
+							onShowMore={props.onShowMore}
+						/>
+					)}
+					{!props.onShowMore && (
+						<span className="para-4 lg:para-3 text-primary-black pt-6 pb-2 text-center leading-6 lg:px-10 lg:leading-9">
+							{props.reviewComments}
+						</span>
+					)}
 				</div>
 			</div>
-		</section>
+		</>
 	);
 };
-export default TestimonialCard;
+export default TestimonialCardWrapper;

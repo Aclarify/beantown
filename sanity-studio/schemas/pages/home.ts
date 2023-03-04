@@ -68,7 +68,7 @@ export default defineType({
       name: 'servicesGroup',
       title: 'Services Group',
       type: 'array',
-      of: [{type: 'textImageButtonGroup'}],
+      of: [{type: 'servicesCards'}],
     }),
     defineField({
       name: 'whyUsTitle',
@@ -105,55 +105,16 @@ export default defineType({
       ],
     }),
     defineField({
-      name: 'testimonialTitle',
-      title: 'Testimonial Title',
-      type: 'string',
+      name: 'serviceAreaSection',
+      title: 'Service Area Section',
+      type: 'reference',
+      to: [{type: 'serviceAreas'}],
     }),
     defineField({
-      name: 'testimonialDescription',
-      title: 'Testimonial Description',
-      type: 'string',
-    }),
-    defineField({
-      name: 'testimonialCardIcon',
-      title: 'Testimonial Card Icon',
-      type: 'image',
-      options: {
-        hotspot: true,
-      },
-    }),
-    defineField({
-      name: 'testimonialCards',
-      title: 'Testimonial Cards',
-      type: 'array',
-      of: [
-        {
-          type: 'titleDescription',
-        },
-      ],
-    }),
-    defineField({
-      name: 'serviceAreaTitle',
-      title: 'Service Area Title',
-      type: 'string',
-    }),
-    defineField({
-      name: 'serviceAreaDescription',
-      title: 'Service Area Description',
-      type: 'string',
-    }),
-    defineField({
-      name: 'serviceAreaImage',
-      title: 'Service Areas Image',
-      type: 'image',
-      options: {
-        hotspot: true,
-      },
-    }),
-    defineField({
-      name: 'serviceAreas',
-      title: 'Service Areas',
-      type: 'textList',
+      name: 'testimonialSection',
+      title: 'Testimonials Section',
+      type: 'reference',
+      to: [{type: 'testimonials'}],
     }),
     defineField({
       name: 'blogsTitle',

@@ -45,7 +45,7 @@ const homeQuery = ` allHome {
 			}
 			servicesGroup {
 				name
-				text
+				isMainService
 				thumbnailImage{
 					asset{
 						url
@@ -79,28 +79,27 @@ const homeQuery = ` allHome {
 				}
 				description 
 			}
-			testimonialTitle
-			testimonialDescription
-			testimonialCardIcon{
-			asset{
-				url
+			serviceAreaSection {
+				serviceAreaTitle
+				serviceAreaDescription
+				serviceAreaImage {
+					asset {
+						url
+					}
+				}
+				serviceAreas {
+					title
+					listItem
+				}
 			}
-			}
-			testimonialCards {
-				titleText
-				subText
-				description 
-			}
-			serviceAreaTitle
-			serviceAreaDescription
-			serviceAreaImage{
-			asset{
-				url
-			}
-			}
-			serviceAreas {
-				title
-				listItem
+			testimonialSection {
+				testimonialTitle
+				testimonialDescription
+				testimonialCards {
+					titleText
+					subText
+					description
+				}
 			}
 			blogsTitle
 		blogsDescription
@@ -143,6 +142,8 @@ const homeQuery = ` allHome {
 				image {
 					asset {
 						url
+						_id
+            			_key
 					}
 				}
 			}

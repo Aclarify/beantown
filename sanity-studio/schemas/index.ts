@@ -17,7 +17,6 @@ import {breakType} from './molecules/breakType'
 import footer from './layouts/footer'
 import home from './pages/home'
 import titleDescriptionImageGroup from './organism/titleDescriptionImageGroup'
-import textImageButtonGroup from './organism/textImageButtonGroup'
 import textList from './molecules/textList'
 import imageDescriptionButtonGroup from './organism/imageDescriptionButtonGroup'
 import nav from './layouts/nav'
@@ -29,6 +28,9 @@ import otherServices from './pages/other-services'
 import serviceAreas from './organism/serviceAreas'
 import testimonials from './organism/testimonials'
 import teamMembers from './organism/teamMembers'
+import images from './molecules/images'
+import socialMediaIcons from './molecules/socialMediaIcons'
+import servicesCards from './organism/servicesCards'
 
 export const schemaTypes = [
   //Document Types
@@ -45,10 +47,12 @@ export const schemaTypes = [
   //Other Types
   breakType,
   cta,
+  images,
   imageIcon,
   link,
   textTitle,
   teamMembers,
+  socialMediaIcons,
   titleDescription,
   titleDescriptionImage,
   textImageContent,
@@ -56,7 +60,7 @@ export const schemaTypes = [
   imageIconGroup,
   imageText,
   imageTextGroup,
-  textImageButtonGroup,
+  servicesCards,
   imageDescriptionButtonGroup,
   linkGroup,
   textList,

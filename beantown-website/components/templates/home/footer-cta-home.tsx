@@ -2,10 +2,10 @@ import React, { useContext } from 'react';
 import { GlobalContext } from '@contexts/global/global.context';
 import { GlobalContextProps } from '@typing/common/interfaces/contexts.interface';
 import { HomePageContentProps } from 'pages';
-import RichText from 'components/molecules/rich-text.molecule';
 import CTAWithImage from 'components/organisms/cta-with-image.organism';
-import ContentWrapper from 'components/organisms/content-wrapper.organism';
-import CtaWrapper from 'components/molecules/cta-wrapper.molecule';
+import CTATextContent, {
+	CTAButton,
+} from 'components/organisms/cta-text-content.organism';
 
 export default function FooterCta() {
 	const { pageContent } =
@@ -20,7 +20,7 @@ export default function FooterCta() {
 			<section
 				id="home-cta"
 				className="z-15 3xl:-top-[10em] 3xl:-mb-[4em] relative -top-[1em] mb-[6em] sm:-top-[2em] sm:mb-[5em] md:-top-[3em]
-				md:mb-[5em] lg:-top-[3em] lg:mb-[3em] xl:-top-[5em] 2xl:-top-[6em] 2xl:mb-[0em]"
+				md:mb-[5em] lg:-top-[4em] lg:mb-[3em] xl:-top-[5em] 2xl:-top-[7em] 2xl:mb-[0em]"
 			>
 				<CTAWithImage
 					heroImageURL={ctaImage?.asset?.url || ''}
@@ -32,21 +32,15 @@ export default function FooterCta() {
 					heroImagePosition="right"
 					bgColor="var(--secondary-color-shade-2-rgb)"
 				>
-					<ContentWrapper className="2xl:padding-for-section px-10 pt-[2em] pb-[4em] text-center md:px-[10em] md:py-[12em] lg:px-10 lg:py-[6em] lg:text-left">
-						<ContentWrapper.Title className="mb-[8px]   lg:mb-[16px]">
-							<h1 className="title-5 lg:title-2 text-primary-shade-1">
-								{ctaTitle}
-							</h1>
-						</ContentWrapper.Title>
-						<ContentWrapper.Description>
-							<RichText value={ctaDescription?.contentRaw} />
-						</ContentWrapper.Description>
-						<ContentWrapper.CTA className="mt-[32px]">
-							<CtaWrapper.CTA className="para-3 lg:para-2 bg-primary-shade-1 h-[52px] w-[184px] rounded-lg py-1 px-4 tracking-wide text-white  md:py-2  md:px-8  lg:h-[64px] lg:w-[198px] lg:tracking-wider ">
-								<p>{finalCtaButton?.text}</p>
-							</CtaWrapper.CTA>
-						</ContentWrapper.CTA>
-					</ContentWrapper>
+					<div className="text-primary-shade-1 ">
+						<CTATextContent title={ctaTitle || ''} description={ctaDescription}>
+							<CTAButton
+								text={finalCtaButton?.text || ''}
+								textColor="text-white"
+								bgColor="bg-primary-shade-1"
+							/>
+						</CTATextContent>
+					</div>
 				</CTAWithImage>
 			</section>
 		</>
