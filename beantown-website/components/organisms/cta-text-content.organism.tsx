@@ -9,7 +9,7 @@ interface IProps {
 }
 const CTATextContent: React.FC<IProps> = ({ title, description, children }) => {
 	return (
-		<ContentWrapper className="flex flex-col justify-between px-16 text-center sm:px-48 md:px-4 lg:px-20 lg:text-left">
+		<ContentWrapper className="flex flex-col justify-between px-14 text-center md:px-4 lg:px-20 lg:text-left">
 			<ContentWrapper.Title className="  mb-2  lg:mb-4 ">
 				<h1 className="title-5 lg:title-2 lg:leading-[70px]">{title}</h1>
 			</ContentWrapper.Title>
@@ -22,7 +22,7 @@ const CTATextContent: React.FC<IProps> = ({ title, description, children }) => {
 					)}
 				</ContentWrapper.Description>
 			)}
-			<ContentWrapper.CTA className="mt-8 pb-[1em] lg:pb-0">
+			<ContentWrapper.CTA className="pb-[1em] lg:pb-0">
 				{children}
 			</ContentWrapper.CTA>
 		</ContentWrapper>
