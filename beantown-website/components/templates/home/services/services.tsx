@@ -23,12 +23,14 @@ export default function Services() {
 	let clonedServicesGroup = servicesGroup ? [...servicesGroup] : [];
 
 	if (isMobile && servicesGroup && servicesGroup.length > 0) {
-		// Create a new array from servicesGroup by making the second element as the first element and add the first and last element
-		clonedServicesGroup = [
-			servicesGroup[1],
-			servicesGroup[0],
-			servicesGroup[servicesGroup.length - 1],
-		];
+		// Find the service which is marked as main service and make it the first element
+		const mainServiceIndex = servicesGroup.findIndex(
+			(service) => service?.isMainService
+		);
+		if (mainServiceIndex !== -1) {
+			const mainService = clonedServicesGroup.splice(mainServiceIndex, 1);
+			clonedServicesGroup = [...mainService, ...clonedServicesGroup];
+		}
 	}
 	return (
 		<section
