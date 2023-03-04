@@ -1,6 +1,7 @@
 import React from 'react';
 import Image from 'next/image';
 import CtaWrapper from 'components/molecules/cta-wrapper.molecule';
+import Link from 'next/link';
 
 interface Props {
 	title: string;
@@ -30,7 +31,9 @@ const ServiceCard: React.FC<Props> = (props) => {
 							{props.title}
 						</h1>
 						<CtaWrapper.CTA className="bg-primary-shade-1 para-3 lg:para-2 h-[52px] w-[184px] rounded-lg py-1  px-4 tracking-wide text-white  md:py-2 md:px-8 lg:h-[64px] lg:w-[196px] lg:tracking-wider ">
-							<p>{props.buttonText}</p>
+							<Link href={props.hRef}>
+								<p>{props.buttonText}</p>
+							</Link>
 						</CtaWrapper.CTA>
 					</div>
 				</div>
