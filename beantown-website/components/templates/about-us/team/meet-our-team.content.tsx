@@ -35,7 +35,8 @@ const MeetOurTeam = () => {
 				</div>
 				<div
 					id="cards-container"
-					className=" grid grid-cols-2 gap-4 lg:grid-cols-3 "
+					//className=" container mx-auto flex      flex-wrap items-center justify-center  space-x-4  space-y-4 "
+					className=" container grid grid-cols-2 mx-auto  sm:flex sm:flex-wrap items-center justify-center  space-x-4  space-y-4 "
 				>
 					{memberCards?.map((content, index) => {
 						return (
@@ -43,7 +44,7 @@ const MeetOurTeam = () => {
 								<div
 									key={index}
 									id="card"
-									className="flex flex-col   rounded-lg  bg-white p-1 shadow-[rgba(29,_39,_87,_0.08)_4px_8px_60px] sm:flex sm:flex-row  sm:p-2 "
+									className="flex flex-col place-items-center h-full    rounded-lg  bg-white p-1 shadow-[rgba(29,_39,_87,_0.08)_4px_8px_60px] sm:flex sm:flex-row  sm:p-2 "
 								>
 									{/* <div className="flex h-full items-center">
 											<CMSImageWrapper
@@ -54,14 +55,15 @@ const MeetOurTeam = () => {
 
 									<div
 										id="profileInfo-wrapper"
-										className="justify-between sm:flex sm:space-x-5 "
+										className="justify-between  sm:flex sm:space-x-5 "
 									>
-										<div className="h-[150px] w-[150px]   rounded-lg fill-current md:h-[200px] md:w-[200px] ">
+										<div className="h-[150px] w-[150px]  rounded-lg fill-current  md:h-[200px] md:w-[200px] ">
 											<Image
 												src={content.profilePicture?.asset?.url || ''}
 												height={'200'}
 												width={'200'}
 												alt={content.profilePicture?.asset?.altText || ''}
+												className="rounded-lg  p-1"
 											/>
 										</div>
 
