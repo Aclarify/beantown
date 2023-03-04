@@ -21,7 +21,7 @@ const MissionContent = () => {
 	return (
 		<div
 			id="section-wrapper"
-			className="z-10 mb-[6em]  flex flex-col  overflow-hidden "
+			className="z-10   flex flex-col  overflow-hidden "
 		>
 			<div
 				id="content-image-wrapper"
@@ -42,7 +42,7 @@ const MissionContent = () => {
 				</div>
 				<div
 					id="content-wrapper"
-					className="z-10 flex basis-1/2 flex-col items-start text-left lg:pt-20 "
+					className=" 3xl:px-[10em]  z-10 flex basis-1/2  flex-col px-0 pb-[6em] text-left lg:px-[4em] "
 				>
 					<ContentWrapper>
 						<ContentWrapper.Title>
