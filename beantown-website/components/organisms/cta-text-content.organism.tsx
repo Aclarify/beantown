@@ -1,4 +1,3 @@
-import CtaWrapper from 'components/molecules/cta-wrapper.molecule';
 import RichText from 'components/molecules/rich-text.molecule';
 import React from 'react';
 import ContentWrapper from './content-wrapper.organism';
@@ -10,13 +9,17 @@ interface IProps {
 }
 const CTATextContent: React.FC<IProps> = ({ title, description, children }) => {
 	return (
-		<ContentWrapper className="flex flex-col justify-between px-10 text-center md:px-4 lg:px-20 lg:text-left">
+		<ContentWrapper className="flex flex-col justify-between px-16 text-center sm:px-48 md:px-4 lg:px-20 lg:text-left">
 			<ContentWrapper.Title className="  mb-2  lg:mb-4 ">
 				<h1 className="title-5 lg:title-2 lg:leading-[70px]">{title}</h1>
 			</ContentWrapper.Title>
 			{description && (
 				<ContentWrapper.Description>
-					<RichText value={description?.contentRaw} />
+					{typeof description === 'string' ? (
+						<span>{description}</span>
+					) : (
+						<RichText value={description?.contentRaw} />
+					)}
 				</ContentWrapper.Description>
 			)}
 			<ContentWrapper.CTA className="mt-8 pb-[1em] lg:pb-0">
