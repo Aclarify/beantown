@@ -1,4 +1,4 @@
-import React, { useContext, useEffect } from 'react';
+import React, { useContext } from 'react';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faArrowRight, faArrowLeft } from '@fortawesome/free-solid-svg-icons';
 import { GlobalContext } from '@contexts/global/global.context';
@@ -101,9 +101,9 @@ const HeatingCoolingProductsCardContent = () => {
 			{
 				breakpoint: SCREEN_BREAKPOINTS.XS,
 				settings: {
-					slidesToShow: 1,
+					slidesToShow: 1.1,
 					slidesToScroll: 1,
-					variableWidth: false,
+					variableWidth: true,
 				},
 			},
 		],
@@ -118,13 +118,13 @@ const HeatingCoolingProductsCardContent = () => {
 
 					<div className="hidden  justify-center  gap-4 pt-4 lg:flex  ">
 						<button
-							onClick={next}
+							onClick={previous}
 							className="lg:text-service-red text-primary-shade-1 bg-secondary-shade-3 h-16 w-32 rounded-full py-4 px-6 text-xl"
 						>
 							<FontAwesomeIcon icon={faArrowLeft} />
 						</button>
 						<button
-							onClick={previous}
+							onClick={next}
 							className=" bg-service-red h-16  w-32 rounded-full py-4 px-6 text-xl text-white"
 						>
 							<FontAwesomeIcon icon={faArrowRight} />
