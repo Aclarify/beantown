@@ -21,12 +21,13 @@ const MissionValuesSection = () => {
 						: '/images/about-us/mission/about-us-mission-top-wave-mobile.svg'
 				}
 			></WaveWrapper>
-
-			<SectionContentWrapper>
-				<MissionContent />
-				<ValuesContent />
-				<ValuesCards />
-			</SectionContentWrapper>
+			<div className="3xl:mt-[-10em] 4xl:-mt-[15em] 3xl:mb-[-10em] xs:mb-[0em] relative z-20 md:mt-[-4em] xl:mt-[-8em] xl:mb-[-3em] 2xl:mb-[-6em] ">
+				<SectionContentWrapper>
+					<MissionContent />
+					<ValuesContent />
+					<ValuesCards />
+				</SectionContentWrapper>
+			</div>
 			<WaveWrapper
 				waveURL={
 					width > 1023
