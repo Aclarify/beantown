@@ -25,7 +25,7 @@ export default function HomeTestimonials() {
 				height={590}
 				width={650}
 				alt="Left Blob "
-				className="z-1  absolute top-0 left-0 hidden -translate-x-[55%] transform lg:block lg:-translate-y-[45%] "
+				className="z-1  absolute top-0 left-0 hidden -translate-x-[55%] transform lg:block lg:-translate-y-[33%] "
 			/>
 			<Image
 				src={'/images/home/testimonials/home-testimonial-right-blob.svg'}

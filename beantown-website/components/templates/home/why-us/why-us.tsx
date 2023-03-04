@@ -4,12 +4,12 @@ import { GlobalContextProps } from '@typing/common/interfaces/contexts.interface
 import RichText from 'components/molecules/rich-text.molecule';
 import { HomePageContentProps } from 'pages';
 import WhyUsCard from './why-us-card';
-import Button from 'components/atoms/button.atom';
 import ContentWrapper from 'components/organisms/content-wrapper.organism';
 import MaskedImageWithBackgroundVector from 'components/organisms/masked-image-with-blob.organism';
 import useWindowDimensions from '@lib/hooks/use-window-dimensions.hook';
 import WaveWrapper from 'components/molecules/wave-wrapper.molecule';
 import CtaWrapper from 'components/molecules/cta-wrapper.molecule';
+import Link from 'next/link';
 export default function WhyUs() {
 	const { pageContent } =
 		useContext<GlobalContextProps<HomePageContentProps>>(GlobalContext);
@@ -51,7 +51,9 @@ export default function WhyUs() {
 							</ContentWrapper.Description>
 							<ContentWrapper.CTA className="mt-[16px] lg:mt-[32px]">
 								<CtaWrapper.CTA className="bg-primary-shade-1 para-3 lg:para-2 h-[52px] w-[184px] rounded-lg py-1 px-4 tracking-wide text-white md:py-2  md:px-8  lg:h-[64px] lg:w-[210px] lg:tracking-wider ">
-									<p>{whyUsButton?.text}</p>
+									<Link href={whyUsButton?.href || '#'}>
+										<p>{whyUsButton?.text}</p>
+									</Link>
 								</CtaWrapper.CTA>
 							</ContentWrapper.CTA>
 						</ContentWrapper>
