@@ -45,15 +45,23 @@ const HeatingCoolingProductsCardContent = () => {
 			{
 				breakpoint: SCREEN_BREAKPOINTS.XXL,
 				settings: {
-					slidesToShow: 4.05,
+					slidesToShow: 3.5,
 					slidesToScroll: 1,
 					variableWidth: true,
 				},
 			},
 			{
-				breakpoint: SCREEN_BREAKPOINTS.XL,
+				breakpoint: 1972,
 				settings: {
-					slidesToShow: 3.5,
+					slidesToShow: 2.7,
+					slidesToScroll: 1,
+					variableWidth: true,
+				},
+			},
+			{
+				breakpoint: 1576,
+				settings: {
+					slidesToShow: 2.2,
 					slidesToScroll: 1,
 					variableWidth: true,
 				},
@@ -61,7 +69,15 @@ const HeatingCoolingProductsCardContent = () => {
 			{
 				breakpoint: SCREEN_BREAKPOINTS.LG,
 				settings: {
-					slidesToShow: 3.5,
+					slidesToShow: 2,
+					slidesToScroll: 1,
+					variableWidth: true,
+				},
+			},
+			{
+				breakpoint: 1040,
+				settings: {
+					slidesToShow: 1.8,
 					slidesToScroll: 1,
 					variableWidth: true,
 				},
@@ -69,7 +85,7 @@ const HeatingCoolingProductsCardContent = () => {
 			{
 				breakpoint: 1024,
 				settings: {
-					slidesToShow: 3.1,
+					slidesToShow: 1.8,
 					slidesToScroll: 1,
 					variableWidth: true,
 				},
@@ -77,7 +93,7 @@ const HeatingCoolingProductsCardContent = () => {
 			{
 				breakpoint: SCREEN_BREAKPOINTS.SM,
 				settings: {
-					slidesToShow: 2.5,
+					slidesToShow: 1.5,
 					slidesToScroll: 1,
 					variableWidth: true,
 				},
@@ -85,9 +101,9 @@ const HeatingCoolingProductsCardContent = () => {
 			{
 				breakpoint: SCREEN_BREAKPOINTS.XS,
 				settings: {
-					slidesToShow: 1.5,
+					slidesToShow: 1,
 					slidesToScroll: 1,
-					variableWidth: true,
+					variableWidth: false,
 				},
 			},
 		],
@@ -115,43 +131,41 @@ const HeatingCoolingProductsCardContent = () => {
 						</button>
 					</div>
 				</div>
-				<div>
-					<div className="w-full pt-8 ">
-						<Slider ref={slider} {...settings} className="">
-							{productsGroup?.map((productInfo, index) => {
-								return (
-									<div
-										className="product-card-wrapper  !flex justify-center px-1 xl:px-2"
-										key={index}
-									>
-										<ProductCard
-											key={index}
-											title={productInfo?.titleText || ''}
-											image={productInfo?.image || null}
-											thumbnailAltText={'Heating and Cooling Product Images'}
-											description={productInfo?.description || ''}
-										/>
-									</div>
-								);
-							})}
-						</Slider>
-					</div>
-				</div>
-				<div className="-mt-96 relative flex justify-center gap-4  lg:hidden ">
-					<button						
-						onClick={previous}					
-						className="lg:text-service-red text-primary-shade-1 bg-secondary-shade-3 h-12 w-20  rounded-full py-2 px-4"
-					>
-						<FontAwesomeIcon icon={faArrowLeft} />
-					</button>
-					<button						
-						onClick={next}
-						className=" bg-service-red h-12 w-20 rounded-full py-2 px-4 text-white"
-					>
-						<FontAwesomeIcon icon={faArrowRight} />
-					</button>
-				</div>
 			</SectionContentWrapper>
+			<div className="w-full pl-5 pt-8 md:pl-8 2xl:pl-[120px] ">
+				<Slider ref={slider} {...settings} className="">
+					{productsGroup?.map((productInfo, index) => {
+						return (
+							<div
+								className="product-card-wrapper  !flex justify-center px-1 xl:px-2"
+								key={index}
+							>
+								<ProductCard
+									key={index}
+									title={productInfo?.titleText || ''}
+									image={productInfo?.image || null}
+									thumbnailAltText={'Heating and Cooling Product Images'}
+									description={productInfo?.description || ''}
+								/>
+							</div>
+						);
+					})}
+				</Slider>
+			</div>
+			<div className="relative flex justify-center gap-4 pt-8 lg:hidden ">
+				<button
+					onClick={previous}
+					className="lg:text-service-red text-primary-shade-1 bg-secondary-shade-3 h-12 w-20  rounded-full py-2 px-4"
+				>
+					<FontAwesomeIcon icon={faArrowLeft} />
+				</button>
+				<button
+					onClick={next}
+					className=" bg-service-red h-12 w-20 rounded-full py-2 px-4 text-white"
+				>
+					<FontAwesomeIcon icon={faArrowRight} />
+				</button>
+			</div>
 		</>
 	);
 };
