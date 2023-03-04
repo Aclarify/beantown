@@ -1,9 +1,7 @@
 import React, { useContext } from 'react';
 import { GlobalContext } from '@contexts/global/global.context';
 import { GlobalContextProps } from '@typing/common/interfaces/contexts.interface';
-import ContentWrapper from 'components/organisms/content-wrapper.organism';
 import CTAWithImage from 'components/organisms/cta-with-image.organism';
-import CtaWrapper from 'components/molecules/cta-wrapper.molecule';
 import { AboutUsContentProps } from 'pages/about-us';
 import CTATextContent, {
 	CTAButton,
@@ -31,12 +29,12 @@ const CommunityCTAContent = () => {
 			heroImagePosition="left"
 			bgColor="var(--primary-color-shade-2-rgb)"
 		>
-			<div className="text-white ">
+			<div className="text-white">
 				<CTATextContent title={communityCtaTitle || ''}>
 					<CTAButton
 						text={communityCtaButton?.text || ''}
 						textColor="text-primary-shade-1"
-						bgColor="bg-white"
+						bgColor="bg-primary-white-shade-1"
 					/>
 				</CTATextContent>
 			</div>

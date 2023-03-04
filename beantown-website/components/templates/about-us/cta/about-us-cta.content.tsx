@@ -14,7 +14,7 @@ const AboutUSCTAContent = () => {
 		return null;
 	}
 	const pageData = pageContent.page[0];
-	const { ctaButton, ctaImage, ctaTitle } = pageData;
+	const { ctaButton, ctaImage, ctaTitle, ctaDescription } = pageData;
 
 	return (
 		<CTAWithImage
@@ -27,8 +27,8 @@ const AboutUSCTAContent = () => {
 			heroImagePosition="right"
 			bgColor="var(--secondary-color-shade-2-rgb)"
 		>
-			<div className="text-primary-shade-1 ">
-				<CTATextContent title={ctaTitle || ''}>
+			<div className="text-primary-shade-1">
+				<CTATextContent title={ctaTitle || ''} description={ctaDescription}>
 					<CTAButton
 						text={ctaButton?.text || ''}
 						textColor="text-white"
