@@ -22,7 +22,7 @@ const Testimonials: React.FC<IProps> = (props) => {
 	const slider = React.useRef<Slider | null>(null);
 	const [showTestimonialModel, setShowTestimonialModel] = useState(false);
 	const [selectedTestimonial, setSelectedTestimonial] = useState<any>(null);
-	
+
 	const previous = () => {
 		if (slider.current) {
 			slider.current.slickPrev();
@@ -45,9 +45,17 @@ const Testimonials: React.FC<IProps> = (props) => {
 		variableWidth: true,
 		responsive: [
 			{
-				breakpoint: 320,
+				breakpoint: 324,
 				settings: {
-					slidesToShow: 1.2,
+					slidesToShow: 1,
+					slidesToScroll: 1,
+					variableWidth: false,
+				},
+			},
+			{
+				breakpoint: 355,
+				settings: {
+					slidesToShow: 1.1,
 					slidesToScroll: 1,
 					variableWidth: true,
 				},
@@ -60,11 +68,19 @@ const Testimonials: React.FC<IProps> = (props) => {
 					variableWidth: true,
 				},
 			},
+			{
+				breakpoint: 500,
+				settings: {
+					slidesToShow: 1.2,
+					slidesToScroll: 1,
+					variableWidth: true,
+				},
+			},
 
 			{
 				breakpoint: 720,
 				settings: {
-					slidesToShow: 2.5,
+					slidesToShow: 1.7,
 					slidesToScroll: 1,
 					variableWidth: true,
 				},
@@ -80,16 +96,16 @@ const Testimonials: React.FC<IProps> = (props) => {
 			{
 				breakpoint: 920,
 				settings: {
-					slidesToShow: 3,
+					slidesToShow: 2.5,
 					slidesToScroll: 1,
 					variableWidth: true,
 				},
 			},
 			// 3 slide but square shape
 			{
-				breakpoint: 1000,
+				breakpoint: 1048,
 				settings: {
-					slidesToShow: 3,
+					slidesToShow: 1.7,
 					slidesToScroll: 1,
 					variableWidth: true,
 				},
@@ -112,7 +128,23 @@ const Testimonials: React.FC<IProps> = (props) => {
 				},
 			},
 			{
+				breakpoint: 1690,
+				settings: {
+					slidesToShow: 1.8,
+					slidesToScroll: 1,
+					variableWidth: true,
+				},
+			},
+			{
 				breakpoint: 1900,
+				settings: {
+					slidesToShow: 2.7,
+					slidesToScroll: 1,
+					variableWidth: true,
+				},
+			},
+			{
+				breakpoint: 2182,
 				settings: {
 					slidesToShow: 3.1,
 					slidesToScroll: 1,
@@ -141,7 +173,7 @@ const Testimonials: React.FC<IProps> = (props) => {
 			<div>
 				<div className="relative lg:hidden ">
 					<div className=" w-full flex-none">
-						<div className="ml-8">
+						<div className="ml-8 pb-6">
 							<h1 className="para-4 text-primary-shade-1 ">
 								{props.testimonialTitle}
 							</h1>
@@ -152,7 +184,7 @@ const Testimonials: React.FC<IProps> = (props) => {
 					</div>
 				</div>
 				<div className=" flex space-x-6">
-					<div className="gap-15 z-40 ml-28 mr-16 hidden flex-none   flex-col  items-center justify-center lg:-mt-96   lg:flex xl:mt-32 2xl:-mt-96 ">
+					<div className="gap-15 z-40 ml-28 mr-16 hidden flex-none   flex-col  items-center justify-center    lg:flex  ">
 						<div className="flex-none  gap-5 ">
 							<h1 className=" text-light-1 text-primary-shade-1 ">
 								{props.testimonialTitle}
@@ -181,7 +213,7 @@ const Testimonials: React.FC<IProps> = (props) => {
 							{props.testimonialCards?.map((reviews, index) => {
 								return (
 									<div
-										className="testimonial-card-wrapper slick-item outline-none"
+										className="testimonial-card-wrapper slick-item !flex justify-center px-2 outline-none xl:px-4"
 										key={index}
 									>
 										<TestimonialCard

@@ -3,30 +3,28 @@
 @tailwind utilities;
 
 :root {
-	--main-black-color-hex: #18181B;
-	--primary-color-shade-1-hex: #15284C;
+	--main-black-color-hex: #18181b;
+	--primary-color-shade-1-hex: #15284c;
 	--primary-color-shade-1-rgb: 21, 40, 76;
-	--primary-color-shade-2-hex: #A0A9B7;
+	--primary-color-shade-2-hex: #a0a9b7;
 	--primary-color-shade-2-rgb: 160, 169, 183;
-	--primary-color-shade-3-hex: #ECEEF1;
+	--primary-color-shade-3-hex: #eceef1;
 	--primary-color-shade-3-rgb: 236, 238, 241;
-	--secondary-color-shade-1-hex: #7AADD3;
+	--secondary-color-shade-1-hex: #7aadd3;
 	--secondary-color-shade-1-rgb: 122, 173, 211;
-	--secondary-color-shade-2-hex: #CADEED;
+	--secondary-color-shade-2-hex: #cadeed;
 	--secondary-color-shade-2-rgb: 202, 222, 237;
-	--secondary-color-shade-3-hex: #F4F8FB;
+	--secondary-color-shade-3-hex: #f4f8fb;
 	--secondary-color-shade-3-rgb: 244, 248, 251;
-	--services-red-color-hex: #BC3B39;
+	--services-red-color-hex: #bc3b39;
 	--services-red-color-rgb: 188, 59, 57;
-	--services-yellow-color-hex: #F4DE00;
+	--services-yellow-color-hex: #f4de00;
 	--services-yellow-color-rgb: 244, 222, 0;
 	--services-green-color-hex: #008340;
 	--services-green-color-rgb: 0, 131, 64;
 }
 
-
 @layer utilities {
-
 	/* hide for chrome,safari and opera */
 	.no-scrollbar::-webkit-scrollbar {
 		display: none;
@@ -149,12 +147,3 @@
 		@apply font-light;
 	}
 }
-
-
-.slick-item {
-	margin: 0 10px;
-	
-}
-
-
-
