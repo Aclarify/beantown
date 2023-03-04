@@ -62,7 +62,7 @@ const ServiceAreas: React.FC<IProps> = (props) => {
 										return (
 											<div
 												key={index}
-												className="bg-secondary-shade-3 rounded lg:rounded-lg"
+												className="bg-secondary-shade-3 rounded pl-1 lg:rounded-lg"
 											>
 												<LocationCard
 													locationText={
