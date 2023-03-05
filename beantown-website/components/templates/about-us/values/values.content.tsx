@@ -29,7 +29,7 @@ const ValuesContent = () => {
 			>
 				<div
 					id="content-wrapper"
-					className="3xl:px-[10em] z-10 flex basis-1/2 flex-col items-start  px-0 text-left lg:px-[4em] lg:pt-20 "
+					className="3xl:px-[10em] z-10 flex basis-1/2 flex-col items-start  px-0 text-left lg:pl-48 lg:pr-[4em] lg:pt-20 "
 				>
 					<ContentWrapper>
 						<ContentWrapper.Title>
