@@ -6,16 +6,29 @@ import React from 'react';
 
 interface Props {
 	image: CMSImageType | null;
+	shouldBePrefetched?: boolean;
 	altText?: string;
+	stretchWidth?: boolean;
+	stretchHeight?: boolean;
 }
-const CMSImageWrapper: React.FC<Props> = (props) => {
-	const imageProps = useNextSanityImage(client, props.image) as any;
+const CMSImageWrapper: React.FC<Props> = ({
+	image,
+	shouldBePrefetched,
+	altText,
+	stretchWidth = true,
+	stretchHeight = false,
+}) => {
+	const imageProps = useNextSanityImage(client, image) as any;
+	const imageWidth = stretchWidth ? '100%' : 'auto';
+	const imageHeight = stretchHeight ? '100%' : 'auto';
 	return (
 		<Image
 			{...imageProps}
-			alt={props.image?.asset?.altText || props.altText || ''}
+			alt={image?.asset?.altText || altText || ''}
+			priority={shouldBePrefetched || false}
 			style={{
-				width: '100%',
+				width: imageWidth,
+				height: imageHeight,
 			}}
 		/>
 	);
