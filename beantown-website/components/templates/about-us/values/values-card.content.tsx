@@ -31,7 +31,7 @@ const ValuesCards = () => {
 							>
 								<div
 									key={index}
-									className="bg-secondary-shade-3 flex  h-[140px] w-1/3 items-center justify-center rounded-2xl  "
+									className="bg-secondary-shade-3 flex w-1/3 items-center justify-center rounded-2xl py-8 px-5  "
 								>
 									<Image
 										alt={cardInfo?.iconImage?.asset?.altText || ''}

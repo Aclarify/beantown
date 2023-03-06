@@ -5,7 +5,6 @@ import { Bars3Icon, XMarkIcon } from '@heroicons/react/24/outline';
 import { Nav } from '@typing/gql/graphql';
 
 import Image from 'next/image';
-import CtaWrapper from 'components/molecules/cta-wrapper.molecule';
 import clsx from 'clsx';
 
 interface IProps {
@@ -16,7 +15,7 @@ interface IProps {
 	children: React.ReactNode;
 }
 export default function Header(props: IProps) {
-	const { navLinks, navGroup, headerButton } = props.content;
+	const { navLinks, navGroup } = props.content;
 	const childLinks = navGroup?.map((nav) => nav?.links).flat();
 
 	const allNavLinks = [
@@ -34,31 +33,35 @@ export default function Header(props: IProps) {
 				<Popover className="relative z-30">
 					<div
 						className={clsx(
-							'flex items-center  justify-between py-6 lg:p-0',
+							'flex items-center  justify-between py-4 lg:p-0',
 							props.fontColor
 						)}
 					>
 						<div className="hidden align-middle lg:flex ">
-							<Image
-								alt={logoDesktop?.asset?.altText || ''}
-								width={200}
-								height={300}
-								priority={true}
-								src={logoDesktop?.asset?.url || ''}
-							/>
+							<Link href="/">
+								<Image
+									alt={logoDesktop?.asset?.altText || ''}
+									width={200}
+									height={300}
+									priority={true}
+									src={logoDesktop?.asset?.url || ''}
+								/>
+							</Link>
 						</div>
 						<div className="flex align-middle lg:hidden">
-							<Image
-								alt={logoMobile?.asset?.altText || ''}
-								width={150}
-								height={100}
-								priority={true}
-								src={logoMobile?.asset?.url || ''}
-							/>
+							<Link href="/">
+								<Image
+									alt={logoMobile?.asset?.altText || ''}
+									width={150}
+									height={100}
+									priority={true}
+									src={logoMobile?.asset?.url || ''}
+								/>
+							</Link>
 						</div>
-						<div className="-my-2  text-white lg:hidden">
+						<div className="  items-center text-white lg:hidden">
 							<Popover.Button
-								className="inline-flex rounded-md p-2 "
+								className="inline-flex rounded-md px-2 "
 								aria-label="menu for navigation"
 							>
 								<Bars3Icon className="h-8 w-8 " aria-hidden="true" />

@@ -101,7 +101,7 @@ export default function Services() {
 				height={590}
 				width={650}
 				alt="Left Blob "
-				className="absolute  bottom-0 left-0 z-[-1] hidden -translate-x-[61%] transform md:block md:translate-y-[6%] lg:translate-y-[25%]"
+				className="absolute  bottom-0 left-0 z-[-1] hidden -translate-x-[65%] transform md:block md:translate-y-[6%] lg:translate-y-[45%]"
 			/>
 		</section>
 	);

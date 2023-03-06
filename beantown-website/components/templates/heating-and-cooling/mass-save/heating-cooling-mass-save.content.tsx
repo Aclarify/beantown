@@ -60,7 +60,7 @@ const HeatingCoolingMassSaveContent = () => {
 						maskImg={
 							width > 768
 								? './images/heating-cooling/mass-save/hc-mass-save-blob.svg'
-								: './images/heating-cooling/mass-save/hc-mass-save-bg-blob.svg'
+								: './images/heating-cooling/mass-save/hc-mass-save-blob-mask-mobile.svg'
 						}
 						bgImg={
 							width > 768
