@@ -6,6 +6,7 @@ import React from 'react';
 
 interface Props {
 	image: CMSImageType | null;
+	shouldBePrefetched?: boolean;
 	altText?: string;
 }
 const CMSImageWrapper: React.FC<Props> = (props) => {
@@ -14,8 +15,10 @@ const CMSImageWrapper: React.FC<Props> = (props) => {
 		<Image
 			{...imageProps}
 			alt={props.image?.asset?.altText || props.altText || ''}
+			priority={props.shouldBePrefetched || false}
 			style={{
 				width: '100%',
+				height: '100%',
 			}}
 		/>
 	);

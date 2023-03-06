@@ -3,10 +3,10 @@ import { GlobalContext } from '@contexts/global/global.context';
 import { GlobalContextProps } from '@typing/common/interfaces/contexts.interface';
 import { HomePageContentProps } from 'pages';
 import RichText from 'components/molecules/rich-text.molecule';
-import Image from 'next/image';
 
 import ContentWrapper from 'components/organisms/content-wrapper.organism';
 import CtaWrapper from 'components/molecules/cta-wrapper.molecule';
+import CMSImageWrapper from 'components/molecules/cms-image-wrapper.molecule';
 
 export default function HomeHero() {
 	const { pageContent } =
@@ -16,8 +16,7 @@ export default function HomeHero() {
 		return null;
 	}
 	const homeData = pageContent.page[0];
-	const { heroTitle, heroDescription, heroButton, heroImage, heroImageMobile } =
-		homeData;
+	const { heroTitle, heroDescription, heroButton, heroImage } = homeData;
 	return (
 		<section id="home_page_hero" className="relative">
 			<div
@@ -41,39 +40,14 @@ export default function HomeHero() {
 				</ContentWrapper>
 			</div>
 			<div
-				id="image-wrapper-desktop"
-				className="after:z-1 after:from-home-hero-gradient-start after:to-home-hero-gradient-end absolute top-0 z-0 hidden h-full w-full after:absolute after:top-0 after:left-0 after:h-full after:w-full after:bg-gradient-to-b sm:block"
-			>
-				<Image
-					alt={heroImage?.asset?.altText || ''}
-					width={4000}
-					height={1000}
-					priority={true}
-					src={heroImage?.asset?.url || ''}
-					style={{
-						zIndex: '0',
-						width: '100%',
-						height: '100%',
-						maxWidth: '100%',
-					}}
-				/>
-			</div>
-			<div
-				id="image-wrapper-mobile"
+				id="image-wrapper"
 				className="after:z-1 after:from-home-hero-gradient-start after:to-home-hero-gradient-end absolute top-0 z-0  h-full
-				after:absolute after:top-0 after:left-0 after:h-full after:w-full after:bg-gradient-to-b sm:hidden"
+				w-full after:absolute after:top-0 after:left-0 after:h-full after:w-full after:bg-gradient-to-b"
 			>
-				<Image
-					alt={heroImageMobile?.asset?.altText || ''}
-					width={1000}
-					height={1000}
-					priority={true}
-					src={heroImageMobile?.asset?.url || ''}
-					style={{
-						zIndex: '0',
-						height: '100%',
-						maxWidth: '100%',
-					}}
+				<CMSImageWrapper
+					altText={heroImage?.asset?.altText || ''}
+					image={heroImage || null}
+					shouldBePrefetched={true}
 				/>
 			</div>
 		</section>
