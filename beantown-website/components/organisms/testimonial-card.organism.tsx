@@ -46,11 +46,7 @@ export const TestimonialCard: React.FC<Props> = (props) => {
 							onShowMore={props.onShowMore}
 						/>
 					)}
-					{!props.onShowMore && (
-						<span className="para-4 lg:para-3 text-primary-black pt-6 pb-2 text-center leading-6 lg:px-10 lg:leading-9">
-							{props.reviewComments}
-						</span>
-					)}
+					{!props.onShowMore && props.reviewComments}
 				</div>
 			</div>
 		</>
