@@ -97,6 +97,7 @@ const Brands: React.FC<IProps> = (props) => {
 										<CMSImageWrapper
 											altText={logo?.image?.asset?.altText || ''}
 											image={logo?.image || null}
+											shouldBePrefetched={true}
 										/>
 									</div>
 								</div>
