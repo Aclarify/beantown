@@ -1,6 +1,5 @@
 import { GlobalContext } from '@contexts/global/global.context';
 import { GlobalContextProps } from '@typing/common/interfaces/contexts.interface';
-import Button from 'components/atoms/button.atom';
 import CMSImageWrapper from 'components/molecules/cms-image-wrapper.molecule';
 import CtaWrapper from 'components/molecules/cta-wrapper.molecule';
 import ContentWrapper from 'components/organisms/content-wrapper.organism';
