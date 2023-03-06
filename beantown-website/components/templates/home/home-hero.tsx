@@ -3,10 +3,10 @@ import { GlobalContext } from '@contexts/global/global.context';
 import { GlobalContextProps } from '@typing/common/interfaces/contexts.interface';
 import { HomePageContentProps } from 'pages';
 import RichText from 'components/molecules/rich-text.molecule';
+import Image from 'next/image';
 
 import ContentWrapper from 'components/organisms/content-wrapper.organism';
 import CtaWrapper from 'components/molecules/cta-wrapper.molecule';
-import CMSImageWrapper from 'components/molecules/cms-image-wrapper.molecule';
 
 export default function HomeHero() {
 	const { pageContent } =
@@ -25,11 +25,11 @@ export default function HomeHero() {
 			>
 				<ContentWrapper className="relative z-[2] pt-28 pb-20 md:pt-48 md:pb-48 xl:pt-80 xl:pb-80">
 					<ContentWrapper.Title className=" mb-2  lg:mb-4">
-						<h1 className="title-5 xl:title-1 leading-[36px] xl:leading-[90px]">
+						<h1 className="title-5 2xl:title-1 leading-[36px] 2xl:leading-[90px]">
 							{heroTitle}
 						</h1>
 					</ContentWrapper.Title>
-					<ContentWrapper.Description className="para-4 lg:para-2">
+					<ContentWrapper.Description className="para-4 2xl:para-2">
 						<RichText value={heroDescription?.contentRaw} />
 					</ContentWrapper.Description>
 					<ContentWrapper.CTA className="mt-4  lg:mt-8">
@@ -41,13 +41,21 @@ export default function HomeHero() {
 			</div>
 			<div
 				id="image-wrapper"
-				className="after:z-1 after:from-home-hero-gradient-start after:to-home-hero-gradient-end absolute top-0 z-0  h-full
-				w-full after:absolute after:top-0 after:left-0 after:h-full after:w-full after:bg-gradient-to-b"
+				className="after:z-1 after:from-home-hero-gradient-start after:to-home-hero-gradient-end xs:block absolute top-0 z-0 h-full w-full after:absolute after:top-0 after:left-0 after:h-full after:w-full after:bg-gradient-to-b"
 			>
-				<CMSImageWrapper
-					altText={heroImage?.asset?.altText || ''}
-					image={heroImage || null}
-					shouldBePrefetched={true}
+				<Image
+					alt={heroImage?.asset?.altText || ''}
+					width={4000}
+					height={1000}
+					priority={true}
+					src={heroImage?.asset?.url || ''}
+					style={{
+						width: '100%',
+						height: '100%',
+						maxWidth: '100%',
+						objectFit: 'cover',
+						objectPosition: 'center',
+					}}
 				/>
 			</div>
 		</section>
