@@ -33,7 +33,7 @@ export default function Header(props: IProps) {
 				<Popover className="relative z-30">
 					<div
 						className={clsx(
-							'flex items-center  justify-between py-4 lg:p-0',
+							'flex items-center  justify-between py-2 lg:p-0',
 							props.fontColor
 						)}
 					>
