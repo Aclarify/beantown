@@ -34,7 +34,7 @@ const HeatingCoolingProductsCardContent = () => {
 	const settings = {
 		dots: false,
 		infinite: true,
-		speed: 2000,
+		speed: 800,
 		slidesToShow: 4,
 		slidesToScroll: 1,
 		arrows: false,
