@@ -41,7 +41,7 @@ const Testimonials: React.FC<IProps> = (props) => {
 		slidesToScroll: 1,
 		arrows: false,
 		initialSlide: 0,
-		focusOnSelect: true,
+		focusOnSelect: false,
 		variableWidth: true,
 		responsive: [
 			{
