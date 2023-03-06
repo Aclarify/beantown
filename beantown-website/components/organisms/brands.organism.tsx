@@ -21,6 +21,7 @@ const settings = {
 	slidesToShow: 4,
 	slidesToScroll: 1,
 	pauseOnHover: false,
+	useTransform: false,
 	responsive: [
 		{
 			breakpoint: 1800,
@@ -104,7 +105,7 @@ const Brands: React.FC<IProps> = (props) => {
 						);
 					})}
 				</Slider>
-			</div>
+			</div>			
 		</div>
 	);
 };
