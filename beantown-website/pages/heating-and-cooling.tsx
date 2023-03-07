@@ -79,11 +79,7 @@ const HeatingCoolingServicePage: React.FC = (props) => {
 			<HeatingCoolingBrandsSection />
 			<HeatingCoolingBlogsSection />
 			<HeatingCoolingFaqSection />
-			<FooterSection
-				logoDesktop={logoDesktop?.image}
-				logoMobile={logoMobile?.image}
-				content={footerData}
-			/>
+			<FooterSection logoDesktop={logoDesktop?.image} content={footerData} />
 		</div>
 	);
 };

@@ -74,11 +74,7 @@ const AboutUsPage: React.FC = (props) => {
 			<AboutUsServiceAreas />
 			<AboutUsTestimonials />
 			<CTASection />
-			<FooterSection
-				logoDesktop={logoDesktop?.image}
-				logoMobile={logoMobile?.image}
-				content={footerData}
-			/>
+			<FooterSection logoDesktop={logoDesktop?.image} content={footerData} />
 		</div>
 	);
 };

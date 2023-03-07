@@ -72,11 +72,7 @@ const ElectricalServicesPage: React.FC = (props) => {
 			<ElectricalPageCTASection />
 			<ElectricalBlogsSection />
 			<ElectricalFaqSection />
-			<FooterSection
-				logoDesktop={logoDesktop?.image}
-				logoMobile={logoMobile?.image}
-				content={footerData}
-			/>
+			<FooterSection logoDesktop={logoDesktop?.image} content={footerData} />
 		</section>
 	);
 };

@@ -6,11 +6,10 @@ import { Footer as FooterType } from '@typing/gql/graphql';
 
 interface IProps {
 	logoDesktop: any;
-	logoMobile: any;
 	content: FooterType;
 }
 export default function Footer(props: IProps) {
-	const { logoMobile } = props;
+	const { logoDesktop } = props;
 	const footerData = props.content;
 	const {
 		description,
@@ -90,10 +89,10 @@ export default function Footer(props: IProps) {
 							<div id="logoImage">
 								<Link href={'/'}>
 									<Image
-										alt={logoMobile?.asset?.altText || ''}
+										alt={logoDesktop?.asset?.altText || ''}
 										width={200}
 										height={300}
-										src={logoMobile?.asset?.url || ''}
+										src={logoDesktop?.asset?.url || ''}
 									/>
 								</Link>
 							</div>

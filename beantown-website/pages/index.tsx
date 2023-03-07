@@ -20,6 +20,7 @@ import FooterSection from 'components/organisms/footer';
 import CtaWrapper from 'components/molecules/cta-wrapper.molecule';
 import HomeTestimonials from '../components/templates/home/testimonials/testimonials';
 import HomeServiceAreas from '../components/templates/home/service-areas/service-areas';
+import RefinedHeader from 'components/organisms/nav-bar';
 
 export interface HomePageContentProps {
 	page: Home[];
@@ -60,7 +61,7 @@ const HomePage: React.FC = (props) => {
 	return (
 		<section className="bg-secondary-shade-3">
 			<PageHead />
-			<Header
+			<RefinedHeader
 				fontColor="text-white"
 				logoDesktop={logoDesktop?.image}
 				logoMobile={logoMobile?.image}
@@ -71,7 +72,7 @@ const HomePage: React.FC = (props) => {
 						<p>{headerData.headerButton?.text}</p>
 					</CtaWrapper.CTA>
 				</div>
-			</Header>
+			</RefinedHeader>
 
 			<HomeHero />
 			<Services />
@@ -82,11 +83,7 @@ const HomePage: React.FC = (props) => {
 			<HomeFaq />
 			<HomeBrands />
 			<FooterCta />
-			<FooterSection
-				logoDesktop={logoDesktop?.image}
-				logoMobile={logoMobile?.image}
-				content={footerData}
-			/>
+			<FooterSection logoDesktop={logoDesktop?.image} content={footerData} />
 		</section>
 	);
 };

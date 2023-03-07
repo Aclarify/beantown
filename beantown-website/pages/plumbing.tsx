@@ -74,11 +74,7 @@ const PlumbingServicesPage: React.FC = (props) => {
 			<PlumbingCTASection />
 			<PlumbingBlogsSection />
 			<PlumbingFaqSection />
-			<FooterSection
-				logoDesktop={logoDesktop?.image}
-				logoMobile={logoMobile?.image}
-				content={footerData}
-			/>
+			<FooterSection logoDesktop={logoDesktop?.image} content={footerData} />
 		</div>
 	);
 };
