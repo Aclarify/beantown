@@ -36,12 +36,12 @@ const Testimonials: React.FC<IProps> = (props) => {
 	const settings = {
 		dots: false,
 		infinite: true,
-		speed: 2000,
+		speed: 800,
 		slidesToShow: 4,
 		slidesToScroll: 1,
 		arrows: false,
 		initialSlide: 0,
-		focusOnSelect: true,
+		focusOnSelect: false,
 		variableWidth: true,
 		responsive: [
 			{

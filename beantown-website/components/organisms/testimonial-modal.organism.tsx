@@ -1,5 +1,5 @@
 import React, { useRef } from 'react';
-import Image from 'next/image';
+import XMarkIcon from '@heroicons/react/20/solid/XMarkIcon';
 import useEscapeKey from '@lib/hooks/handle-escape-key.hook';
 import useOutsideClick from '@lib/hooks/handle-outside-click.hook';
 import { TestimonialCard } from './testimonial-card.organism';
@@ -31,14 +31,14 @@ const TestimonialModal = ({
 						ref={ref}
 						className="flex min-h-full items-center justify-center"
 					>
-						<div className="card-wrapper mx-auto max-w-sm rounded bg-white py-2">
+						<div className="card-wrapper mx-auto max-w-sm rounded-2xl bg-white py-2 lg:rounded-3xl">
 							<div className="flex justify-end">
 								<button
-									className="fixed pr-4 text-3xl text-black"
+									className="fixed pr-4 text-gray-400"
 									aria-label="Close testimonial"
 									onClick={onClose}
 								>
-									X
+									<XMarkIcon className="h-8 w-8" />
 								</button>
 							</div>
 							<div className="px-4">
