@@ -128,6 +128,53 @@ export type AboutUsSorting = {
 	valuesTitle?: InputMaybe<SortOrder>;
 };
 
+export type BookNow = Document & {
+	__typename?: 'BookNow';
+	/** Date the document was created */
+	_createdAt?: Maybe<Scalars['DateTime']>;
+	/** Document ID */
+	_id?: Maybe<Scalars['ID']>;
+	_key?: Maybe<Scalars['String']>;
+	/** Current document revision */
+	_rev?: Maybe<Scalars['String']>;
+	/** Document type */
+	_type?: Maybe<Scalars['String']>;
+	/** Date the document was last modified */
+	_updatedAt?: Maybe<Scalars['DateTime']>;
+	bookNowTitle?: Maybe<Scalars['String']>;
+	bookNowDescription?: Maybe<PortableText>;
+	bookNowUrl?: Maybe<Scalars['String']>;
+	logoDesktop?: Maybe<ImageIcon>;
+	footerLogo?: Maybe<ImageIcon>;
+};
+
+export type BookNowFilter = {
+	/** Apply filters on document level */
+	_?: InputMaybe<Sanity_DocumentFilter>;
+	_createdAt?: InputMaybe<DatetimeFilter>;
+	_id?: InputMaybe<IdFilter>;
+	_key?: InputMaybe<StringFilter>;
+	_rev?: InputMaybe<StringFilter>;
+	_type?: InputMaybe<StringFilter>;
+	_updatedAt?: InputMaybe<DatetimeFilter>;
+	bookNowTitle?: InputMaybe<StringFilter>;
+	bookNowDescription?: InputMaybe<PortableTextFilter>;
+	bookNowUrl?: InputMaybe<StringFilter>;
+	logoDesktop?: InputMaybe<ImageIconFilter>;
+	footerLogo?: InputMaybe<ImageIconFilter>;
+};
+
+export type BookNowSorting = {
+	_createdAt?: InputMaybe<SortOrder>;
+	_id?: InputMaybe<SortOrder>;
+	_key?: InputMaybe<SortOrder>;
+	_rev?: InputMaybe<SortOrder>;
+	_type?: InputMaybe<SortOrder>;
+	_updatedAt?: InputMaybe<SortOrder>;
+	bookNowTitle?: InputMaybe<SortOrder>;
+	bookNowDescription?: InputMaybe<PortableTextSorting>;
+};
+
 export type Block = {
 	__typename?: 'Block';
 	_key?: Maybe<Scalars['String']>;

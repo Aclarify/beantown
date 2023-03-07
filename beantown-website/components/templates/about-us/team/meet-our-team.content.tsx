@@ -34,12 +34,7 @@ const MeetOurTeam = () => {
 				</div>
 				<div
 					id="cards-container"
-<<<<<<< HEAD
-					//className=" container mx-auto flex      flex-wrap items-center justify-center  space-x-4  space-y-4 "
-					className=" container grid grid-cols-2 mx-auto  sm:flex sm:flex-wrap items-center justify-center  space-x-4  space-y-4 "
-=======
 					className=" grid grid-cols-2 justify-items-center gap-x-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-2 xl:grid-cols-3"
->>>>>>> a643156dd30e8cc3ff526c8fa8c6906a50913a82
 				>
 					{memberCards?.map((content, index) => {
 						return (
@@ -47,11 +42,7 @@ const MeetOurTeam = () => {
 								<div
 									key={index}
 									id="card"
-<<<<<<< HEAD
-									className="flex flex-col place-items-center h-full    rounded-lg  bg-white p-1 shadow-[rgba(29,_39,_87,_0.08)_4px_8px_60px] sm:flex sm:flex-row  sm:p-2 "
-=======
 									className="m-2 w-[160px] rounded-lg bg-white  px-3 shadow-[rgba(29,_39,_87,_0.08)_4px_8px_60px]  lg:w-full lg:px-4 "
->>>>>>> a643156dd30e8cc3ff526c8fa8c6906a50913a82
 								>
 									<div
 										id="profileInfo-wrapper"
@@ -62,23 +53,6 @@ const MeetOurTeam = () => {
 												altText={content.profilePicture?.asset?.altText || ''}
 												image={content.profilePicture || null}
 											/>
-<<<<<<< HEAD
-										</div> */}
-
-									<div
-										id="profileInfo-wrapper"
-										className="justify-between  sm:flex sm:space-x-5 "
-									>
-										<div className="h-[150px] w-[150px]  rounded-lg fill-current  md:h-[200px] md:w-[200px] ">
-											<Image
-												src={content.profilePicture?.asset?.url || ''}
-												height={'200'}
-												width={'200'}
-												alt={content.profilePicture?.asset?.altText || ''}
-												className="rounded-lg  p-1"
-											/>
-=======
->>>>>>> a643156dd30e8cc3ff526c8fa8c6906a50913a82
 										</div>
 
 										<div

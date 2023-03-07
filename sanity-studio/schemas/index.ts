@@ -31,6 +31,7 @@ import teamMembers from './organism/teamMembers'
 import images from './molecules/images'
 import socialMediaIcons from './molecules/socialMediaIcons'
 import servicesCards from './organism/servicesCards'
+import bookNow from './pages/bookNow'
 
 export const schemaTypes = [
   //Document Types
@@ -44,6 +45,7 @@ export const schemaTypes = [
   faq,
   serviceAreas,
   testimonials,
+  bookNow,
   //Other Types
   breakType,
   cta,
@@ -68,4 +70,5 @@ export const schemaTypes = [
   textImageContentGroup,
   titleDescriptionGroup,
   titleDescriptionImageGroup,
+ 
 ]

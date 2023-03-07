@@ -9,4 +9,5 @@ export enum PageNames {
 	CONTACTUS = 'contactUs',
 	HEADER = 'header',
 	FOOTER = 'footer',
+	BOOKNOW = 'bookNow'
 }
