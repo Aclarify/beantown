@@ -1,26 +1,11 @@
 import React, { Fragment, useState } from 'react';
 import { Dialog, Disclosure, Popover, Transition } from '@headlessui/react';
-import {
-	ArrowPathIcon,
-	Bars3Icon,
-	BookmarkSquareIcon,
-	CalendarIcon,
-	ChartBarIcon,
-	ChartPieIcon,
-	CursorArrowRaysIcon,
-	FingerPrintIcon,
-	LifebuoyIcon,
-	PhoneIcon,
-	PlayIcon,
-	ShieldCheckIcon,
-	Squares2X2Icon,
-	XMarkIcon,
-	SquaresPlusIcon,
-} from '@heroicons/react/24/outline';
+import { Bars3Icon, XMarkIcon } from '@heroicons/react/24/outline';
 import { Nav } from '@typing/gql/graphql';
 import { ChevronDownIcon } from '@heroicons/react/20/solid';
 import Link from 'next/link';
 import Image from 'next/image';
+import clsx from 'clsx';
 
 function classNames(...classes: any) {
 	return classes.filter(Boolean).join(' ');
@@ -51,108 +36,114 @@ export default function RefinedHeader(props: IProps) {
 	return (
 		<section className="2xl:padding-for-section absolute w-full px-5">
 			<Popover className="relative z-30">
-				<div className="mx-auto max-w-7xl px-6">
-					<div className="flex items-center justify-between py-6  text-white md:justify-start md:space-x-10">
-						<div className=" align-middle  ">
-							<Link href="/">
-								<Image
-									alt={logoDesktop?.asset?.altText || ''}
-									width={200}
-									height={300}
-									priority={true}
-									src={logoDesktop?.asset?.url || ''}
-								/>
-							</Link>
-						</div>
-						<div className=" items-center text-white lg:hidden">
-							<Popover.Button
-								className="inline-flex items-center justify-center rounded-md  p-2  "
-								aria-label="menu for navigation"
-								onClick={() => setMobileMenuOpen(true)}
-							>
-								<span className="sr-only">Open menu</span>
-								<Bars3Icon className="h-8 w-8 " aria-hidden="true" />
-							</Popover.Button>
-						</div>
-						<Popover.Group as="nav" className="hidden space-x-10 md:flex">
-							{navLinks?.map((link, index) => {
-								return (
-									<Link
-										key={index}
-										href={link?.href || '/'}
-										className="group inline-block p-8"
-									>
-										{link?.linkText}
-									</Link>
-								);
-							})}
+				<div
+					className={clsx(
+						'flex items-center  justify-between py-4 lg:p-0',
+						props.fontColor
+					)}
+				>
+					<div className=" align-middle  ">
+						<Link href="/">
+							<Image
+								alt={logoDesktop?.asset?.altText || ''}
+								width={200}
+								height={300}
+								priority={true}
+								src={logoDesktop?.asset?.url || ''}
+							/>
+						</Link>
+					</div>
+					<div className=" items-center text-white lg:hidden">
+						<Popover.Button
+							className="inline-flex  rounded-md  px-2  "
+							aria-label="menu for navigation"
+							onClick={() => setMobileMenuOpen(true)}
+						>
+							<span className="sr-only">Open menu</span>
+							<Bars3Icon className="h-8 w-8 " aria-hidden="true" />
+						</Popover.Button>
+					</div>
+					<Popover.Group
+						as="nav"
+						className="para-4 lg:para-3 hidden items-center  lg:flex lg:flex-grow lg:justify-center  "
+					>
+						{navLinks?.map((link, index) => {
+							return (
+								<Link
+									key={index}
+									href={link?.href || '/'}
+									className="group inline-block p-8"
+								>
+									{link?.linkText}
+								</Link>
+							);
+						})}
 
-							{navGroup?.map((linkGroup, index) => {
-								return (
-									<Popover className="relative" key={index}>
-										{({ open }) => (
-											<>
-												<Popover.Button
+						{navGroup?.map((linkGroup, index) => {
+							return (
+								<Popover className="group inline-block pl-6" key={index}>
+									{({ open }) => (
+										<>
+											<Popover.Button
+												className={classNames(
+													//open ? 'text-gray-900' : 'text-gray-500',
+													'min-w-32 flex  items-center rounded-sm  px-3 py-1 outline-none focus:outline-none '
+												)}
+											>
+												<span className="para-4 lg:para-3 flex-1 pr-1 ">
+													{linkGroup?.groupTitle}
+												</span>
+												<ChevronDownIcon
 													className={classNames(
-														//open ? 'text-gray-900' : 'text-gray-500',
-														'group inline-flex items-center rounded-md text-base  font-medium text-white hover:text-gray-900 focus:outline-none focus:ring-2  focus:ring-offset-2'
+														'h-4 w-4 transform fill-current transition duration-150 ease-in-out group-hover:-rotate-180'
 													)}
-												>
-													<span>{linkGroup?.groupTitle}</span>
-													<ChevronDownIcon
-														className={classNames(
-															// open ? 'text-gray-600' : 'text-gray-400',
-															// 'ml-2 h-5 w-5 group-hover:text-gray-500'
-															'ml-2 h-5 w-5 text-white'
-														)}
-														aria-hidden="true"
-													/>
-												</Popover.Button>
+													aria-hidden="true"
+												/>
+											</Popover.Button>
 
-												<Transition
-													as={Fragment}
-													enter="transition ease-out duration-200"
-													enterFrom="opacity-0 translate-y-1"
-													enterTo="opacity-100 translate-y-0"
-													leave="transition ease-in duration-150"
-													leaveFrom="opacity-100 translate-y-0"
-													leaveTo="opacity-0 translate-y-1"
-												>
-													<Popover.Panel className="absolute left-1/2 z-10 mt-3 w-screen max-w-md -translate-x-1/2 transform px-2 sm:px-0">
-														<div className="overflow-hidden rounded-lg shadow-lg ring-1 ring-black ring-opacity-5">
-															<div className="relative grid gap-6 bg-white px-5 py-6 sm:gap-8 sm:p-8">
-																{linkGroup?.links &&
-																	linkGroup?.links?.map((link, index) => {
-																		return (
-																			<a
-																				key={index}
-																				href={link?.href || '/'}
-																				className="-m-3 flex items-start rounded-lg p-3 hover:bg-gray-50"
-																			>
-																				{/* <link.icon
+											<Transition
+												as={Fragment}
+												enter="transition ease-out duration-200"
+												enterFrom="opacity-0 translate-y-1"
+												enterTo="opacity-100 translate-y-0"
+												leave="transition ease-in duration-150"
+												leaveFrom="opacity-100 translate-y-0"
+												leaveTo="opacity-0 translate-y-1"
+											>
+												<Popover.Panel className="absolute left-1/2 z-10 mt-3 w-screen max-w-md -translate-x-1/2 transform px-2 sm:px-0">
+													<div className="overflow-hidden rounded-lg shadow-lg ring-1 ring-black ring-opacity-5">
+														<div className="relative grid gap-6 bg-white px-5 py-6 sm:gap-8 sm:p-8">
+															{linkGroup?.links &&
+																linkGroup?.links?.map((link, index) => {
+																	return (
+																		<a
+																			key={index}
+																			href={link?.href || '/'}
+																			//className="-m-3 flex items-start rounded-lg p-3 hover:bg-gray-50"
+																		>
+																			{/* <link.icon
 																				className="h-6 w-6 flex-shrink-0 text-indigo-600"
 																				aria-hidden="true"
 																			/> */}
-																				<div className="ml-4">
-																					<p className="text-base font-medium text-gray-900">
-																						{link?.linkText}
-																					</p>
-																				</div>
-																			</a>
-																		);
-																	})}
-															</div>
+																			<div className="ml-4">
+																				<span className="para-4 lg:para-3 text-primary-shade-1 rounded-sm px-3 py-1">
+																					{link?.linkText}
+																				</span>
+																			</div>
+																		</a>
+																	);
+																})}
 														</div>
-													</Popover.Panel>
-												</Transition>
-											</>
-										)}
-									</Popover>
-								);
-							})}
-						</Popover.Group>
-						{props.children}
-					</div>
+													</div>
+												</Popover.Panel>
+											</Transition>
+										</>
+									)}
+								</Popover>
+							);
+						})}
+					</Popover.Group>
+					{props.children}
 				</div>
 
 				<Dialog

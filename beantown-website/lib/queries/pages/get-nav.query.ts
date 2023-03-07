@@ -1,6 +1,7 @@
 const navQuery = `allNav(where: { name: { eq: "Header" } }) {
 			navLinks {
 				linkText
+				heroIconName
 				href
 				newWindow
 			}

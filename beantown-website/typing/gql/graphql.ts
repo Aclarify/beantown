@@ -982,6 +982,7 @@ export type Link = Document & {
 	href?: Maybe<Scalars['String']>;
 	linkName?: Maybe<Scalars['String']>;
 	linkText?: Maybe<Scalars['String']>;
+	heroIconName?: Maybe<Scalars['String']>;
 	newWindow?: Maybe<Scalars['Boolean']>;
 };
 
@@ -997,6 +998,7 @@ export type LinkFilter = {
 	href?: InputMaybe<StringFilter>;
 	linkName?: InputMaybe<StringFilter>;
 	linkText?: InputMaybe<StringFilter>;
+	heroIconName?: InputMaybe<StringFilter>;
 	newWindow?: InputMaybe<BooleanFilter>;
 };
 
@@ -1033,6 +1035,7 @@ export type LinkSorting = {
 	href?: InputMaybe<SortOrder>;
 	linkName?: InputMaybe<SortOrder>;
 	linkText?: InputMaybe<SortOrder>;
+	heroIconName?: InputMaybe<SortOrder>;
 	newWindow?: InputMaybe<SortOrder>;
 };
 
