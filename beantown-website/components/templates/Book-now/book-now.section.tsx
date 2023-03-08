@@ -1,9 +1,5 @@
 import SectionContentWrapper from 'components/molecules/section-content-wrapper.molecule';
 import BookNowContent from './book-now.content';
-import topLeftBlob from 'public/images/book-now/book-now-top-left-blob.svg';
-import bottomLeftBlob from 'public/images/book-now/book-now-bottom-left-blob.svg';
-import rightBlob from 'public/images/book-now/book-now-right-blob.svg';
-import bottomBlob from 'public/images/book-now/book-now-bottom-blob.svg';
 import Image from 'next/image';
 
 const BookNowSection = () => {
