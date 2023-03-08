@@ -32,6 +32,7 @@ const ElectricalPageCTAContent = () => {
 						text={ctaButton?.text || ''}
 						textColor="text-primary-black"
 						bgColor="bg-white"
+						href={ctaButton?.href || ''}
 					/>
 				</CTATextContent>
 			</div>

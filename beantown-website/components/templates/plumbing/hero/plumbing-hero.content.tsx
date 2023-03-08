@@ -31,6 +31,7 @@ const PlumbingHeroContent = () => {
 				<CTATextContent title={heroTitle || ''} description={heroDescription}>
 					<CTAButton
 						text={heroButton?.text || ''}
+						href={heroButton?.href || ''}
 						textColor="text-white"
 						bgColor="bg-primary-shade-1"
 					/>

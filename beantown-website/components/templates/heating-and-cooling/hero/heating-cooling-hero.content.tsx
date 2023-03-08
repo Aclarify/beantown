@@ -33,6 +33,7 @@ const HeatingCoolingHeroContent = () => {
 						text={heroButton?.text || ''}
 						textColor="text-white"
 						bgColor="bg-primary-shade-1"
+						href={heroButton?.href || ''}
 					/>
 				</CTATextContent>
 			</div>

@@ -13,14 +13,14 @@ import BookNowSection from 'components/templates/Book-now/book-now.section';
 import CtaWrapper from 'components/molecules/cta-wrapper.molecule';
 import Header from 'components/organisms/nav';
 
-export interface BookNowContentProps{
+export interface BookNowContentProps {
 	page: BookNow[];
 	header: Nav[];
 	footer: Footer[];
 }
 const PageHead = () => {
 	return (
-		<Head>		
+		<Head>
 			<title>Book Now</title>
 			<meta
 				name="description"
@@ -43,11 +43,10 @@ const BookNowPage: React.FC = (props) => {
 	if (!pageContent) {
 		return null;
 	}
-	const pageData:any = pageContent.page[0];
+	const pageData: any = pageContent.page[0];
 	const headerData = pageContent.header[0];
 	const footerData = pageContent.footer[0];
-	
-	
+
 	const { logoDesktop, footerLogo } = pageData;
 	return (
 		<div id="book-now" className="bg-primary-white-shade-1">
@@ -55,7 +54,7 @@ const BookNowPage: React.FC = (props) => {
 			<Header
 				fontColor="text-primary-shade-1"
 				logoDesktop={logoDesktop?.image}
-				logoMobile={footerLogo?.image}
+				logoMobile={logoDesktop?.image}
 				content={headerData}
 			>
 				<div className=" hidden lg:flex lg:justify-end ">
@@ -66,8 +65,7 @@ const BookNowPage: React.FC = (props) => {
 			</Header>
 			<BookNowSection />
 			<FooterSection
-				logoDesktop={logoDesktop?.image || ''}
-				logoMobile={footerLogo?.image || ''}
+				logoDesktop={footerLogo?.image || ''}
 				content={footerData}
 			/>
 		</div>
