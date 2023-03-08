@@ -35,7 +35,7 @@ export default defineType({
     defineField({
       name: 'bookNowDescription',
       title: 'Book Now Description',
-      type: 'portableText',
+      type: 'string',
     }),
   ],
 })

@@ -24,6 +24,7 @@ const BookNowContent = () => {
 					</div>
 					<div className="para-4 lg:para-2 text-primary-shade-1 px-[3em] pt-4  text-center md:px-[1em] lg:px-[8em] 2xl:px-[7em]">
 						<p>
+							
 							{
 								'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim venias. Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod '
 							}

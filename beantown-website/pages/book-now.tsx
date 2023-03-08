@@ -50,7 +50,7 @@ const BookNowPage: React.FC = (props) => {
 	
 	const { logoDesktop, footerLogo } = pageData;
 	return (
-		<div id="about-us" className="bg-primary-white-shade-1">
+		<div id="book-now" className="bg-primary-white-shade-1">
 			<PageHead />
 			<Header
 				fontColor="text-primary-shade-1"

@@ -142,7 +142,7 @@ export type BookNow = Document & {
 	/** Date the document was last modified */
 	_updatedAt?: Maybe<Scalars['DateTime']>;
 	bookNowTitle?: Maybe<Scalars['String']>;
-	bookNowDescription?: Maybe<PortableText>;
+	bookNowDescription?: Maybe<Scalars['String']>;
 	bookNowUrl?: Maybe<Scalars['String']>;
 	logoDesktop?: Maybe<ImageIcon>;
 	footerLogo?: Maybe<ImageIcon>;
@@ -158,7 +158,7 @@ export type BookNowFilter = {
 	_type?: InputMaybe<StringFilter>;
 	_updatedAt?: InputMaybe<DatetimeFilter>;
 	bookNowTitle?: InputMaybe<StringFilter>;
-	bookNowDescription?: InputMaybe<PortableTextFilter>;
+	bookNowDescription?: InputMaybe<StringFilter>;
 	bookNowUrl?: InputMaybe<StringFilter>;
 	logoDesktop?: InputMaybe<ImageIconFilter>;
 	footerLogo?: InputMaybe<ImageIconFilter>;
@@ -172,7 +172,7 @@ export type BookNowSorting = {
 	_type?: InputMaybe<SortOrder>;
 	_updatedAt?: InputMaybe<SortOrder>;
 	bookNowTitle?: InputMaybe<SortOrder>;
-	bookNowDescription?: InputMaybe<PortableTextSorting>;
+	bookNowDescription?: InputMaybe<SortOrder>;
 };
 
 export type Block = {

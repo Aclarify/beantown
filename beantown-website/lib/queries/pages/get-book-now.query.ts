@@ -19,9 +19,7 @@ const bookNowQuery = `allBooknow{
     }
     bookNowUrl
     bookNowTitle
-    bookNowDescription{
-      contentRaw
-    }
+    bookNowDescription
   }
 `;
 export default gql`
