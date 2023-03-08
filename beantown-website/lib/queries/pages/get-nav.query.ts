@@ -1,6 +1,7 @@
 const navQuery = `allNav(where: { name: { eq: "Header" } }) {
 			navLinks {
 				linkText
+				heroIconName
 				href
 				newWindow
 			}
@@ -8,6 +9,7 @@ const navQuery = `allNav(where: { name: { eq: "Header" } }) {
 				groupTitle
 				links {
 					linkText
+          			heroIconName
 					href
 					newWindow
 				}

@@ -12,10 +12,11 @@ import ElectricalFaqSection from 'components/templates/electrical/faq/electrical
 import AboutPlumbingServiceSection from 'components/templates/electrical/about-the-service/electrical-about.section';
 import Header from 'components/organisms/nav';
 import FooterSection from 'components/organisms/footer';
-import { useContext } from 'react';
+import React, { useContext } from 'react';
 import { GlobalContextProps } from '@typing/common/interfaces/contexts.interface';
 import { GlobalContext } from '@contexts/global/global.context';
 import CtaWrapper from 'components/molecules/cta-wrapper.molecule';
+import Link from 'next/link';
 
 export interface ElectricalContentProps {
 	page: OtherServices[];
@@ -62,9 +63,11 @@ const ElectricalServicesPage: React.FC = (props) => {
 				content={headerData}
 			>
 				<div className=" hidden lg:flex lg:justify-end ">
-					<CtaWrapper.CTA className="para-3 bg-primary-shade-1 h-[48px] w-[139px] rounded-lg py-1 px-4 tracking-wide  text-white  md:py-2 md:px-8 lg:tracking-wider ">
-						<p>{headerData.headerButton?.text}</p>
-					</CtaWrapper.CTA>
+					<Link href={headerData.headerButton?.href || ''}>
+						<CtaWrapper.CTA className="para-3 bg-primary-shade-1 h-[48px] w-[139px] rounded-lg py-1 px-4 tracking-wide  text-white  md:py-2 md:px-8 lg:tracking-wider ">
+							<p>{headerData.headerButton?.text}</p>
+						</CtaWrapper.CTA>
+					</Link>
 				</div>
 			</Header>
 			<ElectricalHeroSection />
@@ -72,11 +75,7 @@ const ElectricalServicesPage: React.FC = (props) => {
 			<ElectricalPageCTASection />
 			<ElectricalBlogsSection />
 			<ElectricalFaqSection />
-			<FooterSection
-				logoDesktop={logoDesktop?.image}
-				logoMobile={logoMobile?.image}
-				content={footerData}
-			/>
+			<FooterSection logoDesktop={logoDesktop?.image} content={footerData} />
 		</section>
 	);
 };

@@ -1,4 +1,5 @@
 import RichText from 'components/molecules/rich-text.molecule';
+import Link from 'next/link';
 import React from 'react';
 import ContentWrapper from './content-wrapper.organism';
 
@@ -42,11 +43,13 @@ export const CTAButton: React.FC<ICTAButtonProps> = ({
 	bgColor,
 }) => {
 	return (
-		<button
-			className={`para-3 lg:para-2 h-[52px] w-[184px] rounded-lg ${bgColor} ${textColor} py-1 px-4  tracking-wide  md:py-2  md:px-8 lg:h-[64px] lg:w-[198px]  lg:tracking-wider`}
-		>
-			{text}
-		</button>
+		<Link href={href || ''}>
+			<button
+				className={`para-3 lg:para-2 h-[52px] w-[184px] rounded-lg ${bgColor} ${textColor} py-1 px-4  tracking-wide  md:py-2  md:px-8 lg:h-[64px] lg:w-[198px]  lg:tracking-wider`}
+			>
+				{text}
+			</button>
+		</Link>
 	);
 };
 
