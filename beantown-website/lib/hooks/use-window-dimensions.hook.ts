@@ -1,28 +1,29 @@
 import { useState, useEffect } from 'react';
 
-function getWindowDimensions() {
-	if (typeof window === 'undefined') return { width: 1200, height: 800 };
-	const { innerWidth: width, innerHeight: height } = window;
-	return {
-		width,
-		height,
-	};
-}
-
 export default function useWindowDimensions() {
-	const [windowDimensions, setWindowDimensions] = useState(
-		getWindowDimensions()
-	);
-
+	const [windowSize, setWindowSize] = useState<{
+		width: number;
+		height: number;
+	}>({
+		width: 0,
+		height: 0,
+	});
 	useEffect(() => {
+		// Handler to call on window resize
 		function handleResize() {
-			setWindowDimensions(getWindowDimensions());
+			// Set window width/height to state
+			setWindowSize({
+				width: window.innerWidth,
+				height: window.innerHeight,
+			});
 		}
-		if (typeof window !== 'undefined') {
-			window.addEventListener('resize', handleResize);
-			return () => window.removeEventListener('resize', handleResize);
-		}
-	}, []);
-
-	return windowDimensions;
+		if (typeof window === 'undefined') return;
+		// Add event listener
+		window.addEventListener('resize', handleResize);
+		// Call handler right away so state gets updated with initial window size
+		handleResize();
+		// Remove event listener on cleanup
+		return () => window.removeEventListener('resize', handleResize);
+	}, []); // Empty array ensures that effect is only run on mount
+	return windowSize;
 }

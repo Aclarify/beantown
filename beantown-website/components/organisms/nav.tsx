@@ -37,26 +37,28 @@ export default function Header(props: IProps) {
 							props.fontColor
 						)}
 					>
-						<div className="hidden align-middle lg:flex ">
+						<div className="hidden align-middle lg:flex">
 							<Link href="/">
-								<Image
-									alt={logoDesktop?.asset?.altText || ''}
-									width={200}
-									height={300}
-									priority={true}
-									src={logoDesktop?.asset?.url || ''}
-								/>
+								<div className="image-wrapper relative h-[80px] w-[230px]">
+									<Image
+										alt={logoDesktop?.asset?.altText || ''}
+										fill={true}
+										priority={true}
+										src={logoDesktop?.asset?.url || ''}
+									/>
+								</div>
 							</Link>
 						</div>
 						<div className="flex align-middle lg:hidden">
 							<Link href="/">
-								<Image
-									alt={logoMobile?.asset?.altText || ''}
-									width={150}
-									height={100}
-									priority={true}
-									src={logoMobile?.asset?.url || ''}
-								/>
+								<div className="image-wrapper relative h-[50px] w-[136px] md:h-[80px] md:w-[230px]">
+									<Image
+										alt={logoMobile?.asset?.altText || ''}
+										fill={true}
+										priority={true}
+										src={logoMobile?.asset?.url || ''}
+									/>
+								</div>
 							</Link>
 						</div>
 						<div className="  items-center text-white lg:hidden">

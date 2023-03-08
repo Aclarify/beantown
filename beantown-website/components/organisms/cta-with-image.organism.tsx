@@ -38,16 +38,19 @@ const CTAWithImage: React.FC<IProps> = ({
 					'flex-row-reverse': heroImagePosition === 'right',
 				})}
 			>
-				<div id="hero-image-wrapper" className={clsx('z-0 w-full lg:w-1/2')}>
+				<div
+					id="hero-image-wrapper"
+					className={clsx('relative z-0 w-full lg:w-1/2')}
+				>
 					<Image
 						src={heroImageURL}
 						alt="Image mask"
-						height={2000}
-						width={2000}
+						fill
 						priority={isImageToBePrefetched}
 						style={{
 							width: '100%',
 							height: '100%',
+							objectFit: 'cover',
 						}}
 					/>
 				</div>
