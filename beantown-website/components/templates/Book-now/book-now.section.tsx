@@ -13,7 +13,7 @@ const BookNowSection = () => {
 				height={590}
 				width={650}
 				alt="Left Top Blob "
-				className="2xl-translate-y-0  absolute top-0 left-0 z-[3]  hidden transform lg:block lg:translate-y-[-24%] lg:translate-x-[-85%] 2xl:translate-x-[-75%]"
+				className="absolute  top-0 left-0 z-[3] hidden  transform lg:block lg:translate-y-[-24%] lg:translate-x-[-85%] 2xl:translate-y-[-22%] 2xl:translate-x-[-78%]"
 			/>
 			<Image
 				src={'/images/book-now/book-now-top-left-blob-mobile.svg'}
