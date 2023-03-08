@@ -54,6 +54,11 @@ const neuePlak = localFont({
 export default function App({ Component, pageProps }: AppProps) {
 	return (
 		<>
+			<style jsx global>{`
+				:root {
+					--font-neue-plak: ${neuePlak.style.fontFamily};
+				}
+			`}</style>
 			<ApolloProvider client={graphQLClient}>
 				<main
 					className={`${neuePlak.className}  overflow-hidden tracking-wide lg:tracking-wider`}

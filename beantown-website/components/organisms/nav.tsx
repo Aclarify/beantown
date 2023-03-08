@@ -124,25 +124,13 @@ export default function Header(props: IProps) {
 																		React.ComponentProps<'svg'>
 																	>;
 																	return (
-																		<a
-																			key={index}
-																			href={link?.href || '/'}
-																			//className="-m-3 flex items-start rounded-lg p-3 hover:bg-gray-50"
-																		>
-																			{/* <link.icon
-																				className="h-6 w-6 flex-shrink-0 text-indigo-600"
-																				aria-hidden="true"
-																			/> */}
+																		<Link key={index} href={link?.href || ''}>
 																			<div className="ml-4 flex items-center">
 																				<div className="icon-wrapper">
 																					<IconComponent
 																						className={classNames(
-																							'h-4 w-4 transform text-red-800 transition duration-150 ease-in-out group-hover:-rotate-180'
+																							'h-6 w-6 transform text-red-800 '
 																						)}
-																						// className={classNames(
-																						// 	open ? 'rotate-180' : '',
-																						// 	'h-5 w-5 flex-none'
-																						// )}
 																						aria-hidden="true"
 																					/>
 																				</div>
@@ -150,7 +138,7 @@ export default function Header(props: IProps) {
 																					{link?.linkText}
 																				</span>
 																			</div>
-																		</a>
+																		</Link>
 																	);
 																})}
 														</div>
@@ -228,7 +216,7 @@ export default function Header(props: IProps) {
 															/>
 														</Disclosure.Button>
 														<Disclosure.Panel className="mt-2 space-y-2">
-															{linkGroup?.links &&
+															{/* {linkGroup?.links &&
 																linkGroup?.links?.map((link, index) => (
 																	<Disclosure.Button
 																		key={index}
@@ -236,11 +224,58 @@ export default function Header(props: IProps) {
 																		href={link?.href || ''}
 																		className="para-4 !font-neuePlak  block rounded-lg py-2 pl-6 pr-3 "
 																	>
-																		<span className="para-4 !font-neuePlak !font-light">
-																			{link?.linkText}
-																		</span>
+																		<div className="ml-4 flex items-center">
+																			<div className="icon-wrapper">
+																				<IconComponent
+																					className={classNames(
+																						'h-6 w-6 transform text-red-800 '
+																					)}
+																					aria-hidden="true"
+																				/>
+																			</div>
+																			<span className="para-4 lg:para-3 text-primary-shade-1 rounded-sm px-3 py-1">
+																				{link?.linkText}
+																			</span>
+																		</div>
 																	</Disclosure.Button>
-																))}
+																))} */}
+
+															{linkGroup?.links &&
+																linkGroup?.links?.map((link, index) => {
+																	const IconComponent = dynamic(async () => {
+																		const mod = await import(
+																			'@heroicons/react/24/outline'
+																		);
+																		if (link && link.heroIconName) {
+																			/* tslint:disable-next-line */
+																			return (mod as any)[link.heroIconName];
+																		}
+																	}) as React.ComponentType<
+																		React.ComponentProps<'svg'>
+																	>;
+																	return (
+																		<Disclosure.Button
+																			key={index}
+																			as="a"
+																			href={link?.href || ''}
+																			className="para-4 !font-neuePlak  block rounded-lg py-2 pl-6 pr-3 "
+																		>
+																			<div className="ml-4 flex items-center">
+																				<div className="icon-wrapper">
+																					<IconComponent
+																						className={classNames(
+																							'h-6 w-6 transform text-red-800 '
+																						)}
+																						aria-hidden="true"
+																					/>
+																				</div>
+																				<span className="para-4 lg:para-3 text-primary-shade-1 rounded-sm px-3 py-1">
+																					{link?.linkText}
+																				</span>
+																			</div>
+																		</Disclosure.Button>
+																	);
+																})}
 														</Disclosure.Panel>
 													</>
 												)}
