@@ -21,18 +21,9 @@ interface IProps {
 
 export default function RefinedHeader(props: IProps) {
 	const { navLinks, navGroup } = props.content;
-	const childLinks = navGroup?.map((nav) => nav?.links).flat();
 
-	const allNavLinks = [
-		...(navLinks ? navLinks : []),
-		...(childLinks ? childLinks : []),
-	];
 	const { logoDesktop, logoMobile } = props;
-	const childNavLinks = allNavLinks.filter((element) => {
-		return element !== null;
-	});
 	const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
-	console.log('navGroup-->', navGroup);
 	return (
 		<section className="2xl:padding-for-section absolute w-full px-5">
 			<Popover className="relative z-30">
@@ -94,8 +85,12 @@ export default function RefinedHeader(props: IProps) {
 													{linkGroup?.groupTitle}
 												</span>
 												<ChevronDownIcon
+													// className={classNames(
+													// 	'h-4 w-4 transform fill-current transition duration-150 ease-in-out group-hover:-rotate-180'
+													// )}
 													className={classNames(
-														'h-4 w-4 transform fill-current transition duration-150 ease-in-out group-hover:-rotate-180'
+														open ? 'rotate-180' : '',
+														'h-5 w-5 flex-none'
 													)}
 													aria-hidden="true"
 												/>
@@ -152,8 +147,8 @@ export default function RefinedHeader(props: IProps) {
 					open={mobileMenuOpen}
 					onClose={setMobileMenuOpen}
 				>
-					<div className="fixed inset-0 z-10" />
-					<Dialog.Panel className="fixed inset-y-0 right-0 z-10 w-full overflow-y-auto bg-white px-6 py-6 sm:max-w-sm sm:ring-1 sm:ring-gray-900/10">
+					<div className="fixed inset-0 z-10 " />
+					<Dialog.Panel className="bg-primary-white-shade-1 fixed inset-y-0 right-0 z-10 w-full overflow-y-auto px-6 py-6 sm:max-w-sm sm:ring-1 sm:ring-gray-900/10">
 						<div className="flex items-center justify-between">
 							<a href="#" className="-m-1.5 p-1.5">
 								<Image
@@ -166,7 +161,7 @@ export default function RefinedHeader(props: IProps) {
 							</a>
 							<button
 								type="button"
-								className="-m-2.5 rounded-md p-2.5 text-gray-700"
+								className="  inline-flex items-center justify-center rounded-md  p-2  "
 								onClick={() => setMobileMenuOpen(false)}
 							>
 								<span className="sr-only">Close menu</span>
@@ -181,7 +176,7 @@ export default function RefinedHeader(props: IProps) {
 											<Link
 												key={index}
 												href={link?.href || '/'}
-												className="group inline-block p-8"
+												className="para-4 lg:para-3 group inline-block py-2  "
 											>
 												{link?.linkText}
 											</Link>
@@ -192,7 +187,7 @@ export default function RefinedHeader(props: IProps) {
 											<Disclosure as="div" className="-mx-3" key={index}>
 												{({ open }) => (
 													<>
-														<Disclosure.Button className="flex w-full items-center justify-between rounded-lg py-2 pl-3 pr-3.5 text-base font-semibold leading-7 hover:bg-gray-50">
+														<Disclosure.Button className="para-4 lg:para-3 flex w-full items-center justify-between rounded-lg py-2 pl-3 pr-3.5  ">
 															{linkGroup?.groupTitle}
 															<ChevronDownIcon
 																className={classNames(
@@ -209,7 +204,7 @@ export default function RefinedHeader(props: IProps) {
 																		key={index}
 																		as="a"
 																		href={link?.href || ''}
-																		className="block rounded-lg py-2 pl-6 pr-3 text-sm font-semibold leading-7 text-gray-900 hover:bg-gray-50"
+																		className="para-4 lg:para-3 block rounded-lg py-2 pl-6 pr-3 "
 																	>
 																		{link?.linkText}
 																	</Disclosure.Button>
@@ -226,94 +221,6 @@ export default function RefinedHeader(props: IProps) {
 						</div>
 					</Dialog.Panel>
 				</Dialog>
-
-				{/* <Transition
-					as={Fragment}
-					enter="duration-200 ease-out"
-					enterFrom="opacity-0 scale-95"
-					enterTo="opacity-100 scale-100"
-					leave="duration-100 ease-in"
-					leaveFrom="opacity-100 scale-100"
-					leaveTo="opacity-0 scale-95"
-				>
-					<Popover.Panel
-						focus
-						className="absolute inset-x-0 top-0 origin-top-right transform p-2 transition md:hidden"
-					>
-						<div className="divide-y-2 divide-gray-50 rounded-lg bg-white shadow-lg ring-1 ring-black ring-opacity-5">
-							<div className="px-5 pt-5 pb-6">
-								<div className="flex items-center justify-between">
-									<div>
-										<img
-											className="h-8 w-auto"
-											src="https://tailwindui.com/img/logos/mark.svg?color=indigo&shade=600"
-											alt="Your Company"
-										/>
-									</div>
-									<div className="-mr-2">
-										<Popover.Button className="inline-flex items-center justify-center rounded-md bg-white p-2 text-gray-400 hover:bg-gray-100 hover:text-gray-500 focus:outline-none focus:ring-2 focus:ring-inset focus:ring-indigo-500">
-											<span className="sr-only">Close menu</span>
-											<XMarkIcon className="h-6 w-6" aria-hidden="true" />
-										</Popover.Button>
-									</div>
-								</div>
-								<div className="mt-6">
-									<nav className="grid gap-y-8">
-										{solutions.map((item) => (
-											<a
-												key={item.name}
-												href={item.href}
-												className="-m-3 flex items-center rounded-md p-3 hover:bg-gray-50"
-											>
-												<item.icon
-													className="h-6 w-6 flex-shrink-0 text-indigo-600"
-													aria-hidden="true"
-												/>
-												<span className="ml-3 text-base font-medium text-gray-900">
-													{item.name}
-												</span>
-											</a>
-										))}
-									</nav>
-								</div>
-							</div>
-							<div className="space-y-6 py-6 px-5">
-								<div className="grid grid-cols-2 gap-y-4 gap-x-8">
-									<a
-										href="#"
-										className="text-base font-medium text-gray-900 hover:text-gray-700"
-									>
-										Pricing
-									</a>
-
-									<a
-										href="#"
-										className="text-base font-medium text-gray-900 hover:text-gray-700"
-									>
-										Docs
-									</a>
-									{resources.map((item) => (
-										<a
-											key={item.name}
-											href={item.href}
-											className="text-base font-medium text-gray-900 hover:text-gray-700"
-										>
-											{item.name}
-										</a>
-									))}
-								</div>
-								<div>
-									<a
-										href="#"
-										className="flex w-full items-center justify-center rounded-md border border-transparent bg-indigo-600 px-4 py-2 text-base font-medium text-white shadow-sm hover:bg-indigo-700"
-									>
-										{props.children}
-									</a>
-								</div>
-							</div>
-						</div>
-					</Popover.Panel>
-				</Transition> */}
 			</Popover>
 		</section>
 	);
