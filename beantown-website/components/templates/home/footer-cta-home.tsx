@@ -38,6 +38,7 @@ export default function FooterCta() {
 								text={finalCtaButton?.text || ''}
 								textColor="text-white"
 								bgColor="bg-primary-shade-1"
+								href={finalCtaButton?.href || ''}
 							/>
 						</CTATextContent>
 					</div>

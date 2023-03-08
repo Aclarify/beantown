@@ -45,6 +45,7 @@ module.exports = {
 				'service-yellow-bg': '#FEFCE6',
 				'service-green': 'var(--services-green-color-hex)',
 				'service-green-bg': '#F0FAF5',
+				'primary-white-shade-2': '#F5F5F5',
 			},
 			letterSpacing: {
 				wide: '1px',

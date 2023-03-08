@@ -7,6 +7,8 @@ const aboutUsQuery = `allAboutUs {
 				image {
 					asset {
 						url
+						_id
+						_key
 					}
 				}
 			}
@@ -14,6 +16,8 @@ const aboutUsQuery = `allAboutUs {
 				image {
 					asset {
 						url
+						_id
+						_key
 					}
 				}
 			}
@@ -21,12 +25,16 @@ const aboutUsQuery = `allAboutUs {
 			heroImage {
 				asset {
 					url
+					_id
+					_key
 				}
 			}
 			heroDescription
 			heroImageMobile {
 				asset {
 					url
+					_id
+					_key
 				}
 			}
 			missionTitle
@@ -36,6 +44,8 @@ const aboutUsQuery = `allAboutUs {
 			missionImage {
 				asset {
 					url
+					_id
+					_key
 				}
 			}
 			valuesTitle
@@ -45,6 +55,8 @@ const aboutUsQuery = `allAboutUs {
 			valuesImage {
 				asset {
 					url
+					_id
+					_key
 				}
 			}
 			valuesCards {
@@ -52,6 +64,8 @@ const aboutUsQuery = `allAboutUs {
 				iconImage {
 					asset {
 						url
+						_id
+						_key
 					}
 				}
 			}
@@ -59,6 +73,8 @@ const aboutUsQuery = `allAboutUs {
 			communityctaImage {
 				asset {
 					url
+					_id
+					_key
 				}
 			}
 			communityCtaButton {
@@ -73,6 +89,8 @@ const aboutUsQuery = `allAboutUs {
 				profilePicture {
 					asset {
 						url
+						_id
+						_key
 					}
 				}
 				socialMediaDetails {
@@ -80,6 +98,8 @@ const aboutUsQuery = `allAboutUs {
 						image {
 							asset {
 								url
+								_id
+								_key
 							}
 						}
 					}
@@ -93,6 +113,8 @@ const aboutUsQuery = `allAboutUs {
 				serviceAreaImage {
 					asset {
 						url
+						_id
+						_key
 					}
 				}
 				serviceAreas {
@@ -116,6 +138,8 @@ const aboutUsQuery = `allAboutUs {
 			ctaImage {
 				asset {
 					url
+					_id
+					_key
 				}
 			}
 			ctaButton {

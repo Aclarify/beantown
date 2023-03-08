@@ -8,6 +8,8 @@ const homeQuery = ` allHome {
 					asset
 						{
 							url
+							_id
+							_key
 						}
 					}
 					href
@@ -17,6 +19,8 @@ const homeQuery = ` allHome {
 					asset
 						{
 							url
+							_id
+							_key
 						}
         			}
 					href
@@ -32,11 +36,15 @@ const homeQuery = ` allHome {
 			heroImage{
 			asset{
 				url
+				_id
+				_key
 			}
 			}
 			heroImageMobile{
 			asset{
 				url
+				_id
+				_key
 			}
 			}
 			servicesTitle

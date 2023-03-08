@@ -53,7 +53,7 @@ const HeatingCoolingHeroServicesSection = () => {
 				height={180}
 				width={200}
 				alt="Right Blob Mobile"
-				className="absolute right-0 bottom-0 z-[-1] translate-x-[27%]  -translate-y-[354%] transform md:hidden"
+				className="absolute right-0 bottom-0 z-[-1] translate-x-[42%]  -translate-y-[235%] transform md:hidden"
 			/>
 		</section>
 	);

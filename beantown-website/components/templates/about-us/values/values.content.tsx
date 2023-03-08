@@ -21,7 +21,7 @@ const ValuesContent = () => {
 	return (
 		<div
 			id="section-wrapper"
-			className="z-10 mb-[6em]  flex flex-col  overflow-hidden "
+			className="z-10 mb-[3em]  flex flex-col  overflow-hidden "
 		>
 			<div
 				id="content-image-wrapper"
@@ -29,7 +29,7 @@ const ValuesContent = () => {
 			>
 				<div
 					id="content-wrapper"
-					className="z-10 flex basis-1/2 flex-col items-start text-left lg:pt-20 "
+					className="3xl:px-[10em] z-10 flex basis-1/2 flex-col items-start  px-0 text-left lg:pl-48 lg:pr-[4em] lg:pt-20 "
 				>
 					<ContentWrapper>
 						<ContentWrapper.Title>

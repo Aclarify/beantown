@@ -7,12 +7,14 @@ import { HomePageContentProps } from 'pages';
 import React, { useContext } from 'react';
 import ServiceCard from './service-card';
 import WaveWrapper from 'components/molecules/wave-wrapper.molecule';
-import useIsMobileDevice from '@lib/hooks/is-mobile-device.hook';
+import useWindowDimensions from '@lib/hooks/use-window-dimensions.hook';
+import { SCREEN_BREAKPOINTS } from '@typing/common/interfaces/devices.interface';
 
 export default function Services() {
 	const { pageContent } =
 		useContext<GlobalContextProps<HomePageContentProps>>(GlobalContext);
-	const isMobile = useIsMobileDevice();
+	const { width } = useWindowDimensions();
+
 	if (!pageContent) {
 		return null;
 	}
@@ -22,7 +24,12 @@ export default function Services() {
 	const { servicesTitle, servicesDescription, servicesGroup } = homeData;
 	let clonedServicesGroup = servicesGroup ? [...servicesGroup] : [];
 
-	if (isMobile && servicesGroup && servicesGroup.length > 0) {
+	if (
+		width &&
+		width < SCREEN_BREAKPOINTS.SM &&
+		servicesGroup &&
+		servicesGroup.length > 0
+	) {
 		// Find the service which is marked as main service and make it the first element
 		const mainServiceIndex = servicesGroup.findIndex(
 			(service) => service?.isMainService
@@ -101,7 +108,7 @@ export default function Services() {
 				height={590}
 				width={650}
 				alt="Left Blob "
-				className="absolute  bottom-0 left-0 z-[-1] hidden -translate-x-[61%] transform md:block md:translate-y-[6%] lg:translate-y-[25%]"
+				className="absolute  bottom-0 left-0 z-[-1] hidden -translate-x-[65%] transform md:block md:translate-y-[6%] lg:translate-y-[45%]"
 			/>
 		</section>
 	);

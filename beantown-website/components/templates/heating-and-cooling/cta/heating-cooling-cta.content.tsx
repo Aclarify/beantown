@@ -32,6 +32,7 @@ const HeatingCoolingPageCTAContent = () => {
 						text={finalCtaButton?.text || ''}
 						textColor="lg:text-service-red text-primary-black"
 						bgColor="bg-white"
+						href={finalCtaButton?.href || ''}
 					/>
 				</CTATextContent>
 			</div>

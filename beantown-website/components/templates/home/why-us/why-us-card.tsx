@@ -11,7 +11,7 @@ interface Props {
 const WhyUsCard: React.FC<Props> = (props) => {
 	return (
 		<>
-			<div className="m-2 flex items-center  rounded-xl bg-white p-[3px] shadow-sm md:m-4 ">
+			<div className="flex items-center  rounded-xl bg-white py-[3px] shadow-sm md:m-4 ">
 				<div className=" flex-none p-2 md:p-4 ">
 					<Image
 						src={props.thumbnailSrc}
@@ -21,7 +21,7 @@ const WhyUsCard: React.FC<Props> = (props) => {
 						className="h-32 w-24 flex-none  md:h-44 md:w-32  "
 					/>
 				</div>
-				<div className=" flex-1 pl-4">
+				<div className=" flex-1 px-3">
 					<h1 className="subtitle-5 lg:subtitle-2 text-primary-black font-semibold ">
 						{props.title}
 					</h1>
