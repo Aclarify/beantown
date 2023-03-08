@@ -35,13 +35,14 @@ export default function RefinedHeader(props: IProps) {
 				>
 					<div className=" align-middle  ">
 						<Link href="/">
-							<Image
-								alt={logoDesktop?.asset?.altText || ''}
-								width={200}
-								height={300}
-								priority={true}
-								src={logoDesktop?.asset?.url || ''}
-							/>
+							<div className="image-wrapper relative h-[80px] w-[230px]">
+								<Image
+									alt={logoDesktop?.asset?.altText || ''}
+									fill={true}
+									priority={true}
+									src={logoDesktop?.asset?.url || ''}
+								/>
+							</div>
 						</Link>
 					</div>
 					<div className=" items-center text-white lg:hidden">
@@ -78,7 +79,7 @@ export default function RefinedHeader(props: IProps) {
 											<Popover.Button
 												className={classNames(
 													//open ? 'text-gray-900' : 'text-gray-500',
-													'min-w-32 flex  items-center rounded-sm  px-3 py-1 outline-none focus:outline-none '
+													'min-w-32 flex  items-center rounded-sm  px-3 py-1  '
 												)}
 											>
 												<span className="para-4 lg:para-3 flex-1 pr-1 ">
@@ -106,7 +107,7 @@ export default function RefinedHeader(props: IProps) {
 												leaveTo="opacity-0 translate-y-1"
 											>
 												<Popover.Panel className="absolute left-1/2 z-10 mt-3 w-screen max-w-md -translate-x-1/2 transform px-2 sm:px-0">
-													<div className="overflow-hidden rounded-lg shadow-lg ring-1 ring-black ring-opacity-5">
+													<div className="overflow-hidden rounded-lg shadow-lg ">
 														<div className="relative grid gap-6 bg-white px-5 py-6 sm:gap-8 sm:p-8">
 															{linkGroup?.links &&
 																linkGroup?.links?.map((link, index) => {
@@ -148,17 +149,18 @@ export default function RefinedHeader(props: IProps) {
 					onClose={setMobileMenuOpen}
 				>
 					<div className="fixed inset-0 z-10 " />
-					<Dialog.Panel className="bg-primary-white-shade-1 fixed inset-y-0 right-0 z-10 w-full overflow-y-auto px-6 py-6 sm:max-w-sm sm:ring-1 sm:ring-gray-900/10">
+					<Dialog.Panel className="bg-primary-white-shade-1 fixed inset-y-0 right-0 z-10 w-full overflow-y-auto px-6 py-6 sm:max-w-sm ">
 						<div className="flex items-center justify-between">
-							<a href="#" className="-m-1.5 p-1.5">
-								<Image
-									alt={logoMobile?.asset?.altText || ''}
-									width={150}
-									height={100}
-									priority={true}
-									src={logoMobile?.asset?.url || ''}
-								/>
-							</a>
+							<Link href="/">
+								<div className="image-wrapper relative h-[50px] w-[136px] md:h-[80px] md:w-[230px]">
+									<Image
+										alt={logoMobile?.asset?.altText || ''}
+										fill={true}
+										priority={true}
+										src={logoMobile?.asset?.url || ''}
+									/>
+								</div>
+							</Link>
 							<button
 								type="button"
 								className="  inline-flex items-center justify-center rounded-md  p-2  "
@@ -178,7 +180,9 @@ export default function RefinedHeader(props: IProps) {
 												href={link?.href || '/'}
 												className="para-4 lg:para-3 group inline-block py-2  "
 											>
-												{link?.linkText}
+												<span className="para-4 !font-neuePlak">
+													{link?.linkText}
+												</span>
 											</Link>
 										);
 									})}
@@ -187,8 +191,10 @@ export default function RefinedHeader(props: IProps) {
 											<Disclosure as="div" className="-mx-3" key={index}>
 												{({ open }) => (
 													<>
-														<Disclosure.Button className="para-4 lg:para-3 flex w-full items-center justify-between rounded-lg py-2 pl-3 pr-3.5  ">
-															{linkGroup?.groupTitle}
+														<Disclosure.Button className="  flex w-full items-center justify-between rounded-lg py-2 pl-3 pr-3.5  ">
+															<span className="para-4 !font-neuePlak">
+																{linkGroup?.groupTitle}
+															</span>
 															<ChevronDownIcon
 																className={classNames(
 																	open ? 'rotate-180' : '',
@@ -204,9 +210,11 @@ export default function RefinedHeader(props: IProps) {
 																		key={index}
 																		as="a"
 																		href={link?.href || ''}
-																		className="para-4 lg:para-3 block rounded-lg py-2 pl-6 pr-3 "
+																		className="para-4 !font-neuePlak  block rounded-lg py-2 pl-6 pr-3 "
 																	>
-																		{link?.linkText}
+																		<span className="para-4 !font-neuePlak">
+																			{link?.linkText}
+																		</span>
 																	</Disclosure.Button>
 																))}
 														</Disclosure.Panel>
