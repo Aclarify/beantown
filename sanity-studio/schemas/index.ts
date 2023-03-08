@@ -33,7 +33,7 @@ import socialMediaIcons from './molecules/socialMediaIcons'
 import servicesCards from './organism/servicesCards'
 import memberships from './pages/memberships'
 import checkableItem from './molecules/checkableItem'
-import serviceMembership from './organism/serviceMembership'
+import serviceMemberships from './organism/serviceMemberships'
 import serviceMembershipCard from './organism/serviceMembershipCard'
 
 export const schemaTypes = [
@@ -49,7 +49,7 @@ export const schemaTypes = [
   faq,
   serviceAreas,
   testimonials,
-  serviceMembership,
+  serviceMemberships,
   serviceMembershipCard,
   //Other Types
   breakType,

@@ -1,7 +1,7 @@
 import {defineField, defineType} from 'sanity'
 
 export default defineType({
-  name: 'serviceMembership',
+  name: 'serviceMemberships',
   title: 'Service Category Membership',
   type: 'document',
   fields: [
@@ -17,9 +17,9 @@ export default defineType({
       of: [
         {
           type: 'serviceMembershipCard',
-          validation: (Rule) => Rule.max(3),
         },
       ],
+      validation: (Rule) => Rule.max(3),
     }),
     defineField({
       name: 'serviceMembershipTitle',

@@ -38,8 +38,9 @@ export default defineType({
       type: 'array',
       of: [
         {
+          name: 'serviceMemberships',
           type: 'reference',
-          to: [{type: 'serviceMembership'}],
+          to: [{type: 'serviceMemberships'}],
         },
       ],
     }),
