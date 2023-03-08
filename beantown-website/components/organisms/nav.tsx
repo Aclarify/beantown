@@ -6,6 +6,7 @@ import { ChevronDownIcon } from '@heroicons/react/20/solid';
 import Link from 'next/link';
 import Image from 'next/image';
 import clsx from 'clsx';
+import dynamic from 'next/dynamic';
 
 function classNames(...classes: any) {
 	return classes.filter(Boolean).join(' ');
@@ -111,6 +112,17 @@ export default function Header(props: IProps) {
 														<div className="relative grid gap-6 bg-white px-5 py-6 sm:gap-8 sm:p-8">
 															{linkGroup?.links &&
 																linkGroup?.links?.map((link, index) => {
+																	const IconComponent = dynamic(async () => {
+																		const mod = await import(
+																			'@heroicons/react/24/outline'
+																		);
+																		if (link && link.heroIconName) {
+																			/* tslint:disable-next-line */
+																			return (mod as any)[link.heroIconName];
+																		}
+																	}) as React.ComponentType<
+																		React.ComponentProps<'svg'>
+																	>;
 																	return (
 																		<a
 																			key={index}
@@ -121,7 +133,19 @@ export default function Header(props: IProps) {
 																				className="h-6 w-6 flex-shrink-0 text-indigo-600"
 																				aria-hidden="true"
 																			/> */}
-																			<div className="ml-4">
+																			<div className="ml-4 flex items-center">
+																				<div className="icon-wrapper">
+																					<IconComponent
+																						className={classNames(
+																							'h-4 w-4 transform text-red-800 transition duration-150 ease-in-out group-hover:-rotate-180'
+																						)}
+																						// className={classNames(
+																						// 	open ? 'rotate-180' : '',
+																						// 	'h-5 w-5 flex-none'
+																						// )}
+																						aria-hidden="true"
+																					/>
+																				</div>
 																				<span className="para-4 lg:para-3 text-primary-shade-1 rounded-sm px-3 py-1">
 																					{link?.linkText}
 																				</span>
