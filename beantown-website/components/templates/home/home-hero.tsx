@@ -43,20 +43,21 @@ export default function HomeHero() {
 				id="image-wrapper"
 				className="after:z-1 after:from-home-hero-gradient-start after:to-home-hero-gradient-end xs:block absolute top-0 z-0 h-full w-full after:absolute after:top-0 after:left-0 after:h-full after:w-full after:bg-gradient-to-b"
 			>
-				<Image
-					alt={heroImage?.asset?.altText || ''}
-					width={4000}
-					height={1000}
-					priority={true}
-					src={heroImage?.asset?.url || ''}
-					style={{
-						width: '100%',
-						height: '100%',
-						maxWidth: '100%',
-						objectFit: 'cover',
-						objectPosition: 'center',
-					}}
-				/>
+				<div className="relative h-full w-full">
+					<Image
+						alt={heroImage?.asset?.altText || ''}
+						priority={true}
+						src={heroImage?.asset?.url || ''}
+						fill
+						style={{
+							zIndex: '0',
+							width: '100%',
+							height: '100%',
+							maxWidth: '100%',
+							objectFit: 'cover',
+						}}
+					/>
+				</div>
 			</div>
 		</section>
 	);
