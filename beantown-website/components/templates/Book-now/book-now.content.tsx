@@ -30,7 +30,7 @@ const BookNowContent = () => {
 			</div>
 
 			<div className="mx-auto h-[295px] w-[385px] lg:h-[962px] lg:w-[1254px] ">
-				<iframe className="h-full w-full" src={bookNowUrl}></iframe>
+				<iframe className="h-full w-full" src={bookNowUrl || ''}></iframe>
 			</div>
 		</div>
 	);
