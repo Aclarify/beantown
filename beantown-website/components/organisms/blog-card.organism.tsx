@@ -1,5 +1,6 @@
 import React from 'react';
 import Image from 'next/image';
+import { showUnderConstructionMsg } from 'utils/helper';
 
 interface Props {
 	blogName: string;
@@ -11,7 +12,10 @@ interface Props {
 const BlogCard: React.FC<Props> = (props) => {
 	return (
 		<>
-			<div className=" cursor-pointer flex-col justify-center border-none p-1">
+			<div
+				className=" cursor-pointer flex-col justify-center border-none p-1"
+				onClick={showUnderConstructionMsg}
+			>
 				<div className="flex justify-center ">
 					<Image
 						src={props.thumbnailSrc}
