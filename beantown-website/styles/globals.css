@@ -24,6 +24,26 @@
 	--services-green-color-rgb: 0, 131, 64;
 }
 
+@layer base {
+	/* Main head line */
+	h1 {
+		@apply text-[32px];
+		@apply font-bold;
+		@apply leading-[36px];
+	}
+
+	/* Sub title 2 */
+	h2 {
+	}
+
+	@media screen(xl) {
+		h1 {
+			@apply text-7xl;
+			@apply leading-[90px];
+		}
+	}
+}
+
 @layer utilities {
 	/* hide for chrome,safari and opera */
 	.no-scrollbar::-webkit-scrollbar {

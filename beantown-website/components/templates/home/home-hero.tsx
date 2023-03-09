@@ -26,9 +26,7 @@ export default function HomeHero() {
 			>
 				<ContentWrapper className="relative z-[2] pt-24 pb-16 sm:pt-28 sm:pb-20 md:pt-48 md:pb-48 xl:pt-80 xl:pb-80">
 					<ContentWrapper.Title className=" mb-2  lg:mb-4">
-						<h1 className="title-5 2xl:title-1 leading-[36px] 2xl:leading-[90px]">
-							{heroTitle}
-						</h1>
+						<h1>{heroTitle}</h1>
 					</ContentWrapper.Title>
 					<ContentWrapper.Description className="para-4 2xl:para-2 w-[80%]">
 						<RichText value={heroDescription?.contentRaw} />
