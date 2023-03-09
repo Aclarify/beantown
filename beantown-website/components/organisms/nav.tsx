@@ -13,6 +13,7 @@ function classNames(...classes: any) {
 
 interface IProps {
 	fontColor?: string;
+	mobileMenuIconColor?: string;
 	logoDesktop: any;
 	logoMobile: any;
 	content: Nav;
