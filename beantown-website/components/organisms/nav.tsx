@@ -49,7 +49,7 @@ export default function Header(props: IProps) {
 						</div>
 						<div className=" items-center  lg:hidden">
 							<Popover.Button
-								className="inline-flex  rounded-md  px-2  "
+								className="inline-flex rounded-md px-2 focus:outline-none  "
 								aria-label="menu for navigation"
 							>
 								<span className="sr-only">Open menu</span>
@@ -79,7 +79,7 @@ export default function Header(props: IProps) {
 											<>
 												<Popover.Button
 													className={classNames(
-														'min-w-32 flex  items-center rounded-sm  px-3 py-1  '
+														'min-w-32 flex  items-center rounded-sm  px-3 py-1 focus:outline-none  '
 													)}
 												>
 													<span className="para-4 lg:para-3 flex-1 pr-1 ">
@@ -165,7 +165,7 @@ export default function Header(props: IProps) {
 							focus
 							className="absolute inset-x-0 top-0 origin-top-right transform p-2 transition lg:hidden"
 						>
-							<div className="divide-y-2 divide-gray-50 rounded-lg bg-white shadow-lg ring-1 ring-black ring-opacity-5">
+							<div className="divide-y-2 divide-gray-50 rounded-lg bg-white shadow-lg ">
 								<div className="px-5 pt-5 pb-6">
 									<div className="flex items-center justify-between">
 										<div className=" align-middle  ">
