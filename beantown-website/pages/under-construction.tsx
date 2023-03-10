@@ -12,6 +12,7 @@ import { GlobalContext } from '@contexts/global/global.context';
 import CtaWrapper from 'components/molecules/cta-wrapper.molecule';
 import Header from 'components/organisms/nav';
 import UnderConstructionSection from 'components/templates/under-construction/under-construction.section';
+import Link from 'next/link';
 
 export interface UnderConstructionContentProps {
 	page: BookNow[];
@@ -61,9 +62,11 @@ const UnderConstructionPage: React.FC = (props) => {
 				content={headerData}
 			>
 				<div className=" hidden lg:flex lg:justify-end ">
-					<CtaWrapper.CTA className="para-3 bg-primary-shade-1 h-[48px] w-[139px] rounded-lg py-1 px-4 tracking-wide  text-white  md:py-2 md:px-8 lg:tracking-wider ">
-						<p>{headerData.headerButton?.text}</p>
-					</CtaWrapper.CTA>
+					<Link href={headerData.headerButton?.href || ''}>
+						<CtaWrapper.CTA className="para-3 bg-primary-shade-1 h-[48px] w-[139px] rounded-lg py-1 px-4 tracking-wide  text-white  md:py-2 md:px-8 lg:tracking-wider ">
+							<p>{headerData.headerButton?.text}</p>
+						</CtaWrapper.CTA>
+					</Link>
 				</div>
 			</Header>
 			<UnderConstructionSection />
