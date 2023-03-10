@@ -6,6 +6,7 @@ import { AboutUsContentProps } from 'pages/about-us';
 import CTATextContent, {
 	CTAButton,
 } from 'components/organisms/cta-text-content.organism';
+import { showUnderConstructionMsg } from 'utils/helper';
 
 const CommunityCTAContent = () => {
 	const { pageContent } =

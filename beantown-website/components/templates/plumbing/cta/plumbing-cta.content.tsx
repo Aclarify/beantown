@@ -15,7 +15,6 @@ const PlumbingCTAContent = () => {
 	}
 	const pageData = pageContent.page[0];
 	const { ctaImage, ctaTitle, ctaButton } = pageData;
-	console.log(pageData);
 	return (
 		<CTAWithImage
 			heroImageURL={ctaImage?.asset?.url || ''}

@@ -37,16 +37,16 @@ export default function Header(props: IProps) {
 						)}
 					>
 						<div className=" align-middle  ">
-							<Link href="/">
-								<div className="image-wrapper relative h-[50px] w-[136px] focus:outline-none md:h-[80px] md:w-[230px] lg:h-[80px] lg:w-[230px] ">
+							<div className="image-wrapper relative h-[50px] w-[136px] focus:outline-none md:h-[80px] md:w-[230px] lg:h-[80px] lg:w-[230px] ">
+								<Link href="/">
 									<Image
 										alt={logoDesktop?.asset?.altText || ''}
 										fill={true}
 										priority={true}
 										src={logoDesktop?.asset?.url || ''}
 									/>
-								</div>
-							</Link>
+								</Link>
+							</div>
 						</div>
 						<div className=" items-center  lg:hidden">
 							<Popover.Button
@@ -178,16 +178,16 @@ export default function Header(props: IProps) {
 								<div className="px-5 pt-5 pb-6">
 									<div className="flex items-center justify-between">
 										<div className=" align-middle  ">
-											<Link href="/">
-												<div className="image-wrapper relative h-[50px] w-[136px] focus:outline-none md:h-[80px] md:w-[230px] ">
+											<div className="image-wrapper relative h-[50px] w-[136px] focus:outline-none md:h-[80px] md:w-[230px] ">
+												<Link href="/">
 													<Image
 														alt={logoMobile?.asset?.altText || ''}
 														fill={true}
 														priority={true}
 														src={logoMobile?.asset?.url || ''}
 													/>
-												</div>
-											</Link>
+												</Link>
+											</div>
 										</div>
 										<div className="-mr-2">
 											<Popover.Button className="inline-flex items-center justify-center rounded-md  p-2 ">
