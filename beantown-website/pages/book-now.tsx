@@ -56,6 +56,7 @@ const BookNowPage: React.FC = (props) => {
 				logoDesktop={logoDesktop?.image}
 				logoMobile={logoDesktop?.image}
 				content={headerData}
+				mobileBgColor="bg-secondary-shade-3"
 			>
 				<div className=" hidden lg:flex lg:justify-end ">
 					<CtaWrapper.CTA className="para-3 bg-primary-shade-1 h-[48px] w-[139px] rounded-lg py-1 px-4 tracking-wide  text-white  md:py-2 md:px-8 lg:tracking-wider ">
