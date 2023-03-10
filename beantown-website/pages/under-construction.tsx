@@ -1,5 +1,5 @@
 import React, { useContext } from 'react';
-import { Nav, Footer, BookNow } from '@typing/gql/graphql';
+import { Nav, Footer, Booknow as BookNow } from '@typing/gql/graphql';
 import Head from 'next/head';
 import pageQuery from '@lib/queries/pages/get-book-now.query';
 import WithGlobalContent, {
@@ -9,7 +9,6 @@ import { PageNames } from '@configs/client/pages/pages.config';
 import FooterSection from 'components/organisms/footer';
 import { GlobalContextProps } from '@typing/common/interfaces/contexts.interface';
 import { GlobalContext } from '@contexts/global/global.context';
-import BookNowSection from 'components/templates/Book-now/book-now.section';
 import CtaWrapper from 'components/molecules/cta-wrapper.molecule';
 import Header from 'components/organisms/nav';
 import UnderConstructionSection from 'components/templates/under-construction/under-construction.section';
