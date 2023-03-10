@@ -3,6 +3,7 @@ import React from 'react';
 import { Blog, Maybe } from '@typing/gql/graphql';
 import BlogCard from './blog-card.organism';
 import CtaWrapper from 'components/molecules/cta-wrapper.molecule';
+import { showUnderConstructionMsg } from 'utils/helper';
 
 interface IProps extends React.HTMLAttributes<HTMLDivElement> {
 	blogsTitle: string;
@@ -44,6 +45,7 @@ const BlogsOther: React.FC<IProps> = (props) => {
 			</div>
 			<div className="items-center pt-4 text-center lg:mb-16">
 				<CtaWrapper.CTA
+					onClick={showUnderConstructionMsg}
 					className={`${props.blogsButtonTextColour} ${props.blogsButtonBgColour} 
 					para-3 lg:para-2 h-[52px] w-[184px] rounded-lg py-1 px-4 tracking-wide md:py-2  md:px-8  lg:h-[64px] lg:w-[210px] lg:tracking-wider`}
 				>

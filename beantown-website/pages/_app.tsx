@@ -52,6 +52,7 @@ export default function App({ Component, pageProps }: AppProps) {
 					className={`${neuePlak.className}  overflow-hidden tracking-wide lg:tracking-wider`}
 				>
 					<Component {...pageProps} />
+					<Toast />
 				</main>
 			</ApolloProvider>
 		</>
