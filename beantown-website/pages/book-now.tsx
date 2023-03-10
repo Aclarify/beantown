@@ -59,8 +59,8 @@ const BookNowPage: React.FC = (props) => {
 				mobileBgColor="bg-secondary-shade-3"
 			>
 				<div className=" hidden lg:flex lg:justify-end ">
-					<CtaWrapper.CTA className="para-3 bg-primary-shade-1 h-[48px] w-[139px] rounded-lg py-1 px-4 tracking-wide  text-white  md:py-2 md:px-8 lg:tracking-wider ">
-						<p>{headerData.headerButton?.text}</p>
+					<CtaWrapper.CTA className="headerButton bg-primary-shade-1 h-[48px] w-[139px] rounded-lg py-1 px-8  tracking-wide   text-white lg:tracking-wider ">
+						{headerData.headerButton?.text}
 					</CtaWrapper.CTA>
 				</div>
 			</Header>

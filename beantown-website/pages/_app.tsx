@@ -6,6 +6,7 @@ import '@fortawesome/fontawesome-svg-core/styles.css';
 config.autoAddCss = false;
 import localFont from '@next/font/local';
 import { graphQLClient } from '@lib/clients/apollo/apollo.client';
+import Toast from 'components/molecules/toast.molecule';
 
 const neuePlak = localFont({
 	display: 'swap',
