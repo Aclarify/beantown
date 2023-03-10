@@ -25,9 +25,7 @@ const CTATextContent: React.FC<IProps> = ({
 					{typeof description === 'string' ? (
 						<p>{description}</p>
 					) : (
-						<p>
-							<RichText value={description?.contentRaw} />
-						</p>
+						<RichText value={description?.contentRaw} />
 					)}
 				</ContentWrapper.Description>
 			)}
@@ -52,9 +50,7 @@ export const CTAButton: React.FC<ICTAButtonProps> = ({
 }) => {
 	return (
 		<Link href={href || ''}>
-			<button className={` ${bgColor} ${textColor} button ctaButton`}>
-				{text}
-			</button>
+			<button className={` ${bgColor} ${textColor} button`}>{text}</button>
 		</Link>
 	);
 };

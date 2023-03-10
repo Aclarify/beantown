@@ -41,13 +41,20 @@
 
 	/* title 3 */
 	h3 {
-		@apply text-2xl;
+		@apply text-[28px];
 		@apply font-semibold;
 		@apply leading-[32px];
 	}
 
 	/* title 4 */
 	h4 {
+		@apply text-2xl;
+		@apply font-semibold;
+		@apply leading-[32px];
+	}
+
+	/* title 5 */
+	h5 {
 		@apply text-xl;
 		@apply font-semibold;
 		@apply leading-[28px];
@@ -56,7 +63,13 @@
 	/* para */
 	p {
 		@apply text-base;
-		@apply font-light;
+		@apply font-thin;
+		@apply leading-[22px];
+	}
+	/* richText */
+	.richText {
+		@apply text-base;
+		@apply font-thin;
 		@apply leading-[22px];
 	}
 
@@ -70,15 +83,12 @@
 	/* buttonText */
 	.button {
 		@apply text-xl;
-		@apply font-light;
+		@apply font-normal;
 		@apply leading-[32px];
 		@apply rounded-lg;
 		@apply py-1;
 		@apply px-4;
 		@apply tracking-wide;
-	}
-
-	.ctaButton {
 		@apply h-[52px];
 		@apply w-[184px];
 	}
@@ -86,7 +96,7 @@
 	/* Header buttonText */
 	.headerButton {
 		@apply text-xl;
-		@apply font-light;
+		@apply font-normal;
 		@apply leading-[32px];
 		@apply h-[48px];
 		@apply w-[139px];
@@ -97,7 +107,7 @@
 	}
 
 	@media screen(md) {
-		.ctaButton {
+		.button {
 			@apply py-2;
 			@apply px-8;
 		}
@@ -114,13 +124,21 @@
 		}
 		h3 {
 			@apply text-[40px];
-			@apply leading-[56px];
+			@apply leading-[60px];
 		}
 		h4 {
+			@apply text-[40px];
+			@apply leading-[56px];
+		}
+		h5 {
 			@apply text-[32px];
 			@apply leading-[44px];
 		}
 		p {
+			@apply text-2xl;
+			@apply leading-[36px];
+		}
+		.richText {
 			@apply text-2xl;
 			@apply leading-[36px];
 		}
@@ -132,13 +150,11 @@
 			@apply text-2xl;
 			@apply font-thin;
 			@apply leading-[36px];
+			@apply h-[64px];
+			@apply w-[200px];
 		}
 		.headerButton {
 			@apply tracking-wider;
-		}
-		.ctaButton {
-			@apply h-[64px];
-			@apply w-[182px];
 		}
 	}
 }

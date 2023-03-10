@@ -29,13 +29,11 @@ export default function HomeHero() {
 						<h1>{heroTitle}</h1>
 					</ContentWrapper.Title>
 					<ContentWrapper.Description className=" w-[80%]">
-						<p>
-							<RichText value={heroDescription?.contentRaw} />
-						</p>
+						<RichText value={heroDescription?.contentRaw} />
 					</ContentWrapper.Description>
 					<ContentWrapper.CTA className="mt-4 lg:mt-8">
 						<Link href={heroButton?.href || ''}>
-							<CtaWrapper.CTA className="text-primary-shade-1 button ctaButton bg-white ">
+							<CtaWrapper.CTA className="text-primary-shade-1 button bg-white ">
 								{heroButton?.text}
 							</CtaWrapper.CTA>
 						</Link>

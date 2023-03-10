@@ -46,11 +46,9 @@ const MissionContent = () => {
 				>
 					<ContentWrapper>
 						<ContentWrapper.Title>
-							<h1 className="title-5 lg:title-2 text-primary-black ">
-								{missionTitle}
-							</h1>
+							<h2 className="text-primary-black ">{missionTitle}</h2>
 						</ContentWrapper.Title>
-						<ContentWrapper.Description className="para-4 lg:para-2 text-left !font-thin">
+						<ContentWrapper.Description className="text-left ">
 							<RichText value={missionDescription?.contentRaw} />
 						</ContentWrapper.Description>
 					</ContentWrapper>
