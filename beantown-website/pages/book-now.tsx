@@ -1,5 +1,5 @@
 import React, { useContext } from 'react';
-import { Nav, Footer, BookNow } from '@typing/gql/graphql';
+import { Nav, Footer, Booknow as BookNow } from '@typing/gql/graphql';
 import Head from 'next/head';
 import pageQuery from '@lib/queries/pages/get-book-now.query';
 import WithGlobalContent, {
