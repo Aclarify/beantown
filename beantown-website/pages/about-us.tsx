@@ -61,6 +61,7 @@ const AboutUsPage: React.FC = (props) => {
 				logoDesktop={logoDesktop?.image}
 				logoMobile={logoMobile?.image}
 				content={headerData}
+				mobileBgColor="bg-secondary-shade-3"
 			>
 				<div className=" hidden lg:flex lg:justify-end ">
 					<Link href={headerData.headerButton?.href || ''}>
