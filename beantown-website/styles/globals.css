@@ -66,6 +66,12 @@
 		@apply font-light;
 		@apply leading-[22px];
 	}
+	/* para1 */
+	.para {
+		@apply text-base;
+		@apply font-light;
+		@apply leading-[24px];
+	}
 	/* richText */
 	.richText {
 		@apply text-base;
@@ -78,6 +84,12 @@
 		@apply text-[18px];
 		@apply font-semibold;
 		@apply leading-[26px];
+	}
+	/* subtitle */
+	.subtitle-2 {
+		@apply text-base;
+		@apply font-light;
+		@apply leading-[20px];
 	}
 	/* list item */
 	.listItem {
@@ -144,6 +156,11 @@
 			@apply text-2xl;
 			@apply leading-[36px];
 		}
+		/* para1 */
+		.para {
+			@apply text-xl;
+			@apply leading-[32px];
+		}
 		.richText {
 			@apply text-2xl;
 			@apply leading-[36px];
@@ -151,6 +168,10 @@
 		.subtitle {
 			@apply text-[28px];
 			@apply leading-[40px];
+		}
+		.subtitle-2 {
+			@apply text-xl;
+			@apply leading-[32px];
 		}
 		.listItem {
 			@apply text-2xl;
@@ -227,10 +248,10 @@
 		@apply font-normal;
 	}
 
-	.subtitle-2 {
+	/* .subtitle-2 {
 		@apply text-[32px];
 		@apply font-normal;
-	}
+	} */
 
 	.subtitle-3 {
 		@apply text-[28px];

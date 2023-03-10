@@ -65,7 +65,7 @@ const AboutElectricalServiceContent = () => {
 							<RichText value={aboutTheServiceDescription?.contentRaw} />
 						</ContentWrapper.Description>
 						<ContentWrapper.CTA className="mt-[16px] lg:mt-[32px]">
-							<CtaWrapper.CTA className="bg-service-yellow text-black">
+							<CtaWrapper.CTA className="bg-service-yellow button text-black">
 								{contactUsButton?.text}
 							</CtaWrapper.CTA>
 						</ContentWrapper.CTA>
