@@ -125,13 +125,15 @@ export default function Footer(props: IProps) {
 							{socialMediaIcons?.map((icon, index) => {
 								return (
 									icon && (
-										<Image
-											key={index}
-											alt={icon?.image?.asset?.altText || ''}
-											width={35}
-											height={35}
-											src={icon?.image?.asset?.url || ''}
-										/>
+										<Link href={icon?.href || ''}>
+											<Image
+												key={index}
+												alt={icon?.image?.asset?.altText || ''}
+												width={35}
+												height={35}
+												src={icon?.image?.asset?.url || ''}
+											/>
+										</Link>
 									)
 								);
 							})}
