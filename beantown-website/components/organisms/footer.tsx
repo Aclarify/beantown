@@ -37,7 +37,7 @@ export default function Footer(props: IProps) {
 						{navGroup &&
 							navGroup.map((linkGroup, index) => (
 								<div key={index} className="max-w-sm pt-4 lg:pt-10">
-									<h1 className="para-3 lg:para-1 font-bold text-white lg:pb-6 lg:font-normal">
+									<h1 className="subtitle font-bold text-white lg:pb-6 lg:font-normal">
 										{linkGroup?.groupTitle}
 									</h1>
 									<div className="flex justify-start lg:flex-col">
@@ -46,7 +46,7 @@ export default function Footer(props: IProps) {
 												link && (
 													<div key={index} className="pt-2 pr-6  ">
 														<Link
-															className="para-4 lg:para-3 text-gray-300 "
+															className="para text-gray-300 "
 															href={link?.href || '/'}
 														>
 															{link?.linkText}
@@ -60,7 +60,7 @@ export default function Footer(props: IProps) {
 							))}
 						<div id="contact" className="pt-4 lg:pt-10">
 							<div className="pb-2 lg:pb-4">
-								<span className=" para-3 lg:para-1 font-bold text-white lg:font-normal">
+								<span className=" subtitle font-bold text-white lg:font-normal">
 									{contactUsTitle}
 								</span>
 							</div>
@@ -69,7 +69,7 @@ export default function Footer(props: IProps) {
 									contactDtl?.iconImage && (
 										<div
 											key={index}
-											className="para-4 lg:para-3 flex justify-start space-x-2 pt-2 text-gray-300"
+											className="para flex justify-start space-x-2 pt-2 text-gray-300"
 										>
 											<Image
 												alt={contactDtl.iconImage?.asset?.altText || ''}
@@ -116,7 +116,7 @@ export default function Footer(props: IProps) {
 							</div>
 						</div>
 						<div id="footerDescription" className="lg:pb-6 lg:pt-4">
-							<p className="para-4 lg:para-3 text-gray-300">{description}</p>
+							<p className="para text-gray-300">{description}</p>
 						</div>
 						<div
 							id="socialMediaIconGroupDesktop"
@@ -141,7 +141,7 @@ export default function Footer(props: IProps) {
 				<div className="2xl:padding-for-section bg-primary-shade-1 px-5">
 					<div
 						id="copyWrite"
-						className="border-gray-shade-2 para-5 lg:para-3  flex justify-center border-t-2  py-6  text-gray-300"
+						className="border-gray-shade-2 para  flex justify-center border-t-2  py-6  text-gray-300"
 					>
 						<span className="">{copyright} </span>
 

@@ -29,7 +29,7 @@ const HeatingCoolingServiceCard: React.FC<Props> = (props) => {
 					</div>
 					<div className="text-center lg:pt-8">
 						<h3 className=" text-primary-black pb-4">{props.title}</h3>
-						<p className=" text-gray-shade-1 ">{props.content}</p>
+						<p className=" text-gray-shade-1 !font-thin ">{props.content}</p>
 					</div>
 				</div>
 			</div>

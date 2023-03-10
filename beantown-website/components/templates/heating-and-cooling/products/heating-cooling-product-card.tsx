@@ -19,7 +19,7 @@ const ProductCard: React.FC<Props> = (props) => {
 					<h3 className=" text-primary-black pb-2 lg:pb-4">{props.title}</h3>
 
 					<div className=" text-gray-shade-1  text-left  ">
-						<p>{props.description}</p>
+						<p className="!font-thin">{props.description}</p>
 					</div>
 				</div>
 			</div>

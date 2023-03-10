@@ -30,7 +30,7 @@ function ElectricalServicesList() {
 								<div
 									key={index}
 									id="list-items"
-									className="para-4 md:para-3 text-gray-shade-1 flex items-center"
+									className=" text-gray-shade-1 flex items-center"
 								>
 									<Image
 										src={

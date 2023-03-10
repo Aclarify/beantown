@@ -47,7 +47,7 @@ const Blogs: React.FC<IProps> = (props) => {
 				<CtaWrapper.CTA
 					onClick={showUnderConstructionMsg}
 					className={`${props.blogsButtonTextColour} ${props.blogsButtonBgColour} 
-					para-3 lg:para-2 h-[52px] w-[184px] rounded-lg py-1 px-4 tracking-wide md:py-2  md:px-8  lg:h-[64px] lg:w-[210px] lg:tracking-wider`}
+					 button`}
 				>
 					<p>{props.blogsButtonText}</p>
 				</CtaWrapper.CTA>

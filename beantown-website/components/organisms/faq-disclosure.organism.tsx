@@ -60,9 +60,9 @@ const FAQDisclosure: React.FC<Props> = (props) => {
 								leaveTo="opacity-0 scale-95"
 							></Transition>
 							{props.isOpen && (
-								<Disclosure.Panel className="para-4 lg:para-3 text-primary-shade-1 rounded-b-lg bg-white p-4">
+								<Disclosure.Panel className="text-primary-shade-1 rounded-b-lg bg-white p-4">
 									<div className="border-t-2 pt-2">
-										<p>{props.faqAnswer} </p>
+										<p className="!font-thin">{props.faqAnswer} </p>
 									</div>
 								</Disclosure.Panel>
 							)}

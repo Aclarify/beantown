@@ -31,7 +31,7 @@ const BlogCard: React.FC<Props> = (props) => {
 						<p> {props.blogDescription} </p>
 					</div>
 					<div className="mt-4 flex justify-between align-middle lg:pb-2 ">
-						<button className="para-4 lg:para-2 text-primary-black underline ">
+						<button className="para text-primary-black underline ">
 							{props.buttonText}
 						</button>
 

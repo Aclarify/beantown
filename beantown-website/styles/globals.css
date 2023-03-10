@@ -156,7 +156,6 @@
 			@apply text-2xl;
 			@apply leading-[36px];
 		}
-		/* para1 */
 		.para {
 			@apply text-xl;
 			@apply leading-[32px];
@@ -165,6 +164,7 @@
 			@apply text-2xl;
 			@apply leading-[36px];
 		}
+
 		.subtitle {
 			@apply text-[28px];
 			@apply leading-[40px];
@@ -206,110 +206,5 @@
 @layer components {
 	.padding-for-section {
 		@apply px-[120px];
-	}
-
-	.title-1 {
-		@apply text-7xl;
-		@apply font-semibold;
-	}
-
-	.title-2 {
-		@apply text-[56px];
-		@apply font-semibold;
-	}
-
-	.title-3 {
-		@apply text-[40px];
-		@apply font-semibold;
-	}
-
-	.title-4 {
-		@apply text-4xl;
-		@apply font-semibold;
-	}
-
-	.title-5 {
-		@apply text-[32px];
-		@apply font-semibold;
-	}
-
-	.title-6 {
-		@apply text-2xl;
-		@apply font-semibold;
-	}
-
-	.title-7 {
-		@apply text-xl;
-		@apply font-semibold;
-	}
-
-	.subtitle-1 {
-		@apply text-[40px];
-		@apply font-normal;
-	}
-
-	/* .subtitle-2 {
-		@apply text-[32px];
-		@apply font-normal;
-	} */
-
-	.subtitle-3 {
-		@apply text-[28px];
-		@apply font-normal;
-	}
-
-	.subtitle-4 {
-		@apply text-2xl;
-		@apply font-normal;
-	}
-
-	.subtitle-5 {
-		@apply text-xl;
-		@apply font-normal;
-	}
-
-	.subtitle-6 {
-		@apply text-[18px];
-		@apply font-normal;
-	}
-
-	.subtitle-7 {
-		@apply text-base;
-		@apply font-normal;
-	}
-
-	.text-light-1 {
-		@apply text-[32px];
-		@apply font-light;
-	}
-
-	.para-1 {
-		@apply text-[28px];
-		@apply font-light;
-	}
-
-	.para-2 {
-		@apply text-2xl;
-		@apply font-light;
-	}
-
-	.para-3 {
-		@apply text-xl;
-		@apply font-light;
-	}
-
-	.para-4 {
-		@apply text-base;
-		@apply font-light;
-	}
-
-	.para-5 {
-		@apply text-sm;
-		@apply font-light;
-	}
-
-	.para-6 {
-		@apply text-xs;
-		@apply font-light;
 	}
 }
