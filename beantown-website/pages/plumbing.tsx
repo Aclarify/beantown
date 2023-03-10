@@ -63,6 +63,7 @@ const PlumbingServicesPage: React.FC = (props) => {
 				logoDesktop={logoDesktop?.image}
 				logoMobile={logoMobile?.image}
 				content={headerData}
+				mobileBgColor="bg-service-green-bg"
 			>
 				<div className=" hidden lg:flex lg:justify-end ">
 					<Link href={headerData.headerButton?.href || ''}>
