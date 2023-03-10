@@ -31,7 +31,7 @@ const HeatingCoolingServicesContent = () => {
 						</ContentWrapper.Description>
 					</ContentWrapper>
 				</div>
-				<div className="flex flex-wrap bg-white">
+				<div className="flex flex-wrap ">
 					{servicesGroup?.map((content, index) => {
 						return (
 							<div
