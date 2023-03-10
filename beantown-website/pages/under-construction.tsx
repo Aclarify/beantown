@@ -55,6 +55,7 @@ const UnderConstructionPage: React.FC = (props) => {
 		<div id="book-now" className="bg-primary-white-shade-1">
 			<PageHead />
 			<Header
+				mobileBgColor="bg-primary-white-shade-1"
 				fontColor="text-primary-shade-1"
 				logoDesktop={logoDesktop?.image}
 				logoMobile={logoDesktop?.image}
@@ -66,7 +67,7 @@ const UnderConstructionPage: React.FC = (props) => {
 					</CtaWrapper.CTA>
 				</div>
 			</Header>
-			<UnderConstructionSection/>
+			<UnderConstructionSection />
 			<FooterSection
 				logoDesktop={footerLogo?.image || ''}
 				content={footerData}
