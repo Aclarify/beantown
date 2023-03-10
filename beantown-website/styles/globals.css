@@ -63,13 +63,13 @@
 	/* para */
 	p {
 		@apply text-base;
-		@apply font-thin;
+		@apply font-light;
 		@apply leading-[22px];
 	}
 	/* richText */
 	.richText {
 		@apply text-base;
-		@apply font-thin;
+		@apply font-light;
 		@apply leading-[22px];
 	}
 

@@ -14,7 +14,7 @@ interface IProps extends React.HTMLAttributes<HTMLDivElement> {
 	faqList: Maybe<Array<Maybe<Faq>>>;
 }
 
-const FAQOther: React.FC<IProps> = (props) => {
+const FAQ: React.FC<IProps> = (props) => {
 	const [indexToBeOpen, setIndexToBeOpen] = useState(0);
 	function handleFaqClick(index: number) {
 		if (index == indexToBeOpen) {
@@ -72,4 +72,4 @@ const FAQOther: React.FC<IProps> = (props) => {
 	);
 };
 
-export default FAQOther;
+export default FAQ;
