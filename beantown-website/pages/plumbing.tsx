@@ -67,7 +67,7 @@ const PlumbingServicesPage: React.FC = (props) => {
 			>
 				<div className=" hidden lg:flex lg:justify-end ">
 					<Link href={headerData.headerButton?.href || ''}>
-						<CtaWrapper.CTA className="text-primary-shade-1 headerButton h-[48px] w-[139px] rounded-lg bg-white py-1 px-8    tracking-wide lg:tracking-wider  ">
+						<CtaWrapper.CTA className="text-primary-shade-1 headerButton  bg-white">
 							{headerData.headerButton?.text}
 						</CtaWrapper.CTA>
 					</Link>

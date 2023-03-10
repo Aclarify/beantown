@@ -79,6 +79,12 @@
 		@apply text-xl;
 		@apply font-light;
 		@apply leading-[32px];
+		@apply h-[48px];
+		@apply w-[139px];
+		@apply rounded-lg;
+		@apply py-1;
+		@apply px-8;
+		@apply tracking-wide;
 	}
 
 	@media screen(xl) {
@@ -110,6 +116,9 @@
 			@apply text-2xl;
 			@apply font-normal;
 			@apply leading-[36px];
+		}
+		.headerButton {
+			@apply tracking-wider;
 		}
 	}
 }
