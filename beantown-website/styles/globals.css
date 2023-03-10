@@ -70,8 +70,17 @@
 	/* buttonText */
 	.button {
 		@apply text-xl;
-		@apply font-semibold;
+		@apply font-light;
 		@apply leading-[32px];
+		@apply rounded-lg;
+		@apply py-1;
+		@apply px-4;
+		@apply tracking-wide;
+	}
+
+	.ctaButton {
+		@apply h-[52px];
+		@apply w-[184px];
 	}
 
 	/* Header buttonText */
@@ -87,7 +96,14 @@
 		@apply tracking-wide;
 	}
 
-	@media screen(xl) {
+	@media screen(md) {
+		.ctaButton {
+			@apply py-2;
+			@apply px-8;
+		}
+	}
+
+	@media screen(lg) {
 		h1 {
 			@apply text-7xl;
 			@apply leading-[90px];
@@ -114,11 +130,15 @@
 		}
 		.button {
 			@apply text-2xl;
-			@apply font-normal;
+			@apply font-thin;
 			@apply leading-[36px];
 		}
 		.headerButton {
 			@apply tracking-wider;
+		}
+		.ctaButton {
+			@apply h-[64px];
+			@apply w-[182px];
 		}
 	}
 }

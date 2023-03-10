@@ -30,7 +30,7 @@ const CommunityCTAContent = () => {
 			bgColor="var(--primary-color-shade-2-rgb)"
 		>
 			<div className="text-white">
-				<CTATextContent title={communityCtaTitle || ''}>
+				<CTATextContent title={communityCtaTitle || ''} isHero={false}>
 					<CTAButton
 						text={communityCtaButton?.text || ''}
 						textColor="text-primary-shade-1"

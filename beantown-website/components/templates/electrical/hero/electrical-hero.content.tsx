@@ -29,7 +29,11 @@ const ElectricalHeroContent = () => {
 			isImageToBePrefetched={true}
 		>
 			<div className="text-black">
-				<CTATextContent title={heroTitle || ''} description={heroDescription}>
+				<CTATextContent
+					title={heroTitle || ''}
+					description={heroDescription}
+					isHero={true}
+				>
 					<CTAButton
 						text={heroButton?.text || ''}
 						textColor="text-white"

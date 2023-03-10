@@ -16,11 +16,7 @@ const Title: React.FC<TitleProps> = (props) => {
 
 interface DescriptionProps extends PropsWithStyles, PropsWithChildren {}
 const Description: React.FC<DescriptionProps> = (props) => {
-	return (
-		<div className={clsx('para-4 lg:para-2 lg:leading-9', props.className)}>
-			{props.children}
-		</div>
-	);
+	return <div className={clsx(props.className)}>{props.children}</div>;
 };
 
 interface DescriptionProps extends PropsWithStyles, PropsWithChildren {}

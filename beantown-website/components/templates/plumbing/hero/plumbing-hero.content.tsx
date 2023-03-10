@@ -28,7 +28,11 @@ const PlumbingHeroContent = () => {
 			isImageToBePrefetched={true}
 		>
 			<div className="text-white">
-				<CTATextContent title={heroTitle || ''} description={heroDescription}>
+				<CTATextContent
+					title={heroTitle || ''}
+					description={heroDescription}
+					isHero={true}
+				>
 					<CTAButton
 						text={heroButton?.text || ''}
 						href={heroButton?.href || ''}

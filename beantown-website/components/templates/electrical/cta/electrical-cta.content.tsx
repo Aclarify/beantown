@@ -27,7 +27,7 @@ const ElectricalPageCTAContent = () => {
 			bgColor="var(--services-yellow-color-rgb)"
 		>
 			<div className="text-primary-black">
-				<CTATextContent title={ctaTitle || ''}>
+				<CTATextContent title={ctaTitle || ''} isHero={false}>
 					<CTAButton
 						text={ctaButton?.text || ''}
 						textColor="text-primary-black"
