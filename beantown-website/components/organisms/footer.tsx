@@ -20,6 +20,26 @@ export default function Footer(props: IProps) {
 		contactUs,
 		copyright,
 	} = footerData;
+
+	const renderSocialMediaIcons = () => {
+		return socialMediaIcons?.map((icon, index) => {
+			return (
+				icon && (
+					// Add target blank to open in new tab
+					<a href={icon?.href || ''} target="_blank" rel="noreferrer">
+						<Image
+							key={index}
+							alt={icon?.image?.asset?.altText || 'Social Media Icon'}
+							width={35}
+							height={35}
+							src={icon?.image?.asset?.url || ''}
+						/>
+					</a>
+				)
+			);
+		});
+	};
+
 	return (
 		<section id="footer">
 			<div className=" 3xl:-mb-[12em] 3xl:bottom-[13em] relative bottom-[9em] z-10 max-h-40 overflow-hidden md:bottom-[10em] md:-mb-[8em]  lg:bottom-[11em] lg:-mb-[8em] xl:-mb-[10em]">
@@ -100,21 +120,7 @@ export default function Footer(props: IProps) {
 								id="socialMediaIconGroupMobile"
 								className="flex items-center space-x-4 align-middle lg:hidden"
 							>
-								{socialMediaIcons?.map((icon, index) => {
-									return (
-										icon && (
-											<Link href={icon?.href || ''}>
-												<Image
-													key={index}
-													alt={icon?.image?.asset?.altText || ''}
-													width={35}
-													height={35}
-													src={icon?.image?.asset?.url || ''}
-												/>
-											</Link>
-										)
-									);
-								})}
+								{renderSocialMediaIcons()}
 							</div>
 						</div>
 						<div id="footerDescription" className="lg:pb-6 lg:pt-4">
@@ -124,21 +130,7 @@ export default function Footer(props: IProps) {
 							id="socialMediaIconGroupDesktop"
 							className="hidden space-x-4 pb-8 lg:flex"
 						>
-							{socialMediaIcons?.map((icon, index) => {
-								return (
-									icon && (
-										<Link href={icon?.href || ''}>
-											<Image
-												key={index}
-												alt={icon?.image?.asset?.altText || ''}
-												width={35}
-												height={35}
-												src={icon?.image?.asset?.url || ''}
-											/>
-										</Link>
-									)
-								);
-							})}
+							{renderSocialMediaIcons()}
 						</div>
 					</div>
 				</div>
