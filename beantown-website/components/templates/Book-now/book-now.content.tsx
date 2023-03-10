@@ -12,7 +12,6 @@ const BookNowContent = () => {
 
 	const pageData = pageContent.page[0];
 	const { bookNowTitle, bookNowDescription, bookNowUrl } = pageData;
-	console.log(pageData);
 	return (
 		<div
 			id="section-wrapper"
