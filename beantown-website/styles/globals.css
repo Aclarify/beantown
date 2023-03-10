@@ -73,11 +73,17 @@
 		@apply leading-[22px];
 	}
 
+	/* subtitle */
+	.subtitle {
+		@apply text-[18px];
+		@apply font-semibold;
+		@apply leading-[26px];
+	}
 	/* list item */
 	.listItem {
-		@apply text-xl;
-		@apply font-normal;
-		@apply leading-[28px];
+		@apply text-base;
+		@apply font-light;
+		@apply leading-[22px];
 	}
 
 	/* buttonText */
@@ -142,9 +148,13 @@
 			@apply text-2xl;
 			@apply leading-[36px];
 		}
-		.listItem {
+		.subtitle {
 			@apply text-[28px];
 			@apply leading-[40px];
+		}
+		.listItem {
+			@apply text-2xl;
+			@apply leading-[36px];
 		}
 		.button {
 			@apply text-2xl;

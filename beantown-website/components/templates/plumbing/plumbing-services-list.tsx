@@ -19,9 +19,9 @@ const PlumbingServicesList = () => {
 			className=" mt-[-2em] mb-[5em]  h-auto w-full rounded-3xl bg-white shadow-[rgba(29,_39,_87,_0.08)_4px_8px_60px] sm:mt-[0em]"
 		>
 			<div className="container p-4  lg:p-[44px]  ">
-				<p className="title-6 md:title-4 text-primary-black pb-4  sm:pb-8">
+				<span className="subtitle text-primary-black pb-4  sm:pb-8">
 					{servicesListTitle}
-				</p>
+				</span>
 				<div id="list-container" className="">
 					<div className="grid  grid-cols-2   md:grid-cols-4">
 						{servicesList?.map((listItem, index) => {
@@ -39,9 +39,9 @@ const PlumbingServicesList = () => {
 										className="h-[20px] w-[20px] sm:h-[24] sm:w-[24]"
 									/>
 
-									<p className="para-4 md:para-3 text-gray-shade-1  text-left">
+									<span className="listItem text-gray-shade-1  text-left">
 										{listItem}
-									</p>
+									</span>
 								</div>
 							);
 						})}
