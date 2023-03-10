@@ -35,22 +35,19 @@ const FAQOther: React.FC<IProps> = (props) => {
 				<div className="flex  flex-col justify-center text-center lg:text-left ">
 					<ContentWrapper>
 						<ContentWrapper.Title className=" mb-3 lg:mb-4">
-							<h1 className="title-5 lg:title-2 text-primary-shade-1 mt-10">
-								{props.faqTitle}
-							</h1>
+							<h2 className=" text-primary-shade-1 mt-10">{props.faqTitle}</h2>
 						</ContentWrapper.Title>
 						<ContentWrapper.Description>
-							<p className="para-4 lg:subtitle-4 text-primary-shade-1 my-4 flex flex-wrap justify-center lg:w-2/3">
+							<p className=" text-primary-shade-1 my-4 flex flex-wrap justify-center lg:w-2/3">
 								{props.faqDescription}
 							</p>
 						</ContentWrapper.Description>
 						<ContentWrapper.CTA className="mt-[32px]">
 							<CtaWrapper.CTA
 								onClick={showUnderConstructionMsg}
-								className={`${props.faqsButtonTextColour} ${props.faqsButtonBgColour} 
-					para-3 lg:para-2 h-[52px] w-[184px] rounded-lg py-1 px-4 tracking-wide md:py-2  md:px-8  lg:h-[64px] lg:w-[210px] lg:tracking-wider`}
+								className={`${props.faqsButtonTextColour} ${props.faqsButtonBgColour} button`}
 							>
-								<p>{props.faqButtonText}</p>
+								{props.faqButtonText}
 							</CtaWrapper.CTA>
 						</ContentWrapper.CTA>
 					</ContentWrapper>
