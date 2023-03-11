@@ -39,7 +39,7 @@ const PlumbingServicesList = () => {
 										className="h-[20px] w-[20px] sm:h-[24] sm:w-[24]"
 									/>
 
-									<span className="listItem text-gray-shade-1  text-left">
+									<span className="text-gray-shade-1 list-items  text-left">
 										{listItem}
 									</span>
 								</div>

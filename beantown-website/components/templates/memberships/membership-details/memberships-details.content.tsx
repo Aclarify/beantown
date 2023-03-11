@@ -39,11 +39,11 @@ const MembersipsDetails = () => {
 				>
 					<ContentWrapper>
 						<ContentWrapper.Title>
-							<h1 className="title-5 lg:title-2 text-primary-black ">
+							<h2 className=" text-primary-black ">
 								{activeServiceMembership?.serviceMembershipTitle}
-							</h1>
+							</h2>
 						</ContentWrapper.Title>
-						<ContentWrapper.Description className="para-4 lg:para-2 text-left !font-thin">
+						<ContentWrapper.Description className="text-left !font-thin">
 							<RichText
 								value={
 									activeServiceMembership?.serviceMembershipDescription

@@ -34,12 +34,8 @@ const MembershipCard: React.FC<IProps> = (props) => {
 						</div>
 					</div>
 					<div className="mb-4 flex flex-col items-center gap-1 px-3 sm:px-2">
-						<h1 className="title-5 lg:title-2 text-primary-black ">
-							{props.title}
-						</h1>
-						<h4 className="md:para-3 para-5 text-gray-shade-1 text-center">
-							{props.description}
-						</h4>
+						<h2 className="text-primary-black ">{props.title}</h2>
+						<p className="text-gray-shade-1 text-center">{props.description}</p>
 					</div>
 				</div>
 				<div id="list-container" className="mb-4 p-2">
@@ -49,7 +45,7 @@ const MembershipCard: React.FC<IProps> = (props) => {
 								<div
 									key={index}
 									id="list-items"
-									className="para-4 md:para-3 text-gray-shade-1 flex items-center p-1 sm:p-2"
+									className="list-items text-gray-shade-1 flex items-center p-1 sm:p-2"
 								>
 									{item?.isActivated ? (
 										<Image

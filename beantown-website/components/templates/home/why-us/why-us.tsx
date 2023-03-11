@@ -44,7 +44,7 @@ export default function WhyUs() {
 							<ContentWrapper.Title>
 								<h2 className=" text-primary-black ">{whyUsTitle}</h2>
 							</ContentWrapper.Title>
-							<ContentWrapper.Description className="richText text-left lg:pr-4">
+							<ContentWrapper.Description className="rich-text text-left lg:pr-4">
 								<RichText value={whyUsDescription?.contentRaw} />
 							</ContentWrapper.Description>
 							<ContentWrapper.CTA className="mt-[16px] lg:mt-[32px]">
