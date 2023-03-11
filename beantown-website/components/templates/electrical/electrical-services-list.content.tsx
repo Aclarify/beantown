@@ -40,7 +40,7 @@ function ElectricalServicesList() {
 										width={'32'}
 										height={'32'}
 									/>
-									<span className="listItem pl-2">{item}</span>
+									<span className="list-items pl-2">{item}</span>
 								</div>
 							);
 						})}

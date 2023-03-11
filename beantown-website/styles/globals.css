@@ -25,38 +25,43 @@
 }
 
 @layer base {
+	/* Common properties */
+	h1,
+	h2,
+	h3,
+	h4,
+	h5 {
+		@apply font-semibold;
+		@apply capitalize;
+	}
+
 	/* Main head line */
 	h1 {
 		@apply text-[32px];
-		@apply font-bold;
 		@apply leading-[38px];
 	}
 
 	/* title 2 */
 	h2 {
 		@apply text-[32px];
-		@apply font-semibold;
 		@apply leading-[38px];
 	}
 
 	/* title 3 */
 	h3 {
 		@apply text-[28px];
-		@apply font-semibold;
 		@apply leading-[32px];
 	}
 
 	/* title 4 */
 	h4 {
 		@apply text-2xl;
-		@apply font-semibold;
 		@apply leading-[32px];
 	}
 
 	/* title 5 */
 	h5 {
 		@apply text-xl;
-		@apply font-semibold;
 		@apply leading-[28px];
 	}
 
@@ -72,8 +77,8 @@
 		@apply font-light;
 		@apply leading-[24px];
 	}
-	/* richText */
-	.richText {
+	/* Rich Text */
+	.rich-text {
 		@apply text-base;
 		@apply font-light;
 		@apply leading-[22px];
@@ -92,7 +97,7 @@
 		@apply leading-[20px];
 	}
 	/* list item */
-	.listItem {
+	.list-items {
 		@apply text-base;
 		@apply font-light;
 		@apply leading-[22px];
@@ -121,6 +126,13 @@
 		@apply rounded-lg;
 		@apply py-1;
 		@apply px-8;
+		@apply tracking-wide;
+	}
+
+	/* Tab */
+	.tab-item {
+		@apply text-xl;
+		@apply leading-[28px];
 		@apply tracking-wide;
 	}
 
@@ -160,7 +172,7 @@
 			@apply text-xl;
 			@apply leading-[32px];
 		}
-		.richText {
+		.rich-text {
 			@apply text-2xl;
 			@apply leading-[36px];
 		}
@@ -173,7 +185,7 @@
 			@apply text-xl;
 			@apply leading-[32px];
 		}
-		.listItem {
+		.list-items {
 			@apply text-2xl;
 			@apply leading-[36px];
 		}
@@ -185,6 +197,11 @@
 			@apply w-[200px];
 		}
 		.headerButton {
+			@apply tracking-wider;
+		}
+		.tab-item {
+			@apply text-[32px];
+			@apply leading-[44px];
 			@apply tracking-wider;
 		}
 	}
