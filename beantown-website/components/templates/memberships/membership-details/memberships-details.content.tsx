@@ -6,6 +6,7 @@ import { MembershipsContentProps } from '../../../../pages/memberships';
 import RichText from '../../../molecules/rich-text.molecule';
 import MaskedImageWithBackgroundVector from '../../../organisms/masked-image-with-blob.organism';
 import useWindowDimensions from '../../../../lib/hooks/use-window-dimensions.hook';
+import { MembershipsContext } from '../../../../contexts/memberships/memberships.context';
 
 const MembersipsDetails = () => {
 	const { pageContent } =
@@ -13,15 +14,15 @@ const MembersipsDetails = () => {
 
 	const { width } = useWindowDimensions();
 
+	const { activeServiceMembership } = useContext(MembershipsContext);
+
 	if (!pageContent) {
 		return null;
 	}
-	const pageData = pageContent.page[0];
-	const { serviceMembershipsSection } = pageData;
-	if (!serviceMembershipsSection) {
+
+	if (!activeServiceMembership) {
 		return null;
 	}
-	const currentMembership = serviceMembershipsSection[0];
 
 	return (
 		<div
@@ -39,13 +40,14 @@ const MembersipsDetails = () => {
 					<ContentWrapper>
 						<ContentWrapper.Title>
 							<h1 className="title-5 lg:title-2 text-primary-black ">
-								{currentMembership?.serviceMembershipTitle}
+								{activeServiceMembership?.serviceMembershipTitle}
 							</h1>
 						</ContentWrapper.Title>
 						<ContentWrapper.Description className="para-4 lg:para-2 text-left !font-thin">
 							<RichText
 								value={
-									currentMembership?.serviceMembershipDescription?.contentRaw
+									activeServiceMembership?.serviceMembershipDescription
+										?.contentRaw
 								}
 							/>
 						</ContentWrapper.Description>
@@ -57,10 +59,11 @@ const MembersipsDetails = () => {
 				>
 					<MaskedImageWithBackgroundVector
 						imageURL={
-							currentMembership?.serviceMembershipImage?.asset?.url || ''
+							activeServiceMembership?.serviceMembershipImage?.asset?.url || ''
 						}
 						imgAltText={
-							currentMembership?.serviceMembershipImage?.asset?.altText || ''
+							activeServiceMembership?.serviceMembershipImage?.asset?.altText ||
+							''
 						}
 						width={width > 768 ? 1000 : 500}
 						height={width > 768 ? 1000 : 500}

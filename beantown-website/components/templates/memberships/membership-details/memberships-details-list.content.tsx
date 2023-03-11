@@ -3,21 +3,21 @@ import Image from 'next/image';
 import { GlobalContext } from '@contexts/global/global.context';
 import { GlobalContextProps } from '@typing/common/interfaces/contexts.interface';
 import { MembershipsContentProps } from 'pages/memberships';
+import { MembershipsContext } from '../../../../contexts/memberships/memberships.context';
 
-function MembershipsDetailsList() {
+const MembershipsDetailsList = () => {
 	const { pageContent } =
 		useContext<GlobalContextProps<MembershipsContentProps>>(GlobalContext);
+
+	const { activeServiceMembership } = useContext(MembershipsContext);
 
 	if (!pageContent) {
 		return null;
 	}
 
-	const pageData = pageContent.page[0];
-	const { serviceMembershipsSection } = pageData;
-	if (!serviceMembershipsSection) {
+	if (!activeServiceMembership) {
 		return null;
 	}
-	const currentMembership = serviceMembershipsSection[0];
 
 	return (
 		<section
@@ -27,7 +27,7 @@ function MembershipsDetailsList() {
 			<div className="container py-6 lg:p-[60px] ">
 				<div id="list-container" className="">
 					<div className="3xl:grid-cols-2  grid  w-full  grid-cols-1 gap-y-2 lg:grid-cols-2 xl:grid-cols-2  ">
-						{currentMembership?.serviceMembershipDetails?.map(
+						{activeServiceMembership?.serviceMembershipDetails?.map(
 							(item: any, index: number) => {
 								return (
 									<div
@@ -53,6 +53,6 @@ function MembershipsDetailsList() {
 			</div>
 		</section>
 	);
-}
+};
 
 export default MembershipsDetailsList;

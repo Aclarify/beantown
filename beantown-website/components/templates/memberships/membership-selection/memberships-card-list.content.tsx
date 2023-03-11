@@ -1,58 +1,54 @@
 import React, { useContext } from 'react';
-import Image from 'next/image';
 import { GlobalContext } from '@contexts/global/global.context';
 import { GlobalContextProps } from '@typing/common/interfaces/contexts.interface';
 import { MembershipsContentProps } from 'pages/memberships';
+import { MembershipsContext } from '../../../../contexts/memberships/memberships.context';
+import MembershipCard from './membership-card';
 
-function MembershipsDetailsList() {
+const MembershipsCardList = () => {
 	const { pageContent } =
 		useContext<GlobalContextProps<MembershipsContentProps>>(GlobalContext);
+
+	const { activeServiceMembership } = useContext(MembershipsContext);
 
 	if (!pageContent) {
 		return null;
 	}
 
-	const pageData = pageContent.page[0];
-	const { serviceMembershipsSection } = pageData;
-	if (!serviceMembershipsSection) {
-		return null;
-	}
-	const currentMembership = serviceMembershipsSection[0];
-
 	return (
 		<section
-			id="electrical-services-list"
-			className=" mb-[5em] mt-[-1em] h-auto w-full rounded-3xl bg-white py-8 px-4 shadow-[rgba(29,_39,_87,_0.08)_4px_8px_60px] 	"
+			id="service-membership-card-list"
+			className=" mb-[5em] h-auto w-full"
 		>
-			<div className="container py-6 lg:p-[60px] ">
-				<div id="list-container" className="">
-					<div className="3xl:grid-cols-2  grid  w-full  grid-cols-1 gap-y-2 lg:grid-cols-2 xl:grid-cols-2  ">
-						{currentMembership?.serviceMembershipDetails?.map(
-							(item: any, index: number) => {
-								return (
-									<div
+			<div className="flex flex-wrap justify-center rounded-lg">
+				{activeServiceMembership?.serviceMembershipCards?.map(
+					(membershipCard, index) => {
+						return (
+							membershipCard?.membershipIcon?.asset?.url && (
+								<div
+									key={index}
+									className="membership-card-wrapper mb-5 w-full  md:basis-1/2 md:px-4 lg:mr-0 lg:mb-0 lg:space-x-6   lg:pr-6 lg:pb-5 xl:basis-1/3"
+								>
+									<MembershipCard
 										key={index}
-										id="list-items"
-										className="para-4 md:para-3 text-gray-shade-1 flex items-center"
-									>
-										<Image
-											src={
-												'/images/memberships/membership-details/details-list-icon.svg'
-											}
-											alt={'electrical-services-list-icon-image'}
-											width={'32'}
-											height={'32'}
-										/>
-										<p className="pl-2">{item}</p>
-									</div>
-								);
-							}
-						)}
-					</div>
-				</div>
+										title={membershipCard?.membershipTitle || ''}
+										description={membershipCard?.membershipDescription || ''}
+										price={membershipCard?.membershipPrice || ''}
+										buttonText={membershipCard?.button?.text || ''}
+										iconSrc={membershipCard?.membershipIcon?.asset?.url || ''}
+										iconAltText={
+											membershipCard?.membershipIcon?.asset?.altText || ''
+										}
+										summaryItems={membershipCard?.membershipSummaryItems || []}
+									/>
+								</div>
+							)
+						);
+					}
+				)}
 			</div>
 		</section>
 	);
-}
+};
 
-export default MembershipsDetailsList;
+export default MembershipsCardList;
