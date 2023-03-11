@@ -111,12 +111,14 @@ export default function Footer(props: IProps) {
 					</div>
 					<div id="logoSection" className="basis-1/4 pb-[16px]">
 						<div className="flex space-x-4 pt-8">
-							<div id="logoImage">
+							<div
+								id="logoImage"
+								className="relative h-[50px] w-[136px] focus:outline-none lg:h-[80px] lg:w-[230px]"
+							>
 								<Link href={'/'}>
 									<Image
 										alt={logoDesktop?.asset?.altText || ''}
-										width={200}
-										height={300}
+										fill={true}
 										src={logoDesktop?.asset?.url || ''}
 									/>
 								</Link>
