@@ -6,14 +6,14 @@ import ContentWrapper from './content-wrapper.organism';
 interface IProps {
 	title: string;
 	description?: any;
-	isHero: boolean;
+	isHero?: boolean;
 	children: React.ReactNode;
 }
 const CTATextContent: React.FC<IProps> = ({
 	title,
 	description,
 	children,
-	isHero,
+	isHero = false,
 }) => {
 	return (
 		<ContentWrapper className="flex flex-col justify-between px-14 text-center md:px-4 lg:px-20 lg:text-left">
