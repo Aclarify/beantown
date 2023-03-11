@@ -33,7 +33,11 @@ export default function FooterCta() {
 					bgColor="var(--secondary-color-shade-2-rgb)"
 				>
 					<div className="text-primary-shade-1 ">
-						<CTATextContent title={ctaTitle || ''} description={ctaDescription}>
+						<CTATextContent
+							title={ctaTitle || ''}
+							description={ctaDescription}
+							isHero={false}
+						>
 							<CTAButton
 								text={finalCtaButton?.text || ''}
 								textColor="text-white"

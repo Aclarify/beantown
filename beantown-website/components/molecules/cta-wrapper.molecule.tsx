@@ -13,8 +13,7 @@ const CTA: React.FC<CTAProps> = (props) => {
 		<button
 			onClick={props.onClick}
 			className={clsx(props.className, {
-				'para-3 lg:para-2 mt-[20px] rounded py-1 px-4 tracking-wide text-white md:px-6 md:py-2 lg:mt-[40px] lg:px-8 lg:tracking-wider':
-					!props.className,
+				'mt-[20px]  text-white': !props.className,
 			})}
 		>
 			{props.children}

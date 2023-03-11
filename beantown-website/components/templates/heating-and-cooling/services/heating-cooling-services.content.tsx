@@ -22,18 +22,16 @@ const HeatingCoolingServicesContent = () => {
 				<div className="flex flex-col items-center pb-8 text-center">
 					<ContentWrapper>
 						<ContentWrapper.Title>
-							<h1 className="title-5 lg:title-2 text-primary-black mb-4">
-								{servicesTitle}
-							</h1>
+							<h2 className="text-primary-black mb-4">{servicesTitle}</h2>
 						</ContentWrapper.Title>
 						<ContentWrapper.Description className="lg:flex lg:justify-center">
-							<div className="text-wrapper para-4 lg:para-2 text-primary-shade-1 !font-thin lg:w-3/4 ">
+							<div className="text-wrapper text-primary-shade-1  lg:w-3/4 ">
 								<RichText value={servicesDescription?.contentRaw} />
 							</div>
 						</ContentWrapper.Description>
 					</ContentWrapper>
 				</div>
-				<div className="flex flex-wrap bg-[FFFFFF]">
+				<div className="flex flex-wrap ">
 					{servicesGroup?.map((content, index) => {
 						return (
 							<div

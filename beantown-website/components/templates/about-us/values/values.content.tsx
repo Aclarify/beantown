@@ -33,11 +33,9 @@ const ValuesContent = () => {
 				>
 					<ContentWrapper>
 						<ContentWrapper.Title>
-							<h1 className="title-5 lg:title-2 text-primary-black ">
-								{valuesTitle}
-							</h1>
+							<h2 className=" text-primary-black ">{valuesTitle}</h2>
 						</ContentWrapper.Title>
-						<ContentWrapper.Description className="para-4 lg:para-2 text-left !font-thin">
+						<ContentWrapper.Description className=" text-left">
 							<RichText value={valuesDescription?.contentRaw} />
 						</ContentWrapper.Description>
 					</ContentWrapper>

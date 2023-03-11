@@ -22,10 +22,8 @@ const WhyUsCard: React.FC<Props> = (props) => {
 					/>
 				</div>
 				<div className=" flex-1 px-3">
-					<h1 className="subtitle-5 lg:subtitle-2 text-primary-black font-semibold ">
-						{props.title}
-					</h1>
-					<div className="lg:para-2 para-4  text-gray-shade-1 pt-2">
+					<h4 className=" text-primary-black  ">{props.title}</h4>
+					<div className=" text-gray-shade-1 pt-2">
 						<p>{props.description}</p>
 					</div>
 				</div>

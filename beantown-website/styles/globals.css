@@ -24,6 +24,172 @@
 	--services-green-color-rgb: 0, 131, 64;
 }
 
+@layer base {
+	/* Main head line */
+	h1 {
+		@apply text-[32px];
+		@apply font-bold;
+		@apply leading-[38px];
+	}
+
+	/* title 2 */
+	h2 {
+		@apply text-[32px];
+		@apply font-semibold;
+		@apply leading-[38px];
+	}
+
+	/* title 3 */
+	h3 {
+		@apply text-[28px];
+		@apply font-semibold;
+		@apply leading-[32px];
+	}
+
+	/* title 4 */
+	h4 {
+		@apply text-2xl;
+		@apply font-semibold;
+		@apply leading-[32px];
+	}
+
+	/* title 5 */
+	h5 {
+		@apply text-xl;
+		@apply font-semibold;
+		@apply leading-[28px];
+	}
+
+	/* para */
+	p {
+		@apply text-base;
+		@apply font-light;
+		@apply leading-[22px];
+	}
+	/* para1 */
+	.para {
+		@apply text-base;
+		@apply font-light;
+		@apply leading-[24px];
+	}
+	/* richText */
+	.richText {
+		@apply text-base;
+		@apply font-light;
+		@apply leading-[22px];
+	}
+
+	/* subtitle */
+	.subtitle {
+		@apply text-[18px];
+		@apply font-semibold;
+		@apply leading-[26px];
+	}
+	/* subtitle */
+	.subtitle-2 {
+		@apply text-base;
+		@apply font-light;
+		@apply leading-[20px];
+	}
+	/* list item */
+	.listItem {
+		@apply text-base;
+		@apply font-light;
+		@apply leading-[22px];
+	}
+
+	/* buttonText */
+	.button {
+		@apply text-xl;
+		@apply font-normal;
+		@apply leading-[32px];
+		@apply rounded-lg;
+		@apply py-1;
+		@apply px-4;
+		@apply tracking-wide;
+		@apply h-[52px];
+		@apply w-[184px];
+	}
+
+	/* Header buttonText */
+	.headerButton {
+		@apply text-xl;
+		@apply font-normal;
+		@apply leading-[32px];
+		@apply h-[48px];
+		@apply w-[139px];
+		@apply rounded-lg;
+		@apply py-1;
+		@apply px-8;
+		@apply tracking-wide;
+	}
+
+	@media screen(md) {
+		.button {
+			@apply py-2;
+			@apply px-8;
+		}
+	}
+
+	@media screen(lg) {
+		h1 {
+			@apply text-7xl;
+			@apply leading-[90px];
+		}
+		h2 {
+			@apply text-[56px];
+			@apply leading-[70px];
+		}
+		h3 {
+			@apply text-[40px];
+			@apply leading-[60px];
+		}
+		h4 {
+			@apply text-[40px];
+			@apply leading-[56px];
+		}
+		h5 {
+			@apply text-[32px];
+			@apply leading-[44px];
+		}
+		p {
+			@apply text-2xl;
+			@apply leading-[36px];
+		}
+		.para {
+			@apply text-xl;
+			@apply leading-[32px];
+		}
+		.richText {
+			@apply text-2xl;
+			@apply leading-[36px];
+		}
+
+		.subtitle {
+			@apply text-[28px];
+			@apply leading-[40px];
+		}
+		.subtitle-2 {
+			@apply text-xl;
+			@apply leading-[32px];
+		}
+		.listItem {
+			@apply text-2xl;
+			@apply leading-[36px];
+		}
+		.button {
+			@apply text-2xl;
+			@apply font-thin;
+			@apply leading-[36px];
+			@apply h-[64px];
+			@apply w-[200px];
+		}
+		.headerButton {
+			@apply tracking-wider;
+		}
+	}
+}
+
 @layer utilities {
 	/* hide for chrome,safari and opera */
 	.no-scrollbar::-webkit-scrollbar {
@@ -40,110 +206,5 @@
 @layer components {
 	.padding-for-section {
 		@apply px-[120px];
-	}
-
-	.title-1 {
-		@apply text-7xl;
-		@apply font-semibold;
-	}
-
-	.title-2 {
-		@apply text-[56px];
-		@apply font-semibold;
-	}
-
-	.title-3 {
-		@apply text-[40px];
-		@apply font-semibold;
-	}
-
-	.title-4 {
-		@apply text-4xl;
-		@apply font-semibold;
-	}
-
-	.title-5 {
-		@apply text-[32px];
-		@apply font-semibold;
-	}
-
-	.title-6 {
-		@apply text-2xl;
-		@apply font-semibold;
-	}
-
-	.title-7 {
-		@apply text-xl;
-		@apply font-semibold;
-	}
-
-	.subtitle-1 {
-		@apply text-[40px];
-		@apply font-normal;
-	}
-
-	.subtitle-2 {
-		@apply text-[32px];
-		@apply font-normal;
-	}
-
-	.subtitle-3 {
-		@apply text-[28px];
-		@apply font-normal;
-	}
-
-	.subtitle-4 {
-		@apply text-2xl;
-		@apply font-normal;
-	}
-
-	.subtitle-5 {
-		@apply text-xl;
-		@apply font-normal;
-	}
-
-	.subtitle-6 {
-		@apply text-[18px];
-		@apply font-normal;
-	}
-
-	.subtitle-7 {
-		@apply text-base;
-		@apply font-normal;
-	}
-
-	.text-light-1 {
-		@apply text-[32px];
-		@apply font-light;
-	}
-
-	.para-1 {
-		@apply text-[28px];
-		@apply font-light;
-	}
-
-	.para-2 {
-		@apply text-2xl;
-		@apply font-light;
-	}
-
-	.para-3 {
-		@apply text-xl;
-		@apply font-light;
-	}
-
-	.para-4 {
-		@apply text-base;
-		@apply font-light;
-	}
-
-	.para-5 {
-		@apply text-sm;
-		@apply font-light;
-	}
-
-	.para-6 {
-		@apply text-xs;
-		@apply font-light;
 	}
 }

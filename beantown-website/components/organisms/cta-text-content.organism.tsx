@@ -6,18 +6,24 @@ import ContentWrapper from './content-wrapper.organism';
 interface IProps {
 	title: string;
 	description?: any;
+	isHero: boolean;
 	children: React.ReactNode;
 }
-const CTATextContent: React.FC<IProps> = ({ title, description, children }) => {
+const CTATextContent: React.FC<IProps> = ({
+	title,
+	description,
+	children,
+	isHero,
+}) => {
 	return (
 		<ContentWrapper className="flex flex-col justify-between px-14 text-center md:px-4 lg:px-20 lg:text-left">
 			<ContentWrapper.Title className="  mb-2  lg:mb-4 ">
-				<h1 className="title-5 lg:title-2 lg:leading-[70px]">{title}</h1>
+				{isHero ? <h1>{title}</h1> : <h2>{title}</h2>}
 			</ContentWrapper.Title>
 			{description && (
 				<ContentWrapper.Description>
 					{typeof description === 'string' ? (
-						<span>{description}</span>
+						<p>{description}</p>
 					) : (
 						<RichText value={description?.contentRaw} />
 					)}
@@ -44,11 +50,7 @@ export const CTAButton: React.FC<ICTAButtonProps> = ({
 }) => {
 	return (
 		<Link href={href || ''}>
-			<button
-				className={`para-3 lg:para-2 h-[52px] w-[184px] rounded-lg ${bgColor} ${textColor} py-1 px-4  tracking-wide  md:py-2  md:px-8 lg:h-[64px] lg:w-[198px]  lg:tracking-wider`}
-			>
-				{text}
-			</button>
+			<button className={` ${bgColor} ${textColor} button`}>{text}</button>
 		</Link>
 	);
 };

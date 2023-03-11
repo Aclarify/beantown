@@ -70,11 +70,9 @@ export default function Services() {
 				<div className="flex flex-col items-center  pt-[4em] text-center lg:pt-0">
 					<ContentWrapper>
 						<ContentWrapper.Title>
-							<h1 className="title-5 lg:title-2 text-primary-black mb-4">
-								{servicesTitle}
-							</h1>
+							<h2 className="text-primary-black mb-4">{servicesTitle}</h2>
 						</ContentWrapper.Title>
-						<ContentWrapper.Description className="para-4 lg:para-2 px-10 sm:px-20  lg:px-80 ">
+						<ContentWrapper.Description className=" px-10 sm:px-20  lg:px-80 ">
 							<RichText value={servicesDescription?.contentRaw} />
 						</ContentWrapper.Description>
 					</ContentWrapper>
