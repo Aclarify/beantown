@@ -32,13 +32,11 @@ export const TestimonialCard: React.FC<Props> = (props) => {
 				</div>
 			</div>
 			<div className="flex flex-col items-center gap-1 py-2 lg:py-5 ">
-				<h1 className="subtitle-2 lg:subtitle-4 text-primary-black">
-					{props.clientName}
-				</h1>
-				<h4 className="md:para-3 para-4 text-gray-shade-2">
+				<h5 className=" text-primary-black">{props.clientName}</h5>
+				<span className="subtitle-2 text-gray-shade-2">
 					{props.clientDetails}
-				</h4>
-				<div className="para-4 lg:para-3 text-primary-black pt-6 pb-2 text-center leading-6 lg:px-10 lg:leading-9">
+				</span>
+				<div className="para text-primary-black pt-6 pb-2 text-center leading-6 lg:px-10 lg:leading-9">
 					{props.onShowMore && (
 						<ReadMore
 							content={props.reviewComments}

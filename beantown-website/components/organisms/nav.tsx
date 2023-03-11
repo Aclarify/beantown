@@ -37,7 +37,7 @@ export default function Header(props: IProps) {
 						)}
 					>
 						<div className=" align-middle  ">
-							<div className="image-wrapper relative h-[50px] w-[136px] focus:outline-none md:h-[80px] md:w-[230px] lg:h-[80px] lg:w-[230px] ">
+							<div className="image-wrapper relative h-[50px] w-[136px] focus:outline-none md:h-[80px] md:w-[230px]">
 								<Link href="/">
 									<Image
 										alt={logoDesktop?.asset?.altText || ''}
@@ -59,7 +59,7 @@ export default function Header(props: IProps) {
 						</div>
 						<Popover.Group
 							as="nav"
-							className="para-4 lg:para-3 hidden items-center  lg:flex lg:flex-grow lg:justify-center  "
+							className="para hidden items-center  lg:flex lg:flex-grow lg:justify-center  "
 						>
 							{navLinks?.map((link, index) => {
 								return (
@@ -83,7 +83,7 @@ export default function Header(props: IProps) {
 														'min-w-32 flex  items-center rounded-sm  px-3 py-1 focus:outline-none  '
 													)}
 												>
-													<span className="para-4 lg:para-3 flex-1 pr-1 ">
+													<span className="para flex-1 pr-1  ">
 														{linkGroup?.groupTitle}
 													</span>
 													<ChevronDownIcon
@@ -135,7 +135,7 @@ export default function Header(props: IProps) {
 																							aria-hidden="true"
 																						/>
 																					</div>
-																					<span className="para-3 text-primary-black rounded-sm px-3 py-1">
+																					<span className="para text-primary-black rounded-sm px-3 py-1">
 																						{link?.linkText}
 																					</span>
 																				</div>
@@ -205,7 +205,7 @@ export default function Header(props: IProps) {
 														href={link?.href || '/'}
 														className=" group inline-block   "
 													>
-														<span className="para-3 !font-neuePlak !font-medium">
+														<span className="subtitle !font-neuePlak !font-medium">
 															{link?.linkText}
 														</span>
 													</Link>
@@ -217,7 +217,7 @@ export default function Header(props: IProps) {
 														{({ open }) => (
 															<>
 																<Disclosure.Button className="  flex w-full items-center justify-between rounded-lg  pl-3 pr-3.5  ">
-																	<span className="para-3 !font-neuePlak  !font-medium">
+																	<span className="subtitle !font-neuePlak  !font-medium">
 																		{linkGroup?.groupTitle}
 																	</span>
 																	<ChevronDownIcon
@@ -251,7 +251,7 @@ export default function Header(props: IProps) {
 																					key={index}
 																					as="a"
 																					href={link?.href || ''}
-																					className="para-3 !font-neuePlak  block rounded-lg  pl-6 pr-3 "
+																					className=" !font-neuePlak  block rounded-lg  pl-6 pr-3 "
 																				>
 																					<div className="ml-4 flex items-center">
 																						<div className="icon-wrapper">
@@ -262,7 +262,7 @@ export default function Header(props: IProps) {
 																								aria-hidden="true"
 																							/>
 																						</div>
-																						<span className="para-3 text-primary-black rounded-sm px-3 py-1">
+																						<span className="para text-primary-black rounded-sm px-3 py-1">
 																							{link?.linkText}
 																						</span>
 																					</div>

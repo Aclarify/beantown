@@ -29,7 +29,7 @@ const RichText: React.FC<Props> = (props) => {
 		},
 	};
 	return (
-		<div>
+		<div className="rich-text">
 			<PortableText value={props.value} components={components} />
 		</div>
 	);

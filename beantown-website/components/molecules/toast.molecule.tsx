@@ -58,7 +58,7 @@ const Toast: React.FC = () => {
 				className: '',
 				duration: 3000,
 				style: {
-					background: '#363636',
+					background: '#15284C',
 					color: '#fff',
 				},
 

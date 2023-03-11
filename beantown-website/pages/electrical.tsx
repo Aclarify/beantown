@@ -59,14 +59,14 @@ const ElectricalServicesPage: React.FC = (props) => {
 			<Header
 				fontColor="text-primary-shade-1"
 				logoDesktop={logoDesktop?.image}
-				logoMobile={logoMobile?.image}
+				logoMobile={logoDesktop?.image}
 				content={headerData}
 				mobileBgColor="bg-service-yellow-bg"
 			>
 				<div className=" hidden lg:flex lg:justify-end ">
 					<Link href={headerData.headerButton?.href || ''}>
-						<CtaWrapper.CTA className="para-3 bg-primary-shade-1 h-[48px] w-[139px] rounded-lg py-1 px-4 tracking-wide  text-white  md:py-2 md:px-8 lg:tracking-wider ">
-							<p>{headerData.headerButton?.text}</p>
+						<CtaWrapper.CTA className="headerButton bg-primary-shade-1   text-white  ">
+							{headerData.headerButton?.text}
 						</CtaWrapper.CTA>
 					</Link>
 				</div>
@@ -76,7 +76,7 @@ const ElectricalServicesPage: React.FC = (props) => {
 			<ElectricalPageCTASection />
 			<ElectricalBlogsSection />
 			<ElectricalFaqSection />
-			<FooterSection logoDesktop={logoDesktop?.image} content={footerData} />
+			<FooterSection logoDesktop={logoMobile?.image} content={footerData} />
 		</section>
 	);
 };

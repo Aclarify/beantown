@@ -39,16 +39,14 @@ const AboutPlumbingServiceContent = () => {
 				>
 					<ContentWrapper>
 						<ContentWrapper.Title>
-							<h1 className="title-5 lg:title-2 text-primary-black ">
-								{aboutTheServiceTitle}
-							</h1>
+							<h2 className=" text-primary-black ">{aboutTheServiceTitle}</h2>
 						</ContentWrapper.Title>
-						<ContentWrapper.Description className="para-4 lg:para-2 text-left !font-thin">
+						<ContentWrapper.Description className=" text-left">
 							<RichText value={aboutTheServiceDescription?.contentRaw} />
 						</ContentWrapper.Description>
 						<ContentWrapper.CTA className="mt-[16px] lg:mt-[32px]">
-							<CtaWrapper.CTA className="bg-service-green para-3 lg:para-2 h-[52px] w-[184px] rounded-lg py-1 px-4 tracking-wide text-white md:py-2  md:px-8  lg:h-[64px] lg:w-[210px] lg:tracking-wider ">
-								<p>{contactUsButton?.text}</p>
+							<CtaWrapper.CTA className="bg-service-green button  text-white  ">
+								{contactUsButton?.text}
 							</CtaWrapper.CTA>
 						</ContentWrapper.CTA>
 					</ContentWrapper>

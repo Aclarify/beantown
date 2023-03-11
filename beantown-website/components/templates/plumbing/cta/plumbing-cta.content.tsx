@@ -27,7 +27,7 @@ const PlumbingCTAContent = () => {
 			bgColor="var(--services-green-color-rgb)"
 		>
 			<div className="text-white">
-				<CTATextContent title={ctaTitle || ''}>
+				<CTATextContent title={ctaTitle || ''} isHero={false}>
 					<CTAButton
 						text={ctaButton?.text || ''}
 						href={ctaButton?.href || ''}

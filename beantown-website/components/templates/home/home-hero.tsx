@@ -26,17 +26,15 @@ export default function HomeHero() {
 			>
 				<ContentWrapper className="relative z-[2] pt-24 pb-16 sm:pt-28 sm:pb-20 md:pt-48 md:pb-48 xl:pt-80 xl:pb-80">
 					<ContentWrapper.Title className=" mb-2  lg:mb-4">
-						<h1 className="title-5 2xl:title-1 leading-[36px] 2xl:leading-[90px]">
-							{heroTitle}
-						</h1>
+						<h1>{heroTitle}</h1>
 					</ContentWrapper.Title>
-					<ContentWrapper.Description className="para-4 2xl:para-2 w-[80%]">
+					<ContentWrapper.Description className=" w-[80%]">
 						<RichText value={heroDescription?.contentRaw} />
 					</ContentWrapper.Description>
 					<ContentWrapper.CTA className="mt-4 lg:mt-8">
 						<Link href={heroButton?.href || ''}>
-							<CtaWrapper.CTA className="text-primary-shade-1 para-3 xl:para-2 h-[52px] w-[184px] rounded-lg bg-white py-1 px-4 tracking-wide  md:py-2 md:px-8 lg:h-[64px] lg:w-[182px] lg:tracking-wider ">
-								<p>{heroButton?.text}</p>
+							<CtaWrapper.CTA className="text-primary-shade-1 button bg-white ">
+								{heroButton?.text}
 							</CtaWrapper.CTA>
 						</Link>
 					</ContentWrapper.CTA>

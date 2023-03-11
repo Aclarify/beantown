@@ -18,21 +18,6 @@ const neuePlak = localFont({
 			style: 'normal',
 		},
 		{
-			path: '../public/fonts/neue-plak-condensed/NeuePlak-CondBold.ttf',
-			weight: '700',
-			style: 'normal',
-		},
-		{
-			path: '../public/fonts/neue-plak-condensed/NeuePlak-CondBlack.ttf',
-			weight: '900',
-			style: 'normal',
-		},
-		{
-			path: '../public/fonts/neue-plak-condensed/NeuePlak-CondExtraBlack.ttf',
-			weight: '950',
-			style: 'normal',
-		},
-		{
 			path: '../public/fonts/neue-plak-condensed/NeuePlak-CondLight.ttf',
 			weight: '300',
 			style: 'normal',
@@ -45,6 +30,11 @@ const neuePlak = localFont({
 		{
 			path: '../public/fonts/neue-plak-condensed/NeuePlak-CondSemiBold.ttf',
 			weight: '600',
+			style: 'normal',
+		},
+		{
+			path: '../public/fonts/neue-plak-condensed/NeuePlak-CondBold.ttf',
+			weight: '700',
 			style: 'normal',
 		},
 	],
