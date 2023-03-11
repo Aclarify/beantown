@@ -21,6 +21,7 @@ const membershipsQuery = `
         heroTitle
         heroDescription
         serviceMembershipsSection {
+          name,
           serviceMembershipTitle,
           serviceMembershipDescription {
             contentRaw,
