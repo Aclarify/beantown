@@ -37,7 +37,7 @@ export default function Header(props: IProps) {
 						)}
 					>
 						<div className=" align-middle  ">
-							<div className="image-wrapper relative h-[50px] w-[136px] focus:outline-none md:h-[80px] md:w-[230px] lg:h-[80px] lg:w-[230px] ">
+							<div className="image-wrapper relative h-[50px] w-[136px] focus:outline-none md:h-[80px] md:w-[230px]">
 								<Link href="/">
 									<Image
 										alt={logoDesktop?.asset?.altText || ''}

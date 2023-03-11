@@ -59,7 +59,7 @@ const ElectricalServicesPage: React.FC = (props) => {
 			<Header
 				fontColor="text-primary-shade-1"
 				logoDesktop={logoDesktop?.image}
-				logoMobile={logoMobile?.image}
+				logoMobile={logoDesktop?.image}
 				content={headerData}
 				mobileBgColor="bg-service-yellow-bg"
 			>
@@ -76,7 +76,7 @@ const ElectricalServicesPage: React.FC = (props) => {
 			<ElectricalPageCTASection />
 			<ElectricalBlogsSection />
 			<ElectricalFaqSection />
-			<FooterSection logoDesktop={logoDesktop?.image} content={footerData} />
+			<FooterSection logoDesktop={logoMobile?.image} content={footerData} />
 		</section>
 	);
 };
