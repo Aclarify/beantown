@@ -56,10 +56,10 @@ const MembershipsServicePage: React.FC = (props) => {
 		<div id="memberships" className="bg-primary-white-shade-1">
 			<PageHead />
 			<Header
+				mobileBgColor="bg-primary-white-shade-1"
 				fontColor="text-primary-shade-1"
-				mobileMenuIconColor="text-primary-shade-1"
 				logoDesktop={logoDesktop?.image}
-				logoMobile={logoMobile?.image}
+				logoMobile={logoDesktop?.image}
 				content={headerData}
 			>
 				<div className=" hidden lg:flex lg:justify-end ">
