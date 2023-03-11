@@ -27,7 +27,7 @@ const MembersipsContent = () => {
 				height={100}
 				width={150}
 				alt="Left Blob "
-				className="absolute  bottom-0 left-0 z-[-1] hidden -translate-x-[10%] transform md:block md:translate-y-[6%] lg:-translate-y-[15%]"
+				className="absolute  bottom-0 left-0 z-[-1] hidden -translate-x-[10%] transform md:block md:translate-y-[10%] lg:translate-y-[15%]"
 			/>
 			<Image
 				src={'/images/memberships/hero/blob-shape-2.svg'}
@@ -47,7 +47,7 @@ const MembersipsContent = () => {
 				id="content-wrapper"
 				className="z-1 2xl:padding-for-section text-primary-shade-1 flex w-full items-center justify-center  px-6  "
 			>
-				<ContentWrapper className="xl:py-50 relative z-[2]  pt-28 pb-20 text-center md:py-48  lg:w-1/2">
+				<ContentWrapper className="xl:py-50 relative z-[2]  pt-28 pb-20 text-center md:pt-48  lg:w-1/2">
 					<ContentWrapper.Title className=" mb-2  lg:mb-4">
 						<h1 className="title-5 xl:title-1 leading-[36px] xl:leading-[90px]">
 							{heroTitle}
