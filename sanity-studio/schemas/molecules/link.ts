@@ -15,6 +15,11 @@ export default defineType({
       type: 'string',
     }),
     defineField({
+      name: 'heroIconName',
+      title: 'Hero Icon Name',
+      type: 'string',
+    }),
+    defineField({
       name: 'href',
       title: 'Link To',
       type: 'string',

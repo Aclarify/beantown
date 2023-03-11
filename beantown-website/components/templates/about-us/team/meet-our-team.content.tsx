@@ -1,20 +1,62 @@
 import { GlobalContext } from '@contexts/global/global.context';
+import useWindowDimensions from '@lib/hooks/use-window-dimensions.hook';
 import { GlobalContextProps } from '@typing/common/interfaces/contexts.interface';
 import CMSImageWrapper from 'components/molecules/cms-image-wrapper.molecule';
 import CtaWrapper from 'components/molecules/cta-wrapper.molecule';
 import ContentWrapper from 'components/organisms/content-wrapper.organism';
 import Image from 'next/image';
 import { AboutUsContentProps } from 'pages/about-us';
-import { useContext } from 'react';
+import { SCREEN_BREAKPOINTS } from '@typing/common/interfaces/devices.interface';
+import { useContext, useEffect, useState } from 'react';
+import { toastBuilder } from 'components/molecules/toast.molecule';
 
 const MeetOurTeam = () => {
 	const { pageContent } =
 		useContext<GlobalContextProps<AboutUsContentProps>>(GlobalContext);
+	const [cardsToShow, setCardsToShow] = useState(0);
+	const { width } = useWindowDimensions();
+
+	useEffect(() => {
+		// If width is less than 640px, show 8 cards
+		// width is between 640px and 768px, show 9 cards
+		// width is between 768px and 1024px, show 8 cards
+		// width is between 1024px and 1280px, show 8 cards
+		// width is greater than 1280px, show 9 cards
+		if (width < 640) {
+			setCardsToShow(8);
+		} else if (width >= 640 && width < SCREEN_BREAKPOINTS.SM) {
+			setCardsToShow(9);
+		} else if (
+			width >= SCREEN_BREAKPOINTS.SM &&
+			width < SCREEN_BREAKPOINTS.MD
+		) {
+			setCardsToShow(8);
+		} else if (width >= SCREEN_BREAKPOINTS.MD && width < 1280) {
+			setCardsToShow(8);
+		} else if (width >= 1280) {
+			setCardsToShow(9);
+		}
+	}, [width, setCardsToShow]);
+
 	if (!pageContent) {
 		return null;
 	}
 	const pageData = pageContent.page[0];
 	const { teamTitle, teamDescription, memberCards } = pageData;
+
+	const memberCardsToDisplay = memberCards?.slice(0, cardsToShow);
+
+	const onLoadMore = () => {
+		if (memberCardsToDisplay && memberCards) {
+			// Check if there are more cards to display
+			if (memberCardsToDisplay.length >= memberCards.length) {
+				toastBuilder('Thats all our team there', 'default');
+				return;
+			}
+			setCardsToShow(memberCardsToDisplay.length + cardsToShow);
+		}
+	};
+
 	return (
 		<section id="meet-our-team-section" className="lg:pb-[2em]">
 			<div id="section-container">
@@ -36,7 +78,7 @@ const MeetOurTeam = () => {
 					id="cards-container"
 					className=" grid grid-cols-2 justify-items-center gap-x-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-2 xl:grid-cols-3"
 				>
-					{memberCards?.map((content, index) => {
+					{memberCardsToDisplay?.map((content, index) => {
 						return (
 							content && (
 								<div
@@ -89,7 +131,10 @@ const MeetOurTeam = () => {
 					})}
 				</div>
 				<div className="mt-8 items-center text-center lg:mt-[60px] ">
-					<CtaWrapper.CTA className="para-3 lg:para-2 bg-primary-shade-1 h-[52px] w-[184px] rounded-lg py-1 px-4 tracking-wide text-white  md:py-2  md:px-8 lg:h-[64px] lg:w-[210px] lg:tracking-wider ">
+					<CtaWrapper.CTA
+						onClick={onLoadMore}
+						className="para-3 lg:para-2 bg-primary-shade-1 h-[52px] w-[184px] rounded-lg py-1 px-4 tracking-wide text-white  md:py-2  md:px-8 lg:h-[64px] lg:w-[210px] lg:tracking-wider "
+					>
 						<p>{'Load More'}</p>
 					</CtaWrapper.CTA>
 				</div>

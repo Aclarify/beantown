@@ -6,6 +6,7 @@ import { AboutUsContentProps } from 'pages/about-us';
 import CTATextContent, {
 	CTAButton,
 } from 'components/organisms/cta-text-content.organism';
+import { showUnderConstructionMsg } from 'utils/helper';
 
 const CommunityCTAContent = () => {
 	const { pageContent } =
@@ -29,9 +30,9 @@ const CommunityCTAContent = () => {
 			heroImagePosition="left"
 			bgColor="var(--primary-color-shade-2-rgb)"
 		>
-			<div className="text-white">
+			<div className="text-white" onClick={showUnderConstructionMsg}>
 				<CTATextContent title={communityCtaTitle || ''}>
-					<CTAButton
+					<CTAButton						
 						text={communityCtaButton?.text || ''}
 						textColor="text-primary-shade-1"
 						bgColor="bg-primary-white-shade-1"

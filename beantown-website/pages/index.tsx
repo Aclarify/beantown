@@ -20,6 +20,7 @@ import FooterSection from 'components/organisms/footer';
 import CtaWrapper from 'components/molecules/cta-wrapper.molecule';
 import HomeTestimonials from '../components/templates/home/testimonials/testimonials';
 import HomeServiceAreas from '../components/templates/home/service-areas/service-areas';
+import Link from 'next/link';
 
 export interface HomePageContentProps {
 	page: Home[];
@@ -65,11 +66,14 @@ const HomePage: React.FC = (props) => {
 				logoDesktop={logoDesktop?.image}
 				logoMobile={logoMobile?.image}
 				content={headerData}
+				mobileBgColor="bg-secondary-shade-3"
 			>
 				<div className=" hidden lg:flex lg:justify-end ">
-					<CtaWrapper.CTA className="text-primary-shade-1 para-3 h-[48px] w-[139px] rounded-lg bg-white py-1 px-4  tracking-wide  md:py-2 md:px-8 lg:tracking-wider ">
-						<p>{headerData.headerButton?.text}</p>
-					</CtaWrapper.CTA>
+					<Link href={headerData.headerButton?.href || ''}>
+						<CtaWrapper.CTA className="text-primary-shade-1 para-3 h-[48px] w-[139px] rounded-lg bg-white py-1 px-4  tracking-wide  md:py-2 md:px-8 lg:tracking-wider ">
+							<p>{headerData.headerButton?.text}</p>
+						</CtaWrapper.CTA>
+					</Link>
 				</div>
 			</Header>
 
@@ -82,11 +86,7 @@ const HomePage: React.FC = (props) => {
 			<HomeFaq />
 			<HomeBrands />
 			<FooterCta />
-			<FooterSection
-				logoDesktop={logoDesktop?.image}
-				logoMobile={logoMobile?.image}
-				content={footerData}
-			/>
+			<FooterSection logoDesktop={logoDesktop?.image} content={footerData} />
 		</section>
 	);
 };

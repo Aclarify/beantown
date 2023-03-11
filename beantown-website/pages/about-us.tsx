@@ -18,6 +18,7 @@ import MissionValuesSection from 'components/templates/about-us/mission/mission.
 import AboutUsTestimonials from 'components/templates/about-us/testimonials/about-us-testimonials';
 import AboutUsServiceAreas from 'components/templates/about-us/service-areas/service-areas';
 import CommunityCTASection from 'components/templates/about-us/community-cta/about-us-community-cta.section';
+import Link from 'next/link';
 export interface AboutUsContentProps {
 	page: AboutUs[];
 	header: Nav[];
@@ -60,11 +61,14 @@ const AboutUsPage: React.FC = (props) => {
 				logoDesktop={logoDesktop?.image}
 				logoMobile={logoMobile?.image}
 				content={headerData}
+				mobileBgColor="bg-secondary-shade-3"
 			>
 				<div className=" hidden lg:flex lg:justify-end ">
-					<CtaWrapper.CTA className="text-primary-shade-1 para-3 h-[48px] w-[139px] rounded-lg bg-white py-1 px-4  tracking-wide  md:py-2 md:px-8 lg:tracking-wider ">
-						<p>{headerData.headerButton?.text}</p>
-					</CtaWrapper.CTA>
+					<Link href={headerData.headerButton?.href || ''}>
+						<CtaWrapper.CTA className="text-primary-shade-1 para-3 h-[48px] w-[139px] rounded-lg bg-white py-1 px-4  tracking-wide  md:py-2 md:px-8 lg:tracking-wider ">
+							<p>{headerData.headerButton?.text}</p>
+						</CtaWrapper.CTA>
+					</Link>
 				</div>
 			</Header>
 			<AboutUsHeroSection />
@@ -74,11 +78,7 @@ const AboutUsPage: React.FC = (props) => {
 			<AboutUsServiceAreas />
 			<AboutUsTestimonials />
 			<CTASection />
-			<FooterSection
-				logoDesktop={logoDesktop?.image}
-				logoMobile={logoMobile?.image}
-				content={footerData}
-			/>
+			<FooterSection logoDesktop={logoDesktop?.image} content={footerData} />
 		</div>
 	);
 };

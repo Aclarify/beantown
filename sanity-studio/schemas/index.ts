@@ -31,12 +31,18 @@ import teamMembers from './organism/teamMembers'
 import images from './molecules/images'
 import socialMediaIcons from './molecules/socialMediaIcons'
 import servicesCards from './organism/servicesCards'
+import memberships from './pages/memberships'
+import checkableItem from './molecules/checkableItem'
+import serviceMemberships from './organism/serviceMemberships'
+import serviceMembershipCard from './organism/serviceMembershipCard'
+import bookNow from './pages/bookNow'
 
 export const schemaTypes = [
   //Document Types
   aboutUs,
   home,
   heatingAndCooling,
+  memberships,
   nav,
   footer,
   otherServices,
@@ -44,6 +50,9 @@ export const schemaTypes = [
   faq,
   serviceAreas,
   testimonials,
+  serviceMemberships,
+  serviceMembershipCard,
+  bookNow,
   //Other Types
   breakType,
   cta,
@@ -68,4 +77,5 @@ export const schemaTypes = [
   textImageContentGroup,
   titleDescriptionGroup,
   titleDescriptionImageGroup,
+  checkableItem,
 ]

@@ -106,7 +106,7 @@ const Brands: React.FC<IProps> = (props) => {
 						);
 					})}
 				</Slider>
-			</div>
+			</div>			
 		</div>
 	);
 };
