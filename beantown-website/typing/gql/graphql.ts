@@ -1400,11 +1400,9 @@ export type RootQueryBlogArgs = {
   id: Scalars['ID'];
 };
 
-
 export type RootQueryBooknowArgs = {
   id: Scalars['ID'];
 };
-
 
 export type RootQueryCtaArgs = {
   id: Scalars['ID'];
@@ -1450,11 +1448,9 @@ export type RootQueryLinkArgs = {
   id: Scalars['ID'];
 };
 
-
 export type RootQueryMembershipsArgs = {
   id: Scalars['ID'];
 };
-
 
 export type RootQueryNavArgs = {
   id: Scalars['ID'];
@@ -1480,11 +1476,9 @@ export type RootQueryServiceAreasArgs = {
   id: Scalars['ID'];
 };
 
-
 export type RootQueryServiceMembershipsArgs = {
   id: Scalars['ID'];
 };
-
 
 export type RootQueryTestimonialsArgs = {
   id: Scalars['ID'];
@@ -1506,14 +1500,12 @@ export type RootQueryAllBlogArgs = {
   where?: InputMaybe<BlogFilter>;
 };
 
-
 export type RootQueryAllBooknowArgs = {
   limit?: InputMaybe<Scalars['Int']>;
   offset?: InputMaybe<Scalars['Int']>;
   sort?: InputMaybe<Array<BooknowSorting>>;
   where?: InputMaybe<BooknowFilter>;
 };
-
 
 export type RootQueryAllCtaArgs = {
   limit?: InputMaybe<Scalars['Int']>;
@@ -1586,14 +1578,12 @@ export type RootQueryAllLinkArgs = {
   where?: InputMaybe<LinkFilter>;
 };
 
-
 export type RootQueryAllMembershipsArgs = {
   limit?: InputMaybe<Scalars['Int']>;
   offset?: InputMaybe<Scalars['Int']>;
   sort?: InputMaybe<Array<MembershipsSorting>>;
   where?: InputMaybe<MembershipsFilter>;
 };
-
 
 export type RootQueryAllNavArgs = {
   limit?: InputMaybe<Scalars['Int']>;
@@ -1634,14 +1624,12 @@ export type RootQueryAllServiceAreasArgs = {
   where?: InputMaybe<ServiceAreasFilter>;
 };
 
-
 export type RootQueryAllServiceMembershipsArgs = {
   limit?: InputMaybe<Scalars['Int']>;
   offset?: InputMaybe<Scalars['Int']>;
   sort?: InputMaybe<Array<ServiceMembershipsSorting>>;
   where?: InputMaybe<ServiceMembershipsFilter>;
 };
-
 
 export type RootQueryAllTestimonialsArgs = {
   limit?: InputMaybe<Scalars['Int']>;

@@ -7,11 +7,9 @@ import { GlobalContextProps } from '../../../../typing/common/interfaces/context
 import { GlobalContext } from '../../../../contexts/global/global.context';
 import { ServiceMemberships } from '../../../../typing/gql/graphql';
 import { MembershipsContext } from '../../../../contexts/memberships/memberships.context';
-import Slider from 'react-slick';
 import 'slick-carousel/slick/slick.css';
 import 'slick-carousel/slick/slick-theme.css';
 import MembershipServiceCategories from './membership-service-category.content';
-import { Transition } from '@headlessui/react';
 
 const MembershipsSelectionSection = () => {
 	const { pageContent } =
@@ -38,15 +36,6 @@ const MembershipsSelectionSection = () => {
 	if (!serviceMembershipsSection) {
 		return null;
 	}
-
-	const handleSelect = (serviceCategory: ServiceMemberships) => {
-		if (activeServiceMembership == serviceCategory) return;
-		setActiveServiceMembership(serviceCategory);
-		setShow(false);
-		setTimeout(() => {
-			setShow(true);
-		}, 100);
-	};
 
 	return (
 		<MembershipsContext.Provider

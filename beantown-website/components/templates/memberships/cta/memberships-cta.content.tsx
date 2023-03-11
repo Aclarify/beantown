@@ -6,7 +6,6 @@ import CTAWithImage from 'components/organisms/cta-with-image.organism';
 import CTATextContent, {
 	CTAButton,
 } from 'components/organisms/cta-text-content.organism';
-import WaveWrapper from '../../../molecules/wave-wrapper.molecule';
 
 const MembershipsPageCTAContent = () => {
 	const { pageContent } =

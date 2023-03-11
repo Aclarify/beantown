@@ -9,11 +9,12 @@ import { PageNames } from '@configs/client/pages/pages.config';
 import FooterSection from 'components/organisms/footer';
 import { GlobalContextProps } from '@typing/common/interfaces/contexts.interface';
 import { GlobalContext } from '@contexts/global/global.context';
-import BookNowSection from 'components/templates/Book-now/book-now.section';
 import CtaWrapper from 'components/molecules/cta-wrapper.molecule';
 import Header from 'components/organisms/nav';
+import UnderConstructionSection from 'components/templates/under-construction/under-construction.section';
+import Link from 'next/link';
 
-export interface BookNowContentProps {
+export interface UnderConstructionContentProps {
 	page: BookNow[];
 	header: Nav[];
 	footer: Footer[];
@@ -30,15 +31,17 @@ const PageHead = () => {
 		</Head>
 	);
 };
-const getStaticProps = generateGetStaticProps<BookNowContentProps>(
+const getStaticProps = generateGetStaticProps<UnderConstructionContentProps>(
 	pageQuery,
-	PageNames.BOOKNOW
+	PageNames.UNDERCONSTRUCTION
 );
 export { getStaticProps };
 
-const BookNowPage: React.FC = (props) => {
+const UnderConstructionPage: React.FC = (props) => {
 	const { pageContent } =
-		useContext<GlobalContextProps<BookNowContentProps>>(GlobalContext);
+		useContext<GlobalContextProps<UnderConstructionContentProps>>(
+			GlobalContext
+		);
 
 	if (!pageContent) {
 		return null;
@@ -52,19 +55,21 @@ const BookNowPage: React.FC = (props) => {
 		<div id="book-now" className="bg-primary-white-shade-1">
 			<PageHead />
 			<Header
+				mobileBgColor="bg-primary-white-shade-1"
 				fontColor="text-primary-shade-1"
 				logoDesktop={logoDesktop?.image}
 				logoMobile={logoDesktop?.image}
 				content={headerData}
-				mobileBgColor="bg-secondary-shade-3"
 			>
 				<div className=" hidden lg:flex lg:justify-end ">
-					<CtaWrapper.CTA className="para-3 bg-primary-shade-1 h-[48px] w-[139px] rounded-lg py-1 px-4 tracking-wide  text-white  md:py-2 md:px-8 lg:tracking-wider ">
-						<p>{headerData.headerButton?.text}</p>
-					</CtaWrapper.CTA>
+					<Link href={headerData.headerButton?.href || ''}>
+						<CtaWrapper.CTA className="para-3 bg-primary-shade-1 h-[48px] w-[139px] rounded-lg py-1 px-4 tracking-wide  text-white  md:py-2 md:px-8 lg:tracking-wider ">
+							<p>{headerData.headerButton?.text}</p>
+						</CtaWrapper.CTA>
+					</Link>
 				</div>
 			</Header>
-			<BookNowSection />
+			<UnderConstructionSection />
 			<FooterSection
 				logoDesktop={footerLogo?.image || ''}
 				content={footerData}
@@ -72,4 +77,6 @@ const BookNowPage: React.FC = (props) => {
 		</div>
 	);
 };
-export default WithGlobalContent<BookNowContentProps>(BookNowPage);
+export default WithGlobalContent<UnderConstructionContentProps>(
+	UnderConstructionPage
+);
