@@ -20,9 +20,11 @@ const MembershipsPageCTAContent = () => {
 			<CTAWithImage
 				heroImageURL={ctaImage?.asset?.url || ''}
 				heroImageAltText={'Hero image'}
-				textContentBGImage={'/images/home/footer-cta/home-cta-spiral.svg'}
+				textContentBGImage={
+					'/images/memberships/footer-cta/memberships-cta-spiral.svg'
+				}
 				textContentBGImageForSmallScreen={
-					'/images/home/footer-cta/home-cta-spiral-mobile.svg'
+					'/images/memberships/footer-cta/memberships-cta-spiral-mobile.svg'
 				}
 				heroImagePosition="right"
 				bgColor="var(--secondary-color-shade-2-rgb)"
