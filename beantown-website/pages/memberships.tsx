@@ -13,7 +13,7 @@ import { GlobalContext } from '@contexts/global/global.context';
 import Header from 'components/organisms/nav';
 import FooterSection from 'components/organisms/footer';
 import CtaWrapper from 'components/molecules/cta-wrapper.molecule';
-import MembershipsDetailsSection from '../components/templates/memberships/membership-details/memberships-details.section';
+import MembershipsSelectionSection from '../components/templates/memberships/membership-selection/membership-selection.section';
 
 export interface MembershipsContentProps {
 	page: Memberships[];
@@ -51,6 +51,7 @@ const MembershipsServicePage: React.FC = (props) => {
 	const headerData = pageContent.header[0];
 	const footerData = pageContent.footer[0];
 	const { logoDesktop, logoMobile } = pageData;
+
 	return (
 		<div id="memberships" className="bg-primary-white-shade-1">
 			<PageHead />
@@ -68,13 +69,9 @@ const MembershipsServicePage: React.FC = (props) => {
 				</div>
 			</Header>
 			<MembershipsHeroSection />
-			<MembershipsDetailsSection />
+			<MembershipsSelectionSection />
 			<MembershipsPageCTASection />
-			<FooterSection
-				logoDesktop={logoDesktop?.image}
-				logoMobile={logoMobile?.image}
-				content={footerData}
-			/>
+			<FooterSection logoDesktop={logoDesktop?.image} content={footerData} />
 		</div>
 	);
 };
