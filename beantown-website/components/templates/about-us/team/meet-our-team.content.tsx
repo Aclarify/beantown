@@ -50,7 +50,7 @@ const MeetOurTeam = () => {
 		if (memberCardsToDisplay && memberCards) {
 			// Check if there are more cards to display
 			if (memberCardsToDisplay.length >= memberCards.length) {
-				toastBuilder('No more users to show', 'success');
+				toastBuilder('Thats all our team there', 'default');
 				return;
 			}
 			setCardsToShow(memberCardsToDisplay.length + cardsToShow);

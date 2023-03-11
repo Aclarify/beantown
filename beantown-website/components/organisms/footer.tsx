@@ -26,7 +26,12 @@ export default function Footer(props: IProps) {
 			return (
 				icon && (
 					// Add target blank to open in new tab
-					<a href={icon?.href || ''} target="_blank" rel="noreferrer">
+					<a
+						href={icon?.href || ''}
+						target="_blank"
+						rel="noreferrer"
+						key={index}
+					>
 						<Image
 							key={index}
 							alt={icon?.image?.asset?.altText || 'Social Media Icon'}
