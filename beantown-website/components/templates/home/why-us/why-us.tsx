@@ -42,17 +42,15 @@ export default function WhyUs() {
 					>
 						<ContentWrapper>
 							<ContentWrapper.Title>
-								<h1 className="title-5 lg:title-2 text-primary-black ">
-									{whyUsTitle}
-								</h1>
+								<h2 className=" text-primary-black ">{whyUsTitle}</h2>
 							</ContentWrapper.Title>
-							<ContentWrapper.Description className="para-4 lg:para-2 text-left lg:pr-4">
+							<ContentWrapper.Description className="rich-text text-left lg:pr-4">
 								<RichText value={whyUsDescription?.contentRaw} />
 							</ContentWrapper.Description>
 							<ContentWrapper.CTA className="mt-[16px] lg:mt-[32px]">
-								<CtaWrapper.CTA className="bg-primary-shade-1 para-3 lg:para-2 h-[52px] w-[184px] rounded-lg py-1 px-4 tracking-wide text-white md:py-2  md:px-8  lg:h-[64px] lg:w-[210px] lg:tracking-wider ">
+								<CtaWrapper.CTA className="bg-primary-shade-1  button text-white ">
 									<Link href={whyUsButton?.href || '#'}>
-										<p>{whyUsButton?.text}</p>
+										{whyUsButton?.text}
 									</Link>
 								</CtaWrapper.CTA>
 							</ContentWrapper.CTA>

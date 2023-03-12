@@ -19,10 +19,10 @@ const BookNowContent = () => {
 		>
 			<div className="pt-40 pb-[89px]">
 				<div className=" flex flex-col justify-center text-center align-middle  ">
-					<div className="title-5 lg:title-1 text-primary-black px-[1em] pt-[2em] text-center md:mx-40 lg:px-[1em] lg:pt-0 xl:px-[2em] 2xl:px-[4em]">
+					<div className=" text-primary-black px-[1em] pt-[2em] text-center md:mx-40 lg:px-[1em] lg:pt-0 xl:px-[2em] 2xl:px-[4em]">
 						<h1>{bookNowTitle}</h1>
 					</div>
-					<div className="para-4 lg:para-2 text-gray-shade-1 px-[3em] pt-4  text-center md:px-[1em] lg:px-[8em] 2xl:px-[7em]">
+					<div className=" text-gray-shade-1 px-[3em] pt-4  text-center md:px-[1em] lg:px-[8em] 2xl:px-[7em]">
 						<p>{bookNowDescription}</p>
 					</div>
 				</div>

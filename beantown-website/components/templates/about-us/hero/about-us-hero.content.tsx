@@ -21,12 +21,10 @@ const AboutUsHeroContent = () => {
 			>
 				<ContentWrapper className="relative z-[2] pt-28 pb-20 text-center md:py-48 lg:w-1/2  xl:py-80">
 					<ContentWrapper.Title className=" mb-2  lg:mb-4">
-						<h1 className="title-5 xl:title-1 leading-[36px] xl:leading-[90px]">
-							{heroTitle}
-						</h1>
+						<h1>{heroTitle}</h1>
 					</ContentWrapper.Title>
 					<ContentWrapper.Description>
-						<span className="para-4 lg:para-2">{heroDescription}</span>
+						<p>{heroDescription}</p>
 					</ContentWrapper.Description>
 				</ContentWrapper>
 			</div>

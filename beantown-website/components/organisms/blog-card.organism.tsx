@@ -26,14 +26,12 @@ const BlogCard: React.FC<Props> = (props) => {
 					/>
 				</div>
 				<div>
-					<p className="title-7 lg:title-5 text-primary-black py-4">
-						{props.blogName}
-					</p>
-					<div className="para-4 lg:para-2 text-primary-shade-1 mb-4">
+					<h5 className=" text-primary-black py-4">{props.blogName}</h5>
+					<div className=" text-primary-shade-1 mb-4">
 						<p> {props.blogDescription} </p>
 					</div>
 					<div className="mt-4 flex justify-between align-middle lg:pb-2 ">
-						<button className="para-4 lg:para-2 text-primary-black underline ">
+						<button className="para text-primary-black underline ">
 							{props.buttonText}
 						</button>
 

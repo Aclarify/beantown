@@ -14,7 +14,7 @@ const ReadMore: React.FC<Props> = (props) => {
 					: props.content.substring(0, props.limit)}
 			</span>
 
-			<span className="text-blue-600 cursor-pointer" onClick={props.onShowMore}>
+			<span className="cursor-pointer text-blue-600" onClick={props.onShowMore}>
 				{props.content.length > props.limit ? '... Show More' : ''}
 			</span>
 		</>

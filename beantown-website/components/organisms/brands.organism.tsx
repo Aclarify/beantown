@@ -80,9 +80,7 @@ const Brands: React.FC<IProps> = (props) => {
 			className={`${props.brandsBgColour} flex w-full flex-col space-y-5 pt-5 pb-4 lg:pt-0 `}
 		>
 			<div className="flex  justify-center ">
-				<span className="title-5 lg:title-2 text-primary-black">
-					{props.brandsTitle}
-				</span>
+				<h2 className=" text-primary-black">{props.brandsTitle}</h2>
 			</div>
 			<div className="slider-wrapper w-full pt-6" id="brands-slider">
 				<Slider {...settings}>
@@ -106,7 +104,7 @@ const Brands: React.FC<IProps> = (props) => {
 						);
 					})}
 				</Slider>
-			</div>			
+			</div>
 		</div>
 	);
 };

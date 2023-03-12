@@ -18,8 +18,10 @@ const LocationCard: React.FC<Props> = (props) => {
 					}}
 				></Image>
 			</div>
-			<div className="text-container para-6 lg:para-2 pl-[10px]">
-				<span>{props.locationText}</span>
+			<div className="text-container  pl-[10px]">
+				<span className=" text-xs font-light lg:text-2xl ">
+					{props.locationText}
+				</span>
 			</div>
 		</div>
 	);

@@ -30,9 +30,9 @@ const CommunityCTAContent = () => {
 			heroImagePosition="left"
 			bgColor="var(--primary-color-shade-2-rgb)"
 		>
-			<div className="text-white" onClick={showUnderConstructionMsg}>
-				<CTATextContent title={communityCtaTitle || ''}>
-					<CTAButton						
+			<div className="text-white">
+				<CTATextContent title={communityCtaTitle || ''} isHero={false}>
+					<CTAButton
 						text={communityCtaButton?.text || ''}
 						textColor="text-primary-shade-1"
 						bgColor="bg-primary-white-shade-1"

@@ -41,7 +41,7 @@ const ValuesCards = () => {
 									/>
 								</div>
 								<div className="w-2/3 pl-6">
-									<span className="subtitle-2">{cardInfo?.text}</span>
+									<h5>{cardInfo?.text}</h5>
 								</div>
 							</div>
 						)

@@ -27,7 +27,7 @@ const HeatingCoolingPageCTAContent = () => {
 			bgColor="var(--services-red-color-rgb)"
 		>
 			<div className="text-white">
-				<CTATextContent title={ctaTitle || ''}>
+				<CTATextContent title={ctaTitle || ''} isHero={false}>
 					<CTAButton
 						text={finalCtaButton?.text || ''}
 						textColor="lg:text-service-red text-primary-black"

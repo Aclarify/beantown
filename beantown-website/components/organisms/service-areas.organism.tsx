@@ -17,11 +17,11 @@ const ServiceAreas: React.FC<IProps> = (props) => {
 		<div className=" z-1 bg-primary-white-shade-1 2xl:padding-for-section p-5   lg:pr-6">
 			<div className=" pb-6  lg:flex 2xl:pt-16">
 				<div className="lg:w-1/2 lg:border-r-2">
-					<h1 className="title-5 lg:title-2  text-primary-black  lg:pr-20 lg:pl-6">
+					<h2 className="  text-primary-black  lg:pr-20 lg:pl-6">
 						{props.serviceAreaSectionTitle}
-					</h1>
+					</h2>
 				</div>
-				<div className=" para-4 lg:para-2 text-primary-shade-1 w-full  pt-4  lg:w-[60%] lg:pl-20 ">
+				<div className="  text-primary-shade-1 w-full  pt-4  lg:w-[60%] lg:pl-20 ">
 					<p>{props.serviceAreaDescription}</p>
 				</div>
 			</div>
@@ -49,9 +49,9 @@ const ServiceAreas: React.FC<IProps> = (props) => {
 							id="service-areas-inner-container"
 							className="rounded-lg bg-white px-4  pt-2 pb-4 shadow-md lg:rounded-2xl lg:py-4 lg:pt-1"
 						>
-							<h1 className="subtitle-7 lg:subtitle-3 text-primary-black   mt-2 pb-2 lg:pl-6 ">
+							<span className="subtitle text-primary-black   mt-2 pb-2 lg:pl-6 ">
 								{props.serviceAreaListTitle || 'Service Areas'}
-							</h1>
+							</span>
 
 							<div
 								id="service-area-container"

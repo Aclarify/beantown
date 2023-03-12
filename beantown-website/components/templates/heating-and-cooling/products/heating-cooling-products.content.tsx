@@ -113,7 +113,7 @@ const HeatingCoolingProductsCardContent = () => {
 			<SectionContentWrapper>
 				<div className=" flex items-center justify-between">
 					<div>
-						<p className="title-5 lg:title-2 ">{productsTitle}</p>
+						<h2 className=" ">{productsTitle}</h2>
 					</div>
 
 					<div className="hidden  justify-center  gap-4 pt-4 lg:flex  ">

@@ -63,12 +63,12 @@ const MeetOurTeam = () => {
 				<div id="title-container" className="flex flex-col">
 					<ContentWrapper>
 						<ContentWrapper.Title className=" mb-3 lg:mb-6">
-							<h1 className="title-5 lg:title-2 text-primary-shade-1 mt-10 text-center">
+							<h2 className=" text-primary-shade-1 mt-10 text-center">
 								{teamTitle}
-							</h1>
+							</h2>
 						</ContentWrapper.Title>
 						<ContentWrapper.Description>
-							<p className="para-4 lg:subtitle-4 text-primary-shade-1 mb-8 justify-center text-center md:mx-40 lg:mb-14">
+							<p className=" text-primary-shade-1 mb-8 justify-center text-center md:mx-40 lg:mb-14">
 								{teamDescription}
 							</p>
 						</ContentWrapper.Description>
@@ -101,12 +101,12 @@ const MeetOurTeam = () => {
 											id="profile-Info"
 											className="flex flex-col items-center justify-center pb-2 lg:items-start lg:justify-evenly lg:py-8 lg:pl-8"
 										>
-											<h1 className="title-6 lg:title-3 text-primary-black ">
+											<h4 className=" text-primary-black ">
 												{content?.memberName}
-											</h1>
-											<span className="subtitle-5 lg:subtitle-4 text-gray-shade-1 block !font-thin">
+											</h4>
+											<p className=" text-gray-shade-1 block !font-thin">
 												{content?.memberDesignation}
-											</span>
+											</p>
 											<div className="flex">
 												{content.socialMediaDetails?.map((details, index) => {
 													return (
@@ -133,7 +133,7 @@ const MeetOurTeam = () => {
 				<div className="mt-8 items-center text-center lg:mt-[60px] ">
 					<CtaWrapper.CTA
 						onClick={onLoadMore}
-						className="para-3 lg:para-2 bg-primary-shade-1 h-[52px] w-[184px] rounded-lg py-1 px-4 tracking-wide text-white  md:py-2  md:px-8 lg:h-[64px] lg:w-[210px] lg:tracking-wider "
+						className=" bg-primary-shade-1   button text-white"
 					>
 						<p>{'Load More'}</p>
 					</CtaWrapper.CTA>
