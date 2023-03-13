@@ -40,7 +40,7 @@ const MembershipServiceCategories = () => {
 									serviceCategory == activeServiceMembership
 										? 'bg-secondary-shade-1 text-white'
 										: 'text-primary-shade-1'
-								} tab-item rounded-lg border py-3 px-10 sm:border-0 sm:py-4`}
+								} tab-item rounded-lg border py-3 px-8 sm:border-0 sm:py-4`}
 							>
 								{serviceCategory?.name}
 							</button>
