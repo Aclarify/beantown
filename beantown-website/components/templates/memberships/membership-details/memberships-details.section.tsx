@@ -4,6 +4,7 @@ import MembershipsDetailsContent from './memberships-details.content';
 import WaveWrapper from 'components/molecules/wave-wrapper.molecule';
 import SectionContentWrapper from 'components/molecules/section-content-wrapper.molecule';
 import MembershipsDetailsList from './memberships-details-list.content';
+import bottomWave from 'public/images/memberships/membership-details/bottom-wave.svg';
 
 const MembershipsDetailsSection = () => {
 	return (
@@ -19,7 +20,7 @@ const MembershipsDetailsSection = () => {
 				<MembershipsDetailsContent />
 				<MembershipsDetailsList />
 			</SectionContentWrapper>
-			<WaveWrapper waveURL="/images/memberships/membership-details/bottom-wave.svg"></WaveWrapper>
+			<WaveWrapper waveURL={bottomWave}></WaveWrapper>
 		</section>
 	);
 };
