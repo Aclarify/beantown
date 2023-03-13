@@ -11,8 +11,8 @@ interface Props {
 const HeatingCoolingServiceCard: React.FC<Props> = (props) => {
 	return (
 		<>
-			<div className="w-full">
-				<Fade cascade>
+			<Fade cascade>
+				<div className="w-full">
 					<div
 						className="rounded-3xl bg-white px-4 py-6
 			shadow-[rgba(29,_39,_87,_0.04)_0px_6px_10px] lg:px-2 xl:px-6 
@@ -35,8 +35,8 @@ const HeatingCoolingServiceCard: React.FC<Props> = (props) => {
 							<p className=" text-gray-shade-1 !font-thin ">{props.content}</p>
 						</div>
 					</div>
-				</Fade>
-			</div>
+				</div>
+			</Fade>
 		</>
 	);
 };
