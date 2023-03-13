@@ -3,6 +3,7 @@ import Image from 'next/image';
 import { GlobalContextProps } from '@typing/common/interfaces/contexts.interface';
 import { PlumbingContentProps } from 'pages/plumbing';
 import { GlobalContext } from '@contexts/global/global.context';
+import Fade from 'react-reveal/Fade';
 
 const PlumbingServicesList = () => {
 	const { pageContent } =
@@ -23,29 +24,31 @@ const PlumbingServicesList = () => {
 					{servicesListTitle}
 				</span>
 				<div id="list-container" className="">
-					<div className="grid  grid-cols-2   md:grid-cols-4">
-						{servicesList?.map((listItem, index) => {
-							return (
-								<div
-									id="list-items"
-									className="flex items-center gap-2 py-1 "
-									key={index}
-								>
-									<Image
-										src={'/images/plumbing/plumbing-services-list-icon.svg'}
-										alt={'plumbing-services-list-icon-image'}
-										width={'24'}
-										height={'24'}
-										className="h-[20px] w-[20px] sm:h-[24] sm:w-[24]"
-									/>
+					<Fade>
+						<div className="grid  grid-cols-2   md:grid-cols-4">
+							{servicesList?.map((listItem, index) => {
+								return (
+									<div
+										id="list-items"
+										className="flex items-center gap-2 py-1 "
+										key={index}
+									>
+										<Image
+											src={'/images/plumbing/plumbing-services-list-icon.svg'}
+											alt={'plumbing-services-list-icon-image'}
+											width={'24'}
+											height={'24'}
+											className="h-[20px] w-[20px] sm:h-[24] sm:w-[24]"
+										/>
 
-									<span className="text-gray-shade-1 list-items  text-left">
-										{listItem}
-									</span>
-								</div>
-							);
-						})}
-					</div>
+										<span className="text-gray-shade-1 list-items  text-left">
+											{listItem}
+										</span>
+									</div>
+								);
+							})}
+						</div>
+					</Fade>
 				</div>
 			</div>
 		</section>
