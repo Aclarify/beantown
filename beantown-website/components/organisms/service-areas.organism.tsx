@@ -2,6 +2,7 @@ import React from 'react';
 import Image from 'next/image';
 import { TextList as ServiceAreas, Maybe } from '@typing/gql/graphql';
 import LocationCard from './location-card.organism';
+import Fade from 'react-reveal/Fade';
 
 interface IProps extends React.HTMLAttributes<HTMLDivElement> {
 	serviceAreaSectionTitle: string;
@@ -40,42 +41,49 @@ const ServiceAreas: React.FC<IProps> = (props) => {
 						}}
 					></Image>
 				</div>
-				<div className="service-area-padding-container lg:py-20">
-					<div
-						id="service-area-outer-container"
-						className="bg-primary-white-shade-1 -mt-8 rounded-3xl p-4 lg:-ml-[25%] lg:mt-0 lg:p-6"
-					>
-						<div
-							id="service-areas-inner-container"
-							className="rounded-lg bg-white px-4  pt-2 pb-4 shadow-md lg:rounded-2xl lg:py-4 lg:pt-1"
-						>
-							<span className="subtitle text-primary-black   mt-2 pb-2 lg:pl-6 ">
-								{props.serviceAreaListTitle || 'Service Areas'}
-							</span>
 
+				<Fade left>
+					<div className="service-area-padding-container lg:py-20">
+						<div
+							id="service-area-outer-container"
+							className="bg-primary-white-shade-1 -mt-8 rounded-3xl p-4 lg:-ml-[25%] lg:mt-0 lg:p-6"
+						>
 							<div
-								id="service-area-container"
-								className="grid grid-cols-2 gap-x-2 gap-y-1 sm:gap-x-4 lg:gap-4 lg:pl-6"
+								id="service-areas-inner-container"
+								className="rounded-lg bg-white px-4  pt-2 pb-4 shadow-md lg:rounded-2xl lg:py-4 lg:pt-1"
 							>
-								{props.serviceAreaList &&
-									props.serviceAreaList?.listItem?.map((serviceArea, index) => {
-										return (
-											<div
-												key={index}
-												className="bg-secondary-shade-3 rounded pl-1 lg:rounded-lg"
-											>
-												<LocationCard
-													locationText={
-														serviceArea ? serviceArea.split(',').join(', ') : ''
-													}
-												/>
-											</div>
-										);
-									})}
+								<span className="subtitle text-primary-black   mt-2 pb-2 lg:pl-6 ">
+									{props.serviceAreaListTitle || 'Service Areas'}
+								</span>
+
+								<div
+									id="service-area-container"
+									className="grid grid-cols-2 gap-x-2 gap-y-1 sm:gap-x-4 lg:gap-4 lg:pl-6"
+								>
+									{props.serviceAreaList &&
+										props.serviceAreaList?.listItem?.map(
+											(serviceArea, index) => {
+												return (
+													<div
+														key={index}
+														className="bg-secondary-shade-3 rounded pl-1 lg:rounded-lg"
+													>
+														<LocationCard
+															locationText={
+																serviceArea
+																	? serviceArea.split(',').join(', ')
+																	: ''
+															}
+														/>
+													</div>
+												);
+											}
+										)}
+								</div>
 							</div>
 						</div>
 					</div>
-				</div>
+				</Fade>
 			</div>
 		</div>
 	);
