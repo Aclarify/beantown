@@ -1,6 +1,7 @@
 import React from 'react';
 import Image from 'next/image';
 import { showUnderConstructionMsg } from 'utils/helper';
+import Fade from 'react-reveal/Fade';
 
 interface Props {
 	blogName: string;
@@ -16,15 +17,17 @@ const BlogCard: React.FC<Props> = (props) => {
 				className=" cursor-pointer flex-col justify-center border-none p-1"
 				onClick={showUnderConstructionMsg}
 			>
-				<div className="flex justify-center ">
-					<Image
-						src={props.thumbnailSrc}
-						alt={props.thumbnailAltText}
-						width="600"
-						height="600"
-						className="w-full rounded-3xl border-2"
-					/>
-				</div>
+				<Fade cascade>
+					<div className="flex justify-center ">
+						<Image
+							src={props.thumbnailSrc}
+							alt={props.thumbnailAltText}
+							width="600"
+							height="600"
+							className="w-full rounded-3xl border-2"
+						/>
+					</div>
+				</Fade>
 				<div>
 					<h5 className=" text-primary-black py-4">{props.blogName}</h5>
 					<div className=" text-primary-shade-1 mb-4">
