@@ -9,6 +9,8 @@ import MaskedImageWithBackgroundVector from 'components/organisms/masked-image-w
 import useWindowDimensions from '@lib/hooks/use-window-dimensions.hook';
 import WaveWrapper from 'components/molecules/wave-wrapper.molecule';
 import CtaWrapper from 'components/molecules/cta-wrapper.molecule';
+import topWave from 'public/images/home/why-us/top-wave.svg';
+import bottomWave from 'public/images/home/why-us/bottom-wave.svg';
 import Link from 'next/link';
 export default function WhyUs() {
 	const { pageContent } =
@@ -27,7 +29,7 @@ export default function WhyUs() {
 			id="whyUs"
 			className=" relative z-30  py-[4rem] pb-[25em] md:mt-[6em] md:pt-[10vw] xl:mt-[1em]"
 		>
-			<WaveWrapper waveURL="/images/home/why-us/top-wave.svg" />
+			<WaveWrapper waveURL={topWave} />
 			<div
 				id="section-wrapper"
 				className="bg-primary-white-shade-1 2xl:padding-for-section z-1 flex  flex-col overflow-hidden px-5 pb-14 md:pb-0"
@@ -90,7 +92,7 @@ export default function WhyUs() {
 					})}
 				</div>
 			</div>
-			<WaveWrapper waveURL="/images/home/why-us/bottom-wave.svg" />
+			<WaveWrapper waveURL={bottomWave} />
 		</section>
 	);
 }

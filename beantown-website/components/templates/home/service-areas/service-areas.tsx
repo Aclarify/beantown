@@ -5,6 +5,7 @@ import { HomePageContentProps } from 'pages';
 import Image from 'next/image';
 import WaveWrapper from 'components/molecules/wave-wrapper.molecule';
 import ServiceAreas from 'components/organisms/service-areas.organism';
+import topWave from 'public/images/home/service-area/home-service-area-top-wave.svg';
 
 export default function HomeServiceAreas() {
 	const { pageContent } =
@@ -16,7 +17,7 @@ export default function HomeServiceAreas() {
 	const { serviceAreaSection } = homeData;
 	return (
 		<section id="serviceAreas" className="relative mt-20 ">
-			<WaveWrapper waveURL="/images/home/service-area/home-service-area-top-wave.svg"></WaveWrapper>
+			<WaveWrapper waveURL={topWave}></WaveWrapper>
 			<ServiceAreas
 				serviceAreaSectionTitle={serviceAreaSection?.serviceAreaTitle || ''}
 				serviceAreaDescription={

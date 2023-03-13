@@ -6,6 +6,7 @@ import Image from 'next/image';
 import WaveWrapper from 'components/molecules/wave-wrapper.molecule';
 import Blogs from 'components/organisms/blogs.organism';
 import SectionContentWrapper from 'components/molecules/section-content-wrapper.molecule';
+import bottomWave from 'public/images/home/blogs/home-blogs-bottom-wave.svg';
 
 export default function HomeBlogs() {
 	const { pageContent } =
@@ -52,7 +53,7 @@ export default function HomeBlogs() {
 					></Blogs>
 				</SectionContentWrapper>
 			</div>
-			<WaveWrapper waveURL="/images/home/blogs/home-blogs-bottom-wave.svg"></WaveWrapper>
+			<WaveWrapper waveURL={bottomWave}></WaveWrapper>
 		</section>
 	);
 }
