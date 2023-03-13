@@ -7,6 +7,7 @@ import ContentWrapper from 'components/organisms/content-wrapper.organism';
 import MaskedImageWithBackgroundVector from 'components/organisms/masked-image-with-blob.organism';
 import { ElectricalContentProps } from 'pages/electrical';
 import { useContext } from 'react';
+import Fade from 'react-reveal/Fade';
 
 const AboutElectricalServiceContent = () => {
 	const { pageContent } =
@@ -62,7 +63,9 @@ const AboutElectricalServiceContent = () => {
 							<h2 className="text-primary-black ">{aboutTheServiceTitle}</h2>
 						</ContentWrapper.Title>
 						<ContentWrapper.Description className="text-left ">
-							<RichText value={aboutTheServiceDescription?.contentRaw} />
+							<Fade>
+								<RichText value={aboutTheServiceDescription?.contentRaw} />
+							</Fade>
 						</ContentWrapper.Description>
 						<ContentWrapper.CTA className="mt-[16px] lg:mt-[32px]">
 							<CtaWrapper.CTA className="bg-service-yellow button text-black">
