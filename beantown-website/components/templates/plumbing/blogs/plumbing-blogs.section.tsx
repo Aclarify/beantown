@@ -3,9 +3,9 @@ import WaveWrapper from 'components/molecules/wave-wrapper.molecule';
 import SectionContentWrapper from 'components/molecules/section-content-wrapper.molecule';
 import PlumbingBlogsContent from './plumbing-blogs.content';
 import useWindowDimensions from '@lib/hooks/use-window-dimensions.hook';
-import topWave from 'public/images/blogs/plumbing-blogs-top-wave.svg';
-import topWaveMobile from 'public/images/blogs/plumbing-blogs-top-wave.svg';
-import bottomWave from 'public/plumbing/blogs/plumbing-blogs-bottom-wave.svg';
+import topWave from 'public/images/plumbing/blogs/plumbing-blogs-top-wave.svg';
+import topWaveMobile from 'public/images/plumbing/blogs/plumbing-blogs-top-wave.svg';
+import bottomWave from 'public/images/plumbing/blogs/plumbing-blogs-bottom-wave.svg';
 
 const PlumbingBlogsSection = () => {
 	const { width } = useWindowDimensions();
