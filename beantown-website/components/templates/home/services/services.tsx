@@ -9,6 +9,7 @@ import ServiceCard from './service-card';
 import WaveWrapper from 'components/molecules/wave-wrapper.molecule';
 import useWindowDimensions from '@lib/hooks/use-window-dimensions.hook';
 import { SCREEN_BREAKPOINTS } from '@typing/common/interfaces/devices.interface';
+import topWave from 'public/images/home/services/home-services-top-wave.svg';
 
 export default function Services() {
 	const { pageContent } =
@@ -44,7 +45,7 @@ export default function Services() {
 			id="services"
 			className="z-1 relative mt-[-2rem] sm:mt-[-3rem] md:mt-[-5rem]  lg:mt-[-6rem] xl:mt-[-8rem] 2xl:mt-[-9rem] "
 		>
-			<WaveWrapper waveURL="/images/home/services/home-services-top-wave.svg"></WaveWrapper>
+			<WaveWrapper waveURL={topWave}></WaveWrapper>
 			<Image
 				src={'/images/home/blob-shape-1.svg'}
 				height={590}

@@ -4,6 +4,10 @@ import WaveWrapper from 'components/molecules/wave-wrapper.molecule';
 import Image from 'next/image';
 import ElectricalServicesList from '../electrical-services-list.content';
 import AboutElectricalServiceContent from './electrical-about.content';
+import topWave from 'public/images/services/services-hero-bottom-wave.svg';
+import topWaveMobile from 'public/images/services/services-hero-bottom-wave-mobile.svg';
+import bottomWave from 'public/images/plumbing/about/plumbing-about-bottom-wave.svg';
+import bottomWaveMobile from 'public/images/plumbing/about/plumbing-about-bottom-wave-mobile.svg';
 
 const AboutElectricalServiceSection = () => {
 	const { width } = useWindowDimensions();
@@ -13,11 +17,7 @@ const AboutElectricalServiceSection = () => {
 			className=" 3xl:mt-[-10em] xs:mt-[-4em] relative z-10 mt-[-5em] sm:mt-[-6em] md:mt-[-9em] lg:mt-[-4em] 2xl:mt-[-6em] "
 		>
 			<WaveWrapper
-				waveURL={
-					width > 1023
-						? '/images/services/services-hero-bottom-wave.svg'
-						: '/images/services/services-hero-bottom-wave-mobile.svg'
-				}
+				waveURL={width > 1023 ? topWave : topWaveMobile}
 			></WaveWrapper>
 			<Image
 				src={
@@ -42,11 +42,7 @@ const AboutElectricalServiceSection = () => {
 				className="absolute left-0 top-0 z-[-1] translate-x-[-35%] translate-y-[92%] transform md:translate-y-[110%] lg:hidden"
 			/>
 			<WaveWrapper
-				waveURL={
-					width > 1023
-						? '/images/plumbing/about/plumbing-about-bottom-wave.svg'
-						: '/images/plumbing/about/plumbing-about-bottom-wave-mobile.svg'
-				}
+				waveURL={width > 1023 ? bottomWave : bottomWaveMobile}
 			></WaveWrapper>
 		</section>
 	);
