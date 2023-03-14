@@ -60,16 +60,8 @@ const AboutPlumbingServiceContent = () => {
 						imgAltText={aboutTheServiceImage?.asset?.altText || ''}
 						width={width > 768 ? 1000 : 500}
 						height={width > 768 ? 1000 : 500}
-						maskImg={
-							width > 768
-								? './images/plumbing/about/plumbing-services-blob-mask.svg'
-								: './images/plumbing/about/plumbing-services-blob-mask-mobile.svg'
-						}
-						bgImg={
-							width > 768
-								? './images/plumbing/about/plumbing-services-bg-blob.svg'
-								: './images/plumbing/about/plumbing-services-bg-blob-mobile.svg'
-						}
+						maskImg={'./images/plumbing/about/plumbing-services-blob-mask.svg'}
+						bgImg={'./images/plumbing/about/plumbing-services-bg-blob.svg'}
 					/>
 				</div>
 			</div>
