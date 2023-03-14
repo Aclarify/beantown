@@ -6,6 +6,7 @@ import CTAWithImage from 'components/organisms/cta-with-image.organism';
 import CTATextContent, {
 	CTAButton,
 } from 'components/organisms/cta-text-content.organism';
+import Animate from 'components/molecules/animate.molecule';
 
 const PlumbingHeroContent = () => {
 	const { pageContent } =
@@ -27,20 +28,22 @@ const PlumbingHeroContent = () => {
 			bgColor="var(--services-green-color-rgb)"
 			isImageToBePrefetched={true}
 		>
-			<div className="text-white">
-				<CTATextContent
-					title={heroTitle || ''}
-					description={heroDescription}
-					isHero={true}
-				>
-					<CTAButton
-						text={heroButton?.text || ''}
-						href={heroButton?.href || ''}
-						textColor="text-white"
-						bgColor="bg-primary-shade-1"
-					/>
-				</CTATextContent>
-			</div>
+			<Animate bottom>
+				<div className="text-white">
+					<CTATextContent
+						title={heroTitle || ''}
+						description={heroDescription}
+						isHero={true}
+					>
+						<CTAButton
+							text={heroButton?.text || ''}
+							href={heroButton?.href || ''}
+							textColor="text-white"
+							bgColor="bg-primary-shade-1"
+						/>
+					</CTATextContent>
+				</div>
+			</Animate>
 		</CTAWithImage>
 	);
 };

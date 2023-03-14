@@ -4,6 +4,7 @@ import { GlobalContextProps } from '@typing/common/interfaces/contexts.interface
 import { AboutUsContentProps } from 'pages/about-us';
 import ContentWrapper from 'components/organisms/content-wrapper.organism';
 import Image from 'next/image';
+import Animate from 'components/molecules/animate.molecule';
 
 const AboutUsHeroContent = () => {
 	const { pageContent } =
@@ -21,10 +22,14 @@ const AboutUsHeroContent = () => {
 			>
 				<ContentWrapper className="relative z-[2] pt-28 pb-20 text-center md:py-48 lg:w-1/2  xl:py-80">
 					<ContentWrapper.Title className=" mb-2  lg:mb-4">
-						<h1>{heroTitle}</h1>
+						<Animate bottom>
+							<h1>{heroTitle}</h1>
+						</Animate>
 					</ContentWrapper.Title>
 					<ContentWrapper.Description>
-						<p>{heroDescription}</p>
+						<Animate bottom>
+							<p>{heroDescription}</p>
+						</Animate>
 					</ContentWrapper.Description>
 				</ContentWrapper>
 			</div>

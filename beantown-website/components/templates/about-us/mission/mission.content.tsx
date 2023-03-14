@@ -7,6 +7,7 @@ import MaskedImageWithBackgroundVector from 'components/organisms/masked-image-w
 import useWindowDimensions from '@lib/hooks/use-window-dimensions.hook';
 
 import { AboutUsContentProps } from 'pages/about-us';
+import Animate from 'components/molecules/animate.molecule';
 const MissionContent = () => {
 	const { pageContent } =
 		useContext<GlobalContextProps<AboutUsContentProps>>(GlobalContext);
@@ -46,10 +47,14 @@ const MissionContent = () => {
 				>
 					<ContentWrapper>
 						<ContentWrapper.Title>
-							<h2 className="text-primary-black ">{missionTitle}</h2>
+							<Animate bottom>
+								<h2 className="text-primary-black ">{missionTitle}</h2>
+							</Animate>
 						</ContentWrapper.Title>
 						<ContentWrapper.Description className="text-left ">
-							<RichText value={missionDescription?.contentRaw} />
+							<Animate bottom>
+								<RichText value={missionDescription?.contentRaw} />
+							</Animate>
 						</ContentWrapper.Description>
 					</ContentWrapper>
 				</div>

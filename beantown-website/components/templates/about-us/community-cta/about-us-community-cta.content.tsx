@@ -7,6 +7,7 @@ import CTATextContent, {
 	CTAButton,
 } from 'components/organisms/cta-text-content.organism';
 import { showUnderConstructionMsg } from 'utils/helper';
+import Animate from 'components/molecules/animate.molecule';
 
 const CommunityCTAContent = () => {
 	const { pageContent } =
@@ -30,15 +31,17 @@ const CommunityCTAContent = () => {
 			heroImagePosition="left"
 			bgColor="var(--primary-color-shade-2-rgb)"
 		>
-			<div className="text-white">
-				<CTATextContent title={communityCtaTitle || ''} isHero={false}>
-					<CTAButton
-						text={communityCtaButton?.text || ''}
-						textColor="text-primary-shade-1"
-						bgColor="bg-primary-white-shade-1"
-					/>
-				</CTATextContent>
-			</div>
+			<Animate bottom>
+				<div className="text-white">
+					<CTATextContent title={communityCtaTitle || ''} isHero={false}>
+						<CTAButton
+							text={communityCtaButton?.text || ''}
+							textColor="text-primary-shade-1"
+							bgColor="bg-primary-white-shade-1"
+						/>
+					</CTATextContent>
+				</div>
+			</Animate>
 		</CTAWithImage>
 	);
 };

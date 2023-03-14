@@ -6,6 +6,7 @@ import { AboutUsContentProps } from 'pages/about-us';
 import CTATextContent, {
 	CTAButton,
 } from 'components/organisms/cta-text-content.organism';
+import Animate from 'components/molecules/animate.molecule';
 
 const AboutUSCTAContent = () => {
 	const { pageContent } =
@@ -27,19 +28,21 @@ const AboutUSCTAContent = () => {
 			heroImagePosition="right"
 			bgColor="var(--secondary-color-shade-2-rgb)"
 		>
-			<div className="text-primary-shade-1">
-				<CTATextContent
-					title={ctaTitle || ''}
-					description={ctaDescription}
-					isHero={false}
-				>
-					<CTAButton
-						text={ctaButton?.text || ''}
-						textColor="text-white"
-						bgColor="bg-primary-shade-1"
-					/>
-				</CTATextContent>
-			</div>
+			<Animate bottom>
+				<div className="text-primary-shade-1">
+					<CTATextContent
+						title={ctaTitle || ''}
+						description={ctaDescription}
+						isHero={false}
+					>
+						<CTAButton
+							text={ctaButton?.text || ''}
+							textColor="text-white"
+							bgColor="bg-primary-shade-1"
+						/>
+					</CTATextContent>
+				</div>
+			</Animate>
 		</CTAWithImage>
 	);
 };

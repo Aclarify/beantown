@@ -7,6 +7,7 @@ import ContentWrapper from 'components/organisms/content-wrapper.organism';
 import MaskedImageWithBackgroundVector from 'components/organisms/masked-image-with-blob.organism';
 import useWindowDimensions from '@lib/hooks/use-window-dimensions.hook';
 import CtaWrapper from 'components/molecules/cta-wrapper.molecule';
+import Animate from 'components/molecules/animate.molecule';
 const HeatingCoolingMassSaveContent = () => {
 	const { pageContent } =
 		useContext<GlobalContextProps<HeatingCoolingContentProps>>(GlobalContext);
@@ -34,10 +35,14 @@ const HeatingCoolingMassSaveContent = () => {
 				>
 					<ContentWrapper>
 						<ContentWrapper.Title>
-							<h2 className=" text-primary-black ">{massSaveTitle}</h2>
+							<Animate bottom>
+								<h2 className=" text-primary-black ">{massSaveTitle}</h2>
+							</Animate>
 						</ContentWrapper.Title>
 						<ContentWrapper.Description className=" text-gray-shade-1 text-left">
-							<RichText value={massSaveDescription?.contentRaw} />
+							<Animate bottom>
+								<RichText value={massSaveDescription?.contentRaw} />
+							</Animate>
 						</ContentWrapper.Description>
 						<ContentWrapper.CTA className=" mt-4 lg:mt-8">
 							<CtaWrapper.CTA className="bg-service-red  button text-white ">
