@@ -10,6 +10,7 @@ import useWindowDimensions from '@lib/hooks/use-window-dimensions.hook';
 import WaveWrapper from 'components/molecules/wave-wrapper.molecule';
 import CtaWrapper from 'components/molecules/cta-wrapper.molecule';
 import Link from 'next/link';
+import Animate from 'components/molecules/animate.molecule';
 export default function WhyUs() {
 	const { pageContent } =
 		useContext<GlobalContextProps<HomePageContentProps>>(GlobalContext);
@@ -42,10 +43,14 @@ export default function WhyUs() {
 					>
 						<ContentWrapper>
 							<ContentWrapper.Title>
-								<h2 className=" text-primary-black ">{whyUsTitle}</h2>
+								<Animate bottom>
+									<h2 className=" text-primary-black ">{whyUsTitle}</h2>
+								</Animate>
 							</ContentWrapper.Title>
 							<ContentWrapper.Description className="rich-text text-left lg:pr-4">
-								<RichText value={whyUsDescription?.contentRaw} />
+								<Animate bottom>
+									<RichText value={whyUsDescription?.contentRaw} />
+								</Animate>
 							</ContentWrapper.Description>
 							<ContentWrapper.CTA className="mt-[16px] lg:mt-[32px]">
 								<CtaWrapper.CTA className="bg-primary-shade-1  button text-white ">

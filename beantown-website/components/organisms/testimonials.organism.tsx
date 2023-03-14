@@ -11,6 +11,7 @@ import 'slick-carousel/slick/slick-theme.css';
 import TestimonialCard from './testimonial-card.organism';
 import TestimonialModal from './testimonial-modal.organism';
 import SectionContentWrapper from 'components/molecules/section-content-wrapper.molecule';
+import Animate from 'components/molecules/animate.molecule';
 
 interface IProps extends React.HTMLAttributes<HTMLDivElement> {
 	testimonialTitle: string;
@@ -174,24 +175,28 @@ const Testimonials: React.FC<IProps> = (props) => {
 				<div className="relative lg:hidden ">
 					<div className=" w-full flex-none">
 						<div className="ml-8 pb-6">
-							<h5 className="text-primary-shade-1 !font-thin ">
-								{props.testimonialTitle}
-							</h5>
-							<h2 className=" text-primary-black">
-								{props.testimonialDescription}
-							</h2>
+							<Animate bottom>
+								<h5 className="text-primary-shade-1 !font-thin ">
+									{props.testimonialTitle}
+								</h5>
+								<h2 className=" text-primary-black">
+									{props.testimonialDescription}
+								</h2>
+							</Animate>
 						</div>
 					</div>
 				</div>
 				<div className=" flex space-x-6">
 					<div className="gap-15 z-40 ml-28 mr-16 hidden flex-none   flex-col  items-center justify-center    lg:flex  ">
 						<div className="flex-none  gap-5 ">
-							<h5 className=" text-primary-shade-1 !font-thin ">
-								{props.testimonialTitle}
-							</h5>
-							<h2 className="  text-primary-black">
-								{props.testimonialDescription}
-							</h2>
+							<Animate bottom>
+								<h5 className=" text-primary-shade-1 !font-thin ">
+									{props.testimonialTitle}
+								</h5>
+								<h2 className="  text-primary-black">
+									{props.testimonialDescription}
+								</h2>
+							</Animate>
 							<div className="mt-8 flex space-x-6">
 								<button
 									onClick={previous}
@@ -216,13 +221,15 @@ const Testimonials: React.FC<IProps> = (props) => {
 										className="testimonial-card-wrapper slick-item !flex justify-center px-2 outline-none xl:px-4"
 										key={index}
 									>
-										<TestimonialCard
-											key={index}
-											clientName={reviews?.titleText || ''}
-											clientDetails={reviews?.subText || ''}
-											reviewComments={reviews?.description || ''}
-											onShowMore={() => onTestimonialCardClick(reviews)}
-										/>
+										<Animate>
+											<TestimonialCard
+												key={index}
+												clientName={reviews?.titleText || ''}
+												clientDetails={reviews?.subText || ''}
+												reviewComments={reviews?.description || ''}
+												onShowMore={() => onTestimonialCardClick(reviews)}
+											/>
+										</Animate>
 									</div>
 								);
 							})}

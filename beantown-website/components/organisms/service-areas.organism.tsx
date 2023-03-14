@@ -2,7 +2,7 @@ import React from 'react';
 import Image from 'next/image';
 import { TextList as ServiceAreas, Maybe } from '@typing/gql/graphql';
 import LocationCard from './location-card.organism';
-import Fade from 'react-reveal/Fade';
+import Animate from 'components/molecules/animate.molecule';
 
 interface IProps extends React.HTMLAttributes<HTMLDivElement> {
 	serviceAreaSectionTitle: string;
@@ -18,12 +18,16 @@ const ServiceAreas: React.FC<IProps> = (props) => {
 		<div className=" z-1 bg-primary-white-shade-1 2xl:padding-for-section p-5   lg:pr-6">
 			<div className=" pb-6  lg:flex 2xl:pt-16">
 				<div className="lg:w-1/2 lg:border-r-2">
-					<h2 className="  text-primary-black  lg:pr-20 lg:pl-6">
-						{props.serviceAreaSectionTitle}
-					</h2>
+					<Animate bottom>
+						<h2 className="  text-primary-black  lg:pr-20 lg:pl-6">
+							{props.serviceAreaSectionTitle}
+						</h2>
+					</Animate>
 				</div>
 				<div className="  text-primary-shade-1 w-full  pt-4  lg:w-[60%] lg:pl-20 ">
-					<p>{props.serviceAreaDescription}</p>
+					<Animate bottom>
+						<p>{props.serviceAreaDescription}</p>
+					</Animate>
 				</div>
 			</div>
 
@@ -42,7 +46,7 @@ const ServiceAreas: React.FC<IProps> = (props) => {
 					></Image>
 				</div>
 
-				<Fade left>
+				<Animate left>
 					<div className="service-area-padding-container lg:py-20">
 						<div
 							id="service-area-outer-container"
@@ -83,7 +87,7 @@ const ServiceAreas: React.FC<IProps> = (props) => {
 							</div>
 						</div>
 					</div>
-				</Fade>
+				</Animate>
 			</div>
 		</div>
 	);

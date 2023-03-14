@@ -3,11 +3,10 @@ import { GlobalContext } from '@contexts/global/global.context';
 import { GlobalContextProps } from '@typing/common/interfaces/contexts.interface';
 import { HomePageContentProps } from 'pages';
 import RichText from 'components/molecules/rich-text.molecule';
-import Image from 'next/image';
-
-import ContentWrapper from 'components/organisms/content-wrapper.organism';
+import Image from 'next/image';import ContentWrapper from 'components/organisms/content-wrapper.organism';
 import CtaWrapper from 'components/molecules/cta-wrapper.molecule';
 import Link from 'next/link';
+import Animate from 'components/molecules/animate.molecule';
 
 export default function HomeHero() {
 	const { pageContent } =
@@ -26,10 +25,14 @@ export default function HomeHero() {
 			>
 				<ContentWrapper className="relative z-[2] pt-24 pb-16 sm:pt-28 sm:pb-20 md:pt-48 md:pb-48 xl:pt-80 xl:pb-80">
 					<ContentWrapper.Title className=" mb-2  lg:mb-4">
-						<h1>{heroTitle}</h1>
+						<Animate bottom>
+							<h1>{heroTitle}</h1>
+						</Animate>
 					</ContentWrapper.Title>
 					<ContentWrapper.Description className=" w-[80%]">
-						<RichText value={heroDescription?.contentRaw} />
+						<Animate bottom>
+							<RichText value={heroDescription?.contentRaw} />
+						</Animate>
 					</ContentWrapper.Description>
 					<ContentWrapper.CTA className="mt-4 lg:mt-8">
 						<Link href={heroButton?.href || ''}>
@@ -40,6 +43,7 @@ export default function HomeHero() {
 					</ContentWrapper.CTA>
 				</ContentWrapper>
 			</div>
+
 			<div
 				id="image-wrapper"
 				className="after:z-1 after:from-home-hero-gradient-start after:to-home-hero-gradient-end xs:block absolute top-0 z-0 h-full w-full after:absolute after:top-0 after:left-0 after:h-full after:w-full after:bg-gradient-to-b"

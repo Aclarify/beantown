@@ -1,7 +1,7 @@
 import React from 'react';
 import Image from 'next/image';
 import { showUnderConstructionMsg } from 'utils/helper';
-import Fade from 'react-reveal/Fade';
+import Animate from 'components/molecules/animate.molecule';
 
 interface Props {
 	blogName: string;
@@ -17,8 +17,8 @@ const BlogCard: React.FC<Props> = (props) => {
 				className=" cursor-pointer flex-col justify-center border-none p-1"
 				onClick={showUnderConstructionMsg}
 			>
-				<Fade cascade>
-					<div className="flex justify-center ">
+				<div className="flex justify-center ">
+					<Animate cascade>
 						<Image
 							src={props.thumbnailSrc}
 							alt={props.thumbnailAltText}
@@ -26,13 +26,16 @@ const BlogCard: React.FC<Props> = (props) => {
 							height="600"
 							className="w-full rounded-3xl border-2"
 						/>
-					</div>
-				</Fade>
+					</Animate>
+				</div>
+
 				<div>
-					<h5 className=" text-primary-black py-4">{props.blogName}</h5>
-					<div className=" text-primary-shade-1 mb-4">
-						<p> {props.blogDescription} </p>
-					</div>
+					<Animate bottom>
+						<h5 className=" text-primary-black py-4">{props.blogName}</h5>
+						<div className=" text-primary-shade-1 mb-4">
+							<p> {props.blogDescription} </p>
+						</div>
+					</Animate>
 					<div className="mt-4 flex justify-between align-middle lg:pb-2 ">
 						<button className="para text-primary-black underline ">
 							{props.buttonText}
