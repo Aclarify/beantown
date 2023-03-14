@@ -27,12 +27,11 @@ const MembershipsDetailsList = () => {
 		>
 			<div className="container py-6 lg:p-[60px] ">
 				<div id="list-container" className="">
-					
+					<Animate bottom cascade>
 						<div className="3xl:grid-cols-2  grid  w-full  grid-cols-1 gap-y-2 lg:grid-cols-2 xl:grid-cols-2  ">
 							{activeServiceMembership?.serviceMembershipDetails?.map(
 								(item: any, index: number) => {
 									return (
-										<Animate bottom cascade>
 										<div
 											key={index}
 											id="list-items"
@@ -48,12 +47,11 @@ const MembershipsDetailsList = () => {
 											/>
 											<p className="pl-2">{item}</p>
 										</div>
-										</Animate>
 									);
 								}
 							)}
 						</div>
-					
+					</Animate>
 				</div>
 			</div>
 		</section>

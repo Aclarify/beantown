@@ -138,7 +138,7 @@ const HeatingCoolingProductsCardContent = () => {
 				<Slider ref={slider} {...settings} className="">
 					{productsGroup?.map((productInfo, index) => {
 						return (
-							<Animate bottom >
+							
 								<div
 									className="product-card-wrapper  !flex justify-center px-1 xl:px-2"
 									key={index}
@@ -151,7 +151,7 @@ const HeatingCoolingProductsCardContent = () => {
 										description={productInfo?.description || ''}
 									/>
 								</div>
-							</Animate>
+						
 						);
 					})}
 				</Slider>
