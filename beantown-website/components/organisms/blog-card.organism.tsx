@@ -18,7 +18,7 @@ const BlogCard: React.FC<Props> = (props) => {
 				onClick={showUnderConstructionMsg}
 			>
 				<div className="flex transform justify-center transition duration-500 hover:scale-105 ">
-					<Animate cascade>
+				
 						<Image
 							src={props.thumbnailSrc}
 							alt={props.thumbnailAltText}
@@ -26,7 +26,7 @@ const BlogCard: React.FC<Props> = (props) => {
 							height="600"
 							className="w-full rounded-3xl border-2"
 						/>
-					</Animate>
+					
 				</div>
 
 				<div>
