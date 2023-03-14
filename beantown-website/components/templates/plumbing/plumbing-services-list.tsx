@@ -3,7 +3,8 @@ import Image from 'next/image';
 import { GlobalContextProps } from '@typing/common/interfaces/contexts.interface';
 import { PlumbingContentProps } from 'pages/plumbing';
 import { GlobalContext } from '@contexts/global/global.context';
-import Fade from 'react-reveal/Fade';
+import Animate from 'components/molecules/animate.molecule';
+
 
 const PlumbingServicesList = () => {
 	const { pageContent } =
@@ -24,7 +25,7 @@ const PlumbingServicesList = () => {
 					{servicesListTitle}
 				</span>
 				<div id="list-container" className="">
-					<Fade>
+					<Animate bottom cascade>
 						<div className="grid  grid-cols-2   md:grid-cols-4">
 							{servicesList?.map((listItem, index) => {
 								return (
@@ -48,7 +49,7 @@ const PlumbingServicesList = () => {
 								);
 							})}
 						</div>
-					</Fade>
+					</Animate>
 				</div>
 			</div>
 		</section>
