@@ -37,13 +37,15 @@ const FAQ: React.FC<IProps> = (props) => {
 					<ContentWrapper>
 						<ContentWrapper.Title className=" mb-3 lg:mb-4">
 							<Animate bottom>
-								<h2 className=" text-primary-shade-1 mt-10">
-									{props.faqTitle}
-								</h2>
+								
+									<h2 className=" text-primary-shade-1 mt-10">
+										{props.faqTitle}
+									</h2>
+								
 							</Animate>
 						</ContentWrapper.Title>
 						<ContentWrapper.Description>
-							<Animate bottom >
+							<Animate bottom>
 								<p className=" text-primary-shade-1 my-4 flex flex-wrap justify-center lg:w-2/3">
 									{props.faqDescription}
 								</p>

@@ -56,14 +56,14 @@ export default function Footer(props: IProps) {
 					id="footerContainer"
 					className="bg-primary-shade-1 2xl:padding-for-section flex h-auto w-full flex-col px-5   pt-[2em] lg:grid lg:grid-cols-5 lg:pt-0"
 				>
-					<Animate bottom>
-						<div
-							id="linkSection"
-							className="basis-3/4 lg:order-last  lg:col-span-4 lg:flex lg:justify-between lg:p-10"
-						>
-							{navGroup &&
-								navGroup.map((linkGroup, index) => (
-									<div key={index} className="max-w-sm pt-4 lg:pt-10">
+					<div
+						id="linkSection"
+						className="basis-3/4 lg:order-last  lg:col-span-4 lg:flex lg:justify-between lg:p-10"
+					>
+						{navGroup &&
+							navGroup.map((linkGroup, index) => (
+								<div key={index} className="max-w-sm pt-4 lg:pt-10">
+									<Animate bottom>
 										<h1 className="subtitle font-bold text-white lg:pb-6 lg:font-normal">
 											{linkGroup?.groupTitle}
 										</h1>
@@ -83,17 +83,21 @@ export default function Footer(props: IProps) {
 												);
 											})}
 										</div>
-									</div>
-								))}
-							<div id="contact" className="pt-4 lg:pt-10">
+									</Animate>
+								</div>
+							))}
+						<div id="contact" className="pt-4 lg:pt-10">
+							<Animate bottom>
 								<div className="pb-2 lg:pb-4">
 									<span className=" subtitle font-bold text-white lg:font-normal">
 										{contactUsTitle}
 									</span>
 								</div>
-								{contactUs?.map((contactDtl, index) => {
-									return (
-										contactDtl?.iconImage && (
+							</Animate>
+							{contactUs?.map((contactDtl, index) => {
+								return (
+									contactDtl?.iconImage && (
+										<Animate bottom>
 											<div
 												key={index}
 												className="para flex justify-start space-x-2 pt-2 text-gray-300"
@@ -106,15 +110,16 @@ export default function Footer(props: IProps) {
 												/>
 												<span>{contactDtl.text}</span>
 											</div>
-										)
-									);
-								})}
-							</div>
+										</Animate>
+									)
+								);
+							})}
 						</div>
-					</Animate>
-					<Animate bottom>
-						<div id="logoSection" className="basis-1/4 pb-[16px]">
-							<div className="flex space-x-4 pt-8">
+					</div>
+
+					<div id="logoSection" className="basis-1/4 pb-[16px]">
+						<div className="flex space-x-4 pt-8">
+							<Animate bottom>
 								<div
 									id="logoImage"
 									className="relative h-[50px] w-[136px] focus:outline-none lg:h-[80px] lg:w-[230px]"
@@ -133,18 +138,22 @@ export default function Footer(props: IProps) {
 								>
 									{renderSocialMediaIcons()}
 								</div>
-							</div>
-							<div id="footerDescription" className="lg:pb-6 lg:pt-4">
+							</Animate>
+						</div>
+						<div id="footerDescription" className="lg:pb-6 lg:pt-4">
+							<Animate bottom>
 								<p className="para text-gray-300">{description}</p>
-							</div>
+							</Animate>
+						</div>
+						<Animate>
 							<div
 								id="socialMediaIconGroupDesktop"
 								className="hidden space-x-4 pb-8 lg:flex"
 							>
 								{renderSocialMediaIcons()}
 							</div>
-						</div>
-					</Animate>
+						</Animate>
+					</div>
 				</div>
 
 				<div className="2xl:padding-for-section bg-primary-shade-1 px-5">

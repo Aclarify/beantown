@@ -34,18 +34,20 @@ const Blogs: React.FC<IProps> = (props) => {
 				<div className=" no-scrollbar mt-10 flex snap-x snap-mandatory flex-nowrap gap-4 overflow-x-auto pb-4  ">
 					{props.blogCards?.map((blog, index) => {
 						return (
-							<div
-								key={index}
-								className="w-[250px] flex-none  snap-start  snap-always md:w-[32%]  "
-							>
-								<BlogCard
-									blogName={blog?.blogTitle || ''}
-									buttonText={blog?.button?.text || ''}
-									blogDescription={blog?.description || ''}
-									thumbnailSrc={blog?.blogImage?.image?.asset?.url || ''}
-									thumbnailAltText={blog?.blogImage?.altText || ''}
-								/>
-							</div>
+							<Animate >
+								<div
+									key={index}
+									className="w-[250px] flex-none  snap-start  snap-always md:w-[32%]  "
+								>
+									<BlogCard
+										blogName={blog?.blogTitle || ''}
+										buttonText={blog?.button?.text || ''}
+										blogDescription={blog?.description || ''}
+										thumbnailSrc={blog?.blogImage?.image?.asset?.url || ''}
+										thumbnailAltText={blog?.blogImage?.altText || ''}
+									/>
+								</div>
+							</Animate>
 						);
 					})}
 				</div>

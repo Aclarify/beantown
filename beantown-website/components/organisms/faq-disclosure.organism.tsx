@@ -1,5 +1,6 @@
 import { Disclosure, Transition } from '@headlessui/react';
 import { ChevronDownIcon } from '@heroicons/react/20/solid';
+import Animate from 'components/molecules/animate.molecule';
 interface Props {
 	faq: string;
 	faqAnswer: string;
@@ -33,15 +34,17 @@ const FAQDisclosure: React.FC<Props> = (props) => {
 									props.handleClick();
 								}}
 							>
-								<p
-									className={`${
-										open && props.isOpen
-											? ' text-primary-shade-1'
-											: ' text-gray-shade-1'
-									} !font-normal `}
-								>
-									{props.faq}
-								</p>
+								<Animate>
+									<p
+										className={`${
+											open && props.isOpen
+												? ' text-primary-shade-1'
+												: ' text-gray-shade-1'
+										} !font-normal `}
+									>
+										{props.faq}
+									</p>
+								</Animate>
 								<ChevronDownIcon
 									className={`${
 										open && props.isOpen
@@ -61,9 +64,11 @@ const FAQDisclosure: React.FC<Props> = (props) => {
 							></Transition>
 							{props.isOpen && (
 								<Disclosure.Panel className="text-primary-shade-1 rounded-b-lg bg-white p-4">
-									<div className="border-t-2 pt-2">
-										<p className="!font-thin">{props.faqAnswer} </p>
-									</div>
+									<Animate >
+										<div className="border-t-2 pt-2">
+											<p className="!font-thin">{props.faqAnswer} </p>
+										</div>
+									</Animate>
 								</Disclosure.Panel>
 							)}
 						</div>
