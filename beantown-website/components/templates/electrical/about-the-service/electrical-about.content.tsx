@@ -44,14 +44,10 @@ const AboutElectricalServiceContent = () => {
 						width={width > 768 ? 1000 : 500}
 						height={width > 768 ? 1000 : 500}
 						maskImg={
-							width > 768
-								? './images/electrical/repairs-installation-upgrades/electrical-RIU-blob.svg'
-								: './images/electrical/repairs-installation-upgrades/electrical-RIU-bg-blob.svg'
+							'./images/electrical/repairs-installation-upgrades/electrical-RIU-blob.svg'
 						}
 						bgImg={
-							width > 768
-								? './images/electrical/repairs-installation-upgrades/electrical-RIU-bg-blob.svg'
-								: './images/electrical/repairs-installation-upgrades/electrical-RIU-blob.svg'
+							'./images/electrical/repairs-installation-upgrades/electrical-RIU-bg-blob.svg'
 						}
 					/>
 				</div>

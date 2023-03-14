@@ -17,7 +17,7 @@ const BlogCard: React.FC<Props> = (props) => {
 				className=" cursor-pointer flex-col justify-center border-none p-1"
 				onClick={showUnderConstructionMsg}
 			>
-				<div className="flex justify-center ">
+				<div className="flex transform justify-center transition duration-500 hover:scale-105 ">
 					<Animate cascade>
 						<Image
 							src={props.thumbnailSrc}
