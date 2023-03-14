@@ -3,6 +3,8 @@ import Image from 'next/image';
 import { GlobalContext } from '@contexts/global/global.context';
 import { GlobalContextProps } from '@typing/common/interfaces/contexts.interface';
 import { ElectricalContentProps } from 'pages/electrical';
+import Animate from 'components/molecules/animate.molecule';
+
 
 function ElectricalServicesList() {
 	const { pageContent } =
@@ -23,28 +25,31 @@ function ElectricalServicesList() {
 				<span className="subtitle text-primary-black pb-4  sm:pb-8">
 					{servicesListTitle}
 				</span>
+
 				<div id="list-container" className="">
-					<div className="3xl:grid-cols-4 grid  w-full  grid-cols-1  gap-y-2 lg:grid-cols-2 xl:grid-cols-3  ">
-						{servicesList?.map((item: any, index: number) => {
-							return (
-								<div
-									key={index}
-									id="list-items"
-									className=" text-gray-shade-1 flex items-center"
-								>
-									<Image
-										src={
-											'/images/electrical/services/electrical-services-list-icon.svg'
-										}
-										alt={'electrical-services-list-icon-image'}
-										width={'32'}
-										height={'32'}
-									/>
-									<span className="list-items pl-2">{item}</span>
-								</div>
-							);
-						})}
-					</div>
+					<Animate bottom cascade>
+						<div className="3xl:grid-cols-4 grid  w-full  grid-cols-1  gap-y-2 lg:grid-cols-2 xl:grid-cols-3  ">
+							{servicesList?.map((item: any, index: number) => {
+								return (
+									<div
+										key={index}
+										id="list-items"
+										className=" text-gray-shade-1 flex items-center"
+									>
+										<Image
+											src={
+												'/images/electrical/services/electrical-services-list-icon.svg'
+											}
+											alt={'electrical-services-list-icon-image'}
+											width={'32'}
+											height={'32'}
+										/>
+										<span className="list-items pl-2">{item}</span>
+									</div>
+								);
+							})}
+						</div>
+					</Animate>
 				</div>
 			</div>
 		</section>

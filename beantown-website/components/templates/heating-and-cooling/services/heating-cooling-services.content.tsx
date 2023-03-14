@@ -6,6 +6,7 @@ import { GlobalContext } from '@contexts/global/global.context';
 import { GlobalContextProps } from '@typing/common/interfaces/contexts.interface';
 import { HeatingCoolingContentProps } from 'pages/heating-and-cooling';
 import SectionContentWrapper from 'components/molecules/section-content-wrapper.molecule';
+import Animate from 'components/molecules/animate.molecule';
 
 const HeatingCoolingServicesContent = () => {
 	const { pageContent } =
@@ -22,11 +23,15 @@ const HeatingCoolingServicesContent = () => {
 				<div className="flex flex-col items-center pb-8 text-center">
 					<ContentWrapper>
 						<ContentWrapper.Title>
-							<h2 className="text-primary-black mb-4">{servicesTitle}</h2>
+							<Animate bottom>
+								<h2 className="text-primary-black mb-4">{servicesTitle}</h2>
+							</Animate>
 						</ContentWrapper.Title>
 						<ContentWrapper.Description className="lg:flex lg:justify-center">
 							<div className="text-wrapper text-primary-shade-1  lg:w-3/4 ">
-								<RichText value={servicesDescription?.contentRaw} />
+								<Animate bottom>
+									<RichText value={servicesDescription?.contentRaw} />
+								</Animate>
 							</div>
 						</ContentWrapper.Description>
 					</ContentWrapper>

@@ -8,6 +8,8 @@ import MaskedImageWithBackgroundVector from 'components/organisms/masked-image-w
 import useWindowDimensions from '@lib/hooks/use-window-dimensions.hook';
 import CtaWrapper from 'components/molecules/cta-wrapper.molecule';
 import { PlumbingContentProps } from 'pages/plumbing';
+import Animate from 'components/molecules/animate.molecule';
+
 const AboutPlumbingServiceContent = () => {
 	const { pageContent } =
 		useContext<GlobalContextProps<PlumbingContentProps>>(GlobalContext);
@@ -39,10 +41,14 @@ const AboutPlumbingServiceContent = () => {
 				>
 					<ContentWrapper>
 						<ContentWrapper.Title>
-							<h2 className=" text-primary-black ">{aboutTheServiceTitle}</h2>
+							<Animate bottom>
+								<h2 className=" text-primary-black ">{aboutTheServiceTitle}</h2>
+							</Animate>
 						</ContentWrapper.Title>
 						<ContentWrapper.Description className=" text-left">
-							<RichText value={aboutTheServiceDescription?.contentRaw} />
+							<Animate bottom>
+								<RichText value={aboutTheServiceDescription?.contentRaw} />
+							</Animate>
 						</ContentWrapper.Description>
 						<ContentWrapper.CTA className="mt-[16px] lg:mt-[32px]">
 							<CtaWrapper.CTA className="bg-service-green button  text-white  ">

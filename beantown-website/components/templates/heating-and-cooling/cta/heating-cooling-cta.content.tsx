@@ -6,6 +6,7 @@ import CTAWithImage from 'components/organisms/cta-with-image.organism';
 import CTATextContent, {
 	CTAButton,
 } from 'components/organisms/cta-text-content.organism';
+import Animate from 'components/molecules/animate.molecule';
 
 const HeatingCoolingPageCTAContent = () => {
 	const { pageContent } =
@@ -26,16 +27,18 @@ const HeatingCoolingPageCTAContent = () => {
 			heroImagePosition="left"
 			bgColor="var(--services-red-color-rgb)"
 		>
-			<div className="text-white">
-				<CTATextContent title={ctaTitle || ''} isHero={false}>
-					<CTAButton
-						text={finalCtaButton?.text || ''}
-						textColor="lg:text-service-red text-primary-black"
-						bgColor="bg-white"
-						href={finalCtaButton?.href || ''}
-					/>
-				</CTATextContent>
-			</div>
+			<Animate bottom>
+				<div className="text-white">
+					<CTATextContent title={ctaTitle || ''} isHero={false}>
+						<CTAButton
+							text={finalCtaButton?.text || ''}
+							textColor="lg:text-service-red text-primary-black"
+							bgColor="bg-white"
+							href={finalCtaButton?.href || ''}
+						/>
+					</CTATextContent>
+				</div>
+			</Animate>
 		</CTAWithImage>
 	);
 };

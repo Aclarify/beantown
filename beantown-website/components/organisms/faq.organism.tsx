@@ -4,6 +4,7 @@ import FAQDisclosure from './faq-disclosure.organism';
 import ContentWrapper from './content-wrapper.organism';
 import CtaWrapper from 'components/molecules/cta-wrapper.molecule';
 import { showUnderConstructionMsg } from 'utils/helper';
+import Animate from 'components/molecules/animate.molecule';
 interface IProps extends React.HTMLAttributes<HTMLDivElement> {
 	backgroundImage: string;
 	faqTitle: string;
@@ -35,12 +36,20 @@ const FAQ: React.FC<IProps> = (props) => {
 				<div className="flex  flex-col justify-center text-center lg:text-left ">
 					<ContentWrapper>
 						<ContentWrapper.Title className=" mb-3 lg:mb-4">
-							<h2 className=" text-primary-shade-1 mt-10">{props.faqTitle}</h2>
+							<Animate bottom>
+								
+									<h2 className=" text-primary-shade-1 mt-10">
+										{props.faqTitle}
+									</h2>
+								
+							</Animate>
 						</ContentWrapper.Title>
 						<ContentWrapper.Description>
-							<p className=" text-primary-shade-1 my-4 flex flex-wrap justify-center lg:w-2/3">
-								{props.faqDescription}
-							</p>
+							<Animate bottom>
+								<p className=" text-primary-shade-1 my-4 flex flex-wrap justify-center lg:w-2/3">
+									{props.faqDescription}
+								</p>
+							</Animate>
 						</ContentWrapper.Description>
 						<ContentWrapper.CTA className="mt-[32px]">
 							<CtaWrapper.CTA
