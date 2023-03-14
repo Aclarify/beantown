@@ -10,6 +10,7 @@ import 'slick-carousel/slick/slick.css';
 import 'slick-carousel/slick/slick-theme.css';
 import SectionContentWrapper from 'components/molecules/section-content-wrapper.molecule';
 import { SCREEN_BREAKPOINTS } from '@typing/common/interfaces/devices.interface';
+import Animate from 'components/molecules/animate.molecule';
 
 const HeatingCoolingProductsCardContent = () => {
 	const slider = React.useRef<Slider | null>(null);
@@ -112,10 +113,11 @@ const HeatingCoolingProductsCardContent = () => {
 		<>
 			<SectionContentWrapper>
 				<div className=" flex items-center justify-between">
-					<div>
-						<h2 className=" ">{productsTitle}</h2>
-					</div>
-
+					<Animate bottom>
+						<div>
+							<h2 className=" ">{productsTitle}</h2>
+						</div>
+					</Animate>
 					<div className="hidden  justify-center  gap-4 pt-4 lg:flex  ">
 						<button
 							onClick={previous}
@@ -136,18 +138,20 @@ const HeatingCoolingProductsCardContent = () => {
 				<Slider ref={slider} {...settings} className="">
 					{productsGroup?.map((productInfo, index) => {
 						return (
-							<div
-								className="product-card-wrapper  !flex justify-center px-1 xl:px-2"
-								key={index}
-							>
-								<ProductCard
+							<Animate bottom >
+								<div
+									className="product-card-wrapper  !flex justify-center px-1 xl:px-2"
 									key={index}
-									title={productInfo?.titleText || ''}
-									image={productInfo?.image || null}
-									thumbnailAltText={'Heating and Cooling Product Images'}
-									description={productInfo?.description || ''}
-								/>
-							</div>
+								>
+									<ProductCard
+										key={index}
+										title={productInfo?.titleText || ''}
+										image={productInfo?.image || null}
+										thumbnailAltText={'Heating and Cooling Product Images'}
+										description={productInfo?.description || ''}
+									/>
+								</div>
+							</Animate>
 						);
 					})}
 				</Slider>

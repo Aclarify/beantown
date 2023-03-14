@@ -1,6 +1,7 @@
 import React from 'react';
 import Image from 'next/image';
-import Fade from 'react-reveal/Fade';
+import Animate from 'components/molecules/animate.molecule';
+
 interface Props {
 	title: string;
 	thumbnailSrc: string;
@@ -11,7 +12,7 @@ interface Props {
 const HeatingCoolingServiceCard: React.FC<Props> = (props) => {
 	return (
 		<>
-			<Fade cascade>
+			<Animate bottom cascade>
 				<div className="w-full">
 					<div
 						className="rounded-3xl bg-white px-4 py-6
@@ -36,7 +37,7 @@ const HeatingCoolingServiceCard: React.FC<Props> = (props) => {
 						</div>
 					</div>
 				</div>
-			</Fade>
+			</Animate>
 		</>
 	);
 };

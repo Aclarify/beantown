@@ -1,8 +1,8 @@
 import React from 'react';
-
 import { Image as CMSImage } from '@typing/gql/graphql';
 import CMSImageWrapper from 'components/molecules/cms-image-wrapper.molecule';
-import Fade from 'react-reveal/Fade';
+
+
 interface Props {
 	title: string;
 	thumbnailAltText: string;
@@ -12,7 +12,7 @@ interface Props {
 const ProductCard: React.FC<Props> = (props) => {
 	return (
 		<>
-			<Fade cascade>
+		
 				<div className="w-[281px] rounded-3xl bg-[#FCF7F7] p-2  lg:w-[480px] lg:p-4">
 					<div className=" flex h-[209px] justify-center rounded-3xl bg-white px-[30px] py-[20px] md:px-[50px]  md:py-[43px] lg:h-[360px] lg:max-h-full">
 						<CMSImageWrapper image={props.image} altText="A product image" />
@@ -25,7 +25,7 @@ const ProductCard: React.FC<Props> = (props) => {
 						</div>
 					</div>
 				</div>
-			</Fade>
+			
 		</>
 	);
 };

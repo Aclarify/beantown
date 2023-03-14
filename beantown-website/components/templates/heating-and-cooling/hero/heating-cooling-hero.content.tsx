@@ -6,6 +6,7 @@ import CTAWithImage from 'components/organisms/cta-with-image.organism';
 import CTATextContent, {
 	CTAButton,
 } from 'components/organisms/cta-text-content.organism';
+import Animate from 'components/molecules/animate.molecule';
 
 const HeatingCoolingHeroContent = () => {
 	const { pageContent } =
@@ -27,20 +28,24 @@ const HeatingCoolingHeroContent = () => {
 			bgColor="var(--services-red-color-rgb)"
 			isImageToBePrefetched={true}
 		>
-			<div className="text-white">
-				<CTATextContent
-					title={heroTitle || ''}
-					description={heroDescription}
-					isHero={true}
-				>
-					<CTAButton
-						text={heroButton?.text || ''}
-						textColor="text-white"
-						bgColor="bg-primary-shade-1"
-						href={heroButton?.href || ''}
-					/>
-				</CTATextContent>
-			</div>
+			<Animate bottom>
+				<div className="text-white">
+					<CTATextContent
+						title={heroTitle || ''}
+						description={heroDescription}
+						isHero={true}
+					>
+						
+							<CTAButton
+								text={heroButton?.text || ''}
+								textColor="text-white"
+								bgColor="bg-primary-shade-1"
+								href={heroButton?.href || ''}
+							/>
+						
+					</CTATextContent>
+				</div>
+			</Animate>
 		</CTAWithImage>
 	);
 };
