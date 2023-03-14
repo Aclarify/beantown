@@ -28,18 +28,6 @@ const getStaticProps = generateGetStaticProps<ElectricalContentProps>(
 	PageNames.ELECTRICAL
 );
 export { getStaticProps };
-const PageHead = () => {
-	return (
-		<Head>
-			<title>Electrical Services</title>
-			<meta
-				name="description"
-				content="Beantown Services is a full-service cleaning company that provides residential and commercial cleaning services in the Boston area."
-			/>
-			<link rel="icon" href="/favicon.ico" />
-		</Head>
-	);
-};
 
 const ElectricalServicesPage: React.FC = (props) => {
 	const { pageContent } =
@@ -52,7 +40,17 @@ const ElectricalServicesPage: React.FC = (props) => {
 	const headerData = pageContent.header[0];
 	const footerData = pageContent.footer[0];
 
-	const { logoDesktop, logoMobile } = pageData;
+	const { logoDesktop, logoMobile, pageTitle, metaDescription } = pageData;
+	const PageHead = () => {
+		return (
+			<Head>
+				{/* TODO to fetch from CMS */}
+				<title>{pageTitle}</title>
+				<meta name="description" content={metaDescription || ''} />
+				<link rel="icon" href="/favicon.ico" />
+			</Head>
+		);
+	};
 	return (
 		<section id="electrical-services" className="bg-primary-white-shade-1">
 			<PageHead />

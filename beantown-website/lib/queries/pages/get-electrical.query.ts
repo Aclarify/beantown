@@ -3,7 +3,9 @@ import footerQuery from './get-footer.query';
 import navQuery from './get-nav.query';
 
 const electricalQuery = ` allOtherServices(where: {name: {eq: "Electrical"}}) {
-		logoDesktop{
+	pageTitle
+	metaDescription	
+  logoDesktop{
       image{
 				asset{
 					url

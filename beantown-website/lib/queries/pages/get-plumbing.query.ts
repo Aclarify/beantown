@@ -3,7 +3,9 @@ import footerQuery from './get-footer.query';
 import navQuery from './get-nav.query';
 
 const plumbingQuery = ` allOtherServices(where: {name: {eq: "Plumbing"}}) {
-		logoDesktop{
+	pageTitle
+	metaDescription	
+  logoDesktop{
       image{
 				asset{
 					url

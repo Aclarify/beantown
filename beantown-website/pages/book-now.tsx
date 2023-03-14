@@ -18,18 +18,6 @@ export interface BookNowContentProps {
 	header: Nav[];
 	footer: Footer[];
 }
-const PageHead = () => {
-	return (
-		<Head>
-			<title>Book Now</title>
-			<meta
-				name="description"
-				content="Beantown Services is a full-service cleaning company that provides residential and commercial cleaning services in the Boston area."
-			/>
-			<link rel="icon" href="/favicon.ico" />
-		</Head>
-	);
-};
 const getStaticProps = generateGetStaticProps<BookNowContentProps>(
 	pageQuery,
 	PageNames.BOOKNOW
@@ -47,7 +35,17 @@ const BookNowPage: React.FC = (props) => {
 	const headerData = pageContent.header[0];
 	const footerData = pageContent.footer[0];
 
-	const { logoDesktop, footerLogo } = pageData;
+	const { logoDesktop, footerLogo, pageTitle, metaDescription } = pageData;
+	const PageHead = () => {
+		return (
+			<Head>
+				{/* TODO to fetch from CMS */}
+				<title>{pageTitle}</title>
+				<meta name="description" content={metaDescription || ''} />
+				<link rel="icon" href="/favicon.ico" />
+			</Head>
+		);
+	};
 	return (
 		<div id="book-now" className="bg-primary-white-shade-1">
 			<PageHead />

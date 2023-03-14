@@ -11,6 +11,16 @@ export default defineType({
       type: 'string',
     }),
     defineField({
+      name: 'pageTitle',
+      title: 'HTML Page Title',
+      type: 'string',
+    }),
+    defineField({
+      name: 'metaDescription',
+      title: 'HTML Page Description',
+      type: 'string',
+    }),
+    defineField({
       name: 'logoDesktop',
       title: 'Logo Desktop',
       type: 'reference',

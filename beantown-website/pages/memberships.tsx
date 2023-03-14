@@ -21,19 +21,6 @@ export interface MembershipsContentProps {
 	footer: Footer[];
 }
 
-const PageHead = () => {
-	return (
-		<Head>
-			{/* TODO to fetch from CMS */}
-			<title>Memberships</title>
-			<meta
-				name="description"
-				content="Beantown Services is a full-service cleaning company that provides residential and commercial cleaning services in the Boston area."
-			/>
-			<link rel="icon" href="/favicon.ico" />
-		</Head>
-	);
-};
 const getStaticProps = generateGetStaticProps<MembershipsContentProps>(
 	pageQuery,
 	PageNames.MEMBERSHIPS
@@ -50,8 +37,17 @@ const MembershipsServicePage: React.FC = (props) => {
 	const pageData = pageContent.page[0];
 	const headerData = pageContent.header[0];
 	const footerData = pageContent.footer[0];
-	const { logoDesktop, logoMobile } = pageData;
-
+	const { logoDesktop, logoMobile, pageTitle, metaDescription } = pageData;
+	const PageHead = () => {
+		return (
+			<Head>
+				{/* TODO to fetch from CMS */}
+				<title>{pageTitle}</title>
+				<meta name="description" content={metaDescription || ''} />
+				<link rel="icon" href="/favicon.ico" />
+			</Head>
+		);
+	};
 	return (
 		<div id="memberships" className="bg-primary-white-shade-1">
 			<PageHead />

@@ -3,6 +3,8 @@ import footerQuery from './get-footer.query';
 import navQuery from './get-nav.query';
 
 const homeQuery = ` allHome {
+			pageTitle
+			metaDescription
     		logoDesktop{
 				image{
 					asset

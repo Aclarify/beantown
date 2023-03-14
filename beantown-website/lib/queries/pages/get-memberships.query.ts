@@ -4,6 +4,8 @@ import navQuery from './get-nav.query';
 
 const membershipsQuery = `
     allMemberships {
+      pageTitle
+			metaDescription
         logoDesktop {
             image {
                 asset {
