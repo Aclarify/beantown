@@ -6,7 +6,6 @@ import { PlumbingContentProps } from 'pages/plumbing';
 import CTATextContent, {
 	CTAButton,
 } from 'components/organisms/cta-text-content.organism';
-import Animate from 'components/molecules/animate.molecule';
 
 const PlumbingCTAContent = () => {
 	const { pageContent } =
@@ -27,7 +26,7 @@ const PlumbingCTAContent = () => {
 			heroImagePosition="left"
 			bgColor="var(--services-green-color-rgb)"
 		>
-			<Animate bottom>
+			
 				<div className="text-white">
 					<CTATextContent title={ctaTitle || ''} isHero={false}>
 						<CTAButton
@@ -38,7 +37,7 @@ const PlumbingCTAContent = () => {
 						/>
 					</CTATextContent>
 				</div>
-			</Animate>
+		
 		</CTAWithImage>
 	);
 };
