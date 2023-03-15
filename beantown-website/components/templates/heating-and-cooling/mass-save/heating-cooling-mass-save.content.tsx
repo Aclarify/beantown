@@ -40,7 +40,7 @@ const HeatingCoolingMassSaveContent = () => {
 							</Animate>
 						</ContentWrapper.Title>
 						<ContentWrapper.Description className=" text-gray-shade-1 text-left">
-							<Animate bottom>
+							<Animate>
 								<RichText value={massSaveDescription?.contentRaw} />
 							</Animate>
 						</ContentWrapper.Description>
