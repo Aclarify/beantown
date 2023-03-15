@@ -3,10 +3,10 @@ import { GlobalContext } from '@contexts/global/global.context';
 import { GlobalContextProps } from '@typing/common/interfaces/contexts.interface';
 import { HomePageContentProps } from 'pages';
 import RichText from 'components/molecules/rich-text.molecule';
-import Image from 'next/image';import ContentWrapper from 'components/organisms/content-wrapper.organism';
+import Image from 'next/image';
+import ContentWrapper from 'components/organisms/content-wrapper.organism';
 import CtaWrapper from 'components/molecules/cta-wrapper.molecule';
 import Link from 'next/link';
-import Animate from 'components/molecules/animate.molecule';
 
 export default function HomeHero() {
 	const { pageContent } =
@@ -25,14 +25,10 @@ export default function HomeHero() {
 			>
 				<ContentWrapper className="relative z-[2] pt-24 pb-16 sm:pt-28 sm:pb-20 md:pt-48 md:pb-48 xl:pt-80 xl:pb-80">
 					<ContentWrapper.Title className=" mb-2  lg:mb-4">
-						<Animate bottom>
-							<h1>{heroTitle}</h1>
-						</Animate>
+						<h1>{heroTitle}</h1>
 					</ContentWrapper.Title>
 					<ContentWrapper.Description className=" w-[80%]">
-						<Animate bottom>
-							<RichText value={heroDescription?.contentRaw} />
-						</Animate>
+						<RichText value={heroDescription?.contentRaw} />
 					</ContentWrapper.Description>
 					<ContentWrapper.CTA className="mt-4 lg:mt-8">
 						<Link href={heroButton?.href || ''}>

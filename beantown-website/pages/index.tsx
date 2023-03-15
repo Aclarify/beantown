@@ -76,7 +76,6 @@ const HomePage: React.FC = (props) => {
 					</Link>
 				</div>
 			</Header>
-
 			<HomeHero />
 			<Services />
 			<WhyUs />

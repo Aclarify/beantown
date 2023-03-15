@@ -45,7 +45,7 @@ export default function WhyUs() {
 					>
 						<ContentWrapper>
 							<ContentWrapper.Title>
-								<Animate bottom>
+								<Animate>
 									<h2 className=" text-primary-black ">{whyUsTitle}</h2>
 								</Animate>
 							</ContentWrapper.Title>

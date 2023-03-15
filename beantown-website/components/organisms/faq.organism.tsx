@@ -36,12 +36,10 @@ const FAQ: React.FC<IProps> = (props) => {
 				<div className="flex  flex-col justify-center text-center lg:text-left ">
 					<ContentWrapper>
 						<ContentWrapper.Title className=" mb-3 lg:mb-4">
-							<Animate bottom>
-								
+							<Animate>								
 									<h2 className=" text-primary-shade-1 mt-10">
 										{props.faqTitle}
-									</h2>
-								
+									</h2>								
 							</Animate>
 						</ContentWrapper.Title>
 						<ContentWrapper.Description>

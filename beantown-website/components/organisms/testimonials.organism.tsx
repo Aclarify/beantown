@@ -179,6 +179,8 @@ const Testimonials: React.FC<IProps> = (props) => {
 								<h5 className="text-primary-shade-1 !font-thin ">
 									{props.testimonialTitle}
 								</h5>
+							</Animate>
+							<Animate>
 								<h2 className=" text-primary-black">
 									{props.testimonialDescription}
 								</h2>
@@ -193,10 +195,13 @@ const Testimonials: React.FC<IProps> = (props) => {
 								<h5 className=" text-primary-shade-1 !font-thin ">
 									{props.testimonialTitle}
 								</h5>
+							</Animate>
+							<Animate>
 								<h2 className="  text-primary-black">
 									{props.testimonialDescription}
 								</h2>
 							</Animate>
+
 							<div className="mt-8 flex space-x-6">
 								<button
 									onClick={previous}

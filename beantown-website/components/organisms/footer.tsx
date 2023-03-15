@@ -63,10 +63,12 @@ export default function Footer(props: IProps) {
 						{navGroup &&
 							navGroup.map((linkGroup, index) => (
 								<div key={index} className="max-w-sm pt-4 lg:pt-10">
-									<Animate bottom>
+									<Animate>
 										<h1 className="subtitle font-bold text-white lg:pb-6 lg:font-normal">
 											{linkGroup?.groupTitle}
 										</h1>
+									</Animate>
+									<Animate>
 										<div className="flex justify-start lg:flex-col">
 											{linkGroup?.links?.map((link, index) => {
 												return (
@@ -87,7 +89,7 @@ export default function Footer(props: IProps) {
 								</div>
 							))}
 						<div id="contact" className="pt-4 lg:pt-10">
-							<Animate bottom>
+							<Animate>
 								<div className="pb-2 lg:pb-4">
 									<span className=" subtitle font-bold text-white lg:font-normal">
 										{contactUsTitle}
@@ -97,7 +99,7 @@ export default function Footer(props: IProps) {
 							{contactUs?.map((contactDtl, index) => {
 								return (
 									contactDtl?.iconImage && (
-										<Animate bottom>
+										<Animate>
 											<div
 												key={index}
 												className="para flex justify-start space-x-2 pt-2 text-gray-300"
@@ -119,7 +121,7 @@ export default function Footer(props: IProps) {
 
 					<div id="logoSection" className="basis-1/4 pb-[16px]">
 						<div className="flex space-x-4 pt-8">
-							<Animate bottom>
+							<Animate>
 								<div
 									id="logoImage"
 									className="relative h-[50px] w-[136px] focus:outline-none lg:h-[80px] lg:w-[230px]"
@@ -141,7 +143,7 @@ export default function Footer(props: IProps) {
 							</Animate>
 						</div>
 						<div id="footerDescription" className="lg:pb-6 lg:pt-4">
-							<Animate bottom>
+							<Animate >
 								<p className="para text-gray-300">{description}</p>
 							</Animate>
 						</div>
@@ -157,7 +159,7 @@ export default function Footer(props: IProps) {
 				</div>
 
 				<div className="2xl:padding-for-section bg-primary-shade-1 px-5">
-					<Animate bottom>
+					<Animate>
 						<div
 							id="copyWrite"
 							className="border-gray-shade-2 para  flex justify-center border-t-2  py-6  text-gray-300"

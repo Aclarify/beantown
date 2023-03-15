@@ -18,7 +18,7 @@ const ServiceAreas: React.FC<IProps> = (props) => {
 		<div className=" z-1 bg-primary-white-shade-1 2xl:padding-for-section p-5   lg:pr-6">
 			<div className=" pb-6  lg:flex 2xl:pt-16">
 				<div className="lg:w-1/2 lg:border-r-2">
-					<Animate bottom>
+					<Animate>
 						<h2 className="  text-primary-black  lg:pr-20 lg:pl-6">
 							{props.serviceAreaSectionTitle}
 						</h2>
