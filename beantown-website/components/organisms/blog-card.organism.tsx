@@ -28,7 +28,7 @@ const BlogCard: React.FC<Props> = (props) => {
 				</div>
 
 				<div>
-					<Animate bottom>
+					<Animate>
 						<h5 className=" text-primary-black py-4">{props.blogName}</h5>
 					</Animate>
 					<Animate>

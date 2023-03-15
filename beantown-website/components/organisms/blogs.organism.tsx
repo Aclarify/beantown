@@ -20,7 +20,7 @@ const Blogs: React.FC<IProps> = (props) => {
 		<section className="relative z-10 pb-[3rem] lg:pb-1 lg:pt-[3em] ">
 			<div className=" flex flex-col justify-center text-center align-middle  ">
 				<div className="  text-primary-shade-1 px-[1em] pt-[2em] text-center md:mx-40 lg:px-[1em] lg:pt-0 xl:px-[2em] 2xl:px-[4em]">
-					<Animate>
+					<Animate bottom>
 						<h2>{props.blogsTitle}</h2>
 					</Animate>
 				</div>
