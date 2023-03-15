@@ -25,19 +25,6 @@ export interface PlumbingContentProps {
 	footer: Footer[];
 }
 
-const PageHead = () => {
-	return (
-		<Head>
-			{/* TODO to fetch from CMS */}
-			<title>Plumbing Services</title>
-			<meta
-				name="description"
-				content="Beantown Services is a full-service cleaning company that provides residential and commercial cleaning services in the Boston area."
-			/>
-			<link rel="icon" href="/favicon.ico" />
-		</Head>
-	);
-};
 const getStaticProps = generateGetStaticProps<PlumbingContentProps>(
 	pageQuery,
 	PageNames.PLUMBING
@@ -54,14 +41,24 @@ const PlumbingServicesPage: React.FC = (props) => {
 	const pageData = pageContent.page[0];
 	const headerData = pageContent.header[0];
 	const footerData = pageContent.footer[0];
-	const { logoDesktop, logoMobile } = pageData;
+	const { logoLight, logoDark, pageTitle, metaDescription } = pageData;
+	const PageHead = () => {
+		return (
+			<Head>
+				{/* TODO to fetch from CMS */}
+				<title>{pageTitle}</title>
+				<meta name="description" content={metaDescription || ''} />
+				<link rel="icon" href="/favicon.ico" />
+			</Head>
+		);
+	};
 	return (
 		<div id="plumbing-services" className="bg-primary-white-shade-1">
 			<PageHead />
 			<Header
 				fontColor="text-white"
-				logoDesktop={logoDesktop?.image}
-				logoMobile={logoMobile?.image}
+				logoDesktop={logoLight?.image}
+				logoMobile={logoDark?.image}
 				content={headerData}
 				mobileBgColor="bg-service-green-bg"
 			>
@@ -78,7 +75,7 @@ const PlumbingServicesPage: React.FC = (props) => {
 			<PlumbingCTASection />
 			<PlumbingBlogsSection />
 			<PlumbingFaqSection />
-			<FooterSection logoDesktop={logoDesktop?.image} content={footerData} />
+			<FooterSection logoDesktop={logoLight?.image} content={footerData} />
 		</div>
 	);
 };

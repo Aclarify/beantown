@@ -3,7 +3,9 @@ import footerQuery from './get-footer.query';
 import navQuery from './get-nav.query';
 
 const aboutUsQuery = `allAboutUs {
-			logoDesktop {
+			pageTitle
+			metaDescription
+			logoLight {
 				image {
 					asset {
 						url
@@ -12,7 +14,7 @@ const aboutUsQuery = `allAboutUs {
 					}
 				}
 			}
-			logoMobile {
+			logoDark {
 				image {
 					asset {
 						url

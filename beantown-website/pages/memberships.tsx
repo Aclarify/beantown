@@ -21,19 +21,6 @@ export interface MembershipsContentProps {
 	footer: Footer[];
 }
 
-const PageHead = () => {
-	return (
-		<Head>
-			{/* TODO to fetch from CMS */}
-			<title>Memberships</title>
-			<meta
-				name="description"
-				content="Beantown Services is a full-service cleaning company that provides residential and commercial cleaning services in the Boston area."
-			/>
-			<link rel="icon" href="/favicon.ico" />
-		</Head>
-	);
-};
 const getStaticProps = generateGetStaticProps<MembershipsContentProps>(
 	pageQuery,
 	PageNames.MEMBERSHIPS
@@ -50,16 +37,25 @@ const MembershipsServicePage: React.FC = (props) => {
 	const pageData = pageContent.page[0];
 	const headerData = pageContent.header[0];
 	const footerData = pageContent.footer[0];
-	const { logoDesktop, logoMobile } = pageData;
-
+	const { logoLight, logoDark, pageTitle, metaDescription } = pageData;
+	const PageHead = () => {
+		return (
+			<Head>
+				{/* TODO to fetch from CMS */}
+				<title>{pageTitle}</title>
+				<meta name="description" content={metaDescription || ''} />
+				<link rel="icon" href="/favicon.ico" />
+			</Head>
+		);
+	};
 	return (
 		<div id="memberships" className="bg-primary-white-shade-1">
 			<PageHead />
 			<Header
 				mobileBgColor="bg-primary-white-shade-1"
 				fontColor="text-primary-shade-1"
-				logoDesktop={logoDesktop?.image}
-				logoMobile={logoDesktop?.image}
+				logoDesktop={logoDark?.image}
+				logoMobile={logoDark?.image}
 				content={headerData}
 			>
 				<div className=" hidden lg:flex lg:justify-end ">
@@ -71,7 +67,7 @@ const MembershipsServicePage: React.FC = (props) => {
 			<MembershipsHeroSection />
 			<MembershipsSelectionSection />
 			<MembershipsPageCTASection />
-			<FooterSection logoDesktop={logoMobile?.image} content={footerData} />
+			<FooterSection logoDesktop={logoLight?.image} content={footerData} />
 		</div>
 	);
 };

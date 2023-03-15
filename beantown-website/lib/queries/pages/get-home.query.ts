@@ -3,7 +3,9 @@ import footerQuery from './get-footer.query';
 import navQuery from './get-nav.query';
 
 const homeQuery = ` allHome {
-    		logoDesktop{
+			pageTitle
+			metaDescription
+    		logoLight{
 				image{
 					asset
 						{
@@ -14,7 +16,7 @@ const homeQuery = ` allHome {
 					}
 					href
 				}
-	  		logoMobile{
+	  		logoDark{
 				image{
 					asset
 						{

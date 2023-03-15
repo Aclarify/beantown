@@ -24,19 +24,7 @@ export interface AboutUsContentProps {
 	header: Nav[];
 	footer: Footer[];
 }
-const PageHead = () => {
-	return (
-		<Head>
-			{/* TODO to fetch from CMS */}
-			<title>About Us</title>
-			<meta
-				name="description"
-				content="Beantown Services is a full-service cleaning company that provides residential and commercial cleaning services in the Boston area."
-			/>
-			<link rel="icon" href="/favicon.ico" />
-		</Head>
-	);
-};
+
 const getStaticProps = generateGetStaticProps<AboutUsContentProps>(
 	pageQuery,
 	PageNames.ABOUTUS
@@ -52,14 +40,24 @@ const AboutUsPage: React.FC = (props) => {
 	const pageData = pageContent.page[0];
 	const headerData = pageContent.header[0];
 	const footerData = pageContent.footer[0];
-	const { logoDesktop, logoMobile } = pageData;
+	const { logoLight, logoDark, pageTitle, metaDescription } = pageData;
+	const PageHead = () => {
+		return (
+			<Head>
+				{/* TODO to fetch from CMS */}
+				<title>{pageTitle}</title>
+				<meta name="description" content={metaDescription || ''} />
+				<link rel="icon" href="/favicon.ico" />
+			</Head>
+		);
+	};
 	return (
 		<div id="about-us" className="bg-primary-white-shade-1">
 			<PageHead />
 			<Header
 				fontColor="text-white"
-				logoDesktop={logoDesktop?.image}
-				logoMobile={logoMobile?.image}
+				logoDesktop={logoLight?.image}
+				logoMobile={logoDark?.image}
 				content={headerData}
 				mobileBgColor="bg-secondary-shade-3"
 			>
@@ -78,7 +76,7 @@ const AboutUsPage: React.FC = (props) => {
 			<AboutUsServiceAreas />
 			<AboutUsTestimonials />
 			<CTASection />
-			<FooterSection logoDesktop={logoDesktop?.image} content={footerData} />
+			<FooterSection logoDesktop={logoLight?.image} content={footerData} />
 		</div>
 	);
 };
