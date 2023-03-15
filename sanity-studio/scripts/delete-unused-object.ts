@@ -27,10 +27,10 @@ const query = `
 // Replace the params in patch with the id of the document you want to update
 // Add the fields you want to remove/unset to the unset array
 // For example:
-// The following patch will remove the fields logoDesktop and logoMobile from the document with the id c24a6c1f-e299-4da7-8c5a-a0d063a4ade5
+// The following patch will remove the fields logoDesktop and logoDark from the document with the id c24a6c1f-e299-4da7-8c5a-a0d063a4ade5
 // client
 //   .patch('c24a6c1f-e299-4da7-8c5a-a0d063a4ade5')
-//   .unset(['logoDesktop', 'logoMobile'])
+//   .unset(['logoLight', 'logoDark'])
 //   .commit()
 //   .then((res) => {
 //     console.log(res)

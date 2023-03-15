@@ -28,19 +28,6 @@ export interface HomePageContentProps {
 	footer: Footer[];
 }
 
-const PageHead = () => {
-	return (
-		<Head>
-			{/* TODO to fetch from CMS */}
-			<title>Home - Beantown Services</title>
-			<meta
-				name="description"
-				content="Beantown Services is a full-service cleaning company that provides residential and commercial cleaning services in the Boston area."
-			/>
-			<link rel="icon" href="/favicon.ico" />
-		</Head>
-	);
-};
 const getStaticProps = generateGetStaticProps<HomePageContentProps>(
 	pageQuery,
 	PageNames.HOME
@@ -57,14 +44,24 @@ const HomePage: React.FC = (props) => {
 	const homeData = pageContent.page[0];
 	const headerData = pageContent.header[0];
 	const footerData = pageContent.footer[0];
-	const { logoDesktop, logoMobile } = homeData;
+	const { logoLight, logoDark, pageTitle, metaDescription } = homeData;
+	const PageHead = () => {
+		return (
+			<Head>
+				{/* TODO to fetch from CMS */}
+				<title>{pageTitle}</title>
+				<meta name="description" content={metaDescription || ''} />
+				<link rel="icon" href="/favicon.ico" />
+			</Head>
+		);
+	};
 	return (
 		<section className="bg-secondary-shade-3">
 			<PageHead />
 			<Header
 				fontColor="text-white"
-				logoDesktop={logoDesktop?.image}
-				logoMobile={logoMobile?.image}
+				logoDesktop={logoLight?.image}
+				logoMobile={logoDark?.image}
 				content={headerData}
 				mobileBgColor="bg-secondary-shade-3"
 			>
@@ -86,7 +83,7 @@ const HomePage: React.FC = (props) => {
 			<HomeFaq />
 			<HomeBrands />
 			<FooterCta />
-			<FooterSection logoDesktop={logoDesktop?.image} content={footerData} />
+			<FooterSection logoDesktop={logoLight?.image} content={footerData} />
 		</section>
 	);
 };

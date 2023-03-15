@@ -3,7 +3,9 @@ import footerQuery from './get-footer.query';
 import navQuery from './get-nav.query';
 
 const heatingCoolingQuery = ` allHeatingAndCooling {
-    			logoDesktop{
+  pageTitle
+	metaDescription  		
+  logoLight{
 				image{
 					asset
 						{
@@ -12,7 +14,7 @@ const heatingCoolingQuery = ` allHeatingAndCooling {
 					}
 					href
 				}
-	  		logoMobile{
+	  		logoDark{
 				image{
 					asset
 						{

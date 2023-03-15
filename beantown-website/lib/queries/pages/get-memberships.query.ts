@@ -4,14 +4,16 @@ import navQuery from './get-nav.query';
 
 const membershipsQuery = `
     allMemberships {
-        logoDesktop {
+      pageTitle
+			metaDescription
+        logoLight {
             image {
                 asset {
                     url
                 }
             }
         }
-        logoMobile {
+        logoDark {
             image {
                 asset {
                     url
