@@ -47,7 +47,7 @@ const MembersipsDetails = () => {
 							</Animate>
 						</ContentWrapper.Title>
 						<ContentWrapper.Description className="text-left !font-thin">
-							<Animate bottom>
+							<Animate>
 								<RichText
 									value={
 										activeServiceMembership?.serviceMembershipDescription

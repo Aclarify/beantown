@@ -30,7 +30,7 @@ const MembershipsCardList = () => {
 									key={index}
 									className="membership-card-wrapper mb-5 w-full  md:basis-1/2 md:px-4 lg:mr-0 lg:mb-0 lg:space-x-6   lg:pr-6 lg:pb-5 xl:basis-1/3"
 								>
-									<Animate bottom >
+									<Animate>
 										<MembershipCard
 											key={index}
 											title={membershipCard?.membershipTitle || ''}
