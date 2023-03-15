@@ -26,8 +26,7 @@ const ElectricalPageCTAContent = () => {
 			}
 			heroImagePosition="left"
 			bgColor="var(--services-yellow-color-rgb)"
-		>
-			<Animate bottom>
+		>			
 				<div className="text-primary-black">
 					<CTATextContent title={ctaTitle || ''} isHero={false}>
 						<CTAButton
@@ -37,8 +36,7 @@ const ElectricalPageCTAContent = () => {
 							href={ctaButton?.href || ''}
 						/>
 					</CTATextContent>
-				</div>
-			</Animate>
+				</div>		
 		</CTAWithImage>
 	);
 };
