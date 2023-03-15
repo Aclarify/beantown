@@ -6,8 +6,6 @@ import { AboutUsContentProps } from 'pages/about-us';
 import CTATextContent, {
 	CTAButton,
 } from 'components/organisms/cta-text-content.organism';
-import Animate from 'components/molecules/animate.molecule';
-
 const AboutUSCTAContent = () => {
 	const { pageContent } =
 		useContext<GlobalContextProps<AboutUsContentProps>>(GlobalContext);
@@ -28,7 +26,7 @@ const AboutUSCTAContent = () => {
 			heroImagePosition="right"
 			bgColor="var(--secondary-color-shade-2-rgb)"
 		>
-			<Animate bottom>
+			
 				<div className="text-primary-shade-1">
 					<CTATextContent
 						title={ctaTitle || ''}
@@ -42,7 +40,7 @@ const AboutUSCTAContent = () => {
 						/>
 					</CTATextContent>
 				</div>
-			</Animate>
+			
 		</CTAWithImage>
 	);
 };

@@ -30,8 +30,7 @@ const CommunityCTAContent = () => {
 			}
 			heroImagePosition="left"
 			bgColor="var(--primary-color-shade-2-rgb)"
-		>
-			<Animate bottom>
+		>			
 				<div className="text-white">
 					<CTATextContent title={communityCtaTitle || ''} isHero={false}>
 						<CTAButton
@@ -40,8 +39,7 @@ const CommunityCTAContent = () => {
 							bgColor="bg-primary-white-shade-1"
 						/>
 					</CTATextContent>
-				</div>
-			</Animate>
+				</div>			
 		</CTAWithImage>
 	);
 };

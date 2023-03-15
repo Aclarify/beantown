@@ -52,7 +52,7 @@ const MissionContent = () => {
 							</Animate>
 						</ContentWrapper.Title>
 						<ContentWrapper.Description className="text-left ">
-							<Animate bottom>
+							<Animate>
 								<RichText value={missionDescription?.contentRaw} />
 							</Animate>
 						</ContentWrapper.Description>

@@ -39,7 +39,7 @@ const ValuesContent = () => {
 							</Animate>
 						</ContentWrapper.Title>
 						<ContentWrapper.Description className=" text-left">
-							<Animate bottom>
+							<Animate>
 								<RichText value={valuesDescription?.contentRaw} />
 							</Animate>
 						</ContentWrapper.Description>

@@ -21,15 +21,11 @@ const AboutUsHeroContent = () => {
 				className="z-1 2xl:padding-for-section flex w-full items-center justify-center px-6  text-white  "
 			>
 				<ContentWrapper className="relative z-[2] pt-28 pb-20 text-center md:py-48 lg:w-1/2  xl:py-80">
-					<ContentWrapper.Title className=" mb-2  lg:mb-4">
-						<Animate bottom>
-							<h1>{heroTitle}</h1>
-						</Animate>
+					<ContentWrapper.Title className=" mb-2  lg:mb-4">						
+							<h1>{heroTitle}</h1>						
 					</ContentWrapper.Title>
-					<ContentWrapper.Description>
-						<Animate bottom>
-							<p>{heroDescription}</p>
-						</Animate>
+					<ContentWrapper.Description>						
+							<p>{heroDescription}</p>						
 					</ContentWrapper.Description>
 				</ContentWrapper>
 			</div>
