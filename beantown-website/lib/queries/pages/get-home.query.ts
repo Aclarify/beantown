@@ -5,7 +5,7 @@ import navQuery from './get-nav.query';
 const homeQuery = ` allHome {
 			pageTitle
 			metaDescription
-    		logoDesktop{
+    		logoLight{
 				image{
 					asset
 						{
@@ -16,7 +16,7 @@ const homeQuery = ` allHome {
 					}
 					href
 				}
-	  		logoMobile{
+	  		logoDark{
 				image{
 					asset
 						{

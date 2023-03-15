@@ -6,14 +6,14 @@ const membershipsQuery = `
     allMemberships {
       pageTitle
 			metaDescription
-        logoDesktop {
+        logoLight {
             image {
                 asset {
                     url
                 }
             }
         }
-        logoMobile {
+        logoDark {
             image {
                 asset {
                     url

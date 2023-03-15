@@ -5,7 +5,7 @@ import navQuery from './get-nav.query';
 const plumbingQuery = ` allOtherServices(where: {name: {eq: "Plumbing"}}) {
 	pageTitle
 	metaDescription	
-  logoDesktop{
+  logoLight{
       image{
 				asset{
 					url
@@ -13,7 +13,7 @@ const plumbingQuery = ` allOtherServices(where: {name: {eq: "Plumbing"}}) {
      		 }
       href
 			}
-	  logoMobile{
+	  logoDark{
       image{
 				asset{
 					url

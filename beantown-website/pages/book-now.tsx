@@ -35,7 +35,7 @@ const BookNowPage: React.FC = (props) => {
 	const headerData = pageContent.header[0];
 	const footerData = pageContent.footer[0];
 
-	const { logoDesktop, footerLogo, pageTitle, metaDescription } = pageData;
+	const { logoLight, logoDark, pageTitle, metaDescription } = pageData;
 	const PageHead = () => {
 		return (
 			<Head>
@@ -51,8 +51,8 @@ const BookNowPage: React.FC = (props) => {
 			<PageHead />
 			<Header
 				fontColor="text-primary-shade-1"
-				logoDesktop={logoDesktop?.image}
-				logoMobile={logoDesktop?.image}
+				logoDesktop={logoDark?.image}
+				logoMobile={logoDark?.image}
 				content={headerData}
 				mobileBgColor="bg-secondary-shade-3"
 			>
@@ -64,7 +64,7 @@ const BookNowPage: React.FC = (props) => {
 			</Header>
 			<BookNowSection />
 			<FooterSection
-				logoDesktop={footerLogo?.image || ''}
+				logoDesktop={logoLight?.image || ''}
 				content={footerData}
 			/>
 		</div>

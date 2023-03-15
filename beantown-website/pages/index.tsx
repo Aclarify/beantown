@@ -44,7 +44,7 @@ const HomePage: React.FC = (props) => {
 	const homeData = pageContent.page[0];
 	const headerData = pageContent.header[0];
 	const footerData = pageContent.footer[0];
-	const { logoDesktop, logoMobile, pageTitle, metaDescription } = homeData;
+	const { logoLight, logoDark, pageTitle, metaDescription } = homeData;
 	const PageHead = () => {
 		return (
 			<Head>
@@ -60,8 +60,8 @@ const HomePage: React.FC = (props) => {
 			<PageHead />
 			<Header
 				fontColor="text-white"
-				logoDesktop={logoDesktop?.image}
-				logoMobile={logoMobile?.image}
+				logoDesktop={logoLight?.image}
+				logoMobile={logoDark?.image}
 				content={headerData}
 				mobileBgColor="bg-secondary-shade-3"
 			>
@@ -83,7 +83,7 @@ const HomePage: React.FC = (props) => {
 			<HomeFaq />
 			<HomeBrands />
 			<FooterCta />
-			<FooterSection logoDesktop={logoDesktop?.image} content={footerData} />
+			<FooterSection logoDesktop={logoLight?.image} content={footerData} />
 		</section>
 	);
 };

@@ -50,15 +50,15 @@ const UnderConstructionPage: React.FC = (props) => {
 	const headerData = pageContent.header[0];
 	const footerData = pageContent.footer[0];
 
-	const { logoDesktop, footerLogo } = pageData;
+	const { logoLight, logoDark } = pageData;
 	return (
 		<div id="under-construction" className="bg-primary-white-shade-1">
 			<PageHead />
 			<Header
 				mobileBgColor="bg-primary-white-shade-1"
 				fontColor="text-primary-shade-1"
-				logoDesktop={logoDesktop?.image}
-				logoMobile={logoDesktop?.image}
+				logoDesktop={logoLight?.image}
+				logoMobile={logoDark?.image}
 				content={headerData}
 			>
 				<div className=" hidden lg:flex lg:justify-end ">
@@ -71,7 +71,7 @@ const UnderConstructionPage: React.FC = (props) => {
 			</Header>
 			<UnderConstructionSection />
 			<FooterSection
-				logoDesktop={footerLogo?.image || ''}
+				logoDesktop={logoLight?.image || ''}
 				content={footerData}
 			/>
 		</div>

@@ -5,7 +5,7 @@ import navQuery from './get-nav.query';
 const heatingCoolingQuery = ` allHeatingAndCooling {
   pageTitle
 	metaDescription  		
-  logoDesktop{
+  logoLight{
 				image{
 					asset
 						{
@@ -14,7 +14,7 @@ const heatingCoolingQuery = ` allHeatingAndCooling {
 					}
 					href
 				}
-	  		logoMobile{
+	  		logoDark{
 				image{
 					asset
 						{

@@ -41,7 +41,7 @@ const PlumbingServicesPage: React.FC = (props) => {
 	const pageData = pageContent.page[0];
 	const headerData = pageContent.header[0];
 	const footerData = pageContent.footer[0];
-	const { logoDesktop, logoMobile, pageTitle, metaDescription } = pageData;
+	const { logoLight, logoDark, pageTitle, metaDescription } = pageData;
 	const PageHead = () => {
 		return (
 			<Head>
@@ -57,8 +57,8 @@ const PlumbingServicesPage: React.FC = (props) => {
 			<PageHead />
 			<Header
 				fontColor="text-white"
-				logoDesktop={logoDesktop?.image}
-				logoMobile={logoMobile?.image}
+				logoDesktop={logoLight?.image}
+				logoMobile={logoDark?.image}
 				content={headerData}
 				mobileBgColor="bg-service-green-bg"
 			>
@@ -75,7 +75,7 @@ const PlumbingServicesPage: React.FC = (props) => {
 			<PlumbingCTASection />
 			<PlumbingBlogsSection />
 			<PlumbingFaqSection />
-			<FooterSection logoDesktop={logoDesktop?.image} content={footerData} />
+			<FooterSection logoDesktop={logoLight?.image} content={footerData} />
 		</div>
 	);
 };

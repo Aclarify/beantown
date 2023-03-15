@@ -49,8 +49,8 @@ export type AboutUs = Document & {
 	heroImage?: Maybe<Image>;
 	heroImageMobile?: Maybe<Image>;
 	heroTitle?: Maybe<Scalars['String']>;
-	logoDesktop?: Maybe<ImageIcon>;
-	logoMobile?: Maybe<ImageIcon>;
+	logoLight?: Maybe<ImageIcon>;
+	logoDark?: Maybe<ImageIcon>;
 	memberCards?: Maybe<Array<Maybe<TeamMembers>>>;
 	metaDescription?: Maybe<Scalars['String']>;
 	missionDescription?: Maybe<PortableText>;
@@ -88,8 +88,8 @@ export type AboutUsFilter = {
 	heroImage?: InputMaybe<ImageFilter>;
 	heroImageMobile?: InputMaybe<ImageFilter>;
 	heroTitle?: InputMaybe<StringFilter>;
-	logoDesktop?: InputMaybe<ImageIconFilter>;
-	logoMobile?: InputMaybe<ImageIconFilter>;
+	logoLight?: InputMaybe<ImageIconFilter>;
+	logoDark?: InputMaybe<ImageIconFilter>;
 	metaDescription?: InputMaybe<StringFilter>;
 	missionDescription?: InputMaybe<PortableTextFilter>;
 	missionImage?: InputMaybe<ImageFilter>;
@@ -210,8 +210,8 @@ export type Booknow = Document & {
 	bookNowDescription?: Maybe<Scalars['String']>;
 	bookNowTitle?: Maybe<Scalars['String']>;
 	bookNowUrl?: Maybe<Scalars['String']>;
-	footerLogo?: Maybe<ImageIcon>;
-	logoDesktop?: Maybe<ImageIcon>;
+	logoDark?: Maybe<ImageIcon>;
+	logoLight?: Maybe<ImageIcon>;
 	name?: Maybe<Scalars['String']>;
 };
 
@@ -229,8 +229,8 @@ export type BooknowFilter = {
 	bookNowDescription?: InputMaybe<StringFilter>;
 	bookNowTitle?: InputMaybe<StringFilter>;
 	bookNowUrl?: InputMaybe<StringFilter>;
-	footerLogo?: InputMaybe<ImageIconFilter>;
-	logoDesktop?: InputMaybe<ImageIconFilter>;
+	logoDark?: InputMaybe<ImageIconFilter>;
+	logoLight?: InputMaybe<ImageIconFilter>;
 	name?: InputMaybe<StringFilter>;
 };
 
@@ -618,8 +618,8 @@ export type HeatingAndCooling = Document & {
 	heroDescription?: Maybe<PortableText>;
 	heroImage?: Maybe<Image>;
 	heroTitle?: Maybe<Scalars['String']>;
-	logoDesktop?: Maybe<ImageIcon>;
-	logoMobile?: Maybe<ImageIcon>;
+	logoLight?: Maybe<ImageIcon>;
+	logoDark?: Maybe<ImageIcon>;
 	massSaveButton?: Maybe<Cta>;
 	massSaveDescription?: Maybe<PortableText>;
 	massSaveImage?: Maybe<Image>;
@@ -659,8 +659,8 @@ export type HeatingAndCoolingFilter = {
 	heroDescription?: InputMaybe<PortableTextFilter>;
 	heroImage?: InputMaybe<ImageFilter>;
 	heroTitle?: InputMaybe<StringFilter>;
-	logoDesktop?: InputMaybe<ImageIconFilter>;
-	logoMobile?: InputMaybe<ImageIconFilter>;
+	logoLight?: InputMaybe<ImageIconFilter>;
+	logoDark?: InputMaybe<ImageIconFilter>;
 	massSaveButton?: InputMaybe<CtaFilter>;
 	massSaveDescription?: InputMaybe<PortableTextFilter>;
 	massSaveImage?: InputMaybe<ImageFilter>;
@@ -736,8 +736,8 @@ export type Home = Document & {
 	heroImage?: Maybe<Image>;
 	heroImageMobile?: Maybe<Image>;
 	heroTitle?: Maybe<Scalars['String']>;
-	logoDesktop?: Maybe<ImageIcon>;
-	logoMobile?: Maybe<ImageIcon>;
+	logoLight?: Maybe<ImageIcon>;
+	logoDark?: Maybe<ImageIcon>;
 	name?: Maybe<Scalars['String']>;
 	metaDescription?: Maybe<Scalars['String']>;
 	pageTitle?: Maybe<Scalars['String']>;
@@ -778,8 +778,8 @@ export type HomeFilter = {
 	heroImage?: InputMaybe<ImageFilter>;
 	heroImageMobile?: InputMaybe<ImageFilter>;
 	heroTitle?: InputMaybe<StringFilter>;
-	logoDesktop?: InputMaybe<ImageIconFilter>;
-	logoMobile?: InputMaybe<ImageIconFilter>;
+	logoLight?: InputMaybe<ImageIconFilter>;
+	logoDark?: InputMaybe<ImageIconFilter>;
 	name?: InputMaybe<StringFilter>;
 	metaDescription?: InputMaybe<StringFilter>;
 	pageTitle?: InputMaybe<StringFilter>;
@@ -1180,8 +1180,8 @@ export type Memberships = Document & {
 	finalCtaButton?: Maybe<Cta>;
 	heroDescription?: Maybe<Scalars['String']>;
 	heroTitle?: Maybe<Scalars['String']>;
-	logoDesktop?: Maybe<ImageIcon>;
-	logoMobile?: Maybe<ImageIcon>;
+	logoLight?: Maybe<ImageIcon>;
+	logoDark?: Maybe<ImageIcon>;
 	name?: Maybe<Scalars['String']>;
 	metaDescription?: Maybe<Scalars['String']>;
 	pageTitle?: Maybe<Scalars['String']>;
@@ -1203,8 +1203,8 @@ export type MembershipsFilter = {
 	finalCtaButton?: InputMaybe<CtaFilter>;
 	heroDescription?: InputMaybe<StringFilter>;
 	heroTitle?: InputMaybe<StringFilter>;
-	logoDesktop?: InputMaybe<ImageIconFilter>;
-	logoMobile?: InputMaybe<ImageIconFilter>;
+	logoLight?: InputMaybe<ImageIconFilter>;
+	logoDark?: InputMaybe<ImageIconFilter>;
 	name?: InputMaybe<StringFilter>;
 	metaDescription?: InputMaybe<StringFilter>;
 	pageTitle?: InputMaybe<StringFilter>;
@@ -1301,8 +1301,8 @@ export type OtherServices = Document & {
 	heroDescription?: Maybe<PortableText>;
 	heroImage?: Maybe<Image>;
 	heroTitle?: Maybe<Scalars['String']>;
-	logoDesktop?: Maybe<ImageIcon>;
-	logoMobile?: Maybe<ImageIcon>;
+	logoLight?: Maybe<ImageIcon>;
+	logoDark?: Maybe<ImageIcon>;
 	name?: Maybe<Scalars['String']>;
 	metaDescription?: Maybe<Scalars['String']>;
 	pageTitle?: Maybe<Scalars['String']>;
@@ -1336,8 +1336,8 @@ export type OtherServicesFilter = {
 	heroDescription?: InputMaybe<PortableTextFilter>;
 	heroImage?: InputMaybe<ImageFilter>;
 	heroTitle?: InputMaybe<StringFilter>;
-	logoDesktop?: InputMaybe<ImageIconFilter>;
-	logoMobile?: InputMaybe<ImageIconFilter>;
+	logoLight?: InputMaybe<ImageIconFilter>;
+	logoDark?: InputMaybe<ImageIconFilter>;
 	name?: InputMaybe<StringFilter>;
 	metaDescription?: InputMaybe<StringFilter>;
 	pageTitle?: InputMaybe<StringFilter>;

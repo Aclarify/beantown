@@ -40,7 +40,7 @@ const ElectricalServicesPage: React.FC = (props) => {
 	const headerData = pageContent.header[0];
 	const footerData = pageContent.footer[0];
 
-	const { logoDesktop, logoMobile, pageTitle, metaDescription } = pageData;
+	const { logoLight, logoDark, pageTitle, metaDescription } = pageData;
 	const PageHead = () => {
 		return (
 			<Head>
@@ -56,8 +56,8 @@ const ElectricalServicesPage: React.FC = (props) => {
 			<PageHead />
 			<Header
 				fontColor="text-primary-shade-1"
-				logoDesktop={logoDesktop?.image}
-				logoMobile={logoDesktop?.image}
+				logoDesktop={logoDark?.image}
+				logoMobile={logoDark?.image}
 				content={headerData}
 				mobileBgColor="bg-service-yellow-bg"
 			>
@@ -74,7 +74,7 @@ const ElectricalServicesPage: React.FC = (props) => {
 			<ElectricalPageCTASection />
 			<ElectricalBlogsSection />
 			<ElectricalFaqSection />
-			<FooterSection logoDesktop={logoMobile?.image} content={footerData} />
+			<FooterSection logoDesktop={logoLight?.image} content={footerData} />
 		</section>
 	);
 };

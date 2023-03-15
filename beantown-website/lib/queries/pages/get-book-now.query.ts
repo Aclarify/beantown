@@ -5,14 +5,14 @@ import navQuery from './get-nav.query';
 const bookNowQuery = `allBooknow{
     pageTitle
 		metaDescription
-		logoDesktop{
+		logoLight{
       image{
         asset{
           url
         }
       }
     }
-    footerLogo{
+    logoDark{
       image{
         asset{
           url

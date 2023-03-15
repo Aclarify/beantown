@@ -37,7 +37,7 @@ const MembershipsServicePage: React.FC = (props) => {
 	const pageData = pageContent.page[0];
 	const headerData = pageContent.header[0];
 	const footerData = pageContent.footer[0];
-	const { logoDesktop, logoMobile, pageTitle, metaDescription } = pageData;
+	const { logoLight, logoDark, pageTitle, metaDescription } = pageData;
 	const PageHead = () => {
 		return (
 			<Head>
@@ -54,8 +54,8 @@ const MembershipsServicePage: React.FC = (props) => {
 			<Header
 				mobileBgColor="bg-primary-white-shade-1"
 				fontColor="text-primary-shade-1"
-				logoDesktop={logoDesktop?.image}
-				logoMobile={logoDesktop?.image}
+				logoDesktop={logoDark?.image}
+				logoMobile={logoDark?.image}
 				content={headerData}
 			>
 				<div className=" hidden lg:flex lg:justify-end ">
@@ -67,7 +67,7 @@ const MembershipsServicePage: React.FC = (props) => {
 			<MembershipsHeroSection />
 			<MembershipsSelectionSection />
 			<MembershipsPageCTASection />
-			<FooterSection logoDesktop={logoMobile?.image} content={footerData} />
+			<FooterSection logoDesktop={logoLight?.image} content={footerData} />
 		</div>
 	);
 };

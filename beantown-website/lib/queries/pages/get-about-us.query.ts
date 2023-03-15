@@ -5,7 +5,7 @@ import navQuery from './get-nav.query';
 const aboutUsQuery = `allAboutUs {
 			pageTitle
 			metaDescription
-			logoDesktop {
+			logoLight {
 				image {
 					asset {
 						url
@@ -14,7 +14,7 @@ const aboutUsQuery = `allAboutUs {
 					}
 				}
 			}
-			logoMobile {
+			logoDark {
 				image {
 					asset {
 						url

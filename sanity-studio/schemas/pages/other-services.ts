@@ -22,14 +22,14 @@ export default defineType({
       type: 'string',
     }),
     defineField({
-      name: 'logoDesktop',
-      title: 'Logo Desktop',
+      name: 'logoLight',
+      title: 'Logo Light',
       type: 'reference',
       to: [{type: 'imageIcon'}],
     }),
     defineField({
-      name: 'logoMobile',
-      title: 'Logo Mobile',
+      name: 'logoDark',
+      title: 'Logo Dark',
       type: 'reference',
       to: [{type: 'imageIcon'}],
     }),
