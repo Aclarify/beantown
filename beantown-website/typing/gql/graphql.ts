@@ -842,33 +842,6 @@ export type Image = {
 	hotspot?: Maybe<SanityImageHotspot>;
 };
 
-export type ImageDescriptionButtonGroup = {
-	__typename?: 'ImageDescriptionButtonGroup';
-	_key?: Maybe<Scalars['String']>;
-	_type?: Maybe<Scalars['String']>;
-	button?: Maybe<Cta>;
-	description?: Maybe<Scalars['String']>;
-	image?: Maybe<ImageIcon>;
-	name?: Maybe<Scalars['String']>;
-};
-
-export type ImageDescriptionButtonGroupFilter = {
-	_key?: InputMaybe<StringFilter>;
-	_type?: InputMaybe<StringFilter>;
-	button?: InputMaybe<CtaFilter>;
-	description?: InputMaybe<StringFilter>;
-	image?: InputMaybe<ImageIconFilter>;
-	name?: InputMaybe<StringFilter>;
-};
-
-export type ImageDescriptionButtonGroupSorting = {
-	_key?: InputMaybe<SortOrder>;
-	_type?: InputMaybe<SortOrder>;
-	description?: InputMaybe<SortOrder>;
-	image?: InputMaybe<ImageIconSorting>;
-	name?: InputMaybe<SortOrder>;
-};
-
 export type ImageFilter = {
 	_key?: InputMaybe<StringFilter>;
 	_type?: InputMaybe<StringFilter>;
@@ -915,29 +888,6 @@ export type ImageIconFilter = {
 	text?: InputMaybe<StringFilter>;
 };
 
-export type ImageIconGroup = {
-	__typename?: 'ImageIconGroup';
-	_key?: Maybe<Scalars['String']>;
-	_type?: Maybe<Scalars['String']>;
-	icons?: Maybe<Array<Maybe<ImageIcon>>>;
-	name?: Maybe<Scalars['String']>;
-	text?: Maybe<Scalars['String']>;
-};
-
-export type ImageIconGroupFilter = {
-	_key?: InputMaybe<StringFilter>;
-	_type?: InputMaybe<StringFilter>;
-	name?: InputMaybe<StringFilter>;
-	text?: InputMaybe<StringFilter>;
-};
-
-export type ImageIconGroupSorting = {
-	_key?: InputMaybe<SortOrder>;
-	_type?: InputMaybe<SortOrder>;
-	name?: InputMaybe<SortOrder>;
-	text?: InputMaybe<SortOrder>;
-};
-
 export type ImageIconSorting = {
 	_createdAt?: InputMaybe<SortOrder>;
 	_id?: InputMaybe<SortOrder>;
@@ -975,29 +925,6 @@ export type ImageTextFilter = {
 	_type?: InputMaybe<StringFilter>;
 	iconImage?: InputMaybe<ImageFilter>;
 	text?: InputMaybe<StringFilter>;
-};
-
-export type ImageTextGroup = {
-	__typename?: 'ImageTextGroup';
-	_key?: Maybe<Scalars['String']>;
-	_type?: Maybe<Scalars['String']>;
-	groupTitle?: Maybe<Scalars['String']>;
-	imagesText?: Maybe<Array<Maybe<ImageText>>>;
-	name?: Maybe<Scalars['String']>;
-};
-
-export type ImageTextGroupFilter = {
-	_key?: InputMaybe<StringFilter>;
-	_type?: InputMaybe<StringFilter>;
-	groupTitle?: InputMaybe<StringFilter>;
-	name?: InputMaybe<StringFilter>;
-};
-
-export type ImageTextGroupSorting = {
-	_key?: InputMaybe<SortOrder>;
-	_type?: InputMaybe<SortOrder>;
-	groupTitle?: InputMaybe<SortOrder>;
-	name?: InputMaybe<SortOrder>;
 };
 
 export type ImageTextSorting = {
@@ -1135,30 +1062,6 @@ export type LinkSorting = {
 	linkName?: InputMaybe<SortOrder>;
 	linkText?: InputMaybe<SortOrder>;
 	newWindow?: InputMaybe<SortOrder>;
-};
-
-export type List = {
-	__typename?: 'List';
-	_key?: Maybe<Scalars['String']>;
-	_type?: Maybe<Scalars['String']>;
-	description?: Maybe<Array<Maybe<PortableText>>>;
-	icons?: Maybe<Array<Maybe<ImageTextGroup>>>;
-	name?: Maybe<Scalars['String']>;
-	titleText?: Maybe<Scalars['String']>;
-};
-
-export type ListFilter = {
-	_key?: InputMaybe<StringFilter>;
-	_type?: InputMaybe<StringFilter>;
-	name?: InputMaybe<StringFilter>;
-	titleText?: InputMaybe<StringFilter>;
-};
-
-export type ListSorting = {
-	_key?: InputMaybe<SortOrder>;
-	_type?: InputMaybe<SortOrder>;
-	name?: InputMaybe<SortOrder>;
-	titleText?: InputMaybe<SortOrder>;
 };
 
 export type Memberships = Document & {
@@ -2324,59 +2227,6 @@ export type TestimonialsSorting = {
 	testimonialTitle?: InputMaybe<SortOrder>;
 };
 
-export type TextImageContent = {
-	__typename?: 'TextImageContent';
-	_key?: Maybe<Scalars['String']>;
-	_type?: Maybe<Scalars['String']>;
-	button?: Maybe<Array<Maybe<Cta>>>;
-	description?: Maybe<Array<Maybe<PortableText>>>;
-	image?: Maybe<Image>;
-	name?: Maybe<Scalars['String']>;
-	subText?: Maybe<Scalars['String']>;
-	titleText?: Maybe<Scalars['String']>;
-};
-
-export type TextImageContentFilter = {
-	_key?: InputMaybe<StringFilter>;
-	_type?: InputMaybe<StringFilter>;
-	image?: InputMaybe<ImageFilter>;
-	name?: InputMaybe<StringFilter>;
-	subText?: InputMaybe<StringFilter>;
-	titleText?: InputMaybe<StringFilter>;
-};
-
-export type TextImageContentGroup = {
-	__typename?: 'TextImageContentGroup';
-	_key?: Maybe<Scalars['String']>;
-	_type?: Maybe<Scalars['String']>;
-	name?: Maybe<Scalars['String']>;
-	text?: Maybe<Scalars['String']>;
-	textImageContents?: Maybe<Array<Maybe<TextImageContent>>>;
-};
-
-export type TextImageContentGroupFilter = {
-	_key?: InputMaybe<StringFilter>;
-	_type?: InputMaybe<StringFilter>;
-	name?: InputMaybe<StringFilter>;
-	text?: InputMaybe<StringFilter>;
-};
-
-export type TextImageContentGroupSorting = {
-	_key?: InputMaybe<SortOrder>;
-	_type?: InputMaybe<SortOrder>;
-	name?: InputMaybe<SortOrder>;
-	text?: InputMaybe<SortOrder>;
-};
-
-export type TextImageContentSorting = {
-	_key?: InputMaybe<SortOrder>;
-	_type?: InputMaybe<SortOrder>;
-	image?: InputMaybe<ImageSorting>;
-	name?: InputMaybe<SortOrder>;
-	subText?: InputMaybe<SortOrder>;
-	titleText?: InputMaybe<SortOrder>;
-};
-
 export type TextList = {
 	__typename?: 'TextList';
 	_key?: Maybe<Scalars['String']>;
@@ -2400,31 +2250,6 @@ export type TextListSorting = {
 	title?: InputMaybe<SortOrder>;
 };
 
-export type TextTitle = {
-	__typename?: 'TextTitle';
-	_key?: Maybe<Scalars['String']>;
-	_type?: Maybe<Scalars['String']>;
-	name?: Maybe<Scalars['String']>;
-	subText?: Maybe<Scalars['String']>;
-	titleText?: Maybe<Scalars['String']>;
-};
-
-export type TextTitleFilter = {
-	_key?: InputMaybe<StringFilter>;
-	_type?: InputMaybe<StringFilter>;
-	name?: InputMaybe<StringFilter>;
-	subText?: InputMaybe<StringFilter>;
-	titleText?: InputMaybe<StringFilter>;
-};
-
-export type TextTitleSorting = {
-	_key?: InputMaybe<SortOrder>;
-	_type?: InputMaybe<SortOrder>;
-	name?: InputMaybe<SortOrder>;
-	subText?: InputMaybe<SortOrder>;
-	titleText?: InputMaybe<SortOrder>;
-};
-
 export type TitleDescription = {
 	__typename?: 'TitleDescription';
 	_key?: Maybe<Scalars['String']>;
@@ -2440,23 +2265,6 @@ export type TitleDescriptionFilter = {
 	description?: InputMaybe<StringFilter>;
 	subText?: InputMaybe<StringFilter>;
 	titleText?: InputMaybe<StringFilter>;
-};
-
-export type TitleDescriptionGroup = {
-	__typename?: 'TitleDescriptionGroup';
-	_key?: Maybe<Scalars['String']>;
-	_type?: Maybe<Scalars['String']>;
-	titlesDescription?: Maybe<Array<Maybe<TitleDescription>>>;
-};
-
-export type TitleDescriptionGroupFilter = {
-	_key?: InputMaybe<StringFilter>;
-	_type?: InputMaybe<StringFilter>;
-};
-
-export type TitleDescriptionGroupSorting = {
-	_key?: InputMaybe<SortOrder>;
-	_type?: InputMaybe<SortOrder>;
 };
 
 export type TitleDescriptionImage = {
@@ -2476,28 +2284,6 @@ export type TitleDescriptionImageFilter = {
 	image?: InputMaybe<ImageFilter>;
 	subText?: InputMaybe<StringFilter>;
 	titleText?: InputMaybe<StringFilter>;
-};
-
-export type TitleDescriptionImageGroup = {
-	__typename?: 'TitleDescriptionImageGroup';
-	_key?: Maybe<Scalars['String']>;
-	_type?: Maybe<Scalars['String']>;
-	button?: Maybe<Array<Maybe<Cta>>>;
-	name?: Maybe<Scalars['String']>;
-	titleDetails?: Maybe<Array<Maybe<TextTitle>>>;
-	titleImageGroup?: Maybe<Array<Maybe<TextImageContent>>>;
-};
-
-export type TitleDescriptionImageGroupFilter = {
-	_key?: InputMaybe<StringFilter>;
-	_type?: InputMaybe<StringFilter>;
-	name?: InputMaybe<StringFilter>;
-};
-
-export type TitleDescriptionImageGroupSorting = {
-	_key?: InputMaybe<SortOrder>;
-	_type?: InputMaybe<SortOrder>;
-	name?: InputMaybe<SortOrder>;
 };
 
 export type TitleDescriptionImageSorting = {
