@@ -80,7 +80,7 @@ const Brands: React.FC<IProps> = (props) => {
 		<div
 			className={`${props.brandsBgColour} flex w-full flex-col space-y-5 pt-5 pb-4 lg:pt-0 `}
 		>
-			<Animate>
+			<Animate bottom>
 				<div className="flex  justify-center ">
 					<h2 className=" text-primary-black">{props.brandsTitle}</h2>
 				</div>

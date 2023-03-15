@@ -45,12 +45,12 @@ export default function WhyUs() {
 					>
 						<ContentWrapper>
 							<ContentWrapper.Title>
-								<Animate>
+								<Animate bottom>
 									<h2 className=" text-primary-black ">{whyUsTitle}</h2>
 								</Animate>
 							</ContentWrapper.Title>
 							<ContentWrapper.Description className="rich-text text-left lg:pr-4">
-								<Animate bottom>
+								<Animate>
 									<RichText value={whyUsDescription?.contentRaw} />
 								</Animate>
 							</ContentWrapper.Description>

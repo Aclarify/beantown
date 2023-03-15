@@ -28,10 +28,10 @@ const BlogCard: React.FC<Props> = (props) => {
 				</div>
 
 				<div>
-					<Animate>
+					<Animate bottom>
 						<h5 className=" text-primary-black py-4">{props.blogName}</h5>
 					</Animate>
-					<Animate bottom>
+					<Animate>
 						<div className=" text-primary-shade-1 mb-4">
 							<p> {props.blogDescription} </p>
 						</div>

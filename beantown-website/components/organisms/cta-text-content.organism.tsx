@@ -1,3 +1,4 @@
+import Animate from 'components/molecules/animate.molecule';
 import RichText from 'components/molecules/rich-text.molecule';
 import Link from 'next/link';
 import React from 'react';
@@ -18,7 +19,16 @@ const CTATextContent: React.FC<IProps> = ({
 	return (
 		<ContentWrapper className="flex flex-col justify-between px-14 text-center md:px-4 lg:px-20 lg:text-left">
 			<ContentWrapper.Title className="  mb-2  lg:mb-4 ">
-				{isHero ? <h1>{title}</h1> : <h2>{title}</h2>}
+				{isHero ? (
+					<Animate bottom>
+						{' '}
+						<h1>{title}</h1>
+					</Animate>
+				) : (
+					<Animate bottom>
+						<h2>{title}</h2>
+					</Animate>
+				)}
 			</ContentWrapper.Title>
 			{description && (
 				<ContentWrapper.Description>
