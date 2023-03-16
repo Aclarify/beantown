@@ -32,13 +32,6 @@ const aboutUsQuery = `allAboutUs {
 				}
 			}
 			heroDescription
-			heroImageMobile {
-				asset {
-					url
-					_id
-					_key
-				}
-			}
 			missionTitle
 			missionDescription {
 				contentRaw
