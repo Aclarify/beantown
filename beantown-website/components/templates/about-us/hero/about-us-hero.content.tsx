@@ -13,7 +13,7 @@ const AboutUsHeroContent = () => {
 		return null;
 	}
 	const pageData = pageContent.page[0];
-	const { heroImage, heroTitle, heroDescription, heroImageMobile } = pageData;
+	const { heroImage, heroTitle, heroDescription } = pageData;
 	return (
 		<section id="home_page_hero" className="relative">
 			<div

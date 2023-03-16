@@ -47,7 +47,6 @@ export type AboutUs = Document & {
 	ctaTitle?: Maybe<Scalars['String']>;
 	heroDescription?: Maybe<Scalars['String']>;
 	heroImage?: Maybe<Image>;
-	heroImageMobile?: Maybe<Image>;
 	heroTitle?: Maybe<Scalars['String']>;
 	logoLight?: Maybe<ImageIcon>;
 	logoDark?: Maybe<ImageIcon>;
@@ -86,7 +85,6 @@ export type AboutUsFilter = {
 	ctaTitle?: InputMaybe<StringFilter>;
 	heroDescription?: InputMaybe<StringFilter>;
 	heroImage?: InputMaybe<ImageFilter>;
-	heroImageMobile?: InputMaybe<ImageFilter>;
 	heroTitle?: InputMaybe<StringFilter>;
 	logoLight?: InputMaybe<ImageIconFilter>;
 	logoDark?: InputMaybe<ImageIconFilter>;
@@ -118,7 +116,6 @@ export type AboutUsSorting = {
 	ctaTitle?: InputMaybe<SortOrder>;
 	heroDescription?: InputMaybe<SortOrder>;
 	heroImage?: InputMaybe<ImageSorting>;
-	heroImageMobile?: InputMaybe<ImageSorting>;
 	heroTitle?: InputMaybe<SortOrder>;
 	metaDescription?: InputMaybe<SortOrder>;
 	missionDescription?: InputMaybe<PortableTextSorting>;
@@ -734,7 +731,6 @@ export type Home = Document & {
 	heroButton?: Maybe<Cta>;
 	heroDescription?: Maybe<PortableText>;
 	heroImage?: Maybe<Image>;
-	heroImageMobile?: Maybe<Image>;
 	heroTitle?: Maybe<Scalars['String']>;
 	logoLight?: Maybe<ImageIcon>;
 	logoDark?: Maybe<ImageIcon>;
@@ -776,7 +772,6 @@ export type HomeFilter = {
 	heroButton?: InputMaybe<CtaFilter>;
 	heroDescription?: InputMaybe<PortableTextFilter>;
 	heroImage?: InputMaybe<ImageFilter>;
-	heroImageMobile?: InputMaybe<ImageFilter>;
 	heroTitle?: InputMaybe<StringFilter>;
 	logoLight?: InputMaybe<ImageIconFilter>;
 	logoDark?: InputMaybe<ImageIconFilter>;
@@ -810,7 +805,6 @@ export type HomeSorting = {
 	faqTitle?: InputMaybe<SortOrder>;
 	heroDescription?: InputMaybe<PortableTextSorting>;
 	heroImage?: InputMaybe<ImageSorting>;
-	heroImageMobile?: InputMaybe<ImageSorting>;
 	heroTitle?: InputMaybe<SortOrder>;
 	name?: InputMaybe<SortOrder>;
 	metaDescription?: InputMaybe<SortOrder>;
