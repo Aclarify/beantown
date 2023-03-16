@@ -36,7 +36,7 @@ export const TestimonialCard: React.FC<Props> = (props) => {
 				<span className="subtitle-2 text-gray-shade-2">
 					{props.clientDetails}
 				</span>
-				<div className="para text-primary-black pt-6 pb-2 text-center leading-6 lg:px-10 lg:leading-9">
+				<div className="para text-primary-black no-scrollbar   md:h-96 pt-6 pb-2 text-center leading-6 lg:px-10  lg:leading-9">
 					{props.onShowMore && (
 						<ReadMore
 							content={props.reviewComments}

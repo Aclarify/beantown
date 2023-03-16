@@ -12,6 +12,7 @@ import TestimonialCard from './testimonial-card.organism';
 import TestimonialModal from './testimonial-modal.organism';
 import SectionContentWrapper from 'components/molecules/section-content-wrapper.molecule';
 import Animate from 'components/molecules/animate.molecule';
+import Zoom from 'react-reveal/Zoom';
 
 interface IProps extends React.HTMLAttributes<HTMLDivElement> {
 	testimonialTitle: string;
@@ -260,6 +261,7 @@ const Testimonials: React.FC<IProps> = (props) => {
 						<FontAwesomeIcon icon={faArrowRight} />
 					</button>
 				</div>
+	
 				<TestimonialModal
 					onClose={handleOnClose}
 					visible={showTestimonialModel}
