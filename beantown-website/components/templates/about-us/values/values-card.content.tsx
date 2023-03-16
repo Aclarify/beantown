@@ -18,7 +18,7 @@ const ValuesCards = () => {
 
 	return (
 		<>
-			<Animate bottom cascade>
+			<Animate>
 				<div
 					id="card-container"
 					className="text-primary-black flex flex-wrap justify-evenly gap-4 p-2"

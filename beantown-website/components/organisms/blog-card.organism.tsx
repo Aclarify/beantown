@@ -18,29 +18,31 @@ const BlogCard: React.FC<Props> = (props) => {
 				onClick={showUnderConstructionMsg}
 			>
 				<div className="flex transform justify-center transition duration-500 hover:scale-105 ">
-				
-						<Image
-							src={props.thumbnailSrc}
-							alt={props.thumbnailAltText}
-							width="600"
-							height="600"
-							className="w-full rounded-3xl border-2"
-						/>
-					
+					<Image
+						src={props.thumbnailSrc}
+						alt={props.thumbnailAltText}
+						width="600"
+						height="600"
+						className="w-full rounded-3xl border-2"
+					/>
 				</div>
 
 				<div>
-					<Animate bottom>
+					<Animate>
 						<h5 className=" text-primary-black py-4">{props.blogName}</h5>
+					</Animate>
+					<Animate>
 						<div className=" text-primary-shade-1 mb-4">
 							<p> {props.blogDescription} </p>
 						</div>
 					</Animate>
-					<div className="mt-4 flex justify-between align-middle lg:pb-2 ">
-						<button className="para text-primary-black underline ">
-							{props.buttonText}
-						</button>
 
+					<div className="mt-4 flex justify-between align-middle lg:pb-2 ">
+						<Animate>
+							<button className="para text-primary-black underline ">
+								{props.buttonText}
+							</button>
+						</Animate>
 						<Image
 							src="/images/home/blog-arrow.svg"
 							width="75"

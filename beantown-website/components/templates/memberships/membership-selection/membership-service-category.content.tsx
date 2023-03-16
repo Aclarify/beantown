@@ -27,7 +27,7 @@ const MembershipServiceCategories = () => {
 			id="membership-service-category"
 			className="relative mb-20 flex w-full justify-center "
 		>
-			<Animate bottom>
+			<Animate>
 				<div
 					id="categories-container"
 					className="grid  grid-cols-2 gap-4 rounded-2xl border-0 p-2 sm:grid-cols-4 sm:border "

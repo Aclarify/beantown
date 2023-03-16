@@ -25,7 +25,7 @@ const ServiceAreas: React.FC<IProps> = (props) => {
 					</Animate>
 				</div>
 				<div className="  text-primary-shade-1 w-full  pt-4  lg:w-[60%] lg:pl-20 ">
-					<Animate bottom>
+					<Animate>
 						<p>{props.serviceAreaDescription}</p>
 					</Animate>
 				</div>

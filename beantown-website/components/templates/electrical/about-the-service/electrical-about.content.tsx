@@ -62,7 +62,7 @@ const AboutElectricalServiceContent = () => {
 							</Animate>
 						</ContentWrapper.Title>
 						<ContentWrapper.Description className="text-left ">
-							<Animate bottom>
+							<Animate>
 								<RichText value={aboutTheServiceDescription?.contentRaw} />
 							</Animate>
 						</ContentWrapper.Description>

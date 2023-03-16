@@ -25,7 +25,7 @@ const Blogs: React.FC<IProps> = (props) => {
 					</Animate>
 				</div>
 				<div className=" text-primary-shade-1 px-[3em] pt-4  text-center md:px-[1em] lg:px-[8em] 2xl:px-[7em]">
-					<Animate bottom>
+					<Animate>
 						<p>{props.blogsDescription}</p>
 					</Animate>
 				</div>

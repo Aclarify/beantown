@@ -2,7 +2,6 @@ import RichText from 'components/molecules/rich-text.molecule';
 import React from 'react';
 import Image from 'next/image';
 import Animate from 'components/molecules/animate.molecule';
-
 interface Props {
 	title: string;
 	description: string;
@@ -11,8 +10,8 @@ interface Props {
 }
 const WhyUsCard: React.FC<Props> = (props) => {
 	return (
-		<Animate bottom >
-			<section>
+		<section>
+			<Animate>
 				<div className="flex items-center  rounded-xl bg-white py-[3px] shadow-sm md:m-4 ">
 					<div className=" flex-none p-2 md:p-4 ">
 						<Image
@@ -24,14 +23,18 @@ const WhyUsCard: React.FC<Props> = (props) => {
 						/>
 					</div>
 					<div className=" flex-1 px-3">
-						<h4 className=" text-primary-black  ">{props.title}</h4>
-						<div className=" text-gray-shade-1 pt-2">
-							<p>{props.description}</p>
-						</div>
+						<Animate>
+							<h4 className=" text-primary-black  ">{props.title}</h4>
+						</Animate>
+						<Animate>
+							<div className=" text-gray-shade-1 pt-2">
+								<p>{props.description}</p>
+							</div>
+						</Animate>
 					</div>
 				</div>
-			</section>
-		</Animate>
+			</Animate>
+		</section>
 	);
 };
 export default WhyUsCard;

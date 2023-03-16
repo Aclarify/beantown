@@ -12,7 +12,7 @@ interface Props {
 const HeatingCoolingServiceCard: React.FC<Props> = (props) => {
 	return (
 		<>
-			<Animate bottom cascade>
+			<Animate cascade>
 				<div className="w-full">
 					<div
 						className="rounded-3xl bg-white px-4 py-6

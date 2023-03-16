@@ -175,10 +175,12 @@ const Testimonials: React.FC<IProps> = (props) => {
 				<div className="relative lg:hidden ">
 					<div className=" w-full flex-none">
 						<div className="ml-8 pb-6">
-							<Animate bottom>
+							<Animate>
 								<h5 className="text-primary-shade-1 !font-thin ">
 									{props.testimonialTitle}
 								</h5>
+							</Animate>
+							<Animate bottom>
 								<h2 className=" text-primary-black">
 									{props.testimonialDescription}
 								</h2>
@@ -189,14 +191,17 @@ const Testimonials: React.FC<IProps> = (props) => {
 				<div className=" flex space-x-6">
 					<div className="gap-15 z-40 ml-28 mr-16 hidden flex-none   flex-col  items-center justify-center    lg:flex  ">
 						<div className="flex-none  gap-5 ">
-							<Animate bottom>
+							<Animate>
 								<h5 className=" text-primary-shade-1 !font-thin ">
 									{props.testimonialTitle}
 								</h5>
+							</Animate>
+							<Animate bottom>
 								<h2 className="  text-primary-black">
 									{props.testimonialDescription}
 								</h2>
 							</Animate>
+
 							<div className="mt-8 flex space-x-6">
 								<button
 									onClick={previous}

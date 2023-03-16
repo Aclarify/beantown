@@ -13,7 +13,7 @@ interface Props {
 const ProductCard: React.FC<Props> = (props) => {
 	return (
 		<>
-			<Animate bottom>
+			<Animate>
 				<div className="w-[281px] rounded-3xl bg-[#FCF7F7] p-2  lg:w-[480px] lg:p-4">
 					<div className=" flex h-[209px] justify-center rounded-3xl bg-white px-[30px] py-[20px] md:px-[50px]  md:py-[43px] lg:h-[360px] lg:max-h-full">
 						<CMSImageWrapper image={props.image} altText="A product image" />

@@ -29,7 +29,7 @@ const HeatingCoolingServicesContent = () => {
 						</ContentWrapper.Title>
 						<ContentWrapper.Description className="lg:flex lg:justify-center">
 							<div className="text-wrapper text-primary-shade-1  lg:w-3/4 ">
-								<Animate bottom>
+								<Animate>
 									<RichText value={servicesDescription?.contentRaw} />
 								</Animate>
 							</div>

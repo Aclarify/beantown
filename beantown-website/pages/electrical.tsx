@@ -9,7 +9,6 @@ import ElectricalHeroSection from 'components/templates/electrical/hero/electric
 import ElectricalPageCTASection from 'components/templates/electrical/cta/electrical-cta.section';
 import ElectricalBlogsSection from 'components/templates/electrical/blog/electrical-blogs.section';
 import ElectricalFaqSection from 'components/templates/electrical/faq/electrical-faqs.section';
-import AboutPlumbingServiceSection from 'components/templates/electrical/about-the-service/electrical-about.section';
 import Header from 'components/organisms/nav';
 import FooterSection from 'components/organisms/footer';
 import React, { useContext } from 'react';
@@ -17,6 +16,7 @@ import { GlobalContextProps } from '@typing/common/interfaces/contexts.interface
 import { GlobalContext } from '@contexts/global/global.context';
 import CtaWrapper from 'components/molecules/cta-wrapper.molecule';
 import Link from 'next/link';
+import AboutElectricalServiceSection from 'components/templates/electrical/about-the-service/electrical-about.section';
 
 export interface ElectricalContentProps {
 	page: OtherServices[];
@@ -70,7 +70,7 @@ const ElectricalServicesPage: React.FC = (props) => {
 				</div>
 			</Header>
 			<ElectricalHeroSection />
-			<AboutPlumbingServiceSection />
+			<AboutElectricalServiceSection />
 			<ElectricalPageCTASection />
 			<ElectricalBlogsSection />
 			<ElectricalFaqSection />

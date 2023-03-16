@@ -6,7 +6,6 @@ import { ElectricalContentProps } from 'pages/electrical';
 import CTATextContent, {
 	CTAButton,
 } from 'components/organisms/cta-text-content.organism';
-import Animate from 'components/molecules/animate.molecule';
 
 const ElectricalHeroContent = () => {
 	const { pageContent } =
@@ -28,8 +27,7 @@ const ElectricalHeroContent = () => {
 			heroImagePosition="right"
 			bgColor="var(--services-yellow-color-rgb)"
 			isImageToBePrefetched={true}
-		>
-			<Animate bottom>
+		>			
 				<div className="text-black">
 					<CTATextContent
 						title={heroTitle || ''}
@@ -43,8 +41,7 @@ const ElectricalHeroContent = () => {
 							href={heroButton?.href || ''}
 						/>
 					</CTATextContent>
-				</div>
-			</Animate>
+				</div>			
 		</CTAWithImage>
 	);
 };
