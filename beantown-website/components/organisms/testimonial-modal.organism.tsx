@@ -35,7 +35,7 @@ const TestimonialModal = ({
 							ref={ref}
 							className="flex min-h-full items-center justify-center"
 						>
-							<div className="card-wrapper mx-auto max-w-sm rounded-2xl bg-white py-2 lg:rounded-3xl">
+							<div className="card-wrapper mx-auto max-w-xs lg:max-w-md rounded-2xl bg-white py-2 lg:rounded-3xl">
 								<div className="flex justify-end">
 									<button
 										className="fixed pr-4 text-gray-400"
@@ -46,7 +46,7 @@ const TestimonialModal = ({
 									</button>
 								</div>
 
-								<div className="overflow-y-auto px-4">
+								<div className=" px-4">
 									<TestimonialCard
 										clientName={clientName || ''}
 										clientDetails={clientDetails || ''}
