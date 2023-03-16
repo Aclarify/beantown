@@ -121,12 +121,14 @@ const HeatingCoolingProductsCardContent = () => {
 					<div className="hidden  justify-center  gap-4 pt-4 lg:flex  ">
 						<button
 							onClick={previous}
+							aria-label={'left-arrow'}
 							className="lg:text-service-red text-primary-shade-1 bg-secondary-shade-3 h-16 w-32 rounded-full py-4 px-6 text-xl"
 						>
 							<FontAwesomeIcon icon={faArrowLeft} />
 						</button>
 						<button
 							onClick={next}
+							aria-label={'right-arrow'}
 							className=" bg-service-red h-16  w-32 rounded-full py-4 px-6 text-xl text-white"
 						>
 							<FontAwesomeIcon icon={faArrowRight} />
@@ -138,20 +140,18 @@ const HeatingCoolingProductsCardContent = () => {
 				<Slider ref={slider} {...settings} className="">
 					{productsGroup?.map((productInfo, index) => {
 						return (
-							
-								<div
-									className="product-card-wrapper  !flex justify-center px-1 xl:px-2"
+							<div
+								className="product-card-wrapper  !flex justify-center px-1 xl:px-2"
+								key={index}
+							>
+								<ProductCard
 									key={index}
-								>
-									<ProductCard
-										key={index}
-										title={productInfo?.titleText || ''}
-										image={productInfo?.image || null}
-										thumbnailAltText={'Heating and Cooling Product Images'}
-										description={productInfo?.description || ''}
-									/>
-								</div>
-						
+									title={productInfo?.titleText || ''}
+									image={productInfo?.image || null}
+									thumbnailAltText={'Heating and Cooling Product Images'}
+									description={productInfo?.description || ''}
+								/>
+							</div>
 						);
 					})}
 				</Slider>
@@ -159,12 +159,14 @@ const HeatingCoolingProductsCardContent = () => {
 			<div className="relative flex justify-center gap-4 pt-8 lg:hidden ">
 				<button
 					onClick={previous}
+					aria-label={'left-arrow'}
 					className="lg:text-service-red text-primary-shade-1 bg-secondary-shade-3 h-12 w-20  rounded-full py-2 px-4"
 				>
 					<FontAwesomeIcon icon={faArrowLeft} />
 				</button>
 				<button
 					onClick={next}
+					aria-label={'right-arrow'}
 					className=" bg-service-red h-12 w-20 rounded-full py-2 px-4 text-white"
 				>
 					<FontAwesomeIcon icon={faArrowRight} />
