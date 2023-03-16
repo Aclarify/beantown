@@ -16,7 +16,7 @@ const MaskedImageWithBackgroundVector: React.FC<IProps> = (props) => {
 				backgroundImage: `url(${props.bgImg})`,
 				backgroundSize: 'contain',
 				backgroundRepeat: 'no-repeat',
-				backgroundPosition: 'inherit',
+				backgroundPosition: 'center',
 			}}
 		>
 			<Image
@@ -29,9 +29,11 @@ const MaskedImageWithBackgroundVector: React.FC<IProps> = (props) => {
 					WebkitMaskImage: `url(${props.maskImg})`,
 					WebkitMaskSize: 'contain',
 					WebkitMaskRepeat: 'no-repeat',
+					WebkitMaskPosition: 'center',
 					maskImage: `url(${props.maskImg})`,
 					maskSize: 'contain',
 					maskRepeat: 'no-repeat',
+					maskPosition: 'center',
 				}}
 			/>
 		</div>

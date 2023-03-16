@@ -42,13 +42,6 @@ const homeQuery = ` allHome {
 				_key
 			}
 			}
-			heroImageMobile{
-			asset{
-				url
-				_id
-				_key
-			}
-			}
 			servicesTitle
 			servicesDescription {
 				contentRaw

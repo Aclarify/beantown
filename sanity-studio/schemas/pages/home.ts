@@ -57,14 +57,6 @@ export default defineType({
       },
     }),
     defineField({
-      name: 'heroImageMobile',
-      title: 'Hero Background Image For Mobile Screens',
-      type: 'image',
-      options: {
-        hotspot: true,
-      },
-    }),
-    defineField({
       name: 'servicesTitle',
       title: 'Services Offered Title',
       type: 'string',
