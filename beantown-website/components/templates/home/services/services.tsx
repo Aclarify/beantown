@@ -72,12 +72,12 @@ export default function Services() {
 				<div className="flex flex-col items-center  pt-[4em] text-center lg:pt-0">
 					<ContentWrapper>
 						<ContentWrapper.Title>
-							<Animate bottom >
+							<Animate bottom>
 								<h2 className="text-primary-black mb-4">{servicesTitle}</h2>
 							</Animate>
 						</ContentWrapper.Title>
 						<ContentWrapper.Description className=" px-10 sm:px-20  lg:px-80 ">
-							<Animate bottom>
+							<Animate>
 								<RichText value={servicesDescription?.contentRaw} />
 							</Animate>
 						</ContentWrapper.Description>

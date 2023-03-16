@@ -29,8 +29,7 @@ const MembershipsPageCTAContent = () => {
 				}
 				heroImagePosition="right"
 				bgColor="var(--secondary-color-shade-2-rgb)"
-			>
-				<Animate bottom>
+			>			
 					<div className="text-primary-shade-1">
 						<CTATextContent title={ctaTitle || ''} description={ctaDescription}>
 							<CTAButton
@@ -39,8 +38,7 @@ const MembershipsPageCTAContent = () => {
 								bgColor="bg-primary-shade-1"
 							/>
 						</CTATextContent>
-					</div>
-				</Animate>
+					</div>				
 			</CTAWithImage>
 		</>
 	);

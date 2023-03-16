@@ -34,7 +34,7 @@ export default function FooterCta() {
 					bgColor="var(--secondary-color-shade-2-rgb)"
 				>
 					<div className="text-primary-shade-1 ">
-						<Animate bottom>
+						<Animate>
 							<CTATextContent
 								title={ctaTitle || ''}
 								description={ctaDescription}

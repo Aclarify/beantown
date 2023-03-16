@@ -71,7 +71,7 @@ const MeetOurTeam = () => {
 							</Animate>
 						</ContentWrapper.Title>
 						<ContentWrapper.Description>
-							<Animate bottom>
+							<Animate>
 								<p className=" text-primary-shade-1 mb-8 justify-center text-center md:mx-40 lg:mb-14">
 									{teamDescription}
 								</p>
@@ -79,7 +79,7 @@ const MeetOurTeam = () => {
 						</ContentWrapper.Description>
 					</ContentWrapper>
 				</div>
-				<Animate bottom cascade>
+				
 				
 					<div
 						id="cards-container"
@@ -88,58 +88,60 @@ const MeetOurTeam = () => {
 						{memberCardsToDisplay?.map((content, index) => {
 							return (
 								content && (
-									<div
-										key={index}
-										id="card"
-										className="m-2 w-[160px] rounded-lg bg-white  px-3 shadow-[rgba(29,_39,_87,_0.08)_4px_8px_60px]  lg:w-full lg:px-4 "
-									>
+									<Animate  cascade>
 										<div
-											id="profileInfo-wrapper"
-											className="flex  flex-col  lg:flex-row  "
+											key={index}
+											id="card"
+											className="m-2 w-[160px] rounded-lg bg-white  px-3 shadow-[rgba(29,_39,_87,_0.08)_4px_8px_60px]  lg:w-full lg:px-4 "
 										>
-											<div className="rounded-lg fill-current py-3 lg:w-[200px]  lg:py-4 ">
-												<CMSImageWrapper
-													altText={content.profilePicture?.asset?.altText || ''}
-													image={content.profilePicture || null}
-												/>
-											</div>
-
 											<div
-												id="profile-Info"
-												className="flex flex-col items-center justify-center pb-2 lg:items-start lg:justify-evenly lg:py-8 lg:pl-8"
+												id="profileInfo-wrapper"
+												className="flex  flex-col  lg:flex-row  "
 											>
-												<h4 className=" text-primary-black ">
-													{content?.memberName}
-												</h4>
-												<p className=" text-gray-shade-1 block !font-thin">
-													{content?.memberDesignation}
-												</p>
-												<div className="flex">
-													{content.socialMediaDetails?.map((details, index) => {
-														return (
-															<div id="socialMediaIconGroupicons" key={index}>
-																<div className=" fill-current ">
-																	<Image
-																		alt={details?.image?.name || ''}
-																		width={32}
-																		height={32}
-																		src={
-																			details?.image?.image?.asset?.url || ''
-																		}
-																	/>
+												<div className="rounded-lg fill-current py-3 lg:w-[200px]  lg:py-4 ">
+													<CMSImageWrapper
+														altText={content.profilePicture?.asset?.altText || ''}
+														image={content.profilePicture || null}
+													/>
+												</div>
+
+												<div
+													id="profile-Info"
+													className="flex flex-col items-center justify-center pb-2 lg:items-start lg:justify-evenly lg:py-8 lg:pl-8"
+												>
+													<h4 className=" text-primary-black ">
+														{content?.memberName}
+													</h4>
+													<p className=" text-gray-shade-1 block !font-thin">
+														{content?.memberDesignation}
+													</p>
+													<div className="flex">
+														{content.socialMediaDetails?.map((details, index) => {
+															return (
+																<div id="socialMediaIconGroupicons" key={index}>
+																	<div className=" fill-current ">
+																		<Image
+																			alt={details?.image?.name || ''}
+																			width={32}
+																			height={32}
+																			src={
+																				details?.image?.image?.asset?.url || ''
+																			}
+																		/>
+																	</div>
 																</div>
-															</div>
-														);
-													})}
+															);
+														})}
+													</div>
 												</div>
 											</div>
 										</div>
-									</div>
+									</Animate>
 								)
 							);
 						})}
 					</div>
-				</Animate>
+				
 				<div className="mt-8 items-center text-center lg:mt-[60px] ">
 					<CtaWrapper.CTA
 						onClick={onLoadMore}

@@ -2,7 +2,8 @@ import React from 'react';
 import Image from 'next/image';
 import CtaWrapper from 'components/molecules/cta-wrapper.molecule';
 import Link from 'next/link';
-import Fade from 'react-reveal/Fade';
+import Animate from 'components/molecules/animate.molecule';
+
 
 interface Props {
 	title: string;
@@ -15,7 +16,7 @@ interface Props {
 const ServiceCard: React.FC<Props> = (props) => {
 	return (
 		<>
-			<Fade cascade>
+			<Animate cascade>
 				<div className="flex w-full transform flex-col rounded-xl rounded-t-3xl bg-white shadow-lg transition duration-500 hover:scale-105">
 					<div className="basis-3/4  ">
 						<Image
@@ -41,7 +42,7 @@ const ServiceCard: React.FC<Props> = (props) => {
 						</div>
 					</div>
 				</div>
-			</Fade>
+			</Animate>
 		</>
 	);
 };
