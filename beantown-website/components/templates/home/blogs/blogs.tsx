@@ -7,10 +7,6 @@ import WaveWrapper from 'components/molecules/wave-wrapper.molecule';
 import Blogs from 'components/organisms/blogs.organism';
 import SectionContentWrapper from 'components/molecules/section-content-wrapper.molecule';
 import bottomWave from 'public/images/home/blogs/home-blogs-bottom-wave.svg';
-import leftBlob from 'public/images/home/blue-blob-shape-1.svg';
-import leftBlobMobile from 'public/images/home/blue-blob-shape-1-mobile.svg';
-import rightBlobMobile from 'public/images/home/blue-blob-shape-2-mobile.svg';
-import StaticImageWrapper from 'components/molecules/static-image-wrapper.molecule';
 
 export default function HomeBlogs() {
 	const { pageContent } =
@@ -22,25 +18,28 @@ export default function HomeBlogs() {
 	const { blogsTitle, blogsDescription, blogButton, blogCards } = homeData;
 	return (
 		<section id="blogs" className=" relative  z-10 -mb-[9em]   ">
-			<div className=" z-1 absolute left-0  hidden -translate-x-[55%] translate-y-[12%] transform lg:block">
-				<StaticImageWrapper
-					src={leftBlob}
-					altText="Left-blob"
-				></StaticImageWrapper>
-			</div>
-			<div className=" z-1 -md:translate-y-[33%] absolute left-0 -translate-x-[77%] -translate-y-[15%] transform lg:hidden">
-				<StaticImageWrapper
-					src={leftBlobMobile}
-					altText="Left-blob-mobile"
-				></StaticImageWrapper>
-			</div>
-			<div className=" absolute top-0 right-0 z-10 h-[250px] w-[250px] translate-x-[75%] translate-y-[-70%] transform lg:hidden">
-				<StaticImageWrapper
-					src={rightBlobMobile}
-					altText="Right-blob-mobile"
-				></StaticImageWrapper>
-			</div>
+			<Image
+				src="/images/home/blue-blob-shape-1.svg"
+				alt="Left-blob"
+				width={590}
+				height={650}
+				className=" z-1 absolute left-0  hidden -translate-x-[55%] translate-y-[12%] transform lg:block"
+			></Image>
 
+			<Image
+				src="/images/home/blue-blob-shape-1-mobile.svg"
+				alt="Left-blob-mobile"
+				width={450}
+				height={300}
+				className=" z-1 -md:translate-y-[33%] absolute left-0 -translate-x-[77%] -translate-y-[15%] transform lg:hidden"
+			></Image>
+			<Image
+				src={'/images/home/blue-blob-shape-2-mobile.svg'}
+				height={250}
+				width={250}
+				alt="Right Blob mobile"
+				className="absolute  top-0 right-0 z-10 translate-x-[75%] translate-y-[-70%] transform lg:hidden"
+			/>
 			<div className="bg-primary-white-shade-1">
 				<SectionContentWrapper>
 					<Blogs
