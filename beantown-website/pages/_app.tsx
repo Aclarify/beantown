@@ -1,5 +1,6 @@
 import '../styles/globals.css';
 import type { AppProps } from 'next/app';
+import Script from 'next/script';
 import { ApolloProvider } from '@apollo/client/react';
 import { config } from '@fortawesome/fontawesome-svg-core';
 import '@fortawesome/fontawesome-svg-core/styles.css';
@@ -48,6 +49,11 @@ export default function App({ Component, pageProps }: AppProps) {
 					--font-neue-plak: ${neuePlak.style.fontFamily};
 				}
 			`}</style>
+			<Script
+				data-api-key="ckqky3gqt018408n1em335fyr"
+				id="se-widget-embed"
+				src="https://embed.scheduleengine.net/schedule-engine-v3.js"
+			/>
 			<ApolloProvider client={graphQLClient}>
 				<main
 					className={`${neuePlak.className}  overflow-hidden tracking-wide lg:tracking-wider`}

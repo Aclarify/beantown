@@ -99,7 +99,7 @@ export default function Footer(props: IProps) {
 							{contactUs?.map((contactDtl, index) => {
 								return (
 									contactDtl?.iconImage && (
-										<Animate>
+										<Animate key={index}>
 											<div
 												key={index}
 												className="para flex justify-start space-x-2 pt-2 text-gray-300"
@@ -143,7 +143,7 @@ export default function Footer(props: IProps) {
 							</Animate>
 						</div>
 						<div id="footerDescription" className="lg:pb-6 lg:pt-4">
-							<Animate >
+							<Animate>
 								<p className="para text-gray-300">{description}</p>
 							</Animate>
 						</div>
