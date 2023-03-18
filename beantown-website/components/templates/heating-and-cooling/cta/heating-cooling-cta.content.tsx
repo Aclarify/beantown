@@ -6,6 +6,7 @@ import CTAWithImage from 'components/organisms/cta-with-image.organism';
 import CTATextContent, {
 	CTAButton,
 } from 'components/organisms/cta-text-content.organism';
+import BookNowButton from 'components/atoms/book-now-button.atom';
 
 const HeatingCoolingPageCTAContent = () => {
 	const { pageContent } =
@@ -25,17 +26,18 @@ const HeatingCoolingPageCTAContent = () => {
 			}
 			heroImagePosition="left"
 			bgColor="var(--services-red-color-rgb)"
-		>			
-				<div className="text-white">
-					<CTATextContent title={ctaTitle || ''} isHero={false}>
-						<CTAButton
-							text={finalCtaButton?.text || ''}
-							textColor="lg:text-service-red text-primary-black"
-							bgColor="bg-white"
-							href={finalCtaButton?.href || ''}
-						/>
-					</CTATextContent>
-				</div>			
+		>
+			<div className="text-white">
+				<CTATextContent title={ctaTitle || ''} isHero={false}>
+					<BookNowButton
+						fontColor="text-primary-black lg:text-service-red"
+						bgColor="bg-white"
+						buttonStyle="button"
+					>
+						{finalCtaButton?.text}
+					</BookNowButton>
+				</CTATextContent>
+			</div>
 		</CTAWithImage>
 	);
 };

@@ -12,6 +12,7 @@ import { GlobalContext } from '@contexts/global/global.context';
 import BookNowSection from 'components/templates/Book-now/book-now.section';
 import CtaWrapper from 'components/molecules/cta-wrapper.molecule';
 import Header from 'components/organisms/nav';
+import BookNowButton from 'components/atoms/book-now-button.atom';
 
 export interface BookNowContentProps {
 	page: BookNow[];
@@ -57,9 +58,13 @@ const BookNowPage: React.FC = (props) => {
 				mobileBgColor="bg-secondary-shade-3"
 			>
 				<div className=" hidden lg:flex lg:justify-end ">
-					<CtaWrapper.CTA className="headerButton bg-primary-shade-1 text-white  ">
+					<BookNowButton
+						fontColor="text-white"
+						bgColor="bg-primary-shade-1"
+						buttonStyle="headerButton"
+					>
 						{headerData.headerButton?.text}
-					</CtaWrapper.CTA>
+					</BookNowButton>
 				</div>
 			</Header>
 			<BookNowSection />

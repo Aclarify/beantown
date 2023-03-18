@@ -32,7 +32,11 @@ export default function HomeHero() {
 						<RichText value={heroDescription?.contentRaw} />
 					</ContentWrapper.Description>
 					<ContentWrapper.CTA className="mt-4 lg:mt-8">
-						<BookNowButton fontColor="text-primary-shade-1" bgColor="bg-white">
+						<BookNowButton
+							fontColor="text-primary-shade-1"
+							bgColor="bg-white"
+							buttonStyle="button"
+						>
 							{heroButton?.text}
 						</BookNowButton>
 					</ContentWrapper.CTA>

@@ -7,6 +7,7 @@ import CTATextContent, {
 	CTAButton,
 } from 'components/organisms/cta-text-content.organism';
 import Animate from 'components/molecules/animate.molecule';
+import BookNowButton from 'components/atoms/book-now-button.atom';
 
 const ElectricalPageCTAContent = () => {
 	const { pageContent } =
@@ -26,17 +27,18 @@ const ElectricalPageCTAContent = () => {
 			}
 			heroImagePosition="left"
 			bgColor="var(--services-yellow-color-rgb)"
-		>			
-				<div className="text-primary-black">
-					<CTATextContent title={ctaTitle || ''} isHero={false}>
-						<CTAButton
-							text={ctaButton?.text || ''}
-							textColor="text-primary-black"
-							bgColor="bg-white"
-							href={ctaButton?.href || ''}
-						/>
-					</CTATextContent>
-				</div>		
+		>
+			<div className="text-primary-black">
+				<CTATextContent title={ctaTitle || ''} isHero={false}>
+					<BookNowButton
+						fontColor="text-primary-black"
+						bgColor="bg-white"
+						buttonStyle="button"
+					>
+						{ctaButton?.text}
+					</BookNowButton>
+				</CTATextContent>
+			</div>
 		</CTAWithImage>
 	);
 };

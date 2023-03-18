@@ -32,7 +32,11 @@ const PlumbingHeroContent = () => {
 					description={heroDescription}
 					isHero={true}
 				>
-					<BookNowButton fontColor="text-white" bgColor="bg-primary-shade-1">
+					<BookNowButton
+						fontColor="text-white"
+						bgColor="bg-primary-shade-1"
+						buttonStyle="button"
+					>
 						{heroButton?.text}
 					</BookNowButton>
 				</CTATextContent>

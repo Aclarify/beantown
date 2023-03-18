@@ -5,6 +5,7 @@ declare const window: any;
 
 interface Props {
 	children?: React.ReactNode;
+	buttonStyle?: string;
 	bgColor?: string;
 	fontColor?: string;
 	className?: string;
@@ -15,7 +16,8 @@ const BookNowButton: React.FC<Props> = (props) => {
 			<button
 				type="button"
 				className={clsx(
-					'button se-widget-button',
+					' se-widget-button',
+					props.buttonStyle,
 					props.fontColor,
 					props.bgColor
 				)}

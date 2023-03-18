@@ -21,6 +21,7 @@ import CtaWrapper from 'components/molecules/cta-wrapper.molecule';
 import HomeTestimonials from '../components/templates/home/testimonials/testimonials';
 import HomeServiceAreas from '../components/templates/home/service-areas/service-areas';
 import Link from 'next/link';
+import BookNowButton from 'components/atoms/book-now-button.atom';
 
 export interface HomePageContentProps {
 	page: Home[];
@@ -67,9 +68,13 @@ const HomePage: React.FC = (props) => {
 			>
 				<div className=" hidden lg:flex lg:justify-end ">
 					<Link href={headerData.headerButton?.href || ''}>
-						<CtaWrapper.CTA className="text-primary-shade-1 headerButton  bg-white   ">
+						<BookNowButton
+							fontColor="text-primary-shade-1"
+							bgColor="bg-white"
+							buttonStyle="headerButton"
+						>
 							{headerData.headerButton?.text}
-						</CtaWrapper.CTA>
+						</BookNowButton>
 					</Link>
 				</div>
 			</Header>
