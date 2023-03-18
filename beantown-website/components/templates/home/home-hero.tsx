@@ -8,6 +8,8 @@ import ContentWrapper from 'components/organisms/content-wrapper.organism';
 import CtaWrapper from 'components/molecules/cta-wrapper.molecule';
 import Link from 'next/link';
 
+declare const window: any;
+
 export default function HomeHero() {
 	const { pageContent } =
 		useContext<GlobalContextProps<HomePageContentProps>>(GlobalContext);
@@ -31,11 +33,13 @@ export default function HomeHero() {
 						<RichText value={heroDescription?.contentRaw} />
 					</ContentWrapper.Description>
 					<ContentWrapper.CTA className="mt-4 lg:mt-8">
-						<Link href={heroButton?.href || ''}>
-							<CtaWrapper.CTA className="text-primary-shade-1 button bg-white ">
-								{heroButton?.text}
-							</CtaWrapper.CTA>
-						</Link>
+						<button
+							className="se-widget-button text-primary-shade-1 button bg-white"
+							type="button"
+							onClick={() => window.ScheduleEngine.show()}
+						>
+							{heroButton?.text}
+						</button>
 					</ContentWrapper.CTA>
 				</ContentWrapper>
 			</div>
