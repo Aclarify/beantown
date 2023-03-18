@@ -18,6 +18,7 @@ import { GlobalContextProps } from '@typing/common/interfaces/contexts.interface
 import { GlobalContext } from '@contexts/global/global.context';
 import CtaWrapper from 'components/molecules/cta-wrapper.molecule';
 import Link from 'next/link';
+import BookNowButton from 'components/atoms/book-now-button.atom';
 
 export interface PlumbingContentProps {
 	page: OtherServices[];
@@ -25,19 +26,6 @@ export interface PlumbingContentProps {
 	footer: Footer[];
 }
 
-const PageHead = () => {
-	return (
-		<Head>
-			{/* TODO to fetch from CMS */}
-			<title>Plumbing Services</title>
-			<meta
-				name="description"
-				content="Beantown Services is a full-service cleaning company that provides residential and commercial cleaning services in the Boston area."
-			/>
-			<link rel="icon" href="/favicon.ico" />
-		</Head>
-	);
-};
 const getStaticProps = generateGetStaticProps<PlumbingContentProps>(
 	pageQuery,
 	PageNames.PLUMBING
@@ -54,23 +42,35 @@ const PlumbingServicesPage: React.FC = (props) => {
 	const pageData = pageContent.page[0];
 	const headerData = pageContent.header[0];
 	const footerData = pageContent.footer[0];
-	const { logoDesktop, logoMobile } = pageData;
+	const { logoLight, logoDark, pageTitle, metaDescription } = pageData;
+	const PageHead = () => {
+		return (
+			<Head>
+				{/* TODO to fetch from CMS */}
+				<title>{pageTitle}</title>
+				<meta name="description" content={metaDescription || ''} />
+				<link rel="icon" href="/favicon.ico" />
+			</Head>
+		);
+	};
 	return (
 		<div id="plumbing-services" className="bg-primary-white-shade-1">
 			<PageHead />
 			<Header
 				fontColor="text-white"
-				logoDesktop={logoDesktop?.image}
-				logoMobile={logoMobile?.image}
+				logoDesktop={logoLight?.image}
+				logoMobile={logoDark?.image}
 				content={headerData}
 				mobileBgColor="bg-service-green-bg"
 			>
 				<div className=" hidden lg:flex lg:justify-end ">
-					<Link href={headerData.headerButton?.href || ''}>
-						<CtaWrapper.CTA className="text-primary-shade-1 headerButton  bg-white">
-							{headerData.headerButton?.text}
-						</CtaWrapper.CTA>
-					</Link>
+					<BookNowButton
+						fontColor="text-primary-shade-1"
+						bgColor="bg-white"
+						buttonStyle="headerButton"
+					>
+						{headerData.headerButton?.text}
+					</BookNowButton>
 				</div>
 			</Header>
 			<PlumbingHeroContent />
@@ -78,7 +78,7 @@ const PlumbingServicesPage: React.FC = (props) => {
 			<PlumbingCTASection />
 			<PlumbingBlogsSection />
 			<PlumbingFaqSection />
-			<FooterSection logoDesktop={logoDesktop?.image} content={footerData} />
+			<FooterSection logoDesktop={logoLight?.image} content={footerData} />
 		</div>
 	);
 };

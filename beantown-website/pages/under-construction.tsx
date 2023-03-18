@@ -13,6 +13,7 @@ import CtaWrapper from 'components/molecules/cta-wrapper.molecule';
 import Header from 'components/organisms/nav';
 import UnderConstructionSection from 'components/templates/under-construction/under-construction.section';
 import Link from 'next/link';
+import BookNowButton from 'components/atoms/book-now-button.atom';
 
 export interface UnderConstructionContentProps {
 	page: BookNow[];
@@ -22,7 +23,7 @@ export interface UnderConstructionContentProps {
 const PageHead = () => {
 	return (
 		<Head>
-			<title>Book Now</title>
+			<title>UnderConstruction - Beantown Home Services</title>
 			<meta
 				name="description"
 				content="Beantown Services is a full-service cleaning company that provides residential and commercial cleaning services in the Boston area."
@@ -50,28 +51,32 @@ const UnderConstructionPage: React.FC = (props) => {
 	const headerData = pageContent.header[0];
 	const footerData = pageContent.footer[0];
 
-	const { logoDesktop, footerLogo } = pageData;
+	const { logoLight, logoDark } = pageData;
 	return (
-		<div id="book-now" className="bg-primary-white-shade-1">
+		<div id="under-construction" className="bg-primary-white-shade-1">
 			<PageHead />
 			<Header
 				mobileBgColor="bg-primary-white-shade-1"
 				fontColor="text-primary-shade-1"
-				logoDesktop={logoDesktop?.image}
-				logoMobile={logoDesktop?.image}
+				logoDesktop={logoLight?.image}
+				logoMobile={logoDark?.image}
 				content={headerData}
 			>
 				<div className=" hidden lg:flex lg:justify-end ">
 					<Link href={headerData.headerButton?.href || ''}>
-						<CtaWrapper.CTA className="para-3 bg-primary-shade-1 h-[48px] w-[139px] rounded-lg py-1 px-4 tracking-wide  text-white  md:py-2 md:px-8 lg:tracking-wider ">
-							<p>{headerData.headerButton?.text}</p>
-						</CtaWrapper.CTA>
+						<BookNowButton
+							fontColor="text-white"
+							bgColor="bg-primary-shade-1"
+							buttonStyle="headerButton"
+						>
+							{headerData.headerButton?.text}
+						</BookNowButton>
 					</Link>
 				</div>
 			</Header>
 			<UnderConstructionSection />
 			<FooterSection
-				logoDesktop={footerLogo?.image || ''}
+				logoDesktop={logoLight?.image || ''}
 				content={footerData}
 			/>
 		</div>

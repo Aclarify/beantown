@@ -12,24 +12,13 @@ import { GlobalContext } from '@contexts/global/global.context';
 import BookNowSection from 'components/templates/Book-now/book-now.section';
 import CtaWrapper from 'components/molecules/cta-wrapper.molecule';
 import Header from 'components/organisms/nav';
+import BookNowButton from 'components/atoms/book-now-button.atom';
 
 export interface BookNowContentProps {
 	page: BookNow[];
 	header: Nav[];
 	footer: Footer[];
 }
-const PageHead = () => {
-	return (
-		<Head>
-			<title>Book Now</title>
-			<meta
-				name="description"
-				content="Beantown Services is a full-service cleaning company that provides residential and commercial cleaning services in the Boston area."
-			/>
-			<link rel="icon" href="/favicon.ico" />
-		</Head>
-	);
-};
 const getStaticProps = generateGetStaticProps<BookNowContentProps>(
 	pageQuery,
 	PageNames.BOOKNOW
@@ -47,26 +36,40 @@ const BookNowPage: React.FC = (props) => {
 	const headerData = pageContent.header[0];
 	const footerData = pageContent.footer[0];
 
-	const { logoDesktop, footerLogo } = pageData;
+	const { logoLight, logoDark, pageTitle, metaDescription } = pageData;
+	const PageHead = () => {
+		return (
+			<Head>
+				{/* TODO to fetch from CMS */}
+				<title>{pageTitle}</title>
+				<meta name="description" content={metaDescription || ''} />
+				<link rel="icon" href="/favicon.ico" />
+			</Head>
+		);
+	};
 	return (
 		<div id="book-now" className="bg-primary-white-shade-1">
 			<PageHead />
 			<Header
 				fontColor="text-primary-shade-1"
-				logoDesktop={logoDesktop?.image}
-				logoMobile={logoDesktop?.image}
+				logoDesktop={logoDark?.image}
+				logoMobile={logoDark?.image}
 				content={headerData}
 				mobileBgColor="bg-secondary-shade-3"
 			>
 				<div className=" hidden lg:flex lg:justify-end ">
-					<CtaWrapper.CTA className="headerButton bg-primary-shade-1 text-white  ">
+					<BookNowButton
+						fontColor="text-white"
+						bgColor="bg-primary-shade-1"
+						buttonStyle="headerButton"
+					>
 						{headerData.headerButton?.text}
-					</CtaWrapper.CTA>
+					</BookNowButton>
 				</div>
 			</Header>
 			<BookNowSection />
 			<FooterSection
-				logoDesktop={footerLogo?.image || ''}
+				logoDesktop={logoLight?.image || ''}
 				content={footerData}
 			/>
 		</div>

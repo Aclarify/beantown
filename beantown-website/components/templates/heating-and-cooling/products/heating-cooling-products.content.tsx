@@ -10,6 +10,7 @@ import 'slick-carousel/slick/slick.css';
 import 'slick-carousel/slick/slick-theme.css';
 import SectionContentWrapper from 'components/molecules/section-content-wrapper.molecule';
 import { SCREEN_BREAKPOINTS } from '@typing/common/interfaces/devices.interface';
+import Animate from 'components/molecules/animate.molecule';
 
 const HeatingCoolingProductsCardContent = () => {
 	const slider = React.useRef<Slider | null>(null);
@@ -112,19 +113,22 @@ const HeatingCoolingProductsCardContent = () => {
 		<>
 			<SectionContentWrapper>
 				<div className=" flex items-center justify-between">
-					<div>
-						<h2 className=" ">{productsTitle}</h2>
-					</div>
-
+					<Animate bottom>
+						<div>
+							<h2 className=" ">{productsTitle}</h2>
+						</div>
+					</Animate>
 					<div className="hidden  justify-center  gap-4 pt-4 lg:flex  ">
 						<button
 							onClick={previous}
+							aria-label={'left-arrow'}
 							className="lg:text-service-red text-primary-shade-1 bg-secondary-shade-3 h-16 w-32 rounded-full py-4 px-6 text-xl"
 						>
 							<FontAwesomeIcon icon={faArrowLeft} />
 						</button>
 						<button
 							onClick={next}
+							aria-label={'right-arrow'}
 							className=" bg-service-red h-16  w-32 rounded-full py-4 px-6 text-xl text-white"
 						>
 							<FontAwesomeIcon icon={faArrowRight} />
@@ -155,12 +159,14 @@ const HeatingCoolingProductsCardContent = () => {
 			<div className="relative flex justify-center gap-4 pt-8 lg:hidden ">
 				<button
 					onClick={previous}
+					aria-label={'left-arrow'}
 					className="lg:text-service-red text-primary-shade-1 bg-secondary-shade-3 h-12 w-20  rounded-full py-2 px-4"
 				>
 					<FontAwesomeIcon icon={faArrowLeft} />
 				</button>
 				<button
 					onClick={next}
+					aria-label={'right-arrow'}
 					className=" bg-service-red h-12 w-20 rounded-full py-2 px-4 text-white"
 				>
 					<FontAwesomeIcon icon={faArrowRight} />

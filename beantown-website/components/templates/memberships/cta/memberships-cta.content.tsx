@@ -6,6 +6,8 @@ import CTAWithImage from 'components/organisms/cta-with-image.organism';
 import CTATextContent, {
 	CTAButton,
 } from 'components/organisms/cta-text-content.organism';
+import Animate from 'components/molecules/animate.molecule';
+import BookNowButton from 'components/atoms/book-now-button.atom';
 
 const MembershipsPageCTAContent = () => {
 	const { pageContent } =
@@ -31,11 +33,9 @@ const MembershipsPageCTAContent = () => {
 			>
 				<div className="text-primary-shade-1">
 					<CTATextContent title={ctaTitle || ''} description={ctaDescription}>
-						<CTAButton
-							text={finalCtaButton?.text || ''}
-							textColor="text-white"
-							bgColor="bg-primary-shade-1"
-						/>
+						<BookNowButton fontColor="text-white" bgColor="bg-primary-shade-1">
+							{finalCtaButton?.text}
+						</BookNowButton>
 					</CTATextContent>
 				</div>
 			</CTAWithImage>

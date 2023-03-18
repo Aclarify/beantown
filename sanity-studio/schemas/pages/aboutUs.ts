@@ -11,14 +11,24 @@ export default defineType({
       type: 'string',
     }),
     defineField({
-      name: 'logoDesktop',
-      title: 'Logo Desktop',
+      name: 'pageTitle',
+      title: 'HTML Page Title',
+      type: 'string',
+    }),
+    defineField({
+      name: 'metaDescription',
+      title: 'HTML Page Description',
+      type: 'string',
+    }),
+    defineField({
+      name: 'logoLight',
+      title: 'Logo Light',
       type: 'reference',
       to: [{type: 'imageIcon'}],
     }),
     defineField({
-      name: 'logoMobile',
-      title: 'Logo Mobile',
+      name: 'logoDark',
+      title: 'Logo Dark',
       type: 'reference',
       to: [{type: 'imageIcon'}],
     }),
@@ -35,14 +45,6 @@ export default defineType({
     defineField({
       name: 'heroImage',
       title: 'Hero Background Image',
-      type: 'image',
-      options: {
-        hotspot: true,
-      },
-    }),
-    defineField({
-      name: 'heroImageMobile',
-      title: 'Hero Background Image For Mobile Screens',
       type: 'image',
       options: {
         hotspot: true,

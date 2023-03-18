@@ -3,6 +3,8 @@ import WaveWrapper from 'components/molecules/wave-wrapper.molecule';
 import Image from 'next/image';
 import React from 'react';
 import HeatingCoolingServicesContent from './heating-cooling-services.content';
+import bottomWaveMobile from 'public/images/services/services-hero-bottom-wave-mobile.svg';
+import bottomWave from 'public/images/services/services-hero-bottom-wave.svg';
 
 const HeatingCoolingHeroServicesSection = () => {
 	const { width } = useWindowDimensions();
@@ -12,11 +14,7 @@ const HeatingCoolingHeroServicesSection = () => {
 			className="z-5 -sm:mt-[6em] 3xl:-mt-[7em] relative -mt-[5em] mb-[3em]  md:-mt-[9em] lg:-mt-[5em] "
 		>
 			<WaveWrapper
-				waveURL={
-					width > 1023
-						? '/images/services/services-hero-bottom-wave.svg'
-						: '/images/services/services-hero-bottom-wave-mobile.svg'
-				}
+				waveURL={width > 1023 ? bottomWave : bottomWaveMobile}
 			></WaveWrapper>
 
 			<Image

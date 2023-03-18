@@ -6,6 +6,7 @@ import Image from 'next/image';
 import WaveWrapper from 'components/molecules/wave-wrapper.molecule';
 import Blogs from 'components/organisms/blogs.organism';
 import SectionContentWrapper from 'components/molecules/section-content-wrapper.molecule';
+import bottomWave from 'public/images/home/blogs/home-blogs-bottom-wave.svg';
 
 export default function HomeBlogs() {
 	const { pageContent } =
@@ -39,7 +40,6 @@ export default function HomeBlogs() {
 				alt="Right Blob mobile"
 				className="absolute  top-0 right-0 z-10 translate-x-[75%] translate-y-[-70%] transform lg:hidden"
 			/>
-
 			<div className="bg-primary-white-shade-1">
 				<SectionContentWrapper>
 					<Blogs
@@ -52,7 +52,7 @@ export default function HomeBlogs() {
 					></Blogs>
 				</SectionContentWrapper>
 			</div>
-			<WaveWrapper waveURL="/images/home/blogs/home-blogs-bottom-wave.svg"></WaveWrapper>
+			<WaveWrapper waveURL={bottomWave}></WaveWrapper>
 		</section>
 	);
 }

@@ -9,6 +9,7 @@ import { AboutUsContentProps } from 'pages/about-us';
 import { SCREEN_BREAKPOINTS } from '@typing/common/interfaces/devices.interface';
 import { useContext, useEffect, useState } from 'react';
 import { toastBuilder } from 'components/molecules/toast.molecule';
+import Animate from 'components/molecules/animate.molecule';
 
 const MeetOurTeam = () => {
 	const { pageContent } =
@@ -63,73 +64,84 @@ const MeetOurTeam = () => {
 				<div id="title-container" className="flex flex-col">
 					<ContentWrapper>
 						<ContentWrapper.Title className=" mb-3 lg:mb-6">
-							<h2 className=" text-primary-shade-1 mt-10 text-center">
-								{teamTitle}
-							</h2>
+							<Animate bottom>
+								<h2 className=" text-primary-shade-1 mt-10 text-center">
+									{teamTitle}
+								</h2>
+							</Animate>
 						</ContentWrapper.Title>
 						<ContentWrapper.Description>
-							<p className=" text-primary-shade-1 mb-8 justify-center text-center md:mx-40 lg:mb-14">
-								{teamDescription}
-							</p>
+							<Animate>
+								<p className=" text-primary-shade-1 mb-8 justify-center text-center md:mx-40 lg:mb-14">
+									{teamDescription}
+								</p>
+							</Animate>
 						</ContentWrapper.Description>
 					</ContentWrapper>
 				</div>
-				<div
-					id="cards-container"
-					className=" grid grid-cols-2 justify-items-center gap-x-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-2 xl:grid-cols-3"
-				>
-					{memberCardsToDisplay?.map((content, index) => {
-						return (
-							content && (
-								<div
-									key={index}
-									id="card"
-									className="m-2 w-[160px] rounded-lg bg-white  px-3 shadow-[rgba(29,_39,_87,_0.08)_4px_8px_60px]  lg:w-full lg:px-4 "
-								>
-									<div
-										id="profileInfo-wrapper"
-										className="flex  flex-col  lg:flex-row  "
-									>
-										<div className="rounded-lg fill-current py-3 lg:w-[200px]  lg:py-4 ">
-											<CMSImageWrapper
-												altText={content.profilePicture?.asset?.altText || ''}
-												image={content.profilePicture || null}
-											/>
-										</div>
-
+				
+				
+					<div
+						id="cards-container"
+						className=" grid grid-cols-2 justify-items-center gap-x-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-2 xl:grid-cols-3"
+					>
+						{memberCardsToDisplay?.map((content, index) => {
+							return (
+								content && (
+									<Animate  cascade>
 										<div
-											id="profile-Info"
-											className="flex flex-col items-center justify-center pb-2 lg:items-start lg:justify-evenly lg:py-8 lg:pl-8"
+											key={index}
+											id="card"
+											className="m-2 w-[160px] rounded-lg bg-white  px-3 shadow-[rgba(29,_39,_87,_0.08)_4px_8px_60px]  lg:w-full lg:px-4 "
 										>
-											<h4 className=" text-primary-black ">
-												{content?.memberName}
-											</h4>
-											<p className=" text-gray-shade-1 block !font-thin">
-												{content?.memberDesignation}
-											</p>
-											<div className="flex">
-												{content.socialMediaDetails?.map((details, index) => {
-													return (
-														<div id="socialMediaIconGroupicons" key={index}>
-															<div className=" fill-current ">
-																<Image
-																	alt={details?.image?.name || ''}
-																	width={32}
-																	height={32}
-																	src={details?.image?.image?.asset?.url || ''}
-																/>
-															</div>
-														</div>
-													);
-												})}
+											<div
+												id="profileInfo-wrapper"
+												className="flex  flex-col  lg:flex-row  "
+											>
+												<div className="rounded-lg fill-current py-3 lg:w-[200px]  lg:py-4 ">
+													<CMSImageWrapper
+														altText={content.profilePicture?.asset?.altText || ''}
+														image={content.profilePicture || null}
+													/>
+												</div>
+
+												<div
+													id="profile-Info"
+													className="flex flex-col items-center justify-center pb-2 lg:items-start lg:justify-evenly lg:py-8 lg:pl-8"
+												>
+													<h4 className=" text-primary-black ">
+														{content?.memberName}
+													</h4>
+													<p className=" text-gray-shade-1 block !font-thin">
+														{content?.memberDesignation}
+													</p>
+													<div className="flex">
+														{content.socialMediaDetails?.map((details, index) => {
+															return (
+																<div id="socialMediaIconGroupicons" key={index}>
+																	<div className=" fill-current ">
+																		<Image
+																			alt={details?.image?.name || ''}
+																			width={32}
+																			height={32}
+																			src={
+																				details?.image?.image?.asset?.url || ''
+																			}
+																		/>
+																	</div>
+																</div>
+															);
+														})}
+													</div>
+												</div>
 											</div>
 										</div>
-									</div>
-								</div>
-							)
-						);
-					})}
-				</div>
+									</Animate>
+								)
+							);
+						})}
+					</div>
+				
 				<div className="mt-8 items-center text-center lg:mt-[60px] ">
 					<CtaWrapper.CTA
 						onClick={onLoadMore}

@@ -3,6 +3,7 @@ import Link from 'next/link';
 import Image from 'next/image';
 import topWave from 'public/images/home/footer-top-wave.svg';
 import { Footer as FooterType } from '@typing/gql/graphql';
+import Animate from 'components/molecules/animate.molecule';
 
 interface IProps {
 	logoDesktop: any;
@@ -62,103 +63,121 @@ export default function Footer(props: IProps) {
 						{navGroup &&
 							navGroup.map((linkGroup, index) => (
 								<div key={index} className="max-w-sm pt-4 lg:pt-10">
-									<h1 className="subtitle font-bold text-white lg:pb-6 lg:font-normal">
-										{linkGroup?.groupTitle}
-									</h1>
-									<div className="flex justify-start lg:flex-col">
-										{linkGroup?.links?.map((link, index) => {
-											return (
-												link && (
-													<div key={index} className="pt-2 pr-6  ">
-														<Link
-															className="para text-gray-300 "
-															href={link?.href || '/'}
-														>
-															{link?.linkText}
-														</Link>
-													</div>
-												)
-											);
-										})}
-									</div>
+									<Animate>
+										<h1 className="subtitle font-bold text-white lg:pb-6 lg:font-normal">
+											{linkGroup?.groupTitle}
+										</h1>
+									</Animate>
+									<Animate>
+										<div className="flex justify-start lg:flex-col">
+											{linkGroup?.links?.map((link, index) => {
+												return (
+													link && (
+														<div key={index} className="pt-2 pr-6  ">
+															<Link
+																className="para text-gray-300 "
+																href={link?.href || '/'}
+															>
+																{link?.linkText}
+															</Link>
+														</div>
+													)
+												);
+											})}
+										</div>
+									</Animate>
 								</div>
 							))}
 						<div id="contact" className="pt-4 lg:pt-10">
-							<div className="pb-2 lg:pb-4">
-								<span className=" subtitle font-bold text-white lg:font-normal">
-									{contactUsTitle}
-								</span>
-							</div>
+							<Animate>
+								<div className="pb-2 lg:pb-4">
+									<span className=" subtitle font-bold text-white lg:font-normal">
+										{contactUsTitle}
+									</span>
+								</div>
+							</Animate>
 							{contactUs?.map((contactDtl, index) => {
 								return (
 									contactDtl?.iconImage && (
-										<div
-											key={index}
-											className="para flex justify-start space-x-2 pt-2 text-gray-300"
-										>
-											<Image
-												alt={contactDtl.iconImage?.asset?.altText || ''}
-												width={15}
-												height={15}
-												src={contactDtl.iconImage?.asset?.url || ''}
-											/>
-											<span>{contactDtl.text}</span>
-										</div>
+										<Animate key={index}>
+											<div
+												key={index}
+												className="para flex justify-start space-x-2 pt-2 text-gray-300"
+											>
+												<Image
+													alt={contactDtl.iconImage?.asset?.altText || ''}
+													width={15}
+													height={15}
+													src={contactDtl.iconImage?.asset?.url || ''}
+												/>
+												<span>{contactDtl.text}</span>
+											</div>
+										</Animate>
 									)
 								);
 							})}
 						</div>
 					</div>
+
 					<div id="logoSection" className="basis-1/4 pb-[16px]">
 						<div className="flex space-x-4 pt-8">
+							<Animate>
+								<div
+									id="logoImage"
+									className="relative h-[50px] w-[136px] focus:outline-none lg:h-[80px] lg:w-[230px]"
+								>
+									<Link href={'/'}>
+										<Image
+											alt={logoDesktop?.asset?.altText || ''}
+											fill={true}
+											src={logoDesktop?.asset?.url || ''}
+										/>
+									</Link>
+								</div>
+								<div
+									id="socialMediaIconGroupMobile"
+									className="flex items-center space-x-4 align-middle lg:hidden"
+								>
+									{renderSocialMediaIcons()}
+								</div>
+							</Animate>
+						</div>
+						<div id="footerDescription" className="lg:pb-6 lg:pt-4">
+							<Animate>
+								<p className="para text-gray-300">{description}</p>
+							</Animate>
+						</div>
+						<Animate>
 							<div
-								id="logoImage"
-								className="relative h-[50px] w-[136px] focus:outline-none lg:h-[80px] lg:w-[230px]"
-							>
-								<Link href={'/'}>
-									<Image
-										alt={logoDesktop?.asset?.altText || ''}
-										fill={true}
-										src={logoDesktop?.asset?.url || ''}
-									/>
-								</Link>
-							</div>
-							<div
-								id="socialMediaIconGroupMobile"
-								className="flex items-center space-x-4 align-middle lg:hidden"
+								id="socialMediaIconGroupDesktop"
+								className="hidden space-x-4 pb-8 lg:flex"
 							>
 								{renderSocialMediaIcons()}
 							</div>
-						</div>
-						<div id="footerDescription" className="lg:pb-6 lg:pt-4">
-							<p className="para text-gray-300">{description}</p>
-						</div>
-						<div
-							id="socialMediaIconGroupDesktop"
-							className="hidden space-x-4 pb-8 lg:flex"
-						>
-							{renderSocialMediaIcons()}
-						</div>
+						</Animate>
 					</div>
 				</div>
-				<div className="2xl:padding-for-section bg-primary-shade-1 px-5">
-					<div
-						id="copyWrite"
-						className="border-gray-shade-2 para  flex justify-center border-t-2  py-6  text-gray-300"
-					>
-						<span className="">{copyright} </span>
 
-						{navLinks?.map((link, index) => {
-							return (
-								link && (
-									<div className="" key={index}>
-										<span className="px-2"> . </span>
-										<Link href={link?.href || '/'}>{link?.linkText}</Link>
-									</div>
-								)
-							);
-						})}
-					</div>
+				<div className="2xl:padding-for-section bg-primary-shade-1 px-5">
+					<Animate>
+						<div
+							id="copyWrite"
+							className="border-gray-shade-2 para  flex justify-center border-t-2  py-6  text-gray-300"
+						>
+							<span className="">{copyright} </span>
+
+							{navLinks?.map((link, index) => {
+								return (
+									link && (
+										<div className="" key={index}>
+											<span className="px-2"> . </span>
+											<Link href={link?.href || '/'}>{link?.linkText}</Link>
+										</div>
+									)
+								);
+							})}
+						</div>
+					</Animate>
 				</div>
 			</div>
 		</section>

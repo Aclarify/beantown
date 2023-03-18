@@ -4,10 +4,10 @@ import { GlobalContextProps } from '@typing/common/interfaces/contexts.interface
 import { HomePageContentProps } from 'pages';
 import RichText from 'components/molecules/rich-text.molecule';
 import Image from 'next/image';
-
 import ContentWrapper from 'components/organisms/content-wrapper.organism';
-import CtaWrapper from 'components/molecules/cta-wrapper.molecule';
-import Link from 'next/link';
+import BookNowButton from 'components/atoms/book-now-button.atom';
+
+declare const window: any;
 
 export default function HomeHero() {
 	const { pageContent } =
@@ -32,14 +32,13 @@ export default function HomeHero() {
 						<RichText value={heroDescription?.contentRaw} />
 					</ContentWrapper.Description>
 					<ContentWrapper.CTA className="mt-4 lg:mt-8">
-						<Link href={heroButton?.href || ''}>
-							<CtaWrapper.CTA className="text-primary-shade-1 button bg-white ">
-								{heroButton?.text}
-							</CtaWrapper.CTA>
-						</Link>
+						<BookNowButton fontColor="text-primary-shade-1" bgColor="bg-white">
+							{heroButton?.text}
+						</BookNowButton>
 					</ContentWrapper.CTA>
 				</ContentWrapper>
 			</div>
+
 			<div
 				id="image-wrapper"
 				className="after:z-1 after:from-home-hero-gradient-start after:to-home-hero-gradient-end xs:block absolute top-0 z-0 h-full w-full after:absolute after:top-0 after:left-0 after:h-full after:w-full after:bg-gradient-to-b"

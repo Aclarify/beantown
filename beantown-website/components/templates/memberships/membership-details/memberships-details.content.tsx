@@ -7,6 +7,7 @@ import RichText from '../../../molecules/rich-text.molecule';
 import MaskedImageWithBackgroundVector from '../../../organisms/masked-image-with-blob.organism';
 import useWindowDimensions from '../../../../lib/hooks/use-window-dimensions.hook';
 import { MembershipsContext } from '../../../../contexts/memberships/memberships.context';
+import Animate from 'components/molecules/animate.molecule';
 
 const MembersipsDetails = () => {
 	const { pageContent } =
@@ -39,17 +40,21 @@ const MembersipsDetails = () => {
 				>
 					<ContentWrapper>
 						<ContentWrapper.Title>
-							<h2 className=" text-primary-black ">
-								{activeServiceMembership?.serviceMembershipTitle}
-							</h2>
+							<Animate bottom>
+								<h2 className=" text-primary-black ">
+									{activeServiceMembership?.serviceMembershipTitle}
+								</h2>
+							</Animate>
 						</ContentWrapper.Title>
 						<ContentWrapper.Description className="text-left !font-thin">
-							<RichText
-								value={
-									activeServiceMembership?.serviceMembershipDescription
-										?.contentRaw
-								}
-							/>
+							<Animate>
+								<RichText
+									value={
+										activeServiceMembership?.serviceMembershipDescription
+											?.contentRaw
+									}
+								/>
+							</Animate>
 						</ContentWrapper.Description>
 					</ContentWrapper>
 				</div>

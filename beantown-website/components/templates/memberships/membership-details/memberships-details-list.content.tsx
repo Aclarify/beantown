@@ -4,6 +4,7 @@ import { GlobalContext } from '@contexts/global/global.context';
 import { GlobalContextProps } from '@typing/common/interfaces/contexts.interface';
 import { MembershipsContentProps } from 'pages/memberships';
 import { MembershipsContext } from '../../../../contexts/memberships/memberships.context';
+import Animate from 'components/molecules/animate.molecule';
 
 const MembershipsDetailsList = () => {
 	const { pageContent } =
@@ -26,29 +27,31 @@ const MembershipsDetailsList = () => {
 		>
 			<div className="container py-6 lg:p-[60px] ">
 				<div id="list-container" className="">
-					<div className="3xl:grid-cols-2  grid  w-full  grid-cols-1 gap-y-2 lg:grid-cols-2 xl:grid-cols-2  ">
-						{activeServiceMembership?.serviceMembershipDetails?.map(
-							(item: any, index: number) => {
-								return (
-									<div
-										key={index}
-										id="list-items"
-										className="para-4 md:para-3 text-gray-shade-1 flex items-center"
-									>
-										<Image
-											src={
-												'/images/memberships/membership-details/details-list-icon.svg'
-											}
-											alt={'electrical-services-list-icon-image'}
-											width={'32'}
-											height={'32'}
-										/>
-										<p className="pl-2">{item}</p>
-									</div>
-								);
-							}
-						)}
-					</div>
+					<Animate bottom cascade>
+						<div className="3xl:grid-cols-2  grid  w-full  grid-cols-1 gap-y-2 lg:grid-cols-2 xl:grid-cols-2  ">
+							{activeServiceMembership?.serviceMembershipDetails?.map(
+								(item: any, index: number) => {
+									return (
+										<div
+											key={index}
+											id="list-items"
+											className="para-4 md:para-3 text-gray-shade-1 flex items-center"
+										>
+											<Image
+												src={
+													'/images/memberships/membership-details/details-list-icon.svg'
+												}
+												alt={'electrical-services-list-icon-image'}
+												width={'32'}
+												height={'32'}
+											/>
+											<p className="pl-2">{item}</p>
+										</div>
+									);
+								}
+							)}
+						</div>
+					</Animate>
 				</div>
 			</div>
 		</section>

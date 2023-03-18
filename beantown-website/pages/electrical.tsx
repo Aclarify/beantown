@@ -9,7 +9,6 @@ import ElectricalHeroSection from 'components/templates/electrical/hero/electric
 import ElectricalPageCTASection from 'components/templates/electrical/cta/electrical-cta.section';
 import ElectricalBlogsSection from 'components/templates/electrical/blog/electrical-blogs.section';
 import ElectricalFaqSection from 'components/templates/electrical/faq/electrical-faqs.section';
-import AboutPlumbingServiceSection from 'components/templates/electrical/about-the-service/electrical-about.section';
 import Header from 'components/organisms/nav';
 import FooterSection from 'components/organisms/footer';
 import React, { useContext } from 'react';
@@ -17,6 +16,8 @@ import { GlobalContextProps } from '@typing/common/interfaces/contexts.interface
 import { GlobalContext } from '@contexts/global/global.context';
 import CtaWrapper from 'components/molecules/cta-wrapper.molecule';
 import Link from 'next/link';
+import AboutElectricalServiceSection from 'components/templates/electrical/about-the-service/electrical-about.section';
+import BookNowButton from 'components/atoms/book-now-button.atom';
 
 export interface ElectricalContentProps {
 	page: OtherServices[];
@@ -28,18 +29,6 @@ const getStaticProps = generateGetStaticProps<ElectricalContentProps>(
 	PageNames.ELECTRICAL
 );
 export { getStaticProps };
-const PageHead = () => {
-	return (
-		<Head>
-			<title>Electrical Services</title>
-			<meta
-				name="description"
-				content="Beantown Services is a full-service cleaning company that provides residential and commercial cleaning services in the Boston area."
-			/>
-			<link rel="icon" href="/favicon.ico" />
-		</Head>
-	);
-};
 
 const ElectricalServicesPage: React.FC = (props) => {
 	const { pageContent } =
@@ -52,31 +41,43 @@ const ElectricalServicesPage: React.FC = (props) => {
 	const headerData = pageContent.header[0];
 	const footerData = pageContent.footer[0];
 
-	const { logoDesktop, logoMobile } = pageData;
+	const { logoLight, logoDark, pageTitle, metaDescription } = pageData;
+	const PageHead = () => {
+		return (
+			<Head>
+				{/* TODO to fetch from CMS */}
+				<title>{pageTitle}</title>
+				<meta name="description" content={metaDescription || ''} />
+				<link rel="icon" href="/favicon.ico" />
+			</Head>
+		);
+	};
 	return (
 		<section id="electrical-services" className="bg-primary-white-shade-1">
 			<PageHead />
 			<Header
 				fontColor="text-primary-shade-1"
-				logoDesktop={logoDesktop?.image}
-				logoMobile={logoDesktop?.image}
+				logoDesktop={logoDark?.image}
+				logoMobile={logoDark?.image}
 				content={headerData}
 				mobileBgColor="bg-service-yellow-bg"
 			>
 				<div className=" hidden lg:flex lg:justify-end ">
-					<Link href={headerData.headerButton?.href || ''}>
-						<CtaWrapper.CTA className="headerButton bg-primary-shade-1   text-white  ">
-							{headerData.headerButton?.text}
-						</CtaWrapper.CTA>
-					</Link>
+					<BookNowButton
+						fontColor="text-white"
+						bgColor="bg-primary-shade-1"
+						buttonStyle="headerButton"
+					>
+						{headerData.headerButton?.text}
+					</BookNowButton>
 				</div>
 			</Header>
 			<ElectricalHeroSection />
-			<AboutPlumbingServiceSection />
+			<AboutElectricalServiceSection />
 			<ElectricalPageCTASection />
 			<ElectricalBlogsSection />
 			<ElectricalFaqSection />
-			<FooterSection logoDesktop={logoMobile?.image} content={footerData} />
+			<FooterSection logoDesktop={logoLight?.image} content={footerData} />
 		</section>
 	);
 };

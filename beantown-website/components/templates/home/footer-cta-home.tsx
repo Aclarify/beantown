@@ -6,6 +6,8 @@ import CTAWithImage from 'components/organisms/cta-with-image.organism';
 import CTATextContent, {
 	CTAButton,
 } from 'components/organisms/cta-text-content.organism';
+import Animate from 'components/molecules/animate.molecule';
+import BookNowButton from 'components/atoms/book-now-button.atom';
 
 export default function FooterCta() {
 	const { pageContent } =
@@ -33,18 +35,20 @@ export default function FooterCta() {
 					bgColor="var(--secondary-color-shade-2-rgb)"
 				>
 					<div className="text-primary-shade-1 ">
-						<CTATextContent
-							title={ctaTitle || ''}
-							description={ctaDescription}
-							isHero={false}
-						>
-							<CTAButton
-								text={finalCtaButton?.text || ''}
-								textColor="text-white"
-								bgColor="bg-primary-shade-1"
-								href={finalCtaButton?.href || ''}
-							/>
-						</CTATextContent>
+						<Animate>
+							<CTATextContent
+								title={ctaTitle || ''}
+								description={ctaDescription}
+								isHero={false}
+							>
+								<BookNowButton
+									fontColor="text-white"
+									bgColor="bg-primary-shade-1"
+								>
+									{finalCtaButton?.text}
+								</BookNowButton>
+							</CTATextContent>
+						</Animate>
 					</div>
 				</CTAWithImage>
 			</section>

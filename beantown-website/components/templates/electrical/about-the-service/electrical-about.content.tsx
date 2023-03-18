@@ -1,12 +1,14 @@
 import { GlobalContext } from '@contexts/global/global.context';
 import useWindowDimensions from '@lib/hooks/use-window-dimensions.hook';
 import { GlobalContextProps } from '@typing/common/interfaces/contexts.interface';
+import Animate from 'components/molecules/animate.molecule';
 import CtaWrapper from 'components/molecules/cta-wrapper.molecule';
 import RichText from 'components/molecules/rich-text.molecule';
 import ContentWrapper from 'components/organisms/content-wrapper.organism';
 import MaskedImageWithBackgroundVector from 'components/organisms/masked-image-with-blob.organism';
 import { ElectricalContentProps } from 'pages/electrical';
 import { useContext } from 'react';
+
 
 const AboutElectricalServiceContent = () => {
 	const { pageContent } =
@@ -42,14 +44,10 @@ const AboutElectricalServiceContent = () => {
 						width={width > 768 ? 1000 : 500}
 						height={width > 768 ? 1000 : 500}
 						maskImg={
-							width > 768
-								? './images/electrical/repairs-installation-upgrades/electrical-RIU-blob.svg'
-								: './images/electrical/repairs-installation-upgrades/electrical-RIU-bg-blob.svg'
+							'./images/electrical/repairs-installation-upgrades/electrical-RIU-blob.svg'
 						}
 						bgImg={
-							width > 768
-								? './images/electrical/repairs-installation-upgrades/electrical-RIU-bg-blob.svg'
-								: './images/electrical/repairs-installation-upgrades/electrical-RIU-blob.svg'
+							'./images/electrical/repairs-installation-upgrades/electrical-RIU-bg-blob.svg'
 						}
 					/>
 				</div>
@@ -59,10 +57,14 @@ const AboutElectricalServiceContent = () => {
 				>
 					<ContentWrapper>
 						<ContentWrapper.Title className="mr-[2em] md:mr-[0em] lg:mr-[1em] xl:mr-[2em] 2xl:mr-[5em]">
-							<h2 className="text-primary-black ">{aboutTheServiceTitle}</h2>
+							<Animate  bottom>
+								<h2 className="text-primary-black ">{aboutTheServiceTitle}</h2>
+							</Animate>
 						</ContentWrapper.Title>
 						<ContentWrapper.Description className="text-left ">
-							<RichText value={aboutTheServiceDescription?.contentRaw} />
+							<Animate>
+								<RichText value={aboutTheServiceDescription?.contentRaw} />
+							</Animate>
 						</ContentWrapper.Description>
 						<ContentWrapper.CTA className="mt-[16px] lg:mt-[32px]">
 							<CtaWrapper.CTA className="bg-service-yellow button text-black">

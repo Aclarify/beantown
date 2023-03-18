@@ -4,6 +4,7 @@ import { GlobalContextProps } from '@typing/common/interfaces/contexts.interface
 import { MembershipsContentProps } from 'pages/memberships';
 import { MembershipsContext } from '../../../../contexts/memberships/memberships.context';
 import MembershipCard from './membership-card';
+import Animate from 'components/molecules/animate.molecule';
 
 const MembershipsCardList = () => {
 	const { pageContent } =
@@ -29,18 +30,22 @@ const MembershipsCardList = () => {
 									key={index}
 									className="membership-card-wrapper mb-5 w-full  md:basis-1/2 md:px-4 lg:mr-0 lg:mb-0 lg:space-x-6   lg:pr-6 lg:pb-5 xl:basis-1/3"
 								>
-									<MembershipCard
-										key={index}
-										title={membershipCard?.membershipTitle || ''}
-										description={membershipCard?.membershipDescription || ''}
-										price={membershipCard?.membershipPrice || ''}
-										buttonText={membershipCard?.button?.text || ''}
-										iconSrc={membershipCard?.membershipIcon?.asset?.url || ''}
-										iconAltText={
-											membershipCard?.membershipIcon?.asset?.altText || ''
-										}
-										summaryItems={membershipCard?.membershipSummaryItems || []}
-									/>
+									<Animate>
+										<MembershipCard
+											key={index}
+											title={membershipCard?.membershipTitle || ''}
+											description={membershipCard?.membershipDescription || ''}
+											price={membershipCard?.membershipPrice || ''}
+											buttonText={membershipCard?.button?.text || ''}
+											iconSrc={membershipCard?.membershipIcon?.asset?.url || ''}
+											iconAltText={
+												membershipCard?.membershipIcon?.asset?.altText || ''
+											}
+											summaryItems={
+												membershipCard?.membershipSummaryItems || []
+											}
+										/>
+									</Animate>
 								</div>
 							)
 						);

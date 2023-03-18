@@ -3,14 +3,16 @@ import footerQuery from './get-footer.query';
 import navQuery from './get-nav.query';
 
 const bookNowQuery = `allBooknow{
-		logoDesktop{
+    pageTitle
+		metaDescription
+		logoLight{
       image{
         asset{
           url
         }
       }
     }
-    footerLogo{
+    logoDark{
       image{
         asset{
           url

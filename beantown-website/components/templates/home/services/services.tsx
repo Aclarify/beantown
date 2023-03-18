@@ -9,6 +9,8 @@ import ServiceCard from './service-card';
 import WaveWrapper from 'components/molecules/wave-wrapper.molecule';
 import useWindowDimensions from '@lib/hooks/use-window-dimensions.hook';
 import { SCREEN_BREAKPOINTS } from '@typing/common/interfaces/devices.interface';
+import Animate from 'components/molecules/animate.molecule';
+import topWave from 'public/images/home/services/home-services-top-wave.svg';
 
 export default function Services() {
 	const { pageContent } =
@@ -44,7 +46,7 @@ export default function Services() {
 			id="services"
 			className="z-1 relative mt-[-2rem] sm:mt-[-3rem] md:mt-[-5rem]  lg:mt-[-6rem] xl:mt-[-8rem] 2xl:mt-[-9rem] "
 		>
-			<WaveWrapper waveURL="/images/home/services/home-services-top-wave.svg"></WaveWrapper>
+			<WaveWrapper waveURL={topWave}></WaveWrapper>
 			<Image
 				src={'/images/home/blob-shape-1.svg'}
 				height={590}
@@ -70,10 +72,14 @@ export default function Services() {
 				<div className="flex flex-col items-center  pt-[4em] text-center lg:pt-0">
 					<ContentWrapper>
 						<ContentWrapper.Title>
-							<h2 className="text-primary-black mb-4">{servicesTitle}</h2>
+							<Animate bottom>
+								<h2 className="text-primary-black mb-4">{servicesTitle}</h2>
+							</Animate>
 						</ContentWrapper.Title>
 						<ContentWrapper.Description className=" px-10 sm:px-20  lg:px-80 ">
-							<RichText value={servicesDescription?.contentRaw} />
+							<Animate>
+								<RichText value={servicesDescription?.contentRaw} />
+							</Animate>
 						</ContentWrapper.Description>
 					</ContentWrapper>
 				</div>

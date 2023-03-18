@@ -6,6 +6,7 @@ import { PlumbingContentProps } from 'pages/plumbing';
 import CTATextContent, {
 	CTAButton,
 } from 'components/organisms/cta-text-content.organism';
+import BookNowButton from 'components/atoms/book-now-button.atom';
 
 const PlumbingCTAContent = () => {
 	const { pageContent } =
@@ -28,12 +29,9 @@ const PlumbingCTAContent = () => {
 		>
 			<div className="text-white">
 				<CTATextContent title={ctaTitle || ''} isHero={false}>
-					<CTAButton
-						text={ctaButton?.text || ''}
-						href={ctaButton?.href || ''}
-						textColor="text-service-green"
-						bgColor="bg-white"
-					/>
+					<BookNowButton fontColor="text-service-green" bgColor="bg-white">
+						{ctaButton?.text}
+					</BookNowButton>
 				</CTATextContent>
 			</div>
 		</CTAWithImage>

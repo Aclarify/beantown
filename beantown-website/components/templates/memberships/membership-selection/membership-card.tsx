@@ -18,7 +18,7 @@ const MembershipCard: React.FC<IProps> = (props) => {
 
 	return (
 		<>
-			<div className="flex w-full flex-col content-center rounded-3xl bg-white p-3 shadow-lg sm:p-3">
+			<div className="flex w-full flex-col content-center rounded-3xl border bg-white p-3 shadow-lg sm:p-3">
 				<div className="bg-secondary-shade-3 mb-4 rounded-2xl p-4">
 					<div className="flex justify-center py-3 lg:py-5">
 						<div className="image-wrapper w-[30px]  lg:h-[56px] lg:w-[60px]">
@@ -69,10 +69,12 @@ const MembershipCard: React.FC<IProps> = (props) => {
 						})}
 					</div>
 				</div>
-				<button className="bg-primary-shade-1 para-5 lg:para-3 mx-2 mb-4 flex rounded-2xl py-4 px-4 tracking-wide text-white md:py-6 md:px-8">
-					<span className="translate-y-[25%]">{props.buttonText}</span>
-					<span className="title-6 md:title-4 ml-4">{props.price}</span>
-					<span className="translate-y-[30%]">/per year</span>
+				<button className="bg-primary-shade-1 para-5 lg:para-3 mx-2 mb-4 flex items-center rounded-xl py-4 px-4 tracking-wide text-white md:py-2 md:px-4 ">
+					<span className=" !font-thin">{props.buttonText}</span>
+					<h3 className="ml-auto text-white">{props.price}</h3>
+					<span className="para -translate-y-[10%] self-end lg:-translate-y-[30%]">
+						/per year
+					</span>
 				</button>
 			</div>
 		</>

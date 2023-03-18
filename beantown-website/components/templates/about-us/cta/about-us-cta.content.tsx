@@ -6,7 +6,7 @@ import { AboutUsContentProps } from 'pages/about-us';
 import CTATextContent, {
 	CTAButton,
 } from 'components/organisms/cta-text-content.organism';
-
+import BookNowButton from 'components/atoms/book-now-button.atom';
 const AboutUSCTAContent = () => {
 	const { pageContent } =
 		useContext<GlobalContextProps<AboutUsContentProps>>(GlobalContext);
@@ -33,11 +33,9 @@ const AboutUSCTAContent = () => {
 					description={ctaDescription}
 					isHero={false}
 				>
-					<CTAButton
-						text={ctaButton?.text || ''}
-						textColor="text-white"
-						bgColor="bg-primary-shade-1"
-					/>
+					<BookNowButton fontColor="text-white" bgColor="bg-primary-shade-1">
+						{ctaButton?.text}
+					</BookNowButton>
 				</CTATextContent>
 			</div>
 		</CTAWithImage>

@@ -3,9 +3,8 @@ import { GlobalContext } from '@contexts/global/global.context';
 import { GlobalContextProps } from '@typing/common/interfaces/contexts.interface';
 import CTAWithImage from 'components/organisms/cta-with-image.organism';
 import { ElectricalContentProps } from 'pages/electrical';
-import CTATextContent, {
-	CTAButton,
-} from 'components/organisms/cta-text-content.organism';
+import CTATextContent from 'components/organisms/cta-text-content.organism';
+import BookNowButton from 'components/atoms/book-now-button.atom';
 
 const ElectricalHeroContent = () => {
 	const { pageContent } =
@@ -34,12 +33,9 @@ const ElectricalHeroContent = () => {
 					description={heroDescription}
 					isHero={true}
 				>
-					<CTAButton
-						text={heroButton?.text || ''}
-						textColor="text-white"
-						bgColor="bg-primary-shade-1"
-						href={heroButton?.href || ''}
-					/>
+					<BookNowButton fontColor="text-white" bgColor="bg-primary-shade-1">
+						{heroButton?.text}
+					</BookNowButton>
 				</CTATextContent>
 			</div>
 		</CTAWithImage>

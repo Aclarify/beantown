@@ -21,6 +21,7 @@ import CtaWrapper from 'components/molecules/cta-wrapper.molecule';
 import HomeTestimonials from '../components/templates/home/testimonials/testimonials';
 import HomeServiceAreas from '../components/templates/home/service-areas/service-areas';
 import Link from 'next/link';
+import BookNowButton from 'components/atoms/book-now-button.atom';
 
 export interface HomePageContentProps {
 	page: Home[];
@@ -28,19 +29,6 @@ export interface HomePageContentProps {
 	footer: Footer[];
 }
 
-const PageHead = () => {
-	return (
-		<Head>
-			{/* TODO to fetch from CMS */}
-			<title>Home - Beantown Services</title>
-			<meta
-				name="description"
-				content="Beantown Services is a full-service cleaning company that provides residential and commercial cleaning services in the Boston area."
-			/>
-			<link rel="icon" href="/favicon.ico" />
-		</Head>
-	);
-};
 const getStaticProps = generateGetStaticProps<HomePageContentProps>(
 	pageQuery,
 	PageNames.HOME
@@ -57,26 +45,37 @@ const HomePage: React.FC = (props) => {
 	const homeData = pageContent.page[0];
 	const headerData = pageContent.header[0];
 	const footerData = pageContent.footer[0];
-	const { logoDesktop, logoMobile } = homeData;
+	const { logoLight, logoDark, pageTitle, metaDescription } = homeData;
+	const PageHead = () => {
+		return (
+			<Head>
+				{/* TODO to fetch from CMS */}
+				<title>{pageTitle}</title>
+				<meta name="description" content={metaDescription || ''} />
+				<link rel="icon" href="/favicon.ico" />
+			</Head>
+		);
+	};
 	return (
 		<section className="bg-secondary-shade-3">
 			<PageHead />
 			<Header
 				fontColor="text-white"
-				logoDesktop={logoDesktop?.image}
-				logoMobile={logoMobile?.image}
+				logoDesktop={logoLight?.image}
+				logoMobile={logoDark?.image}
 				content={headerData}
 				mobileBgColor="bg-secondary-shade-3"
 			>
 				<div className=" hidden lg:flex lg:justify-end ">
-					<Link href={headerData.headerButton?.href || ''}>
-						<CtaWrapper.CTA className="text-primary-shade-1 headerButton  bg-white   ">
-							{headerData.headerButton?.text}
-						</CtaWrapper.CTA>
-					</Link>
+					<BookNowButton
+						fontColor="text-primary-shade-1"
+						bgColor="bg-white"
+						buttonStyle="headerButton"
+					>
+						{headerData.headerButton?.text}
+					</BookNowButton>
 				</div>
 			</Header>
-
 			<HomeHero />
 			<Services />
 			<WhyUs />
@@ -86,7 +85,7 @@ const HomePage: React.FC = (props) => {
 			<HomeFaq />
 			<HomeBrands />
 			<FooterCta />
-			<FooterSection logoDesktop={logoDesktop?.image} content={footerData} />
+			<FooterSection logoDesktop={logoLight?.image} content={footerData} />
 		</section>
 	);
 };

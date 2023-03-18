@@ -11,6 +11,8 @@ import 'slick-carousel/slick/slick-theme.css';
 import TestimonialCard from './testimonial-card.organism';
 import TestimonialModal from './testimonial-modal.organism';
 import SectionContentWrapper from 'components/molecules/section-content-wrapper.molecule';
+import Animate from 'components/molecules/animate.molecule';
+import Zoom from 'react-reveal/Zoom';
 
 interface IProps extends React.HTMLAttributes<HTMLDivElement> {
 	testimonialTitle: string;
@@ -174,33 +176,44 @@ const Testimonials: React.FC<IProps> = (props) => {
 				<div className="relative lg:hidden ">
 					<div className=" w-full flex-none">
 						<div className="ml-8 pb-6">
-							<h5 className="text-primary-shade-1 !font-thin ">
-								{props.testimonialTitle}
-							</h5>
-							<h2 className=" text-primary-black">
-								{props.testimonialDescription}
-							</h2>
+							<Animate>
+								<h5 className="text-primary-shade-1 !font-thin ">
+									{props.testimonialTitle}
+								</h5>
+							</Animate>
+							<Animate bottom>
+								<h2 className=" text-primary-black">
+									{props.testimonialDescription}
+								</h2>
+							</Animate>
 						</div>
 					</div>
 				</div>
 				<div className=" flex space-x-6">
 					<div className="gap-15 z-40 ml-28 mr-16 hidden flex-none   flex-col  items-center justify-center    lg:flex  ">
 						<div className="flex-none  gap-5 ">
-							<h5 className=" text-primary-shade-1 !font-thin ">
-								{props.testimonialTitle}
-							</h5>
-							<h2 className="  text-primary-black">
-								{props.testimonialDescription}
-							</h2>
+							<Animate>
+								<h5 className=" text-primary-shade-1 !font-thin ">
+									{props.testimonialTitle}
+								</h5>
+							</Animate>
+							<Animate bottom>
+								<h2 className="  text-primary-black">
+									{props.testimonialDescription}
+								</h2>
+							</Animate>
+
 							<div className="mt-8 flex space-x-6">
 								<button
 									onClick={previous}
+									aria-label={'left-arrow'}
 									className=" text-primary-shade-1 h-16 w-32 rounded-full bg-white py-4 px-6 text-lg"
 								>
 									<FontAwesomeIcon icon={faArrowLeft} />
 								</button>
 								<button
 									onClick={next}
+									aria-label={'right-arrow'}
 									className="text-primary-shade-1 bg-primary-shade-1 h-16 w-32 rounded-full py-4 px-6 text-lg md:text-white"
 								>
 									<FontAwesomeIcon icon={faArrowRight} />
@@ -216,13 +229,15 @@ const Testimonials: React.FC<IProps> = (props) => {
 										className="testimonial-card-wrapper slick-item !flex justify-center px-2 outline-none xl:px-4"
 										key={index}
 									>
-										<TestimonialCard
-											key={index}
-											clientName={reviews?.titleText || ''}
-											clientDetails={reviews?.subText || ''}
-											reviewComments={reviews?.description || ''}
-											onShowMore={() => onTestimonialCardClick(reviews)}
-										/>
+										<Animate>
+											<TestimonialCard
+												key={index}
+												clientName={reviews?.titleText || ''}
+												clientDetails={reviews?.subText || ''}
+												reviewComments={reviews?.description || ''}
+												onShowMore={() => onTestimonialCardClick(reviews)}
+											/>
+										</Animate>
 									</div>
 								);
 							})}
@@ -233,17 +248,20 @@ const Testimonials: React.FC<IProps> = (props) => {
 				<div className="mt-2 flex justify-end gap-4 pt-4 pr-4 lg:hidden ">
 					<button
 						onClick={previous}
+						aria-label={'left-arrow'}
 						className="text-primary-shade-1 h-12 w-20 rounded-full  bg-white py-2 px-4"
 					>
 						<FontAwesomeIcon icon={faArrowLeft} />
 					</button>
 					<button
 						onClick={next}
+						aria-label={'right-arrow'}
 						className=" bg-primary-shade-1 h-12 w-20 rounded-full py-2 px-4 text-white"
 					>
 						<FontAwesomeIcon icon={faArrowRight} />
 					</button>
 				</div>
+	
 				<TestimonialModal
 					onClose={handleOnClose}
 					visible={showTestimonialModel}

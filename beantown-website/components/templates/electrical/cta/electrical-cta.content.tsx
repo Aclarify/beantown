@@ -6,6 +6,8 @@ import { ElectricalContentProps } from 'pages/electrical';
 import CTATextContent, {
 	CTAButton,
 } from 'components/organisms/cta-text-content.organism';
+import Animate from 'components/molecules/animate.molecule';
+import BookNowButton from 'components/atoms/book-now-button.atom';
 
 const ElectricalPageCTAContent = () => {
 	const { pageContent } =
@@ -28,12 +30,9 @@ const ElectricalPageCTAContent = () => {
 		>
 			<div className="text-primary-black">
 				<CTATextContent title={ctaTitle || ''} isHero={false}>
-					<CTAButton
-						text={ctaButton?.text || ''}
-						textColor="text-primary-black"
-						bgColor="bg-white"
-						href={ctaButton?.href || ''}
-					/>
+					<BookNowButton fontColor="text-primary-black" bgColor="bg-white">
+						{ctaButton?.text}
+					</BookNowButton>
 				</CTATextContent>
 			</div>
 		</CTAWithImage>

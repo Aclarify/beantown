@@ -6,6 +6,10 @@ import SectionContentWrapper from 'components/molecules/section-content-wrapper.
 import MissionContent from './mission.content';
 import ValuesContent from '../values/values.content';
 import ValuesCards from '../values/values-card.content';
+import topWave from 'public/images/about-us/mission/about-us-mission-top-wave.svg';
+import topWaveMobile from 'public/images/about-us/mission/about-us-mission-top-wave-mobile.svg';
+import bottomWave from 'public/images/about-us/values/about-us-values-bottom-wave.svg';
+import bottomWaveMobile from 'public/images/about-us/values/about-us-values-bottom-wave-mobile.svg';
 
 const MissionValuesSection = () => {
 	const { width } = useWindowDimensions();
@@ -15,11 +19,7 @@ const MissionValuesSection = () => {
 			className="  xs:-mt-[2em] 3xl:-mt-[12em] 4xl:-mt-[16em] relative z-10 -mt-[3em] sm:-mt-[3em] md:-mt-[5em] xl:-mt-[7em] 2xl:-mt-[9em]"
 		>
 			<WaveWrapper
-				waveURL={
-					width > 1023
-						? '/images/about-us/mission/about-us-mission-top-wave.svg'
-						: '/images/about-us/mission/about-us-mission-top-wave-mobile.svg'
-				}
+				waveURL={width > 1023 ? topWave : topWaveMobile}
 			></WaveWrapper>
 			<Image
 				src={'/images/about-us/mission/about-us-right-blob.svg'}
@@ -58,11 +58,7 @@ const MissionValuesSection = () => {
 				</SectionContentWrapper>
 			</div>
 			<WaveWrapper
-				waveURL={
-					width > 1023
-						? '/images/about-us/values/about-us-values-bottom-wave.svg'
-						: '/images/about-us/values/about-us-values-bottom-wave-mobile.svg'
-				}
+				waveURL={width > 1023 ? bottomWave : bottomWaveMobile}
 			></WaveWrapper>
 		</section>
 	);
