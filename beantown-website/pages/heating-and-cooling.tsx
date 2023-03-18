@@ -20,6 +20,7 @@ import Header from 'components/organisms/nav';
 import FooterSection from 'components/organisms/footer';
 import CtaWrapper from 'components/molecules/cta-wrapper.molecule';
 import Link from 'next/link';
+import BookNowButton from 'components/atoms/book-now-button.atom';
 
 export interface HeatingCoolingContentProps {
 	page: HeatingAndCooling[];
@@ -65,11 +66,13 @@ const HeatingCoolingServicePage: React.FC = (props) => {
 				mobileBgColor="bg-service-red-bg"
 			>
 				<div className=" hidden lg:flex lg:justify-end ">
-					<Link href={headerData.headerButton?.href || ''}>
-						<CtaWrapper.CTA className="text-primary-shade-1 headerButton bg-white ">
-							{headerData.headerButton?.text}
-						</CtaWrapper.CTA>
-					</Link>
+					<BookNowButton
+						fontColor="text-primary-shade-1"
+						bgColor="bg-white"
+						buttonStyle="headerButton"
+					>
+						{headerData.headerButton?.text}
+					</BookNowButton>
 				</div>
 			</Header>
 			<HeatingCoolingHeroSection />

@@ -7,6 +7,7 @@ import CTATextContent, {
 	CTAButton,
 } from 'components/organisms/cta-text-content.organism';
 import Animate from 'components/molecules/animate.molecule';
+import BookNowButton from 'components/atoms/book-now-button.atom';
 
 export default function FooterCta() {
 	const { pageContent } =
@@ -40,12 +41,12 @@ export default function FooterCta() {
 								description={ctaDescription}
 								isHero={false}
 							>
-								<CTAButton
-									text={finalCtaButton?.text || ''}
-									textColor="text-white"
+								<BookNowButton
+									fontColor="text-white"
 									bgColor="bg-primary-shade-1"
-									href={finalCtaButton?.href || ''}
-								/>
+								>
+									{finalCtaButton?.text}
+								</BookNowButton>
 							</CTATextContent>
 						</Animate>
 					</div>

@@ -17,6 +17,7 @@ import { GlobalContext } from '@contexts/global/global.context';
 import CtaWrapper from 'components/molecules/cta-wrapper.molecule';
 import Link from 'next/link';
 import AboutElectricalServiceSection from 'components/templates/electrical/about-the-service/electrical-about.section';
+import BookNowButton from 'components/atoms/book-now-button.atom';
 
 export interface ElectricalContentProps {
 	page: OtherServices[];
@@ -62,11 +63,13 @@ const ElectricalServicesPage: React.FC = (props) => {
 				mobileBgColor="bg-service-yellow-bg"
 			>
 				<div className=" hidden lg:flex lg:justify-end ">
-					<Link href={headerData.headerButton?.href || ''}>
-						<CtaWrapper.CTA className="headerButton bg-primary-shade-1   text-white  ">
-							{headerData.headerButton?.text}
-						</CtaWrapper.CTA>
-					</Link>
+					<BookNowButton
+						fontColor="text-white"
+						bgColor="bg-primary-shade-1"
+						buttonStyle="headerButton"
+					>
+						{headerData.headerButton?.text}
+					</BookNowButton>
 				</div>
 			</Header>
 			<ElectricalHeroSection />

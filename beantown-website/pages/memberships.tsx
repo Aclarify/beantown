@@ -14,6 +14,7 @@ import Header from 'components/organisms/nav';
 import FooterSection from 'components/organisms/footer';
 import CtaWrapper from 'components/molecules/cta-wrapper.molecule';
 import MembershipsSelectionSection from '../components/templates/memberships/membership-selection/membership-selection.section';
+import BookNowButton from 'components/atoms/book-now-button.atom';
 
 export interface MembershipsContentProps {
 	page: Memberships[];
@@ -59,9 +60,13 @@ const MembershipsServicePage: React.FC = (props) => {
 				content={headerData}
 			>
 				<div className=" hidden lg:flex lg:justify-end ">
-					<CtaWrapper.CTA className=" bg-primary-shade-1 headerButton  text-white  ">
+					<BookNowButton
+						fontColor="text-white"
+						bgColor="bg-primary-shade-1"
+						buttonStyle="headerButton"
+					>
 						{headerData.headerButton?.text}
-					</CtaWrapper.CTA>
+					</BookNowButton>
 				</div>
 			</Header>
 			<MembershipsHeroSection />
