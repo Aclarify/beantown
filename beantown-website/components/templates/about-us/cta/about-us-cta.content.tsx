@@ -33,11 +33,7 @@ const AboutUSCTAContent = () => {
 					description={ctaDescription}
 					isHero={false}
 				>
-					<BookNowButton
-						fontColor="text-white"
-						bgColor="bg-primary-shade-1"
-						buttonStyle="button"
-					>
+					<BookNowButton fontColor="text-white" bgColor="bg-primary-shade-1">
 						{ctaButton?.text}
 					</BookNowButton>
 				</CTATextContent>

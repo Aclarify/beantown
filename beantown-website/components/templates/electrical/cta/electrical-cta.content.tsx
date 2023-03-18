@@ -30,11 +30,7 @@ const ElectricalPageCTAContent = () => {
 		>
 			<div className="text-primary-black">
 				<CTATextContent title={ctaTitle || ''} isHero={false}>
-					<BookNowButton
-						fontColor="text-primary-black"
-						bgColor="bg-white"
-						buttonStyle="button"
-					>
+					<BookNowButton fontColor="text-primary-black" bgColor="bg-white">
 						{ctaButton?.text}
 					</BookNowButton>
 				</CTATextContent>

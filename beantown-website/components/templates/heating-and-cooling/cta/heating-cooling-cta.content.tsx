@@ -32,7 +32,6 @@ const HeatingCoolingPageCTAContent = () => {
 					<BookNowButton
 						fontColor="text-primary-black lg:text-service-red"
 						bgColor="bg-white"
-						buttonStyle="button"
 					>
 						{finalCtaButton?.text}
 					</BookNowButton>

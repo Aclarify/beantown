@@ -63,15 +63,13 @@ const AboutUsPage: React.FC = (props) => {
 				mobileBgColor="bg-secondary-shade-3"
 			>
 				<div className=" hidden lg:flex lg:justify-end ">
-					<Link href={headerData.headerButton?.href || ''}>
-						<BookNowButton
-							fontColor="text-primary-shade-1"
-							bgColor="bg-white"
-							buttonStyle="headerButton"
-						>
-							{headerData.headerButton?.text}
-						</BookNowButton>
-					</Link>
+					<BookNowButton
+						fontColor="text-primary-shade-1"
+						bgColor="bg-white"
+						buttonStyle="headerButton"
+					>
+						{headerData.headerButton?.text}
+					</BookNowButton>
 				</div>
 			</Header>
 			<AboutUsHeroSection />

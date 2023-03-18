@@ -63,15 +63,13 @@ const ElectricalServicesPage: React.FC = (props) => {
 				mobileBgColor="bg-service-yellow-bg"
 			>
 				<div className=" hidden lg:flex lg:justify-end ">
-					<Link href={headerData.headerButton?.href || ''}>
-						<BookNowButton
-							fontColor="text-white"
-							bgColor="bg-primary-shade-1"
-							buttonStyle="headerButton"
-						>
-							{headerData.headerButton?.text}
-						</BookNowButton>
-					</Link>
+					<BookNowButton
+						fontColor="text-white"
+						bgColor="bg-primary-shade-1"
+						buttonStyle="headerButton"
+					>
+						{headerData.headerButton?.text}
+					</BookNowButton>
 				</div>
 			</Header>
 			<ElectricalHeroSection />

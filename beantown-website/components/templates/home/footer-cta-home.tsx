@@ -44,7 +44,6 @@ export default function FooterCta() {
 								<BookNowButton
 									fontColor="text-white"
 									bgColor="bg-primary-shade-1"
-									buttonStyle="button"
 								>
 									{finalCtaButton?.text}
 								</BookNowButton>

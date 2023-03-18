@@ -33,11 +33,7 @@ const MembershipsPageCTAContent = () => {
 			>
 				<div className="text-primary-shade-1">
 					<CTATextContent title={ctaTitle || ''} description={ctaDescription}>
-						<BookNowButton
-							fontColor="text-white"
-							bgColor="bg-primary-shade-1"
-							buttonStyle="button"
-						>
+						<BookNowButton fontColor="text-white" bgColor="bg-primary-shade-1">
 							{finalCtaButton?.text}
 						</BookNowButton>
 					</CTATextContent>

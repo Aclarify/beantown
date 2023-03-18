@@ -6,24 +6,23 @@ declare const window: any;
 interface Props {
 	children?: React.ReactNode;
 	buttonStyle?: string;
-	bgColor?: string;
-	fontColor?: string;
-	className?: string;
+	bgColor: string;
+	fontColor: string;
 }
-const BookNowButton: React.FC<Props> = (props) => {
+const BookNowButton: React.FC<Props> = ({
+	children,
+	buttonStyle = 'button',
+	bgColor,
+	fontColor,
+}) => {
 	return (
 		<>
 			<button
 				type="button"
-				className={clsx(
-					' se-widget-button',
-					props.buttonStyle,
-					props.fontColor,
-					props.bgColor
-				)}
+				className={clsx(' se-widget-button', buttonStyle, fontColor, bgColor)}
 				onClick={() => window.ScheduleEngine.show()}
 			>
-				{props.children}
+				{children}
 			</button>
 		</>
 	);

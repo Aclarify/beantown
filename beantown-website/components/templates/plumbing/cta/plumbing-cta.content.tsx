@@ -29,11 +29,7 @@ const PlumbingCTAContent = () => {
 		>
 			<div className="text-white">
 				<CTATextContent title={ctaTitle || ''} isHero={false}>
-					<BookNowButton
-						fontColor="text-service-green"
-						bgColor="bg-white"
-						buttonStyle="button"
-					>
+					<BookNowButton fontColor="text-service-green" bgColor="bg-white">
 						{ctaButton?.text}
 					</BookNowButton>
 				</CTATextContent>
