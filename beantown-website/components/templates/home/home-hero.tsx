@@ -5,8 +5,7 @@ import { HomePageContentProps } from 'pages';
 import RichText from 'components/molecules/rich-text.molecule';
 import Image from 'next/image';
 import ContentWrapper from 'components/organisms/content-wrapper.organism';
-import CtaWrapper from 'components/molecules/cta-wrapper.molecule';
-import Link from 'next/link';
+import BookNowButton from 'components/atoms/book-now-button.atom';
 
 declare const window: any;
 
@@ -33,13 +32,9 @@ export default function HomeHero() {
 						<RichText value={heroDescription?.contentRaw} />
 					</ContentWrapper.Description>
 					<ContentWrapper.CTA className="mt-4 lg:mt-8">
-						<button
-							className="se-widget-button text-primary-shade-1 button bg-white"
-							type="button"
-							onClick={() => window.ScheduleEngine.show()}
-						>
+						<BookNowButton fontColor="text-primary-shade-1" bgColor="bg-white">
 							{heroButton?.text}
-						</button>
+						</BookNowButton>
 					</ContentWrapper.CTA>
 				</ContentWrapper>
 			</div>

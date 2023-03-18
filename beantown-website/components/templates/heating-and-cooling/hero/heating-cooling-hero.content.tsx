@@ -3,9 +3,8 @@ import { GlobalContext } from '@contexts/global/global.context';
 import { GlobalContextProps } from '@typing/common/interfaces/contexts.interface';
 import { HeatingCoolingContentProps } from 'pages/heating-and-cooling';
 import CTAWithImage from 'components/organisms/cta-with-image.organism';
-import CTATextContent, {
-	CTAButton,
-} from 'components/organisms/cta-text-content.organism';
+import CTATextContent from 'components/organisms/cta-text-content.organism';
+import BookNowButton from 'components/atoms/book-now-button.atom';
 
 const HeatingCoolingHeroContent = () => {
 	const { pageContent } =
@@ -27,24 +26,17 @@ const HeatingCoolingHeroContent = () => {
 			bgColor="var(--services-red-color-rgb)"
 			isImageToBePrefetched={true}
 		>
-		
-				<div className="text-white">
-					<CTATextContent
-						title={heroTitle || ''}
-						description={heroDescription}
-						isHero={true}
-					>
-						
-							<CTAButton
-								text={heroButton?.text || ''}
-								textColor="text-white"
-								bgColor="bg-primary-shade-1"
-								href={heroButton?.href || ''}
-							/>
-						
-					</CTATextContent>
-				</div>
-		
+			<div className="text-white">
+				<CTATextContent
+					title={heroTitle || ''}
+					description={heroDescription}
+					isHero={true}
+				>
+					<BookNowButton fontColor="text-white" bgColor="bg-primary-shade-1">
+						{heroButton?.text}
+					</BookNowButton>
+				</CTATextContent>
+			</div>
 		</CTAWithImage>
 	);
 };
