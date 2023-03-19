@@ -17,6 +17,7 @@ const AboutElectricalServiceSection = () => {
 			className=" 3xl:mt-[-10em] xs:mt-[-4em] relative z-10 mt-[-5em] sm:mt-[-6em] md:mt-[-9em] lg:mt-[-4em] 2xl:mt-[-6em] "
 		>
 			<WaveWrapper
+				shouldBePrefetched={true}
 				waveURL={width > 1023 ? topWave : topWaveMobile}
 			></WaveWrapper>
 			<Image

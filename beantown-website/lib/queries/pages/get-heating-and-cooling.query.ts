@@ -10,6 +10,8 @@ const heatingCoolingQuery = ` allHeatingAndCooling {
 					asset
 						{
 							url
+              _id
+              _key
 						}
 					}
 					href
@@ -19,6 +21,8 @@ const heatingCoolingQuery = ` allHeatingAndCooling {
 					asset
 						{
 							url
+              _id
+              _key
 						}
         			}
 					href
@@ -35,6 +39,8 @@ const heatingCoolingQuery = ` allHeatingAndCooling {
       asset{
         url
       	altText
+        _id
+        _key
       }
     }
     servicesTitle
@@ -47,6 +53,8 @@ const heatingCoolingQuery = ` allHeatingAndCooling {
       image{
         asset{
           url
+          _id
+          _key
           altText
         }
       }
@@ -79,6 +87,8 @@ const heatingCoolingQuery = ` allHeatingAndCooling {
       asset{
         url
         altText
+        _id
+        _key
       }
     }
     ctaTitle
@@ -92,6 +102,8 @@ const heatingCoolingQuery = ` allHeatingAndCooling {
     ctaImage{
       	asset{
         	url
+          _id
+          _key
       	}
     	}
     brandsTitle
@@ -113,6 +125,8 @@ const heatingCoolingQuery = ` allHeatingAndCooling {
           image{
             asset{
               url
+              _id
+              _key
             }
           }
         	href

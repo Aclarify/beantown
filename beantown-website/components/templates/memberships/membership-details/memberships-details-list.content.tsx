@@ -27,7 +27,7 @@ const MembershipsDetailsList = () => {
 		>
 			<div className="container py-6 lg:p-[60px] ">
 				<div id="list-container" className="">
-					<Animate bottom cascade>
+					<Animate>
 						<div className="3xl:grid-cols-2  grid  w-full  grid-cols-1 gap-y-2 lg:grid-cols-2 xl:grid-cols-2  ">
 							{activeServiceMembership?.serviceMembershipDetails?.map(
 								(item: any, index: number) => {

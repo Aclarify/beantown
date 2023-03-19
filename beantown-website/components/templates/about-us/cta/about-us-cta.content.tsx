@@ -18,7 +18,7 @@ const AboutUSCTAContent = () => {
 
 	return (
 		<CTAWithImage
-			heroImageURL={ctaImage?.asset?.url || ''}
+			heroImage={ctaImage}
 			heroImageAltText={'Hero image'}
 			textContentBGImage={'/images/home/footer-cta/home-cta-spiral.svg'}
 			textContentBGImageForSmallScreen={

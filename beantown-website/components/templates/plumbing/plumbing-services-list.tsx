@@ -5,7 +5,6 @@ import { PlumbingContentProps } from 'pages/plumbing';
 import { GlobalContext } from '@contexts/global/global.context';
 import Animate from 'components/molecules/animate.molecule';
 
-
 const PlumbingServicesList = () => {
 	const { pageContent } =
 		useContext<GlobalContextProps<PlumbingContentProps>>(GlobalContext);
@@ -25,7 +24,7 @@ const PlumbingServicesList = () => {
 					{servicesListTitle}
 				</span>
 				<div id="list-container" className="">
-					<Animate bottom cascade>
+					<Animate>
 						<div className="grid  grid-cols-2   md:grid-cols-4">
 							{servicesList?.map((listItem, index) => {
 								return (

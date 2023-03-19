@@ -16,7 +16,7 @@ const HeatingCoolingHeroContent = () => {
 	const { heroImage, heroTitle, heroDescription, heroButton } = pageData;
 	return (
 		<CTAWithImage
-			heroImageURL={heroImage?.asset?.url || ''}
+			heroImage={heroImage}
 			heroImageAltText={'Hero image'}
 			textContentBGImage={'/images/heating-cooling/hero/hc-hero-vector.svg'}
 			textContentBGImageForSmallScreen={

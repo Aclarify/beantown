@@ -19,6 +19,7 @@ const AboutPlumbingServiceSection = () => {
 		>
 			<WaveWrapper
 				waveURL={width > 1023 ? topWave : topWaveMobile}
+				shouldBePrefetched={true}
 			></WaveWrapper>
 			<Image
 				src={'/images/plumbing/about/plumbing-green-blob.svg'}

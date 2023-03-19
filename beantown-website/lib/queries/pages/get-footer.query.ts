@@ -5,6 +5,8 @@ const footerQuery = `
 				image {
 					asset {
 						url
+						_id
+          				_key
 					}
 				}
 				href
@@ -30,6 +32,8 @@ const footerQuery = `
         		 asset
           			{
             		url
+					_id
+					_key
           			}
         		}
 			}
