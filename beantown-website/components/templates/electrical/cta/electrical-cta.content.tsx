@@ -19,7 +19,7 @@ const ElectricalPageCTAContent = () => {
 	const { ctaImage, ctaTitle, ctaButton } = pageData;
 	return (
 		<CTAWithImage
-			heroImageURL={ctaImage?.asset?.url || ''}
+			heroImage={ctaImage}
 			heroImageAltText={'Hero image'}
 			textContentBGImage={'/images/electrical/cta/electrical-cta-bg-vector.svg'}
 			textContentBGImageForSmallScreen={

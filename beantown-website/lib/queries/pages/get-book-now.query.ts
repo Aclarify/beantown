@@ -9,6 +9,8 @@ const bookNowQuery = `allBooknow{
       image{
         asset{
           url
+          _id
+          _key
         }
       }
     }
@@ -16,6 +18,8 @@ const bookNowQuery = `allBooknow{
       image{
         asset{
           url
+          _id
+          _key
         }
       }
     }

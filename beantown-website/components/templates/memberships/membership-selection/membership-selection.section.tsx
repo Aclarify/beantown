@@ -48,7 +48,7 @@ const MembershipsSelectionSection = () => {
 			<section id="memberships-selection" className="relative z-10 ">
 				<MembershipServiceCategories />
 				<div
-					className={`transition-all duration-300 ease-in-out ${
+					className={`transition-all ease-in-out duration-1000${
 						show
 							? 'opacity-100'
 							: 'translate-y-full transform opacity-0 sm:translate-x-0 sm:scale-50'

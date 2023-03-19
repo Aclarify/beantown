@@ -46,7 +46,7 @@ export default function Services() {
 			id="services"
 			className="z-1 relative mt-[-2rem] sm:mt-[-3rem] md:mt-[-5rem]  lg:mt-[-6rem] xl:mt-[-8rem] 2xl:mt-[-9rem] "
 		>
-			<WaveWrapper waveURL={topWave}></WaveWrapper>
+			<WaveWrapper shouldBePrefetched={true} waveURL={topWave}></WaveWrapper>
 			<Image
 				src={'/images/home/blob-shape-1.svg'}
 				height={590}

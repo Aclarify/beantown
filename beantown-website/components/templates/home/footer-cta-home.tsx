@@ -25,7 +25,7 @@ export default function FooterCta() {
 				md:mb-[5em] lg:-top-[4em] lg:mb-[3em] xl:-top-[5em] 2xl:-top-[7em] 2xl:mb-[0em]"
 			>
 				<CTAWithImage
-					heroImageURL={ctaImage?.asset?.url || ''}
+					heroImage={ctaImage}
 					heroImageAltText={'Hero image'}
 					textContentBGImage={'/images/home/footer-cta/home-cta-spiral.svg'}
 					textContentBGImageForSmallScreen={

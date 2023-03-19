@@ -52,6 +52,8 @@ const homeQuery = ` allHome {
 				thumbnailImage{
 					asset{
 						url
+						_id
+        				_key
 					}
 				}
 				button {
@@ -70,6 +72,8 @@ const homeQuery = ` allHome {
 			whyUsImage{
 				asset{
 					url
+					_id
+        			_key
 				}
 			}
 			whyUsCards {
@@ -78,6 +82,8 @@ const homeQuery = ` allHome {
 				image{
 				asset{
 					url
+					_id
+        			_key
 				}
 				}
 				description 
@@ -88,6 +94,8 @@ const homeQuery = ` allHome {
 				serviceAreaImage {
 					asset {
 						url
+						_id
+        				_key
 					}
 				}
 				serviceAreas {
@@ -113,6 +121,8 @@ const homeQuery = ` allHome {
           image{
             asset{
               url
+				_id
+				_key
             }
           }
         	href
@@ -157,6 +167,8 @@ const homeQuery = ` allHome {
     		ctaImage{
       			asset{
         			url
+					_id
+					_key
       			}
     		}
 }`;

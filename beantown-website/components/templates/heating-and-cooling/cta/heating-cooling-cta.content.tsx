@@ -18,7 +18,7 @@ const HeatingCoolingPageCTAContent = () => {
 	const { ctaImage, ctaTitle, finalCtaButton } = pageData;
 	return (
 		<CTAWithImage
-			heroImageURL={ctaImage?.asset?.url || ''}
+			heroImage={ctaImage}
 			heroImageAltText={'Hero image'}
 			textContentBGImage={'/images/heating-cooling/cta/hc-cta-bg-vector.svg'}
 			textContentBGImageForSmallScreen={

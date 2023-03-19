@@ -14,6 +14,7 @@ const HeatingCoolingHeroServicesSection = () => {
 			className="z-5 -sm:mt-[6em] 3xl:-mt-[7em] relative -mt-[5em] mb-[3em]  md:-mt-[9em] lg:-mt-[5em] "
 		>
 			<WaveWrapper
+				shouldBePrefetched={true}
 				waveURL={width > 1023 ? bottomWave : bottomWaveMobile}
 			></WaveWrapper>
 

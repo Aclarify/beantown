@@ -20,7 +20,7 @@ const MembershipsPageCTAContent = () => {
 	return (
 		<>
 			<CTAWithImage
-				heroImageURL={ctaImage?.asset?.url || ''}
+				heroImage={ctaImage}
 				heroImageAltText={'Hero image'}
 				textContentBGImage={
 					'/images/memberships/footer-cta/memberships-cta-spiral.svg'

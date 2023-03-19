@@ -1,12 +1,12 @@
 import useWindowDimensions from '@lib/hooks/use-window-dimensions.hook';
 import { SCREEN_BREAKPOINTS } from '@typing/common/interfaces/devices.interface';
 import clsx from 'clsx';
-import Image from 'next/image';
+import CMSImageWrapper from 'components/molecules/cms-image-wrapper.molecule';
 import React from 'react';
 
 interface IProps {
 	children: React.ReactNode;
-	heroImageURL: string;
+	heroImage: any;
 	textContentBGImage: string;
 	textContentBGImageForSmallScreen: string;
 	heroImagePosition?: 'left' | 'right';
@@ -17,10 +17,11 @@ interface IProps {
 const CTAWithImage: React.FC<IProps> = ({
 	heroImagePosition,
 	children,
+	heroImageAltText,
 	textContentBGImage,
 	textContentBGImageForSmallScreen,
-	heroImageURL,
 	bgColor,
+	heroImage,
 	isImageToBePrefetched = false,
 }) => {
 	const { width } = useWindowDimensions();
@@ -28,6 +29,7 @@ const CTAWithImage: React.FC<IProps> = ({
 		width > SCREEN_BREAKPOINTS.LG
 			? textContentBGImage
 			: textContentBGImageForSmallScreen;
+
 	return (
 		<>
 			<div
@@ -42,16 +44,10 @@ const CTAWithImage: React.FC<IProps> = ({
 					id="hero-image-wrapper"
 					className={clsx('relative z-0 w-full lg:w-1/2')}
 				>
-					<Image
-						src={heroImageURL}
-						alt="Image mask"
-						fill
-						priority={isImageToBePrefetched}
-						style={{
-							width: '100%',
-							height: '100%',
-							objectFit: 'cover',
-						}}
+					<CMSImageWrapper
+						image={heroImage}
+						shouldBePrefetched={isImageToBePrefetched}
+						altText={heroImageAltText}
 					/>
 				</div>
 				<div
@@ -108,18 +104,14 @@ const CTAWithImage: React.FC<IProps> = ({
 					backgroundColor: `rgba(${bgColor},1)`,
 				}}
 			>
-				<div id="hero-image-wrapper" className="w-full">
-					<Image
-						src={heroImageURL}
-						alt="Image mask"
-						height={2000}
-						width={2000}
-						priority={isImageToBePrefetched}
-						style={{
-							width: '100%',
-							height: 'auto',
-						}}
-					/>
+				<div id="hero-image-wrapper" className="relative w-full">
+					{heroImage && (
+						<CMSImageWrapper
+							image={heroImage}
+							altText={heroImageAltText}
+							shouldBePrefetched={isImageToBePrefetched}
+						/>
+					)}
 				</div>
 				<div
 					id="content-wrapper"
