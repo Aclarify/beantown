@@ -5,6 +5,7 @@ import 'slick-carousel/slick/slick.css';
 import 'slick-carousel/slick/slick-theme.css';
 import CMSImageWrapper from 'components/molecules/cms-image-wrapper.molecule';
 import Animate from 'components/molecules/animate.molecule';
+import Image from 'next/image';
 
 interface IProps extends React.HTMLAttributes<HTMLDivElement> {
 	brandsTitle: string;
@@ -95,11 +96,18 @@ const Brands: React.FC<IProps> = (props) => {
 									key={index}
 									className="3xl:px-[10rem] 4xl:px-[13rem] 5xl:px-[18rem]  h-[92px] w-[182px] px-8 py-4 sm:px-[5rem] lg:h-[180px] lg:w-[354px] lg:p-10 2xl:px-[5rem] "
 								>
-									<div className="flex h-full items-center py-4">
-										<CMSImageWrapper
-											altText={logo?.image?.asset?.altText || ''}
-											image={logo?.image || null}
-											shouldBePrefetched={true}
+									<div className="flex h-full  items-center py-4">
+										<Image
+											alt={logo?.image?.asset?.altText || ''}
+											src={logo?.image?.asset?.url || ''}
+											priority={true}
+											width="292"
+											height="148"
+											style={{
+												width: '100%',
+												height: 'auto',
+												objectFit: 'cover',
+											}}
 										/>
 									</div>
 								</div>
