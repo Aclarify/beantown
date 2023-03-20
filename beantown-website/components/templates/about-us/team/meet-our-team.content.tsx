@@ -119,7 +119,7 @@ const MeetOurTeam = () => {
 														{content.socialMediaDetails?.map((details, index) => {
 															return (
 																<div id="socialMediaIconGroupicons" key={index}>
-																	<div className=" fill-current  ">
+																	<div className=" fill-current cursor-pointer ">
 																		<Image
 																			alt={details?.image?.name || ''}
 																			width={42}
