@@ -46,7 +46,7 @@ const HeatingCoolingProductsCardContent = () => {
 			{
 				breakpoint: SCREEN_BREAKPOINTS.XXL,
 				settings: {
-					slidesToShow: 3.5,
+					slidesToShow: 4.2,
 					slidesToScroll: 1,
 					variableWidth: true,
 				},

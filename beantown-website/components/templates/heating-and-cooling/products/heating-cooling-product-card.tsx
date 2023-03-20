@@ -15,8 +15,10 @@ const ProductCard: React.FC<Props> = (props) => {
 		<>
 			<Animate>
 				<div className="w-[281px] rounded-3xl bg-[#FCF7F7] p-2  lg:w-[480px] lg:p-4">
-					<div className=" flex h-[209px] justify-center rounded-3xl bg-white px-[30px] py-[20px] md:px-[50px]  md:py-[43px] lg:h-[360px] lg:max-h-full">
-						<CMSImageWrapper image={props.image} altText="A product image" />
+					<div className=" flex h-[209px]  justify-center rounded-3xl bg-white px-[30px] py-[20px] md:px-[50px]  md:py-[43px] lg:h-[360px] ">
+						<div className='w-[189px] h-[149px] fill-current md:w-[347px] md:h-[247px] '>
+							<CMSImageWrapper image={props.image} altText="A product image" />
+						</div>						
 					</div>
 					<div className="flex flex-col items-start gap-2 px-2 py-4 pb-8 lg:px-4 lg:pt-8 ">
 						<h3 className=" text-primary-black pb-2 lg:pb-4">{props.title}</h3>
