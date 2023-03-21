@@ -2097,33 +2097,6 @@ export type SlugSorting = {
 	source?: InputMaybe<SortOrder>;
 };
 
-export type SocialMediaIcon = {
-	__typename?: 'SocialMediaIcon';
-	_key?: Maybe<Scalars['String']>;
-	_type?: Maybe<Scalars['String']>;
-	altText?: Maybe<Scalars['String']>;
-	href?: Maybe<Scalars['String']>;
-	image?: Maybe<Images>;
-	newWindow?: Maybe<Scalars['Boolean']>;
-};
-
-export type SocialMediaIconFilter = {
-	_key?: InputMaybe<StringFilter>;
-	_type?: InputMaybe<StringFilter>;
-	altText?: InputMaybe<StringFilter>;
-	href?: InputMaybe<StringFilter>;
-	image?: InputMaybe<ImagesFilter>;
-	newWindow?: InputMaybe<BooleanFilter>;
-};
-
-export type SocialMediaIconSorting = {
-	_key?: InputMaybe<SortOrder>;
-	_type?: InputMaybe<SortOrder>;
-	altText?: InputMaybe<SortOrder>;
-	href?: InputMaybe<SortOrder>;
-	newWindow?: InputMaybe<SortOrder>;
-};
-
 export enum SortOrder {
 	/** Sorts on the value in ascending order. */
 	Asc = 'ASC',
@@ -2157,7 +2130,8 @@ export type TeamMembers = {
 	memberDesignation?: Maybe<Scalars['String']>;
 	memberName?: Maybe<Scalars['String']>;
 	profilePicture?: Maybe<Image>;
-	socialMediaDetails?: Maybe<Array<Maybe<SocialMediaIcon>>>;
+	memberLinkedIn?: Maybe<Scalars['String']>;
+	memberEmail?: Maybe<Scalars['String']>;
 };
 
 export type TeamMembersFilter = {
@@ -2166,6 +2140,8 @@ export type TeamMembersFilter = {
 	memberDesignation?: InputMaybe<StringFilter>;
 	memberName?: InputMaybe<StringFilter>;
 	profilePicture?: InputMaybe<ImageFilter>;
+	memberLinkedIn?: InputMaybe<ImageFilter>;
+	memberEmail?: InputMaybe<ImageFilter>;
 };
 
 export type TeamMembersSorting = {
@@ -2174,6 +2150,8 @@ export type TeamMembersSorting = {
 	memberDesignation?: InputMaybe<SortOrder>;
 	memberName?: InputMaybe<SortOrder>;
 	profilePicture?: InputMaybe<ImageSorting>;
+	memberLinkedIn?: InputMaybe<ImageSorting>;
+	memberEmail?: InputMaybe<ImageSorting>;
 };
 
 export type Testimonials = Document & {
