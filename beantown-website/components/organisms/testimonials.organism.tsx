@@ -229,7 +229,7 @@ const Testimonials: React.FC<IProps> = (props) => {
 										className="testimonial-card-wrapper slick-item !flex justify-center px-2 outline-none xl:px-4"
 										key={index}
 									>
-										<Animate>
+										
 											<TestimonialCard
 												key={index}
 												clientName={reviews?.titleText || ''}
@@ -237,7 +237,7 @@ const Testimonials: React.FC<IProps> = (props) => {
 												reviewComments={reviews?.description || ''}
 												onShowMore={() => onTestimonialCardClick(reviews)}
 											/>
-										</Animate>
+										
 									</div>
 								);
 							})}
