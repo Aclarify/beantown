@@ -119,14 +119,15 @@ const MeetOurTeam = () => {
 														{content.socialMediaDetails?.map((details, index) => {
 															return (
 																<div id="socialMediaIconGroupicons" key={index}>
-																	<div className=" fill-current ">
+																	<div className=" fill-current cursor-pointer ">
 																		<Image
 																			alt={details?.image?.name || ''}
-																			width={32}
-																			height={32}
+																			width={42}
+																			height={42}
 																			src={
 																				details?.image?.image?.asset?.url || ''
 																			}
+																			
 																		/>
 																	</div>
 																</div>

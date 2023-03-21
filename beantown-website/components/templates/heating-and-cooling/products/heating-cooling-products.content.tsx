@@ -177,3 +177,4 @@ const HeatingCoolingProductsCardContent = () => {
 };
 
 export default HeatingCoolingProductsCardContent;
+

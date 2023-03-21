@@ -36,7 +36,7 @@ export const TestimonialCard: React.FC<Props> = (props) => {
 				<span className="subtitle-2 text-gray-shade-2">
 					{props.clientDetails}
 				</span>
-				<div className="para text-primary-black no-scrollbar overflow-y-auto  pt-6 pb-2 text-center leading-6 md:h-96 lg:px-10  lg:leading-9">
+				<div className=" cursor-pointer para text-primary-black no-scrollbar overflow-y-auto  pt-6 pb-2 text-center leading-6 md:h-96 lg:px-10  lg:leading-9">
 					{props.onShowMore && (
 						<ReadMore
 							content={props.reviewComments}
