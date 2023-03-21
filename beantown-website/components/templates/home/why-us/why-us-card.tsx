@@ -12,7 +12,7 @@ const WhyUsCard: React.FC<Props> = (props) => {
 	return (
 		<section>
 			<Animate>
-				<div className="flex items-center  rounded-xl bg-white py-[3px] shadow-sm md:m-4 ">
+				<div className="z-5 relative flex items-center  rounded-xl bg-white py-[3px] shadow-sm md:m-4 ">
 					<div className=" flex-none p-2 md:p-4 ">
 						<Image
 							src={props.thumbnailSrc}
