@@ -51,7 +51,6 @@ const HeatingCoolingServicePage: React.FC = (props) => {
 				{/* TODO to fetch from CMS */}
 				<title>{pageTitle}</title>
 				<meta name="description" content={metaDescription || ''} />
-				<link rel="icon" href="/favicon.ico" />
 			</Head>
 		);
 	};

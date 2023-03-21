@@ -29,11 +29,11 @@ const MissionValuesSection = () => {
 				className="3xl:translate-x-[45%] 3xl:translate-y-[120%]  absolute right-0 top-0 z-[15] hidden translate-x-[65%] translate-y-[35%] transform lg:block xl:translate-x-[60%] xl:translate-y-[45%] 2xl:translate-x-[60%] 2xl:translate-y-[65%]"
 			/>
 			<Image
-				src={'/images/about-us/mission/about-us-right-blob-mobile.svg'}
+				src={'/images/about-us/mission/about-us-mission-right-blob-mobile.svg'}
 				height={180}
 				width={200}
 				alt="Right Blob Mobile"
-				className="xs:translate-x-[34%] xs:translate-y-[34%] absolute right-0 top-0 z-[-1] translate-x-[21%] translate-y-[34%] transform md:translate-x-[9%] md:translate-y-[34%] lg:hidden"
+				className="xs:translate-x-[53%] xs:translate-y-[180%] absolute right-0 top-0 z-[-1] translate-x-[60%] translate-y-[170%] transform md:translate-x-[50%] md:translate-y-[186%] lg:hidden"
 			/>
 
 			<Image

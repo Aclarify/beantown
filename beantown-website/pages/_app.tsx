@@ -8,6 +8,7 @@ config.autoAddCss = false;
 import localFont from '@next/font/local';
 import { graphQLClient } from '@lib/clients/apollo/apollo.client';
 import Toast from 'components/molecules/toast.molecule';
+import Head from 'next/head';
 
 const neuePlak = localFont({
 	display: 'swap',
@@ -40,10 +41,36 @@ const neuePlak = localFont({
 		},
 	],
 });
+const AppHead = () => {
+	return (
+		<Head>
+			<link
+				rel="apple-touch-icon"
+				sizes="180x180"
+				href="/favicons/apple-touch-icon.png"
+			/>
+			<link
+				rel="icon"
+				type="image/png"
+				sizes="32x32"
+				href="/favicons/favicon-32x32.png"
+			/>
+			<link
+				rel="icon"
+				type="image/png"
+				sizes="16x16"
+				href="/favicons/favicon-16x16.png"
+			/>
+			<link rel="manifest" href="/favicons/site.webmanifest" />
+			<link rel="icon" href="/favicons/favicon.ico" />
+		</Head>
+	);
+};
 
 export default function App({ Component, pageProps }: AppProps) {
 	return (
 		<>
+			<AppHead />
 			<style jsx global>{`
 				:root {
 					--font-neue-plak: ${neuePlak.style.fontFamily};

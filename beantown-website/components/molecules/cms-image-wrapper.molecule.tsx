@@ -10,11 +10,13 @@ interface Props {
 	altText?: string;
 	stretchWidth?: boolean;
 	stretchHeight?: boolean;
+	style?: React.CSSProperties;
 }
 const CMSImageWrapper: React.FC<Props> = ({
 	image,
 	shouldBePrefetched,
 	altText,
+	style,
 	stretchWidth = true,
 	stretchHeight = false,
 }) => {
@@ -24,11 +26,15 @@ const CMSImageWrapper: React.FC<Props> = ({
 			{...imageProps}
 			alt={image?.asset?.altText || altText || ''}
 			priority={shouldBePrefetched || false}
-			style={{
-				width: '100%',
-				height: '100%',
-				objectFit: 'cover',
-			}}
+			style={
+				style
+					? style
+					: {
+							width: '100%',
+							height: '100%',
+							objectFit: 'cover',
+					  }
+			}
 		/>
 	);
 };
