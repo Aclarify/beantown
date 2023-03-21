@@ -20,7 +20,6 @@ import serviceAreas from './organism/serviceAreas'
 import testimonials from './organism/testimonials'
 import teamMembers from './organism/teamMembers'
 import images from './molecules/images'
-import socialMediaIcons from './molecules/socialMediaIcons'
 import servicesCards from './organism/servicesCards'
 import memberships from './pages/memberships'
 import checkableItem from './molecules/checkableItem'
@@ -51,7 +50,6 @@ export const schemaTypes = [
   imageIcon,
   link,
   teamMembers,
-  socialMediaIcons,
   titleDescription,
   titleDescriptionImage,
   portableText,
