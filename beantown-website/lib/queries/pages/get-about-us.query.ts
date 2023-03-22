@@ -88,19 +88,8 @@ const aboutUsQuery = `allAboutUs {
 						_key
 					}
 				}
-				socialMediaDetails {
-					image {
-						image {
-							asset {
-								url
-								_id
-								_key
-							}
-						}
-					}
-					href
-					altText
-				}
+				memberLinkedIn
+				memberEmail
 			}
 			serviceAreaSection {
 				serviceAreaTitle

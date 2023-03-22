@@ -3,10 +3,7 @@ import { GlobalContext } from '@contexts/global/global.context';
 import { GlobalContextProps } from '@typing/common/interfaces/contexts.interface';
 import { MembershipsContentProps } from 'pages/memberships';
 import CTAWithImage from 'components/organisms/cta-with-image.organism';
-import CTATextContent, {
-	CTAButton,
-} from 'components/organisms/cta-text-content.organism';
-import Animate from 'components/molecules/animate.molecule';
+import CTATextContent from 'components/organisms/cta-text-content.organism';
 import BookNowButton from 'components/atoms/book-now-button.atom';
 
 const MembershipsPageCTAContent = () => {
@@ -20,7 +17,7 @@ const MembershipsPageCTAContent = () => {
 	return (
 		<>
 			<CTAWithImage
-				heroImageURL={ctaImage?.asset?.url || ''}
+				heroImage={ctaImage}
 				heroImageAltText={'Hero image'}
 				textContentBGImage={
 					'/images/memberships/footer-cta/memberships-cta-spiral.svg'

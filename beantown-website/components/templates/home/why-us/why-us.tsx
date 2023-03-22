@@ -28,7 +28,7 @@ export default function WhyUs() {
 	return (
 		<section
 			id="whyUs"
-			className=" relative z-30  py-[4rem] pb-[25em] md:mt-[6em] md:pt-[10vw] xl:mt-[1em]"
+			className="relative z-60  py-[4rem] pb-[25em] md:mt-[6em] md:pt-[10vw] xl:mt-[1em]"
 		>
 			<WaveWrapper waveURL={topWave} />
 			<div

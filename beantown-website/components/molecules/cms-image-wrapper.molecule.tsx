@@ -10,26 +10,31 @@ interface Props {
 	altText?: string;
 	stretchWidth?: boolean;
 	stretchHeight?: boolean;
+	style?: React.CSSProperties;
 }
 const CMSImageWrapper: React.FC<Props> = ({
 	image,
 	shouldBePrefetched,
 	altText,
+	style,
 	stretchWidth = true,
 	stretchHeight = false,
 }) => {
 	const imageProps = useNextSanityImage(client, image) as any;
-	const imageWidth = stretchWidth ? '100%' : 'auto';
-	const imageHeight = stretchHeight ? '100%' : 'auto';
 	return (
 		<Image
 			{...imageProps}
 			alt={image?.asset?.altText || altText || ''}
 			priority={shouldBePrefetched || false}
-			style={{
-				width: imageWidth,
-				height: imageHeight,
-			}}
+			style={
+				style
+					? style
+					: {
+							width: '100%',
+							height: '100%',
+							objectFit: 'cover',
+					  }
+			}
 		/>
 	);
 };

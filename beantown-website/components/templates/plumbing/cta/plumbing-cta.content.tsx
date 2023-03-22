@@ -18,7 +18,7 @@ const PlumbingCTAContent = () => {
 	const { ctaImage, ctaTitle, ctaButton } = pageData;
 	return (
 		<CTAWithImage
-			heroImageURL={ctaImage?.asset?.url || ''}
+			heroImage={ctaImage}
 			heroImageAltText={'Hero image'}
 			textContentBGImage={'/images/plumbing/cta/plumbing-cta-bg-vector.svg'}
 			textContentBGImageForSmallScreen={

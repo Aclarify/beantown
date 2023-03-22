@@ -3,9 +3,13 @@ import React from 'react';
 
 interface IProps {
 	waveURL: string;
+	shouldBePrefetched?: boolean;
 	className?: string;
 }
-const WaveWrapper: React.FC<IProps> = (props) => {
+const WaveWrapper: React.FC<IProps> = ({
+	waveURL,
+	shouldBePrefetched = false,
+}) => {
 	return (
 		<Image
 			alt="Wave"
@@ -13,7 +17,8 @@ const WaveWrapper: React.FC<IProps> = (props) => {
 				width: '100%',
 				height: 'auto',
 			}}
-			src={props.waveURL}
+			priority={shouldBePrefetched}
+			src={waveURL}
 		></Image>
 	);
 };

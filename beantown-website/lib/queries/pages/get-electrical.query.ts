@@ -9,6 +9,8 @@ const electricalQuery = ` allOtherServices(where: {name: {eq: "Electrical"}}) {
       image{
 				asset{
 					url
+          _id
+          _key
 						}
      		 }
       href
@@ -17,6 +19,8 @@ const electricalQuery = ` allOtherServices(where: {name: {eq: "Electrical"}}) {
       image{
 				asset{
 					url
+          _id
+          _key
 						}
      		 }
       href
@@ -33,6 +37,8 @@ const electricalQuery = ` allOtherServices(where: {name: {eq: "Electrical"}}) {
       asset{
         url
       	altText
+        _id
+        _key
       }
     }
     aboutTheServiceTitle
@@ -40,7 +46,11 @@ const electricalQuery = ` allOtherServices(where: {name: {eq: "Electrical"}}) {
       contentRaw
     }
     aboutTheServiceImage{
-      asset{url}
+      asset{
+        url
+        _id
+        _key
+      }
     }
     contactUsButton{
       href
@@ -56,6 +66,8 @@ const electricalQuery = ` allOtherServices(where: {name: {eq: "Electrical"}}) {
     ctaImage{
       	asset{
         	url
+          _id
+          _key
       	}
     	}
     blogsTitle
@@ -67,6 +79,8 @@ const electricalQuery = ` allOtherServices(where: {name: {eq: "Electrical"}}) {
           image{
             asset{
               url
+              _id
+              _key
             }
           }
         	href

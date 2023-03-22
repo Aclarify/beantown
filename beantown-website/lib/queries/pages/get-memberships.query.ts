@@ -10,6 +10,8 @@ const membershipsQuery = `
             image {
                 asset {
                     url
+                    _id
+					          _key
                 }
             }
         }
@@ -17,6 +19,8 @@ const membershipsQuery = `
             image {
                 asset {
                     url
+                    _id
+					          _key
                 }
             }
         }
@@ -32,6 +36,8 @@ const membershipsQuery = `
             asset {
               url,
               altText,
+              _id
+              _key
             },
           },
           serviceMembershipDetails
@@ -40,8 +46,11 @@ const membershipsQuery = `
               asset {
                 url,
                 altText
+                _id
+                _key
               }
             },
+            membershipIndex,
             membershipTitle,
             membershipDescription,
             membershipPrice,
@@ -62,6 +71,8 @@ const membershipsQuery = `
         ctaImage {
             asset {
                 url
+                _id
+                _key
             }
         }
         finalCtaButton {
@@ -73,6 +84,6 @@ export default gql`
 	query {
 		page: ${membershipsQuery}
 		header: ${navQuery}
-		footer: ${footerQuery}
+ 		footer: ${footerQuery}
 	}
 `;

@@ -28,7 +28,6 @@ const PageHead = () => {
 				name="description"
 				content="Beantown Services is a full-service cleaning company that provides residential and commercial cleaning services in the Boston area."
 			/>
-			<link rel="icon" href="/favicon.ico" />
 		</Head>
 	);
 };

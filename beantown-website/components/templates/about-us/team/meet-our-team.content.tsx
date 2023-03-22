@@ -10,6 +10,11 @@ import { SCREEN_BREAKPOINTS } from '@typing/common/interfaces/devices.interface'
 import { useContext, useEffect, useState } from 'react';
 import { toastBuilder } from 'components/molecules/toast.molecule';
 import Animate from 'components/molecules/animate.molecule';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { faEnvelope } from '@fortawesome/free-solid-svg-icons';
+import { faLinkedin } from '@fortawesome/free-brands-svg-icons';
+import { IconProp } from '@fortawesome/fontawesome-svg-core';
+import Link from 'next/link';
 
 const MeetOurTeam = () => {
 	const { pageContent } =
@@ -79,69 +84,72 @@ const MeetOurTeam = () => {
 						</ContentWrapper.Description>
 					</ContentWrapper>
 				</div>
-				
-				
-					<div
-						id="cards-container"
-						className=" grid grid-cols-2 justify-items-center gap-x-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-2 xl:grid-cols-3"
-					>
-						{memberCardsToDisplay?.map((content, index) => {
-							return (
-								content && (
-									<Animate  cascade>
-										<div
-											key={index}
-											id="card"
-											className="m-2 w-[160px] rounded-lg bg-white  px-3 shadow-[rgba(29,_39,_87,_0.08)_4px_8px_60px]  lg:w-full lg:px-4 "
-										>
-											<div
-												id="profileInfo-wrapper"
-												className="flex  flex-col  lg:flex-row  "
-											>
-												<div className="rounded-lg fill-current py-3 lg:w-[200px]  lg:py-4 ">
-													<CMSImageWrapper
-														altText={content.profilePicture?.asset?.altText || ''}
-														image={content.profilePicture || null}
-													/>
-												</div>
 
-												<div
-													id="profile-Info"
-													className="flex flex-col items-center justify-center pb-2 lg:items-start lg:justify-evenly lg:py-8 lg:pl-8"
-												>
-													<h4 className=" text-primary-black ">
-														{content?.memberName}
-													</h4>
-													<p className=" text-gray-shade-1 block !font-thin">
-														{content?.memberDesignation}
-													</p>
-													<div className="flex">
-														{content.socialMediaDetails?.map((details, index) => {
-															return (
-																<div id="socialMediaIconGroupicons" key={index}>
-																	<div className=" fill-current ">
-																		<Image
-																			alt={details?.image?.name || ''}
-																			width={32}
-																			height={32}
-																			src={
-																				details?.image?.image?.asset?.url || ''
-																			}
-																		/>
-																	</div>
-																</div>
-															);
-														})}
-													</div>
+				<div
+					id="cards-container"
+					className=" grid grid-cols-2 justify-items-center gap-x-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-2 xl:grid-cols-3"
+				>
+					{memberCardsToDisplay?.map((content, index) => {
+						return (
+							content && (
+								<Animate cascade>
+									<div
+										key={index}
+										id="card"
+										className="m-2 w-[160px] rounded-lg bg-white  px-3 shadow-[rgba(29,_39,_87,_0.08)_4px_8px_60px]  lg:w-full lg:px-4 "
+									>
+										<div
+											id="profileInfo-wrapper"
+											className="flex  flex-col  lg:flex-row  "
+										>
+											<div className="rounded-lg fill-current py-3 lg:w-[200px]  lg:py-4 ">
+												<CMSImageWrapper
+													altText={content.profilePicture?.asset?.altText || ''}
+													image={content.profilePicture || null}
+												/>
+											</div>
+
+											<div
+												id="profile-Info"
+												className="flex flex-col items-center justify-center pb-2 lg:items-start lg:justify-evenly lg:py-8 lg:pl-8 "
+											>
+												<h4 className=" text-primary-black ">
+													{content?.memberName}
+												</h4>
+												<p className=" text-gray-shade-1 block !font-thin">
+													{content?.memberDesignation}
+												</p>
+
+												<div className="flex items-center space-x-6  p-2">
+													<Link
+														href={'mailto:' + content?.memberEmail}
+														target="_blank"
+													>
+														<FontAwesomeIcon
+															icon={faEnvelope as IconProp}
+															size="lg"
+														/>
+													</Link>
+
+													<Link
+														href={content?.memberLinkedIn || 'www.linkedin.com'}
+														target="_blank"
+													>
+														<FontAwesomeIcon
+															icon={faLinkedin as IconProp}
+															size="lg"
+														/>
+													</Link>
 												</div>
 											</div>
 										</div>
-									</Animate>
-								)
-							);
-						})}
-					</div>
-				
+									</div>
+								</Animate>
+							)
+						);
+					})}
+				</div>
+
 				<div className="mt-8 items-center text-center lg:mt-[60px] ">
 					<CtaWrapper.CTA
 						onClick={onLoadMore}

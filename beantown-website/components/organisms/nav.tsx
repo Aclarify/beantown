@@ -6,7 +6,7 @@ import { ChevronDownIcon } from '@heroicons/react/20/solid';
 import Link from 'next/link';
 import Image from 'next/image';
 import clsx from 'clsx';
-import dynamic from 'next/dynamic';
+import * as OutlineIcons from '@heroicons/react/24/outline';
 
 function classNames(...classes: any) {
 	return classes.filter(Boolean).join(' ');
@@ -25,6 +25,18 @@ export default function Header(props: IProps) {
 	const { navLinks, navGroup } = props.content;
 	const iconColor = 'text-primary-shade-1';
 	const { logoDesktop, logoMobile } = props;
+
+	const renderIconComponent = (iconName: string) => {
+		if (!iconName) return null;
+		if (!OutlineIcons) return null;
+		const IconComponent = (OutlineIcons as any)[iconName];
+		return (
+			<IconComponent
+				className={classNames(`${iconColor} h-6 w-6 transform `)}
+				aria-hidden="true"
+			/>
+		);
+	};
 	return (
 		<section className="2xl:padding-for-section absolute w-full px-5">
 			<Popover className="relative z-30">
@@ -113,27 +125,15 @@ export default function Header(props: IProps) {
 															>
 																{linkGroup?.links &&
 																	linkGroup?.links?.map((link, index) => {
-																		const IconComponent = dynamic(async () => {
-																			const mod = await import(
-																				'@heroicons/react/24/outline'
-																			);
-																			if (link && link.heroIconName) {
-																				/* tslint:disable-next-line */
-																				return (mod as any)[link.heroIconName];
-																			}
-																		}) as React.ComponentType<
-																			React.ComponentProps<'svg'>
-																		>;
 																		return (
 																			<Link key={index} href={link?.href || ''}>
 																				<div className="ml-4 flex items-center">
 																					<div className="icon-wrapper">
-																						<IconComponent
-																							className={classNames(
-																								`${iconColor} h-6 w-6 transform `
+																						{link &&
+																							link.heroIconName &&
+																							renderIconComponent(
+																								link.heroIconName
 																							)}
-																							aria-hidden="true"
-																						/>
 																					</div>
 																					<span className="para text-primary-black rounded-sm px-3 py-1">
 																						{link?.linkText}
@@ -231,21 +231,6 @@ export default function Header(props: IProps) {
 																<Disclosure.Panel className="mt-2 space-y-2">
 																	{linkGroup?.links &&
 																		linkGroup?.links?.map((link, index) => {
-																			const IconComponent = dynamic(
-																				async () => {
-																					const mod = await import(
-																						'@heroicons/react/24/outline'
-																					);
-																					if (link && link.heroIconName) {
-																						/* tslint:disable-next-line */
-																						return (mod as any)[
-																							link.heroIconName
-																						];
-																					}
-																				}
-																			) as React.ComponentType<
-																				React.ComponentProps<'svg'>
-																			>;
 																			return (
 																				<Disclosure.Button
 																					key={index}
@@ -255,12 +240,11 @@ export default function Header(props: IProps) {
 																				>
 																					<div className="ml-4 flex items-center">
 																						<div className="icon-wrapper">
-																							<IconComponent
-																								className={classNames(
-																									`${iconColor} h-6 w-6 transform `
+																							{link &&
+																								link.heroIconName &&
+																								renderIconComponent(
+																									link.heroIconName
 																								)}
-																								aria-hidden="true"
-																							/>
 																						</div>
 																						<span className="para text-primary-black rounded-sm px-3 py-1">
 																							{link?.linkText}

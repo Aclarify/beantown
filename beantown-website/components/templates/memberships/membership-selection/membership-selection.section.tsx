@@ -1,4 +1,4 @@
-import React, { useContext, useEffect, useState } from 'react';
+import React, { Fragment, useContext, useEffect, useState } from 'react';
 import SectionContentWrapper from 'components/molecules/section-content-wrapper.molecule';
 import MembershipsCardList from './memberships-card-list.content';
 import MembershipsDetailsSection from '../membership-details/memberships-details.section';
@@ -45,20 +45,24 @@ const MembershipsSelectionSection = () => {
 				setActiveServiceMembership,
 			}}
 		>
-			<section id="memberships-selection" className="relative z-10 ">
-				<MembershipServiceCategories />
-				<div
-					className={`transition-all duration-300 ease-in-out ${
-						show
-							? 'opacity-100'
-							: 'translate-y-full transform opacity-0 sm:translate-x-0 sm:scale-50'
-					}`}
-				>
-					<SectionContentWrapper>
+			<section id="memberships-selection" className="relative z-10">
+				<SectionContentWrapper>
+					<MembershipServiceCategories />
+				</SectionContentWrapper>
+
+				<SectionContentWrapper>
+					<div
+						className={`transition-all duration-1000 ease-in-out ${
+							show
+								? 'opacity-100'
+								: 'translate-y-full transform opacity-0 sm:translate-x-0 sm:scale-50'
+						}`}
+					>
 						<MembershipsCardList />
-					</SectionContentWrapper>
-					<MembershipsDetailsSection />
-				</div>
+					</div>
+				</SectionContentWrapper>
+
+				<MembershipsDetailsSection />
 			</section>
 		</MembershipsContext.Provider>
 	);

@@ -5,7 +5,6 @@ import { GlobalContextProps } from '@typing/common/interfaces/contexts.interface
 import { ElectricalContentProps } from 'pages/electrical';
 import Animate from 'components/molecules/animate.molecule';
 
-
 function ElectricalServicesList() {
 	const { pageContent } =
 		useContext<GlobalContextProps<ElectricalContentProps>>(GlobalContext);
@@ -27,7 +26,7 @@ function ElectricalServicesList() {
 				</span>
 
 				<div id="list-container" className="">
-					<Animate bottom cascade>
+					<Animate>
 						<div className="3xl:grid-cols-4 grid  w-full  grid-cols-1  gap-y-2 lg:grid-cols-2 xl:grid-cols-3  ">
 							{servicesList?.map((item: any, index: number) => {
 								return (

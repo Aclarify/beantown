@@ -41,7 +41,7 @@ const HeatingCoolingServicesContent = () => {
 						return (
 							<div
 								key={index}
-								className="card-wrapper mb-4 px-3 md:basis-1/2 xl:basis-1/4 "
+								className="card-wrapper mb-4 px-3 md:basis-1/2 lg:h-[500px] lg:max-h-[500px] xl:basis-1/4"
 							>
 								<HeatingCoolingServiceCard
 									key={index}

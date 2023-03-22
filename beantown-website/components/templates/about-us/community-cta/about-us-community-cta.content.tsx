@@ -20,7 +20,7 @@ const CommunityCTAContent = () => {
 
 	return (
 		<CTAWithImage
-			heroImageURL={communityctaImage?.asset?.url || ''}
+			heroImage={communityctaImage}
 			heroImageAltText={'Hero image'}
 			textContentBGImage={
 				'/images/about-us/community-CTA/community-cta-bg-vector.svg'
@@ -30,16 +30,16 @@ const CommunityCTAContent = () => {
 			}
 			heroImagePosition="left"
 			bgColor="var(--primary-color-shade-2-rgb)"
-		>			
-				<div className="text-white">
-					<CTATextContent title={communityCtaTitle || ''} isHero={false}>
-						<CTAButton
-							text={communityCtaButton?.text || ''}
-							textColor="text-primary-shade-1"
-							bgColor="bg-primary-white-shade-1"
-						/>
-					</CTATextContent>
-				</div>			
+		>
+			<div className="text-white">
+				<CTATextContent title={communityCtaTitle || ''} isHero={false}>
+					<CTAButton
+						text={communityCtaButton?.text || ''}
+						textColor="text-primary-shade-1"
+						bgColor="bg-primary-white-shade-1"
+					/>
+				</CTATextContent>
+			</div>
 		</CTAWithImage>
 	);
 };

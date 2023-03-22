@@ -1,7 +1,8 @@
-import React from 'react';
+import React, { useState } from 'react';
 import Image from 'next/image';
 import useWindowDimensions from '../../../../lib/hooks/use-window-dimensions.hook';
 import { CheckableItem, Maybe } from '../../../../typing/gql/graphql';
+import MembershipModal from '../../../organisms/membership-modal.organism';
 
 interface IProps extends React.HTMLAttributes<HTMLDivElement> {
 	title: string;
@@ -15,13 +16,21 @@ interface IProps extends React.HTMLAttributes<HTMLDivElement> {
 
 const MembershipCard: React.FC<IProps> = (props) => {
 	const { width } = useWindowDimensions();
+	const [showMembershipModal, setShowMembershipModal] = useState(false);
+
+	const handleOnClose = () => {
+		setShowMembershipModal(false);
+	};
+	const onMembershipClick = (membership: any) => {
+		setShowMembershipModal(true);
+	};
 
 	return (
 		<>
-			<div className="flex w-full flex-col content-center rounded-3xl border bg-white p-3 shadow-lg sm:p-3">
+			<div className="flex h-full min-h-full w-full min-w-full flex-col content-center rounded-3xl border bg-white p-3 shadow-lg sm:p-3">
 				<div className="bg-secondary-shade-3 mb-4 rounded-2xl p-4">
-					<div className="flex justify-center py-3 lg:py-5">
-						<div className="image-wrapper w-[30px]  lg:h-[56px] lg:w-[60px]">
+					<div className="mb-2 flex justify-center py-3 lg:mb-6 lg:py-5">
+						<div className="image-wrapper w-[60px]  lg:h-[56px] lg:w-[80px]">
 							<Image
 								width={80}
 								height={80}
@@ -33,9 +42,11 @@ const MembershipCard: React.FC<IProps> = (props) => {
 							/>
 						</div>
 					</div>
-					<div className="mb-4 flex flex-col items-center gap-1 px-3 sm:px-2">
+					<div className="mb-4 flex flex-col items-center gap-1 px-4 sm:px-6">
 						<h2 className="text-primary-black ">{props.title}</h2>
-						<p className="text-gray-shade-1 text-center">{props.description}</p>
+						<p className="text-gray-shade-1 para text-overflow-ellipsis h-[50px] overflow-hidden  text-center lg:h-[70px]">
+							{props.description}
+						</p>
 					</div>
 				</div>
 				<div id="list-container" className="mb-4 p-2">
@@ -69,14 +80,19 @@ const MembershipCard: React.FC<IProps> = (props) => {
 						})}
 					</div>
 				</div>
-				<button className="bg-primary-shade-1 para-5 lg:para-3 mx-2 mb-4 flex items-center rounded-xl py-4 px-4 tracking-wide text-white md:py-2 md:px-4 ">
-					<span className=" !font-thin">{props.buttonText}</span>
+				<button
+					onClick={onMembershipClick}
+					className="bg-primary-shade-1 para-5 lg:para-3 mx-2 mt-auto mb-4 flex items-center rounded-xl py-4 px-4 tracking-wide text-white md:py-2 md:px-4 "
+				>
+					<span className="xl:para !font-thin">{props.buttonText}</span>
 					<h3 className="ml-auto text-white">{props.price}</h3>
-					<span className="para -translate-y-[10%] self-end lg:-translate-y-[30%]">
+					<span className="xl:para -translate-y-[10%] self-end  xl:-translate-y-[10%] xl:-translate-y-[30%]">
 						/per year
 					</span>
 				</button>
 			</div>
+
+			<MembershipModal onClose={handleOnClose} visible={showMembershipModal} />
 		</>
 	);
 };

@@ -13,7 +13,7 @@ const TestimonialCardWrapper: React.FC<Props> = (props) => {
 	return (
 		<section
 			id="testimonialCard"
-			className="flex h-[358px]  w-[280px] flex-col rounded-2xl bg-white px-6 lg:h-[556px] lg:w-[378px]  lg:rounded-3xl"
+			className="z-5 relative flex h-[358px]  w-[280px] flex-col rounded-2xl bg-white px-6 lg:h-[556px] lg:w-[378px]  lg:rounded-3xl"
 		>
 			<TestimonialCard {...props} />
 		</section>
@@ -36,7 +36,7 @@ export const TestimonialCard: React.FC<Props> = (props) => {
 				<span className="subtitle-2 text-gray-shade-2">
 					{props.clientDetails}
 				</span>
-				<div className="para text-primary-black no-scrollbar overflow-y-auto  pt-6 pb-2 text-center leading-6 md:h-96 lg:px-10  lg:leading-9">
+				<div className=" para text-primary-black no-scrollbar cursor-pointer overflow-y-auto  pt-6 pb-2 text-center leading-6 md:h-96 lg:px-10  lg:leading-9">
 					{props.onShowMore && (
 						<ReadMore
 							content={props.reviewComments}

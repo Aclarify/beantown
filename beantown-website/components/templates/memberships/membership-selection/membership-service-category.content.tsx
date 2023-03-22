@@ -25,12 +25,12 @@ const MembershipServiceCategories = () => {
 	return (
 		<section
 			id="membership-service-category"
-			className="relative mb-20 flex w-full justify-center "
+			className="relative mb-20 flex w-full justify-center"
 		>
 			<Animate>
 				<div
 					id="categories-container"
-					className="grid  grid-cols-2 gap-4 rounded-2xl border-0 p-2 sm:grid-cols-4 sm:border "
+					className="grid w-full grid-cols-2 gap-4 rounded-2xl border-0 sm:p-4 md:mx-auto md:w-2/3 lg:w-auto lg:grid-cols-4 lg:border lg:p-3"
 				>
 					{serviceMembershipsSection?.map((serviceCategory, index) => {
 						return (
@@ -42,7 +42,7 @@ const MembershipServiceCategories = () => {
 										serviceCategory == activeServiceMembership
 											? 'bg-secondary-shade-1 text-white'
 											: 'text-primary-shade-1'
-									} tab-item rounded-lg border py-3 px-8 sm:border-0 sm:py-4`}
+									} tab-item rounded-lg border py-3 px-4 sm:px-8 sm:py-4 lg:border-0 lg:px-4 xl:px-8`}
 								>
 									{serviceCategory?.name}
 								</button>
