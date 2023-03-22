@@ -50,6 +50,7 @@ const membershipsQuery = `
                 _key
               }
             },
+            membershipIndex,
             membershipTitle,
             membershipDescription,
             membershipPrice,
@@ -83,6 +84,6 @@ export default gql`
 	query {
 		page: ${membershipsQuery}
 		header: ${navQuery}
-		footer: ${footerQuery}
+ 		footer: ${footerQuery}
 	}
 `;
