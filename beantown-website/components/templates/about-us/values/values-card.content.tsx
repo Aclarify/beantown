@@ -20,8 +20,8 @@ const ValuesCards = () => {
 		<>
 			<Animate>
 				<div
-					id="card-container"
-					className="text-primary-black flex flex-wrap justify-evenly gap-4 p-2"
+					id="card-container"					
+					className="text-primary-black grid grid-cols-1 lg:grid-cols-2  justify-items-center  2xl:grid-cols-4 gap-4 p-2 "
 				>
 					{valuesCards?.map((cardInfo, index) => {
 						return (
