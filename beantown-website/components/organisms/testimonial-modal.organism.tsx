@@ -5,7 +5,6 @@ import useOutsideClick from '@lib/hooks/handle-outside-click.hook';
 import { TestimonialCard } from './testimonial-card.organism';
 import Zoom from 'react-reveal/Zoom';
 
-
 const TestimonialModal = ({
 	visible,
 	onClose,
@@ -35,7 +34,7 @@ const TestimonialModal = ({
 							ref={ref}
 							className="flex min-h-full items-center justify-center"
 						>
-							<div className="card-wrapper mx-auto max-w-xs lg:max-w-md rounded-2xl bg-white py-2 lg:rounded-3xl">
+							<div className="card-wrapper mx-auto max-w-xs rounded-2xl bg-white py-2 lg:max-w-md lg:rounded-3xl">
 								<div className="flex justify-end">
 									<button
 										className="fixed pr-4 text-gray-400"

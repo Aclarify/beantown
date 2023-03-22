@@ -56,7 +56,7 @@ export const MembershipForm: React.FC<Props> = ({ onSumissionSuccess }) => {
 			{width > 768 ? (
 				<section
 					id="membershipForm"
-					className="flex h-[400px] w-[1200px] flex-col rounded-2xl bg-white py-4 sm:h-[700px]"
+					className="flex flex-col rounded-2xl bg-white py-4 sm:h-[700px] md:w-[900px] lg:w-[1200px]"
 				>
 					<div className="form-header">
 						<Animate>
@@ -194,7 +194,7 @@ export const MembershipForm: React.FC<Props> = ({ onSumissionSuccess }) => {
 					</div>
 
 					<Animate>
-						<div className="mt-6 mb-6 grid grid-cols-3 gap-4">
+						<div className="mt-6 mb-6 grid grid-cols-3 gap-4 px-4">
 							{activeServiceMembership?.serviceMembershipCards?.map(
 								(membership: any, index: number) => {
 									return (
