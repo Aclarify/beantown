@@ -1,9 +1,8 @@
-import React, { Fragment, useState } from 'react';
+import React, { useState } from 'react';
 import Image from 'next/image';
 import useWindowDimensions from '../../../../lib/hooks/use-window-dimensions.hook';
 import { CheckableItem, Maybe } from '../../../../typing/gql/graphql';
 import MembershipModal from '../../../organisms/membership-modal.organism';
-import { Dialog, Transition } from '@headlessui/react';
 
 interface IProps extends React.HTMLAttributes<HTMLDivElement> {
 	title: string;
@@ -21,13 +20,9 @@ const MembershipCard: React.FC<IProps> = (props) => {
 
 	const handleOnClose = () => {
 		setShowMembershipModal(false);
-		// document.body.style.overflow = 'unset';
 	};
 	const onMembershipClick = (membership: any) => {
 		setShowMembershipModal(true);
-		if (typeof window != 'undefined' && window.document) {
-			// document.body.style.overflow = 'hidden';
-		}
 	};
 
 	return (

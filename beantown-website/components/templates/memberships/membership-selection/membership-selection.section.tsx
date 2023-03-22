@@ -10,7 +10,6 @@ import { MembershipsContext } from '../../../../contexts/memberships/memberships
 import 'slick-carousel/slick/slick.css';
 import 'slick-carousel/slick/slick-theme.css';
 import MembershipServiceCategories from './membership-service-category.content';
-import { Dialog, Transition } from '@headlessui/react';
 
 const MembershipsSelectionSection = () => {
 	const { pageContent } =

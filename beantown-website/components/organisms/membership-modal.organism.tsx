@@ -3,7 +3,7 @@ import Zoom from 'react-reveal/Zoom';
 import { MembershipForm } from './membership-form.organism';
 import { Dialog } from '@headlessui/react';
 import { MembershipResult } from './membership-result.organism';
-import { ServiceMembershipCard, Maybe } from '../../typing/gql/graphql';
+import { ServiceMembershipCard } from '../../typing/gql/graphql';
 
 const MembershipModal = ({ visible, onClose }: any) => {
 	const [submissionSuccess, setSubmissionSuccess] = useState<boolean>(false);

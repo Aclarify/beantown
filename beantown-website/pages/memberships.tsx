@@ -12,7 +12,6 @@ import { GlobalContextProps } from '@typing/common/interfaces/contexts.interface
 import { GlobalContext } from '@contexts/global/global.context';
 import Header from 'components/organisms/nav';
 import FooterSection from 'components/organisms/footer';
-import CtaWrapper from 'components/molecules/cta-wrapper.molecule';
 import MembershipsSelectionSection from '../components/templates/memberships/membership-selection/membership-selection.section';
 import BookNowButton from 'components/atoms/book-now-button.atom';
 
@@ -28,7 +27,7 @@ const getStaticProps = generateGetStaticProps<MembershipsContentProps>(
 );
 export { getStaticProps };
 
-const MembershipsServicePage: React.FC = (props) => {
+const MembershipsServicePage: React.FC = () => {
 	const { pageContent } =
 		useContext<GlobalContextProps<MembershipsContentProps>>(GlobalContext);
 
