@@ -21,16 +21,16 @@ const MembershipsCardList = () => {
 			id="service-membership-card-list"
 			className=" mb-[5em] h-auto w-full"
 		>
-			<div className="flex flex-wrap justify-center rounded-lg">
+			<div className="grid grid-cols-1 gap-4 sm:grid-cols-3">
 				{activeServiceMembership?.serviceMembershipCards?.map(
 					(membershipCard, index) => {
 						return (
 							membershipCard?.membershipIcon?.asset?.url && (
-								<div
-									key={index}
-									className="membership-card-wrapper mb-5 w-full  md:basis-1/2 md:px-4 lg:mr-0 lg:mb-0 lg:space-x-6   lg:pr-6 lg:pb-5 xl:basis-1/3"
-								>
-									<Animate>
+								<Animate>
+									<div
+										key={index}
+										className="membership-card-wrapper mb-5 h-full min-h-full w-full md:basis-1/2 md:px-4 lg:mr-0 lg:mb-0 lg:space-x-6 lg:pr-6 lg:pb-5 xl:basis-1/3"
+									>
 										<MembershipCard
 											key={index}
 											title={membershipCard?.membershipTitle || ''}
@@ -45,8 +45,8 @@ const MembershipsCardList = () => {
 												membershipCard?.membershipSummaryItems || []
 											}
 										/>
-									</Animate>
-								</div>
+									</div>
+								</Animate>
 							)
 						);
 					}
