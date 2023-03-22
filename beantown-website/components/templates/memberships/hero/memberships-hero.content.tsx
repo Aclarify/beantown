@@ -45,14 +45,14 @@ const MembersipsContent = () => {
 			/>
 			<div
 				id="content-wrapper"
-				className="z-1 2xl:padding-for-section text-primary-shade-1 flex w-full items-center justify-center  px-6  "
+				className="z-1 2xl:padding-for-section text-primary-shade-1 flex w-full items-center justify-center  px-14"
 			>
-				<ContentWrapper className="xl:py-50 relative z-[2]  pt-28 pb-20 text-center md:pt-48  lg:w-1/2">
-					<ContentWrapper.Title className=" mb-2  lg:mb-4">						
-							<h1>{heroTitle}</h1>					
+				<ContentWrapper className="xl:py-50 relative z-[2]  pt-28 pb-10 text-center sm:pb-20 md:pt-48  lg:w-1/2">
+					<ContentWrapper.Title className=" mb-2  lg:mb-4">
+						<h1>{heroTitle}</h1>
 					</ContentWrapper.Title>
-					<ContentWrapper.Description>						
-							<p>{heroDescription}</p>						
+					<ContentWrapper.Description>
+						<p>{heroDescription}</p>
 					</ContentWrapper.Description>
 				</ContentWrapper>
 			</div>
