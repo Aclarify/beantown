@@ -20,14 +20,14 @@ export default defineType({
       type: 'image',
     }),
     defineField({
-      name: 'socialMediaDetails',
-      title: 'Images with Title',
-      type: 'array',
-      of: [
-        {
-          type: 'socialMediaIcon',
-        },
-      ],
+      name: 'memberLinkedIn',
+      title: 'Member Linked In Profile URL',
+      type: 'string',
+    }),
+    defineField({
+      name: 'memberEmail',
+      title: 'Member Email ID',
+      type: 'string',
     }),
   ],
 })
