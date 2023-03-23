@@ -15,12 +15,21 @@ const BookNowButton: React.FC<Props> = ({
 	bgColor,
 	fontColor,
 }) => {
+	const onBtnClick = () => {
+		if (window.ScheduleEngine) {
+			window.ScheduleEngine.show();
+		} else {
+			// Add a delay to allow the ScheduleEngine to load
+			window.setTimeout(onBtnClick, 100);
+		}
+	};
+
 	return (
 		<>
 			<button
 				type="button"
 				className={clsx(' se-widget-button', buttonStyle, fontColor, bgColor)}
-				onClick={() => window.ScheduleEngine.show()}
+				onClick={onBtnClick}
 			>
 				{children}
 			</button>
