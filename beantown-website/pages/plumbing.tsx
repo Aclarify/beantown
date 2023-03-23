@@ -61,6 +61,7 @@ const PlumbingServicesPage: React.FC = (props) => {
 				logoMobile={logoDark?.image}
 				content={headerData}
 				mobileBgColor="bg-service-green-bg"
+				mobileButtonText={headerData.headerButton?.text || ''}
 			>
 				<div className=" hidden lg:flex lg:justify-end ">
 					<BookNowButton

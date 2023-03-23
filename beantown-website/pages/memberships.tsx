@@ -56,6 +56,7 @@ const MembershipsServicePage: React.FC = () => {
 				logoDesktop={logoDark?.image}
 				logoMobile={logoDark?.image}
 				content={headerData}
+				mobileButtonText={headerData.headerButton?.text || ''}
 			>
 				<div className=" hidden lg:flex lg:justify-end ">
 					<BookNowButton

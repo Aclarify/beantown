@@ -7,6 +7,7 @@ import Link from 'next/link';
 import Image from 'next/image';
 import clsx from 'clsx';
 import * as OutlineIcons from '@heroicons/react/24/outline';
+import BookNowButton from 'components/atoms/book-now-button.atom';
 
 function classNames(...classes: any) {
 	return classes.filter(Boolean).join(' ');
@@ -19,6 +20,7 @@ interface IProps {
 	content: Nav;
 	children: React.ReactNode;
 	mobileBgColor: string;
+	mobileButtonText: string;
 }
 
 export default function Header(props: IProps) {
@@ -261,6 +263,15 @@ export default function Header(props: IProps) {
 											})}
 										</nav>
 									</div>
+								</div>
+								<div className="space-y-6 py-6 px-5">
+									<BookNowButton
+										fontColor="text-white"
+										bgColor="bg-primary-shade-1"
+										buttonStyle="button flex w-full items-center justify-center  shadow-sm"
+									>
+										{props.mobileButtonText}
+									</BookNowButton>
 								</div>
 							</div>
 						</Popover.Panel>

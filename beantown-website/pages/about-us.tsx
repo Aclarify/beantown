@@ -60,6 +60,7 @@ const AboutUsPage: React.FC = (props) => {
 				logoMobile={logoDark?.image}
 				content={headerData}
 				mobileBgColor="bg-secondary-shade-3"
+				mobileButtonText={headerData.headerButton?.text || ''}
 			>
 				<div className=" hidden lg:flex lg:justify-end ">
 					<BookNowButton
