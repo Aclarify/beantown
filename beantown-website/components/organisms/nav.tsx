@@ -174,7 +174,7 @@ export default function Header(props: IProps) {
 						>
 							<div
 								className={classNames(
-									`${props.mobileBgColor} divide-y-2 divide-gray-50 rounded-lg  shadow-lg  `
+									`${props.mobileBgColor} divide-gray-shade-3 divide-y-2 rounded-lg  shadow-lg  `
 								)}
 							>
 								<div className="px-5 pt-5 pb-6">
