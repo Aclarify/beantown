@@ -28,7 +28,7 @@ export default function WhyUs() {
 	return (
 		<section
 			id="whyUs"
-			className="relative z-60  py-[4rem] pb-[25em] md:mt-[6em] md:pt-[10vw] xl:mt-[1em]"
+			className="z-60 relative  py-[4rem] pb-[25em] md:mt-[6em] md:pt-[10vw] xl:mt-[1em]"
 		>
 			<WaveWrapper waveURL={topWave} />
 			<div
@@ -80,7 +80,7 @@ export default function WhyUs() {
 
 				<div
 					id="cards-wrapper"
-					className=" mt-0 grid grid-cols-1 gap-2 md:mt-20 md:mb-20 md:grid-cols-2"
+					className="mt-0 grid grid-cols-1 gap-2 lg:mt-20 lg:mb-20 lg:grid-cols-2"
 				>
 					{whyUsCards?.map((ourValues, index) => {
 						return (
@@ -89,7 +89,7 @@ export default function WhyUs() {
 									key={index}
 									title={ourValues?.titleText || ''}
 									description={ourValues?.description || ''}
-									thumbnailSrc={ourValues.image?.asset?.url || ''}
+									thumbnailImage={ourValues?.image || null}
 									thumbnailAltText={ourValues.image?.asset?.altText || ''}
 								/>
 							)
