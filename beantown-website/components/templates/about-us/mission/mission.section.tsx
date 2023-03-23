@@ -54,8 +54,8 @@ const MissionValuesSection = () => {
 				<SectionContentWrapper>
 					<MissionContent />
 					<ValuesContent />
-					<ValuesCards />
 				</SectionContentWrapper>
+				<ValuesCards />
 			</div>
 			<WaveWrapper
 				waveURL={width > 1023 ? bottomWave : bottomWaveMobile}
