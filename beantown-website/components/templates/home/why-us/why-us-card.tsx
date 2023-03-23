@@ -15,7 +15,7 @@ const WhyUsCard: React.FC<Props> = (props) => {
 		<section>
 			<Animate>
 				<div className="z-5 relative flex items-center rounded-xl bg-white py-2  shadow-sm md:m-4 ">
-					<div className=" flex-none p-2 md:p-4 ">
+					<div className=" w-1/3 flex-none p-2 md:p-4 ">
 						<CMSImageWrapper
 							altText={props.thumbnailAltText || ''}
 							image={props.thumbnailImage || null}
@@ -29,7 +29,7 @@ const WhyUsCard: React.FC<Props> = (props) => {
 							}}
 						/>
 					</div>
-					<div className=" flex-1 p-2 ">
+					<div className=" w-2/3 flex-1 p-2 ">
 						<Animate>
 							<h4 className=" text-primary-black  ">{props.title}</h4>
 						</Animate>
