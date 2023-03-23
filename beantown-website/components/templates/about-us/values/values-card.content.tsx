@@ -22,7 +22,7 @@ const ValuesCards = () => {
 				
 				<div
 					id="card-container"					
-					className="text-primary-black container mx-auto  grid grid-cols-1  justify-items-center  gap-4  p-2 sm:grid-cols-2    xl:grid-cols-4"
+					className="text-primary-black container mx-auto  grid grid-cols-1  justify-items-center  gap-4  p-2 md:grid-cols-2    xl:grid-cols-4"
 				>
 					
 					{valuesCards?.map((cardInfo, index) => {
@@ -30,7 +30,7 @@ const ValuesCards = () => {
 							cardInfo && (
 								<div
 									id="card-item"
-									className="flex w-[354px] items-center space-x-2 rounded-2xl bg-white p-2 shadow-sm  xl:w-[300px]  2xl:w-[350px] "
+									className="flex w-[354px] items-center space-x-2 rounded-2xl bg-white  p-2 shadow-sm  xl:w-[300px]  2xl:w-[350px] "
 									key={index}
 								>
 									<div
