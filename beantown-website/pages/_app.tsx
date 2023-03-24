@@ -1,3 +1,4 @@
+/* eslint-disable @next/next/no-before-interactive-script-outside-document */
 import '../styles/globals.css';
 import type { AppProps } from 'next/app';
 import Script from 'next/script';
@@ -77,6 +78,7 @@ export default function App({ Component, pageProps }: AppProps) {
 				}
 			`}</style>
 			<Script
+				strategy="beforeInteractive"
 				data-api-key="ckqky3gqt018408n1em335fyr"
 				id="se-widget-embed"
 				src="https://embed.scheduleengine.net/schedule-engine-v3.js"

@@ -60,6 +60,7 @@ const UnderConstructionPage: React.FC = (props) => {
 				logoDesktop={logoLight?.image}
 				logoMobile={logoDark?.image}
 				content={headerData}
+				mobileButtonText={headerData.headerButton?.text || ''}
 			>
 				<div className=" hidden lg:flex lg:justify-end ">
 					<Link href={headerData.headerButton?.href || ''}>
