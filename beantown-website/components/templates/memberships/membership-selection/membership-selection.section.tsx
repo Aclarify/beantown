@@ -5,7 +5,10 @@ import MembershipsDetailsSection from '../membership-details/memberships-details
 import { MembershipsContentProps } from '../../../../pages/memberships';
 import { GlobalContextProps } from '../../../../typing/common/interfaces/contexts.interface';
 import { GlobalContext } from '../../../../contexts/global/global.context';
-import { ServiceMemberships } from '../../../../typing/gql/graphql';
+import {
+	ServiceMemberships,
+	ServiceMembershipCard,
+} from '../../../../typing/gql/graphql';
 import { MembershipsContext } from '../../../../contexts/memberships/memberships.context';
 import 'slick-carousel/slick/slick.css';
 import 'slick-carousel/slick/slick-theme.css';
@@ -17,6 +20,9 @@ const MembershipsSelectionSection = () => {
 
 	const [activeServiceMembership, setActiveServiceMembership] =
 		useState<ServiceMemberships>();
+
+	const [selectedMembership, setSelectedMembership] =
+		useState<ServiceMembershipCard | null>(null);
 
 	const [show, setShow] = useState(true);
 
@@ -42,7 +48,9 @@ const MembershipsSelectionSection = () => {
 			value={{
 				activeServiceMembership:
 					activeServiceMembership || serviceMembershipsSection[0],
+				selectedMembership: selectedMembership,
 				setActiveServiceMembership,
+				setSelectedMembership,
 			}}
 		>
 			<section id="memberships-selection" className="relative z-10">
