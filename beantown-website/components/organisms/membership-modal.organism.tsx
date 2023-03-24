@@ -1,28 +1,27 @@
-import React, { useState } from 'react';
+import React, { useContext, useState } from 'react';
 import Zoom from 'react-reveal/Zoom';
 import { MembershipForm } from './membership-form.organism';
 import { Dialog } from '@headlessui/react';
 import { MembershipResult } from './membership-result.organism';
-import { ServiceMembershipCard } from '../../typing/gql/graphql';
 import useWindowDimensions from '../../lib/hooks/use-window-dimensions.hook';
 import clsx from 'clsx';
+import { MembershipsContext } from '../../contexts/memberships/memberships.context';
 
 const MembershipModal = ({ visible, onClose }: any) => {
 	const [submissionSuccess, setSubmissionSuccess] = useState<boolean>(false);
-	const [chosenMembership, setChosenMembership] =
-		useState<ServiceMembershipCard>();
+	const { selectedMembership, setSelectedMembership } =
+		useContext(MembershipsContext);
 
 	const { width } = useWindowDimensions();
 
 	const handleOnClose = () => {
 		setSubmissionSuccess(false);
-		setChosenMembership(undefined);
+		setSelectedMembership(null);
 		onClose();
 	};
 
-	const handleSubmissionSuccess = (choice: ServiceMembershipCard) => {
+	const handleSubmissionSuccess = () => {
 		setSubmissionSuccess(true);
-		setChosenMembership(choice);
 	};
 
 	return (
@@ -45,8 +44,8 @@ const MembershipModal = ({ visible, onClose }: any) => {
 							)}
 						>
 							<div className="">
-								{submissionSuccess && chosenMembership ? (
-									<MembershipResult chosenMembership={chosenMembership} />
+								{submissionSuccess && selectedMembership ? (
+									<MembershipResult chosenMembership={selectedMembership} />
 								) : (
 									<MembershipForm
 										onSumissionSuccess={handleSubmissionSuccess}
