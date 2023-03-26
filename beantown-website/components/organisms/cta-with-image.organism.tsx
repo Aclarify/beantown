@@ -48,6 +48,12 @@ const CTAWithImage: React.FC<IProps> = ({
 						image={heroImage}
 						shouldBePrefetched={isImageToBePrefetched}
 						altText={heroImageAltText}
+						style={{
+							width: '100%',
+							height: '100%',
+							objectFit: 'cover',
+							objectPosition: heroImagePosition === 'right' ? 'right' : 'left',
+						}}
 					/>
 				</div>
 				<div

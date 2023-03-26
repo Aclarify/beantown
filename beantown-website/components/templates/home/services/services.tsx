@@ -76,7 +76,7 @@ export default function Services() {
 								<h2 className="text-primary-black mb-4">{servicesTitle}</h2>
 							</Animate>
 						</ContentWrapper.Title>
-						<ContentWrapper.Description className=" px-10 sm:px-20  lg:px-80 ">
+						<ContentWrapper.Description className=" px-10 sm:px-20  xl:px-80 ">
 							<Animate>
 								<RichText value={servicesDescription?.contentRaw} />
 							</Animate>
