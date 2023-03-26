@@ -16,12 +16,12 @@
 	--secondary-color-shade-2-rgb: 202, 222, 237;
 	--secondary-color-shade-3-hex: #f4f8fb;
 	--secondary-color-shade-3-rgb: 244, 248, 251;
-	--services-red-color-hex: #bc3b39;
-	--services-red-color-rgb: 188, 59, 57;
-	--services-yellow-color-hex: #f4de00;
-	--services-yellow-color-rgb: 244, 222, 0;
-	--services-green-color-hex: #008340;
-	--services-green-color-rgb: 0, 131, 64;
+	--services-red-color-hex: #ba4d4b;
+	--services-red-color-rgb: 186, 77, 75;
+	--services-yellow-color-hex: #f7de3a;
+	--services-yellow-color-rgb: 247, 222, 58;
+	--services-green-color-hex: #2c6e49;
+	--services-green-color-rgb: 44, 110, 73;
 }
 
 @layer base {
