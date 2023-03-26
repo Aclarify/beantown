@@ -1,4 +1,4 @@
-import React, { useContext, useState, useEffect } from 'react';
+import React, { useContext, useState, FormEvent, ChangeEvent } from 'react';
 import { GlobalContext } from '../../contexts/global/global.context';
 import { MembershipsContentProps } from '../../pages/memberships';
 import { GlobalContextProps } from '../../typing/common/interfaces/contexts.interface';
@@ -18,20 +18,18 @@ interface Props {
 export const MembershipForm: React.FC<Props> = ({ onSumissionSuccess }) => {
 	const { pageContent } =
 		useContext<GlobalContextProps<MembershipsContentProps>>(GlobalContext);
-	const [selectedMembership, setSelectedMemberdship] =
-		useState<ServiceMembershipCard | null>();
-
+	const { selectedMembership, setSelectedMembership } =
+		useContext(MembershipsContext);
 	const { activeServiceMembership } = useContext(MembershipsContext);
-
 	const { width } = useWindowDimensions();
 
-	useEffect(() => {
-		if (activeServiceMembership?.serviceMembershipCards) {
-			setSelectedMemberdship(
-				activeServiceMembership?.serviceMembershipCards[0]
-			);
-		}
-	}, [activeServiceMembership]);
+	// ***************
+	const [firstName, setFirstName] = useState<string>('');
+	const [lastName, setLastName] = useState<string>('');
+	const [email, setEmail] = useState<string>('');
+	const [phoneNumber, setPhoneNumber] = useState<string>('');
+	const [homeAddress, setHomeAddress] = useState<string>('');
+	// **************
 
 	if (!pageContent) {
 		return null;
@@ -43,13 +41,44 @@ export const MembershipForm: React.FC<Props> = ({ onSumissionSuccess }) => {
 	const pageData = pageContent.page[0];
 	const { logoDark } = pageData;
 
-	const handleSubmit = (event: React.FormEvent<HTMLFormElement>) => {
+	// **************
+	const handleFirstNameChange = (event: ChangeEvent<HTMLInputElement>) => {
+		setFirstName(event.target.value);
+	};
+
+	const handleLastNameChange = (event: ChangeEvent<HTMLInputElement>) => {
+		setLastName(event.target.value);
+	};
+
+	const handleEmailChange = (event: ChangeEvent<HTMLInputElement>) => {
+		setEmail(event.target.value);
+	};
+
+	const handlePhoneNumberChange = (event: ChangeEvent<HTMLInputElement>) => {
+		setPhoneNumber(event.target.value);
+	};
+
+	const handleHomeAddressChange = (event: ChangeEvent<HTMLInputElement>) => {
+		setHomeAddress(event.target.value);
+	};
+
+	const handleSubmit = (event: FormEvent<HTMLFormElement>) => {
 		event.preventDefault();
 		// Submit form data to server
 		if (selectedMembership) {
+			const data = {
+				firstName: firstName,
+				lastName: lastName,
+				email: email,
+				phoneNumber: phoneNumber,
+				address: homeAddress,
+			};
+			console.log('Form data:', data);
 			onSumissionSuccess(selectedMembership);
 		}
 	};
+
+	// *************
 
 	return (
 		<>
@@ -85,7 +114,7 @@ export const MembershipForm: React.FC<Props> = ({ onSumissionSuccess }) => {
 															<button
 																key={index}
 																onClick={() =>
-																	setSelectedMemberdship(membership)
+																	setSelectedMembership(membership)
 																}
 																className={clsx(
 																	'rounded-lg border py-3 px-4 ',
@@ -120,6 +149,8 @@ export const MembershipForm: React.FC<Props> = ({ onSumissionSuccess }) => {
 										<FormInput
 											id="first-name"
 											placeholderText="Enter your first name"
+											value={firstName}
+											onChange={handleFirstNameChange}
 										/>
 									</div>
 									<div className="flex w-full flex-col gap-2">
@@ -127,6 +158,8 @@ export const MembershipForm: React.FC<Props> = ({ onSumissionSuccess }) => {
 										<FormInput
 											id="last-name"
 											placeholderText="Enter your last name"
+											value={lastName}
+											onChange={handleLastNameChange}
 										/>
 									</div>
 								</div>
@@ -137,6 +170,8 @@ export const MembershipForm: React.FC<Props> = ({ onSumissionSuccess }) => {
 											id="email"
 											type="email"
 											placeholderText="Enter your mail"
+											value={email}
+											onChange={handleEmailChange}
 										/>
 									</div>
 									<div className="flex w-full flex-col gap-2">
@@ -148,6 +183,8 @@ export const MembershipForm: React.FC<Props> = ({ onSumissionSuccess }) => {
 											id="phone-number"
 											type="phone"
 											placeholderText="Enter your phone number"
+											value={phoneNumber}
+											onChange={handlePhoneNumberChange}
 										/>
 									</div>
 								</div>
@@ -158,6 +195,8 @@ export const MembershipForm: React.FC<Props> = ({ onSumissionSuccess }) => {
 											id="home-address"
 											type="address"
 											placeholderText="Enter your home address"
+											value={homeAddress}
+											onChange={handleHomeAddressChange}
 										/>
 									</div>
 								</div>
@@ -200,7 +239,7 @@ export const MembershipForm: React.FC<Props> = ({ onSumissionSuccess }) => {
 									return (
 										<button
 											key={index}
-											onClick={() => setSelectedMemberdship(membership)}
+											onClick={() => setSelectedMembership(membership)}
 											className={clsx('rounded-lg border py-3 px-4 ', {
 												'bg-secondary-shade-1 text-white':
 													membership == selectedMembership,
@@ -231,6 +270,8 @@ export const MembershipForm: React.FC<Props> = ({ onSumissionSuccess }) => {
 									<FormInput
 										id="first-name"
 										placeholderText="Enter your first name"
+										value={firstName}
+										onChange={handleFirstNameChange}
 									/>
 								</div>
 								<div className="flex w-full flex-col gap-2">
@@ -238,6 +279,8 @@ export const MembershipForm: React.FC<Props> = ({ onSumissionSuccess }) => {
 									<FormInput
 										id="last-name"
 										placeholderText="Enter your last name"
+										value={lastName}
+										onChange={handleLastNameChange}
 									/>
 								</div>
 								<div className="flex w-full flex-col gap-2">
@@ -246,6 +289,8 @@ export const MembershipForm: React.FC<Props> = ({ onSumissionSuccess }) => {
 										id="email"
 										type="email"
 										placeholderText="Enter your mail"
+										value={email}
+										onChange={handleEmailChange}
 									/>
 								</div>
 								<div className="flex w-full flex-col gap-2">
@@ -254,6 +299,8 @@ export const MembershipForm: React.FC<Props> = ({ onSumissionSuccess }) => {
 										id="phone-number"
 										type="phone"
 										placeholderText="Enter your phone number"
+										value={phoneNumber}
+										onChange={handlePhoneNumberChange}
 									/>
 								</div>
 
@@ -263,6 +310,8 @@ export const MembershipForm: React.FC<Props> = ({ onSumissionSuccess }) => {
 										id="home-address"
 										type="address"
 										placeholderText="Enter your home address"
+										value={homeAddress}
+										onChange={handleHomeAddressChange}
 									/>
 								</div>
 							</div>
