@@ -3,6 +3,8 @@ import RichText from 'components/molecules/rich-text.molecule';
 import Link from 'next/link';
 import React from 'react';
 import ContentWrapper from './content-wrapper.organism';
+import clsx from 'clsx';
+import { buttonHoverStyle } from '@lib/styles/button.style';
 
 interface IProps {
 	title: string;
@@ -60,7 +62,11 @@ export const CTAButton: React.FC<ICTAButtonProps> = ({
 }) => {
 	return (
 		<Link href={href || ''}>
-			<button className={` ${bgColor} ${textColor} button`}>{text}</button>
+			<button
+				className={clsx(` ${bgColor} ${textColor} button`, buttonHoverStyle)}
+			>
+				{text}
+			</button>
 		</Link>
 	);
 };

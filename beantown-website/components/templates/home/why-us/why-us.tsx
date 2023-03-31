@@ -13,6 +13,8 @@ import topWave from 'public/images/home/why-us/top-wave.svg';
 import bottomWave from 'public/images/home/why-us/bottom-wave.svg';
 import Link from 'next/link';
 import Animate from 'components/molecules/animate.molecule';
+import clsx from 'clsx';
+import { buttonHoverStyle } from '@lib/styles/button.style';
 export default function WhyUs() {
 	const { pageContent } =
 		useContext<GlobalContextProps<HomePageContentProps>>(GlobalContext);
@@ -55,7 +57,12 @@ export default function WhyUs() {
 								</Animate>
 							</ContentWrapper.Description>
 							<ContentWrapper.CTA className="mt-[16px] lg:mt-[32px]">
-								<CtaWrapper.CTA className="bg-primary-shade-1  button text-white ">
+								<CtaWrapper.CTA
+									className={clsx(
+										`bg-primary-shade-1  button text-white`,
+										buttonHoverStyle
+									)}
+								>
 									<Link href={whyUsButton?.href || '#'}>
 										{whyUsButton?.text}
 									</Link>
