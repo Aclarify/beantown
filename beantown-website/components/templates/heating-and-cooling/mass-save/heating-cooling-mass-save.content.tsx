@@ -8,6 +8,8 @@ import MaskedImageWithBackgroundVector from 'components/organisms/masked-image-w
 import useWindowDimensions from '@lib/hooks/use-window-dimensions.hook';
 import CtaWrapper from 'components/molecules/cta-wrapper.molecule';
 import Animate from 'components/molecules/animate.molecule';
+import clsx from 'clsx';
+import { buttonHoverStyle } from '@lib/styles/button.style';
 const HeatingCoolingMassSaveContent = () => {
 	const { pageContent } =
 		useContext<GlobalContextProps<HeatingCoolingContentProps>>(GlobalContext);
@@ -45,7 +47,12 @@ const HeatingCoolingMassSaveContent = () => {
 							</Animate>
 						</ContentWrapper.Description>
 						<ContentWrapper.CTA className=" mt-4 lg:mt-8">
-							<CtaWrapper.CTA className="bg-service-red  button text-white ">
+							<CtaWrapper.CTA
+								className={clsx(
+									'bg-service-red  button text-white',
+									buttonHoverStyle
+								)}
+							>
 								{massSaveButton?.text}
 							</CtaWrapper.CTA>
 						</ContentWrapper.CTA>

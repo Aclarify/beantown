@@ -1,6 +1,8 @@
 import { GlobalContext } from '@contexts/global/global.context';
 import useWindowDimensions from '@lib/hooks/use-window-dimensions.hook';
+import { buttonHoverStyle } from '@lib/styles/button.style';
 import { GlobalContextProps } from '@typing/common/interfaces/contexts.interface';
+import clsx from 'clsx';
 import Animate from 'components/molecules/animate.molecule';
 import CtaWrapper from 'components/molecules/cta-wrapper.molecule';
 import RichText from 'components/molecules/rich-text.molecule';
@@ -8,7 +10,6 @@ import ContentWrapper from 'components/organisms/content-wrapper.organism';
 import MaskedImageWithBackgroundVector from 'components/organisms/masked-image-with-blob.organism';
 import { ElectricalContentProps } from 'pages/electrical';
 import { useContext } from 'react';
-
 
 const AboutElectricalServiceContent = () => {
 	const { pageContent } =
@@ -57,7 +58,7 @@ const AboutElectricalServiceContent = () => {
 				>
 					<ContentWrapper>
 						<ContentWrapper.Title className="mr-[2em] md:mr-[0em] lg:mr-[1em] xl:mr-[2em] 2xl:mr-[5em]">
-							<Animate  bottom>
+							<Animate bottom>
 								<h2 className="text-primary-black ">{aboutTheServiceTitle}</h2>
 							</Animate>
 						</ContentWrapper.Title>
@@ -67,7 +68,12 @@ const AboutElectricalServiceContent = () => {
 							</Animate>
 						</ContentWrapper.Description>
 						<ContentWrapper.CTA className="mt-[16px] lg:mt-[32px]">
-							<CtaWrapper.CTA className="bg-service-yellow button text-black">
+							<CtaWrapper.CTA
+								className={clsx(
+									'bg-service-yellow button text-black',
+									buttonHoverStyle
+								)}
+							>
 								{contactUsButton?.text}
 							</CtaWrapper.CTA>
 						</ContentWrapper.CTA>

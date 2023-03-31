@@ -57,7 +57,7 @@ const UnderConstructionPage: React.FC = (props) => {
 			<Header
 				mobileBgColor="bg-primary-white-shade-1"
 				fontColor="text-primary-shade-1"
-				logoDesktop={logoLight?.image}
+				logoDesktop={logoDark?.image}
 				logoMobile={logoDark?.image}
 				content={headerData}
 				mobileButtonText={headerData.headerButton?.text || ''}

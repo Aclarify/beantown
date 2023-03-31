@@ -191,7 +191,6 @@
 		}
 		.button {
 			@apply text-2xl;
-			@apply font-thin;
 			@apply leading-[36px];
 			@apply h-[64px];
 			@apply w-[200px];
