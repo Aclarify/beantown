@@ -28,7 +28,10 @@ export const MembershipForm: React.FC<Props> = ({ onSumissionSuccess }) => {
 	const [lastName, setLastName] = useState<string>('');
 	const [email, setEmail] = useState<string>('');
 	const [phoneNumber, setPhoneNumber] = useState<string>('');
-	const [homeAddress, setHomeAddress] = useState<string>('');
+	const [address, setAddres] = useState<string>('');
+	const [city, setCity] = useState<string>('');
+	const [state, setState] = useState<string>('');
+	const [zipCode, setZipCode] = useState<string>('');
 	// **************
 
 	if (!pageContent) {
@@ -58,8 +61,20 @@ export const MembershipForm: React.FC<Props> = ({ onSumissionSuccess }) => {
 		setPhoneNumber(event.target.value);
 	};
 
-	const handleHomeAddressChange = (event: ChangeEvent<HTMLInputElement>) => {
-		setHomeAddress(event.target.value);
+	const handleAddressChange = (event: ChangeEvent<HTMLInputElement>) => {
+		setAddres(event.target.value);
+	};
+
+	const handleCityChange = (event: ChangeEvent<HTMLInputElement>) => {
+		setCity(event.target.value);
+	};
+
+	const handleStateChange = (event: ChangeEvent<HTMLInputElement>) => {
+		setState(event.target.value);
+	};
+
+	const handleZipCodeChange = (event: ChangeEvent<HTMLInputElement>) => {
+		setZipCode(event.target.value);
 	};
 
 	const handleSubmit = (event: FormEvent<HTMLFormElement>) => {
@@ -67,12 +82,26 @@ export const MembershipForm: React.FC<Props> = ({ onSumissionSuccess }) => {
 		// Submit form data to server
 		if (selectedMembership) {
 			const data = {
-				firstName: firstName,
-				lastName: lastName,
 				email: email,
+				name: `${firstName} ${lastName}`,
+				summary: `${activeServiceMembership?.name}-${selectedMembership.membershipTitle}`,
+				isFirstTimeClient: email,
 				phoneNumber: phoneNumber,
-				address: homeAddress,
+				contacts: [
+					{
+						type: 'Phone',
+						value: phoneNumber,
+					},
+				],
+				address: {
+					street: address,
+					city: city,
+					state: state,
+					zip: zipCode,
+					country: 'USA',
+				},
 			};
+
 			console.log('Form data:', data);
 			onSumissionSuccess(selectedMembership);
 		}
@@ -85,7 +114,7 @@ export const MembershipForm: React.FC<Props> = ({ onSumissionSuccess }) => {
 			{width > 768 ? (
 				<section
 					id="membershipForm"
-					className="flex flex-col rounded-2xl bg-white py-4 sm:h-[700px] md:w-[900px] lg:w-[1200px]"
+					className="flex flex-col rounded-2xl bg-white py-4 sm:h-[900px] md:w-[900px] lg:w-[1200px]"
 				>
 					<div className="form-header">
 						<Animate>
@@ -190,13 +219,49 @@ export const MembershipForm: React.FC<Props> = ({ onSumissionSuccess }) => {
 								</div>
 								<div className="mx-auto flex w-3/5 flex-row gap-4">
 									<div className="flex w-full flex-col gap-2">
-										<FormLabel inputId="home-address" labelText="Address" />
+										<FormLabel inputId="address" labelText="Address" />
 										<FormInput
-											id="home-address"
-											type="address"
+											id="address"
+											type="text"
 											placeholderText="Enter your home address"
-											value={homeAddress}
-											onChange={handleHomeAddressChange}
+											value={address}
+											onChange={handleAddressChange}
+										/>
+									</div>
+								</div>
+								<div className="mx-auto flex w-3/5 flex-row gap-4">
+									<div className="flex w-full flex-col gap-2">
+										<FormLabel inputId="city" labelText="City" />
+										<FormInput
+											id="city"
+											type="text"
+											placeholderText="Enter your city"
+											value={address}
+											onChange={handleCityChange}
+										/>
+									</div>
+								</div>
+								<div className="mx-auto flex w-3/5 flex-row gap-4">
+									<div className="flex w-full flex-col gap-2">
+										<FormLabel inputId="state" labelText="State" />
+										<FormInput
+											id="state"
+											type="text"
+											placeholderText="Enter your state"
+											value={state}
+											onChange={handleStateChange}
+										/>
+									</div>
+								</div>
+								<div className="mx-auto flex w-3/5 flex-row gap-4">
+									<div className="flex w-full flex-col gap-2">
+										<FormLabel inputId="zipcode" labelText="Zip Code" />
+										<FormInput
+											id="zipcode"
+											type="text"
+											placeholderText="Enter your Zip Code"
+											value={zipCode}
+											onChange={handleZipCodeChange}
 										/>
 									</div>
 								</div>
@@ -240,10 +305,13 @@ export const MembershipForm: React.FC<Props> = ({ onSumissionSuccess }) => {
 										<button
 											key={index}
 											onClick={() => setSelectedMembership(membership)}
-											className={clsx('rounded-lg border py-3 px-4 ', {
-												'bg-secondary-shade-1 text-white':
-													membership == selectedMembership,
-											})}
+											className={clsx(
+												'rounded-lg border py-3 px-3 text-center text-sm',
+												{
+													'bg-secondary-shade-1   text-white':
+														membership == selectedMembership,
+												}
+											)}
 										>
 											{membership?.membershipTitle}
 										</button>
@@ -310,8 +378,8 @@ export const MembershipForm: React.FC<Props> = ({ onSumissionSuccess }) => {
 										id="home-address"
 										type="address"
 										placeholderText="Enter your home address"
-										value={homeAddress}
-										onChange={handleHomeAddressChange}
+										value={address}
+										onChange={handleAddressChange}
 									/>
 								</div>
 							</div>
