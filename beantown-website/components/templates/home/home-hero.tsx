@@ -28,7 +28,8 @@ export default function HomeHero() {
 					<ContentWrapper.Title className=" mb-2  lg:mb-4">
 						<h1>{heroTitle}</h1>
 					</ContentWrapper.Title>
-					<ContentWrapper.Description className=" w-[80%]">
+					{/* FIXME: Targeting/specifity of subtitle should be enhanced ([&>*>p]:) */}
+					<ContentWrapper.Description className="w-[80%] [&>*>p]:text-2xl [&>*>p]:lg:text-4xl">
 						<RichText value={heroDescription?.contentRaw} />
 					</ContentWrapper.Description>
 					<ContentWrapper.CTA className="mt-4 lg:mt-8">
