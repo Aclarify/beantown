@@ -80,7 +80,7 @@ export default function Header(props: IProps) {
 									<Link
 										key={index}
 										href={link?.href || '/'}
-										className="group inline-block p-8"
+										className="group inline-block p-8 text-2xl"
 									>
 										{link?.linkText}
 									</Link>
@@ -89,7 +89,10 @@ export default function Header(props: IProps) {
 
 							{navGroup?.map((linkGroup, index) => {
 								return (
-									<Popover className="group inline-block pl-6" key={index}>
+									<Popover
+										className="group inline-block pl-6 text-2xl"
+										key={index}
+									>
 										{({ open }) => (
 											<>
 												<Popover.Button
@@ -97,7 +100,7 @@ export default function Header(props: IProps) {
 														'min-w-32 flex  items-center rounded-sm  px-3 py-1 focus:outline-none  '
 													)}
 												>
-													<span className="para flex-1 pr-1  ">
+													<span className="flex-1 pr-1  ">
 														{linkGroup?.groupTitle}
 													</span>
 													<ChevronDownIcon
@@ -137,7 +140,7 @@ export default function Header(props: IProps) {
 																								link.heroIconName
 																							)}
 																					</div>
-																					<span className="para text-primary-black rounded-sm px-3 py-1">
+																					<span className="text-primary-black rounded-sm px-3 text-2xl">
 																						{link?.linkText}
 																					</span>
 																				</div>
@@ -205,9 +208,9 @@ export default function Header(props: IProps) {
 													<Link
 														key={index}
 														href={link?.href || '/'}
-														className=" group inline-block   "
+														className=" group inline-block"
 													>
-														<span className="subtitle !font-neuePlak !font-medium">
+														<span className="!font-neuePlak text-2xl !font-medium">
 															{link?.linkText}
 														</span>
 													</Link>
@@ -219,7 +222,7 @@ export default function Header(props: IProps) {
 														{({ open }) => (
 															<>
 																<Disclosure.Button className="  flex w-full items-center justify-between rounded-lg  pl-3 pr-3.5  ">
-																	<span className="subtitle !font-neuePlak  !font-medium">
+																	<span className="!font-neuePlak text-2xl  !font-medium">
 																		{linkGroup?.groupTitle}
 																	</span>
 																	<ChevronDownIcon
@@ -248,7 +251,7 @@ export default function Header(props: IProps) {
 																									link.heroIconName
 																								)}
 																						</div>
-																						<span className="para text-primary-black rounded-sm px-3 py-1">
+																						<span className="text-primary-black rounded-sm px-3 py-1 text-lg">
 																							{link?.linkText}
 																						</span>
 																					</div>
