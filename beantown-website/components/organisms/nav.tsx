@@ -51,11 +51,12 @@ export default function Header(props: IProps) {
 						)}
 					>
 						<div className=" align-middle  ">
-							<div className="image-wrapper relative h-[50px] w-[136px] focus:outline-none md:h-[80px] md:w-[230px]">
+							<div className="image-wrapper relative h-[60px] w-[180px] focus:outline-none md:h-[80px] md:w-[230px]">
 								<Link href="/">
 									<Image
 										alt={logoDesktop?.asset?.altText || ''}
-										fill={true}
+										fill
+										className="object-contain"
 										priority={true}
 										src={logoDesktop?.asset?.url || ''}
 									/>
@@ -68,12 +69,12 @@ export default function Header(props: IProps) {
 								aria-label="menu for navigation"
 							>
 								<span className="sr-only">Open menu</span>
-								<Bars3Icon className="h-8 w-8 " aria-hidden="true" />
+								<Bars3Icon className="h-8 w-8" aria-hidden="true" />
 							</Popover.Button>
 						</div>
 						<Popover.Group
 							as="nav"
-							className="para hidden items-center  lg:flex lg:flex-grow lg:justify-center  "
+							className="para hidden items-center lg:flex lg:flex-grow lg:justify-center  "
 						>
 							{navLinks?.map((link, index) => {
 								return (
@@ -125,7 +126,7 @@ export default function Header(props: IProps) {
 														<div className="overflow-hidden rounded-lg shadow-lg ">
 															<div
 																className={classNames(
-																	`relative grid gap-4 bg-white  px-5 py-6 sm:gap-6 sm:p-4  `
+																	`relative grid gap-4 bg-white px-6 py-6 sm:gap-6  `
 																)}
 															>
 																{linkGroup?.links &&
@@ -183,11 +184,12 @@ export default function Header(props: IProps) {
 								<div className="px-5 pt-5 pb-6">
 									<div className="flex items-center justify-between">
 										<div className=" align-middle  ">
-											<div className="image-wrapper relative h-[50px] w-[136px] focus:outline-none md:h-[80px] md:w-[230px] ">
+											<div className="image-wrapper relative h-[60px] w-[180px] focus:outline-none md:h-[80px] md:w-[230px] ">
 												<Link href="/">
 													<Image
 														alt={logoMobile?.asset?.altText || ''}
-														fill={true}
+														fill
+														className="object-contain"
 														priority={true}
 														src={logoMobile?.asset?.url || ''}
 													/>
