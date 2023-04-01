@@ -10,11 +10,10 @@ import { PlumbingContentProps } from 'pages/plumbing';
 import Animate from 'components/molecules/animate.molecule';
 import clsx from 'clsx';
 import { buttonHoverStyle } from '@lib/styles/button.style';
-import Modal from 'components/organisms/modal.organism';
 import ContactUsModal from 'components/organisms/contact-us-modal.organism';
 
 const AboutPlumbingServiceContent = () => {
-	const [isModalOpen, setIsModalOpen] = useState(true);
+	const [isModalOpen, setIsModalOpen] = useState(false);
 	const { pageContent } =
 		useContext<GlobalContextProps<PlumbingContentProps>>(GlobalContext);
 	const { width } = useWindowDimensions();
