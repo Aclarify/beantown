@@ -1,8 +1,8 @@
 import { prepareFormUrlEncoded } from '@lib/forms/data-prep.forms';
 
-const CLIENT_ID = process.env.NEXT_PUBLIC_SERVICE_TITAN_CLIENT_ID;
-const CLIENT_SECRET = process.env.NEXT_PUBLIC_SERVICE_TITAN_CLIENT_SECRET;
-const ST_APP_KEY = process.env.NEXT_PUBLIC_SERVICE_TITAN_APP_KEY;
+const CLIENT_ID = process.env.SERVICE_TITAN_CLIENT_ID;
+const CLIENT_SECRET = process.env.SERVICE_TITAN_CLIENT_SECRET;
+const ST_APP_KEY = process.env.SERVICE_TITAN_APP_KEY;
 
 export const authenticate = async () => {
 	try {
