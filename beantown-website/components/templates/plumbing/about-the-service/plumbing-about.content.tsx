@@ -11,16 +11,13 @@ import Animate from 'components/molecules/animate.molecule';
 import clsx from 'clsx';
 import { buttonHoverStyle } from '@lib/styles/button.style';
 import ContactUsModal from 'components/organisms/contact-us-modal.organism';
+import { useModal } from 'components/organisms/modal.organism';
 
 const AboutPlumbingServiceContent = () => {
-	const [isModalOpen, setIsModalOpen] = useState(false);
+	const { isVisible, toggleModal } = useModal();
 	const { pageContent } =
 		useContext<GlobalContextProps<PlumbingContentProps>>(GlobalContext);
 	const { width } = useWindowDimensions();
-
-	const toggleModal = useCallback(() => {
-		setIsModalOpen((state) => !state);
-	}, []);
 
 	if (!pageContent) {
 		return null;
@@ -74,7 +71,7 @@ const AboutPlumbingServiceContent = () => {
 							</ContentWrapper.CTA>
 							{/* Modal for CTA click */}
 							<ContactUsModal
-								isVisible={isModalOpen}
+								isVisible={isVisible}
 								onClose={toggleModal}
 								logoDark={logoDark}
 								ctaBgColor="bg-service-green"
