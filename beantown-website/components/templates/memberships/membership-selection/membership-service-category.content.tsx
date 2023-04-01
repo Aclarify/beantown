@@ -41,7 +41,7 @@ const MembershipServiceCategories = () => {
 									className={`${
 										serviceCategory == activeServiceMembership
 											? 'bg-secondary-shade-1 text-white'
-											: 'text-primary-shade-1'
+											: 'text-primary-shade-1 opacity-100 transition-all duration-150 ease-in-out hover:bg-[rgba(202,222,237,0.2)]'
 									} tab-item rounded-lg border py-3 px-4 sm:px-8 sm:py-4 lg:border-0 lg:px-4 xl:px-8`}
 								>
 									{serviceCategory?.name}
