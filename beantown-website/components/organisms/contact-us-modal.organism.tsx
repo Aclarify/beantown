@@ -37,7 +37,7 @@ const ContactUsModal: FC<ContactUsModalProps> = ({
 				<div>
 					<h4 className={clsx('pb-2')}>Need to get in touch?</h4>
 					<p className={clsx('pb-8', 'text-2xl')}>
-						Give us a call and we'll be happy to help.
+						Give us a call and we&apos;ll be happy to help.
 					</p>
 					<CTAButton
 						textColor={ctaTextColor}
@@ -47,7 +47,6 @@ const ContactUsModal: FC<ContactUsModalProps> = ({
 					/>
 				</div>
 			</div>
-			<p className="text-center">{}</p>
 		</div>
 	</Modal>
 );
