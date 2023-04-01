@@ -1,5 +1,5 @@
 import React, { useContext, useState, FormEvent, ChangeEvent } from 'react';
-import toast, { ToastOptions, useToasterStore } from 'react-hot-toast';
+import toast from 'react-hot-toast';
 import { GlobalContext } from '../../contexts/global/global.context';
 import { MembershipsContentProps } from '../../pages/memberships';
 import { GlobalContextProps } from '../../typing/common/interfaces/contexts.interface';
@@ -18,6 +18,7 @@ import {
 import { config } from 'lib/config';
 
 import dynamic from 'next/dynamic';
+import FormCheckBox from '../atoms/form-checkbox';
 
 const AddressAutofill = dynamic(
 	() => import('@mapbox/search-js-react').then((c) => c.AddressAutofill),
@@ -41,7 +42,7 @@ export const MembershipForm: React.FC<Props> = ({ onSumissionSuccess }) => {
 	console.log(mapBoxAccessToken);
 
 	// ***************
-	const [loading, setIsLoading] = useState<string>('');
+	const [isFirstTime, setIsFirstTime] = useState<boolean>(true);
 	const [firstName, setFirstName] = useState<string>('');
 	const [lastName, setLastName] = useState<string>('');
 	const [email, setEmail] = useState<string>('');
@@ -95,6 +96,10 @@ export const MembershipForm: React.FC<Props> = ({ onSumissionSuccess }) => {
 		setZipCode(event.target.value);
 	};
 
+	const toggleIsFirstTime = () => {
+		setIsFirstTime(!isFirstTime);
+	};
+
 	const handleSubmit = async (event: FormEvent<HTMLFormElement>) => {
 		event.preventDefault();
 		// Submit form data to server
@@ -102,7 +107,7 @@ export const MembershipForm: React.FC<Props> = ({ onSumissionSuccess }) => {
 			const bookingDetails: CreateBookingInboundDto = {
 				name: `${firstName} ${lastName}`,
 				summary: `${activeServiceMembership?.name}-${selectedMembership.membershipTitle}`,
-				isFirstTimeClient: true,
+				isFirstTimeClient: isFirstTime,
 				contacts: [
 					{
 						type: 'Email',
@@ -153,7 +158,7 @@ export const MembershipForm: React.FC<Props> = ({ onSumissionSuccess }) => {
 			{width > 768 ? (
 				<section
 					id="membershipForm"
-					className="flex flex-col rounded-2xl bg-white py-4 sm:h-[900px] md:w-[900px] lg:w-[1200px]"
+					className="flex flex-col rounded-2xl bg-white py-4 sm:h-[920px] md:w-[900px] lg:w-[1200px]"
 				>
 					<div className="form-header">
 						<Animate>
@@ -207,7 +212,7 @@ export const MembershipForm: React.FC<Props> = ({ onSumissionSuccess }) => {
 
 					<form
 						onSubmit={handleSubmit}
-						className="form-body flex flex-col py-8"
+						className="form-body flex flex-col py-2"
 					>
 						<Animate>
 							<div className="flex flex-col gap-4 py-2 lg:py-5 ">
@@ -320,6 +325,17 @@ export const MembershipForm: React.FC<Props> = ({ onSumissionSuccess }) => {
 											onChange={handleZipCodeChange}
 										/>
 									</div>
+								</div>
+								<div className="mx-auto flex w-3/5 flex-row items-center gap-4">
+									<FormCheckBox
+										id="isFirstTime"
+										checked={isFirstTime}
+										onChange={toggleIsFirstTime}
+									/>
+									<FormLabel
+										inputId="isFirstTime"
+										labelText="Is it your first time ?"
+									/>
 								</div>
 							</div>
 						</Animate>
@@ -485,6 +501,17 @@ export const MembershipForm: React.FC<Props> = ({ onSumissionSuccess }) => {
 										autoComplete="postal-code"
 										value={zipCode}
 										onChange={handleZipCodeChange}
+									/>
+								</div>
+								<div className="flex w-full flex-row items-center gap-4">
+									<FormCheckBox
+										id="isFirstTime"
+										checked={isFirstTime}
+										onChange={toggleIsFirstTime}
+									/>
+									<FormLabel
+										inputId="isFirstTime"
+										labelText="Is it your first time ?"
 									/>
 								</div>
 							</div>

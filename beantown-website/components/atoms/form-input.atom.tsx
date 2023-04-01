@@ -12,6 +12,7 @@ interface Props {
 	placeholderText?: string;
 	value?: string;
 	autoComplete?: string;
+	checked?: boolean;
 	onChange: (event: ChangeEvent<HTMLInputElement>) => void;
 }
 const FormInput: React.FC<Props> = ({
@@ -25,6 +26,7 @@ const FormInput: React.FC<Props> = ({
 	autoComplete,
 	value,
 	onChange,
+	checked,
 }) => {
 	return (
 		<input
@@ -34,11 +36,11 @@ const FormInput: React.FC<Props> = ({
 			placeholder={placeholderText}
 			onChange={onChange}
 			autoComplete={autoComplete}
+			checked={checked}
 			className={clsx(
 				'w-full rounded-lg border p-3 focus:outline-none',
 				bgColor,
 				fontColor,
-				placeholderColor,
 				placeholderColor,
 				borderColor
 			)}
