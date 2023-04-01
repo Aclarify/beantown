@@ -35,9 +35,12 @@ const CTATextContent: React.FC<IProps> = ({
 			{description && (
 				<ContentWrapper.Description>
 					{typeof description === 'string' ? (
-						<p>{description}</p>
+						<p className="text-2xl lg:text-4xl">{description}</p>
 					) : (
-						<RichText value={description?.contentRaw} />
+						<RichText
+							wrapperClassname="[&>p]:text-xl [&>p]:lg:text-3xl"
+							value={description?.contentRaw}
+						/>
 					)}
 				</ContentWrapper.Description>
 			)}
