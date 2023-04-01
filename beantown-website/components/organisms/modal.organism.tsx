@@ -1,4 +1,4 @@
-import React, { Fragment, ReactNode } from 'react';
+import React, { Fragment, ReactNode, useState } from 'react';
 import XMarkIcon from '@heroicons/react/20/solid/XMarkIcon';
 import { Dialog, Transition } from '@headlessui/react';
 
@@ -7,6 +7,24 @@ interface ModalProps {
 	onClose: () => void;
 	children: ReactNode;
 }
+
+export const useModal = () => {
+	const [isVisible, setIsVisible] = useState(false);
+
+	const openModal = () => {
+		setIsVisible(true);
+	};
+
+	const closeModal = () => {
+		setIsVisible(false);
+	};
+
+	const toggleModal = () => {
+		setIsVisible((state) => !state);
+	};
+
+	return { isVisible, openModal, closeModal, toggleModal };
+};
 
 const Modal: React.FC<ModalProps> = ({ isVisible, onClose, children }) => {
 	return (
