@@ -6,12 +6,15 @@ import clsx from 'clsx';
 import Animate from 'components/molecules/animate.molecule';
 import CtaWrapper from 'components/molecules/cta-wrapper.molecule';
 import RichText from 'components/molecules/rich-text.molecule';
+import ContactUsModal from 'components/organisms/contact-us-modal.organism';
 import ContentWrapper from 'components/organisms/content-wrapper.organism';
 import MaskedImageWithBackgroundVector from 'components/organisms/masked-image-with-blob.organism';
+import { useModal } from 'components/organisms/modal.organism';
 import { ElectricalContentProps } from 'pages/electrical';
 import { useContext } from 'react';
 
 const AboutElectricalServiceContent = () => {
+	const { isVisible, toggleModal } = useModal();
 	const { pageContent } =
 		useContext<GlobalContextProps<ElectricalContentProps>>(GlobalContext);
 	const { width } = useWindowDimensions();
@@ -25,7 +28,9 @@ const AboutElectricalServiceContent = () => {
 		aboutTheServiceDescription,
 		aboutTheServiceImage,
 		contactUsButton,
+		logoDark,
 	} = pageData;
+
 	return (
 		<div
 			id="section-wrapper"
@@ -73,10 +78,19 @@ const AboutElectricalServiceContent = () => {
 									'bg-service-yellow button text-black',
 									buttonHoverStyle
 								)}
+								onClick={toggleModal}
 							>
 								{contactUsButton?.text}
 							</CtaWrapper.CTA>
 						</ContentWrapper.CTA>
+						{/* Modal for CTA click */}
+						<ContactUsModal
+							isVisible={isVisible}
+							onClose={toggleModal}
+							logoDark={logoDark}
+							ctaBgColor="bg-service-yellow"
+							ctaTextColor="text-black"
+						/>
 					</ContentWrapper>
 				</div>
 			</div>

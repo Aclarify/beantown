@@ -1,3 +1,4 @@
+import clsx from 'clsx';
 import React from 'react';
 
 interface Props {
@@ -5,6 +6,7 @@ interface Props {
 	limit: number;
 	onShowMore: () => void;
 }
+
 const ReadMore: React.FC<Props> = (props) => {
 	return (
 		<>
@@ -13,9 +15,17 @@ const ReadMore: React.FC<Props> = (props) => {
 					? props.content
 					: props.content.substring(0, props.limit)}
 			</span>
-
-			<span className="cursor-pointer text-blue-600" onClick={props.onShowMore}>
-				{props.content.length > props.limit ? '... Show More' : ''}
+			<span onClick={props.onShowMore}>
+				{props.content.length > props.limit ? (
+					<>
+						<span className={clsx()}> ...</span>
+						<p className={clsx('text-blue-600', 'pt-2', 'text-center')}>
+							Read More
+						</p>
+					</>
+				) : (
+					''
+				)}
 			</span>
 		</>
 	);

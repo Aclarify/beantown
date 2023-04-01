@@ -51,15 +51,7 @@ const MembershipsSelectionSection = () => {
 				</SectionContentWrapper>
 
 				<SectionContentWrapper>
-					<div
-						className={`transition-all duration-1000 ease-in-out ${
-							show
-								? 'opacity-100'
-								: 'translate-y-full transform opacity-0 sm:translate-x-0 sm:scale-50'
-						}`}
-					>
-						<MembershipsCardList />
-					</div>
+					<MembershipsCardList />
 				</SectionContentWrapper>
 
 				<MembershipsDetailsSection />
