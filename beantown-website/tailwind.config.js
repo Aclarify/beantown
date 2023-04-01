@@ -7,6 +7,9 @@ module.exports = {
 	],
 	theme: {
 		extend: {
+			animation: {
+        'spin-slow': 'spin 3s linear infinite',
+      },
 			screens: {
 				xs: { max: '400px' },
 				'3xl': '2500px',
@@ -29,8 +32,8 @@ module.exports = {
 				'secondary-shade-2': '#CADEED',
 				'secondary-shade-3': '#F4F8FB',
 				'secondary-shade-4': '#D9D9D9',
-				'home-hero-gradient-start': 'rgba(21, 40, 76, 0.4)',
-				'home-hero-gradient-end': 'rgba(21, 40, 76, 0)',
+				'home-hero-gradient-start': 'rgba(21, 40, 76, 0.8)',
+				'home-hero-gradient-end': 'rgba(21, 40, 76, 0.45)',
 				'aboutUs-hero-gradient-start': ' rgba(21, 40, 76, 0.6) 0% ',
 				'aboutUs-hero-gradient-end': ' rgba(21, 40, 76, 0) 100% ',
 				'gray-shade-1': '#47515F',

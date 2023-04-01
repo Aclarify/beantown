@@ -9,6 +9,8 @@ import useWindowDimensions from '@lib/hooks/use-window-dimensions.hook';
 import CtaWrapper from 'components/molecules/cta-wrapper.molecule';
 import { PlumbingContentProps } from 'pages/plumbing';
 import Animate from 'components/molecules/animate.molecule';
+import clsx from 'clsx';
+import { buttonHoverStyle } from '@lib/styles/button.style';
 
 const AboutPlumbingServiceContent = () => {
 	const { pageContent } =
@@ -51,7 +53,12 @@ const AboutPlumbingServiceContent = () => {
 							</Animate>
 						</ContentWrapper.Description>
 						<ContentWrapper.CTA className="mt-[16px] lg:mt-[32px]">
-							<CtaWrapper.CTA className="bg-service-green button  text-white  ">
+							<CtaWrapper.CTA
+								className={clsx(
+									'bg-service-green button  text-white',
+									buttonHoverStyle
+								)}
+							>
 								{contactUsButton?.text}
 							</CtaWrapper.CTA>
 						</ContentWrapper.CTA>

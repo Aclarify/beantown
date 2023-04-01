@@ -22,17 +22,22 @@ export default function HomeHero() {
 		<section id="home_page_hero" className="relative">
 			<div
 				id="content-wrapper"
-				className="z-1 2xl:padding-for-section sm:[w-3/4] flex w-[85%] items-center pl-6 text-white sm:pr-6 lg:w-[50%] "
+				className="z-1 2xl:padding-for-section sm:[w-3/4] flex w-[85%] items-center pl-6 text-white sm:pr-6 lg:w-[60%] "
 			>
 				<ContentWrapper className="relative z-[2] pt-24 pb-16 sm:pt-28 sm:pb-20 md:pt-48 md:pb-48 xl:pt-80 xl:pb-80">
 					<ContentWrapper.Title className=" mb-2  lg:mb-4">
 						<h1>{heroTitle}</h1>
 					</ContentWrapper.Title>
-					<ContentWrapper.Description className=" w-[80%]">
+					{/* FIXME: Targeting/specifity of subtitle should be enhanced ([&>*>p]:) */}
+					<ContentWrapper.Description className="w-[80%] [&>*>p]:text-2xl [&>*>p]:lg:text-4xl">
 						<RichText value={heroDescription?.contentRaw} />
 					</ContentWrapper.Description>
 					<ContentWrapper.CTA className="mt-4 lg:mt-8">
-						<BookNowButton fontColor="text-primary-shade-1" bgColor="bg-white">
+						<BookNowButton
+							fontColor="text-primary-shade-1"
+							bgColor="bg-white"
+							buttonStyle="button"
+						>
 							{heroButton?.text}
 						</BookNowButton>
 					</ContentWrapper.CTA>

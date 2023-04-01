@@ -1,4 +1,5 @@
 import React, { useContext, useState, FormEvent, ChangeEvent } from 'react';
+import toast, { ToastOptions, useToasterStore } from 'react-hot-toast';
 import { GlobalContext } from '../../contexts/global/global.context';
 import { MembershipsContentProps } from '../../pages/memberships';
 import { GlobalContextProps } from '../../typing/common/interfaces/contexts.interface';
@@ -10,6 +11,20 @@ import { ServiceMembershipCard } from '../../typing/gql/graphql';
 import { MembershipsContext } from '../../contexts/memberships/memberships.context';
 import clsx from 'clsx';
 import useWindowDimensions from '../../lib/hooks/use-window-dimensions.hook';
+import {
+	CreateBookingInboundDto,
+	createBooking,
+} from 'lib/api/crm/service-titan/createBooking.handler';
+import { config } from 'lib/config';
+
+import dynamic from 'next/dynamic';
+
+const AddressAutofill = dynamic(
+	() => import('@mapbox/search-js-react').then((c) => c.AddressAutofill),
+	{
+		ssr: false,
+	}
+);
 
 interface Props {
 	onSumissionSuccess: (choice: ServiceMembershipCard) => void;
@@ -22,8 +37,11 @@ export const MembershipForm: React.FC<Props> = ({ onSumissionSuccess }) => {
 		useContext(MembershipsContext);
 	const { activeServiceMembership } = useContext(MembershipsContext);
 	const { width } = useWindowDimensions();
+	const mapBoxAccessToken = config.mapBoxAccessToken;
+	console.log(mapBoxAccessToken);
 
 	// ***************
+	const [loading, setIsLoading] = useState<string>('');
 	const [firstName, setFirstName] = useState<string>('');
 	const [lastName, setLastName] = useState<string>('');
 	const [email, setEmail] = useState<string>('');
@@ -77,17 +95,19 @@ export const MembershipForm: React.FC<Props> = ({ onSumissionSuccess }) => {
 		setZipCode(event.target.value);
 	};
 
-	const handleSubmit = (event: FormEvent<HTMLFormElement>) => {
+	const handleSubmit = async (event: FormEvent<HTMLFormElement>) => {
 		event.preventDefault();
 		// Submit form data to server
 		if (selectedMembership) {
-			const data = {
-				email: email,
+			const bookingDetails: CreateBookingInboundDto = {
 				name: `${firstName} ${lastName}`,
 				summary: `${activeServiceMembership?.name}-${selectedMembership.membershipTitle}`,
-				isFirstTimeClient: email,
-				phoneNumber: phoneNumber,
+				isFirstTimeClient: true,
 				contacts: [
+					{
+						type: 'Email',
+						value: email,
+					},
 					{
 						type: 'Phone',
 						value: phoneNumber,
@@ -102,8 +122,27 @@ export const MembershipForm: React.FC<Props> = ({ onSumissionSuccess }) => {
 				},
 			};
 
-			console.log('Form data:', data);
-			onSumissionSuccess(selectedMembership);
+			const bookingPromise = createBooking(bookingDetails);
+			toast.promise(
+				bookingPromise,
+				{
+					loading: 'Loading',
+					error: (err) => {
+						console.log('Error: ', err);
+						return `Cannot complete this operation: ${err.toString()}`;
+					},
+					success: (data) => {
+						console.log('Data: ', data);
+						onSumissionSuccess(selectedMembership);
+						return `Successfully submitted`;
+					},
+				},
+				{
+					style: {
+						minWidth: '250px',
+					},
+				}
+			);
 		}
 	};
 
@@ -220,13 +259,27 @@ export const MembershipForm: React.FC<Props> = ({ onSumissionSuccess }) => {
 								<div className="mx-auto flex w-3/5 flex-row gap-4">
 									<div className="flex w-full flex-col gap-2">
 										<FormLabel inputId="address" labelText="Address" />
-										<FormInput
-											id="address"
-											type="text"
-											placeholderText="Enter your home address"
-											value={address}
-											onChange={handleAddressChange}
-										/>
+										{mapBoxAccessToken ? (
+											<AddressAutofill accessToken={mapBoxAccessToken}>
+												<FormInput
+													id="address"
+													type="text"
+													placeholderText="Enter your home address"
+													autoComplete="address-line1"
+													value={address}
+													onChange={handleAddressChange}
+												/>
+											</AddressAutofill>
+										) : (
+											<FormInput
+												id="address"
+												type="text"
+												placeholderText="Enter your home address"
+												autoComplete="address-line1"
+												value={address}
+												onChange={handleAddressChange}
+											/>
+										)}
 									</div>
 								</div>
 								<div className="mx-auto flex w-3/5 flex-row gap-4">
@@ -236,7 +289,8 @@ export const MembershipForm: React.FC<Props> = ({ onSumissionSuccess }) => {
 											id="city"
 											type="text"
 											placeholderText="Enter your city"
-											value={address}
+											autoComplete="address-level2"
+											value={city}
 											onChange={handleCityChange}
 										/>
 									</div>
@@ -248,6 +302,7 @@ export const MembershipForm: React.FC<Props> = ({ onSumissionSuccess }) => {
 											id="state"
 											type="text"
 											placeholderText="Enter your state"
+											autoComplete="address-level1"
 											value={state}
 											onChange={handleStateChange}
 										/>
@@ -260,6 +315,7 @@ export const MembershipForm: React.FC<Props> = ({ onSumissionSuccess }) => {
 											id="zipcode"
 											type="text"
 											placeholderText="Enter your Zip Code"
+											autoComplete="postal-code"
 											value={zipCode}
 											onChange={handleZipCodeChange}
 										/>
@@ -374,12 +430,61 @@ export const MembershipForm: React.FC<Props> = ({ onSumissionSuccess }) => {
 
 								<div className="flex w-full flex-col gap-2">
 									<FormLabel inputId="home-address" labelText="Address" />
+									{mapBoxAccessToken ? (
+										<AddressAutofill accessToken={mapBoxAccessToken}>
+											<FormInput
+												id="address"
+												type="text"
+												placeholderText="Enter your home address"
+												autoComplete="address-line1"
+												value={address}
+												onChange={handleAddressChange}
+											/>
+										</AddressAutofill>
+									) : (
+										<FormInput
+											id="address"
+											type="text"
+											placeholderText="Enter your home address"
+											autoComplete="address-line1"
+											value={address}
+											onChange={handleAddressChange}
+										/>
+									)}
+								</div>
+								<div className="flex w-full flex-col gap-2">
+									<FormLabel inputId="city" labelText="City" />
 									<FormInput
-										id="home-address"
-										type="address"
-										placeholderText="Enter your home address"
-										value={address}
-										onChange={handleAddressChange}
+										id="city"
+										type="text"
+										placeholderText="Enter your city"
+										autoComplete="address-level2"
+										value={city}
+										onChange={handleCityChange}
+									/>
+								</div>
+								<div className="flex w-full flex-col gap-2">
+									<div className="flex w-full flex-col gap-2">
+										<FormLabel inputId="state" labelText="State" />
+										<FormInput
+											id="state"
+											type="text"
+											placeholderText="Enter your state"
+											autoComplete="address-level1"
+											value={state}
+											onChange={handleStateChange}
+										/>
+									</div>
+								</div>
+								<div className="flex w-full flex-col gap-2">
+									<FormLabel inputId="zipcode" labelText="Zip Code" />
+									<FormInput
+										id="zipcode"
+										type="text"
+										placeholderText="Enter your Zip Code"
+										autoComplete="postal-code"
+										value={zipCode}
+										onChange={handleZipCodeChange}
 									/>
 								</div>
 							</div>

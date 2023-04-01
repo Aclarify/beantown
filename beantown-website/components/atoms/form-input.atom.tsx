@@ -11,6 +11,7 @@ interface Props {
 	borderColor?: string;
 	placeholderText?: string;
 	value?: string;
+	autoComplete?: string;
 	onChange: (event: ChangeEvent<HTMLInputElement>) => void;
 }
 const FormInput: React.FC<Props> = ({
@@ -21,6 +22,7 @@ const FormInput: React.FC<Props> = ({
 	placeholderColor = 'placeholder-gray-shade-2',
 	borderColor = 'border-primary-shade-3',
 	placeholderText,
+	autoComplete,
 	value,
 	onChange,
 }) => {
@@ -31,6 +33,7 @@ const FormInput: React.FC<Props> = ({
 			value={value}
 			placeholder={placeholderText}
 			onChange={onChange}
+			autoComplete={autoComplete}
 			className={clsx(
 				'w-full rounded-lg border p-3 focus:outline-none',
 				bgColor,

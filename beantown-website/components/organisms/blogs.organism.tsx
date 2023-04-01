@@ -5,6 +5,8 @@ import BlogCard from './blog-card.organism';
 import CtaWrapper from 'components/molecules/cta-wrapper.molecule';
 import { showUnderConstructionMsg } from 'utils/helper';
 import Animate from 'components/molecules/animate.molecule';
+import clsx from 'clsx';
+import { buttonHoverStyle } from '@lib/styles/button.style';
 
 interface IProps extends React.HTMLAttributes<HTMLDivElement> {
 	blogsTitle: string;
@@ -53,10 +55,13 @@ const Blogs: React.FC<IProps> = (props) => {
 			<div className="items-center pt-4 text-center lg:mb-16">
 				<CtaWrapper.CTA
 					onClick={showUnderConstructionMsg}
-					className={`${props.blogsButtonTextColour} ${props.blogsButtonBgColour} 
-					 button`}
+					className={clsx(
+						`${props.blogsButtonTextColour} ${props.blogsButtonBgColour}
+					 button`,
+						buttonHoverStyle
+					)}
 				>
-					<p>{props.blogsButtonText}</p>
+					<p className={clsx('font-normal')}>{props.blogsButtonText}</p>
 				</CtaWrapper.CTA>
 			</div>
 		</section>

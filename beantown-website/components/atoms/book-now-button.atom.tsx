@@ -1,5 +1,6 @@
 import React from 'react';
 import clsx from 'clsx';
+import { buttonHoverStyle } from '@lib/styles/button.style';
 
 declare const window: any;
 
@@ -28,7 +29,13 @@ const BookNowButton: React.FC<Props> = ({
 		<>
 			<button
 				type="button"
-				className={clsx(' se-widget-button', buttonStyle, fontColor, bgColor)}
+				className={clsx(
+					' se-widget-button',
+					buttonHoverStyle,
+					buttonStyle,
+					fontColor,
+					bgColor
+				)}
 				onClick={onBtnClick}
 			>
 				{children}

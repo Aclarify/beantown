@@ -8,6 +8,8 @@ import CTATextContent, {
 } from 'components/organisms/cta-text-content.organism';
 import { showUnderConstructionMsg } from 'utils/helper';
 import Animate from 'components/molecules/animate.molecule';
+import clsx from 'clsx';
+import { buttonHoverStyle } from '@lib/styles/button.style';
 
 const CommunityCTAContent = () => {
 	const { pageContent } =

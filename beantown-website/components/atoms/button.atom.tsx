@@ -1,5 +1,6 @@
 import React from 'react';
 import clsx from 'clsx';
+import { buttonHoverStyle } from '@lib/styles/button.style';
 
 interface Props {
 	children?: React.ReactNode;
@@ -10,7 +11,12 @@ interface Props {
 const Button: React.FC<Props> = (props) => {
 	return (
 		<>
-			<button className={`${props.fontColor} button  ${props.bgColor}`}>
+			<button
+				className={clsx(
+					`${props.fontColor} button  ${props.bgColor}`,
+					buttonHoverStyle
+				)}
+			>
 				{props.children}
 			</button>
 		</>
