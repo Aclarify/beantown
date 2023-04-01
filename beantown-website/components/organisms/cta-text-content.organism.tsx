@@ -63,7 +63,7 @@ export const CTAButton: React.FC<ICTAButtonProps> = ({
 	return (
 		<Link href={href || ''}>
 			<button
-				className={clsx(` ${bgColor} ${textColor} button`, buttonHoverStyle)}
+				className={clsx(`${bgColor} ${textColor} button`, buttonHoverStyle)}
 			>
 				{text}
 			</button>
