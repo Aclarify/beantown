@@ -4,6 +4,8 @@ import { GlobalContext } from '@contexts/global/global.context';
 import { GlobalContextProps } from '@typing/common/interfaces/contexts.interface';
 import { ElectricalContentProps } from 'pages/electrical';
 import Animate from 'components/molecules/animate.molecule';
+import StaticImageWrapper from 'components/molecules/static-image-wrapper.molecule';
+import ListIconImage from 'public/images/electrical/services/electrical-services-list-icon.svg';
 
 function ElectricalServicesList() {
 	const { pageContent } =
@@ -35,14 +37,12 @@ function ElectricalServicesList() {
 										id="list-items"
 										className=" text-gray-shade-1 flex items-center"
 									>
-										<Image
-											src={
-												'/images/electrical/services/electrical-services-list-icon.svg'
-											}
-											alt={'electrical-services-list-icon-image'}
-											width={'32'}
-											height={'32'}
-										/>
+										<div className="image-wrapper relative h-[32px] min-w-[32px]">
+											<StaticImageWrapper
+												src={ListIconImage}
+												altText={'electrical-services-list-icon-image'}
+											/>
+										</div>
 										<span className="list-items pl-2">{item}</span>
 									</div>
 								);
