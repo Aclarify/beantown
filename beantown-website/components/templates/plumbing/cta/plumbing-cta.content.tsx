@@ -3,9 +3,7 @@ import { GlobalContext } from '@contexts/global/global.context';
 import { GlobalContextProps } from '@typing/common/interfaces/contexts.interface';
 import CTAWithImage from 'components/organisms/cta-with-image.organism';
 import { PlumbingContentProps } from 'pages/plumbing';
-import CTATextContent, {
-	CTAButton,
-} from 'components/organisms/cta-text-content.organism';
+import CTATextContent from 'components/organisms/cta-text-content.organism';
 import BookNowButton from 'components/atoms/book-now-button.atom';
 
 const PlumbingCTAContent = () => {

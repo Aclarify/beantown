@@ -5,6 +5,8 @@ import ContentWrapper from './content-wrapper.organism';
 import CtaWrapper from 'components/molecules/cta-wrapper.molecule';
 import { showUnderConstructionMsg } from 'utils/helper';
 import Animate from 'components/molecules/animate.molecule';
+import clsx from 'clsx';
+import { buttonHoverStyle } from '@lib/styles/button.style';
 interface IProps extends React.HTMLAttributes<HTMLDivElement> {
 	backgroundImage: string;
 	faqTitle: string;
@@ -52,7 +54,10 @@ const FAQ: React.FC<IProps> = (props) => {
 						<ContentWrapper.CTA className="mt-[32px]">
 							<CtaWrapper.CTA
 								onClick={showUnderConstructionMsg}
-								className={`${props.faqsButtonTextColour} ${props.faqsButtonBgColour} button`}
+								className={clsx(
+									`${props.faqsButtonTextColour} ${props.faqsButtonBgColour} button`,
+									buttonHoverStyle
+								)}
 							>
 								{props.faqButtonText}
 							</CtaWrapper.CTA>

@@ -76,6 +76,10 @@ export default function App({ Component, pageProps }: AppProps) {
 				:root {
 					--font-neue-plak: ${neuePlak.style.fontFamily};
 				}
+
+				body {
+					font-family: var(--font-neue-plak);
+				}
 			`}</style>
 			<Script
 				strategy="beforeInteractive"

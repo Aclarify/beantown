@@ -137,11 +137,11 @@ const HeatingCoolingProductsCardContent = () => {
 				</div>
 			</SectionContentWrapper>
 			<div className="w-full pl-5 pt-8 md:pl-8 2xl:pl-[120px] ">
-				<Slider ref={slider} {...settings} className="">
+				<Slider ref={slider} {...settings}>
 					{productsGroup?.map((productInfo, index) => {
 						return (
 							<div
-								className="product-card-wrapper  !flex justify-center px-1 xl:px-2"
+								className="product-card-wrapper !flex min-h-[410px] justify-center px-1 lg:min-h-[650px] xl:px-2"
 								key={index}
 							>
 								<ProductCard
@@ -177,4 +177,3 @@ const HeatingCoolingProductsCardContent = () => {
 };
 
 export default HeatingCoolingProductsCardContent;
-

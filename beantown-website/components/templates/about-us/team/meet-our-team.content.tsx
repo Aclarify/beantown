@@ -15,6 +15,8 @@ import { faEnvelope } from '@fortawesome/free-solid-svg-icons';
 import { faLinkedin } from '@fortawesome/free-brands-svg-icons';
 import { IconProp } from '@fortawesome/fontawesome-svg-core';
 import Link from 'next/link';
+import clsx from 'clsx';
+import { buttonHoverStyle } from '@lib/styles/button.style';
 
 const MeetOurTeam = () => {
 	const { pageContent } =
@@ -153,7 +155,10 @@ const MeetOurTeam = () => {
 				<div className="mt-8 items-center text-center lg:mt-[60px] ">
 					<CtaWrapper.CTA
 						onClick={onLoadMore}
-						className=" bg-primary-shade-1   button text-white"
+						className={clsx(
+							'bg-primary-shade-1 button text-white',
+							buttonHoverStyle
+						)}
 					>
 						<p>{'Load More'}</p>
 					</CtaWrapper.CTA>

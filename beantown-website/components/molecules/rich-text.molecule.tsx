@@ -1,8 +1,10 @@
 import React from 'react';
 import { PortableText } from '@portabletext/react';
+import clsx from 'clsx';
 
 interface Props {
 	value: any;
+	wrapperClassname?: string;
 }
 const RichText: React.FC<Props> = (props) => {
 	const components = {
@@ -29,7 +31,7 @@ const RichText: React.FC<Props> = (props) => {
 		},
 	};
 	return (
-		<div className="rich-text">
+		<div className={clsx('rich-text', props.wrapperClassname)}>
 			<PortableText value={props.value} components={components} />
 		</div>
 	);
