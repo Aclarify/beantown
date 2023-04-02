@@ -55,6 +55,10 @@ const electricalQuery = ` allOtherServices(where: {name: {eq: "Electrical"}}) {
     contactUsButton{
       href
       text
+      dialogTitle
+      dialogDesc
+      dialogButtonText
+      dialogButtonHref
     }
     servicesListTitle
     servicesList
