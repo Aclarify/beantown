@@ -101,6 +101,7 @@ export const MembershipForm: React.FC<Props> = ({ onSumissionSuccess }) => {
 
 	const handleSubmit = async (event: FormEvent<HTMLFormElement>) => {
 		event.preventDefault();
+		// TODO: Validate form data
 		// Submit form data to server
 		if (selectedMembership) {
 			const bookingDetails: CreateBookingInboundDto = {
