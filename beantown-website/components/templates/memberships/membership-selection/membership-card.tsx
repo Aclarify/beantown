@@ -1,28 +1,26 @@
-import React, { useState } from 'react';
+import React, { useContext } from 'react';
 import Image from 'next/image';
 import useWindowDimensions from '../../../../lib/hooks/use-window-dimensions.hook';
-import { CheckableItem, Maybe } from '../../../../typing/gql/graphql';
+import { Maybe, ServiceMembershipCard } from '../../../../typing/gql/graphql';
 import MembershipModal from '../../../organisms/membership-modal.organism';
+import { MembershipsContext } from '../../../../contexts/memberships/memberships.context';
+import { useModal } from 'components/organisms/modal.organism';
 
 interface IProps extends React.HTMLAttributes<HTMLDivElement> {
-	title: string;
-	description: string;
-	price: string;
-	buttonText: string;
-	iconSrc: string;
-	iconAltText: string;
-	summaryItems: Maybe<Array<Maybe<CheckableItem>>>;
+	membership: Maybe<ServiceMembershipCard>;
 }
 
-const MembershipCard: React.FC<IProps> = (props) => {
+const MembershipCard: React.FC<IProps> = ({ membership }) => {
 	const { width } = useWindowDimensions();
-	const [showMembershipModal, setShowMembershipModal] = useState(false);
+	const { isVisible, openModal, closeModal } = useModal();
+	const { setSelectedMembership } = useContext(MembershipsContext);
 
 	const handleOnClose = () => {
-		setShowMembershipModal(false);
+		closeModal();
 	};
-	const onMembershipClick = (membership: any) => {
-		setShowMembershipModal(true);
+	const handleMembershipClick = () => {
+		setSelectedMembership(membership);
+		openModal();
 	};
 
 	return (
@@ -37,21 +35,23 @@ const MembershipCard: React.FC<IProps> = (props) => {
 								style={{
 									width: '100%',
 								}}
-								src={props.iconSrc}
-								alt={props.iconAltText}
+								src={membership?.membershipIcon?.asset?.url || ''}
+								alt={membership?.membershipIcon?.asset?.altText || ''}
 							/>
 						</div>
 					</div>
 					<div className="mb-4 flex flex-col items-center gap-1 px-4 sm:px-6">
-						<h2 className="text-primary-black ">{props.title}</h2>
+						<h2 className="text-primary-black ">
+							{membership?.membershipTitle}
+						</h2>
 						<p className="text-gray-shade-1 para text-overflow-ellipsis h-[50px] overflow-hidden  text-center lg:h-[70px]">
-							{props.description}
+							{membership?.membershipDescription}
 						</p>
 					</div>
 				</div>
 				<div id="list-container" className="mb-4 p-2">
 					<div className="w-full">
-						{props.summaryItems?.map((item, index: number) => {
+						{membership?.membershipSummaryItems?.map((item, index: number) => {
 							return (
 								<div
 									key={index}
@@ -81,18 +81,18 @@ const MembershipCard: React.FC<IProps> = (props) => {
 					</div>
 				</div>
 				<button
-					onClick={onMembershipClick}
+					onClick={handleMembershipClick}
 					className="bg-primary-shade-1 para-5 lg:para-3 mx-2 mt-auto mb-4 flex items-center rounded-xl py-4 px-4 tracking-wide text-white md:py-2 md:px-4 "
 				>
-					<span className="xl:para !font-thin">{props.buttonText}</span>
-					<h3 className="ml-auto text-white">{props.price}</h3>
+					<span className="xl:para !font-thin">{membership?.button?.text}</span>
+					<h3 className="ml-auto text-white">{membership?.membershipPrice}</h3>
 					<span className="xl:para -translate-y-[10%] self-end  xl:-translate-y-[10%] xl:-translate-y-[30%]">
 						/per year
 					</span>
 				</button>
 			</div>
 
-			<MembershipModal onClose={handleOnClose} visible={showMembershipModal} />
+			<MembershipModal onClose={handleOnClose} isVisible={isVisible} />
 		</>
 	);
 };
