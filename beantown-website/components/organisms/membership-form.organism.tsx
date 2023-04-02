@@ -120,7 +120,7 @@ export const MembershipForm: React.FC<Props> = ({ onSumissionSuccess }) => {
 					country: 'USA',
 				},
 			};
-
+			console.log('bookDetails', bookingDetails);
 			const bookingPromise = createBooking(bookingDetails);
 
 			toast.promise(
@@ -238,7 +238,7 @@ export const MembershipForm: React.FC<Props> = ({ onSumissionSuccess }) => {
 										<FormInput
 											id="phoneNumber"
 											type="phone"
-											placeholderText="Enter your phone number"
+											placeholderText="Enter your phone number, eg. 5551234567"
 											name={'phoneNumber'}
 											register={register}
 											error={errors.phoneNumber}
@@ -258,7 +258,7 @@ export const MembershipForm: React.FC<Props> = ({ onSumissionSuccess }) => {
 													autoComplete="address-line1"
 													name={'address'}
 													register={register}
-													error={errors.phoneNumber}
+													error={errors.address}
 													showErrorText={false}
 												/>
 											</AddressAutofill>
@@ -270,7 +270,7 @@ export const MembershipForm: React.FC<Props> = ({ onSumissionSuccess }) => {
 												autoComplete="address-line1"
 												name={'address'}
 												register={register}
-												error={errors.phoneNumber}
+												error={errors.address}
 											/>
 										)}
 
@@ -327,6 +327,7 @@ export const MembershipForm: React.FC<Props> = ({ onSumissionSuccess }) => {
 											<span className={clsx('mr-3')}>
 												<FormCheckBox
 													id="isFirstTimeClient"
+													defaultValue={true}
 													name={'isFirstTimeClient'}
 													register={register}
 												/>
@@ -432,7 +433,7 @@ export const MembershipForm: React.FC<Props> = ({ onSumissionSuccess }) => {
 								<FormInput
 									id="phoneNumber"
 									type="phone"
-									placeholderText="Enter your phone number"
+									placeholderText="Enter your phone number, eg. 5551234567"
 									name={'phoneNumber'}
 									register={register}
 									error={errors.phoneNumber}
@@ -449,7 +450,7 @@ export const MembershipForm: React.FC<Props> = ({ onSumissionSuccess }) => {
 											autoComplete="address-line1"
 											name={'address'}
 											register={register}
-											error={errors.phoneNumber}
+											error={errors.address}
 											showErrorText={false}
 										/>
 									</AddressAutofill>
@@ -461,7 +462,7 @@ export const MembershipForm: React.FC<Props> = ({ onSumissionSuccess }) => {
 										autoComplete="address-line1"
 										name={'address'}
 										register={register}
-										error={errors.phoneNumber}
+										error={errors.address}
 									/>
 								)}
 
@@ -512,6 +513,7 @@ export const MembershipForm: React.FC<Props> = ({ onSumissionSuccess }) => {
 							<div className="flex w-full flex-row items-center gap-4">
 								<FormCheckBox
 									id="isFirstTimeClient"
+									defaultValue={true}
 									register={register}
 									name={'isFirstTimeClientClient'}
 								/>
