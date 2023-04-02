@@ -16,6 +16,7 @@ import { config } from 'lib/config';
 import dynamic from 'next/dynamic';
 import { CreateBookingInboundDto } from '@lib/api/crm/service-titan/createBooking.handler';
 import { createBooking } from '@lib/clients/services/crm/booking.crm.service';
+import FormCheckBox from 'components/atoms/form-checkbox';
 
 const AddressAutofill = dynamic(
 	() => import('@mapbox/search-js-react').then((c) => c.AddressAutofill),
@@ -92,6 +93,10 @@ export const MembershipForm: React.FC<Props> = ({ onSumissionSuccess }) => {
 
 	const handleZipCodeChange = (event: ChangeEvent<HTMLInputElement>) => {
 		setZipCode(event.target.value);
+	};
+
+	const toggleIsFirstTimeClient = () => {
+		setIsFirstTimeClient((state) => !state);
 	};
 
 	const handleSubmit = async (event: FormEvent<HTMLFormElement>) => {
@@ -306,6 +311,21 @@ export const MembershipForm: React.FC<Props> = ({ onSumissionSuccess }) => {
 										onChange={handleZipCodeChange}
 									/>
 								</div>
+								<div className="flex w-full flex-row items-center gap-4">
+									<div className={clsx('translate-y-4', 'transform')}>
+										<span className={clsx('mr-3')}>
+											<FormCheckBox
+												id="isFirstTime"
+												checked={isFirstTimeClient}
+												onChange={toggleIsFirstTimeClient}
+											/>
+										</span>
+										<FormLabel
+											inputId="isFirstTime"
+											labelText="Is this your first time using Beantown's services?"
+										/>
+									</div>
+								</div>
 							</div>
 						</div>
 						<button
@@ -457,6 +477,17 @@ export const MembershipForm: React.FC<Props> = ({ onSumissionSuccess }) => {
 									autoComplete="postal-code"
 									value={zipCode}
 									onChange={handleZipCodeChange}
+								/>
+							</div>
+							<div className="flex w-full flex-row items-center gap-4">
+								<FormCheckBox
+									id="isFirstTime"
+									checked={isFirstTimeClient}
+									onChange={toggleIsFirstTimeClient}
+								/>
+								<FormLabel
+									inputId="isFirstTime"
+									labelText="Is this your first time using Beantown's services?"
 								/>
 							</div>
 						</div>
