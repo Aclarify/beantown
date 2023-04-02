@@ -90,6 +90,10 @@ const AboutElectricalServiceContent = () => {
 							logoDark={logoDark}
 							ctaBgColor="bg-service-yellow"
 							ctaTextColor="text-black"
+							dialogTitle={contactUsButton?.dialogTitle || ''}
+							dialogDescription={contactUsButton?.dialogDesc || ''}
+							buttonHref={contactUsButton?.dialogButtonHref || ''}
+							buttonText={contactUsButton?.dialogButtonText || ''}
 						/>
 					</ContentWrapper>
 				</div>
