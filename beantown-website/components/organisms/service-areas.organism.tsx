@@ -46,7 +46,7 @@ const ServiceAreas: React.FC<IProps> = (props) => {
 					></Image>
 				</div>
 
-				<Animate left>
+				<Animate left threshold={0.6}>
 					<div className="service-area-padding-container lg:py-20">
 						<div
 							id="service-area-outer-container"
