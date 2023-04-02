@@ -24,7 +24,7 @@ const FormCheckBox: React.FC<Props> = ({
 			onChange={onChange}
 			type="checkbox"
 			className={clsx(
-				"h-6 w-6 appearance-none rounded border pr-4 shadow after:py-4 after:px-1 after:opacity-0 after:transition-all after:content-['✔'] checked:after:opacity-100",
+				"h-6 w-6 appearance-none rounded border pr-4 shadow after:py-4 after:px-1 after:opacity-0 after:transition-all after:content-['✓'] checked:after:opacity-100",
 				bgColor,
 				fontColor,
 				borderColor
