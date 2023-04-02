@@ -4,7 +4,6 @@ import { GlobalContextProps } from '@typing/common/interfaces/contexts.interface
 import { MembershipsContentProps } from 'pages/memberships';
 import { MembershipsContext } from '../../../../contexts/memberships/memberships.context';
 import MembershipCard from './membership-card';
-import Animate from 'components/molecules/animate.molecule';
 
 const MembershipsCardList = () => {
 	const { pageContent } =
