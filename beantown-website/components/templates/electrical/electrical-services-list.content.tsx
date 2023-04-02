@@ -40,8 +40,9 @@ function ElectricalServicesList() {
 												'/images/electrical/services/electrical-services-list-icon.svg'
 											}
 											alt={'electrical-services-list-icon-image'}
-											width={'32'}
-											height={'32'}
+											width={'24'}
+											height={'24'}
+											className="h-[20px] w-[20px] sm:h-[24] sm:w-[24]"
 										/>
 										<span className="list-items pl-2">{item}</span>
 									</div>
