@@ -7,6 +7,7 @@ import Animate from 'components/molecules/animate.molecule';
 import Image from 'next/image';
 import FormLabel from 'components/atoms/form-label.atom';
 import FormInput from 'components/atoms/form-input.atom';
+import FormCheckBox from 'components/atoms/form-checkbox';
 import { ServiceMembershipCard } from 'typing/gql/graphql';
 import { MembershipsContext } from 'contexts/memberships/memberships.context';
 import clsx from 'clsx';
@@ -18,7 +19,6 @@ import {
 import { config } from 'lib/config';
 
 import dynamic from 'next/dynamic';
-import FormCheckBox from 'components/atoms/form-checkbox';
 import { SubmitHandler, useForm } from 'react-hook-form';
 import { yupResolver } from '@hookform/resolvers/yup';
 import * as Yup from 'yup';
@@ -122,16 +122,16 @@ export const MembershipForm: React.FC<Props> = ({ onSumissionSuccess }) => {
 			};
 
 			const bookingPromise = createBooking(bookingDetails);
+
 			toast.promise(
 				bookingPromise,
 				{
 					loading: 'Loading',
 					error: (err) => {
-						console.log('Error: ', err);
-						return `Cannot complete this operation`;
+						console.error('Error: ', err);
+						return `Cannot complete this operation, please try again later`;
 					},
-					success: (data) => {
-						console.log('Data: ', data);
+					success: () => {
 						onSumissionSuccess(selectedMembership);
 						return `Successfully submitted`;
 					},
@@ -150,61 +150,52 @@ export const MembershipForm: React.FC<Props> = ({ onSumissionSuccess }) => {
 			{width > 768 ? (
 				<section
 					id="membershipForm"
-					className="flex flex-col rounded-2xl bg-white py-4 md:w-[900px] lg:w-[1200px]"
+					className="flex min-w-[50vw] flex-col rounded-2xl bg-white"
 				>
 					<div className="form-header">
-						<Animate>
-							<div className="px-auto flex flex-col items-center border-b bg-white">
-								<div className="flex w-3/4 items-center ">
-									<div className="image-wrapper relative h-[32px] w-[170px] md:h-[80px] md:w-[230px]">
-										<Image
-											alt={logoDark?.image?.asset?.altText || ''}
-											fill={true}
-											priority={true}
-											src={logoDark?.image?.asset?.url || ''}
-										/>
-									</div>
-									<div className="mx-4 h-20 border-l"></div>
-									<div className="flex-1  px-3 py-4">
-										<Animate>
-											<span className="subtitle text-primary-shade-1 pb-4 sm:pb-8">
-												Membership Inquiry
-											</span>
-										</Animate>
-										<Animate>
-											<div className="mt-4 mb-6 grid grid-cols-3 gap-4">
-												{activeServiceMembership?.serviceMembershipCards?.map(
-													(membership: any, index: number) => {
-														return (
-															<button
-																key={index}
-																onClick={() =>
-																	setSelectedMembership(membership)
-																}
-																className={clsx(
-																	'rounded-lg border py-3 px-4 text-sm lg:text-base',
-																	{
-																		'bg-secondary-shade-1 text-white':
-																			membership == selectedMembership,
-																	}
-																)}
-															>
-																{membership?.membershipTitle}
-															</button>
-														);
-													}
-												)}
-											</div>
-										</Animate>
+						<div className="px-auto flex flex-col items-center border-b bg-white">
+							<div className="flex w-3/4 items-center ">
+								<div className="image-wrapper relative h-[32px] w-[170px] md:h-[80px] md:w-[230px]">
+									<Image
+										alt={logoDark?.image?.asset?.altText || ''}
+										fill={true}
+										priority={true}
+										src={logoDark?.image?.asset?.url || ''}
+									/>
+								</div>
+								<div className="mx-4 h-20 border-l"></div>
+								<div className="flex-1 px-3 py-2">
+									<span className="subtitle text-primary-shade-1 pb-4 sm:pb-8">
+										Membership Inquiry
+									</span>
+									<div className="mt-4 mb-6 grid grid-cols-3 gap-4">
+										{activeServiceMembership?.serviceMembershipCards?.map(
+											(membership: any, index: number) => {
+												return (
+													<button
+														key={index}
+														onClick={() => setSelectedMembership(membership)}
+														className={clsx(
+															'rounded-lg border py-3 px-4 text-center align-middle',
+															{
+																'bg-secondary-shade-1 text-white':
+																	membership == selectedMembership,
+															}
+														)}
+													>
+														{membership?.membershipTitle}
+													</button>
+												);
+											}
+										)}
 									</div>
 								</div>
 							</div>
-						</Animate>
+						</div>
 					</div>
-
 					<form
 						onSubmit={handleSubmit(onSubmit)}
-						className="form-body flex flex-col py-2"
+						className="form-body flex flex-col py-4"
 					>
 						<Animate>
 							<div className="flex flex-col gap-4 py-2 lg:py-5 ">
@@ -284,7 +275,7 @@ export const MembershipForm: React.FC<Props> = ({ onSumissionSuccess }) => {
 										)}
 
 										{errors.address && (
-											<p className="text-service-red -mt-1 text-xs !font-thin">
+											<p className="text-service-red -mt-1 text-sm">
 												{errors.address.message}
 											</p>
 										)}
@@ -331,17 +322,21 @@ export const MembershipForm: React.FC<Props> = ({ onSumissionSuccess }) => {
 											error={errors.zipCode}
 										/>
 									</div>
-								</div>
-								<div className="mx-auto flex w-3/5 flex-row items-center gap-4">
-									<FormCheckBox
-										id="isFirstTimeClient"
-										name={'isFirstTimeClient'}
-										register={register}
-									/>
-									<FormLabel
-										inputId="isFirstTimeClient"
-										labelText="Is it your first time ?"
-									/>
+									<div className="flex w-full flex-row items-center gap-4">
+										<div className={clsx('translate-y-4', 'transform')}>
+											<span className={clsx('mr-3')}>
+												<FormCheckBox
+													id="isFirstTimeClient"
+													name={'isFirstTimeClient'}
+													register={register}
+												/>
+											</span>
+											<FormLabel
+												inputId="isFirstTimeClient"
+												labelText="Is this your first time using Beantown's services?"
+											/>
+										</div>
+									</div>
 								</div>
 							</div>
 						</Animate>
@@ -358,118 +353,95 @@ export const MembershipForm: React.FC<Props> = ({ onSumissionSuccess }) => {
 			) : (
 				<section
 					id="membershipForm"
-					className="flex flex-col items-center rounded-2xl bg-white py-4"
+					className="flex flex-col items-center rounded-2xl bg-white"
 				>
 					<div className="form-header w-full">
-						<Animate>
-							<div className="flex w-full flex-col items-center border-b bg-white">
-								<div className="image-wrapper relative mb-4 h-[50px] w-[150px]">
-									<Image
-										alt={logoDark?.image?.asset?.altText || ''}
-										fill={true}
-										priority={true}
-										src={logoDark?.image?.asset?.url || ''}
-									/>
-								</div>
+						<div className="flex w-full flex-col items-center border-b bg-white">
+							<div className="image-wrapper relative mb-4 h-[50px] w-[150px]">
+								<Image
+									alt={logoDark?.image?.asset?.altText || ''}
+									fill={true}
+									priority={true}
+									src={logoDark?.image?.asset?.url || ''}
+								/>
 							</div>
-						</Animate>
-					</div>
-
-					<Animate>
-						<div className="mt-6 mb-6 grid grid-cols-3 gap-4 px-4">
-							{activeServiceMembership?.serviceMembershipCards?.map(
-								(membership: any, index: number) => {
-									return (
-										<button
-											key={index}
-											onClick={() => setSelectedMembership(membership)}
-											className={clsx(
-												'rounded-lg border py-3 px-3 text-center text-sm',
-												{
-													'bg-secondary-shade-1   text-white':
-														membership == selectedMembership,
-												}
-											)}
-										>
-											{membership?.membershipTitle}
-										</button>
-									);
-								}
-							)}
 						</div>
-					</Animate>
-
-					<Animate>
-						<span className="subtitle text-primary-shade-1">
-							Membership Inquiry
-						</span>
-					</Animate>
-
+					</div>
+					<div className="mt-6 mb-6 grid grid-cols-3 gap-2 px-2">
+						{activeServiceMembership?.serviceMembershipCards?.map(
+							(membership: any, index: number) => {
+								return (
+									<button
+										key={index}
+										onClick={() => setSelectedMembership(membership)}
+										className={clsx(
+											'rounded-lg border py-3 px-3 text-center text-sm',
+											{
+												'bg-secondary-shade-1   text-white':
+													membership == selectedMembership,
+											}
+										)}
+									>
+										{membership?.membershipTitle}
+									</button>
+								);
+							}
+						)}
+					</div>
+					<span className="subtitle text-primary-shade-1">
+						Membership Inquiry
+					</span>
 					<form
 						onSubmit={handleSubmit(onSubmit)}
 						className="form-body flex w-full flex-col px-4 py-4"
 					>
-						<Animate>
-							<div className="flex flex-col gap-4">
-								<div className="flex w-full flex-col gap-2">
-									<FormLabel inputId="firstName" labelText="First Name" />
-									<FormInput
-										id="firstName"
-										placeholderText="Enter your first name"
-										name={'firstName'}
-										register={register}
-										error={errors.firstName}
-									/>
-								</div>
-								<div className="flex w-full flex-col gap-2">
-									<FormLabel inputId="lastName" labelText="Last Name" />
-									<FormInput
-										id="lastName"
-										placeholderText="Enter your last name"
-										name={'lastName'}
-										register={register}
-										error={errors.lastName}
-									/>
-								</div>
-								<div className="flex w-full flex-col gap-2">
-									<FormLabel inputId="email" labelText="Email" />
-									<FormInput
-										id="email"
-										type="email"
-										placeholderText="Enter your mail"
-										name={'email'}
-										register={register}
-										error={errors.email}
-									/>
-								</div>
-								<div className="flex w-full flex-col gap-2">
-									<FormLabel inputId="phoneNumber" labelText="Phone number" />
-									<FormInput
-										id="phoneNumber"
-										type="phone"
-										placeholderText="Enter your phone number"
-										name={'phoneNumber'}
-										register={register}
-										error={errors.phoneNumber}
-									/>
-								</div>
-
-								<div className="flex w-full flex-col gap-2">
-									<FormLabel inputId="address" labelText="Address" />
-									{mapBoxAccessToken ? (
-										<AddressAutofill accessToken={mapBoxAccessToken}>
-											<FormInput
-												id="address"
-												type="text"
-												placeholderText="Enter your home address"
-												autoComplete="address-line1"
-												name={'address'}
-												register={register}
-												error={errors.phoneNumber}
-												showErrorText={false}
-											/>
-										</AddressAutofill>
-									) : (
+						<div className="flex flex-col gap-4">
+							<div className="flex w-full flex-col gap-2">
+								<FormLabel inputId="firstName" labelText="First Name" />
+								<FormInput
+									id="firstName"
+									placeholderText="Enter your first name"
+									name={'firstName'}
+									register={register}
+									error={errors.firstName}
+								/>
+							</div>
+							<div className="flex w-full flex-col gap-2">
+								<FormLabel inputId="lastName" labelText="Last Name" />
+								<FormInput
+									id="lastName"
+									placeholderText="Enter your last name"
+									name={'lastName'}
+									register={register}
+									error={errors.lastName}
+								/>
+							</div>
+							<div className="flex w-full flex-col gap-2">
+								<FormLabel inputId="email" labelText="Email" />
+								<FormInput
+									id="email"
+									type="email"
+									placeholderText="Enter your mail"
+									name={'email'}
+									register={register}
+									error={errors.email}
+								/>
+							</div>
+							<div className="flex w-full flex-col gap-2">
+								<FormLabel inputId="phoneNumber" labelText="Phone number" />
+								<FormInput
+									id="phoneNumber"
+									type="phone"
+									placeholderText="Enter your phone number"
+									name={'phoneNumber'}
+									register={register}
+									error={errors.phoneNumber}
+								/>
+							</div>
+							<div className="flex w-full flex-col gap-2">
+								<FormLabel inputId="address" labelText="Address" />
+								{mapBoxAccessToken ? (
+									<AddressAutofill accessToken={mapBoxAccessToken}>
 										<FormInput
 											id="address"
 											type="text"
@@ -478,75 +450,83 @@ export const MembershipForm: React.FC<Props> = ({ onSumissionSuccess }) => {
 											name={'address'}
 											register={register}
 											error={errors.phoneNumber}
+											showErrorText={false}
 										/>
-									)}
+									</AddressAutofill>
+								) : (
+									<FormInput
+										id="address"
+										type="text"
+										placeholderText="Enter your home address"
+										autoComplete="address-line1"
+										name={'address'}
+										register={register}
+										error={errors.phoneNumber}
+									/>
+								)}
 
-									{errors.address && (
-										<p className="text-service-red -mt-1 text-sm !font-thin">
-											{errors.address.message}
-										</p>
-									)}
-								</div>
+								{errors.address && (
+									<p className="text-service-red -mt-1 text-sm">
+										{errors.address.message}
+									</p>
+								)}
+							</div>
+							<div className="flex w-full flex-col gap-2">
+								<FormLabel inputId="city" labelText="City" />
+								<FormInput
+									id="city"
+									type="text"
+									placeholderText="Enter your city"
+									autoComplete="address-level2"
+									name={'city'}
+									register={register}
+									error={errors.city}
+								/>
+							</div>
+							<div className="flex w-full flex-col gap-2">
 								<div className="flex w-full flex-col gap-2">
-									<FormLabel inputId="city" labelText="City" />
+									<FormLabel inputId="state" labelText="State" />
 									<FormInput
-										id="city"
+										id="state"
 										type="text"
-										placeholderText="Enter your city"
-										autoComplete="address-level2"
-										name={'city'}
+										placeholderText="Enter your state"
+										autoComplete="address-level1"
+										name={'state'}
 										register={register}
-										error={errors.city}
-									/>
-								</div>
-								<div className="flex w-full flex-col gap-2">
-									<div className="flex w-full flex-col gap-2">
-										<FormLabel inputId="state" labelText="State" />
-										<FormInput
-											id="state"
-											type="text"
-											placeholderText="Enter your state"
-											autoComplete="address-level1"
-											name={'state'}
-											register={register}
-											error={errors.state}
-										/>
-									</div>
-								</div>
-								<div className="flex w-full flex-col gap-2">
-									<FormLabel inputId="zipCode" labelText="Zip Code" />
-									<FormInput
-										id="zipCode"
-										type="text"
-										placeholderText="Enter your Zip Code"
-										autoComplete="postal-code"
-										name={'zipCode'}
-										register={register}
-										error={errors.zipCode}
-									/>
-								</div>
-								<div className="flex w-full flex-row items-center gap-4">
-									<FormCheckBox
-										id="isFirstTimeClient"
-										defaultValue={true}
-										register={register}
-										name={'isFirstTimeClient'}
-									/>
-									<FormLabel
-										inputId="isFirstTimeClient"
-										labelText="Is it your first time ?"
+										error={errors.state}
 									/>
 								</div>
 							</div>
-						</Animate>
-						<Animate>
-							<button
-								type="submit"
-								className="bg-primary-shade-1 para-2 mx-auto mt-6 w-full rounded-xl py-3 text-white "
-							>
-								Submit information
-							</button>
-						</Animate>
+							<div className="flex w-full flex-col gap-2">
+								<FormLabel inputId="zipCode" labelText="Zip Code" />
+								<FormInput
+									id="zipCode"
+									type="text"
+									placeholderText="Enter your Zip Code"
+									autoComplete="postal-code"
+									name={'zipCode'}
+									register={register}
+									error={errors.zipCode}
+								/>
+							</div>
+							<div className="flex w-full flex-row items-center gap-4">
+								<FormCheckBox
+									id="isFirstTimeClient"
+									register={register}
+									name={'isFirstTimeClientClient'}
+								/>
+								<FormLabel
+									inputId="isFirstTimeClient"
+									labelText="Is this your first time using Beantown's services?"
+								/>
+							</div>
+						</div>
+						<button
+							type="submit"
+							className="bg-primary-shade-1 para-2 mx-auto mt-6 w-full rounded-xl py-3 text-white "
+						>
+							Submit information
+						</button>
 					</form>
 				</section>
 			)}

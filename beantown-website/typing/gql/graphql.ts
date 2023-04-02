@@ -343,6 +343,10 @@ export type Cta = Document & {
 	href?: Maybe<Scalars['String']>;
 	name?: Maybe<Scalars['String']>;
 	text?: Maybe<Scalars['String']>;
+	dialogTitle?: Maybe<Scalars['String']>;
+	dialogDesc?: Maybe<Scalars['String']>;
+	dialogButtonText?: Maybe<Scalars['String']>;
+	dialogButtonHref?: Maybe<Scalars['String']>;
 };
 
 export type CtaFilter = {
@@ -357,6 +361,10 @@ export type CtaFilter = {
 	href?: InputMaybe<StringFilter>;
 	name?: InputMaybe<StringFilter>;
 	text?: InputMaybe<StringFilter>;
+	dialogTitle?: InputMaybe<StringFilter>;
+	dialogDesc?: InputMaybe<StringFilter>;
+	dialogButtonText?: InputMaybe<StringFilter>;
+	dialogButtonHref?: InputMaybe<StringFilter>;
 };
 
 export type CtaSorting = {
@@ -369,6 +377,10 @@ export type CtaSorting = {
 	href?: InputMaybe<SortOrder>;
 	name?: InputMaybe<SortOrder>;
 	text?: InputMaybe<SortOrder>;
+	dialogTitle?: InputMaybe<SortOrder>;
+	dialogDesc?: InputMaybe<SortOrder>;
+	dialogButtonText?: InputMaybe<SortOrder>;
+	dialogButtonHref?: InputMaybe<SortOrder>;
 };
 
 export type DateFilter = {

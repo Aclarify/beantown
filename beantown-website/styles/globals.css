@@ -71,6 +71,14 @@
 		@apply font-light;
 		@apply leading-[22px];
 	}
+
+	/* Button Tailwind Reset */
+	button,
+	.button {
+		@apply ring-0;
+		@apply focus:ring-0;
+	}
+
 	/* para1 */
 	.para {
 		@apply text-base;

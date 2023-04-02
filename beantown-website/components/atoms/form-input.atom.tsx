@@ -52,9 +52,7 @@ const FormInput: React.FC<Props> = ({
 			/>
 			{/* Making the modal heigh too high */}
 			{error && showErrorText && (
-				<p className="text-service-red -mt-1 text-xs !font-thin">
-					{error.message}
-				</p>
+				<p className="text-service-red -mt-1 text-sm">{error.message}</p>
 			)}
 		</>
 	);

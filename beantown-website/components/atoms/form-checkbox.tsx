@@ -27,7 +27,7 @@ const FormCheckBox: React.FC<Props> = ({
 			{...(register ? register(name) : {})}
 			type="checkbox"
 			className={clsx(
-				"h-6 w-6 appearance-none rounded border pr-4 shadow transition-all duration-150 ease-linear after:py-4 after:opacity-0 after:transition-all after:content-['✔'] checked:after:opacity-100",
+				"h-6 w-6 appearance-none rounded border pr-4 shadow transition-all duration-150 ease-linear after:px-1 after:py-4 after:opacity-0 after:transition-all after:content-['✔'] checked:after:opacity-100",
 				bgColor,
 				fontColor,
 				borderColor

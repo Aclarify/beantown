@@ -4,20 +4,21 @@ module.exports = {
 		'./app/**/*.{js,ts,jsx,tsx}',
 		'./pages/**/*.{js,ts,jsx,tsx}',
 		'./components/**/*.{js,ts,jsx,tsx}',
+		'./lib/styles/**/*.{ts, tsx}',
 	],
 	theme: {
+		fontFamily: {
+			neuePlak: ['var(--font-neue-plak)'],
+		},
 		extend: {
 			animation: {
-        'spin-slow': 'spin 3s linear infinite',
-      },
+				'spin-slow': 'spin 3s linear infinite',
+			},
 			screens: {
 				xs: { max: '400px' },
 				'3xl': '2500px',
 				'4xl': '3000px',
 				'5xl': '3740px',
-			},
-			fontFamily: {
-				neuePlak: ['var(--font-neue-plak)'],
 			},
 			fontSize: {
 				//	text-

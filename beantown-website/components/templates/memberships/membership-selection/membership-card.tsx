@@ -1,9 +1,10 @@
-import React, { useContext, useState } from 'react';
+import React, { useContext } from 'react';
 import Image from 'next/image';
 import useWindowDimensions from '../../../../lib/hooks/use-window-dimensions.hook';
 import { Maybe, ServiceMembershipCard } from '../../../../typing/gql/graphql';
 import MembershipModal from '../../../organisms/membership-modal.organism';
 import { MembershipsContext } from '../../../../contexts/memberships/memberships.context';
+import { useModal } from 'components/organisms/modal.organism';
 
 interface IProps extends React.HTMLAttributes<HTMLDivElement> {
 	membership: Maybe<ServiceMembershipCard>;
@@ -11,15 +12,15 @@ interface IProps extends React.HTMLAttributes<HTMLDivElement> {
 
 const MembershipCard: React.FC<IProps> = ({ membership }) => {
 	const { width } = useWindowDimensions();
-	const [showMembershipModal, setShowMembershipModal] = useState(false);
+	const { isVisible, openModal, closeModal } = useModal();
 	const { setSelectedMembership } = useContext(MembershipsContext);
 
 	const handleOnClose = () => {
-		setShowMembershipModal(false);
+		closeModal();
 	};
 	const handleMembershipClick = () => {
 		setSelectedMembership(membership);
-		setShowMembershipModal(true);
+		openModal();
 	};
 
 	return (
@@ -91,7 +92,7 @@ const MembershipCard: React.FC<IProps> = ({ membership }) => {
 				</button>
 			</div>
 
-			<MembershipModal onClose={handleOnClose} visible={showMembershipModal} />
+			<MembershipModal onClose={handleOnClose} isVisible={isVisible} />
 		</>
 	);
 };
