@@ -31,19 +31,14 @@ const ServiceAreas: React.FC<IProps> = (props) => {
 				</div>
 			</div>
 
-			<div className="flex flex-col pl-4 lg:flex-row ">
-				<div className="image-wrapper rounded-2xl lg:w-3/4">
+			<div className="flex flex-col pl-4 lg:flex-row">
+				<div className="image-wrapper relative min-h-[220px] overflow-hidden rounded-2xl sm:min-h-[400px] lg:w-3/4">
 					<Image
 						src={props.serviceAreaImageSrc}
 						alt={props.serviceAreaImageAltText}
-						width="2000"
-						height="1200"
-						style={{
-							width: '100%',
-							height: '100%',
-							objectFit: 'fill',
-						}}
-					></Image>
+						fill
+						className="object-cover"
+					/>
 				</div>
 
 				<Animate left threshold={0.6}>
