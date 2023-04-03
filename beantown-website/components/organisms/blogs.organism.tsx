@@ -26,14 +26,14 @@ const Blogs: React.FC<IProps> = (props) => {
 						<h2>{props.blogsTitle}</h2>
 					</Animate>
 				</div>
-				<div className=" text-primary-shade-1  pt-4  text-center md:px-[1em] xl:px-[8em] 2xl:px-[7em]">
+				<div className=" text-primary-shade-1 pt-6 pb-10  text-center md:px-[1em]  md:pt-10 md:pb-16 xl:px-[8em] 2xl:px-[7em]">
 					<Animate>
 						<p>{props.blogsDescription}</p>
 					</Animate>
 				</div>
 			</div>
-			<Animate>
-				<div className=" no-scrollbar mt-10 flex snap-x snap-mandatory flex-nowrap gap-4 overflow-x-auto pb-4  ">
+			<Animate className="pb-6 sm:pb-10">
+				<div className="no-scrollbar  flex snap-x snap-mandatory flex-nowrap gap-4 overflow-x-auto ">
 					{props.blogCards?.map((blog, index) => {
 						return (
 							<div
@@ -52,7 +52,7 @@ const Blogs: React.FC<IProps> = (props) => {
 					})}
 				</div>
 			</Animate>
-			<div className="items-center pt-4 text-center lg:mb-16">
+			<div className="items-center py-10 text-center">
 				<CtaWrapper.CTA
 					onClick={showUnderConstructionMsg}
 					className={clsx(
