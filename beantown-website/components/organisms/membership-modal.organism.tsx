@@ -1,9 +1,7 @@
 import React, { FC, useContext, useState } from 'react';
-import Zoom from 'react-reveal/Zoom';
 import { MembershipForm } from './membership-form.organism';
 import { Dialog } from '@headlessui/react';
 import { MembershipResult } from './membership-result.organism';
-import useWindowDimensions from '../../lib/hooks/use-window-dimensions.hook';
 import clsx from 'clsx';
 import { MembershipsContext } from '../../contexts/memberships/memberships.context';
 import Modal from './modal.organism';

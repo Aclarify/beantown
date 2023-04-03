@@ -4,8 +4,6 @@ import { GlobalContext } from '@contexts/global/global.context';
 import { GlobalContextProps } from '@typing/common/interfaces/contexts.interface';
 import { ElectricalContentProps } from 'pages/electrical';
 import Animate from 'components/molecules/animate.molecule';
-import StaticImageWrapper from 'components/molecules/static-image-wrapper.molecule';
-import ListIconImage from 'public/images/electrical/services/electrical-services-list-icon.svg';
 
 function ElectricalServicesList() {
 	const { pageContent } =
@@ -27,23 +25,28 @@ function ElectricalServicesList() {
 					{servicesListTitle}
 				</span>
 
-				<div id="list-container" className="">
+				<div id="list-container" className="pt-8">
 					<Animate>
-						<div className="3xl:grid-cols-4 grid  w-full  grid-cols-1  gap-y-2 lg:grid-cols-2 xl:grid-cols-3  ">
+						<div className="3xl:grid-cols-4 grid  w-full  grid-cols-1  gap-y-4 lg:grid-cols-2 xl:grid-cols-3  ">
 							{servicesList?.map((item: any, index: number) => {
 								return (
 									<div
 										key={index}
 										id="list-items"
-										className=" text-gray-shade-1 flex items-center"
+										className=" text-gray-shade-1 flex items-start gap-x-2"
 									>
-										<div className="image-wrapper relative h-[32px] min-w-[32px]">
-											<StaticImageWrapper
-												src={ListIconImage}
-												altText={'electrical-services-list-icon-image'}
-											/>
-										</div>
-										<span className="list-items pl-2">{item}</span>
+										<Image
+											src={
+												'/images/electrical/services/electrical-services-list-icon.svg'
+											}
+											alt={'electrical-services-list-icon-image'}
+											width={24}
+											height={24}
+											className="h-[24px] w-[24px] flex-shrink-0 md:h-[32px] md:w-[32px] md:pt-[4px]"
+										/>
+										<span className="text-gray-shade-1 list-items pl-2 text-left">
+											{item}
+										</span>
 									</div>
 								);
 							})}

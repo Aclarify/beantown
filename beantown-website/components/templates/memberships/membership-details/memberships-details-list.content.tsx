@@ -38,7 +38,7 @@ const MembershipsDetailsList = () => {
 										<div
 											key={index}
 											id="list-items"
-											className="para-4 md:para-3 text-gray-shade-1 flex items-center gap-x-2"
+											className="para-4 md:para-3 text-gray-shade-1 flex items-start gap-x-4"
 										>
 											<Image
 												src={
@@ -47,9 +47,9 @@ const MembershipsDetailsList = () => {
 												alt={'memberships-details-list-icon-image'}
 												width={width > 768 ? 32 : 22}
 												height={width > 768 ? 32 : 22}
-												className="w-[22px] sm:w-[32px]"
+												className="w-[22px] pt-[3px] sm:w-[32px]"
 											/>
-											<p className="w-full overflow-hidden truncate ">{item}</p>
+											<p className="w-full">{item}</p>
 										</div>
 									);
 								}
