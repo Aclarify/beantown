@@ -38,18 +38,20 @@ const MembershipsDetailsList = () => {
 										<div
 											key={index}
 											id="list-items"
-											className="para-4 md:para-3 text-gray-shade-1 flex items-start gap-x-4"
+											className=" text-gray-shade-1 flex items-start gap-x-2"
 										>
 											<Image
 												src={
 													'/images/memberships/membership-details/details-list-icon.svg'
 												}
 												alt={'memberships-details-list-icon-image'}
-												width={width > 768 ? 32 : 22}
-												height={width > 768 ? 32 : 22}
-												className="w-[22px] pt-[3px] sm:w-[32px]"
+												width={24}
+												height={24}
+												className="h-[24px] w-[24px] flex-shrink-0 lg:h-[32px] lg:w-[32px] lg:pt-[4px]"
 											/>
-											<p className="w-full">{item}</p>
+											<span className="text-gray-shade-1 list-items pl-2 text-left">
+												{item}
+											</span>
 										</div>
 									);
 								}
