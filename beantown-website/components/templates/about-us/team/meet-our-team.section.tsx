@@ -17,7 +17,7 @@ const TeamSection = () => {
 			<WaveWrapper
 				waveURL={width > 1023 ? topWave : topWaveMobile}
 			></WaveWrapper>
-			<div className="bg-secondary-shade-3 xs:mt-[-5em] 3xl:mt-[-30em] 4xl:mt-[-35em] xs:mb-[0em] 3xl:mb-[-13em] relative z-10 mt-[-2em] sm:mt-[-8em] md:mt-[-12em] lg:-mb-[6em] xl:mt-[-14em] 2xl:mt-[-20em] 2xl:mb-[-9em]">
+			<div className="bg-secondary-shade-3 xs:mt-[-5em] 3xl:mt-[-30em] 4xl:mt-[-35em] xs:mb-[0em] 3xl:mb-[-13em] relative z-10 mt-[-2em] pb-[1em] sm:mt-[-8em] md:mt-[-12em] lg:-mb-[6em] xl:mt-[-14em] 2xl:mt-[-20em] 2xl:mb-[-9em]">
 				<SectionContentWrapper>
 					<MeetOurTeam />
 				</SectionContentWrapper>
