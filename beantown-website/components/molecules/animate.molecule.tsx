@@ -1,6 +1,7 @@
 import React from 'react';
 import { Transition } from '@headlessui/react';
 import useInView from '@lib/hooks/useInView';
+import clsx from 'clsx';
 
 interface Props {
 	children: React.ReactNode;
@@ -8,6 +9,7 @@ interface Props {
 	left?: boolean;
 	cascade?: boolean;
 	threshold?: number;
+	className?: string | string[];
 }
 
 const Animate: React.FC<Props> = ({
@@ -16,6 +18,7 @@ const Animate: React.FC<Props> = ({
 	left,
 	cascade,
 	threshold,
+	className,
 }) => {
 	const [ref, inView] = useInView(threshold);
 
@@ -33,11 +36,11 @@ const Animate: React.FC<Props> = ({
 
 	return (
 		<div ref={ref} className="relative">
-			<div className="absolute h-full w-full">
+			<div className="absolute inset-0">
 				<Transition
 					show={inView}
 					appear={true}
-					className="transition duration-300 ease-in"
+					className={clsx(`transition duration-300 ease-in`, className)}
 				>
 					{React.Children.map(children, (child, index) => (
 						<Transition.Child
