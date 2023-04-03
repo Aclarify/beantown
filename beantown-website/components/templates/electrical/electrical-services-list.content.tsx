@@ -25,26 +25,28 @@ function ElectricalServicesList() {
 					{servicesListTitle}
 				</span>
 
-				<div id="list-container" className="">
+				<div id="list-container" className="pt-8">
 					<Animate>
-						<div className="3xl:grid-cols-4 grid  w-full  grid-cols-1  gap-y-2 lg:grid-cols-2 xl:grid-cols-3  ">
+						<div className="3xl:grid-cols-4 grid  w-full  grid-cols-1  gap-y-4 lg:grid-cols-2 xl:grid-cols-3  ">
 							{servicesList?.map((item: any, index: number) => {
 								return (
 									<div
 										key={index}
 										id="list-items"
-										className=" text-gray-shade-1 flex items-center"
+										className=" text-gray-shade-1 flex items-start gap-x-2"
 									>
 										<Image
 											src={
 												'/images/electrical/services/electrical-services-list-icon.svg'
 											}
 											alt={'electrical-services-list-icon-image'}
-											width={'24'}
-											height={'24'}
-											className="h-[20px] w-[20px] sm:h-[24] sm:w-[24]"
+											width={24}
+											height={24}
+											className="h-[24px] w-[24px] flex-shrink-0 md:h-[32px] md:w-[32px] md:pt-[4px]"
 										/>
-										<span className="list-items pl-2">{item}</span>
+										<span className="text-gray-shade-1 list-items pl-2 text-left">
+											{item}
+										</span>
 									</div>
 								);
 							})}
