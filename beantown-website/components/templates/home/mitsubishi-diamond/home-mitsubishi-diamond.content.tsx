@@ -72,7 +72,6 @@ const HomeMitsubishiDiamondContent = () => {
 									shouldBePrefetched={true}
 									style={{
 										width: '100%',
-										// height: 'auto',
 										objectFit: 'contain',
 									}}
 								/>
