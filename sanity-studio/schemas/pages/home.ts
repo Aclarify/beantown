@@ -173,6 +173,32 @@ export default defineType({
       ],
     }),
     defineField({
+      name: 'mitsubishiDiamondTitle',
+      title: 'Mitsubishi Diamond Section Title',
+      type: 'string',
+    }),
+    defineField({
+      name: 'mitsubishiDiamondDescription',
+      title: 'Mitsubishi Diamond Section Description',
+      type: 'portableText',
+    }),
+    defineField({
+      name: 'mitsubishiLogo',
+      title: 'Mitsubishi Logo',
+      type: 'image',
+      options: {
+        hotspot: true,
+      },
+    }),
+    defineField({
+      name: 'mitsubishiDiamondImage',
+      title: 'Mitsubishi Diamond Section Image',
+      type: 'image',
+      options: {
+        hotspot: true,
+      },
+    }),
+    defineField({
       name: 'brandsTitle',
       title: 'Client Brands Title',
       type: 'string',

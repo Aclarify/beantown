@@ -23,25 +23,25 @@ const PlumbingServicesList = () => {
 				<span className="subtitle text-primary-black pb-4  sm:pb-8">
 					{servicesListTitle}
 				</span>
-				<div id="list-container" className="">
+				<div id="list-container" className="pt-8">
 					<Animate>
-						<div className="grid  grid-cols-2   md:grid-cols-4">
+						<div className="grid grid-cols-1 gap-y-4 md:grid-cols-2 xl:grid-cols-3">
 							{servicesList?.map((listItem, index) => {
 								return (
 									<div
 										id="list-items"
-										className="flex items-center gap-2 py-1 "
+										className="flex items-start gap-2 py-1"
 										key={index}
 									>
 										<Image
 											src={'/images/plumbing/plumbing-services-list-icon.svg'}
 											alt={'plumbing-services-list-icon-image'}
-											width={'24'}
-											height={'24'}
-											className="h-[20px] w-[20px] sm:h-[24] sm:w-[24]"
+											width={24}
+											height={24}
+											className="h-[24px] w-[24px] flex-shrink-0 md:h-[32px] md:w-[32px] md:pt-[4px]"
 										/>
 
-										<span className="text-gray-shade-1 list-items  text-left">
+										<span className="text-gray-shade-1 list-items pl-2 text-left">
 											{listItem}
 										</span>
 									</div>

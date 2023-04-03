@@ -749,6 +749,10 @@ export type Home = Document & {
 	logoDark?: Maybe<ImageIcon>;
 	logoLight?: Maybe<ImageIcon>;
 	metaDescription?: Maybe<Scalars['String']>;
+	mitsubishiDiamondDescription?: Maybe<PortableText>;
+	mitsubishiDiamondImage?: Maybe<Image>;
+	mitsubishiDiamondLogo?: Maybe<Image>;
+	mitsubishiDiamondTitle?: Maybe<Scalars['String']>;
 	name?: Maybe<Scalars['String']>;
 	pageTitle?: Maybe<Scalars['String']>;
 	serviceAreaSection?: Maybe<ServiceAreas>;
@@ -790,6 +794,10 @@ export type HomeFilter = {
 	logoDark?: InputMaybe<ImageIconFilter>;
 	logoLight?: InputMaybe<ImageIconFilter>;
 	metaDescription?: InputMaybe<StringFilter>;
+	mitsubishiDiamondDescription?: InputMaybe<PortableTextFilter>;
+	mitsubishiDiamondImage?: InputMaybe<ImageFilter>;
+	mitsubishiDiamondLogo?: InputMaybe<ImageFilter>;
+	mitsubishiDiamondTitle?: InputMaybe<StringFilter>;
 	name?: InputMaybe<StringFilter>;
 	pageTitle?: InputMaybe<StringFilter>;
 	serviceAreaSection?: InputMaybe<ServiceAreasFilter>;
@@ -821,6 +829,10 @@ export type HomeSorting = {
 	heroImage?: InputMaybe<ImageSorting>;
 	heroTitle?: InputMaybe<SortOrder>;
 	metaDescription?: InputMaybe<SortOrder>;
+	mitsubishiDiamondDescription?: InputMaybe<PortableTextSorting>;
+	mitsubishiDiamondImage?: InputMaybe<ImageSorting>;
+	mitsubishiDiamondLogo?: InputMaybe<ImageSorting>;
+	mitsubishiDiamondTitle?: InputMaybe<SortOrder>;
 	name?: InputMaybe<SortOrder>;
 	pageTitle?: InputMaybe<SortOrder>;
 	servicesDescription?: InputMaybe<PortableTextSorting>;
