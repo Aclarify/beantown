@@ -1,27 +1,30 @@
-import React, { ChangeEvent } from 'react';
+import React from 'react';
 import clsx from 'clsx';
+import { UseFormRegister } from 'react-hook-form';
 
 interface Props {
 	id?: string;
-	checked?: boolean;
+	name: string;
+	defaultValue?: boolean;
 	bgColor?: string;
 	fontColor?: string;
 	borderColor?: string;
-	onChange: (event: ChangeEvent<HTMLInputElement>) => void;
+	register?: UseFormRegister<any>;
 }
 const FormCheckBox: React.FC<Props> = ({
 	id,
-	onChange,
-	checked,
+	name,
+	defaultValue,
 	bgColor = 'bg-secondary-shade-3',
 	fontColor = 'text-primary-shade-1',
 	borderColor = 'border-primary-shade-3',
+	register,
 }) => {
 	return (
 		<input
 			id={id}
-			checked={checked}
-			onChange={onChange}
+			defaultChecked={defaultValue}
+			{...(register ? register(name) : {})}
 			type="checkbox"
 			className={clsx(
 				"h-6 w-6 appearance-none rounded border pr-4 shadow after:py-4 after:px-1 after:opacity-0 after:transition-all after:content-['✓'] checked:after:opacity-100",
