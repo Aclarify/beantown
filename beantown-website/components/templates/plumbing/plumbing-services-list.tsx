@@ -38,7 +38,7 @@ const PlumbingServicesList = () => {
 											alt={'plumbing-services-list-icon-image'}
 											width={24}
 											height={24}
-											className="h-[24px] w-[24px] flex-shrink-0 md:h-[32px] md:w-[32px] md:pt-[4px]"
+											className="h-[24px] w-[24px] flex-shrink-0 lg:h-[32px] lg:w-[32px] lg:pt-[4px]"
 										/>
 
 										<span className="text-gray-shade-1 list-items pl-2 text-left">
