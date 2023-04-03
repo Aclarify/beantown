@@ -12,16 +12,13 @@ import { ServiceMembershipCard } from 'typing/gql/graphql';
 import { MembershipsContext } from 'contexts/memberships/memberships.context';
 import clsx from 'clsx';
 import useWindowDimensions from 'lib/hooks/use-window-dimensions.hook';
-import {
-	CreateBookingInboundDto,
-	createBooking,
-} from 'lib/api/crm/service-titan/createBooking.handler';
 import { config } from 'lib/config';
 
 import dynamic from 'next/dynamic';
 import { SubmitHandler, useForm } from 'react-hook-form';
 import { yupResolver } from '@hookform/resolvers/yup';
 import * as Yup from 'yup';
+import { createBooking } from '@lib/clients/services/crm/booking.crm.service';
 
 const AddressAutofill = dynamic(
 	() => import('@mapbox/search-js-react').then((c) => c.AddressAutofill),
@@ -48,23 +45,25 @@ type MembershipFormValues = {
 
 // form validation rules
 const validationSchema = Yup.object().shape({
-	email: Yup.string().required('Email is required').email('Email is invalid'),
-	firstName: Yup.string().required('Firstname is required'),
-	lastName: Yup.string().required('Firstname is required'),
+	email: Yup.string()
+		.required('Your email is required')
+		.email('Email is invalid'),
+	firstName: Yup.string().required('Your first name is required'),
+	lastName: Yup.string().required('Your last name is required'),
 	address: Yup.string().required('Your address is required'),
 	city: Yup.string().required('Your city is required'),
 	state: Yup.string().required('Your state is required'),
 	// The regular expression ^\d{5}(-\d{4})?$ matches a 5-digit ZIP code
 	// with an optional 4-digit extension
 	zipCode: Yup.string()
-		.matches(/^\d{5}(-\d{4})?$/, 'ZIP code is not valid')
+		.matches(/^\d{5}(-\d{4})?$/, 'Zip code is not valid')
 		.required('Your zip code is required'),
 	isFirstTimeClient: Yup.boolean().default(true),
 	// The regular expression ^\+?\d{10,14}$ matches phone numbers
 	// that start with an optional plus sign (+), followed by 10 to 14 digits.
 	phoneNumber: Yup.string()
 		.matches(/^\+?\d{10,14}$/, 'Phone number is not valid') //
-		.required('Phone number is required'),
+		.required('Your phone number is required'),
 });
 
 export const MembershipForm: React.FC<Props> = ({ onSumissionSuccess }) => {
@@ -227,7 +226,7 @@ export const MembershipForm: React.FC<Props> = ({ onSumissionSuccess }) => {
 										<FormInput
 											id="email"
 											type="email"
-											placeholderText="Enter your mail"
+											placeholderText="Enter your email"
 											name={'email'}
 											register={register}
 											error={errors.email}
@@ -238,7 +237,7 @@ export const MembershipForm: React.FC<Props> = ({ onSumissionSuccess }) => {
 										<FormInput
 											id="phoneNumber"
 											type="phone"
-											placeholderText="Enter your phone number, eg. 5551234567"
+											placeholderText="Enter your phone number"
 											name={'phoneNumber'}
 											register={register}
 											error={errors.phoneNumber}
