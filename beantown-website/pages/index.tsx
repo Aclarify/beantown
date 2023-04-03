@@ -22,6 +22,7 @@ import HomeTestimonials from '../components/templates/home/testimonials/testimon
 import HomeServiceAreas from '../components/templates/home/service-areas/service-areas';
 import Link from 'next/link';
 import BookNowButton from 'components/atoms/book-now-button.atom';
+import HomeMitsubishiDiamond from 'components/templates/home/mitsubishi-diamond/home-mitsubishi-diamond.section';
 
 export interface HomePageContentProps {
 	page: Home[];
@@ -83,6 +84,7 @@ const HomePage: React.FC = (props) => {
 			<HomeServiceAreas />
 			<HomeBlogs />
 			<HomeFaq />
+			<HomeMitsubishiDiamond />
 			<HomeBrands />
 			<FooterCta />
 			<FooterSection logoDesktop={logoLight?.image} content={footerData} />

@@ -8,7 +8,7 @@ import useWindowDimensions from '@lib/hooks/use-window-dimensions.hook';
 import Animate from 'components/molecules/animate.molecule';
 import { HomePageContentProps } from 'pages';
 import CMSImageWrapper from 'components/molecules/cms-image-wrapper.molecule';
-const HomeBrandMitsubishidiamondContent = () => {
+const HomeMitsubishiDiamondContent = () => {
 	const { pageContent } =
 		useContext<GlobalContextProps<HomePageContentProps>>(GlobalContext);
 	const { width } = useWindowDimensions();
@@ -25,13 +25,10 @@ const HomeBrandMitsubishidiamondContent = () => {
 	} = pageData;
 
 	return (
-		<div
-			id="section-wrapper"
-			//className="z-10 flex  flex-col overflow-hidden  px-5 pb-[5em]"
-		>
+		<div id="section-wrapper" className="z-10 flex  flex-col overflow-hidden ">
 			<div
 				id="content-image-wrapper"
-				className="flex w-full flex-col-reverse items-center  lg:flex  lg:flex-row "
+				className="flex w-full flex-col items-center  lg:flex  lg:flex-row "
 			>
 				<div
 					id="image-wrapper"
@@ -43,45 +40,43 @@ const HomeBrandMitsubishidiamondContent = () => {
 						width={width > 768 ? 1000 : 500}
 						height={width > 768 ? 1000 : 500}
 						maskImg={
-							width > 768
-								? './images/home/brand-mitsubishi/home-brand-mitsubishi-blob.svg'
-								: './images/home/brand-mitsubishi/home-brand-mitsubishi-blob-mask-mobile.svg'
+							'./images/home/mitsubishi-diamond/home-brand-mitsubishi-blob.svg'
 						}
 						bgImg={
-							width > 768
-								? './images/home/brand-mitsubishi/home-brand-mitsubishi-bg-blob.svg'
-								: './images/home/brand-mitsubishi/home-brand-mitsubishi-blob.svg'
+							'./images/home/mitsubishi-diamond/home-brand-mitsubishi-bg-blob.svg'
 						}
 					/>
 				</div>
 				<div
 					id="content-wrapper"
-					className="z-10 flex basis-1/2 flex-col items-start text-left lg:pt-20 "
+					className="z-10 flex basis-1/2 flex-col pt-[2em]  lg:pt-20   "
 				>
 					<ContentWrapper>
-						<ContentWrapper.Title>
+						<ContentWrapper.Title className="mr-[2em] text-left md:mr-[0em] lg:mr-[1em] xl:mr-[2em] 2xl:mr-[5em]">
 							<Animate bottom>
 								<h2 className=" text-primary-black ">
 									{mitsubishiDiamondTitle}
 								</h2>
 							</Animate>
 						</ContentWrapper.Title>
-						<ContentWrapper.Description className=" text-gray-shade-1 text-left">
+						<ContentWrapper.Description className="  text-left">
 							<Animate>
 								<RichText value={mitsubishiDiamondDescription?.contentRaw} />
 							</Animate>
 						</ContentWrapper.Description>
-						<div className="flex h-full  items-center py-4">
-							<CMSImageWrapper
-								altText={mitsubishiLogo?.asset?.altText || ''}
-								image={mitsubishiLogo || null}
-								shouldBePrefetched={true}
-								style={{
-									width: '100%',
-									height: 'auto',
-									objectFit: 'contain',
-								}}
-							/>
+						<div className="flex items-center justify-center py-4">
+							<div className="w-[70%] md:w-[50%]">
+								<CMSImageWrapper
+									altText={mitsubishiLogo?.asset?.altText || ''}
+									image={mitsubishiLogo || null}
+									shouldBePrefetched={true}
+									style={{
+										width: '100%',
+										// height: 'auto',
+										objectFit: 'contain',
+									}}
+								/>
+							</div>
 						</div>
 					</ContentWrapper>
 				</div>
@@ -90,4 +85,4 @@ const HomeBrandMitsubishidiamondContent = () => {
 	);
 };
 
-export default HomeBrandMitsubishidiamondContent;
+export default HomeMitsubishiDiamondContent;
