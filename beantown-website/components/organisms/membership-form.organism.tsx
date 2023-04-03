@@ -3,7 +3,6 @@ import toast from 'react-hot-toast';
 import { GlobalContext } from 'contexts/global/global.context';
 import { MembershipsContentProps } from 'pages/memberships';
 import { GlobalContextProps } from 'typing/common/interfaces/contexts.interface';
-import Animate from 'components/molecules/animate.molecule';
 import Image from 'next/image';
 import FormLabel from 'components/atoms/form-label.atom';
 import FormInput from 'components/atoms/form-input.atom';
@@ -154,7 +153,7 @@ export const MembershipForm: React.FC<Props> = ({ onSumissionSuccess }) => {
 				>
 					<div className="form-header">
 						<div className="px-auto flex flex-col items-center border-b bg-white">
-							<div className="flex w-3/4 items-center ">
+							<div className="flex w-4/5 items-center ">
 								<div className="image-wrapper relative h-[32px] w-[170px] md:h-[80px] md:w-[230px]">
 									<Image
 										alt={logoDark?.image?.asset?.altText || ''}
