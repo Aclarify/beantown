@@ -10,6 +10,10 @@ interface ContactUsModalProps {
 	logoDark: any;
 	ctaTextColor: string;
 	ctaBgColor: string;
+	dialogTitle?: string;
+	dialogDescription?: string;
+	buttonHref?: string;
+	buttonText?: string;
 }
 
 const ContactUsModal: FC<ContactUsModalProps> = ({
@@ -18,6 +22,10 @@ const ContactUsModal: FC<ContactUsModalProps> = ({
 	logoDark,
 	ctaTextColor,
 	ctaBgColor,
+	dialogTitle,
+	dialogDescription,
+	buttonHref,
+	buttonText,
 }) => (
 	<Modal onClose={onClose} isVisible={isVisible}>
 		<div className="flex flex-col items-center justify-center">
@@ -35,15 +43,13 @@ const ContactUsModal: FC<ContactUsModalProps> = ({
 			<div className="contact-us-modal--body flex w-full items-center justify-center py-6 text-center">
 				{/* FIXME: Move all following content to CMS */}
 				<div>
-					<h4 className={clsx('pb-2')}>Need to get in touch?</h4>
-					<p className={clsx('pb-8', 'text-2xl')}>
-						Give us a call and we&apos;ll be happy to help.
-					</p>
+					<h4 className={clsx('pb-2')}>{dialogTitle}</h4>
+					<p className={clsx('pb-8', 'text-2xl')}>{dialogDescription}</p>
 					<CTAButton
 						textColor={ctaTextColor}
 						bgColor={ctaBgColor}
-						href="tel:6175555555"
-						text="Call us now"
+						href={`tel:${buttonHref}`}
+						text={buttonText || ''}
 					/>
 				</div>
 			</div>

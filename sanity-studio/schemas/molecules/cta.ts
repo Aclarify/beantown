@@ -16,7 +16,27 @@ export default defineType({
     }),
     defineField({
       name: 'href',
-      title: 'Button href',
+      title: 'Button Href',
+      type: 'string',
+    }),
+    defineField({
+      name: 'dialogTitle',
+      title: 'Dialog Title Text',
+      type: 'string',
+    }),
+    defineField({
+      name: 'dialogDesc',
+      title: 'Dialog Description',
+      type: 'string',
+    }),
+    defineField({
+      name: 'dialogButtonText',
+      title: 'Dialog Button Text',
+      type: 'string',
+    }),
+    defineField({
+      name: 'dialogButtonHref',
+      title: 'Dialog Button Target URl/Action',
       type: 'string',
     }),
   ],

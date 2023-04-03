@@ -76,6 +76,10 @@ const AboutPlumbingServiceContent = () => {
 								logoDark={logoDark}
 								ctaBgColor="bg-service-green"
 								ctaTextColor="text-white"
+								dialogTitle={contactUsButton?.dialogTitle || ''}
+								dialogDescription={contactUsButton?.dialogDesc || ''}
+								buttonHref={contactUsButton?.dialogButtonHref || ''}
+								buttonText={contactUsButton?.dialogButtonText || ''}
 							/>
 						</ContentWrapper>
 					</div>
