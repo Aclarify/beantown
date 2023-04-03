@@ -146,6 +146,24 @@ const homeQuery = ` allHome {
 				question
         answer
 			}
+			mitsubishiDiamondTitle
+			mitsubishiDiamondDescription {
+				contentRaw
+			}
+			mitsubishiDiamondLogo{
+				asset{
+					url
+					_id
+        			_key
+				}
+			}
+			mitsubishiDiamondImage{
+				asset{
+					url
+					_id
+        			_key
+				}
+			}
 			ctaTitle
 			ctaDescription {
 				contentRaw
