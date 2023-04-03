@@ -19,6 +19,7 @@ import { SubmitHandler, useForm } from 'react-hook-form';
 import { yupResolver } from '@hookform/resolvers/yup';
 import * as Yup from 'yup';
 import { createBooking } from '@lib/clients/services/crm/booking.crm.service';
+import { CreateBookingInboundDto } from '@lib/api/crm/service-titan/createBooking.handler';
 
 const AddressAutofill = dynamic(
 	() => import('@mapbox/search-js-react').then((c) => c.AddressAutofill),
@@ -153,7 +154,7 @@ export const MembershipForm: React.FC<Props> = ({ onSumissionSuccess }) => {
 				>
 					<div className="form-header">
 						<div className="px-auto flex flex-col items-center border-b bg-white">
-							<div className="flex w-3/4 items-center ">
+							<div className="flex w-4/5 items-center ">
 								<div className="image-wrapper relative h-[32px] w-[170px] md:h-[80px] md:w-[230px]">
 									<Image
 										alt={logoDark?.image?.asset?.altText || ''}
