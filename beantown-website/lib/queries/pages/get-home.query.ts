@@ -150,7 +150,7 @@ const homeQuery = ` allHome {
 			mitsubishiDiamondDescription {
 				contentRaw
 			}
-			mitsubishiDiamondLogo{
+			mitsubishiLogo{
 				asset{
 					url
 					_id
