@@ -751,7 +751,7 @@ export type Home = Document & {
 	metaDescription?: Maybe<Scalars['String']>;
 	mitsubishiDiamondDescription?: Maybe<PortableText>;
 	mitsubishiDiamondImage?: Maybe<Image>;
-	mitsubishiDiamondLogo?: Maybe<Image>;
+	mitsubishiLogo?: Maybe<Image>;
 	mitsubishiDiamondTitle?: Maybe<Scalars['String']>;
 	name?: Maybe<Scalars['String']>;
 	pageTitle?: Maybe<Scalars['String']>;
@@ -796,7 +796,7 @@ export type HomeFilter = {
 	metaDescription?: InputMaybe<StringFilter>;
 	mitsubishiDiamondDescription?: InputMaybe<PortableTextFilter>;
 	mitsubishiDiamondImage?: InputMaybe<ImageFilter>;
-	mitsubishiDiamondLogo?: InputMaybe<ImageFilter>;
+	mitsubishiLogo?: InputMaybe<ImageFilter>;
 	mitsubishiDiamondTitle?: InputMaybe<StringFilter>;
 	name?: InputMaybe<StringFilter>;
 	pageTitle?: InputMaybe<StringFilter>;
@@ -831,7 +831,7 @@ export type HomeSorting = {
 	metaDescription?: InputMaybe<SortOrder>;
 	mitsubishiDiamondDescription?: InputMaybe<PortableTextSorting>;
 	mitsubishiDiamondImage?: InputMaybe<ImageSorting>;
-	mitsubishiDiamondLogo?: InputMaybe<ImageSorting>;
+	mitsubishiLogo?: InputMaybe<ImageSorting>;
 	mitsubishiDiamondTitle?: InputMaybe<SortOrder>;
 	name?: InputMaybe<SortOrder>;
 	pageTitle?: InputMaybe<SortOrder>;
