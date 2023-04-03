@@ -5,7 +5,7 @@ import 'slick-carousel/slick/slick.css';
 import 'slick-carousel/slick/slick-theme.css';
 import CMSImageWrapper from 'components/molecules/cms-image-wrapper.molecule';
 import Animate from 'components/molecules/animate.molecule';
-import HomeBrandDescription from 'components/templates/home/brand-mitsubishi/home-brand-description.section';
+import HomeBrandMitsubishidiamond from 'components/templates/home/brand-mitsubishi/home-brand-mitsubishi-diamond.section';
 
 interface IProps extends React.HTMLAttributes<HTMLDivElement> {
 	brandsTitle: string;
@@ -81,12 +81,12 @@ const Brands: React.FC<IProps> = (props) => {
 		<div
 			className={`${props.brandsBgColour} flex w-full flex-col space-y-5 pt-5 pb-4 lg:pt-0 `}
 		>
+			<HomeBrandMitsubishidiamond />
 			<Animate>
 				<div className="flex  justify-center ">
 					<h2 className=" text-primary-black">{props.brandsTitle}</h2>
 				</div>
 			</Animate>
-			<HomeBrandDescription />
 			<div className="slider-wrapper w-full pt-6" id="brands-slider">
 				<Slider {...settings}>
 					{props.logoArray?.map((logo, index) => {

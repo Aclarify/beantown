@@ -8,7 +8,7 @@ import useWindowDimensions from '@lib/hooks/use-window-dimensions.hook';
 import Animate from 'components/molecules/animate.molecule';
 import { HomePageContentProps } from 'pages';
 import CMSImageWrapper from 'components/molecules/cms-image-wrapper.molecule';
-const HomeBrandDescriptionContent = () => {
+const HomeBrandMitsubishidiamondContent = () => {
 	const { pageContent } =
 		useContext<GlobalContextProps<HomePageContentProps>>(GlobalContext);
 	const { width } = useWindowDimensions();
@@ -21,7 +21,7 @@ const HomeBrandDescriptionContent = () => {
 		mitsubishiDiamondTitle,
 		mitsubishiDiamondDescription,
 		mitsubishiDiamondImage,
-		mitsubishiLogo,		
+		mitsubishiLogo,
 	} = pageData;
 
 	return (
@@ -90,4 +90,4 @@ const HomeBrandDescriptionContent = () => {
 	);
 };
 
-export default HomeBrandDescriptionContent;
+export default HomeBrandMitsubishidiamondContent;
