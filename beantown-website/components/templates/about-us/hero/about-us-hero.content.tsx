@@ -5,6 +5,7 @@ import { AboutUsContentProps } from 'pages/about-us';
 import ContentWrapper from 'components/organisms/content-wrapper.organism';
 import Image from 'next/image';
 import Animate from 'components/molecules/animate.molecule';
+import clsx from 'clsx';
 
 const AboutUsHeroContent = () => {
 	const { pageContent } =
@@ -25,7 +26,7 @@ const AboutUsHeroContent = () => {
 						<h1>{heroTitle}</h1>
 					</ContentWrapper.Title>
 					<ContentWrapper.Description>
-						<p>{heroDescription}</p>
+						<p className={clsx('text-3xl')}>{heroDescription}</p>
 					</ContentWrapper.Description>
 				</ContentWrapper>
 			</div>
