@@ -1,8 +1,10 @@
-import React, { ChangeEvent } from 'react';
+import React from 'react';
+import { FieldError, UseFormRegister } from 'react-hook-form';
 import clsx from 'clsx';
 
 interface Props {
 	id?: string;
+	name: string;
 	type?: string;
 	placeholder?: string;
 	bgColor?: string;
@@ -12,11 +14,13 @@ interface Props {
 	placeholderText?: string;
 	value?: string;
 	autoComplete?: string;
-	checked?: boolean;
-	onChange: (event: ChangeEvent<HTMLInputElement>) => void;
+	register?: UseFormRegister<any>;
+	error?: FieldError;
+	showErrorText?: boolean;
 }
 const FormInput: React.FC<Props> = ({
 	id,
+	name,
 	type = 'text',
 	bgColor = 'bg-secondary-shade-3',
 	fontColor = 'text-primary-shade-1',
@@ -25,26 +29,32 @@ const FormInput: React.FC<Props> = ({
 	placeholderText,
 	autoComplete,
 	value,
-	onChange,
-	checked,
+	register,
+	error,
+	showErrorText = true,
 }) => {
 	return (
-		<input
-			id={id}
-			type={type}
-			value={value}
-			placeholder={placeholderText}
-			onChange={onChange}
-			autoComplete={autoComplete}
-			checked={checked}
-			className={clsx(
-				'w-full rounded-lg border p-3 focus:outline-none',
-				bgColor,
-				fontColor,
-				placeholderColor,
-				borderColor
+		<>
+			<input
+				id={id}
+				type={type}
+				value={value}
+				placeholder={placeholderText}
+				autoComplete={autoComplete}
+				{...(register ? register(name) : {})}
+				className={clsx(
+					'w-full rounded-lg border p-3 focus:outline-none',
+					bgColor,
+					fontColor,
+					placeholderColor,
+					error ? 'border-service-red' : borderColor
+				)}
+			/>
+			{/* Making the modal heigh too high */}
+			{error && showErrorText && (
+				<p className="text-service-red -mt-1 text-sm">{error.message}</p>
 			)}
-		/>
+		</>
 	);
 };
 export default FormInput;
