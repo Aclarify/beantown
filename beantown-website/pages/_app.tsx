@@ -12,6 +12,7 @@ import Toast from 'components/molecules/toast.molecule';
 import Head from 'next/head';
 import { GA_TRACKING_ID_UA, isGAEnabled } from '@lib/tracking/gtag.tracking';
 import GTag from 'components/atoms/gtag/GTag.Atom';
+import useTrackLogRocket from '@lib/hooks/useTrackLogRocket.hook';
 
 const neuePlak = localFont({
 	display: 'swap',
@@ -97,6 +98,7 @@ const AppHead = () => {
 };
 
 export default function App({ Component, pageProps }: AppProps) {
+	useTrackLogRocket();
 	return (
 		<>
 			<AppHead />
