@@ -6,9 +6,9 @@ import WaveWrapper from 'components/molecules/wave-wrapper.molecule';
 
 const HomeMitsubishiDiamond = () => {
 	return (
-		<section id="mitsubishiDiamondSection" className="relative mt-[-9em]">
+		<section id="mitsubishiDiamondSection" className="relative mt-[-8em]">
 			<WaveWrapper waveURL={topWave}></WaveWrapper>
-			<div className="bg-primary-white-shade-1 pb-8">
+			<div className="bg-primary-white-shade-1 pb-16 pt-8">
 				<SectionContentWrapper>
 					<HomeMitsubishiDiamondContent />
 				</SectionContentWrapper>
