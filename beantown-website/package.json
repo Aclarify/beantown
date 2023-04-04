@@ -11,6 +11,7 @@
 	},
 	"dependencies": {
 		"@apollo/client": "^3.7.3",
+		"@builder.io/partytown": "^0.7.6",
 		"@fortawesome/fontawesome-svg-core": "^6.2.1",
 		"@fortawesome/free-brands-svg-icons": "^6.3.0",
 		"@fortawesome/free-solid-svg-icons": "^6.2.1",
@@ -50,6 +51,7 @@
 	"devDependencies": {
 		"@graphql-codegen/cli": "2.16.4",
 		"@graphql-codegen/client-preset": "1.2.6",
+		"@types/gtag.js": "^0.0.12",
 		"@types/react-modal": "^3.13.1",
 		"@types/react-slick": "^0.23.10",
 		"@typescript-eslint/eslint-plugin": "^5.48.1",
