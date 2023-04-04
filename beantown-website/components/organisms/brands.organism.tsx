@@ -85,7 +85,7 @@ const Brands: React.FC<IProps> = (props) => {
 					<h2 className=" text-primary-black">{props.brandsTitle}</h2>
 				</div>
 			</Animate>
-			<div className="slider-wrapper w-full" id="brands-slider">
+			<div className="slider-wrapper w-full lg:pt-6" id="brands-slider">
 				<Slider {...settings}>
 					{props.logoArray?.map((logo, index) => {
 						return (
