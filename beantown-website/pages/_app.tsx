@@ -10,6 +10,8 @@ import localFont from '@next/font/local';
 import { graphQLClient } from '@lib/clients/apollo/apollo.client';
 import Toast from 'components/molecules/toast.molecule';
 import Head from 'next/head';
+import { GA_TRACKING_ID_UA, isGAEnabled } from '@lib/tracking/gtag.tracking';
+import GTag from 'components/atoms/gtag/GTag.Atom';
 
 const neuePlak = localFont({
 	display: 'swap',
@@ -42,6 +44,32 @@ const neuePlak = localFont({
 		},
 	],
 });
+
+interface WebVitalsProps {
+	id: string;
+	name: string;
+	label: string;
+	value: number;
+}
+
+export const reportWebVitals = ({
+	id,
+	name,
+	label,
+	value,
+}: WebVitalsProps): void => {
+	if (isGAEnabled && window?.gtag) {
+		// For more info: https://nextjs.org/docs/advanced-features/measuring-performance
+		window.gtag('event', name, {
+			event_category:
+				label === 'web-vital' ? 'Web Vitals' : 'Next.js Custom Metric',
+			value: Math.round(name === 'CLS' ? value * 1000 : value), // values must be integers
+			event_label: id, // id unique to current page load
+			non_interaction: true, // avoids affecting bounce rate.
+		});
+	}
+};
+
 const AppHead = () => {
 	return (
 		<Head>
@@ -81,6 +109,7 @@ export default function App({ Component, pageProps }: AppProps) {
 					font-family: var(--font-neue-plak);
 				}
 			`}</style>
+			<GTag trackingId={GA_TRACKING_ID_UA} />
 			<Script
 				strategy="beforeInteractive"
 				data-api-key="ckqky3gqt018408n1em335fyr"
