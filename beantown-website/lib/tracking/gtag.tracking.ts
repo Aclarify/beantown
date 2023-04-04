@@ -22,12 +22,14 @@ export const isGAEnabled = !!(
 
 // https://developers.google.com/analytics/devguides/collection/gtagjs/pages
 export const pageview = (url: URL): void => {
-	window.gtag('config', GA_TRACKING_ID_UA, {
+	if (window === undefined || !isGAEnabled) return;
+	window?.gtag('config', GA_TRACKING_ID_UA, {
 		page_path: url,
 	});
 };
 
 // https://developers.google.com/analytics/devguides/collection/gtagjs/events
 export const sendGAEvent = ({ action, ...options }: GTagEvent): void => {
+	if (window === undefined || !isGAEnabled) return;
 	window.gtag('event', action, options);
 };
