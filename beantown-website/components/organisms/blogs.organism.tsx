@@ -52,7 +52,7 @@ const Blogs: React.FC<IProps> = (props) => {
 					})}
 				</div>
 			</Animate>
-			<div className="items-center py-10 text-center">
+			<div className="items-center text-center">
 				<CtaWrapper.CTA
 					onClick={showUnderConstructionMsg}
 					className={clsx(
