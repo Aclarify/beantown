@@ -10,6 +10,8 @@ import CtaWrapper from 'components/molecules/cta-wrapper.molecule';
 import Animate from 'components/molecules/animate.molecule';
 import clsx from 'clsx';
 import { buttonHoverStyle } from '@lib/styles/button.style';
+import { showUnderConstructionMsg } from 'utils/helper';
+
 const HeatingCoolingMassSaveContent = () => {
 	const { pageContent } =
 		useContext<GlobalContextProps<HeatingCoolingContentProps>>(GlobalContext);
@@ -48,6 +50,7 @@ const HeatingCoolingMassSaveContent = () => {
 						</ContentWrapper.Description>
 						<ContentWrapper.CTA className=" mt-4 lg:mt-8">
 							<CtaWrapper.CTA
+								onClick={showUnderConstructionMsg}
 								className={clsx(
 									'bg-service-red  button text-white',
 									buttonHoverStyle
