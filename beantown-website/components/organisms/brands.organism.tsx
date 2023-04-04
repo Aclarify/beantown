@@ -78,14 +78,14 @@ const settings = {
 const Brands: React.FC<IProps> = (props) => {
 	return (
 		<div
-			className={`${props.brandsBgColour} flex w-full flex-col space-y-5 pt-5 pb-4 lg:pt-0 `}
+			className={`${props.brandsBgColour} flex w-full flex-col space-y-5 py-6 lg:pt-0 `}
 		>
 			<Animate>
-				<div className="flex  justify-center ">
+				<div className="flex justify-center">
 					<h2 className=" text-primary-black">{props.brandsTitle}</h2>
 				</div>
 			</Animate>
-			<div className="slider-wrapper w-full pt-6" id="brands-slider">
+			<div className="slider-wrapper w-full lg:pt-6" id="brands-slider">
 				<Slider {...settings}>
 					{props.logoArray?.map((logo, index) => {
 						return (

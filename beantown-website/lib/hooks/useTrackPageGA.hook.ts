@@ -1,13 +1,13 @@
 import { useEffect } from 'react';
-import * as gtag from '@lib/tracking/gtag.tracking';
+import { isGAEnabled, pageview } from '@lib/tracking/gtag.tracking';
 import { useRouter } from 'next/router';
 
 const useTrackPageGA = (): void => {
 	const router = useRouter();
 	useEffect(() => {
-		if (gtag.isGAEnabled) {
+		if (window !== undefined && isGAEnabled) {
 			const handleRouteChange = (url: URL) => {
-				gtag.pageview(url);
+				pageview(url);
 			};
 			router.events.on('routeChangeComplete', handleRouteChange);
 			return () => {

@@ -25,7 +25,7 @@ const HomeMitsubishiDiamondContent = () => {
 	} = pageData;
 
 	return (
-		<div id="section-wrapper" className="z-10 flex  flex-col overflow-hidden ">
+		<div id="section-wrapper" className="z-10 flex flex-col overflow-hidden ">
 			<div
 				id="content-image-wrapper"
 				className="flex w-full flex-col items-center  lg:flex  lg:flex-row "
@@ -64,7 +64,7 @@ const HomeMitsubishiDiamondContent = () => {
 								<RichText value={mitsubishiDiamondDescription?.contentRaw} />
 							</Animate>
 						</ContentWrapper.Description>
-						<div className="flex items-center justify-center py-4">
+						<div className="flex items-center justify-center pt-8 pb-8">
 							<div className="w-[70%] md:w-[50%]">
 								<CMSImageWrapper
 									altText={mitsubishiLogo?.asset?.altText || ''}

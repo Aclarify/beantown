@@ -17,7 +17,7 @@ export default function HomeBlogs() {
 	const homeData = pageContent.page[0];
 	const { blogsTitle, blogsDescription, blogButton, blogCards } = homeData;
 	return (
-		<section id="blogs" className=" relative  z-10 -mb-[9em]   ">
+		<section id="blogs" className="relative  z-10 -mb-[9em]">
 			<Image
 				src="/images/home/blue-blob-shape-1.svg"
 				alt="Left-blob"
@@ -40,7 +40,7 @@ export default function HomeBlogs() {
 				alt="Right Blob mobile"
 				className="absolute  top-0 right-0 z-10 translate-x-[75%] translate-y-[-70%] transform lg:hidden"
 			/>
-			<div className="bg-primary-white-shade-1">
+			<div className="bg-primary-white-shade-1 pt-16">
 				<SectionContentWrapper>
 					<Blogs
 						blogsTitle={blogsTitle || ''}

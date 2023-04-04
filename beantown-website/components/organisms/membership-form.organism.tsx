@@ -19,6 +19,8 @@ import { yupResolver } from '@hookform/resolvers/yup';
 import * as Yup from 'yup';
 import { createBooking } from '@lib/clients/services/crm/booking.crm.service';
 import { CreateBookingInboundDto } from '@lib/api/crm/service-titan/createBooking.handler';
+import { LOGROCKET_ID } from '@lib/tracking/logRocket.tracking';
+import LogRocket from 'logrocket';
 
 const AddressAutofill = dynamic(
 	() => import('@mapbox/search-js-react').then((c) => c.AddressAutofill),
@@ -121,6 +123,12 @@ export const MembershipForm: React.FC<Props> = ({ onSumissionSuccess }) => {
 			};
 			console.log('bookDetails', bookingDetails);
 			const bookingPromise = createBooking(bookingDetails);
+
+			// Identify  User for LogRocket
+			LogRocket.identify(LOGROCKET_ID, {
+				name: `${data.firstName} ${data.lastName}`,
+				email: data.email,
+			});
 
 			toast.promise(
 				bookingPromise,
