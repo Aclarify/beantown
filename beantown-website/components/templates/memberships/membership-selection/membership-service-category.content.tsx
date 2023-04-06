@@ -30,7 +30,7 @@ const MembershipServiceCategories = () => {
 			<Animate>
 				<div
 					id="categories-container"
-					className="grid w-full grid-cols-2 gap-4 rounded-2xl border-0 sm:p-4 md:mx-auto md:w-2/3 lg:w-auto lg:grid-cols-4 lg:border lg:p-3"
+					className="grid w-full grid-cols-2 gap-4 rounded-2xl border-0 sm:p-4 md:mx-auto  lg:w-auto lg:grid-cols-4 lg:border lg:p-3"
 				>
 					{serviceMembershipsSection?.map((serviceCategory, index) => {
 						return (
