@@ -96,7 +96,7 @@ const MeetOurTeam = () => {
 					{memberCardsToDisplay?.map((content, index) => {
 						return (
 							content && (
-								<Animate>
+								<Animate key={index}>
 									<div
 										key={index}
 										id="card"

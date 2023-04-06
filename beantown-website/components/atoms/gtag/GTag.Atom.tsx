@@ -31,12 +31,12 @@ const GTag: FC<GTagProps> = ({ trackingId }) => {
 
 					<Script
 						id={`gtag-worker-init-${trackingId}`}
-						strategy="worker"
+						strategy="afterInteractive"
 						src={`https://www.googletagmanager.com/gtag/js?id=${trackingId}`}
 					/>
 					<Script
 						id={`gtag-init-${trackingId}`}
-						type="text/partytown"
+						strategy="afterInteractive"
 						dangerouslySetInnerHTML={{
 							__html: `
             window.dataLayer = window.dataLayer || [];
