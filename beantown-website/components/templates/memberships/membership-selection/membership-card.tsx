@@ -44,7 +44,7 @@ const MembershipCard: React.FC<IProps> = ({ membership }) => {
 						<h2 className="text-primary-black ">
 							{membership?.membershipTitle}
 						</h2>
-						<p className="text-gray-shade-1 para text-overflow-ellipsis h-[50px] overflow-hidden  text-center lg:h-[70px]">
+						<p className="text-gray-shade-1 para text-overflow-ellipsis 3xl:h-[70px] h-[70px] overflow-hidden  text-center md:h-[50px] lg:h-[155px] xl:h-[125px] 2xl:h-[100px]">
 							{membership?.membershipDescription}
 						</p>
 					</div>
