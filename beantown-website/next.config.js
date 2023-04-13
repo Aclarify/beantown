@@ -17,6 +17,16 @@ const nextConfig = {
 			},
 		],
 	},
+	redirects: () => {
+		// Redirect from QA code target,`/hvac-services/heating-cooling-service-contract` to `/memberships`
+		return [
+			{
+				source: '/hvac-services/heating-cooling-service-contract',
+				destination: '/memberships',
+				permanent: true,
+			},
+		];
+	},
 };
 
 module.exports = nextConfig;
