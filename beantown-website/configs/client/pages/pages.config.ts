@@ -4,6 +4,7 @@ export enum PageNames {
 	ELECTRICAL = 'electrical',
 	PLUMBING = 'plumbing',
 	ABOUTUS = 'aboutUs',
+	FINANCING = 'financing',
 	MEMBERSHIPS = 'memberships',
 	BLOG = 'blog',
 	CAREERS = 'careers',
@@ -11,5 +12,5 @@ export enum PageNames {
 	HEADER = 'header',
 	FOOTER = 'footer',
 	BOOKNOW = 'bookNow',
-	UNDERCONSTRUCTION = 'underConstruction'
+	UNDERCONSTRUCTION = 'underConstruction',
 }
