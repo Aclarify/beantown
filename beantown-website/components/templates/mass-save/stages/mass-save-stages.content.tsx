@@ -19,7 +19,7 @@ const MassSaveStagesContent = () => {
 	const { howItWorksTitle, howItWorksDescription, stagesCards } = pageData;
 	return (
 		<SectionContentWrapper>
-			<div className="relative px-5 lg:pt-14">
+			<div className="relative   px-5 lg:pt-14">
 				<div className="flex flex-col items-center pb-8 text-center">
 					<ContentWrapper>
 						<ContentWrapper.Title>
@@ -36,10 +36,10 @@ const MassSaveStagesContent = () => {
 						</ContentWrapper.Description>
 					</ContentWrapper>
 				</div>
-				<div className="flex flex-wrap ">
+				<div className="flex-col items-center lg:flex lg:flex-row ">
 					{stagesCards?.map((content, index) => {
 						return (
-							<div key={index} className=" mx-auto mb-4 divide-x divide-dashed">
+							<div key={index} className=" mb-4   ">
 								<MassSaveStagesCard
 									key={index}
 									title={content?.titleText || ''}
