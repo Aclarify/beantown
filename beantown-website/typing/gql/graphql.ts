@@ -222,6 +222,100 @@ export type FinancingSorting = {
 	pageTitle?: InputMaybe<SortOrder>;
 };
 
+export type MassSave = Document & {
+	__typename?: 'MassSave';
+	/** Date the document was created */
+	_createdAt?: Maybe<Scalars['DateTime']>;
+	/** Document ID */
+	_id?: Maybe<Scalars['ID']>;
+	_key?: Maybe<Scalars['String']>;
+	/** Current document revision */
+	_rev?: Maybe<Scalars['String']>;
+	/** Document type */
+	_type?: Maybe<Scalars['String']>;
+	/** Date the document was last modified */
+	_updatedAt?: Maybe<Scalars['DateTime']>;
+	aboutMassSaveDescription?: Maybe<PortableText>;
+	aboutMassSaveImage?: Maybe<Image>;
+	aboutMassSaveTitle?: Maybe<Scalars['String']>;
+	contactButton?: Maybe<Cta>;
+	faqButton?: Maybe<Cta>;
+	faqDescription?: Maybe<Scalars['String']>;
+	faqList?: Maybe<Array<Maybe<Faq>>>;
+	faqTitle?: Maybe<Scalars['String']>;
+	featuresDescription?: Maybe<PortableText>;
+	featuresImage?: Maybe<Image>;
+	featuresTitle?: Maybe<Scalars['String']>;
+	heroDescription?: Maybe<Scalars['String']>;
+	heroImage?: Maybe<Image>;
+	heroTitle?: Maybe<Scalars['String']>;
+	howItWorksDescription?: Maybe<PortableText>;
+	howItWorksTitle?: Maybe<Scalars['String']>;
+	logoDark?: Maybe<ImageIcon>;
+	logoLight?: Maybe<ImageIcon>;
+	metaDescription?: Maybe<Scalars['String']>;
+	name?: Maybe<Scalars['String']>;
+	pageTitle?: Maybe<Scalars['String']>;
+	stagesCards?: Maybe<Array<Maybe<TitleDescriptionImage>>>;
+};
+
+export type MassSaveFilter = {
+	/** Apply filters on document level */
+	_?: InputMaybe<Sanity_DocumentFilter>;
+	_createdAt?: InputMaybe<DatetimeFilter>;
+	_id?: InputMaybe<IdFilter>;
+	_key?: InputMaybe<StringFilter>;
+	_rev?: InputMaybe<StringFilter>;
+	_type?: InputMaybe<StringFilter>;
+	_updatedAt?: InputMaybe<DatetimeFilter>;
+	aboutMassSaveDescription?: InputMaybe<PortableTextFilter>;
+	aboutMassSaveImage?: InputMaybe<ImageFilter>;
+	aboutMassSaveTitle?: InputMaybe<StringFilter>;
+	contactButton?: InputMaybe<CtaFilter>;
+	faqButton?: InputMaybe<CtaFilter>;
+	faqDescription?: InputMaybe<PortableTextFilter>;
+	faqTitle?: InputMaybe<StringFilter>;
+	featuresDescription?: InputMaybe<PortableTextFilter>;
+	featuresImage?: InputMaybe<ImageFilter>;
+	featuresTitle?: InputMaybe<StringFilter>;
+	heroDescription?: InputMaybe<StringFilter>;
+	heroImage?: InputMaybe<ImageFilter>;
+	heroTitle?: InputMaybe<StringFilter>;
+	howItWorksDescription?: InputMaybe<PortableTextFilter>;
+	howItWorksTitle?: InputMaybe<StringFilter>;
+	logoDark?: InputMaybe<ImageIconFilter>;
+	logoLight?: InputMaybe<ImageIconFilter>;
+	metaDescription?: InputMaybe<StringFilter>;
+	name?: InputMaybe<StringFilter>;
+	pageTitle?: InputMaybe<StringFilter>;
+	serviceAreaSection?: InputMaybe<ServiceAreasFilter>;
+};
+
+export type MassSaveSorting = {
+	_createdAt?: InputMaybe<SortOrder>;
+	_id?: InputMaybe<SortOrder>;
+	_key?: InputMaybe<SortOrder>;
+	_rev?: InputMaybe<SortOrder>;
+	_type?: InputMaybe<SortOrder>;
+	_updatedAt?: InputMaybe<SortOrder>;
+	aboutMassSaveDescription?: InputMaybe<PortableTextSorting>;
+	aboutMassSaveImage?: InputMaybe<ImageSorting>;
+	aboutMassSaveTitle?: InputMaybe<SortOrder>;
+	faqDescription?: InputMaybe<PortableTextSorting>;
+	faqTitle?: InputMaybe<SortOrder>;
+	featuresDescription?: InputMaybe<PortableTextSorting>;
+	featuresImage?: InputMaybe<ImageSorting>;
+	featuresTitle?: InputMaybe<SortOrder>;
+	heroDescription?: InputMaybe<SortOrder>;
+	heroImage?: InputMaybe<ImageSorting>;
+	heroTitle?: InputMaybe<SortOrder>;
+	howItWorksDescription?: InputMaybe<PortableTextSorting>;
+	howItWorksTitle?: InputMaybe<SortOrder>;
+	metaDescription?: InputMaybe<SortOrder>;
+	name?: InputMaybe<SortOrder>;
+	pageTitle?: InputMaybe<SortOrder>;
+};
+
 export type Block = {
 	__typename?: 'Block';
 	_key?: Maybe<Scalars['String']>;
@@ -1415,6 +1509,7 @@ export type RootQuery = {
 	ImageIcon?: Maybe<ImageIcon>;
 	Images?: Maybe<Images>;
 	Link?: Maybe<Link>;
+	MassSave?: Maybe<MassSave>;
 	Memberships?: Maybe<Memberships>;
 	Nav?: Maybe<Nav>;
 	OtherServices?: Maybe<OtherServices>;
@@ -1436,6 +1531,7 @@ export type RootQuery = {
 	allImageIcon: Array<ImageIcon>;
 	allImages: Array<Images>;
 	allLink: Array<Link>;
+	allMassSave?: Array<MassSave>;
 	allMemberships: Array<Memberships>;
 	allNav: Array<Nav>;
 	allOtherServices: Array<OtherServices>;
@@ -1495,6 +1591,10 @@ export type RootQueryImagesArgs = {
 };
 
 export type RootQueryLinkArgs = {
+	id: Scalars['ID'];
+};
+
+export type RootQueryMassSaveArgs = {
 	id: Scalars['ID'];
 };
 
@@ -1619,6 +1719,13 @@ export type RootQueryAllLinkArgs = {
 	offset?: InputMaybe<Scalars['Int']>;
 	sort?: InputMaybe<Array<LinkSorting>>;
 	where?: InputMaybe<LinkFilter>;
+};
+
+export type RootQueryAllMassSaveArgs = {
+	limit?: InputMaybe<Scalars['Int']>;
+	offset?: InputMaybe<Scalars['Int']>;
+	sort?: InputMaybe<Array<MassSaveSorting>>;
+	where?: InputMaybe<MassSaveFilter>;
 };
 
 export type RootQueryAllMembershipsArgs = {
