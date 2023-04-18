@@ -27,6 +27,8 @@ import serviceMemberships from './organism/serviceMemberships'
 import serviceMembershipCard from './organism/serviceMembershipCard'
 import bookNow from './pages/bookNow'
 import financing from './pages/financing'
+import careers from './pages/careers'
+import jobDetails from './organism/jobDetails'
 import massSave from './pages/mass-save'
 
 export const schemaTypes = [
@@ -46,8 +48,10 @@ export const schemaTypes = [
   serviceMembershipCard,
   bookNow,
   financing,
+  careers,
   massSave,
   //Other Types
+  jobDetails,
   breakType,
   cta,
   images,
