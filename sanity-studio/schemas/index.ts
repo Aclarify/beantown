@@ -27,6 +27,7 @@ import serviceMemberships from './organism/serviceMemberships'
 import serviceMembershipCard from './organism/serviceMembershipCard'
 import bookNow from './pages/bookNow'
 import financing from './pages/financing'
+import massSave from './pages/mass-save'
 
 export const schemaTypes = [
   //Document Types
@@ -45,6 +46,7 @@ export const schemaTypes = [
   serviceMembershipCard,
   bookNow,
   financing,
+  massSave,
   //Other Types
   breakType,
   cta,
