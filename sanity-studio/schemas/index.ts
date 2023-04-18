@@ -26,6 +26,7 @@ import checkableItem from './molecules/checkableItem'
 import serviceMemberships from './organism/serviceMemberships'
 import serviceMembershipCard from './organism/serviceMembershipCard'
 import bookNow from './pages/bookNow'
+import financing from './pages/financing'
 
 export const schemaTypes = [
   //Document Types
@@ -43,6 +44,7 @@ export const schemaTypes = [
   serviceMemberships,
   serviceMembershipCard,
   bookNow,
+  financing,
   //Other Types
   breakType,
   cta,
