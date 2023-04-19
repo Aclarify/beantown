@@ -83,6 +83,21 @@ const massSaveQuery = `allMassSave {
                     }
                 description
             }
+			ctaTitle
+			ctaDescription {
+				contentRaw
+			}
+			ctaImage {
+				asset {
+					url
+					_id
+					_key
+				}
+			}
+			ctaButton {
+				text
+				href
+			}
 }`;
 export default gql`
 	query {

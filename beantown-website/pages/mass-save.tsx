@@ -15,6 +15,7 @@ import MassSaveHeroSection from 'components/templates/mass-save/hero/mass-save-h
 import MassSaveFaqSection from 'components/templates/mass-save/faq/mass-save-faq.section';
 import AboutMassSaveSection from 'components/templates/mass-save/about-mass-save/about-mass-save.section';
 import MassSaveStagesSection from 'components/templates/mass-save/stages/mass-save-stages.section';
+import FooterCTASection from 'components/templates/mass-save/cta/mass-save-cta.section';
 export interface MassSaveContentProps {
 	page: MassSave[];
 	header: Nav[];
@@ -40,7 +41,6 @@ const MassSavePage: React.FC = (props) => {
 	const PageHead = () => {
 		return (
 			<Head>
-				{/* TODO to fetch from CMS */}
 				<title>{pageTitle}</title>
 				<meta name="description" content={metaDescription || ''} />
 			</Head>
@@ -71,6 +71,7 @@ const MassSavePage: React.FC = (props) => {
 			<AboutMassSaveSection />
 			<MassSaveStagesSection />
 			<MassSaveFaqSection />
+			<FooterCTASection />
 			<FooterSection logoDesktop={logoLight?.image} content={footerData} />
 		</div>
 	);
