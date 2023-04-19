@@ -3,15 +3,13 @@ import { GlobalContext } from '@contexts/global/global.context';
 import { GlobalContextProps } from '@typing/common/interfaces/contexts.interface';
 import RichText from 'components/molecules/rich-text.molecule';
 import ContentWrapper from 'components/organisms/content-wrapper.organism';
-import MaskedImageWithBackgroundVector from 'components/organisms/masked-image-with-blob.organism';
-import useWindowDimensions from '@lib/hooks/use-window-dimensions.hook';
 import Animate from 'components/molecules/animate.molecule';
 import { HomePageContentProps } from 'pages';
 import CMSImageWrapper from 'components/molecules/cms-image-wrapper.molecule';
+import MaskedImageWithBackground from 'components/organisms/masked-image-with-background.organism';
 const HomeMitsubishiDiamondContent = () => {
 	const { pageContent } =
 		useContext<GlobalContextProps<HomePageContentProps>>(GlobalContext);
-	const { width } = useWindowDimensions();
 
 	if (!pageContent) {
 		return null;
@@ -32,13 +30,11 @@ const HomeMitsubishiDiamondContent = () => {
 			>
 				<div
 					id="image-wrapper"
-					className="mb-8 md:mt-12  md:basis-1/2 md:px-20 lg:px-10  "
+					className="mb-8 md:mt-12 md:basis-1/2  md:px-20 lg:px-10"
 				>
-					<MaskedImageWithBackgroundVector
-						imageURL={mitsubishiDiamondImage?.asset?.url || ''}
+					<MaskedImageWithBackground
+						image={mitsubishiDiamondImage || null}
 						imgAltText={mitsubishiDiamondImage?.asset?.altText || ''}
-						width={width > 768 ? 1000 : 500}
-						height={width > 768 ? 1000 : 500}
 						maskImg={
 							'./images/home/mitsubishi-diamond/home-brand-mitsubishi-blob.svg'
 						}

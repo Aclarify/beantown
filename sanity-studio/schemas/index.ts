@@ -29,6 +29,7 @@ import bookNow from './pages/bookNow'
 import financing from './pages/financing'
 import careers from './pages/careers'
 import jobDetails from './organism/jobDetails'
+import massSave from './pages/mass-save'
 
 export const schemaTypes = [
   //Document Types
@@ -48,9 +49,9 @@ export const schemaTypes = [
   bookNow,
   financing,
   careers,
-  jobDetails,
+  massSave,
   //Other Types
-
+  jobDetails,
   breakType,
   cta,
   images,
