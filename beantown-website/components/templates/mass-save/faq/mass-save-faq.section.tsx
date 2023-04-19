@@ -10,7 +10,7 @@ const MassSaveFaqSection = () => {
 				id="faq"
 				className=" z-5  3xl:mt-[15em] relative mb-[6em] 2xl:mt-[10em]  "
 			>
-				<div className="bg-secondary-shade-2">
+				<div>
 					<MassSaveFaqContent />
 					<WaveWrapper waveURL={bottomWave}></WaveWrapper>
 				</div>
