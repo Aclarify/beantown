@@ -7,6 +7,7 @@ import AboutMassSaveContent from './about-mass-save.content';
 import topWave from 'public/images/about-us/mission/about-us-mission-top-wave.svg';
 import topWaveMobile from 'public/images/about-us/mission/about-us-mission-top-wave-mobile.svg';
 import MassSaveFeaturesContent from '../features/mass-save-features.content';
+import { SCREEN_BREAKPOINTS } from '@typing/common/interfaces/devices.interface';
 
 const AboutMassSaveSection = () => {
 	const { width } = useWindowDimensions();
@@ -16,7 +17,7 @@ const AboutMassSaveSection = () => {
 			className="  xs:-mt-[2em] 3xl:-mt-[12em] 4xl:-mt-[16em] relative z-10 -mt-[3em] sm:-mt-[3em] md:-mt-[5em] xl:-mt-[7em] 2xl:-mt-[9em]"
 		>
 			<WaveWrapper
-				waveURL={width > 1023 ? topWave : topWaveMobile}
+				waveURL={width > SCREEN_BREAKPOINTS.MD ? topWave : topWaveMobile}
 			></WaveWrapper>
 
 			{/* <Image

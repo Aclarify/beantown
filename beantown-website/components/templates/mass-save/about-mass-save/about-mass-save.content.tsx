@@ -3,11 +3,11 @@ import { GlobalContext } from '@contexts/global/global.context';
 import { GlobalContextProps } from '@typing/common/interfaces/contexts.interface';
 import RichText from 'components/molecules/rich-text.molecule';
 import ContentWrapper from 'components/organisms/content-wrapper.organism';
-import MaskedImageWithBackgroundVector from 'components/organisms/masked-image-with-blob.organism';
 import useWindowDimensions from '@lib/hooks/use-window-dimensions.hook';
 
 import { MassSaveContentProps } from 'pages/mass-save';
 import Animate from 'components/molecules/animate.molecule';
+import MaskedImageWithBackground from 'components/organisms/masked-image-with-background.organism';
 const AboutMassSaveContent = () => {
 	const { pageContent } =
 		useContext<GlobalContextProps<MassSaveContentProps>>(GlobalContext);
@@ -33,13 +33,11 @@ const AboutMassSaveContent = () => {
 					id="image-wrapper"
 					className="mb-8 md:mt-12  md:basis-1/2 md:px-20 lg:px-10  "
 				>
-					<MaskedImageWithBackgroundVector
-						imageURL={aboutMassSaveImage?.asset?.url || ''}
+					<MaskedImageWithBackground
+						image={aboutMassSaveImage || null}
 						imgAltText={aboutMassSaveImage?.asset?.altText || ''}
 						maskImg="./images/about-us/mission/about-us-mission-mask-blob.svg"
 						bgImg="./images/about-us/mission/about-us-mission-bg-blob.svg"
-						width={width > 768 ? 1000 : 500}
-						height={width > 768 ? 1000 : 500}
 					/>
 				</div>
 				<div

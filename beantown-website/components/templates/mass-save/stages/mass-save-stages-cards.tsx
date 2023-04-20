@@ -1,10 +1,11 @@
 import React from 'react';
 import Image from 'next/image';
 import Animate from 'components/molecules/animate.molecule';
+import CMSImageWrapper from 'components/molecules/cms-image-wrapper.molecule';
 
 interface Props {
 	title: string;
-	thumbnailSrc: string;
+	thumbnailImage: any;
 	thumbnailAltText: string;
 	content: string;
 }
@@ -15,15 +16,15 @@ const MassSaveStagesCard: React.FC<Props> = (props) => {
 			<div className="xs:px-[2em] h-full px-[5em] md:px-[12em] lg:px-[1em] xl:px-[2em]  ">
 				<Animate cascade>
 					<div className="image-icon-wrapper mx-auto h-[60px] w-[60px] md:h-[80px] md:w-[80px]">
-						<Image
-							src={props.thumbnailSrc}
-							alt={props.thumbnailAltText}
-							width={80}
-							height={80}
+						<CMSImageWrapper
+							altText={props.thumbnailAltText || ''}
+							image={props.thumbnailImage || null}
+							shouldBePrefetched={true}
 							style={{
 								width: '100%',
+								objectFit: 'contain',
 							}}
-						></Image>
+						/>
 					</div>
 					<div className=" text-center lg:pt-8">
 						<h5 className=" text-primary-black pb-4">{props.title}</h5>

@@ -49,26 +49,26 @@ const MassSaveStagesContent = () => {
 						</ContentWrapper.Description>
 					</ContentWrapper>
 				</div>
-				<div className="flex-col items-center lg:flex lg:flex-row ">
+				<div className="flex-col items-center lg:flex  lg:flex-row lg:items-start ">
 					{stagesCards?.map((content, index) => {
 						return (
-							<div key={index} className="mb-4 flex flex-row   ">
+							<div key={index} className="mb-4   ">
 								<MassSaveStagesCard
 									key={index}
 									title={content?.titleText || ''}
 									content={content?.description || ''}
-									thumbnailSrc={content?.image?.asset?.url || ''}
+									thumbnailImage={content?.image}
 									thumbnailAltText={''}
 								/>
 								{/* {index !== stagesCards.length - 1 && (
-									<div className="image-icon-wrapper mx-auto h-[60px] w-[60px] md:h-[80px] md:w-[80px]">
+									<div className="hidden w-[80px] lg:block">
 										<Image
 											src={'/images/mass-save/horizontal-dashed-separator.svg'}
 											alt="Horizontal Separator"
-											width={200}
-											height={200}
+											fill={true}
 											style={{
 												width: '100%',
+												objectFit: 'contain',
 											}}
 										></Image>
 									</div>
