@@ -13,6 +13,13 @@ const AboutMassSaveSection = () => {
 			className="  xs:-mt-[5em] 3xl:-mt-[32em] 4xl:-mt-[34em] relative z-10 -mt-[6em] sm:-mt-[8em] md:-mt-[11em] lg:-mt-[14em] xl:-mt-[17em] 2xl:-mt-[27em]"
 		>
 			<WaveWrapper waveURL={topWave}></WaveWrapper>
+			<Image
+				src={'/images/mass-save/mass-save-blob.svg'}
+				height={180}
+				width={200}
+				alt="Right Blob Mobile"
+				className="xs:translate-x-[55%] xs:translate-y-[445%]  absolute right-0 bottom-0 z-[-1] translate-x-[45%] translate-y-[355%] transform md:translate-x-[45%]  lg:hidden"
+			/>
 			<div className="3xl:mt-[-10em] 4xl:-mt-[15em] 3xl:mb-[-10em] xs:mb-[0em] relative z-20 md:mt-[-4em] xl:mt-[-8em] xl:mb-[-3em] 2xl:mb-[-6em] ">
 				<SectionContentWrapper>
 					<AboutMassSaveContent />
