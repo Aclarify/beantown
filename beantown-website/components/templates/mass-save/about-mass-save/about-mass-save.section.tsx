@@ -1,41 +1,18 @@
 import React from 'react';
-import useWindowDimensions from '@lib/hooks/use-window-dimensions.hook';
 import WaveWrapper from 'components/molecules/wave-wrapper.molecule';
 import Image from 'next/image';
 import SectionContentWrapper from 'components/molecules/section-content-wrapper.molecule';
 import AboutMassSaveContent from './about-mass-save.content';
-import topWave from 'public/images/about-us/mission/about-us-mission-top-wave.svg';
-import topWaveMobile from 'public/images/about-us/mission/about-us-mission-top-wave-mobile.svg';
+import topWave from 'public/images/mass-save/mass-save-hero-wave-blob.svg';
 import MassSaveFeaturesContent from '../features/mass-save-features.content';
-import { SCREEN_BREAKPOINTS } from '@typing/common/interfaces/devices.interface';
 
 const AboutMassSaveSection = () => {
-	const { width } = useWindowDimensions();
 	return (
 		<section
 			id="aboutMassSave"
-			className="  xs:-mt-[2em] 3xl:-mt-[12em] 4xl:-mt-[16em] relative z-10 -mt-[3em] sm:-mt-[3em] md:-mt-[5em] xl:-mt-[7em] 2xl:-mt-[9em]"
+			className="  xs:-mt-[5em] 3xl:-mt-[32em] 4xl:-mt-[34em] relative z-10 -mt-[6em] sm:-mt-[8em] md:-mt-[11em] lg:-mt-[14em] xl:-mt-[17em] 2xl:-mt-[27em]"
 		>
-			<WaveWrapper
-				waveURL={width > SCREEN_BREAKPOINTS.MD ? topWave : topWaveMobile}
-			></WaveWrapper>
-
-			{/* <Image
-				src={'/images/mass-save/mass-save-blob-below-hero-wave.svg'}
-				height={600}
-				width={500}
-				alt="Right Blob"
-				className="3xl:translate-x-[45%] 3xl:translate-y-[120%]  absolute right-0 top-0 z-[15] hidden translate-x-[65%] translate-y-[35%] transform lg:block xl:translate-x-[60%] xl:translate-y-[45%] 2xl:translate-x-[60%] 2xl:translate-y-[60%]"
-			/> */}
-
-			{/* <Image
-				src={'/images/mass-save/mass-save-blob.svg'}
-				height={180}
-				width={200}
-				alt="Right Blob Mobile"
-				className="xs:translate-x-[55%] xs:translate-y-[445%]  absolute right-0 bottom-0 z-[-1] translate-x-[45%] translate-y-[355%] transform md:translate-x-[45%]  lg:hidden"
-			/> */}
-
+			<WaveWrapper waveURL={topWave}></WaveWrapper>
 			<div className="3xl:mt-[-10em] 4xl:-mt-[15em] 3xl:mb-[-10em] xs:mb-[0em] relative z-20 md:mt-[-4em] xl:mt-[-8em] xl:mb-[-3em] 2xl:mb-[-6em] ">
 				<SectionContentWrapper>
 					<AboutMassSaveContent />
