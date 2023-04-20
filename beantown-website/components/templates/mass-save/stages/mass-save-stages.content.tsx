@@ -1,14 +1,21 @@
 import RichText from 'components/molecules/rich-text.molecule';
 import ContentWrapper from 'components/organisms/content-wrapper.organism';
 import React, { useContext } from 'react';
+import clsx from 'clsx';
 import MassSaveStagesCard from './mass-save-stages-cards';
 import { GlobalContext } from '@contexts/global/global.context';
 import { GlobalContextProps } from '@typing/common/interfaces/contexts.interface';
 import { MassSaveContentProps } from 'pages/mass-save';
 import SectionContentWrapper from 'components/molecules/section-content-wrapper.molecule';
 import Animate from 'components/molecules/animate.molecule';
+import CtaWrapper from 'components/molecules/cta-wrapper.molecule';
+import ContactUsModal from 'components/organisms/contact-us-modal.organism';
+import { buttonHoverStyle } from '@lib/styles/button.style';
+import { useModal } from 'components/organisms/modal.organism';
+import Image from 'next/image';
 
 const MassSaveStagesContent = () => {
+	const { isVisible, toggleModal } = useModal();
 	const { pageContent } =
 		useContext<GlobalContextProps<MassSaveContentProps>>(GlobalContext);
 	if (!pageContent) {
@@ -16,7 +23,13 @@ const MassSaveStagesContent = () => {
 	}
 	const pageData = pageContent.page[0];
 
-	const { howItWorksTitle, howItWorksDescription, stagesCards } = pageData;
+	const {
+		logoDark,
+		howItWorksTitle,
+		howItWorksDescription,
+		stagesCards,
+		contactButton,
+	} = pageData;
 	return (
 		<SectionContentWrapper>
 			<div className="relative   px-5 lg:pt-14">
@@ -39,7 +52,7 @@ const MassSaveStagesContent = () => {
 				<div className="flex-col items-center lg:flex lg:flex-row ">
 					{stagesCards?.map((content, index) => {
 						return (
-							<div key={index} className=" mb-4   ">
+							<div key={index} className="mb-4 flex flex-row   ">
 								<MassSaveStagesCard
 									key={index}
 									title={content?.titleText || ''}
@@ -47,9 +60,46 @@ const MassSaveStagesContent = () => {
 									thumbnailSrc={content?.image?.asset?.url || ''}
 									thumbnailAltText={''}
 								/>
+								{/* {index !== stagesCards.length - 1 && (
+									<div className="image-icon-wrapper mx-auto h-[60px] w-[60px] md:h-[80px] md:w-[80px]">
+										<Image
+											src={'/images/mass-save/horizontal-dashed-separator.svg'}
+											alt="Horizontal Separator"
+											width={200}
+											height={200}
+											style={{
+												width: '100%',
+											}}
+										></Image>
+									</div>
+								)} */}
 							</div>
 						);
 					})}
+				</div>
+				<div className="flex flex-col items-center  text-center">
+					<ContentWrapper.CTA className="mt-[16px] lg:mt-[32px]">
+						<CtaWrapper.CTA
+							className={clsx(
+								'bg-primary-shade-1 button text-white',
+								buttonHoverStyle
+							)}
+							onClick={toggleModal}
+						>
+							{contactButton?.text}
+						</CtaWrapper.CTA>
+					</ContentWrapper.CTA>
+					<ContactUsModal
+						isVisible={isVisible}
+						onClose={toggleModal}
+						logoDark={logoDark}
+						ctaBgColor="bg-primary-shade-1"
+						ctaTextColor="text-white"
+						dialogTitle={contactButton?.dialogTitle || ''}
+						dialogDescription={contactButton?.dialogDesc || ''}
+						buttonHref={contactButton?.dialogButtonHref || ''}
+						buttonText={contactButton?.dialogButtonText || ''}
+					/>
 				</div>
 			</div>
 		</SectionContentWrapper>

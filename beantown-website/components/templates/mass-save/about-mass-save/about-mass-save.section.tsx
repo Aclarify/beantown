@@ -19,21 +19,21 @@ const AboutMassSaveSection = () => {
 				waveURL={width > 1023 ? topWave : topWaveMobile}
 			></WaveWrapper>
 
-			<Image
-				src={'/images/mass-save/mass-save-blob.svg'}
+			{/* <Image
+				src={'/images/mass-save/mass-save-blob-below-hero-wave.svg'}
 				height={600}
 				width={500}
 				alt="Right Blob"
 				className="3xl:translate-x-[45%] 3xl:translate-y-[120%]  absolute right-0 top-0 z-[15] hidden translate-x-[65%] translate-y-[35%] transform lg:block xl:translate-x-[60%] xl:translate-y-[45%] 2xl:translate-x-[60%] 2xl:translate-y-[60%]"
-			/>
+			/> */}
 
-			<Image
+			{/* <Image
 				src={'/images/mass-save/mass-save-blob.svg'}
 				height={180}
 				width={200}
 				alt="Right Blob Mobile"
 				className="xs:translate-x-[55%] xs:translate-y-[445%]  absolute right-0 bottom-0 z-[-1] translate-x-[45%] translate-y-[355%] transform md:translate-x-[45%]  lg:hidden"
-			/>
+			/> */}
 
 			<div className="3xl:mt-[-10em] 4xl:-mt-[15em] 3xl:mb-[-10em] xs:mb-[0em] relative z-20 md:mt-[-4em] xl:mt-[-8em] xl:mb-[-3em] 2xl:mb-[-6em] ">
 				<SectionContentWrapper>

@@ -61,6 +61,10 @@ const massSaveQuery = `allMassSave {
 			contactButton {
 				text
 				href
+				dialogTitle
+				dialogDesc
+				dialogButtonHref
+				dialogButtonText
 			}
 			faqTitle
 			faqDescription
