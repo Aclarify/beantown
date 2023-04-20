@@ -56,14 +56,13 @@ export default defineType({
       to: [{type: 'cta'}],
     }),
 
-    defineField({
+     defineField({
       name: 'jobList',
       title: 'List of Job Details To Show',
       type: 'array',
       of: [
         {
-          type: 'reference',
-          to: [{type: 'jobDetails'}],
+          type: 'jobDetails',                 
         },
       ],
     }),
@@ -73,12 +72,7 @@ export default defineType({
       type: 'array',
       of: [
         {
-<<<<<<< HEAD
           type: 'titleDescriptionImage',
-=======
-          type: 'reference',
-          to: [{type: 'titleDescriptionImage'}],
->>>>>>> 4a6af0a08ce1972e826de1cf703acb25db0d1678
         },
       ],
     }),
