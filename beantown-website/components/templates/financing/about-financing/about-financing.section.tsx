@@ -6,9 +6,8 @@ import SectionContentWrapper from 'components/molecules/section-content-wrapper.
 import AboutFinancingContent from './about-financing.content';
 import topWave from 'public/images/about-us/mission/about-us-mission-top-wave.svg';
 import topWaveMobile from 'public/images/about-us/mission/about-us-mission-top-wave-mobile.svg';
-import bottomWave from 'public/images/about-us/values/about-us-values-bottom-wave.svg';
-import bottomWaveMobile from 'public/images/about-us/values/about-us-values-bottom-wave-mobile.svg';
 import FinancingBenefitsContent from '../benefits/financing-benefits.content';
+import { SCREEN_BREAKPOINTS } from '@typing/common/interfaces/devices.interface';
 
 const AboutFinancingSection = () => {
 	const { width } = useWindowDimensions();
@@ -18,7 +17,7 @@ const AboutFinancingSection = () => {
 			className="  xs:-mt-[2em] 3xl:-mt-[12em] 4xl:-mt-[16em] relative z-10 -mt-[3em] sm:-mt-[3em] md:-mt-[5em] xl:-mt-[7em] 2xl:-mt-[9em]"
 		>
 			<WaveWrapper
-				waveURL={width > 1023 ? topWave : topWaveMobile}
+				waveURL={width > SCREEN_BREAKPOINTS.MD ? topWave : topWaveMobile}
 			></WaveWrapper>
 			<Image
 				src={'/images/about-us/mission/about-us-mission-right-blob.svg'}

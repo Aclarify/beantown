@@ -3,15 +3,13 @@ import { GlobalContext } from '@contexts/global/global.context';
 import { GlobalContextProps } from '@typing/common/interfaces/contexts.interface';
 import RichText from 'components/molecules/rich-text.molecule';
 import ContentWrapper from 'components/organisms/content-wrapper.organism';
-import MaskedImageWithBackgroundVector from 'components/organisms/masked-image-with-blob.organism';
-import useWindowDimensions from '@lib/hooks/use-window-dimensions.hook';
 
 import { FinancingContentProps } from 'pages/financing';
 import Animate from 'components/molecules/animate.molecule';
+import MaskedImageWithBackground from 'components/organisms/masked-image-with-background.organism';
 const AboutFinancingContent = () => {
 	const { pageContent } =
 		useContext<GlobalContextProps<FinancingContentProps>>(GlobalContext);
-	const { width } = useWindowDimensions();
 
 	if (!pageContent) {
 		return null;
@@ -33,13 +31,11 @@ const AboutFinancingContent = () => {
 					id="image-wrapper"
 					className="mb-8 md:mt-12  md:basis-1/2 md:px-20 lg:px-10  "
 				>
-					<MaskedImageWithBackgroundVector
-						imageURL={aboutSectionImage?.asset?.url || ''}
+					<MaskedImageWithBackground
+						image={aboutSectionImage || null}
 						imgAltText={aboutSectionImage?.asset?.altText || ''}
-						maskImg="./images/about-us/mission/about-us-mission-mask-blob.svg"
-						bgImg="./images/about-us/mission/about-us-mission-bg-blob.svg"
-						width={width > 768 ? 1000 : 500}
-						height={width > 768 ? 1000 : 500}
+						maskImg={'./images/about-us/mission/about-us-mission-mask-blob.svg'}
+						bgImg={'./images/about-us/mission/about-us-mission-bg-blob.svg'}
 					/>
 				</div>
 				<div

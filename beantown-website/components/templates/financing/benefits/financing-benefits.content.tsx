@@ -3,10 +3,10 @@ import { GlobalContext } from '@contexts/global/global.context';
 import { GlobalContextProps } from '@typing/common/interfaces/contexts.interface';
 import RichText from 'components/molecules/rich-text.molecule';
 import ContentWrapper from 'components/organisms/content-wrapper.organism';
-import MaskedImageWithBackgroundVector from 'components/organisms/masked-image-with-blob.organism';
 import useWindowDimensions from '@lib/hooks/use-window-dimensions.hook';
 import { FinancingContentProps } from 'pages/financing';
 import Animate from 'components/molecules/animate.molecule';
+import MaskedImageWithBackground from 'components/organisms/masked-image-with-background.organism';
 const FinancingBenefitsContent = () => {
 	const { pageContent } =
 		useContext<GlobalContextProps<FinancingContentProps>>(GlobalContext);
@@ -48,11 +48,9 @@ const FinancingBenefitsContent = () => {
 					id="image-wrapper"
 					className="mb-8 md:mt-12  md:basis-1/2 md:px-20 lg:px-10  "
 				>
-					<MaskedImageWithBackgroundVector
-						imageURL={benefitsImage?.asset?.url || ''}
+					<MaskedImageWithBackground
+						image={benefitsImage || null}
 						imgAltText={benefitsImage?.asset?.altText || ''}
-						width={width > 768 ? 1000 : 500}
-						height={width > 768 ? 1000 : 500}
 						maskImg="./images/about-us/values/about-us-values-mask-blob.svg"
 						bgImg="./images/about-us/values/about-us-values-bg-blob.svg"
 					/>
