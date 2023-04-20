@@ -2,7 +2,7 @@ import {defineField, defineType} from 'sanity'
 export default defineType({
   name: 'jobDetails',
   title: 'Career Page Job Details',
-  type: 'document',
+  type: 'object',
   fields: [
     defineField({
       name: 'positionName',
@@ -44,10 +44,15 @@ export default defineType({
       title: 'job Description',
       type: 'portableText',
     }),
+    defineField({
+      name: 'jobResponsibilityMainTitle',
+      title: 'Job Responsibility Title',
+      type: 'string',
+    }),
 
     defineField({
       name: 'jobResponsibilityTitle',
-      title: 'Job Responsibility Title',
+      title: 'Title',
       type: 'string',
     }),
 
@@ -59,3 +64,4 @@ export default defineType({
     }),
   ],
 })
+
