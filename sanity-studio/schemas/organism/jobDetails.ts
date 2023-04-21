@@ -10,6 +10,14 @@ export default defineType({
       type: 'string',
     }),
     defineField({
+      name: 'jobImage',
+      title: 'Job Image',
+      type: 'image',
+      options: {
+        hotspot: true,
+      },
+    }),
+    defineField({
       name: 'learnMoreButton',
       title: 'Job Description Button',
       type: 'reference',
@@ -26,10 +34,25 @@ export default defineType({
         },
       ],
     }),
+    defineField({
+      name: 'jobDescriptionTitle',
+      title: 'Job Description Title',
+      type: 'string',
+    }),
+    defineField({
+      name: 'jobDescription',
+      title: 'job Description',
+      type: 'portableText',
+    }),
+    defineField({
+      name: 'jobResponsibilityMainTitle',
+      title: 'Job Responsibility Title',
+      type: 'string',
+    }),
 
     defineField({
       name: 'jobResponsibilityTitle',
-      title: 'Job Responsibility Title',
+      title: 'Title',
       type: 'string',
     }),
 
@@ -41,3 +64,4 @@ export default defineType({
     }),
   ],
 })
+
