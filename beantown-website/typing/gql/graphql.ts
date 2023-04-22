@@ -1169,7 +1169,11 @@ export type JobDetails = {
 	_key?: Maybe<Scalars['String']>;
 	_type?: Maybe<Scalars['String']>;
 	jobBenefitCards?: Maybe<Array<Maybe<TitleDescriptionImage>>>;
+	jobDescription?: Maybe<PortableText>;
+	jobDescriptionTitle?: Maybe<Scalars['String']>;
+	jobImage?: Maybe<Image>;
 	jobResponsibilities?: Maybe<Array<Maybe<Scalars['String']>>>;
+	jobResponsibilityMainTitle?: Maybe<Scalars['String']>;
 	jobResponsibilityTitle?: Maybe<Scalars['String']>;
 	learnMoreButton?: Maybe<Cta>;
 	positionName?: Maybe<Scalars['String']>;
@@ -1178,6 +1182,10 @@ export type JobDetails = {
 export type JobDetailsFilter = {
 	_key?: InputMaybe<StringFilter>;
 	_type?: InputMaybe<StringFilter>;
+	jobDescription?: InputMaybe<PortableTextFilter>;
+	jobDescriptionTitle?: InputMaybe<StringFilter>;
+	jobImage?: InputMaybe<ImageFilter>;
+	jobResponsibilityMainTitle?: InputMaybe<StringFilter>;
 	jobResponsibilityTitle?: InputMaybe<StringFilter>;
 	learnMoreButton?: InputMaybe<CtaFilter>;
 	positionName?: InputMaybe<StringFilter>;
@@ -1186,6 +1194,10 @@ export type JobDetailsFilter = {
 export type JobDetailsSorting = {
 	_key?: InputMaybe<SortOrder>;
 	_type?: InputMaybe<SortOrder>;
+	jobDescription?: InputMaybe<PortableTextSorting>;
+	jobDescriptionTitle?: InputMaybe<SortOrder>;
+	jobImage?: InputMaybe<ImageSorting>;
+	jobResponsibilityMainTitle?: InputMaybe<SortOrder>;
 	jobResponsibilityTitle?: InputMaybe<SortOrder>;
 	positionName?: InputMaybe<SortOrder>;
 };
@@ -1261,6 +1273,62 @@ export type LinkSorting = {
 	linkName?: InputMaybe<SortOrder>;
 	linkText?: InputMaybe<SortOrder>;
 	newWindow?: InputMaybe<SortOrder>;
+};
+
+export type LinksHub = Document & {
+	__typename?: 'LinksHub';
+	/** Date the document was created */
+	_createdAt?: Maybe<Scalars['DateTime']>;
+	/** Document ID */
+	_id?: Maybe<Scalars['ID']>;
+	_key?: Maybe<Scalars['String']>;
+	/** Current document revision */
+	_rev?: Maybe<Scalars['String']>;
+	/** Document type */
+	_type?: Maybe<Scalars['String']>;
+	/** Date the document was last modified */
+	_updatedAt?: Maybe<Scalars['DateTime']>;
+	links?: Maybe<Array<Maybe<Link>>>;
+	linksHubDescription?: Maybe<Scalars['String']>;
+	linksHubTitle?: Maybe<Scalars['String']>;
+	logoDark?: Maybe<ImageIcon>;
+	logoLight?: Maybe<ImageIcon>;
+	metaDescription?: Maybe<Scalars['String']>;
+	name?: Maybe<Scalars['String']>;
+	pageTitle?: Maybe<Scalars['String']>;
+	socialMediaIcons?: Maybe<Array<Maybe<ImageIcon>>>;
+};
+
+export type LinksHubFilter = {
+	/** Apply filters on document level */
+	_?: InputMaybe<Sanity_DocumentFilter>;
+	_createdAt?: InputMaybe<DatetimeFilter>;
+	_id?: InputMaybe<IdFilter>;
+	_key?: InputMaybe<StringFilter>;
+	_rev?: InputMaybe<StringFilter>;
+	_type?: InputMaybe<StringFilter>;
+	_updatedAt?: InputMaybe<DatetimeFilter>;
+	linksHubDescription?: InputMaybe<StringFilter>;
+	linksHubTitle?: InputMaybe<StringFilter>;
+	logoDark?: InputMaybe<ImageIconFilter>;
+	logoLight?: InputMaybe<ImageIconFilter>;
+	metaDescription?: InputMaybe<StringFilter>;
+	name?: InputMaybe<StringFilter>;
+	pageTitle?: InputMaybe<StringFilter>;
+};
+
+export type LinksHubSorting = {
+	_createdAt?: InputMaybe<SortOrder>;
+	_id?: InputMaybe<SortOrder>;
+	_key?: InputMaybe<SortOrder>;
+	_rev?: InputMaybe<SortOrder>;
+	_type?: InputMaybe<SortOrder>;
+	_updatedAt?: InputMaybe<SortOrder>;
+	linksHubDescription?: InputMaybe<SortOrder>;
+	linksHubTitle?: InputMaybe<SortOrder>;
+	metaDescription?: InputMaybe<SortOrder>;
+	name?: InputMaybe<SortOrder>;
+	pageTitle?: InputMaybe<SortOrder>;
 };
 
 export type MassSave = Document & {
@@ -1608,6 +1676,7 @@ export type RootQuery = {
 	ImageIcon?: Maybe<ImageIcon>;
 	Images?: Maybe<Images>;
 	Link?: Maybe<Link>;
+	LinksHub?: Maybe<LinksHub>;
 	MassSave?: Maybe<MassSave>;
 	Memberships?: Maybe<Memberships>;
 	Nav?: Maybe<Nav>;
@@ -1631,6 +1700,7 @@ export type RootQuery = {
 	allImageIcon: Array<ImageIcon>;
 	allImages: Array<Images>;
 	allLink: Array<Link>;
+	allLinksHub: Array<LinksHub>;
 	allMassSave: Array<MassSave>;
 	allMemberships: Array<Memberships>;
 	allNav: Array<Nav>;
@@ -1695,6 +1765,10 @@ export type RootQueryImagesArgs = {
 };
 
 export type RootQueryLinkArgs = {
+	id: Scalars['ID'];
+};
+
+export type RootQueryLinksHubArgs = {
 	id: Scalars['ID'];
 };
 
@@ -1830,6 +1904,13 @@ export type RootQueryAllLinkArgs = {
 	offset?: InputMaybe<Scalars['Int']>;
 	sort?: InputMaybe<Array<LinkSorting>>;
 	where?: InputMaybe<LinkFilter>;
+};
+
+export type RootQueryAllLinksHubArgs = {
+	limit?: InputMaybe<Scalars['Int']>;
+	offset?: InputMaybe<Scalars['Int']>;
+	sort?: InputMaybe<Array<LinksHubSorting>>;
+	where?: InputMaybe<LinksHubFilter>;
 };
 
 export type RootQueryAllMassSaveArgs = {
