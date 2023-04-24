@@ -56,15 +56,20 @@ export default defineType({
       to: [{type: 'cta'}],
     }),
 
-     defineField({
+    defineField({
       name: 'jobList',
       title: 'List of Job Details To Show',
       type: 'array',
       of: [
         {
-          type: 'jobDetails',                 
+          type: 'jobDetails',
         },
       ],
+    }),
+    defineField({
+      name: 'globaljobBenefitSectionTitle',
+      title: 'Global Job Benefit  Section Title',
+      type: 'string',
     }),
     defineField({
       name: 'careerBenefits',

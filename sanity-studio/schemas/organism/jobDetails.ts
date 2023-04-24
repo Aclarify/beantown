@@ -23,6 +23,11 @@ export default defineType({
       type: 'reference',
       to: [{type: 'cta'}],
     }),
+    defineField({
+      name: 'jobBenefitCardsSectionTitle',
+      title: 'Benefit Card Section Title',
+      type: 'string',
+    }),
 
     defineField({
       name: 'jobBenefitCards',
