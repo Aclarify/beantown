@@ -10,21 +10,20 @@ import { SCREEN_BREAKPOINTS } from '@typing/common/interfaces/devices.interface'
 import Animate from 'components/molecules/animate.molecule';
 import { CareersContentProps } from 'pages/careers';
 import CMSImageWrapper from 'components/molecules/cms-image-wrapper.molecule';
-import { jobsContext } from '@contexts/jobs/jobs.context';
+import { jobsContext } from '@contexts/jobs/Job-benefits-context';
 import Button from 'components/atoms/button.atom';
 
 const JobsSliderContent = () => {
 	const slider = React.useRef<Slider | null>(null);
 	const { pageContent } =
 		useContext<GlobalContextProps<CareersContentProps>>(GlobalContext);
-	const { activeJobDetails, setActiveJobDetails } =
-	     useContext(jobsContext);		
+	const { activeJobDetails, setActiveJobDetails } = useContext(jobsContext);
 	if (!pageContent) {
 		return null;
 	}
-	
+
 	const pageData = pageContent.page[0];
-	const { jobList  } = pageData;
+	const { jobList } = pageData;
 	if (!jobList) {
 		return null;
 	}
@@ -144,14 +143,13 @@ const JobsSliderContent = () => {
 												}}
 											/>
 										</div>
-										
 
 										<div className="container absolute bottom-20 left-0 flex  w-full  items-center   justify-between  p-8  pb-8  md:gap-2  lg:pt-4  ">
-											<h6 className="text-white w-1/2 text-lg md:text-3xl xl:text-4xl font-semibold  ">
+											<h6 className="w-1/2 text-lg font-semibold text-white md:text-3xl xl:text-4xl  ">
 												{jobDetails?.positionName}
 											</h6>
 
-											<button className=" text-primary-black  rounded-lg bg-[#7AADD3]  px-4 py-4 text-sm  md:text-xl  lg:px-8  md:text-2xl  ">
+											<button className=" text-primary-black  rounded-lg bg-[#7AADD3]  px-4 py-4 text-sm  md:text-xl  md:text-2xl  lg:px-8  ">
 												{jobDetails?.learnMoreButton?.text}
 											</button>
 										</div>
@@ -165,7 +163,7 @@ const JobsSliderContent = () => {
 					<button
 						onClick={previous}
 						aria-label={'left-arrow'}
-						className=" text-primary-shade-1 bg-secondary-shade-3  flex h-12 w-20 flex justify-center  rounded-full  px-6 py-4 md:px-12 "
+						className=" text-primary-shade-1 bg-secondary-shade-3  flex flex h-12 w-20 justify-center  rounded-full  px-6 py-4 md:px-12 "
 					>
 						<FontAwesomeIcon icon={faArrowLeft} />
 					</button>

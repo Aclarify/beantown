@@ -6,26 +6,23 @@ import Animate from 'components/molecules/animate.molecule';
 import BookNowButton from 'components/atoms/book-now-button.atom';
 import { CareersContentProps } from 'pages/careers';
 import CMSImageWrapper from 'components/molecules/cms-image-wrapper.molecule';
-import { jobsContext } from '@contexts/jobs/jobs.context';
+import { jobsContext } from '@contexts/jobs/Job-benefits-context';
 import Link from 'next/link';
 import Button from 'components/atoms/button.atom';
 
-
 const JobBenefitsContent = () => {
-
-
-	const { pageContent } =	
+	const { pageContent } =
 		useContext<GlobalContextProps<CareersContentProps>>(GlobalContext);
-		const { activeJobDetails } = useContext(jobsContext);
+	const { activeJobDetails } = useContext(jobsContext);
 	if (!pageContent) {
 		return null;
 	}
 	const pageData = pageContent.page[0];
-	const { careerBenefits ,globaljobBenefitSectionTitle} = pageData;
+	const { careerBenefits, globaljobBenefitSectionTitle } = pageData;
 	if (!activeJobDetails) {
 		return null;
 	}
-	
+
 	return (
 		<section className="mb-72 mt-12 md:mt-28">
 			<Animate>
@@ -71,7 +68,7 @@ const JobBenefitsContent = () => {
 							)}
 						</div>
 					)}
-					<h3>{activeJobDetails.positionName + ' Job Benefits'}</h3>
+					
 					{/* Job Selected Benefits */}
 					<div className=" container mx-auto mt-8 flex  h-auto   w-full flex-wrap items-center justify-center  gap-8 md:mt-20 ">
 						{activeJobDetails.jobBenefitCards?.map(

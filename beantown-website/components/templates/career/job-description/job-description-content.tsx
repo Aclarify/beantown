@@ -1,9 +1,9 @@
 import { GlobalContext } from '@contexts/global/global.context';
-import { jobsContext } from '@contexts/jobs/jobs.context';
+import { jobsContext } from '@contexts/jobs/Job-benefits-context';
 import { GlobalContextProps } from '@typing/common/interfaces/contexts.interface';
 import RichText from 'components/molecules/rich-text.molecule';
 import { CareersContentProps } from 'pages/careers';
-import React, { useContext } from 'react'
+import React, { useContext } from 'react';
 
 const JobDescriptionResponsibilityContent = () => {
 	const { pageContent } =
@@ -16,8 +16,8 @@ const JobDescriptionResponsibilityContent = () => {
 	if (!activeJobDetails) {
 		return null;
 	}
-	
-  return (
+
+	return (
 		<>
 			<div
 				id="job-description-responsibility-section"
@@ -25,7 +25,7 @@ const JobDescriptionResponsibilityContent = () => {
 			>
 				<div
 					id="job-description"
-					className=" flex-1  rounded-md bg-[#FFFFFF] p-8 space-y-4 "
+					className=" flex-1  space-y-4 rounded-md bg-[#FFFFFF] p-8 "
 				>
 					<div>
 						<h2 className=" ">
@@ -45,7 +45,10 @@ const JobDescriptionResponsibilityContent = () => {
 
 					{activeJobDetails.jobResponsibilities?.map((data, index) => {
 						return (
-							<div key={index} className="m-2 rounded-md bg-white p-4 flex flex-col gap-2 ">
+							<div
+								key={index}
+								className="m-2 flex flex-col gap-2 rounded-md bg-white p-4 "
+							>
 								<h6 className="text-3xl font-semibold">
 									{activeJobDetails.jobResponsibilityTitle}
 								</h6>
@@ -58,5 +61,5 @@ const JobDescriptionResponsibilityContent = () => {
 		</>
 	);
 };
-  
-export default JobDescriptionResponsibilityContent
+
+export default JobDescriptionResponsibilityContent;

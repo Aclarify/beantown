@@ -4,40 +4,41 @@ import JobDescriptionResponsibilitySection from '../job-description/job-descript
 import { GlobalContext } from '@contexts/global/global.context';
 import { GlobalContextProps } from '@typing/common/interfaces/contexts.interface';
 import { CareersContentProps } from 'pages/careers';
-import { JobDetails} from '@typing/gql/graphql';
-import { jobsContext } from '@contexts/jobs/jobs.context';
+import { JobDetails } from '@typing/gql/graphql';
+import { jobsContext } from '@contexts/jobs/Job-benefits-context';
 import Image from 'next/image';
 
 const JobSection = () => {
-		const { pageContent } =
-			useContext<GlobalContextProps<CareersContentProps>>(GlobalContext);
-			const [activeJobDetails, setActiveJobDetails] =
-				useState<JobDetails>();	
-				const [selectedJobDetails, setSelectedJobDetails] = useState<JobDetails | any>();		
+	const { pageContent } =
+		useContext<GlobalContextProps<CareersContentProps>>(GlobalContext);
+	const [activeJobDetails, setActiveJobDetails] = useState<JobDetails>();
+	const [selectedJobDetails, setSelectedJobDetails] = useState<
+		JobDetails | any
+	>();
 
-			const [show, setShow] = useState(true);
+	const [show, setShow] = useState(true);
 
-		useEffect(() => {
-			setShow(false);
-			setTimeout(() => {
-				setShow(true);
-			}, 100);
-		}, [activeJobDetails]);
+	useEffect(() => {
+		setShow(false);
+		setTimeout(() => {
+			setShow(true);
+		}, 100);
+	}, [activeJobDetails]);
 
-		if (!pageContent) {
-			return null;
-		}
-		const pageData = pageContent.page[0];
-		const { jobList } = pageData;
-		if (!jobList) {
-			return null;
-		}
-		
+	if (!pageContent) {
+		return null;
+	}
+	const pageData = pageContent.page[0];
+	const { jobList } = pageData;
+	if (!jobList) {
+		return null;
+	}
+
 	return (
 		<jobsContext.Provider
 			value={{
-				activeJobDetails: activeJobDetails || jobList[0],				
-				setActiveJobDetails,				
+				activeJobDetails: activeJobDetails || jobList[0],
+				setActiveJobDetails,
 			}}
 		>
 			<Image
