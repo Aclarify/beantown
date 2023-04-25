@@ -41,8 +41,8 @@ const JobsSliderContent = () => {
 		dots: false,
 		infinite: true,
 		speed: 800,
-		slidesToShow: 4,
-		slidesToScroll: 1,
+		slidesToShow: 1,
+		slidesToScroll: 1,		
 		arrows: false,
 		initialSlide: 0,
 		focusOnSelect: true,
@@ -116,7 +116,7 @@ const JobsSliderContent = () => {
 	};
 	return (
 		<>
-			<div className=" w-full pl-5 pt-4 md:pl-8 2xl:pl-[120px] ">
+			<div className=" w-full pl-5 pt-4 md:pl-8 2xl:pl-[120px] pb-8 ">
 				<Slider ref={slider} {...settings}>
 					{jobList?.map((jobDetails, index) => {
 						return (
