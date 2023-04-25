@@ -53,7 +53,7 @@ const JobsSliderContent = () => {
 				breakpoint: SCREEN_BREAKPOINTS.XXL,
 				settings: {
 					slidesToShow: 3.5,
-					slidesToScroll: 4,
+					slidesToScroll: 1,
 					variableWidth: true,
 				},
 			},
