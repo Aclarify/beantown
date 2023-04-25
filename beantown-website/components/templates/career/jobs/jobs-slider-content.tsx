@@ -40,19 +40,20 @@ const JobsSliderContent = () => {
 	const settings = {
 		dots: false,
 		infinite: true,
-		speed: 800,
+		speed: 1300,
 		slidesToShow: 1,
-		slidesToScroll: 1,		
+		slidesToScroll: 1,
 		arrows: false,
 		initialSlide: 0,
 		focusOnSelect: true,
 		variableWidth: true,
+		useTransform: false,
 		responsive: [
 			{
 				breakpoint: SCREEN_BREAKPOINTS.XXL,
 				settings: {
 					slidesToShow: 3.5,
-					slidesToScroll: 1,
+					slidesToScroll: 4,
 					variableWidth: true,
 				},
 			},
@@ -127,7 +128,7 @@ const JobsSliderContent = () => {
 										onClick={() => setActiveJobDetails(jobDetails)}
 										className={`${
 											jobDetails == activeJobDetails
-												? 'container  z-10 h-[410px] w-[281px]  scale-105 cursor-pointer p-4  lg:h-[650px] lg:w-[480px]   '
+												? 'container  z-10 h-[410px] w-[281px]    scale-105 cursor-pointer p-4  lg:h-[650px] lg:w-[480px]   '
 												: 'container  h-[410px]  w-[281px] cursor-pointer   p-4  lg:h-[650px] lg:w-[480px] '
 										}`}
 									>
@@ -149,7 +150,7 @@ const JobsSliderContent = () => {
 												{jobDetails?.positionName}
 											</h6>
 
-											<button className=" text-primary-black  rounded-lg bg-[#7AADD3]  px-4 py-4 text-sm  md:text-xl  lg:text-2xl  lg:px-8  ">
+											<button className=" text-primary-black  rounded-lg bg-[#7AADD3]  px-4 py-4 text-sm  md:text-xl  lg:px-8  lg:text-2xl  ">
 												{jobDetails?.learnMoreButton?.text}
 											</button>
 										</div>
