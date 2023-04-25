@@ -49,15 +49,10 @@ const MassSaveStagesContent = () => {
 						</ContentWrapper.Description>
 					</ContentWrapper>
 				</div>
-				<div className="flex-col items-center lg:flex  lg:flex-row lg:items-start ">
+				<div className="flex-col items-center justify-center  lg:flex lg:flex-row lg:items-start">
 					{stagesCards?.map((content, index) => {
 						return (
-							<div
-								key={index}
-								className="overflow-hidden p-4 text-center text-xl before:relative 
-           before:right-2 before:inline-block before:h-[1px] before:w-1/4 
-           before:bg-black before:align-middle "
-							>
+							<div key={index} className="mb-4 flex justify-center">
 								<MassSaveStagesCard
 									key={index}
 									title={content?.titleText || ''}
@@ -65,20 +60,11 @@ const MassSaveStagesContent = () => {
 									thumbnailImage={content?.image}
 									thumbnailAltText={''}
 								/>
-								{/* {index !== stagesCards.length - 1 && (
-									// <div className="hidden w-[80px] lg:block">
-									// 	<Image
-									// 		src={'/images/mass-save/horizontal-dashed-separator.svg'}
-									// 		alt="Horizontal Separator"
-									// 		fill={true}
-									// 		style={{
-									// 			width: '100%',
-									// 			objectFit: 'contain',
-									// 		}}
-									// 	></Image>
-									// </div>
-									<hr className="" />
-								)} */}
+								{index !== stagesCards.length - 1 && (
+									<div className="3xl:mt-[-10em]  relative  hidden w-40 justify-center lg:mt-[-15em] lg:flex lg:flex-col xl:mt-[-14em] 2xl:mt-[-13em]">
+										<div className="dashed-line border-primary-shade-1 border-2 border-dotted"></div>
+									</div>
+								)}
 							</div>
 						);
 					})}
