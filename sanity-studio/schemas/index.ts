@@ -30,6 +30,7 @@ import financing from './pages/financing'
 import careers from './pages/careers'
 import jobDetails from './organism/jobDetails'
 import massSave from './pages/mass-save'
+import linksHub from './pages/links-hub'
 
 export const schemaTypes = [
   //Document Types
@@ -50,6 +51,7 @@ export const schemaTypes = [
   financing,
   careers,
   massSave,
+  linksHub,
   //Other Types
   jobDetails,
   breakType,

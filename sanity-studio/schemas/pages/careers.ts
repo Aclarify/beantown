@@ -62,10 +62,14 @@ export default defineType({
       type: 'array',
       of: [
         {
-          type: 'reference',
-          to: [{type: 'jobDetails'}],
+          type: 'jobDetails',
         },
       ],
+    }),
+    defineField({
+      name: 'globaljobBenefitSectionTitle',
+      title: 'Global Job Benefit  Section Title',
+      type: 'string',
     }),
     defineField({
       name: 'careerBenefits',
@@ -73,8 +77,7 @@ export default defineType({
       type: 'array',
       of: [
         {
-          type: 'reference',
-          to: [{type: 'titleDescriptionImage'}],
+          type: 'titleDescriptionImage',
         },
       ],
     }),
