@@ -23,7 +23,22 @@ const linksHubQuery = `allLinksHub{
         }
       }
     }
-    
+    linksHubTitle
+    linksHubDescription
+    socialMediaIcons{
+      image{
+        asset{
+          url
+          _id
+          _key
+        }
+      }
+    }
+    links{
+      linkName
+      heroIconName
+      href
+    }
   }
 `;
 export default gql`

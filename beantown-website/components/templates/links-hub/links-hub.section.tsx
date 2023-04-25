@@ -1,12 +1,13 @@
 import SectionContentWrapper from 'components/molecules/section-content-wrapper.molecule';
-import BookNowContent from './links-hub.content';
+import LinksHubContent from './links-hub.content';
 import Image from 'next/image';
+import React from 'react';
 
 const BookNowSection = () => {
 	return (
 		<section
 			id="links-hub"
-			className="3xl:mb-[25em] xs:mb-[12em] relative  z-10 mb-[13em] sm:mb-[15em] lg:mb-[18em] xl:mb-[20em] 2xl:mb-[22em]"
+			className="3xl:mb-[25em] xs:mb-[12em]   relative z-10 mb-[13em] sm:mb-[15em] lg:mb-[18em] xl:mb-[20em] 2xl:mb-[22em]"
 		>
 			<Image
 				src={'/images/links-hub/link-hub-left-top-blob.svg'}
@@ -92,7 +93,9 @@ const BookNowSection = () => {
 				alt="Bottom Blob Tablet "
 				className=" absolute bottom-0 right-0 z-[-1] hidden translate-y-[107%]   translate-x-[-17%] transform md:block lg:hidden "
 			/>
-			<SectionContentWrapper>{/* <BookNowContent /> */}</SectionContentWrapper>
+			<SectionContentWrapper>
+				<LinksHubContent />
+			</SectionContentWrapper>
 		</section>
 	);
 };

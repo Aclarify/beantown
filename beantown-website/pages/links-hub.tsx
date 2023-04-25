@@ -45,7 +45,7 @@ const LinksHubPage: React.FC = (props) => {
 		);
 	};
 	return (
-		<div id="book-now" className="bg-primary-white-shade-1">
+		<div id="book-now" className="bg-secondary-shade-3">
 			<PageHead />
 			<Header
 				fontColor="text-primary-shade-1"
