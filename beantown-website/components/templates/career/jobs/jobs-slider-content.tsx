@@ -41,7 +41,7 @@ const JobsSliderContent = () => {
 		dots: false,
 		infinite: true,
 		speed: 1300,
-		slidesToShow: 4,
+		slidesToShow: 1,
 		slidesToScroll: 1,
 		arrows: false,
 		initialSlide: 0,
