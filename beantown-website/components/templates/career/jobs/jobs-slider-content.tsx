@@ -149,7 +149,7 @@ const JobsSliderContent = () => {
 												{jobDetails?.positionName}
 											</h6>
 
-											<button className=" text-primary-black  rounded-lg bg-[#7AADD3]  px-4 py-4 text-sm  md:text-xl  md:text-2xl  lg:px-8  ">
+											<button className=" text-primary-black  rounded-lg bg-[#7AADD3]  px-4 py-4 text-sm  md:text-xl  lg:text-2xl  lg:px-8  ">
 												{jobDetails?.learnMoreButton?.text}
 											</button>
 										</div>
