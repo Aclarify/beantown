@@ -384,6 +384,7 @@ export type Careers = Document & {
 	heroButton?: Maybe<Cta>;
 	heroDescription?: Maybe<Scalars['String']>;
 	heroTitle?: Maybe<Scalars['String']>;
+	globaljobBenefitSectionTitle?: Maybe<Scalars['String']>;
 	jobList?: Maybe<Array<Maybe<JobDetails>>>;
 	logoDark?: Maybe<ImageIcon>;
 	logoLight?: Maybe<ImageIcon>;
@@ -406,6 +407,7 @@ export type CareersFilter = {
 	heroButton?: InputMaybe<CtaFilter>;
 	heroDescription?: InputMaybe<StringFilter>;
 	heroTitle?: InputMaybe<StringFilter>;
+	globaljobBenefitSectionTitle?: InputMaybe<StringFilter>;
 	logoDark?: InputMaybe<ImageIconFilter>;
 	logoLight?: InputMaybe<ImageIconFilter>;
 	metaDescription?: InputMaybe<StringFilter>;
@@ -423,6 +425,7 @@ export type CareersSorting = {
 	careerHeroImage?: InputMaybe<ImageSorting>;
 	heroDescription?: InputMaybe<SortOrder>;
 	heroTitle?: InputMaybe<SortOrder>;
+	globaljobBenefitSectionTitle?: InputMaybe<SortOrder>;
 	metaDescription?: InputMaybe<SortOrder>;
 	name?: InputMaybe<SortOrder>;
 	pageTitle?: InputMaybe<SortOrder>;
