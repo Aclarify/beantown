@@ -42,12 +42,12 @@ const JobDescriptionResponsibilityContent = () => {
 
 				<div
 					id="job-responsibility"
-					className=" bg-secondary-shade-3 flex-1 rounded-2xl p-4 md:p-8 lg:rounded-3xl"
+					className=" bg-secondary-shade-3 flex-1 rounded-2xl p-4 shadow-[rgba(44,_48,_88,_0.16)_0px_8px_200px]  lg:rounded-3xl"
 				>
 					<h3 className="text-primary-black p-4">
 						{activeJobDetails.jobResponsibilityMainTitle}
 					</h3>
-					<div className="flex flex-col gap-4">
+					<div className="flex flex-col ">
 						{activeJobDetails.jobResponsibilities?.map((data, index) => {
 							return (
 								<div
