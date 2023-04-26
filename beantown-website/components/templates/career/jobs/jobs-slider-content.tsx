@@ -111,6 +111,7 @@ const JobsSliderContent = () => {
 					slidesToShow: 1.1,
 					slidesToScroll: 1,
 					variableWidth: true,
+					ltr:true,
 				},
 			},
 		],
@@ -128,7 +129,7 @@ const JobsSliderContent = () => {
 										onClick={() => setActiveJobDetails(jobDetails)}
 										className={`${
 											jobDetails == activeJobDetails
-												? 'container  z-10 h-[410px] w-[281px]    scale-105 cursor-pointer p-4  lg:h-[650px] lg:w-[480px]   '
+												? 'container  z-10 h-[410px] w-[281px]    scale-105 cursor-pointer p-4   lg:h-[650px] lg:w-[480px]   '
 												: 'container  h-[410px]  w-[281px] cursor-pointer   p-4  lg:h-[650px] lg:w-[480px] '
 										}`}
 									>
@@ -145,7 +146,7 @@ const JobsSliderContent = () => {
 											/>
 										</div>
 
-										<div className="container absolute bottom-20 left-0 flex  w-full  items-center   justify-between  p-8  pb-8  md:gap-2  lg:pt-4  ">
+										<div className="container absolute bottom-24 left-0 flex  w-full  items-center   justify-between  p-8  pb-8  md:gap-2  lg:pt-4  ">
 											<h6 className="w-1/2 text-lg font-semibold text-white md:text-3xl xl:text-4xl  ">
 												{jobDetails?.positionName}
 											</h6>
@@ -160,16 +161,16 @@ const JobsSliderContent = () => {
 						);
 					})}
 				</Slider>
+				
 				<div className="relative mt-0 flex justify-between   p-2 pr-4 md:pr-24 ">
-					<button
-						onClick={previous}
+				
+					<button						
 						aria-label={'left-arrow'}
 						className=" text-primary-shade-1 bg-secondary-shade-3  flex flex h-12 w-20 justify-center  rounded-full  px-6 py-4 md:px-12 "
 					>
 						<FontAwesomeIcon icon={faArrowLeft} />
 					</button>
-					<button
-						onClick={next}
+					<button						
 						aria-label={'right-arrow'}
 						className="bg-primary-shade-1 text-secondary-shade-3 flex h-12 w-20 justify-center rounded-full  px-6 py-4 md:px-12 "
 					>

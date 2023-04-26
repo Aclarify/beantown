@@ -26,22 +26,22 @@ const JobBenefitsContent = () => {
 	return (
 		<section className="mb-72 mt-12 md:mt-28">
 			<Animate>
-				<div className="flex flex-col items-center justify-center gap-12">
-					<h3 className=" mx-auto text-center text-2xl md:text-5xl">
+				<div className="flex flex-col items-center justify-center ">
+					<h3 className=" mx-auto text-center text-2xl md:text-5xl p-8">
 						{globaljobBenefitSectionTitle}
 					</h3>
 
 					{/* Global Benefits */}
 					{careerBenefits && (
-						<div className=" container mx-auto mt-8 flex  h-auto   w-full flex-wrap items-center justify-center  gap-8 md:mt-20 ">
+						<div className=" container mx-auto mt-8 flex  h-auto   w-full flex-wrap items-center justify-center gap-8  p-8  md:mt-20 ">
 							{careerBenefits.map(
 								(globalCareerBefenitscardData: any, index: number) => {
 									return (
 										<div
 											key={index}
-											className="md:[w-480px]   flex h-[348px] w-[380px] flex-col  items-center justify-evenly rounded-lg bg-[#FFFFFF]   p-8 shadow-md md:h-[600px] "
+											className="md:[w-480px]   justify-stretch mb-8 flex h-[348px]  w-[380px] flex-col    items-center gap-4 rounded-lg bg-[#FFFFFF] p-8 shadow-[rgba(44,_48,_88,_0.16)_0px_8px_200px] md:h-[600px]  "
 										>
-											<div className="h-[80px] h-[80px] md:w-[120px] md:w-[120px]  ">
+											<div className="mt-4 h-[80px]  w-[80px] md:h-[120px] md:w-[120px]  ">
 												<CMSImageWrapper
 													altText={
 														globalCareerBefenitscardData?.image?.asset
@@ -56,29 +56,29 @@ const JobBenefitsContent = () => {
 													}}
 												/>
 											</div>
-											<h3 className="text-center">
+											<h3 className=" text-center">
 												{globalCareerBefenitscardData?.titleText}
 											</h3>
-											<p className="text-center">
+											<div className=" para cursor-pointer overflow-auto text-center ">
 												{globalCareerBefenitscardData?.description}
-											</p>
+											</div>
 										</div>
 									);
 								}
 							)}
 						</div>
 					)}
-					
+
 					{/* Job Selected Benefits */}
-					<div className=" container mx-auto mt-8 flex  h-auto   w-full flex-wrap items-center justify-center  gap-8 md:mt-20 ">
+					<div className=" container mx-auto  flex  h-auto   w-full flex-wrap items-center justify-center gap-8  p-8  ">
 						{activeJobDetails.jobBenefitCards?.map(
 							(befinitscard: any, index: number) => {
 								return (
 									<div
 										key={index}
-										className="md:[w-480px]   flex h-[348px] w-[380px] flex-col  items-center justify-evenly rounded-lg bg-[#FFFFFF]   p-8 shadow-md md:h-[600px] "
+										className="md:[w-480px]   justify-stretch mb-8 flex h-[348px]  w-[380px] flex-col    items-center gap-4 rounded-lg bg-[#FFFFFF] p-8 shadow-[rgba(44,_48,_88,_0.16)_0px_8px_200px] md:h-[600px]  "
 									>
-										<div className="h-[80px] h-[80px] md:w-[120px] md:w-[120px]  ">
+										<div className="mt-4 h-[80px]  w-[80px] md:h-[120px] md:w-[120px] ">
 											<CMSImageWrapper
 												altText={befinitscard?.image?.asset?.altText || ''}
 												image={befinitscard?.image || null}
@@ -91,7 +91,10 @@ const JobBenefitsContent = () => {
 											/>
 										</div>
 										<h3 className="text-center">{befinitscard?.titleText}</h3>
-										<p className="text-center">{befinitscard?.description}</p>
+
+										<div className="para overflow-auto text-center">
+											{befinitscard?.description}
+										</div>
 									</div>
 								);
 							}
