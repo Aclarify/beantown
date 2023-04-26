@@ -37,7 +37,7 @@ const careersQuery = `
             href
       	} 	
     		jobList{
-          
+          _key
           positionName
            jobImage{
             asset{

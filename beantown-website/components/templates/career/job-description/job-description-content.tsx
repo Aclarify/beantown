@@ -42,7 +42,7 @@ const JobDescriptionResponsibilityContent = () => {
 
 				<div
 					id="job-responsibility"
-					className=" flex-1 rounded-2xl bg-[#F4F8FB] p-4  lg:rounded-3xl"
+					className=" bg-secondary-shade-3 flex-1 rounded-2xl p-4 md:p-8 lg:rounded-3xl"
 				>
 					<h3 className="text-primary-black p-4">
 						{activeJobDetails.jobResponsibilityMainTitle}

@@ -2,7 +2,7 @@ import React from 'react';
 import JobDescriptionResponsibilityContent from './job-description-content';
 import SectionContentWrapper from 'components/molecules/section-content-wrapper.molecule';
 import Image from 'next/image';
-import JobBenefitsContent from './Job-benefits-content';
+import JobBenefitsContent from './job-benefits.content';
 
 const JobDescriptionResponsibilitySection = () => {
 	return (
