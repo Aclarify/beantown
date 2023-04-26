@@ -6,7 +6,6 @@ import JobBenefitsContent from './Job-benefits-content';
 
 const JobDescriptionResponsibilitySection = () => {
   return (
-	
 		<section
 			id="JobDescriptionResponsibility-details"
 			className="relative z-10 mb-40"
@@ -15,19 +14,19 @@ const JobDescriptionResponsibilitySection = () => {
 				<JobDescriptionResponsibilityContent />
 			</SectionContentWrapper>
 			<Image
-				src={'/images/career/jobs/blob-shape.svg'}
-				height={100}
-				width={200}
+				src={'/images/career/jobs/career-page-blob.svg'}
+				height={551}
+				width={661}
 				alt="Left Blob "
-				className="-z-1 absolute left-0 hidden translate-y-[5%] transform lg:block"
+				className="-z-1 absolute left-0 hidden -translate-x-[35%] transform lg:block"
 			/>
 
 			<Image
-				src={'/images/career/jobs/career-right-blob.svg'}
-				height={290}
-				width={350}
-				alt="Right Blob  "				
-				className="-z-1 absolute right-0  block translate-y-[5%] translate-x-[65%] transform"
+				src={'/images/career/jobs/career-page-blob.svg'}
+				height={551}
+				width={661}
+				alt="Right Blob  "
+				className="-z-1 absolute right-0  block translate-x-[45%] translate-x-[65%] transform"
 			/>
 			<SectionContentWrapper>
 				<JobBenefitsContent />

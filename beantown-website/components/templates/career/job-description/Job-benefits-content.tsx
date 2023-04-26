@@ -39,7 +39,7 @@ const JobBenefitsContent = () => {
 									return (
 										<div
 											key={index}
-											className="md:[w-480px]   justify-stretch flex h-[348px] w-[380px]  flex-col items-center    gap-4 rounded-lg bg-[#FFFFFF] p-8 shadow-md md:h-[600px] mb-8  "
+											className="md:[w-480px]   justify-stretch mb-8 flex h-[348px]  w-[380px] flex-col    items-center gap-4 rounded-lg bg-[#FFFFFF] p-8 shadow-[rgba(44,_48,_88,_0.16)_0px_8px_200px] md:h-[600px]  "
 										>
 											<div className="mt-4 h-[80px]  w-[80px] md:h-[120px] md:w-[120px]  ">
 												<CMSImageWrapper
@@ -70,13 +70,13 @@ const JobBenefitsContent = () => {
 					)}
 
 					{/* Job Selected Benefits */}
-					<div className=" container mx-auto  flex  h-auto   w-full flex-wrap items-center justify-center gap-8 p-8  ">
+					<div className=" container mx-auto  flex  h-auto   w-full flex-wrap items-center justify-center gap-8  p-8  ">
 						{activeJobDetails.jobBenefitCards?.map(
 							(befinitscard: any, index: number) => {
 								return (
 									<div
 										key={index}
-										className="md:[w-480px]   justify-stretch flex h-[348px] w-[380px]  flex-col items-center    gap-4 rounded-lg bg-[#FFFFFF] p-8 shadow-md md:h-[600px] mb-8  "
+										className="md:[w-480px]   justify-stretch mb-8 flex h-[348px]  w-[380px] flex-col    items-center gap-4 rounded-lg bg-[#FFFFFF] p-8 shadow-[rgba(44,_48,_88,_0.16)_0px_8px_200px] md:h-[600px]  "
 									>
 										<div className="mt-4 h-[80px]  w-[80px] md:h-[120px] md:w-[120px] ">
 											<CMSImageWrapper

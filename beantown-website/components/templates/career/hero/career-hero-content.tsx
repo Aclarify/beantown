@@ -30,7 +30,7 @@ const CareerHeroContent = () => {
 			>
 				<div
 					id="content-wrapper"
-					className=" flex w-full basis-1/2 flex-col items-start text-left lg:pt-20 "
+					className=" flex w-full basis-1/2 flex-col items-center  md:items-start text-center  md:text-left lg:pt-20 "
 				>
 					<ContentWrapper className="">
 						<ContentWrapper.Title>
@@ -38,7 +38,7 @@ const CareerHeroContent = () => {
 								<h2 className=" text-primary-black ">{heroTitle}</h2>
 							</Animate>
 						</ContentWrapper.Title>
-						<ContentWrapper.Description className="rich-text text-left text-left !font-thin lg:pr-4">
+						<ContentWrapper.Description className="rich-text  text-center md:text-left !font-thin lg:pr-4">
 							<Animate>
 								<p>{heroDescription}</p>
 							</Animate>
