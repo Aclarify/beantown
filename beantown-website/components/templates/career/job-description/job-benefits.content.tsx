@@ -22,6 +22,10 @@ const JobBenefitsContent = () => {
 		return null;
 	}
 
+	const allBenefits = careerBenefits
+		? [...careerBenefits, ...(activeJobDetails?.jobBenefitCards || [])]
+		: activeJobDetails?.jobBenefitCards || [];
+
 	return (
 		<section className="mb-72 mt-12 md:mt-28">
 			<Animate>
@@ -30,74 +34,34 @@ const JobBenefitsContent = () => {
 						{globaljobBenefitSectionTitle}
 					</h3>
 
-					{/* Global Benefits */}
-					{careerBenefits && (
-						<div className=" container mx-auto mt-8 flex  h-auto   w-full flex-wrap items-center justify-center gap-8  p-8  md:mt-20 ">
-							{careerBenefits.map(
-								(globalCareerBefenitscardData: any, index: number) => {
-									return (
-										<div
-											key={index}
-											className="md:[w-480px]   justify-stretch mb-8 flex h-[348px]  w-[380px] flex-col    items-center gap-4 rounded-lg bg-white p-8 shadow-[rgba(44,_48,_88,_0.16)_0px_8px_200px] md:h-[600px]  "
-										>
-											<div className="mt-4 h-[80px]  w-[80px] md:h-[120px] md:w-[120px]  ">
-												<CMSImageWrapper
-													altText={
-														globalCareerBefenitscardData?.image?.asset
-															?.altText || ''
-													}
-													image={globalCareerBefenitscardData?.image || null}
-													shouldBePrefetched={true}
-													style={{
-														width: '100%',
-														height: 'auto',
-														objectFit: 'contain',
-													}}
-												/>
-											</div>
-											<h3 className=" text-center">
-												{globalCareerBefenitscardData?.titleText}
-											</h3>
-											<div className=" para cursor-pointer overflow-auto text-center ">
-												{globalCareerBefenitscardData?.description}
-											</div>
-										</div>
-									);
-								}
-							)}
-						</div>
-					)}
-
 					{/* Job Selected Benefits */}
 					<div className=" container mx-auto  flex  h-auto   w-full flex-wrap items-center justify-center gap-8  p-8  ">
-						{activeJobDetails.jobBenefitCards?.map(
-							(befinitscard: any, index: number) => {
-								return (
-									<div
-										key={index}
-										className="md:[w-480px]   justify-stretch mb-8 flex h-[348px]  w-[380px] flex-col    items-center gap-4 rounded-lg bg-white p-8 shadow-[rgba(44,_48,_88,_0.16)_0px_8px_200px] md:h-[600px]  "
-									>
-										<div className="mt-4 h-[80px]  w-[80px] md:h-[120px] md:w-[120px] ">
-											<CMSImageWrapper
-												altText={befinitscard?.image?.asset?.altText || ''}
-												image={befinitscard?.image || null}
-												shouldBePrefetched={true}
-												style={{
-													width: '100%',
-													height: 'auto',
-													objectFit: 'contain',
-												}}
-											/>
-										</div>
-										<h3 className="text-center">{befinitscard?.titleText}</h3>
-
-										<div className="para overflow-auto text-center">
-											{befinitscard?.description}
-										</div>
+						{allBenefits?.map((befinitscard: any, index: number) => {
+							return (
+								<div
+									key={index}
+									className="md:[w-480px]   justify-stretch mb-8 flex h-[348px]  w-[380px] flex-col    items-center gap-4 rounded-lg bg-white p-8 shadow-[rgba(44,_48,_88,_0.16)_0px_8px_200px] md:h-[600px]  "
+								>
+									<div className="mt-4 h-[80px]  w-[80px] md:h-[120px] md:w-[120px] ">
+										<CMSImageWrapper
+											altText={befinitscard?.image?.asset?.altText || ''}
+											image={befinitscard?.image || null}
+											shouldBePrefetched={true}
+											style={{
+												width: '100%',
+												height: 'auto',
+												objectFit: 'contain',
+											}}
+										/>
 									</div>
-								);
-							}
-						)}
+									<h3 className="text-center">{befinitscard?.titleText}</h3>
+
+									<div className="para overflow-auto text-center">
+										{befinitscard?.description}
+									</div>
+								</div>
+							);
+						})}
 					</div>
 
 					<Button fontColor="text-white" bgColor="bg-primary-shade-1">
