@@ -39,9 +39,9 @@ const JobBenefitsContent = () => {
 									return (
 										<div
 											key={index}
-											className="md:[w-480px]   flex h-[348px] w-[380px] flex-col  items-center justify-evenly  rounded-lg bg-[#FFFFFF]   shadow-md md:h-[600px] p-12 "
+											className="md:[w-480px]   flex h-[348px] w-[380px] flex-col  items-center justify-evenly   gap-2   rounded-lg bg-[#FFFFFF] p-8 shadow-md md:h-[600px] md:gap-4 md:p-12 "
 										>
-											<div className="h-[80px] h-[80px] md:w-[120px] md:w-[120px] p-4  ">
+											<div className="h-[80px] h-[80px] p-4 md:w-[120px] md:w-[120px]  ">
 												<CMSImageWrapper
 													altText={
 														globalCareerBefenitscardData?.image?.asset
@@ -56,7 +56,7 @@ const JobBenefitsContent = () => {
 													}}
 												/>
 											</div>
-											<h3 className="text-center p-4">
+											<h3 className="p-4 text-center">
 												{globalCareerBefenitscardData?.titleText}
 											</h3>
 											<div className=" para text-center  ">
@@ -70,13 +70,13 @@ const JobBenefitsContent = () => {
 					)}
 					
 					{/* Job Selected Benefits */}
-					<div className=" container mx-auto mt-8 flex  h-auto   w-full flex-wrap items-center justify-evenly p-12   md:mt-20 ">
+					<div className=" container mx-auto mt-8 flex  h-auto   w-full flex-wrap items-center justify-evenly p-12 gap-8  md:mt-20 ">
 						{activeJobDetails.jobBenefitCards?.map(
 							(befinitscard: any, index: number) => {
 								return (
 									<div
 										key={index}
-										className="md:[w-480px]   flex h-[348px] w-[380px] flex-col  items-center justify-evenly    rounded-lg bg-[#FFFFFF]   p-12 shadow-md md:h-[600px] "
+										className="md:[w-480px]   flex h-[348px] w-[380px] flex-col  items-center justify-evenly    rounded-lg bg-[#FFFFFF]  p-8  md:p-12 gap-2 md:gap-4 shadow-md md:h-[600px] "
 									>
 										<div className="h-[80px] h-[80px] md:w-[120px] md:w-[120px] p-4 ">
 											<CMSImageWrapper
