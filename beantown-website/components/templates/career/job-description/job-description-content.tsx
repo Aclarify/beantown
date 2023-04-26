@@ -19,37 +19,44 @@ const JobDescriptionResponsibilityContent = () => {
 
 	return (
 		<>
+			<div className="text-primary-black flex justify-center py-6 text-center">
+				<h1>{activeJobDetails.positionName} </h1>
+			</div>
 			<div
 				id="job-description-responsibility-section"
 				className="mt-8  flex w-full flex-col gap-4 md:flex-row"
 			>
 				<div
 					id="job-description"
-					className=" flex-1  space-y-4 rounded-xl bg-white p-8 shadow-[rgba(44,_48,_88,_0.16)_0px_8px_200px] "
+					className=" flex-1  space-y-4 rounded-2xl bg-white p-8 shadow-[rgba(44,_48,_88,_0.16)_0px_8px_200px] lg:rounded-3xl "
 				>
 					<div>
-						<h2>{activeJobDetails.jobDescriptionTitle || 'Job Description'}</h2>
+						<h2 className="text-primary-black">
+							{activeJobDetails.jobDescriptionTitle || 'Job Description'}
+						</h2>
 					</div>
-					<div>
+					<div className="text-primary-shade-1">
 						<RichText value={activeJobDetails.jobDescription?.contentRaw} />
 					</div>
 				</div>
 
 				<div
 					id="job-responsibility"
-					className=" bg-secondary-shade-3 flex-1 rounded-2xl p-4 md:p-8"
+					className=" bg-secondary-shade-3 flex-1 rounded-2xl p-4 shadow-[rgba(44,_48,_88,_0.16)_0px_8px_200px]  lg:rounded-3xl"
 				>
-					<h5 className="p-4">{activeJobDetails.jobResponsibilityMainTitle}</h5>
-					<div className="flex flex-col gap-4">
+					<h3 className="text-primary-black p-4">
+						{activeJobDetails.jobResponsibilityMainTitle}
+					</h3>
+					<div className="flex flex-col ">
 						{activeJobDetails.jobResponsibilities?.map((data, index) => {
 							return (
 								<div
 									key={index}
-									className="m-2 flex flex-col gap-2 rounded-2xl bg-white p-4 shadow-[rgba(44,_48,_88,_0.16)_0px_8px_200px] md:p-8 "
+									className="text-primary-shade-1 m-2 flex flex-col gap-2 rounded-2xl bg-white p-4 shadow-[rgba(44,_48,_88,_0.16)_0px_8px_200px] md:p-8  lg:rounded-3xl "
 								>
-									<h6 className="text-3xl font-normal">
+									<h5 className=" text-3xl font-normal">
 										{activeJobDetails.jobResponsibilityTitle}
-									</h6>
+									</h5>
 									<p>{data}</p>
 								</div>
 							);

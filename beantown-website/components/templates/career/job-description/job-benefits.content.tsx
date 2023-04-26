@@ -30,22 +30,22 @@ const JobBenefitsContent = () => {
 		<section className="mb-72 mt-12 md:mt-28">
 			<Animate>
 				<div className="flex flex-col items-center justify-center ">
-					<h3 className=" mx-auto p-8 text-center text-2xl md:text-5xl">
+					<h3 className="text-primary-black mx-auto py-4 px-8 text-center ">
 						{globaljobBenefitSectionTitle}
 					</h3>
 
 					{/* Job Selected Benefits */}
 					<div className=" container mx-auto  flex  h-auto   w-full flex-wrap items-center justify-center gap-8  p-8  ">
-						{allBenefits?.map((befinitscard: any, index: number) => {
+						{allBenefits?.map((benefitsCard: any, index: number) => {
 							return (
 								<div
 									key={index}
-									className="md:[w-480px]   justify-stretch mb-8 flex h-[348px]  w-[380px] flex-col    items-center gap-4 rounded-lg bg-white p-8 shadow-[rgba(44,_48,_88,_0.16)_0px_8px_200px] md:h-[600px]  "
+									className="md:[w-480px]   justify-stretch mb-8 flex h-auto  w-[380px] flex-col    items-center gap-4 rounded-2xl bg-white p-8 shadow-[rgba(44,_48,_88,_0.16)_0px_8px_200px] lg:h-[600px] lg:rounded-3xl  "
 								>
 									<div className="mt-4 h-[80px]  w-[80px] md:h-[120px] md:w-[120px] ">
 										<CMSImageWrapper
-											altText={befinitscard?.image?.asset?.altText || ''}
-											image={befinitscard?.image || null}
+											altText={benefitsCard?.image?.asset?.altText || ''}
+											image={benefitsCard?.image || null}
 											shouldBePrefetched={true}
 											style={{
 												width: '100%',
@@ -54,10 +54,12 @@ const JobBenefitsContent = () => {
 											}}
 										/>
 									</div>
-									<h3 className="text-center">{befinitscard?.titleText}</h3>
+									<h3 className="text-primary-shade-1 p-6 text-center">
+										{benefitsCard?.titleText}
+									</h3>
 
-									<div className="para overflow-auto text-center">
-										{befinitscard?.description}
+									<div className="text-primary-shade-1 para  text-center">
+										{benefitsCard?.description}
 									</div>
 								</div>
 							);
