@@ -41,7 +41,7 @@ const JobBenefitsContent = () => {
 											key={index}
 											className="md:[w-480px]   flex h-[348px] w-[380px] flex-col  items-center justify-evenly   gap-2   rounded-lg bg-[#FFFFFF] p-8 shadow-md md:h-[600px] md:gap-4 md:p-12 "
 										>
-											<div className="h-[80px] h-[80px] p-4 md:w-[120px] md:w-[120px]  ">
+											<div className="h-[80px] w-[80px] p-4 md:h-[120px] md:w-[120px]  ">
 												<CMSImageWrapper
 													altText={
 														globalCareerBefenitscardData?.image?.asset
@@ -78,7 +78,7 @@ const JobBenefitsContent = () => {
 										key={index}
 										className="md:[w-480px]   flex h-[348px] w-[380px] flex-col  items-center justify-evenly    rounded-lg bg-[#FFFFFF]  p-8  md:p-12 gap-2 md:gap-4 shadow-md md:h-[600px] "
 									>
-										<div className="h-[80px] h-[80px] md:w-[120px] md:w-[120px] p-4 ">
+										<div className="h-[80px] w-[80px] md:h-[120px] md:w-[120px] p-4 ">
 											<CMSImageWrapper
 												altText={befinitscard?.image?.asset?.altText || ''}
 												image={befinitscard?.image || null}
