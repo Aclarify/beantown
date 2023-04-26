@@ -11,13 +11,14 @@ import Animate from 'components/molecules/animate.molecule';
 import { CareersContentProps } from 'pages/careers';
 import CMSImageWrapper from 'components/molecules/cms-image-wrapper.molecule';
 import { jobsContext } from '@contexts/jobs/Job-benefits-context';
-import Button from 'components/atoms/button.atom';
+import clsx from 'clsx';
 
 const JobsSliderContent = () => {
 	const slider = React.useRef<Slider | null>(null);
 	const { pageContent } =
 		useContext<GlobalContextProps<CareersContentProps>>(GlobalContext);
 	const { activeJobDetails, setActiveJobDetails } = useContext(jobsContext);
+
 	if (!pageContent) {
 		return null;
 	}
@@ -30,11 +31,34 @@ const JobsSliderContent = () => {
 	const previous = () => {
 		if (slider.current) {
 			slider.current.slickPrev();
+			// Update the active job details to the previous job details
+			const activeJobIndex = jobList.findIndex(
+				(jobDetails) => jobDetails?._key == activeJobDetails?._key
+			);
+			if (activeJobIndex > 0 && jobList[activeJobIndex - 1]) {
+				setActiveJobDetails(jobList[activeJobIndex - 1] as any);
+			}
+			// Handle the case when the active job is the first job in the list
+			if (activeJobIndex == 0) {
+				setActiveJobDetails(jobList[jobList.length - 1] as any);
+			}
 		}
 	};
 	const next = () => {
 		if (slider.current) {
 			slider.current.slickNext();
+			// Update the active job details to the next job details
+			const activeJobIndex = jobList.findIndex(
+				(jobDetails) => jobDetails?._key == activeJobDetails?._key
+			);
+			console.log('jobsList', jobList, jobList.length);
+			if (activeJobIndex < jobList.length - 1 && jobList[activeJobIndex + 1]) {
+				setActiveJobDetails(jobList[activeJobIndex + 1] as any);
+			}
+			// Handle the case when the active job is the last job in the list
+			if (activeJobIndex == jobList.length - 1) {
+				setActiveJobDetails(jobList[0] as any);
+			}
 		}
 	};
 	const settings = {
@@ -111,14 +135,14 @@ const JobsSliderContent = () => {
 					slidesToShow: 1.1,
 					slidesToScroll: 1,
 					variableWidth: true,
-					ltr:true,
+					ltr: true,
 				},
 			},
 		],
 	};
 	return (
 		<>
-			<div className=" w-full pl-5 pt-4 md:pl-8 2xl:pl-[120px] pb-8 ">
+			<div className=" w-full pl-5 pt-4 pb-8 md:pl-8 2xl:pl-[120px] ">
 				<Slider ref={slider} {...settings}>
 					{jobList?.map((jobDetails, index) => {
 						return (
@@ -127,11 +151,11 @@ const JobsSliderContent = () => {
 									<div
 										key={index}
 										onClick={() => setActiveJobDetails(jobDetails)}
-										className={`${
-											jobDetails == activeJobDetails
-												? 'container  z-10 h-[410px] w-[281px]    scale-105 cursor-pointer p-4   lg:h-[650px] lg:w-[480px]   '
-												: 'container  h-[410px]  w-[281px] cursor-pointer   p-4  lg:h-[650px] lg:w-[480px] '
-										}`}
+										className={clsx(
+											'container  h-[410px]  w-[281px] cursor-pointer   p-4  lg:h-[650px] lg:w-[480px]',
+											jobDetails?._key == activeJobDetails?._key &&
+												'z-10 scale-105'
+										)}
 									>
 										<div className="container overflow-hidden rounded-3xl">
 											<CMSImageWrapper
@@ -161,18 +185,19 @@ const JobsSliderContent = () => {
 						);
 					})}
 				</Slider>
-				
+
 				<div className="relative mt-0 flex justify-between   p-2 pr-4 md:pr-24 ">
-				
-					<button						
+					<button
 						aria-label={'left-arrow'}
-						className=" text-primary-shade-1 bg-secondary-shade-3  flex flex h-12 w-20 justify-center  rounded-full  px-6 py-4 md:px-12 "
+						onClick={previous}
+						className=" text-primary-shade-1 bg-secondary-shade-3 flex  h-12 w-20 justify-center rounded-full  px-6  py-4 md:px-12 "
 					>
 						<FontAwesomeIcon icon={faArrowLeft} />
 					</button>
-					<button						
+					<button
 						aria-label={'right-arrow'}
-						className="bg-primary-shade-1 text-secondary-shade-3 flex h-12 w-20 justify-center rounded-full  px-6 py-4 md:px-12 "
+						onClick={next}
+						className="bg-primary-shade-1 text-secondary-shade-3 flex h-12 w-20 justify-center rounded-full px-6  py-4  md:px-12 "
 					>
 						<FontAwesomeIcon icon={faArrowRight} />
 					</button>
