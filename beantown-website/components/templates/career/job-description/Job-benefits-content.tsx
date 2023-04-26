@@ -39,7 +39,7 @@ const JobBenefitsContent = () => {
 									return (
 										<div
 											key={index}
-											className="md:[w-480px]   flex h-[348px] w-[380px] flex-col  items-center justify-evenly rounded-lg bg-[#FFFFFF]   p-8 shadow-md md:h-[600px] "
+											className="md:[w-480px]   flex h-[348px] w-[380px] flex-col  items-center justify-evenly rounded-lg bg-[#FFFFFF] gap-6  p-8 shadow-md md:h-[600px] "
 										>
 											<div className="h-[80px] h-[80px] md:w-[120px] md:w-[120px]  ">
 												<CMSImageWrapper
@@ -76,7 +76,7 @@ const JobBenefitsContent = () => {
 								return (
 									<div
 										key={index}
-										className="md:[w-480px]   flex h-[348px] w-[380px] flex-col  items-center justify-evenly rounded-lg bg-[#FFFFFF]   p-8 shadow-md md:h-[600px] "
+										className="md:[w-480px]   flex h-[348px] w-[380px] flex-col  items-center justify-evenly gap-6 rounded-lg  bg-[#FFFFFF]   p-8 shadow-md md:h-[600px] "
 									>
 										<div className="h-[80px] h-[80px] md:w-[120px] md:w-[120px]  ">
 											<CMSImageWrapper
