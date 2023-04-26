@@ -18,7 +18,7 @@ const JobDescriptionResponsibilitySection = () => {
 				height={551}
 				width={661}
 				alt="Left Blob "
-				className="-z-1 absolute left-0 hidden -translate-x-[35%] transform lg:block"
+				className="-z-1 3xl:translate-y-[-42%] absolute left-0 hidden -translate-x-[35%] translate-y-[-49%] transform lg:block"
 			/>
 
 			<Image
@@ -26,7 +26,7 @@ const JobDescriptionResponsibilitySection = () => {
 				height={551}
 				width={661}
 				alt="Right Blob  "
-				className="-z-1 absolute right-0  block translate-x-[45%] translate-x-[65%] transform"
+				className="-z-1   absolute right-0 block translate-x-[60%] translate-y-[5%]  transform"
 			/>
 			<SectionContentWrapper>
 				<JobBenefitsContent />
