@@ -21,11 +21,11 @@ const JobDescriptionResponsibilityContent = () => {
 		<>
 			<div
 				id="job-description-responsibility-section"
-				className="mt-8  flex w-full flex-col md:flex-row gap-4"
+				className="mt-8  flex w-full flex-col gap-4 md:flex-row"
 			>
 				<div
 					id="job-description"
-					className=" flex-1  space-y-4 rounded-xl bg-[#FFFFFF] p-8 shadow "
+					className=" flex-1  space-y-4 rounded-xl bg-[#FFFFFF] p-8 drop-shadow-sm "
 				>
 					<div>
 						<h2>{activeJobDetails.jobDescriptionTitle || 'Job Description'}</h2>
@@ -37,15 +37,15 @@ const JobDescriptionResponsibilityContent = () => {
 
 				<div
 					id="job-responsibility"
-					className=" flex-1 rounded-xl bg-[#F4F8FB] p-8"
+					className=" flex-1 rounded-2xl bg-[#F4F8FB] p-8"
 				>
 					<h5 className="p-4">{activeJobDetails.jobResponsibilityMainTitle}</h5>
-					<div className='flex flex-col gap-4'>
+					<div className="flex flex-col gap-4">
 						{activeJobDetails.jobResponsibilities?.map((data, index) => {
 							return (
 								<div
 									key={index}
-									className="m-2 flex flex-col gap-2 rounded-md bg-white p-8 "
+									className="m-2 flex flex-col gap-2 rounded-2xl bg-white p-8 drop-shadow-sm "
 								>
 									<h6 className="text-3xl font-normal">
 										{activeJobDetails.jobResponsibilityTitle}

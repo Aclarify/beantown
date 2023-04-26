@@ -39,9 +39,9 @@ const JobBenefitsContent = () => {
 									return (
 										<div
 											key={index}
-											className="md:[w-480px]   flex h-[348px] w-[380px] flex-col  items-center justify-evenly rounded-lg bg-[#FFFFFF] gap-6  p-8 shadow-md md:h-[600px] "
+											className="md:[w-480px]   flex h-[348px] w-[380px] flex-col  items-center justify-evenly  rounded-lg bg-[#FFFFFF]   shadow-md md:h-[600px] p-12 "
 										>
-											<div className="h-[80px] h-[80px] md:w-[120px] md:w-[120px]  ">
+											<div className="h-[80px] h-[80px] md:w-[120px] md:w-[120px] p-4  ">
 												<CMSImageWrapper
 													altText={
 														globalCareerBefenitscardData?.image?.asset
@@ -56,12 +56,12 @@ const JobBenefitsContent = () => {
 													}}
 												/>
 											</div>
-											<h3 className="text-center">
+											<h3 className="text-center p-4">
 												{globalCareerBefenitscardData?.titleText}
 											</h3>
-											<p className="text-center">
+											<div className=" para text-center  ">
 												{globalCareerBefenitscardData?.description}
-											</p>
+											</div>
 										</div>
 									);
 								}
@@ -70,15 +70,15 @@ const JobBenefitsContent = () => {
 					)}
 					
 					{/* Job Selected Benefits */}
-					<div className=" container mx-auto mt-8 flex  h-auto   w-full flex-wrap items-center justify-center  gap-8 md:mt-20 ">
+					<div className=" container mx-auto mt-8 flex  h-auto   w-full flex-wrap items-center justify-evenly p-12   md:mt-20 ">
 						{activeJobDetails.jobBenefitCards?.map(
 							(befinitscard: any, index: number) => {
 								return (
 									<div
 										key={index}
-										className="md:[w-480px]   flex h-[348px] w-[380px] flex-col  items-center justify-evenly gap-6 rounded-lg  bg-[#FFFFFF]   p-8 shadow-md md:h-[600px] "
+										className="md:[w-480px]   flex h-[348px] w-[380px] flex-col  items-center justify-evenly    rounded-lg bg-[#FFFFFF]   p-12 shadow-md md:h-[600px] "
 									>
-										<div className="h-[80px] h-[80px] md:w-[120px] md:w-[120px]  ">
+										<div className="h-[80px] h-[80px] md:w-[120px] md:w-[120px] p-4 ">
 											<CMSImageWrapper
 												altText={befinitscard?.image?.asset?.altText || ''}
 												image={befinitscard?.image || null}
@@ -91,7 +91,10 @@ const JobBenefitsContent = () => {
 											/>
 										</div>
 										<h3 className="text-center">{befinitscard?.titleText}</h3>
-										<p className="text-center">{befinitscard?.description}</p>
+
+										<div className=" para text-center">
+											{befinitscard?.description}
+										</div>
 									</div>
 								);
 							}

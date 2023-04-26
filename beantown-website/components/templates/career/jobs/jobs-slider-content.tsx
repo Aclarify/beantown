@@ -128,7 +128,7 @@ const JobsSliderContent = () => {
 										onClick={() => setActiveJobDetails(jobDetails)}
 										className={`${
 											jobDetails == activeJobDetails
-												? 'container  z-10 h-[410px] w-[281px]    scale-105 cursor-pointer p-4  lg:h-[650px] lg:w-[480px]   '
+												? 'container  z-10 h-[410px] w-[281px]    scale-105 cursor-pointer p-4   lg:h-[650px] lg:w-[480px]   '
 												: 'container  h-[410px]  w-[281px] cursor-pointer   p-4  lg:h-[650px] lg:w-[480px] '
 										}`}
 									>
@@ -145,7 +145,7 @@ const JobsSliderContent = () => {
 											/>
 										</div>
 
-										<div className="container absolute bottom-20 left-0 flex  w-full  items-center   justify-between  p-8  pb-8  md:gap-2  lg:pt-4  ">
+										<div className="container absolute bottom-24 left-0 flex  w-full  items-center   justify-between  p-8  pb-8  md:gap-2  lg:pt-4  ">
 											<h6 className="w-1/2 text-lg font-semibold text-white md:text-3xl xl:text-4xl  ">
 												{jobDetails?.positionName}
 											</h6>
