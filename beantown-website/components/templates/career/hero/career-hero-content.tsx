@@ -16,8 +16,9 @@ const CareerHeroContent = () => {
 		return null;
 	}
 	const pageData = pageContent.page[0];
-	const { heroTitle,applyButton,heroDescription,careerHeroImage } =
+	const { heroTitle,heroDescription,careerHeroImage,heroButton  } =
 		pageData;
+		
 	return (
 		<div
 			id="section-wrapper"
@@ -29,7 +30,7 @@ const CareerHeroContent = () => {
 			>
 				<div
 					id="content-wrapper"
-					className=" flex basis-1/2 flex-col items-start text-left lg:pt-20 w-full "
+					className=" flex w-full basis-1/2 flex-col items-center  md:items-start text-center  md:text-left lg:pt-20 "
 				>
 					<ContentWrapper className="">
 						<ContentWrapper.Title>
@@ -37,7 +38,7 @@ const CareerHeroContent = () => {
 								<h2 className=" text-primary-black ">{heroTitle}</h2>
 							</Animate>
 						</ContentWrapper.Title>
-						<ContentWrapper.Description className="text-left !font-thin rich-text text-left lg:pr-4">
+						<ContentWrapper.Description className="rich-text  text-center md:text-left !font-thin lg:pr-4">
 							<Animate>
 								<p>{heroDescription}</p>
 							</Animate>
@@ -45,7 +46,7 @@ const CareerHeroContent = () => {
 					</ContentWrapper>
 					<ContentWrapper className=" mt-4 lg:mt-8">
 						<Button fontColor="text-white" bgColor="bg-primary-shade-1">
-							<Link href={'/jobApplication'}>{applyButton?.text}</Link>
+							<Link href={'/jobApplication'}>{heroButton?.text}</Link>
 						</Button>
 					</ContentWrapper>
 				</div>

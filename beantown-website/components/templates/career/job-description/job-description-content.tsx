@@ -21,16 +21,14 @@ const JobDescriptionResponsibilityContent = () => {
 		<>
 			<div
 				id="job-description-responsibility-section"
-				className="mt-8  flex w-full flex-col md:flex-row"
+				className="mt-8  flex w-full flex-col gap-4 md:flex-row"
 			>
 				<div
 					id="job-description"
-					className=" flex-1  space-y-4 rounded-md bg-[#FFFFFF] p-8 "
+					className=" flex-1  space-y-4 rounded-xl bg-[#FFFFFF] p-8 shadow-[rgba(44,_48,_88,_0.16)_0px_8px_200px] "
 				>
 					<div>
-						<h2 className=" ">
-							{activeJobDetails.jobDescriptionTitle || 'Job Description'}
-						</h2>
+						<h2>{activeJobDetails.jobDescriptionTitle || 'Job Description'}</h2>
 					</div>
 					<div>
 						<RichText value={activeJobDetails.jobDescription?.contentRaw} />
@@ -39,23 +37,24 @@ const JobDescriptionResponsibilityContent = () => {
 
 				<div
 					id="job-responsibility"
-					className="m-2 flex-1 rounded-lg bg-[#F4F8FB] p-4"
+					className=" flex-1 rounded-2xl bg-[#F4F8FB] p-4 md:p-8"
 				>
 					<h5 className="p-4">{activeJobDetails.jobResponsibilityMainTitle}</h5>
-
-					{activeJobDetails.jobResponsibilities?.map((data, index) => {
-						return (
-							<div
-								key={index}
-								className="m-2 flex flex-col gap-2 rounded-md bg-white p-4 "
-							>
-								<h6 className="text-3xl font-semibold">
-									{activeJobDetails.jobResponsibilityTitle}
-								</h6>
-								<p>{data}</p>
-							</div>
-						);
-					})}
+					<div className="flex flex-col gap-4">
+						{activeJobDetails.jobResponsibilities?.map((data, index) => {
+							return (
+								<div
+									key={index}
+									className="p-4 shadow-[rgba(44,_48,_88,_0.16)_0px_8px_200px] m-2 flex flex-col gap-2 rounded-2xl bg-white md:p-8 "
+								>
+									<h6 className="text-3xl font-normal">
+										{activeJobDetails.jobResponsibilityTitle}
+									</h6>
+									<p>{data}</p>
+								</div>
+							);
+						})}
+					</div>
 				</div>
 			</div>
 		</>
