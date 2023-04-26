@@ -13,7 +13,7 @@ export default function FinancingServiceAreas() {
 	const pageData = pageContent.page[0];
 	const { serviceAreaSection } = pageData;
 	return (
-		<section id="serviceAreas" className="relative mt-20 py-[5em]">
+		<section id="serviceAreas" className="relative  py-[2em] lg:py-[5em]">
 			<ServiceAreas
 				serviceAreaSectionTitle={serviceAreaSection?.serviceAreaTitle || ''}
 				serviceAreaDescription={

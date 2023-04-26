@@ -10,7 +10,7 @@ const AboutMassSaveSection = () => {
 	return (
 		<section
 			id="aboutMassSave"
-			className="  xs:-mt-[5em] 3xl:-mt-[32em] 4xl:-mt-[34em] relative z-10 -mt-[6em] sm:-mt-[8em] md:-mt-[11em] lg:-mt-[14em] xl:-mt-[17em] 2xl:-mt-[27em]"
+			className="  xs:-mt-[5em] 3xl:-mt-[32em] 4xl:-mt-[40em] relative z-10 -mt-[7em] sm:-mt-[9em] md:-mt-[11em] lg:-mt-[14em] xl:-mt-[17em] 2xl:-mt-[27em]"
 		>
 			<WaveWrapper waveURL={topWave}></WaveWrapper>
 			<Image

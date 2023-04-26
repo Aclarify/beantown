@@ -32,7 +32,7 @@ const MassSaveStagesContent = () => {
 	} = pageData;
 	return (
 		<SectionContentWrapper>
-			<div className="relative   px-5 lg:pt-14">
+			<div className="relative   px-5 xl:pt-20">
 				<div className="flex flex-col items-center pb-8 text-center">
 					<ContentWrapper>
 						<ContentWrapper.Title>
@@ -49,10 +49,10 @@ const MassSaveStagesContent = () => {
 						</ContentWrapper.Description>
 					</ContentWrapper>
 				</div>
-				<div className="flex-col items-center justify-center  lg:flex lg:flex-row lg:items-start">
+				<div className="flex-col items-center justify-center  xl:flex  xl:flex-row xl:items-start xl:justify-between ">
 					{stagesCards?.map((content, index) => {
 						return (
-							<div key={index} className="mb-4 flex justify-center">
+							<div key={index} className=" flex items-center justify-center ">
 								<MassSaveStagesCard
 									key={index}
 									title={content?.titleText || ''}
@@ -61,9 +61,10 @@ const MassSaveStagesContent = () => {
 									thumbnailAltText={''}
 								/>
 								{index !== stagesCards.length - 1 && (
-									<div className="3xl:mt-[-10em]  relative  hidden w-40 justify-center lg:mt-[-15em] lg:flex lg:flex-col xl:mt-[-14em] 2xl:mt-[-13em]">
-										<div className="dashed-line border-primary-shade-1 border-2 border-dotted"></div>
-									</div>
+									// <div className="3xl:mt-[-10em]  relative  hidden w-40 justify-center  xl:mt-[-14em] xl:flex xl:flex-col 2xl:mt-[-13em]">
+									// 	<div className="dashed-line border-primary-shade-1 border-2 border-dotted"></div>
+									// </div>
+									<p className="border-primary-shade-1 hidden w-[50px] border-b-[3px] border-dashed xl:block 2xl:w-[120px]"></p>
 								)}
 							</div>
 						);

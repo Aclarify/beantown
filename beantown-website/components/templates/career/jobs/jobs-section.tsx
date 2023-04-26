@@ -42,11 +42,18 @@ const JobSection = () => {
 			}}
 		>
 			<Image
-				src={'/images/career/jobs/career-page-blob.svg'}
-				height={551}
-				width={661}
+				src={'/images/career/jobs/career-top-left-blob.svg'}
+				height={600}
+				width={500}
 				alt="Left Blob "
-				className="absolute left-4 hidden -translate-x-[35%] transform lg:block"
+				className="3xl:translate-y-[119%] 4xl:translate-y-[171%] absolute left-0 bottom-0 hidden translate-y-[20%] translate-x-[-30%] transform lg:block xl:translate-x-[-31%] xl:translate-y-[27%] 2xl:translate-x-[-35%] 2xl:translate-y-[60%]"
+			/>
+			<Image
+				src={'/images/career/jobs/career-top-left-blob.svg'}
+				height={100}
+				width={150}
+				alt="Left Blob Mobile"
+				className="  absolute left-0 bottom-0 translate-y-[100%]  translate-x-[-27%]  transform    lg:hidden"
 			/>
 			<section id="JobsSlider" className=" md:mt-32 ">
 				<JobsSliderContent />
