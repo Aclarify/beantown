@@ -33,15 +33,15 @@ const JobBenefitsContent = () => {
 
 					{/* Global Benefits */}
 					{careerBenefits && (
-						<div className=" container mx-auto mt-8 flex  h-auto   w-full flex-wrap items-center justify-center  gap-8 md:mt-20 ">
+						<div className=" container mx-auto mt-8 flex  h-auto   w-full flex-wrap items-center justify-center gap-4 p-8  md:mt-20 ">
 							{careerBenefits.map(
 								(globalCareerBefenitscardData: any, index: number) => {
 									return (
 										<div
 											key={index}
-											className="md:[w-480px]   flex h-[348px] w-[380px] flex-col  items-center justify-evenly   gap-2   rounded-lg bg-[#FFFFFF] p-8 shadow-md md:h-[600px] md:gap-4 md:p-12 "
+											className="md:[w-480px]   justify-stretch flex h-[348px] w-[380px]  flex-col items-center    gap-4 rounded-lg bg-[#FFFFFF] p-8 shadow-md md:h-[600px]   "
 										>
-											<div className="h-[80px] w-[80px] p-4 md:h-[120px] md:w-[120px]  ">
+											<div className="h-[80px] w-[80px]  md:h-[120px] md:w-[120px] mt-4  ">
 												<CMSImageWrapper
 													altText={
 														globalCareerBefenitscardData?.image?.asset
@@ -56,10 +56,10 @@ const JobBenefitsContent = () => {
 													}}
 												/>
 											</div>
-											<h3 className="p-4 text-center">
+											<h3 className=" text-center">
 												{globalCareerBefenitscardData?.titleText}
 											</h3>
-											<div className=" para text-center  ">
+											<div className=" para cursor-pointer overflow-auto text-center ">
 												{globalCareerBefenitscardData?.description}
 											</div>
 										</div>
@@ -68,17 +68,17 @@ const JobBenefitsContent = () => {
 							)}
 						</div>
 					)}
-					
+
 					{/* Job Selected Benefits */}
-					<div className=" container mx-auto mt-8 flex  h-auto   w-full flex-wrap items-center justify-evenly p-12 gap-8  md:mt-20 ">
+					<div className=" justify-stretch container mx-auto mt-10  flex   h-auto w-full flex-wrap items-center gap-4 p-8   md:mt-20 ">
 						{activeJobDetails.jobBenefitCards?.map(
 							(befinitscard: any, index: number) => {
 								return (
 									<div
 										key={index}
-										className="md:[w-480px]   flex h-[348px] w-[380px] flex-col  items-center justify-evenly    rounded-lg bg-[#FFFFFF]  p-8  md:p-12 gap-2 md:gap-4 shadow-md md:h-[600px] "
+										className="md:[w-480px]   justify-stretch flex h-[348px] w-[380px]  flex-col items-center    gap-4 rounded-lg bg-[#FFFFFF] p-8 shadow-md md:h-[600px]   "
 									>
-										<div className="h-[80px] w-[80px] md:h-[120px] md:w-[120px] p-4 ">
+										<div className="mt-4 h-[80px]  w-[80px] md:h-[120px] md:w-[120px] ">
 											<CMSImageWrapper
 												altText={befinitscard?.image?.asset?.altText || ''}
 												image={befinitscard?.image || null}
@@ -92,7 +92,7 @@ const JobBenefitsContent = () => {
 										</div>
 										<h3 className="text-center">{befinitscard?.titleText}</h3>
 
-										<div className=" para text-center">
+										<div className="para overflow-auto text-center">
 											{befinitscard?.description}
 										</div>
 									</div>
