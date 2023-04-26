@@ -27,19 +27,19 @@ const JobBenefitsContent = () => {
 		<section className="mb-72 mt-12 md:mt-28">
 			<Animate>
 				<div className="flex flex-col items-center justify-center ">
-					<h3 className=" mx-auto p-8 text-center text-2xl md:text-5xl">
+					<h2 className=" text-primary-black mx-auto px-8 text-center text-2xl md:text-5xl">
 						{globaljobBenefitSectionTitle}
-					</h3>
+					</h2>
 
 					{/* Global Benefits */}
 					{careerBenefits && (
-						<div className=" container mx-auto mt-8 flex  h-auto   w-full flex-wrap items-center justify-center gap-8  p-8  md:mt-20 ">
+						<div className=" container mx-auto mt-4 flex  h-auto   w-full flex-wrap items-center justify-center gap-14  p-8  md:mt-10 ">
 							{careerBenefits.map(
 								(globalCareerBefenitscardData: any, index: number) => {
 									return (
 										<div
 											key={index}
-											className="md:[w-480px]   justify-stretch mb-8 flex h-[348px]  w-[380px] flex-col    items-center gap-4 rounded-lg bg-[#FFFFFF] p-8 shadow-[rgba(44,_48,_88,_0.16)_0px_8px_200px] md:h-[600px]  "
+											className="md:[w-480px]   justify-stretch mb-8 flex h-[348px]  w-[380px] flex-col    items-center gap-4 rounded-2xl bg-[#FFFFFF] p-8 shadow-[rgba(44,_48,_88,_0.16)_0px_8px_200px] md:h-[600px] lg:rounded-3xl  "
 										>
 											<div className="mt-4 h-[80px]  w-[80px] md:h-[120px] md:w-[120px]  ">
 												<CMSImageWrapper
@@ -56,10 +56,10 @@ const JobBenefitsContent = () => {
 													}}
 												/>
 											</div>
-											<h3 className=" text-center">
+											<h2 className="text-primary-shade-1 text-center">
 												{globalCareerBefenitscardData?.titleText}
-											</h3>
-											<div className=" para cursor-pointer overflow-auto text-center ">
+											</h2>
+											<div className="text-primary-shade-1 para cursor-pointer overflow-auto text-center ">
 												{globalCareerBefenitscardData?.description}
 											</div>
 										</div>

@@ -23,6 +23,14 @@ const JobDescriptionResponsibilitySection = () => {
 
 			<Image
 				src={'/images/career/jobs/career-page-blob.svg'}
+				height={300}
+				width={350}
+				alt="Left Blob Mobile "
+				className="-z-1  absolute left-0 top-0 -translate-x-[35%] translate-y-[13%] transform md:translate-y-[-2%] lg:hidden"
+			/>
+
+			<Image
+				src={'/images/career/jobs/career-page-blob.svg'}
 				height={551}
 				width={661}
 				alt="Right Blob  "
