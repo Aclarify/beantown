@@ -107,11 +107,18 @@ const JobBenefitsContent = () => {
 			</Animate>
 
 			<Image
-				src={'/images/career/jobs/career-right-blob.svg'}
+				src={'/images/career/jobs/career-top-left-blob.svg'}
 				height={290}
 				width={350}
-				alt="Right Blob  "
-				className="-z-2 absolute bottom-0 right-0 block   translate-x-[15%]  translate-y-[95%]  transform "
+				alt="Bottom Blob  "
+				className="-z-2 3xl:translate-x-[25%] 3xl:translate-y-[91%] absolute bottom-0 right-0  hidden translate-x-[33%]  translate-y-[101%] transform  lg:block 2xl:translate-x-[32%]  2xl:translate-y-[99%] "
+			/>
+			<Image
+				src={'/images/career/jobs/career-bottom-blob-mobile.svg'}
+				height={290}
+				width={350}
+				alt="Bottom Blob Mobile "
+				className="-z-2 xs:translate-x-[29%] xs:translate-y-[103%] absolute bottom-0 right-0  block translate-x-[27%]  translate-y-[103%]  transform  lg:hidden "
 			/>
 		</section>
 	);
