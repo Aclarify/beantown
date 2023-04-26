@@ -72,6 +72,7 @@ const JobsSliderContent = () => {
 		focusOnSelect: true,
 		variableWidth: true,
 		useTransform: false,
+		swipe: false,
 		responsive: [
 			{
 				breakpoint: SCREEN_BREAKPOINTS.XXL,
@@ -175,7 +176,15 @@ const JobsSliderContent = () => {
 												{jobDetails?.positionName}
 											</h6>
 
-											<button className=" text-primary-black  rounded-lg bg-[#7AADD3]  px-4 py-4 text-sm  md:text-xl  lg:px-8  lg:text-2xl  ">
+											<button
+												className={clsx(
+													'text-primary-black  rounded-lg   px-4 py-4  text-sm  md:text-xl  lg:px-8 lg:text-2xl',
+													jobDetails?._key !== activeJobDetails?._key &&
+														'bg-secondary-shade-1',
+													jobDetails?._key == activeJobDetails?._key &&
+														'bg-white'
+												)}
+											>
 												{jobDetails?.learnMoreButton?.text}
 											</button>
 										</div>
