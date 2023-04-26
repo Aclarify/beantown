@@ -13,7 +13,7 @@ interface Props {
 const MassSaveStagesCard: React.FC<Props> = (props) => {
 	return (
 		<>
-			<div className="xs:px-[2em] h-full px-[5em] md:px-[12em] lg:px-[1em] xl:px-[2em]  ">
+			<div className="xs:px-[2em] h-full flex-col justify-center py-6 px-[5em] md:px-[12em]  xl:px-[2em] ">
 				<Animate cascade>
 					<div className="image-icon-wrapper mx-auto h-[60px] w-[60px] md:h-[80px] md:w-[80px]">
 						<CMSImageWrapper
