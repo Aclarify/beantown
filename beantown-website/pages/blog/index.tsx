@@ -23,7 +23,7 @@ export interface BlogsContentProps {
 
 const getStaticProps = generateGetStaticProps<BlogsContentProps>(
 	pageQuery,
-	PageNames.BLOGS
+	PageNames.BLOG
 );
 export { getStaticProps };
 
