@@ -4,7 +4,7 @@ dotenv.config()
 
 const projectId = process.env.SANITY_STUDIO_PROJECT_ID
 const dataset = process.env.SANITY_STUDIO_DATASET
-const readToken = process.env.SANITY_API_READ_TOKEN
+const readToken = process.env.NEXT_PUBLIC_SANITY_API_READ_TOKEN
 
 // console.log('projectId', projectId)
 
