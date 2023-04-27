@@ -15,7 +15,6 @@ export default defineType({
       title: 'Blog Title',
       type: 'string',
     }),
-
     defineField({
       name: 'blogImage',
       title: 'Thumbnail Image',
@@ -28,6 +27,7 @@ export default defineType({
       name: 'blogSlug',
       title: 'Slug',
       type: 'slug',
+      validation: (Rule) => Rule.required(),
     }),
     defineField({
       name: 'blogContent',
@@ -58,30 +58,6 @@ export default defineType({
               {title: 'Underline', value: 'underline'},
               {title: 'Strike', value: 'strike-through'},
             ],
-            // annotations: [
-            //   {
-            //     name: 'internalLink',
-            //     type: 'link',
-            //     title: 'Internal link',
-            //   },
-            //   {
-            //     title: 'External Link',
-            //     name: 'externalLink',
-            //     type: 'object',
-            //     fields: [
-            //       {
-            //         title: 'URL',
-            //         name: 'href',
-            //         type: 'url',
-            //         validation: (Rule) =>
-            //           Rule.uri({
-            //             allowRelative: true,
-            //             scheme: ['https', 'http', 'mailto', 'tel'],
-            //           }),
-            //       },
-            //     ],
-            //   },
-            // ],
           },
         },
         {
