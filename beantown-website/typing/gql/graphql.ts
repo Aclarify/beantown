@@ -415,7 +415,6 @@ export type Careers = Document & {
 	applyButton?: Maybe<Cta>;
 	careerBenefits?: Maybe<Array<Maybe<TitleDescriptionImage>>>;
 	careerHeroImage?: Maybe<Image>;
-	globaljobBenefitSectionTitle?: Maybe<Scalars['String']>;
 	heroButton?: Maybe<Cta>;
 	heroDescription?: Maybe<Scalars['String']>;
 	heroTitle?: Maybe<Scalars['String']>;
@@ -439,7 +438,6 @@ export type CareersFilter = {
 	_updatedAt?: InputMaybe<DatetimeFilter>;
 	applyButton?: InputMaybe<CtaFilter>;
 	careerHeroImage?: InputMaybe<ImageFilter>;
-	globaljobBenefitSectionTitle?: InputMaybe<StringFilter>;
 	heroButton?: InputMaybe<CtaFilter>;
 	heroDescription?: InputMaybe<StringFilter>;
 	heroTitle?: InputMaybe<StringFilter>;
@@ -459,7 +457,6 @@ export type CareersSorting = {
 	_type?: InputMaybe<SortOrder>;
 	_updatedAt?: InputMaybe<SortOrder>;
 	careerHeroImage?: InputMaybe<ImageSorting>;
-	globaljobBenefitSectionTitle?: InputMaybe<SortOrder>;
 	heroDescription?: InputMaybe<SortOrder>;
 	heroTitle?: InputMaybe<SortOrder>;
 	globaljobBenefitSectionTitle?: InputMaybe<SortOrder>;

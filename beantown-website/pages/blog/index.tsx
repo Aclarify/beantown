@@ -27,7 +27,7 @@ const getStaticProps = generateGetStaticProps<BlogsContentProps>(
 );
 export { getStaticProps };
 
-const BlogsServicePage: React.FC = () => {
+const BlogPage: React.FC = () => {
 	const { pageContent } =
 		useContext<GlobalContextProps<BlogsContentProps>>(GlobalContext);
 
@@ -47,7 +47,7 @@ const BlogsServicePage: React.FC = () => {
 		);
 	};
 	return (
-		<div id="blogs" className="bg-primary-white-shade-1">
+		<div id="blog" className="bg-primary-white-shade-1">
 			<PageHead />
 			<Header
 				mobileBgColor="bg-primary-white-shade-1"
@@ -75,4 +75,4 @@ const BlogsServicePage: React.FC = () => {
 	);
 };
 
-export default WithGlobalContent<BlogsContentProps>(BlogsServicePage);
+export default WithGlobalContent<BlogsContentProps>(BlogPage);
