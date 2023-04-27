@@ -51,7 +51,6 @@ const JobsSliderContent = () => {
 			const activeJobIndex = jobList.findIndex(
 				(jobDetails) => jobDetails?._key == activeJobDetails?._key
 			);
-			console.log('jobsList', jobList, jobList.length);
 			if (activeJobIndex < jobList.length - 1 && jobList[activeJobIndex + 1]) {
 				setActiveJobDetails(jobList[activeJobIndex + 1] as any);
 			}
@@ -171,21 +170,23 @@ const JobsSliderContent = () => {
 											/>
 										</div>
 
-										<div className="container absolute bottom-24 left-0 flex  w-full  items-center   justify-between  p-8  pb-8  md:gap-2  lg:pt-4  ">
-											<h6 className="w-1/2 text-lg font-semibold text-white md:text-3xl xl:text-4xl  ">
+										<div className="container absolute bottom-24 left-0 flex  w-full items-end   justify-between  p-8    md:gap-2  lg:pt-4  ">
+											<span className="w-[60%] text-2xl font-semibold text-white 2xl:text-4xl ">
 												{jobDetails?.positionName}
-											</h6>
+											</span>
 
 											<button
 												className={clsx(
-													'text-primary-black  rounded-lg   px-4 py-4  text-sm  md:text-xl  lg:px-8 lg:text-2xl',
+													'text-primary-black  h-[36px]   w-[80px]  rounded-lg  text-center  text-xs lg:h-[56px]  lg:w-[128px] lg:text-xl',
 													jobDetails?._key !== activeJobDetails?._key &&
 														'bg-secondary-shade-1',
 													jobDetails?._key == activeJobDetails?._key &&
 														'bg-white'
 												)}
 											>
-												{jobDetails?.learnMoreButton?.text}
+												{jobDetails?._key == activeJobDetails?._key
+													? 'Selected'
+													: jobDetails?.learnMoreButton?.text}
 											</button>
 										</div>
 									</div>
