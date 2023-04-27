@@ -14,5 +14,6 @@ export enum PageNames {
 	HEADER = 'header',
 	FOOTER = 'footer',
 	BOOKNOW = 'bookNow',
+	MASSSAVE = 'massSave',
 	UNDERCONSTRUCTION = 'underConstruction',
 }
