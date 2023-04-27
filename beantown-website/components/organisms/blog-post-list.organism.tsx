@@ -5,7 +5,7 @@ import { BlogPosts, Categories } from '@typing/gql/graphql';
 import CtaWrapper from 'components/molecules/cta-wrapper.molecule';
 import { getCMSDocs } from '@typing/api/api';
 import blogPostsQuery from '@lib/queries/organisms/get-blog-posts.query';
-import { BlogsContentProps } from 'pages/blogs';
+import { BlogsContentProps } from 'pages/blog';
 import { GlobalContextProps } from '@typing/common/interfaces/contexts.interface';
 import { GlobalContext } from 'contexts/global/global.context';
 import BlogPostCard from './blog-post-card.organism';

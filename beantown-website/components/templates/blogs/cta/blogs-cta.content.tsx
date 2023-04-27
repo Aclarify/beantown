@@ -1,7 +1,7 @@
 import React, { useContext } from 'react';
 import { GlobalContext } from '@contexts/global/global.context';
 import { GlobalContextProps } from '@typing/common/interfaces/contexts.interface';
-import { BlogsContentProps } from 'pages/blogs';
+import { BlogsContentProps } from 'pages/blog';
 import CTAWithImage from 'components/organisms/cta-with-image.organism';
 import CTATextContent from 'components/organisms/cta-text-content.organism';
 import BookNowButton from 'components/atoms/book-now-button.atom';

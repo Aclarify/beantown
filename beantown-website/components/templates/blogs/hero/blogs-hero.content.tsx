@@ -2,7 +2,7 @@ import React, { useContext } from 'react';
 import { GlobalContext } from '@contexts/global/global.context';
 import { GlobalContextProps } from '@typing/common/interfaces/contexts.interface';
 import ContentWrapper from 'components/organisms/content-wrapper.organism';
-import { BlogsContentProps } from 'pages/blogs';
+import { BlogsContentProps } from 'pages/blog';
 import Image from 'next/image';
 import Animate from 'components/molecules/animate.molecule';
 import RichText from 'components/molecules/rich-text.molecule';
