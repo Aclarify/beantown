@@ -12,7 +12,6 @@ import CtaWrapper from 'components/molecules/cta-wrapper.molecule';
 import ContactUsModal from 'components/organisms/contact-us-modal.organism';
 import { buttonHoverStyle } from '@lib/styles/button.style';
 import { useModal } from 'components/organisms/modal.organism';
-import Image from 'next/image';
 
 const MassSaveStagesContent = () => {
 	const { isVisible, toggleModal } = useModal();
@@ -49,10 +48,10 @@ const MassSaveStagesContent = () => {
 						</ContentWrapper.Description>
 					</ContentWrapper>
 				</div>
-				<div className="flex-col items-center justify-center  xl:flex  xl:flex-row xl:items-start xl:justify-between ">
+				<div className="flex-col justify-center xl:grid xl:grid-cols-5 ">
 					{stagesCards?.map((content, index) => {
 						return (
-							<div key={index} className=" flex items-center justify-center ">
+							<div key={index} className=" flex justify-center ">
 								<MassSaveStagesCard
 									key={index}
 									title={content?.titleText || ''}
@@ -61,10 +60,7 @@ const MassSaveStagesContent = () => {
 									thumbnailAltText={''}
 								/>
 								{index !== stagesCards.length - 1 && (
-									// <div className="3xl:mt-[-10em]  relative  hidden w-40 justify-center  xl:mt-[-14em] xl:flex xl:flex-col 2xl:mt-[-13em]">
-									// 	<div className="dashed-line border-primary-shade-1 border-2 border-dotted"></div>
-									// </div>
-									<p className="border-primary-shade-1 hidden w-[50px] border-b-[3px] border-dashed xl:block 2xl:w-[120px]"></p>
+									<div className="dots hidden w-full self-baseline border-b-2 border-dashed border-black pt-20 xl:block"></div>
 								)}
 							</div>
 						);

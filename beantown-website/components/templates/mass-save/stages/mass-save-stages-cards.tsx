@@ -1,5 +1,4 @@
 import React from 'react';
-import Image from 'next/image';
 import Animate from 'components/molecules/animate.molecule';
 import CMSImageWrapper from 'components/molecules/cms-image-wrapper.molecule';
 
@@ -13,7 +12,7 @@ interface Props {
 const MassSaveStagesCard: React.FC<Props> = (props) => {
 	return (
 		<>
-			<div className="xs:px-[2em] h-full flex-col justify-center py-6 px-[5em] md:px-[12em]  xl:px-[2em] ">
+			<div className="xs:px-1 h-full flex-col justify-center py-6 ">
 				<Animate cascade>
 					<div className="image-icon-wrapper mx-auto h-[60px] w-[60px] md:h-[80px] md:w-[80px]">
 						<CMSImageWrapper
@@ -26,7 +25,7 @@ const MassSaveStagesCard: React.FC<Props> = (props) => {
 							}}
 						/>
 					</div>
-					<div className=" text-center lg:pt-8">
+					<div className=" px-2 text-center lg:pt-8">
 						<h5 className=" text-primary-black pb-4">{props.title}</h5>
 						<p className=" text-gray-shade-1 !text-[20px] !font-thin ">
 							{props.content}
