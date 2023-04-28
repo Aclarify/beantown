@@ -1,35 +1,35 @@
 import React, { useContext } from 'react';
-import { Memberships, Nav, Footer } from '@typing/gql/graphql';
+import { Nav, Footer, Blogs } from '@typing/gql/graphql';
 import Head from 'next/head';
-import pageQuery from '@lib/queries/pages/get-memberships.query';
+import pageQuery from '@lib/queries/pages/get-blogs.query';
 import WithGlobalContent, {
 	generateGetStaticProps,
-} from '../components/containers/global-content/global-content.container';
+} from 'components/containers/global-content/global-content.container';
 import { PageNames } from '@configs/client/pages/pages.config';
-import MembershipsHeroSection from 'components/templates/memberships/hero/memberships-hero.section';
-import MembershipsPageCTASection from 'components/templates/memberships/cta/memberships-cta.section';
+import BlogsHeroSection from 'components/templates/blogs/hero/blogs-hero.section';
+import BlogsPageCTASection from 'components/templates/blogs/cta/blogs-cta.section';
 import { GlobalContextProps } from '@typing/common/interfaces/contexts.interface';
 import { GlobalContext } from '@contexts/global/global.context';
 import Header from 'components/organisms/nav';
 import FooterSection from 'components/organisms/footer';
-import MembershipsSelectionSection from '../components/templates/memberships/membership-selection/membership-selection.section';
 import BookNowButton from 'components/atoms/book-now-button.atom';
+import BlogPosts from 'components/templates/blogs/blog-posts/blog-posts';
 
-export interface MembershipsContentProps {
-	page: Memberships[];
+export interface BlogsContentProps {
+	page: Blogs[];
 	header: Nav[];
 	footer: Footer[];
 }
 
-const getStaticProps = generateGetStaticProps<MembershipsContentProps>(
+const getStaticProps = generateGetStaticProps<BlogsContentProps>(
 	pageQuery,
-	PageNames.MEMBERSHIPS
+	PageNames.BLOG
 );
 export { getStaticProps };
 
-const MembershipsServicePage: React.FC = () => {
+const BlogPage: React.FC = () => {
 	const { pageContent } =
-		useContext<GlobalContextProps<MembershipsContentProps>>(GlobalContext);
+		useContext<GlobalContextProps<BlogsContentProps>>(GlobalContext);
 
 	if (!pageContent) {
 		return null;
@@ -47,7 +47,7 @@ const MembershipsServicePage: React.FC = () => {
 		);
 	};
 	return (
-		<div id="memberships" className="bg-primary-white-shade-1">
+		<div id="blog" className="bg-primary-white-shade-1">
 			<PageHead />
 			<Header
 				mobileBgColor="bg-primary-white-shade-1"
@@ -67,14 +67,12 @@ const MembershipsServicePage: React.FC = () => {
 					</BookNowButton>
 				</div>
 			</Header>
-			<MembershipsHeroSection />
-			<MembershipsSelectionSection />
-			<MembershipsPageCTASection />
+			<BlogsHeroSection />
+			<BlogPosts />
+			<BlogsPageCTASection />
 			<FooterSection logoDesktop={logoLight?.image} content={footerData} />
 		</div>
 	);
 };
 
-export default WithGlobalContent<MembershipsContentProps>(
-	MembershipsServicePage
-);
+export default WithGlobalContent<BlogsContentProps>(BlogPage);

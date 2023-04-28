@@ -11,6 +11,7 @@ interface Props {
 	fontColor?: string;
 	placeholderColor?: string;
 	borderColor?: string;
+	className?: string;
 	placeholderText?: string;
 	value?: string;
 	autoComplete?: string;
@@ -26,6 +27,7 @@ const FormInput: React.FC<Props> = ({
 	fontColor = 'text-primary-shade-1',
 	placeholderColor = 'placeholder-gray-shade-2',
 	borderColor = 'border-primary-shade-3',
+	className,
 	placeholderText,
 	autoComplete,
 	value,
@@ -47,6 +49,7 @@ const FormInput: React.FC<Props> = ({
 					bgColor,
 					fontColor,
 					placeholderColor,
+					className,
 					error ? 'border-service-red' : borderColor
 				)}
 			/>

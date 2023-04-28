@@ -7,6 +7,7 @@ export enum PageNames {
 	FINANCING = 'financing',
 	MEMBERSHIPS = 'memberships',
 	BLOG = 'blog',
+	BLOGPOST = 'blogPost',
 	CAREERS = 'careers',
 	CONTACTUS = 'contactUs',
 	HEADER = 'header',
