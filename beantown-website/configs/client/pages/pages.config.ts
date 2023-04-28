@@ -14,4 +14,5 @@ export enum PageNames {
 	BOOKNOW = 'bookNow',
 	MASSSAVE = 'massSave',
 	UNDERCONSTRUCTION = 'underConstruction',
+	JOBAPPLICATION = 'jobApplication',
 }
