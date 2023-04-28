@@ -42,7 +42,7 @@ const AboutMassSaveContent = () => {
 				</div>
 				<div
 					id="content-wrapper"
-					className=" 3xl:px-[10em]  z-10 flex basis-1/2  flex-col px-0 pb-[6em] text-left lg:pl-[4em] lg:pr-48"
+					className=" 3xl:px-[10em]  z-10 flex basis-1/2  flex-col px-0 pb-[6em] text-left lg:pl-[4em] lg:pr-[3rem]"
 				>
 					<ContentWrapper>
 						<ContentWrapper.Title>
