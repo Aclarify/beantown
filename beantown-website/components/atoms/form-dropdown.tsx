@@ -1,19 +1,25 @@
 import React from 'react'
+import { FieldError} from 'react-hook-form';
+
 
 interface IPorps {
-  options: Option[]
-  handleChange: (value: any) => void
-  value: any
-  label: string
-  width?: string
-  customClass?: string
-  showTopMargin?: boolean
-  disabled?: boolean
+	id?: string;
+	name: string;
+	type?: string;
+	options?: Option[];
+	handleChange: (value: any) => void;
+	value: any;
+	width?: string;
+	customClass?: string;	
+	disabled?: boolean;
+	error?: FieldError;
+	showErrorText?: boolean;
 }
 interface Option {
-  value: string
-  label: string
+	value: string;
+	
 }
+
 
 const customStyles = {
   menuList: (base: any) => {
@@ -21,48 +27,41 @@ const customStyles = {
   },
 }
 
-// TODO use combobox? but without search type
-const Dropdown: React.FC<IPorps> = ({
-  options,
-  handleChange,
-  value,
-  label,
-  width = 'w-[150px]',
-  customClass = '',
-  showTopMargin = true,
-  disabled = false,
+
+const FormDropdown: React.FC<IPorps> = ({
+	id,
+	name,
+	options,
+	handleChange,
+	value,		
+	customClass = '',
+	disabled = false,
+	error,
+	showErrorText = true,
 }) => {
-  return (
+	return (
 		<>
-			<div className={`${showTopMargin && 'mt-3'}`}>
-				{label && (
-					<label
-						htmlFor={label}
-						className="text-gray-shade-1 border-primary-shade-3 block  font-medium"
-					>
-						{label}
-					</label>
-				)}
-				<select
-					id={label}
-					name={label}
-					className={`${width} ${customClass} mt-1.5 block rounded-lg border p-3 py-4   pl-3 pr-10  text-${
-						disabled ? 'gray-400' : '[#44444F]'
-					} focus:border-[#0062FF] focus:outline-none focus:ring-[#0062FF] sm:text-sm`}
-					//   defaultValue=''
-					value={value}
-					onChange={handleChange}
-					disabled={disabled}
-				>
-					{options.map((option, idx) => (
-						<option value={option.value} key={`${option.value}_${idx}`}>
-							{option.label}
-						</option>
-					))}
-				</select>
-			</div>
+			<select
+				id={id}
+				name={name}
+				className={` ${customClass} mt-1.5 block rounded-lg border p-3 py-4   pl-3 pr-10  text-${
+					disabled ? 'placeholder-gray-shade-2' : 'text-primary-shade-1'
+				} focus:border-[secondary-shade-3] focus:outline-none sm:text-sm`}
+				value={value}
+				onChange={handleChange}
+				disabled={disabled}
+			>
+				{options?.map((option: any, id: number) => (
+					<option value={option} key={`${option}_${id}`}>
+						{option}
+					</option>
+				))}
+			</select>
+			{error && showErrorText && (
+				<p className="text-service-red -mt-1 text-sm">{error.message}</p>
+			)}
 		</>
 	);
-}
+};
 
-export default Dropdown
+export default FormDropdown;

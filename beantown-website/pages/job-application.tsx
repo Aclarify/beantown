@@ -14,7 +14,6 @@ import BookNowButton from 'components/atoms/book-now-button.atom';
 import JobApplicationForm from 'components/templates/job-application/jobApplicationForm';
 import JobApplicationHeroSection from 'components/templates/job-application/hero/job-application-hero-section';
 
-
 export interface JobApplicationProps {
 	page: Careers[];
 	header: Nav[];

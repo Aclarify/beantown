@@ -46,7 +46,7 @@ const CareerHeroContent = () => {
 					</ContentWrapper>
 					<ContentWrapper className=" mt-4 lg:mt-8">
 						<Button fontColor="text-white" bgColor="bg-primary-shade-1">
-							<Link href={'/jobApplication'}>{heroButton?.text}</Link>
+							<Link href={'/job-application'}>{heroButton?.text}</Link>
 						</Button>
 					</ContentWrapper>
 				</div>

@@ -1,24 +1,54 @@
-import React from 'react'
+import React, { useContext } from 'react'
 import FormLabel from 'components/atoms/form-label.atom';
 import FormInput from 'components/atoms/form-input.atom';
-import Dropdown from 'components/atoms/form-dropdown';
 import FormTextArea from 'components/atoms/form-textarea.atoms';
 import SectionContentWrapper from 'components/molecules/section-content-wrapper.molecule';
+import { GlobalContext } from '@contexts/global/global.context';
+import { GlobalContextProps } from '@typing/common/interfaces/contexts.interface';
+import { CareersContentProps } from 'pages/careers';
+import FormDropdown from 'components/atoms/form-dropdown';
+import Image from 'next/image';
 
 const JobApplicationForm = () => {
+	const { pageContent } =
+		useContext<GlobalContextProps<CareersContentProps>>(GlobalContext);
+	
 
+	if (!pageContent) {
+		return null;
+	}
+
+	const pageData = pageContent.page[0];
+	const { jobList } = pageData;
+	if (!jobList) {
+		return null;
+	}
+	const jobOptions:any = []  =  jobList.map((data)=>{
+		return(data?.positionName)
+	})
+
+	const jobDesireOptions:any = ["Part Time" , "Full Time"] 
   return (
 		<>
+			
+
+			
+			
+
 			<SectionContentWrapper>
-				<div className="mb-48 ">
-					<div className=" container mx-auto flex flex-col  rounded-lg bg-[#FFFFFF] shadow">
+				<div className=" container mb-96">
+					<div className=" container m-8 mx-auto flex flex-col rounded-3xl border bg-white p-8 shadow-[rgba(44,_48,_88,_0.16)_0px_8px_200px] shadow">
 						<div className="container  m-4 flex items-center p-4">
-							<h3 className="mx-auto">Job Application</h3>
+							<h3 className="primary-color-shade-1 mx-auto">Job Application</h3>
 						</div>
 						<div className="mt-12 flex flex-col gap-4 py-2 lg:py-5  ">
-							<div className="mx-auto flex w-3/5 flex-col gap-4  md:flex-row">
+							<div className="mx-auto flex w-3/4  flex-col gap-4 md:w-3/5  md:flex-row">
 								<div className="flex w-full flex-col gap-2">
-									<FormLabel inputId="first-name" labelText="First Name" />
+									<FormLabel
+										inputId="first-name"
+										labelText="First Name"
+										className="primary-color-shade-1 "
+									/>
 									<FormInput
 										id="first-name"
 										placeholderText="Enter your first name"
@@ -36,7 +66,8 @@ const JobApplicationForm = () => {
 									/>
 								</div>
 							</div>
-							<div className="mx-auto flex w-3/5 flex-col gap-4  md:flex-row">
+
+							<div className="mx-auto flex w-3/4  flex-col gap-4 md:w-3/5  md:flex-row">
 								<div className={`flex w-full flex-col gap-2`}>
 									<FormLabel inputId="address-1" labelText="Address1" />
 
@@ -64,7 +95,7 @@ const JobApplicationForm = () => {
 									/>
 								</div>
 							</div>
-							<div className="mx-auto flex w-3/5 flex-col gap-4  md:flex-row">
+							<div className="mx-auto flex w-3/4  flex-col gap-4 md:w-3/5  md:flex-row">
 								<div className="flex w-full flex-col gap-2">
 									<FormLabel inputId="city" labelText="City" />
 									<FormInput
@@ -88,8 +119,8 @@ const JobApplicationForm = () => {
 									/>
 								</div>
 							</div>
-							<div className="mx-auto flex w-3/5 flex-col gap-4  md:flex-row">
-								<div className="flex w-1/2 flex-col ">
+							<div className="mx-auto flex w-3/4  flex-col gap-4 md:w-3/5  md:flex-row">
+								<div className=" flex w-1/2 flex-col ">
 									<FormLabel inputId="zip-code" labelText="Zip Code" />
 									<FormInput
 										id="zip-code"
@@ -101,7 +132,7 @@ const JobApplicationForm = () => {
 									/>
 								</div>
 							</div>
-							<div className="mx-auto flex w-3/5 flex-col gap-4 md:flex-row">
+							<div className="mx-auto flex w-3/4  flex-col gap-4 md:w-3/5 md:flex-row">
 								<div className="flex w-full flex-col gap-2">
 									<FormLabel inputId="phone-number" labelText="Phone number" />
 									<FormInput
@@ -112,7 +143,7 @@ const JobApplicationForm = () => {
 										bgColor="white"
 									/>
 								</div>
-								<div className="flex w-full flex-col gap-2">
+								<div className=" flex w-full flex-col gap-2">
 									<FormLabel inputId="email" labelText="Mail Adress" />
 									<FormInput
 										id="email"
@@ -124,49 +155,56 @@ const JobApplicationForm = () => {
 								</div>
 							</div>
 
-							<div className="mx-auto flex w-3/5 flex-col gap-4 md:flex-row">
-								<div className="flex w-full flex-col gap-2">
-									<Dropdown
-										options={[]}
+							<div className="mx-auto flex w-3/4  flex-col gap-4 md:w-3/5 md:flex-row">
+								<div className=" flex w-full flex-col gap-2">
+									<FormLabel
+										inputId="position"
+										labelText="Position Applying for"
+									/>
+
+									<FormDropdown
+										id={'jobOption'}
+										name={'jobOption'}
+										options={jobOptions}
 										handleChange={function (value: any): void {
 											throw new Error('Function not implemented.');
 										}}
 										value={undefined}
-										label={'Position Applying for'}
-										width="w-full"
-										customClass="bg-white  rounded-lg  p-2 "
+										customClass="bg-white  rounded-lg  p-2  "
 									/>
 								</div>
 								<div className="flex w-full flex-col gap-2">
-									<Dropdown
-										options={[]}
+									<FormLabel
+										inputId="employmentDesire"
+										labelText="Employment Desired"
+									/>
+									<FormDropdown
+										id={'jobDesireOptions'}
+										name={'jobDesireOptions'}
+										options={jobDesireOptions}
 										handleChange={function (value: any): void {
 											throw new Error('Function not implemented.');
 										}}
-										value={undefined}
-										label={'Employment Desired'}
-										width="w-full"
+										value={'Residential Plumber'}
 										customClass="bg-white"
 									/>
 								</div>
 							</div>
 
-							<div className="mx-auto w-3/5">
-								<div className={`flex w-full flex-col gap-2`}>
+							<div className="mx-auto w-3/4  md:w-3/5">
+								<div className={'flex w-full flex-col gap-2'}>
 									<FormLabel inputId="resume" labelText="Upload your resume" />
-									<div className='relative block'>
-										
-										
+									<div className="relative block">
 										<FormInput
 											id="resume"
-											placeholderText=" Choose a file"
+											placeholderText="@ Choose a file"
 											name={'resume'}
 										/>
 									</div>
 								</div>
 							</div>
-							<div className="mx-auto w-3/5">
-								<div className={`flex w-full flex-col gap-2`}>
+							<div className="mx-auto w-3/4  md:w-3/5">
+								<div className={'flex w-full flex-col gap-2'}>
 									<FormLabel
 										inputId="experiencelabel"
 										labelText="Tell Us About Yourself & Your Experience"
@@ -187,13 +225,20 @@ const JobApplicationForm = () => {
 						<div className="container m-4 mx-auto flex items-center p-4">
 							<button
 								type="submit"
-								className="bg-primary-shade-1 para-2 mx-auto mt-2 w-1/4 rounded-xl py-3 text-white "
+								className="bg-primary-shade-1 para-2 mx-auto mt-2 w-2/4  rounded-xl py-3 text-white md:w-1/4 "
 							>
 								Submit
 							</button>
 						</div>
 					</div>
-				</div>
+				</div>				
+				<Image
+					src={'/images/career/jobs/career-bottom-blob-mobile.svg'}
+					height={290}
+					width={350}
+					alt="Bottom Blob Mobile "
+					className="-z-2 xs:translate-x-[29%] xs:translate-y-[103%] absolute bottom-0 right-0  block translate-x-[27%]  translate-y-[103%]  transform   "
+				/>
 			</SectionContentWrapper>
 		</>
 	);

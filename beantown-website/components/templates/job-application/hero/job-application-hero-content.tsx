@@ -49,11 +49,11 @@ const JobApplicationHeroContent = () => {
 							</Animate>
 						</ContentWrapper.Description>
 					</ContentWrapper>
-					<ContentWrapper className=" mt-4 lg:mt-8">
+						<ContentWrapper.CTA>
 						<Button fontColor="text-white" bgColor="bg-primary-shade-1">
 							{applyButton?.text}
 						</Button>
-					</ContentWrapper>
+					</ContentWrapper.CTA>
 				</div>
 				<div
 					id="image-wrapper"

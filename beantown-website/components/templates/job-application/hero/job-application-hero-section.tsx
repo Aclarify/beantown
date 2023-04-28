@@ -7,11 +7,11 @@ const JobApplicationHeroSection = () => {
 	return (
 		<section id="job-application-hero-section" className="relative z-10  ">
 			<Image
-				src={'/images/job-application/hero/blob-shape.svg'}
-				height={100}
-				width={200}
+				src={'/images/job-application/hero/hero-left-blob.svg'}
+				height={300}
+				width={400}
 				alt="Left Blob "
-				className="absolute left-0 hidden translate-y-[5%] transform lg:block"
+				className="-z-1 absolute left-0 hidden translate-y-[105%] -translate-x-[55%]  transform lg:block"
 			/>
 			<SectionContentWrapper>
 				<JobApplicationHeroContent />
