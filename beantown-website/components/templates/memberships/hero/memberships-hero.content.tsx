@@ -14,7 +14,7 @@ const MembersipsContent = () => {
 	const pageData = pageContent.page[0];
 	const { heroTitle, heroDescription } = pageData;
 	return (
-		<section id="home_page_hero" className="relative">
+		<section id="memberships_hero" className="relative">
 			<Image
 				src={'/images/memberships/hero/blob-shape-1.svg'}
 				height={100}

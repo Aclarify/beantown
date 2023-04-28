@@ -31,6 +31,9 @@ import careers from './pages/careers'
 import jobDetails from './organism/jobDetails'
 import massSave from './pages/mass-save'
 import linksHub from './pages/links-hub'
+import blogs from './pages/blog'
+import categories from './organism/categories'
+import blogPosts from './pages/blogPosts'
 
 export const schemaTypes = [
   //Document Types
@@ -52,6 +55,9 @@ export const schemaTypes = [
   careers,
   massSave,
   linksHub,
+  blogs,
+  blogPosts,
+  categories,
   //Other Types
   jobDetails,
   breakType,
