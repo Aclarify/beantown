@@ -14,21 +14,21 @@ const BookNowSection = () => {
 				height={590}
 				width={650}
 				alt="Left Top Blob "
-				className="absolute  top-0 left-0 z-[3] hidden  transform lg:block lg:translate-y-[-24%] lg:translate-x-[-85%] 2xl:translate-y-[-22%] 2xl:translate-x-[-78%]"
+				className="absolute  top-0 left-0 z-[-1] hidden  transform lg:block lg:translate-y-[-24%] lg:translate-x-[-85%] 2xl:translate-y-[-22%] 2xl:translate-x-[-78%]"
 			/>
 			<Image
 				src={'/images/links-hub/link-hub-top-left-blob-mobile.svg'}
 				height={90}
 				width={150}
 				alt="Left Top Blob Mobile "
-				className="  absolute top-0 left-0 z-[3]   translate-y-[23%] translate-x-[-70%] transform md:hidden "
+				className="  absolute top-0 left-0 z-[-1]   translate-y-[23%] translate-x-[-70%] transform md:hidden "
 			/>
 			<Image
 				src={'/images/links-hub/link-hub-left-top-blob.svg'}
 				height={290}
 				width={350}
 				alt="Left Top Blob Tablet "
-				className=" absolute top-0 left-0 z-[3] hidden transform   md:block md:translate-y-[-9%] md:translate-x-[-75%] lg:hidden "
+				className=" absolute top-0 left-0 z-[-1] hidden transform   md:block md:translate-y-[-9%] md:translate-x-[-75%] lg:hidden "
 			/>
 			<Image
 				src={'/images/links-hub/link-hub-bottom-left-blob.svg'}
