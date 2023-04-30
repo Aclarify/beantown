@@ -48,6 +48,7 @@ const FormTextArea: React.FC<Props> = ({
 					placeholderColor,
 					error ? 'border-service-red' : borderColor
 				)}
+				maxLength={200}
 			/>
 			{/* Making the modal heigh too high */}
 			{error && showErrorText && (

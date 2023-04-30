@@ -1,4 +1,4 @@
-import React, { useContext } from 'react'
+import React, { useContext, useState } from 'react';
 import FormLabel from 'components/atoms/form-label.atom';
 import FormInput from 'components/atoms/form-input.atom';
 import FormTextArea from 'components/atoms/form-textarea.atoms';
@@ -7,36 +7,85 @@ import { GlobalContext } from '@contexts/global/global.context';
 import { GlobalContextProps } from '@typing/common/interfaces/contexts.interface';
 import { CareersContentProps } from 'pages/careers';
 import FormDropdown from 'components/atoms/form-dropdown';
+import { yupResolver } from '@hookform/resolvers/yup';
+import * as Yup from 'yup';
+import { useForm } from 'react-hook-form';
 import Image from 'next/image';
+import FormUploadFile from 'components/atoms/form-file-upload.atom';
+
+interface Props {
+	onSumissionSuccess: () => void;
+}
+type JobApplicationFormValues = {
+	email: string;
+	firstName: string;
+	lastName: string;
+	phoneNumber: string;
+	address: string;
+	city: string;
+	state: string;
+	zipCode: string;
+	resume:string;
+};
+
+const validationSchema = Yup.object().shape({
+	email: Yup.string()
+		.required('Your email is required')
+		.email('Email is invalid'),
+	firstName: Yup.string().required('Your first name is required'),
+	lastName: Yup.string().required('Your last name is required'),
+	address: Yup.string().required('Your address is required'),
+	city: Yup.string().required('Your city is required'),
+	state: Yup.string().required('Your state is required'),
+	resume: Yup.string().required('Please Choose Your File'),
+	// The regular expression ^\d{5}(-\d{4})?$ matches a 5-digit ZIP code
+	// with an optional 4-digit extension
+	zipCode: Yup.string()
+		.matches(/^\d{5}(-\d{4})?$/, 'Zip code is not valid')
+		.required('Your zip code is required'),
+	// The regular expression ^\+?\d{10,14}$ matches phone numbers
+	// that start with an optional plus sign (+), followed by 10 to 14 digits.
+	phoneNumber: Yup.string()
+		.matches(/^\+?\d{10,14}$/, 'Phone number is not valid') //
+		.required('Your phone number is required'),
+});
 
 const JobApplicationForm = () => {
 	const { pageContent } =
 		useContext<GlobalContextProps<CareersContentProps>>(GlobalContext);
-	
 
 	if (!pageContent) {
 		return null;
 	}
 
 	const pageData = pageContent.page[0];
-	const { jobList } = pageData;
+	const { jobList,logoLight } = pageData;
 	if (!jobList) {
 		return null;
 	}
-	const jobOptions:any = []  =  jobList.map((data)=>{
-		return(data?.positionName)
-	})
+	const jobOptions: any = ([] = jobList.map((data) => {
+		return data?.positionName;
+	}));
 
-	const jobDesireOptions:any = ["Part Time" , "Full Time"] 
-  return (
+	const jobDesireOptions: any = ['Part Time', 'Full Time'];
+	const [showJobApplicationModel, setShowJobApplicationModel] = useState(false);
+	
+
+	const formOptions = { resolver: yupResolver(validationSchema) };
+	const {
+		register,
+		handleSubmit,
+		formState: { errors },
+	} = useForm<JobApplicationFormValues>(formOptions);
+
+	const onSubmit = (data: any) => alert(JSON.stringify(data));
+	const OnButtonClick = ()=>{
+		setShowJobApplicationModel(true);
+	}
+	return (
 		<>
-			
-
-			
-			
-
 			<SectionContentWrapper>
-				<div className=" container mb-96">
+				<form onSubmit={handleSubmit(onSubmit)} className=" container mb-96">
 					<div className=" container m-8 mx-auto flex flex-col rounded-3xl border bg-white p-8 shadow-[rgba(44,_48,_88,_0.16)_0px_8px_200px] shadow">
 						<div className="container  m-4 flex items-center p-4">
 							<h3 className="primary-color-shade-1 mx-auto">Job Application</h3>
@@ -54,6 +103,8 @@ const JobApplicationForm = () => {
 										placeholderText="Enter your first name"
 										name={'firstName'}
 										bgColor="white"
+										register={register}
+										error={errors.firstName}
 									/>
 								</div>
 								<div className="flex w-full flex-col gap-2">
@@ -63,6 +114,8 @@ const JobApplicationForm = () => {
 										placeholderText="Enter your last name"
 										name={'lastName'}
 										bgColor="white"
+										register={register}
+										error={errors.lastName}
 									/>
 								</div>
 							</div>
@@ -141,6 +194,8 @@ const JobApplicationForm = () => {
 										placeholderText="Enter your phone number"
 										name={'phoneNumber'}
 										bgColor="white"
+										register={register}
+										error={errors.phoneNumber}
 									/>
 								</div>
 								<div className=" flex w-full flex-col gap-2">
@@ -151,6 +206,8 @@ const JobApplicationForm = () => {
 										placeholderText="Enter your email"
 										name={'email'}
 										bgColor="white"
+										register={register}
+										error={errors.email}
 									/>
 								</div>
 							</div>
@@ -195,10 +252,12 @@ const JobApplicationForm = () => {
 								<div className={'flex w-full flex-col gap-2'}>
 									<FormLabel inputId="resume" labelText="Upload your resume" />
 									<div className="relative block">
-										<FormInput
+										<FormUploadFile
 											id="resume"
-											placeholderText="@ Choose a file"
+											placeholderText=" Choose a file"
 											name={'resume'}
+											register={register}
+											error={errors.resume}
 										/>
 									</div>
 								</div>
@@ -225,23 +284,33 @@ const JobApplicationForm = () => {
 						<div className="container m-4 mx-auto flex items-center p-4">
 							<button
 								type="submit"
-								className="bg-primary-shade-1 para-2 mx-auto mt-2 w-2/4  rounded-xl py-3 text-white md:w-1/4 "
+								onClick={OnButtonClick}
+								className="bg-primary-shade-1 para-2 mx-auto mt-2 w-3/4  rounded-xl py-3 text-white md:w-2/6 "
 							>
 								Submit
 							</button>
 						</div>
 					</div>
-				</div>				
+				</form>
 				<Image
-					src={'/images/career/jobs/career-bottom-blob-mobile.svg'}
+					src={'/images/job-application/right-blob.svg'}
 					height={290}
 					width={350}
 					alt="Bottom Blob Mobile "
-					className="-z-2 xs:translate-x-[29%] xs:translate-y-[103%] absolute bottom-0 right-0  block translate-x-[27%]  translate-y-[103%]  transform   "
+					className=" absolute bottom-0 right-0 z-10  block translate-x-[27%]  translate-y-[250%]  transform   "
+				/>
+				<Image
+					src={'/images/job-application/left-blob.svg'}
+					height={300}
+					width={400}
+					alt="Left Blob "
+					className="	z-10 absolute left-0 hidden -translate-y-[115%] -translate-x-[45%]  transform lg:block"
 				/>
 			</SectionContentWrapper>
 		</>
 	);
-}
+};
 
-export default JobApplicationForm
+export default JobApplicationForm;
+
+

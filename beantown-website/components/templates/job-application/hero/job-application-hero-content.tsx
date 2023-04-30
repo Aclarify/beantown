@@ -2,27 +2,19 @@ import React, { useContext } from 'react';
 import { GlobalContext } from '@contexts/global/global.context';
 import { GlobalContextProps } from '@typing/common/interfaces/contexts.interface';
 import ContentWrapper from '../../../organisms/content-wrapper.organism';
-import MaskedImageWithBackgroundVector from '../../../organisms/masked-image-with-blob.organism';
-import useWindowDimensions from '../../../../lib/hooks/use-window-dimensions.hook';
 import Animate from 'components/molecules/animate.molecule';
 import { CareersContentProps } from 'pages/careers';
-import CtaWrapper from 'components/molecules/cta-wrapper.molecule';
-import Link from 'next/link';
-import Button from 'components/atoms/button.atom';
 import MaskedImageWithBackground from 'components/organisms/masked-image-with-background.organism';
 
 const JobApplicationHeroContent = () => {
 	const { pageContent } =
 		useContext<GlobalContextProps<CareersContentProps>>(GlobalContext);
-
-	const { width } = useWindowDimensions();
 	
-
 	if (!pageContent) {
 		return null;
 	}
 	const pageData = pageContent.page[0];
-	const { heroTitle,applyButton,heroDescription,careerHeroImage } =
+	const { heroTitle,heroDescription,careerHeroImage } =
 		pageData;
 	return (
 		<div
@@ -35,7 +27,7 @@ const JobApplicationHeroContent = () => {
 			>
 				<div
 					id="content-wrapper"
-					className=" flex basis-1/2 flex-col items-start text-left lg:pt-20 "
+					className=" flex basis-1/2 flex-col text-center md:items-start md:text-left lg:pt-20 "
 				>
 					<ContentWrapper>
 						<ContentWrapper.Title>
@@ -43,17 +35,12 @@ const JobApplicationHeroContent = () => {
 								<h2 className=" text-primary-black ">{heroTitle}</h2>
 							</Animate>
 						</ContentWrapper.Title>
-						<ContentWrapper.Description className="text-left !font-thin">
+						<ContentWrapper.Description className="rich-text  text-center !font-thin md:text-left lg:pr-4">
 							<Animate>
 								<p>{heroDescription}</p>
 							</Animate>
 						</ContentWrapper.Description>
 					</ContentWrapper>
-						<ContentWrapper.CTA>
-						<Button fontColor="text-white" bgColor="bg-primary-shade-1">
-							{applyButton?.text}
-						</Button>
-					</ContentWrapper.CTA>
 				</div>
 				<div
 					id="image-wrapper"
