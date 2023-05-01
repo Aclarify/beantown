@@ -415,10 +415,10 @@ export type Careers = Document & {
 	applyButton?: Maybe<Cta>;
 	careerBenefits?: Maybe<Array<Maybe<TitleDescriptionImage>>>;
 	careerHeroImage?: Maybe<Image>;
+	globaljobBenefitSectionTitle?: Maybe<Scalars['String']>;
 	heroButton?: Maybe<Cta>;
 	heroDescription?: Maybe<Scalars['String']>;
 	heroTitle?: Maybe<Scalars['String']>;
-	globaljobBenefitSectionTitle?: Maybe<Scalars['String']>;
 	jobList?: Maybe<Array<Maybe<JobDetails>>>;
 	logoDark?: Maybe<ImageIcon>;
 	logoLight?: Maybe<ImageIcon>;
@@ -438,10 +438,10 @@ export type CareersFilter = {
 	_updatedAt?: InputMaybe<DatetimeFilter>;
 	applyButton?: InputMaybe<CtaFilter>;
 	careerHeroImage?: InputMaybe<ImageFilter>;
+	globaljobBenefitSectionTitle?: InputMaybe<StringFilter>;
 	heroButton?: InputMaybe<CtaFilter>;
 	heroDescription?: InputMaybe<StringFilter>;
 	heroTitle?: InputMaybe<StringFilter>;
-	globaljobBenefitSectionTitle?: InputMaybe<StringFilter>;
 	logoDark?: InputMaybe<ImageIconFilter>;
 	logoLight?: InputMaybe<ImageIconFilter>;
 	metaDescription?: InputMaybe<StringFilter>;
@@ -457,9 +457,9 @@ export type CareersSorting = {
 	_type?: InputMaybe<SortOrder>;
 	_updatedAt?: InputMaybe<SortOrder>;
 	careerHeroImage?: InputMaybe<ImageSorting>;
+	globaljobBenefitSectionTitle?: InputMaybe<SortOrder>;
 	heroDescription?: InputMaybe<SortOrder>;
 	heroTitle?: InputMaybe<SortOrder>;
-	globaljobBenefitSectionTitle?: InputMaybe<SortOrder>;
 	metaDescription?: InputMaybe<SortOrder>;
 	name?: InputMaybe<SortOrder>;
 	pageTitle?: InputMaybe<SortOrder>;
@@ -1342,9 +1342,8 @@ export type JobDetails = {
 	jobDescription?: Maybe<PortableText>;
 	jobDescriptionTitle?: Maybe<Scalars['String']>;
 	jobImage?: Maybe<Image>;
-	jobResponsibilities?: Maybe<Array<Maybe<Scalars['String']>>>;
+	jobResponsibilities?: Maybe<Array<Maybe<TitleDescription>>>;
 	jobResponsibilityMainTitle?: Maybe<Scalars['String']>;
-	jobResponsibilityTitle?: Maybe<Scalars['String']>;
 	learnMoreButton?: Maybe<Cta>;
 	positionName?: Maybe<Scalars['String']>;
 };
@@ -1357,7 +1356,6 @@ export type JobDetailsFilter = {
 	jobDescriptionTitle?: InputMaybe<StringFilter>;
 	jobImage?: InputMaybe<ImageFilter>;
 	jobResponsibilityMainTitle?: InputMaybe<StringFilter>;
-	jobResponsibilityTitle?: InputMaybe<StringFilter>;
 	learnMoreButton?: InputMaybe<CtaFilter>;
 	positionName?: InputMaybe<StringFilter>;
 };
@@ -1370,7 +1368,6 @@ export type JobDetailsSorting = {
 	jobDescriptionTitle?: InputMaybe<SortOrder>;
 	jobImage?: InputMaybe<ImageSorting>;
 	jobResponsibilityMainTitle?: InputMaybe<SortOrder>;
-	jobResponsibilityTitle?: InputMaybe<SortOrder>;
 	positionName?: InputMaybe<SortOrder>;
 };
 
@@ -1832,6 +1829,69 @@ export type PortableTextSorting = {
 	_type?: InputMaybe<SortOrder>;
 };
 
+export type PrivacyPolicy = Document & {
+	__typename?: 'PrivacyPolicy';
+	/** Date the document was created */
+	_createdAt?: Maybe<Scalars['DateTime']>;
+	/** Document ID */
+	_id?: Maybe<Scalars['ID']>;
+	_key?: Maybe<Scalars['String']>;
+	/** Current document revision */
+	_rev?: Maybe<Scalars['String']>;
+	/** Document type */
+	_type?: Maybe<Scalars['String']>;
+	/** Date the document was last modified */
+	_updatedAt?: Maybe<Scalars['DateTime']>;
+	heroDescription?: Maybe<Scalars['String']>;
+	heroImage?: Maybe<Image>;
+	heroTitle?: Maybe<Scalars['String']>;
+	logoDark?: Maybe<ImageIcon>;
+	logoLight?: Maybe<ImageIcon>;
+	metaDescription?: Maybe<Scalars['String']>;
+	name?: Maybe<Scalars['String']>;
+	pageTitle?: Maybe<Scalars['String']>;
+	privacyPolicyContent?: Maybe<PortableText>;
+	sectionTitle?: Maybe<Scalars['String']>;
+};
+
+export type PrivacyPolicyFilter = {
+	/** Apply filters on document level */
+	_?: InputMaybe<Sanity_DocumentFilter>;
+	_createdAt?: InputMaybe<DatetimeFilter>;
+	_id?: InputMaybe<IdFilter>;
+	_key?: InputMaybe<StringFilter>;
+	_rev?: InputMaybe<StringFilter>;
+	_type?: InputMaybe<StringFilter>;
+	_updatedAt?: InputMaybe<DatetimeFilter>;
+	heroDescription?: InputMaybe<StringFilter>;
+	heroImage?: InputMaybe<ImageFilter>;
+	heroTitle?: InputMaybe<StringFilter>;
+	logoDark?: InputMaybe<ImageIconFilter>;
+	logoLight?: InputMaybe<ImageIconFilter>;
+	metaDescription?: InputMaybe<StringFilter>;
+	name?: InputMaybe<StringFilter>;
+	pageTitle?: InputMaybe<StringFilter>;
+	privacyPolicyContent?: InputMaybe<PortableTextFilter>;
+	sectionTitle?: InputMaybe<StringFilter>;
+};
+
+export type PrivacyPolicySorting = {
+	_createdAt?: InputMaybe<SortOrder>;
+	_id?: InputMaybe<SortOrder>;
+	_key?: InputMaybe<SortOrder>;
+	_rev?: InputMaybe<SortOrder>;
+	_type?: InputMaybe<SortOrder>;
+	_updatedAt?: InputMaybe<SortOrder>;
+	heroDescription?: InputMaybe<SortOrder>;
+	heroImage?: InputMaybe<ImageSorting>;
+	heroTitle?: InputMaybe<SortOrder>;
+	metaDescription?: InputMaybe<SortOrder>;
+	name?: InputMaybe<SortOrder>;
+	pageTitle?: InputMaybe<SortOrder>;
+	privacyPolicyContent?: InputMaybe<PortableTextSorting>;
+	sectionTitle?: InputMaybe<SortOrder>;
+};
+
 export type RootQuery = {
 	__typename?: 'RootQuery';
 	AboutUs?: Maybe<AboutUs>;
@@ -1856,6 +1916,7 @@ export type RootQuery = {
 	Memberships?: Maybe<Memberships>;
 	Nav?: Maybe<Nav>;
 	OtherServices?: Maybe<OtherServices>;
+	PrivacyPolicy?: Maybe<PrivacyPolicy>;
 	SanityFileAsset?: Maybe<SanityFileAsset>;
 	SanityImageAsset?: Maybe<SanityImageAsset>;
 	ServiceAreas?: Maybe<ServiceAreas>;
@@ -1883,6 +1944,7 @@ export type RootQuery = {
 	allMemberships: Array<Memberships>;
 	allNav: Array<Nav>;
 	allOtherServices: Array<OtherServices>;
+	allPrivacyPolicy: Array<PrivacyPolicy>;
 	allSanityFileAsset: Array<SanityFileAsset>;
 	allSanityImageAsset: Array<SanityImageAsset>;
 	allServiceAreas: Array<ServiceAreas>;
@@ -1975,6 +2037,10 @@ export type RootQueryNavArgs = {
 };
 
 export type RootQueryOtherServicesArgs = {
+	id: Scalars['ID'];
+};
+
+export type RootQueryPrivacyPolicyArgs = {
 	id: Scalars['ID'];
 };
 
@@ -2150,6 +2216,13 @@ export type RootQueryAllOtherServicesArgs = {
 	offset?: InputMaybe<Scalars['Int']>;
 	sort?: InputMaybe<Array<OtherServicesSorting>>;
 	where?: InputMaybe<OtherServicesFilter>;
+};
+
+export type RootQueryAllPrivacyPolicyArgs = {
+	limit?: InputMaybe<Scalars['Int']>;
+	offset?: InputMaybe<Scalars['Int']>;
+	sort?: InputMaybe<Array<PrivacyPolicySorting>>;
+	where?: InputMaybe<PrivacyPolicyFilter>;
 };
 
 export type RootQueryAllSanityFileAssetArgs = {
