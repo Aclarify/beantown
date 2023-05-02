@@ -87,8 +87,20 @@ const careersQuery = `
           text
           href
         }
+        applicationTitle
+        applicationDescription
+        applicationImage{
+        asset{
+          url
+          _id
+          _key
+        }
+        }
+        employmentTypeOptions{
+          value
+          label
+        }
   		}
-
          `;
 export default gql`
 	query {
