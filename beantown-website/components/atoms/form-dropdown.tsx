@@ -6,8 +6,7 @@ interface IPorps {
 	id?: string;
 	name: string;
 	type?: string;
-	options?: Option[];
-	handleChange: (value: any) => void;
+	options?: Option[];	
 	value: any;
 	width?: string;
 	customClass?: string;	
@@ -31,8 +30,7 @@ const customStyles = {
 const FormDropdown: React.FC<IPorps> = ({
 	id,
 	name,
-	options,
-	handleChange,
+	options,	
 	value,		
 	customClass = '',
 	disabled = false,
@@ -47,8 +45,7 @@ const FormDropdown: React.FC<IPorps> = ({
 				className={` ${customClass} mt-1.5 block rounded-lg border p-3 py-4   pl-3 pr-10  text-${
 					disabled ? 'placeholder-gray-shade-2' : 'text-primary-shade-1'
 				} focus:border-[secondary-shade-3] focus:outline-none sm:text-sm`}
-				value={value}
-				onChange={handleChange}
+				value={value}				
 				disabled={disabled}
 			>
 				{options?.map((option: any, id: number) => (

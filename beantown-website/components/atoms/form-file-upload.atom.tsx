@@ -40,40 +40,57 @@ const FormUploadFile: React.FC<Props> = ({
 }) => {
 	
 	const inputFile = useRef<HTMLInputElement | null>(null);
-	function chooseFile() {
-		inputFile.current?.click()
+	const [fileName, setFileName] = useState('Choose a file');
+	function chooseFile() {		
+	  	 inputFile.current?.click()
+		 
 	}
-	
+	const handleFileChange = (event:any) => {
+
+		const fileObj = event.target.files && event.target.files[0];
+			if (!fileObj) {
+			return;
+			}
+			event.target.value = null;
+			setFileName(fileObj.name);	 	
+			alert(fileObj.name);
+			
+	}
 
 	return (
 		<>
 			<div className=" text-placeholder-gray-shade-2 ">
-				<button onClick={chooseFile}>
+				<button onClick={chooseFile} className="w-full md:w-1/2">
 					<input
 						id={id}
 						type={type}
 						value={value}
-						placeholder={placeholderText}
+						placeholder={fileName}
 						autoComplete={autoComplete}
 						{...(register ? register(name) : {})}
 						className={clsx(
 							'relative w-full   rounded-lg border p-3 pl-6 focus:outline-0',
 							bgColor,
 							fontColor,
-							placeholderColor,
 							className,
 							error ? 'border-service-red' : borderColor
 						)}
+						
 					/>
-					<input type="file" ref={inputFile} style={{ display: 'none' }} />
+					<input
+						id="resume-upload"
+						type="file"
+						ref={inputFile}
+						onChange={handleFileChange}
+						style={{ display: 'none' }}
+					/>
 					<FontAwesomeIcon
 						icon={faPaperclip}
-						className=" absolute left-0 top-4"
+						className=" absolute left-2 top-4"
 					/>
 				</button>
 			</div>
 
-			{/* Making the modal heigh too high */}
 			{error && showErrorText && (
 				<p className="text-service-red -mt-1 text-sm">{error.message}</p>
 			)}

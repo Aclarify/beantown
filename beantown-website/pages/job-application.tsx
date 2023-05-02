@@ -11,7 +11,7 @@ import { GlobalContext } from '@contexts/global/global.context';
 import Header from 'components/organisms/nav';
 import FooterSection from 'components/organisms/footer';
 import BookNowButton from 'components/atoms/book-now-button.atom';
-import JobApplicationForm from 'components/templates/job-application/job-application-form';
+import JobApplicationForm from 'components/templates/job-application/hero/job-application-form/job-application-form';
 import JobApplicationHeroSection from 'components/templates/job-application/hero/job-application-hero-section';
 
 export interface JobApplicationProps {

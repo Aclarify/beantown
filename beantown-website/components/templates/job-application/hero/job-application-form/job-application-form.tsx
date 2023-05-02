@@ -1,4 +1,4 @@
-import React, { useContext, useState } from 'react';
+import React, { useContext, useRef, useState } from 'react';
 import FormLabel from 'components/atoms/form-label.atom';
 import FormInput from 'components/atoms/form-input.atom';
 import FormTextArea from 'components/atoms/form-textarea.atoms';
@@ -12,6 +12,11 @@ import * as Yup from 'yup';
 import { useForm } from 'react-hook-form';
 import Image from 'next/image';
 import FormUploadFile from 'components/atoms/form-file-upload.atom';
+import { config } from '@lib/config';
+import Modal from 'components/organisms/modal.organism';
+import JobApplicationModal from './job-application-modal';
+import useEscapeKey from '@lib/hooks/handle-escape-key.hook';
+import useOutsideClick from '@lib/hooks/handle-outside-click.hook';
 
 interface Props {
 	onSumissionSuccess: () => void;
@@ -26,6 +31,8 @@ type JobApplicationFormValues = {
 	state: string;
 	zipCode: string;
 	resume:string;
+	experience :string;
+	
 };
 
 const validationSchema = Yup.object().shape({
@@ -38,6 +45,10 @@ const validationSchema = Yup.object().shape({
 	city: Yup.string().required('Your city is required'),
 	state: Yup.string().required('Your state is required'),
 	resume: Yup.string().required('Please Choose Your File'),
+	experience: Yup.string()
+		.required('Please Enter Your Experience')
+		.min(20)
+		.max(250, 'Please enter data, at most 250 words'),
 	// The regular expression ^\d{5}(-\d{4})?$ matches a 5-digit ZIP code
 	// with an optional 4-digit extension
 	zipCode: Yup.string()
@@ -59,7 +70,7 @@ const JobApplicationForm = () => {
 	}
 
 	const pageData = pageContent.page[0];
-	const { jobList,logoLight } = pageData;
+	const { jobList,logoDark } = pageData;
 	if (!jobList) {
 		return null;
 	}
@@ -68,8 +79,7 @@ const JobApplicationForm = () => {
 	}));
 
 	const jobDesireOptions: any = ['Part Time', 'Full Time'];
-	const [showJobApplicationModel, setShowJobApplicationModel] = useState(false);
-	
+	const [showJobApplicationModel, setShowJobApplicationModel] = useState(false);	
 
 	const formOptions = { resolver: yupResolver(validationSchema) };
 	const {
@@ -78,21 +88,26 @@ const JobApplicationForm = () => {
 		formState: { errors },
 	} = useForm<JobApplicationFormValues>(formOptions);
 
+
+	const [isOpen, setIsOpen] = useState(false);
+	
+	
+
 	const onSubmit = (data: any) => alert(JSON.stringify(data));
-	const OnButtonClick = ()=>{
-		setShowJobApplicationModel(true);
-	}
+	
+	const mapBoxAccessToken = config.mapBoxAccessToken;
+
 	return (
 		<>
 			<SectionContentWrapper>
-				<form onSubmit={handleSubmit(onSubmit)} className=" container mb-96">
-					<div className=" container m-8 mx-auto flex flex-col rounded-3xl border bg-white p-8 shadow-[rgba(44,_48,_88,_0.16)_0px_8px_200px] shadow">
+				<form onSubmit={handleSubmit(onSubmit)} className=" container mb-96 ">
+					<div className=" container z-10 m-2 mx-auto flex flex-col rounded-3xl border  bg-white p-2 shadow-[rgba(44,_48,_88,_0.16)_0px_8px_200px] shadow md:m-8 md:p-8">
 						<div className="container  m-4 flex items-center p-4">
 							<h3 className="primary-color-shade-1 mx-auto">Job Application</h3>
 						</div>
-						<div className="mt-12 flex flex-col gap-4 py-2 lg:py-5  ">
-							<div className="mx-auto flex w-3/4  flex-col gap-4 md:w-3/5  md:flex-row">
-								<div className="flex w-full flex-col gap-2">
+						<div className="mt-2 flex flex-col gap-4 py-2 md:mt-6 lg:py-5  ">
+							<div className="mx-auto flex w-3/4   flex-col gap-4 md:w-5/6  md:flex-row">
+								<div className="flex  w-full flex-col gap-2 ">
 									<FormLabel
 										inputId="first-name"
 										labelText="First Name"
@@ -120,7 +135,7 @@ const JobApplicationForm = () => {
 								</div>
 							</div>
 
-							<div className="mx-auto flex w-3/4  flex-col gap-4 md:w-3/5  md:flex-row">
+							<div className="mx-auto flex w-3/4  flex-col gap-4 md:w-5/6  md:flex-row">
 								<div className={`flex w-full flex-col gap-2`}>
 									<FormLabel inputId="address-1" labelText="Address1" />
 
@@ -130,7 +145,8 @@ const JobApplicationForm = () => {
 										placeholderText="Enter your address"
 										autoComplete="address-line1"
 										name={'address'}
-										showErrorText={false}
+										error={errors.address}
+										register={register}
 										bgColor="white"
 									/>
 								</div>
@@ -143,12 +159,13 @@ const JobApplicationForm = () => {
 										placeholderText="Enter your  address"
 										autoComplete="address-line2"
 										name={'address'}
-										showErrorText={false}
+										error={errors.address}
+										register={register}
 										bgColor="white"
 									/>
 								</div>
 							</div>
-							<div className="mx-auto flex w-3/4  flex-col gap-4 md:w-3/5  md:flex-row">
+							<div className="mx-auto flex w-3/4  flex-col gap-4 md:w-5/6  md:flex-row">
 								<div className="flex w-full flex-col gap-2">
 									<FormLabel inputId="city" labelText="City" />
 									<FormInput
@@ -158,6 +175,8 @@ const JobApplicationForm = () => {
 										autoComplete="address-level2"
 										name={'city'}
 										bgColor="white"
+										register={register}
+										error={errors.city}
 									/>
 								</div>
 								<div className="flex w-full flex-col gap-2">
@@ -169,23 +188,25 @@ const JobApplicationForm = () => {
 										autoComplete="address-level1"
 										name={'state'}
 										bgColor="white"
+										register={register}
+										error={errors.state}
 									/>
 								</div>
 							</div>
-							<div className="mx-auto flex w-3/4  flex-col gap-4 md:w-3/5  md:flex-row">
-								<div className=" flex w-1/2 flex-col ">
+							<div className="mx-auto flex w-3/4  flex-col gap-4 md:w-5/6  md:flex-row">
+								<div className=" flex w-full  flex-col md:w-1/2">
 									<FormLabel inputId="zip-code" labelText="Zip Code" />
 									<FormInput
 										id="zip-code"
-										type="text"
 										placeholderText="Enter your Zip Code"
-										autoComplete=""
-										name={'city'}
+										name={'zip'}
 										bgColor="white"
+										error={errors.zipCode}
+										register={register}
 									/>
 								</div>
 							</div>
-							<div className="mx-auto flex w-3/4  flex-col gap-4 md:w-3/5 md:flex-row">
+							<div className="mx-auto flex w-3/4  flex-col gap-4 md:w-5/6 md:flex-row">
 								<div className="flex w-full flex-col gap-2">
 									<FormLabel inputId="phone-number" labelText="Phone number" />
 									<FormInput
@@ -212,7 +233,7 @@ const JobApplicationForm = () => {
 								</div>
 							</div>
 
-							<div className="mx-auto flex w-3/4  flex-col gap-4 md:w-3/5 md:flex-row">
+							<div className="mx-auto flex w-3/4  flex-col gap-4 md:w-5/6 md:flex-row">
 								<div className=" flex w-full flex-col gap-2">
 									<FormLabel
 										inputId="position"
@@ -223,9 +244,6 @@ const JobApplicationForm = () => {
 										id={'jobOption'}
 										name={'jobOption'}
 										options={jobOptions}
-										handleChange={function (value: any): void {
-											throw new Error('Function not implemented.');
-										}}
 										value={undefined}
 										customClass="bg-white  rounded-lg  p-2  "
 									/>
@@ -239,22 +257,18 @@ const JobApplicationForm = () => {
 										id={'jobDesireOptions'}
 										name={'jobDesireOptions'}
 										options={jobDesireOptions}
-										handleChange={function (value: any): void {
-											throw new Error('Function not implemented.');
-										}}
-										value={'Residential Plumber'}
+										value={undefined}
 										customClass="bg-white"
 									/>
 								</div>
 							</div>
 
-							<div className="mx-auto w-3/4  md:w-3/5">
-								<div className={'flex w-full flex-col gap-2'}>
+							<div className="mx-auto flex w-3/4  md:w-5/6 ">
+								<div className={'flex w-full  flex-col gap-2'}>
 									<FormLabel inputId="resume" labelText="Upload your resume" />
-									<div className="relative block">
+									<div className="relative block  ">
 										<FormUploadFile
 											id="resume"
-											placeholderText=" Choose a file"
 											name={'resume'}
 											register={register}
 											error={errors.resume}
@@ -262,7 +276,7 @@ const JobApplicationForm = () => {
 									</div>
 								</div>
 							</div>
-							<div className="mx-auto w-3/4  md:w-3/5">
+							<div className="mx-auto w-3/4  md:w-5/6">
 								<div className={'flex w-full flex-col gap-2'}>
 									<FormLabel
 										inputId="experiencelabel"
@@ -277,14 +291,17 @@ const JobApplicationForm = () => {
 										name={'experience'}
 										showErrorText={false}
 										bgColor="white"
+										error={errors.experience}
+										register={register}
 									/>
 								</div>
 							</div>
 						</div>
+
 						<div className="container m-4 mx-auto flex items-center p-4">
 							<button
 								type="submit"
-								onClick={OnButtonClick}
+								onClick={() => setIsOpen(true)}
 								className="bg-primary-shade-1 para-2 mx-auto mt-2 w-3/4  rounded-xl py-3 text-white md:w-2/6 "
 							>
 								Submit
@@ -292,21 +309,30 @@ const JobApplicationForm = () => {
 						</div>
 					</div>
 				</form>
-				<Image
-					src={'/images/job-application/right-blob.svg'}
-					height={290}
-					width={350}
-					alt="Bottom Blob Mobile "
-					className=" absolute bottom-0 right-0 z-10  block translate-x-[27%]  translate-y-[250%]  transform   "
-				/>
-				<Image
-					src={'/images/job-application/left-blob.svg'}
-					height={300}
-					width={400}
-					alt="Left Blob "
-					className="	z-10 absolute left-0 hidden -translate-y-[115%] -translate-x-[45%]  transform lg:block"
-				/>
+				<div className="container container	 sticky top-0 mx-auto">
+					<Modal
+						isVisible={isOpen}
+						onClose={() => setIsOpen(false)}
+						children={
+							<JobApplicationModal logoImage={logoDark?.image?.asset?.url} />
+						}
+					></Modal>
+				</div>
 			</SectionContentWrapper>
+			<Image
+				src={'/images/job-application/right-blob.svg'}
+				height={290}
+				width={350}
+				alt="Bottom Blob Mobile "
+				className=" absolute bottom-0 right-0 z-10 block hidden translate-x-[27%]  translate-y-[250%]  transform   "
+			/>
+			<Image
+				src={'/images/job-application/left-blob.svg'}
+				height={300}
+				width={400}
+				alt="Left Blob "
+				className="	absolute left-0 z-10 hidden -translate-y-[115%] -translate-x-[45%]  transform lg:block"
+			/>
 		</>
 	);
 };

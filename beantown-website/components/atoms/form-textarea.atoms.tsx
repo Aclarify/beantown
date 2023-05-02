@@ -24,8 +24,7 @@ const FormTextArea: React.FC<Props> = ({
 	type = 'text',
 	bgColor = 'bg-secondary-shade-3',
 	fontColor = 'text-primary-shade-1',
-	placeholderColor = 'placeholder-gray-shade-2',
-	borderColor = 'border-primary-shade-3',
+	placeholderColor = 'placeholder-gray-shade-2',	
 	placeholderText,
 	autoComplete,
 	value,
@@ -36,21 +35,21 @@ const FormTextArea: React.FC<Props> = ({
 	return (
 		<>
 			<textarea
-				id={id}				
+				id={id}
 				value={value}
 				placeholder={placeholderText}
 				autoComplete={autoComplete}
 				{...(register ? register(name) : {})}
 				className={clsx(
-					'w-full h-[200px]   rounded-lg border p-3 focus:outline-none',
+					'h-[200px] w-full   rounded-lg border p-3 focus:outline-none',
 					bgColor,
 					fontColor,
 					placeholderColor,
-					error ? 'border-service-red' : borderColor
+					error ? 'border-service-red' : 'placeholder-gray-shade-2'
 				)}
 				maxLength={200}
 			/>
-			{/* Making the modal heigh too high */}
+		
 			{error && showErrorText && (
 				<p className="text-service-red -mt-1 text-sm">{error.message}</p>
 			)}
