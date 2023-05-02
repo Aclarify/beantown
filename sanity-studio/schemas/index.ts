@@ -35,6 +35,7 @@ import blogs from './pages/blog'
 import categories from './organism/categories'
 import blogPosts from './pages/blogPosts'
 import privacyPolicy from './pages/privacyPolicy'
+import dropdownOptions from './organism/dropdownOptions'
 
 export const schemaTypes = [
   //Document Types
@@ -76,4 +77,5 @@ export const schemaTypes = [
   linkGroup,
   textList,
   checkableItem,
+  dropdownOptions,
 ]
