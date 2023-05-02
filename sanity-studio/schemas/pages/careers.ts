@@ -106,8 +106,8 @@ export default defineType({
       },
     }),
     defineField({
-      name: 'employementTypeOptions',
-      title: 'Employment Type Options',
+      name: 'employmentTypeOptions',
+      title: 'Employment Desired Options',
       type: 'array',
       of: [
         {
