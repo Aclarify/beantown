@@ -54,10 +54,8 @@ const JobDescriptionResponsibilityContent = () => {
 									key={index}
 									className="text-primary-shade-1 m-2 flex flex-col gap-2 rounded-2xl bg-white p-4 shadow-[rgba(44,_48,_88,_0.16)_0px_8px_200px] md:p-8  lg:rounded-3xl "
 								>
-									<h5 className=" text-3xl font-normal">
-										{activeJobDetails.jobResponsibilityTitle}
-									</h5>
-									<p>{data}</p>
+									<h5 className=" text-3xl font-normal">{data?.titleText}</h5>
+									<p>{data?.description}</p>
 								</div>
 							);
 						})}

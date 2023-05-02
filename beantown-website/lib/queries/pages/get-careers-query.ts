@@ -66,8 +66,10 @@ const careersQuery = `
             contentRaw
           }
           jobResponsibilityMainTitle
-          jobResponsibilities          
-          jobResponsibilityTitle
+          jobResponsibilities{
+            titleText
+            description
+          }
         }
         globaljobBenefitSectionTitle
     		careerBenefits{

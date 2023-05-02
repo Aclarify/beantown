@@ -34,6 +34,7 @@ import linksHub from './pages/links-hub'
 import blogs from './pages/blog'
 import categories from './organism/categories'
 import blogPosts from './pages/blogPosts'
+import privacyPolicy from './pages/privacyPolicy'
 
 export const schemaTypes = [
   //Document Types
@@ -58,6 +59,7 @@ export const schemaTypes = [
   blogs,
   blogPosts,
   categories,
+  privacyPolicy,
   //Other Types
   jobDetails,
   breakType,
