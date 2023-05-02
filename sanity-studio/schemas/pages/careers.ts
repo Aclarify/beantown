@@ -87,5 +87,33 @@ export default defineType({
       type: 'reference',
       to: [{type: 'cta'}],
     }),
+    defineField({
+      name: 'applicationTitle',
+      title: 'Application Title',
+      type: 'string',
+    }),
+    defineField({
+      name: 'applicationDescription',
+      title: 'Application Description',
+      type: 'string',
+    }),
+    defineField({
+      name: 'applicationImage',
+      title: 'Application Image',
+      type: 'image',
+      options: {
+        hotspot: true,
+      },
+    }),
+    defineField({
+      name: 'employmentTypeOptions',
+      title: 'Employment Desired Options',
+      type: 'array',
+      of: [
+        {
+          type: 'dropdownOptions',
+        },
+      ],
+    }),
   ],
 })

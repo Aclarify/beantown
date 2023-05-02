@@ -7,6 +7,7 @@ export enum PageNames {
 	FINANCING = 'financing',
 	MEMBERSHIPS = 'memberships',
 	BLOG = 'blog',
+	BLOGPOST = 'blogPost',
 	CAREERS = 'careers',
 	CONTACTUS = 'contactUs',
 	HEADER = 'header',
@@ -14,5 +15,6 @@ export enum PageNames {
 	BOOKNOW = 'bookNow',
 	LINKSHUB = 'linksHub',
 	MASSSAVE = 'massSave',
+	PRIVACYPOLICY = 'privacyPolicy',
 	UNDERCONSTRUCTION = 'underConstruction',
 }

@@ -54,19 +54,11 @@ export default defineType({
       title: 'Job Responsibility Title',
       type: 'string',
     }),
-
-    defineField({
-      name: 'jobResponsibilityTitle',
-      title: 'Title',
-      type: 'string',
-    }),
-
     defineField({
       name: 'jobResponsibilities',
       title: 'Job Responsibility Details',
       type: 'array',
-      of: [{type: 'string'}],
+      of: [{type: 'titleDescription'}],
     }),
   ],
 })
-
