@@ -412,9 +412,13 @@ export type Careers = Document & {
 	_type?: Maybe<Scalars['String']>;
 	/** Date the document was last modified */
 	_updatedAt?: Maybe<Scalars['DateTime']>;
+	applicationDescription?: Maybe<Scalars['String']>;
+	applicationImage?: Maybe<Image>;
+	applicationTitle?: Maybe<Scalars['String']>;
 	applyButton?: Maybe<Cta>;
 	careerBenefits?: Maybe<Array<Maybe<TitleDescriptionImage>>>;
 	careerHeroImage?: Maybe<Image>;
+	employmentTypeOptions?: Maybe<Array<Maybe<DropdownOptions>>>;
 	globaljobBenefitSectionTitle?: Maybe<Scalars['String']>;
 	heroButton?: Maybe<Cta>;
 	heroDescription?: Maybe<Scalars['String']>;
@@ -436,6 +440,9 @@ export type CareersFilter = {
 	_rev?: InputMaybe<StringFilter>;
 	_type?: InputMaybe<StringFilter>;
 	_updatedAt?: InputMaybe<DatetimeFilter>;
+	applicationDescription?: InputMaybe<StringFilter>;
+	applicationImage?: InputMaybe<ImageFilter>;
+	applicationTitle?: InputMaybe<StringFilter>;
 	applyButton?: InputMaybe<CtaFilter>;
 	careerHeroImage?: InputMaybe<ImageFilter>;
 	globaljobBenefitSectionTitle?: InputMaybe<StringFilter>;
@@ -456,6 +463,9 @@ export type CareersSorting = {
 	_rev?: InputMaybe<SortOrder>;
 	_type?: InputMaybe<SortOrder>;
 	_updatedAt?: InputMaybe<SortOrder>;
+	applicationDescription?: InputMaybe<SortOrder>;
+	applicationImage?: InputMaybe<ImageSorting>;
+	applicationTitle?: InputMaybe<SortOrder>;
 	careerHeroImage?: InputMaybe<ImageSorting>;
 	globaljobBenefitSectionTitle?: InputMaybe<SortOrder>;
 	heroDescription?: InputMaybe<SortOrder>;
@@ -675,6 +685,28 @@ export type DocumentSorting = {
 	_rev?: InputMaybe<SortOrder>;
 	_type?: InputMaybe<SortOrder>;
 	_updatedAt?: InputMaybe<SortOrder>;
+};
+
+export type DropdownOptions = {
+	__typename?: 'DropdownOptions';
+	_key?: Maybe<Scalars['String']>;
+	_type?: Maybe<Scalars['String']>;
+	label?: Maybe<Scalars['String']>;
+	value?: Maybe<Scalars['String']>;
+};
+
+export type DropdownOptionsFilter = {
+	_key?: InputMaybe<StringFilter>;
+	_type?: InputMaybe<StringFilter>;
+	label?: InputMaybe<StringFilter>;
+	value?: InputMaybe<StringFilter>;
+};
+
+export type DropdownOptionsSorting = {
+	_key?: InputMaybe<SortOrder>;
+	_type?: InputMaybe<SortOrder>;
+	label?: InputMaybe<SortOrder>;
+	value?: InputMaybe<SortOrder>;
 };
 
 export type Faq = Document & {
