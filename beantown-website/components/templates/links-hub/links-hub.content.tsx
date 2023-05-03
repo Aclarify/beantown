@@ -6,6 +6,7 @@ import Image from 'next/image';
 import * as OutlineIcons from '@heroicons/react/24/outline';
 import Link from 'next/link';
 import { ChevronLeftIcon, ChevronRightIcon } from '@heroicons/react/20/solid';
+import CMSImageWrapper from 'components/molecules/cms-image-wrapper.molecule';
 
 const LinksHubContent = () => {
 	const { pageContent } =
@@ -25,19 +26,18 @@ const LinksHubContent = () => {
 		return socialMediaIcons?.map((icon, index) => {
 			return (
 				icon && (
-					// Add target blank to open in new tab
 					<a
 						href={icon?.href || ''}
 						target="_blank"
 						rel="noreferrer"
 						key={index}
 					>
-						<Image
-							key={index}
-							alt={icon?.image?.asset?.altText || 'Social Media Icon'}
-							width={35}
-							height={35}
-							src={icon?.image?.asset?.url || ''}
+						<CMSImageWrapper
+							altText={icon?.image?.asset?.altText || ''}
+							image={icon?.image || null}
+							style={{
+								objectFit: 'contain',
+							}}
 						/>
 					</a>
 				)
