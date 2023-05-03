@@ -14,7 +14,7 @@ const JobApplicationHeroContent = () => {
 		return null;
 	}
 	const pageData = pageContent.page[0];
-	const { heroTitle,heroDescription,careerHeroImage } =
+	const { applicationTitle, applicationDescription, applicationImage } =
 		pageData;
 	return (
 		<div
@@ -32,12 +32,12 @@ const JobApplicationHeroContent = () => {
 					<ContentWrapper>
 						<ContentWrapper.Title>
 							<Animate bottom>
-								<h2 className=" text-primary-black ">{heroTitle}</h2>
+								<h2 className=" text-primary-black ">{applicationTitle}</h2>
 							</Animate>
 						</ContentWrapper.Title>
 						<ContentWrapper.Description className="rich-text  text-center !font-thin md:text-left lg:pr-4">
 							<Animate>
-								<p>{heroDescription}</p>
+								<p>{applicationDescription}</p>
 							</Animate>
 						</ContentWrapper.Description>
 					</ContentWrapper>
@@ -47,8 +47,8 @@ const JobApplicationHeroContent = () => {
 					className="mb-8 md:mt-12  md:basis-1/2 md:px-20 lg:px-10  "
 				>
 					<MaskedImageWithBackground
-						image={careerHeroImage || null}
-						imgAltText={careerHeroImage?.asset?.altText || ''}
+						image={applicationImage || null}
+						imgAltText={applicationImage?.asset?.altText || ''}
 						maskImg="./images/job-application/hero/blob-mask.svg"
 						bgImg="./images/job-application/hero/bg-blob-shape.svg"
 					/>

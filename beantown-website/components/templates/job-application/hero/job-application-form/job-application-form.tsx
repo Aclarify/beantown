@@ -70,16 +70,22 @@ const JobApplicationForm = () => {
 	}
 
 	const pageData = pageContent.page[0];
-	const { jobList,logoDark } = pageData;
+	const { jobList,logoDark,employmentTypeOptions } = pageData;
 	if (!jobList) {
 		return null;
 	}
-	const jobOptions: any = ([] = jobList.map((data) => {
+	const jobOptions: any = ([] = jobList.map((data:any) => {
 		return data?.positionName;
 	}));
 
-	const jobDesireOptions: any = ['Part Time', 'Full Time'];
-	const [showJobApplicationModel, setShowJobApplicationModel] = useState(false);	
+	
+	// const employmentTypes: any = ([] = employmentTypeOptions.map(
+	// 	(data: any) => {
+				
+	// 		return data?.value;
+	// 	}
+	// ));
+	const jobDesireOptions: any = ['Part Time', 'Full Time'];	
 
 	const formOptions = { resolver: yupResolver(validationSchema) };
 	const {
@@ -88,9 +94,7 @@ const JobApplicationForm = () => {
 		formState: { errors },
 	} = useForm<JobApplicationFormValues>(formOptions);
 
-
-	const [isOpen, setIsOpen] = useState(false);
-	
+	const [isOpen, setIsOpen] = useState(false);	
 	
 
 	const onSubmit = (data: any) => alert(JSON.stringify(data));
