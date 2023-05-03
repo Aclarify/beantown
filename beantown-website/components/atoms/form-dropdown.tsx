@@ -7,7 +7,7 @@ interface IPorps {
 	name: string;
 	type?: string;
 	options?: Option[];	
-	value: any;
+	value?: any;
 	width?: string;
 	customClass?: string;	
 	disabled?: boolean;
@@ -15,7 +15,7 @@ interface IPorps {
 	showErrorText?: boolean;
 }
 interface Option {
-	value: string;
+	value?: string;
 	
 }
 
