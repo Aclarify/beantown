@@ -9,7 +9,7 @@ interface Props {
 	onShowMore?: () => void;
 }
 
-const TestimonialCardWrapper: React.FC<Props> = (props) => {
+const JobBenefitsCardWrapper: React.FC<Props> = (props) => {
 	return (
 		<section
 			id="BenefitCard"
@@ -30,7 +30,7 @@ export const BenefitsCard: React.FC<Props> = (props) => {
 				<div className="mt-4 h-[80px]  w-[80px] md:h-[120px] md:w-[120px] ">
 					<CMSImageWrapper
 						altText={props.briefcaseIconImage.image?.asset?.altText || ''}
-						image={props.briefcaseIconImage}
+						image={props.briefcaseIconImage || null}
 						shouldBePrefetched={true}
 						style={{
 							width: '100%',
@@ -59,4 +59,4 @@ export const BenefitsCard: React.FC<Props> = (props) => {
 	);
 };
 
-export default TestimonialCardWrapper;
+export default JobBenefitsCardWrapper;

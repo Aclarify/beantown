@@ -38,7 +38,8 @@ const JobBenefitsContent = () => {
 			document.body.style.overflow = 'unset';
 	};
 
-	const onBenefitsCardClick = (benefitsCard:any) => {			
+	const onBenefitsCardClick = (benefitsCard:any) => {	
+		console.log('onClick data' + benefitsCard)		
 			setShowBenefitCardModel(true);
 			setSelectedBenefitCard(benefitsCard);
 			
@@ -61,21 +62,26 @@ const JobBenefitsContent = () => {
 
 					{/* Job Selected Benefits */}
 					<div className="container mx-auto  flex  h-auto   w-full flex-wrap items-center justify-center gap-8  p-8  ">
-						
 						{allBenefits?.map((benefitsCard, index) => {
 							return (
 								<div key={index}>
 									<BenefitsCard
-										onShowMore={() => onBenefitsCardClick(benefitsCard)}
 										briefcaseIconImage={benefitsCard?.image || ''}
 										benefitTitle={benefitsCard?.titleText || ''}
 										benefitDescription={benefitsCard?.description || ''}
+										onShowMore={() => onBenefitsCardClick(benefitsCard)}
 									/>
 								</div>
 							);
 						})}
 					</div>
-
+					<JobBenefitsModal
+						onClose={handleOnClose}
+						visible={showBenefitCardModel}
+						benefitsIconImage={selectedBenefitCard?.image || ''}
+						benefitsCardTitle={selectedBenefitCard?.title || ''}
+						benefitsCardDescription={selectedBenefitCard?.description || ''}
+					/>
 					<Button fontColor="text-white" bgColor="bg-primary-shade-1">
 						<Link href={'/jobApplication'}>{'Apply'}</Link>
 					</Button>
@@ -96,16 +102,6 @@ const JobBenefitsContent = () => {
 				alt="Bottom Blob Mobile "
 				className="-z-2 xs:translate-x-[29%] xs:translate-y-[103%] absolute bottom-0 right-0  block translate-x-[27%]  translate-y-[103%]  transform  lg:hidden "
 			/>
-
-			<JobBenefitsModal
-				onClose={handleOnClose}
-				visible={showBenefitCardModel}
-				benefitsIconImage={selectedBenefitCard?.image?.asset?.url || ''}
-				benefitsCardTitle={selectedBenefitCard?.title || ''}
-				benefitsCardDescription={selectedBenefitCard?.description || ''}
-			/>
-
-			
 		</section>
 	);
 };

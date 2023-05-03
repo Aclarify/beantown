@@ -17,18 +17,13 @@ const JobBenefitsModal = ({
 	const ref = useRef(null);
 	useOutsideClick(sendNo, ref);
 
-	console.log(
-		'inside model Card Title   :' + benefitCardTitle,
-		'icon info  : '+ iconImage,
-		'card Description  :'+ benefitCardDescription
-	);
-
+	
 	return (
 		<Modal isVisible={visible} onClose={onClose}>
 			<BenefitsCard
 				briefcaseIconImage={iconImage || ''}
 				benefitTitle={benefitCardTitle || ''}
-				benefitDescription={benefitCardDescription}
+				benefitDescription={benefitCardDescription || ''}
 			/>
 		</Modal>
 	);
