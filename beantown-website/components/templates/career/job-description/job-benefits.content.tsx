@@ -38,9 +38,10 @@ const JobBenefitsContent = () => {
 			document.body.style.overflow = 'unset';
 	};
 
-	const onBenefitsCardClick = (benefitsCard:any) => {
-			setSelectedBenefitCard(benefitsCard);
+	const onBenefitsCardClick = (benefitsCard:any) => {			
 			setShowBenefitCardModel(true);
+			setSelectedBenefitCard(benefitsCard);
+			
 			console.log('Selected card data    :' + selectedBenefitCard);
 		// Disables Background Scrolling whilst the SideDrawer/Modal is open
 		if (typeof window != 'undefined' && window.document) {
@@ -66,7 +67,7 @@ const JobBenefitsContent = () => {
 								<div key={index}>
 									<BenefitsCard
 										onShowMore={() => onBenefitsCardClick(benefitsCard)}
-										brifcaseIconImage={benefitsCard?.image || ''}
+										briefcaseIconImage={benefitsCard?.image || ''}
 										benefitTitle={benefitsCard?.titleText || ''}
 										benefitDescription={benefitsCard?.description || ''}
 									/>

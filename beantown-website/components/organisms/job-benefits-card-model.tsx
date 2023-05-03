@@ -4,6 +4,7 @@ import useOutsideClick from '@lib/hooks/handle-outside-click.hook';
 import Modal from './modal.organism';
 import BenefitsCard from './benefit-card.organism';
 
+
 const JobBenefitsModal = ({
 	visible,
 	onClose,
@@ -16,12 +17,16 @@ const JobBenefitsModal = ({
 	const ref = useRef(null);
 	useOutsideClick(sendNo, ref);
 
-	console.log('image' + benefitCardTitle);
+	console.log(
+		'inside model Card Title   :' + benefitCardTitle,
+		'icon info  : '+ iconImage,
+		'card Description  :'+ benefitCardDescription
+	);
 
 	return (
 		<Modal isVisible={visible} onClose={onClose}>
 			<BenefitsCard
-				brifcaseIconImage={iconImage || ''}
+				briefcaseIconImage={iconImage || ''}
 				benefitTitle={benefitCardTitle || ''}
 				benefitDescription={benefitCardDescription}
 			/>
