@@ -68,12 +68,13 @@ const LinksHubContent = () => {
 					</div>
 					<div className="flex justify-center">
 						<div className="image-wrapper  relative  mt-8 h-[60px] w-[170px]  md:h-[80px] md:w-[230px]">
-							<Image
-								alt={logoDark?.image?.asset?.altText || ''}
-								fill
-								className="object-contain"
-								priority={true}
-								src={logoDark?.image?.asset?.url || ''}
+							<CMSImageWrapper
+								altText={logoDark?.image?.asset?.altText || ''}
+								image={logoDark?.image || null}
+								shouldBePrefetched={true}
+								style={{
+									objectFit: 'contain',
+								}}
 							/>
 						</div>
 					</div>
