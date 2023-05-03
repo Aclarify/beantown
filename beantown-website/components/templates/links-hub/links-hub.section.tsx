@@ -3,95 +3,58 @@ import LinksHubContent from './links-hub.content';
 import Image from 'next/image';
 import React from 'react';
 
-const BookNowSection = () => {
+const LinksHub = () => {
 	return (
 		<section
 			id="links-hub"
-			className="3xl:mb-[25em] xs:mb-[12em]   relative z-10 mb-[13em] sm:mb-[15em] lg:mb-[18em] xl:mb-[20em] 2xl:mb-[22em]"
+			className="3xl:mb-[38em] xs:mb-[21em]   relative z-10 mb-[25em] md:mb-[27em]  lg:mb-[32em] xl:mb-[34em] 2xl:mb-[36em]"
 		>
 			<Image
 				src={'/images/links-hub/link-hub-left-top-blob.svg'}
-				height={590}
-				width={650}
+				height={390}
+				width={450}
 				alt="Left Top Blob "
-				className="absolute  top-0 left-0 z-[-1] hidden  transform lg:block lg:translate-y-[-24%] lg:translate-x-[-85%] 2xl:translate-y-[-22%] 2xl:translate-x-[-78%]"
+				className="absolute  top-0 left-0 z-[-1] hidden  transform xl:block xl:translate-y-[33%] xl:translate-x-[-69%] 2xl:translate-y-[35%] 2xl:translate-x-[-65%]"
 			/>
+
 			<Image
-				src={'/images/links-hub/link-hub-top-left-blob-mobile.svg'}
-				height={90}
-				width={150}
-				alt="Left Top Blob Mobile "
-				className="  absolute top-0 left-0 z-[-1]   translate-y-[23%] translate-x-[-70%] transform md:hidden "
+				src={'/images/links-hub/link-hub-top-right-blob.svg'}
+				height={390}
+				width={450}
+				alt="Right Blob "
+				className="  absolute bottom-0 right-0 z-[-1]  hidden translate-x-[73%] translate-y-[-55%] transform xl:block  2xl:translate-x-[70%] "
 			/>
-			<Image
-				src={'/images/links-hub/link-hub-left-top-blob.svg'}
-				height={290}
-				width={350}
-				alt="Left Top Blob Tablet "
-				className=" absolute top-0 left-0 z-[-1] hidden transform   md:block md:translate-y-[-9%] md:translate-x-[-75%] lg:hidden "
-			/>
+
 			<Image
 				src={'/images/links-hub/link-hub-bottom-left-blob.svg'}
 				height={590}
 				width={650}
 				alt="Left Bottom Blob "
-				className="2xl-translate-y-0  absolute bottom-0 left-0 z-[-1]  hidden transform lg:block lg:translate-y-[5%] lg:translate-x-[-85%] 2xl:translate-x-[-68%]"
+				className="absolute  bottom-0 left-0 z-[-1] hidden  transform lg:block lg:translate-y-[142%] lg:translate-x-[-36%]  "
 			/>
+
 			<Image
 				src={'/images/links-hub/link-hub-bottom-left-blob-mobile.svg'}
 				height={90}
 				width={150}
 				alt="Left Bottom Blob Mobile "
-				className="  absolute bottom-0 left-0 z-[-1]   translate-y-[22%] translate-x-[-70%] transform md:hidden "
+				className="  xs:translate-y-[210%] absolute bottom-0 left-0 z-[-1]    translate-y-[254%] translate-x-[-7%] transform lg:hidden "
 			/>
-			<Image
-				src={'/images/links-hub/link-hub-bottom-left-blob.svg'}
-				height={290}
-				width={350}
-				alt="Left Bottom Blob Tablet "
-				className=" absolute bottom-0 left-0 z-[-1] hidden transform   md:block md:translate-y-[18%] md:translate-x-[-75%] lg:hidden "
-			/>
-			<Image
-				src={'/images/links-hub/link-hub-top-right-blob.svg'}
-				height={590}
-				width={650}
-				alt="Right Blob "
-				className="  absolute bottom-0 right-0 z-[-1]  hidden transform lg:block lg:translate-y-[-63%] lg:translate-x-[65%] 2xl:translate-y-[-45%] 2xl:translate-x-[65%] "
-			/>
-			<Image
-				src={'/images/links-hub/link-hub-top-right-blob-mobile.svg'}
-				height={90}
-				width={150}
-				alt=" Right Blob Mobile "
-				className="  absolute bottom-0 right-0 z-[-1]   translate-y-[-192%] translate-x-[65%] transform md:hidden "
-			/>
-			<Image
-				src={'/images/links-hub/link-hub-top-right-blob.svg'}
-				height={290}
-				width={350}
-				alt="Right Blob Tablet "
-				className=" absolute bottom-0 right-0 z-[-1] hidden transform   md:block md:translate-y-[-22%] md:translate-x-[70%] lg:hidden "
-			/>
+
 			<Image
 				src={'/images/links-hub/link-hub-bottom-right-blob.svg'}
 				height={490}
 				width={550}
 				alt="Bottom Blob "
-				className="  absolute bottom-0 right-0 z-[-1]  hidden transform lg:block lg:translate-x-[-17%] lg:translate-y-[96%] 2xl:translate-y-[107%]   "
+				className="  absolute bottom-0 right-0 z-[-1]  hidden transform lg:block lg:translate-x-[25%] lg:translate-y-[155%] xl:translate-y-[160%] 2xl:translate-y-[165%]   "
 			/>
+
 			<Image
 				src={'/images/links-hub/link-hub-bottom-right-blob-mobile.svg'}
 				height={90}
 				width={150}
 				alt=" Bottom Blob Mobile "
-				className="  absolute bottom-0 right-0 z-[-1]   translate-y-[110%] translate-x-[-17%] transform md:hidden "
-			/>
-			<Image
-				src={'/images/links-hub/link-hub-bottom-right-blob.svg'}
-				height={290}
-				width={350}
-				alt="Bottom Blob Tablet "
-				className=" absolute bottom-0 right-0 z-[-1] hidden translate-y-[107%]   translate-x-[-17%] transform md:block lg:hidden "
+				className="  xs:translate-y-[220%] absolute bottom-0 right-0 z-[-1]  translate-y-[262%] translate-x-[14%] transform  md:translate-y-[288%] lg:hidden "
 			/>
 			<SectionContentWrapper>
 				<LinksHubContent />
@@ -99,4 +62,4 @@ const BookNowSection = () => {
 		</section>
 	);
 };
-export default BookNowSection;
+export default LinksHub;

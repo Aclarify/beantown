@@ -59,67 +59,71 @@ const LinksHubContent = () => {
 	return (
 		<div
 			id="section-wrapper"
-			className=" 2xl:padding-for-section z-10 mx-auto flex flex-col rounded-3xl bg-white px-5 pb-20 lg:rounded-[40px]"
+			className=" xs:top-32 relative top-36 z-10  flex  justify-center    md:top-40 lg:top-48  "
 		>
-			<div className="my-40  flex flex-col justify-center text-center align-middle ">
-				<div className=" text-primary-black border-secondary-shade-2 border-b-2 pb-8  pt-[2em] text-center  lg:pt-0 ">
-					<h4>{linksHubTitle}</h4>
-				</div>
-				<div>
-					<div className="image-wrapper relative mx-auto mt-8 h-[60px] w-[170px] text-center md:h-[80px] md:w-[230px]">
-						<Image
-							alt={logoDark?.image?.asset?.altText || ''}
-							fill
-							className="object-contain"
-							priority={true}
-							src={logoDark?.image?.asset?.url || ''}
-						/>
+			<div className="max-w-[1000px] rounded-3xl bg-white lg:rounded-[40px]">
+				<div className=" flex flex-col text-center align-middle ">
+					<div className=" text-primary-black border-secondary-shade-2 border-b-2 py-5  text-center  ">
+						<h4>{linksHubTitle}</h4>
+					</div>
+					<div className="flex justify-center">
+						<div className="image-wrapper  relative  mt-8 h-[60px] w-[170px]  md:h-[80px] md:w-[230px]">
+							<Image
+								alt={logoDark?.image?.asset?.altText || ''}
+								fill
+								className="object-contain"
+								priority={true}
+								src={logoDark?.image?.asset?.url || ''}
+							/>
+						</div>
+					</div>
+					<div className=" text-gray-shade-1  px-6 pt-4 pb-8 text-center md:px-10 xl:px-32  ">
+						<p className="text-primary-black !text-xl !font-light">
+							{linksHubDescription}
+						</p>
+					</div>
+					<div
+						id="socialMediaIconGroupMobile"
+						className="flex items-center justify-center space-x-4"
+					>
+						{renderSocialMediaIcons()}
 					</div>
 				</div>
-				<div className=" text-gray-shade-1  pt-4 pb-8  text-center  ">
-					<p className="text-primary-black !text-xl !font-light">
-						{linksHubDescription}
-					</p>
-				</div>
-				<div
-					id="socialMediaIconGroupMobile"
-					className="flex items-center justify-center space-x-4"
-				>
-					{renderSocialMediaIcons()}
+				<div className=" flex justify-center pt-12 pb-12 lg:pt-[60px]">
+					<div className="grid grid-cols-1  gap-y-4 sm:gap-x-4 lg:grid-cols-2 lg:gap-4 ">
+						{links &&
+							links?.map((link, index) => {
+								return (
+									<div
+										key={index}
+										className="bg-secondary-shade-3  h-[42px] w-[300px] rounded-xl  lg:h-[60px] lg:w-[370px] lg:rounded-2xl"
+									>
+										<div className=" flex items-center justify-center p-2 lg:p-4 ">
+											<div className="icon-wrapper  basis-[10%]">
+												{link &&
+													link.heroIconName &&
+													renderIconComponent(link.heroIconName)}
+											</div>
+											<div className="basis-[80%]">
+												<span className="text-primary-black  rounded-sm px-3">
+													{link?.linkName}
+												</span>
+											</div>
+											<div className="basis-[10%]">
+												<Link href={link?.href || ''}>
+													<ChevronRightIcon
+														aria-hidden="true"
+														className="h-5 w-5"
+													/>
+												</Link>
+											</div>
+										</div>
+									</div>
+								);
+							})}
+					</div>
 				</div>
 			</div>
-			<div className="grid grid-cols-1 gap-x-2 gap-y-4 sm:gap-x-4 lg:grid-cols-2 lg:gap-4 lg:pl-6">
-				{links &&
-					links?.map((link, index) => {
-						return (
-							<div
-								key={index}
-								className="bg-secondary-shade-3 h-[42px] w-[340px] rounded-xl pl-1 lg:h-[60px] lg:w-[370px] lg:rounded-2xl"
-							>
-								<div className="ml-4 flex items-center justify-around p-4 ">
-									<div className="icon-wrapper basis-[10%]">
-										{link &&
-											link.heroIconName &&
-											renderIconComponent(link.heroIconName)}
-									</div>
-									<div className="basis-[80%]">
-										<span className="text-primary-black rounded-sm px-3 text-2xl">
-											{link?.linkName}
-										</span>
-									</div>
-									<div className="basis-[10%]">
-										<ChevronRightIcon
-											href={link?.href || ''}
-											aria-hidden="true"
-											className="h-5 w-5"
-										/>
-									</div>
-								</div>
-							</div>
-						);
-					})}
-			</div>
-			{/* <div className="mx-auto h-[295px] w-[385px] lg:h-[962px] lg:w-[1254px] "></div> */}
 		</div>
 	);
 };
