@@ -30,9 +30,8 @@ type JobApplicationFormValues = {
 	city: string;
 	state: string;
 	zipCode: string;
-	resume:string;
-	experience :string;
-	
+	resume: string;
+	experience: string;
 };
 
 const validationSchema = Yup.object().shape({
@@ -70,22 +69,21 @@ const JobApplicationForm = () => {
 	}
 
 	const pageData = pageContent.page[0];
-	const { jobList,logoDark,employmentTypeOptions } = pageData;
+	const { jobList, logoDark, employmentTypeOptions } = pageData;
 	if (!jobList) {
 		return null;
 	}
-	const jobOptions: any = ([] = jobList.map((data:any) => {
+	const jobOptions: any = ([] = jobList.map((data: any) => {
 		return data?.positionName;
 	}));
 
-	
-	// const employmentTypes: any = ([] = employmentTypeOptions.map(
-	// 	(data: any) => {
-				
-	// 		return data?.value;
-	// 	}
-	// ));
-	const jobDesireOptions: any = ['Part Time', 'Full Time'];	
+	const employmentTypes: any = employmentTypeOptions.map(
+		(data: any) => {
+
+			return data?.value;
+		}
+	);
+	//const jobDesireOptions: any = ['Part Time', 'Full Time'];
 
 	const formOptions = { resolver: yupResolver(validationSchema) };
 	const {
@@ -94,29 +92,27 @@ const JobApplicationForm = () => {
 		formState: { errors },
 	} = useForm<JobApplicationFormValues>(formOptions);
 
-	const [isOpen, setIsOpen] = useState(false);	
-	
+	const [isOpen, setIsOpen] = useState(false);
 
 	const onSubmit = (data: any) => alert(JSON.stringify(data));
+
 	
-	const mapBoxAccessToken = config.mapBoxAccessToken;
 
 	return (
 		<>
 			<SectionContentWrapper>
-				<form onSubmit={handleSubmit(onSubmit)} className=" container mb-96 ">
-					<div className=" container z-10 m-2 mx-auto flex flex-col rounded-3xl border  bg-white p-2 shadow-[rgba(44,_48,_88,_0.16)_0px_8px_200px] shadow md:m-8 md:p-8">
+				<form
+					onSubmit={handleSubmit(onSubmit)}
+					className=" container z-20 mb-96 "
+				>
+					<div className=" border-gray-shade-6  container m-2 mx-auto flex flex-col rounded-2xl  border  bg-white p-2 shadow-[rgba(29,_39,_87,_0.04)_0px_8px_200px] md:m-8  md:p-8 2xl:rounded-[40px]">
 						<div className="container  m-4 flex items-center p-4">
-							<h3 className="primary-color-shade-1 mx-auto">Job Application</h3>
+							<h3 className="text-primary-shade-1 mx-auto">Job Application</h3>
 						</div>
 						<div className="mt-2 flex flex-col gap-4 py-2 md:mt-6 lg:py-5  ">
 							<div className="mx-auto flex w-3/4   flex-col gap-4 md:w-5/6  md:flex-row">
 								<div className="flex  w-full flex-col gap-2 ">
-									<FormLabel
-										inputId="first-name"
-										labelText="First Name"
-										className="primary-color-shade-1 "
-									/>
+									<FormLabel inputId="first-name" labelText="First Name" />
 									<FormInput
 										id="first-name"
 										placeholderText="Enter your first name"
@@ -248,7 +244,6 @@ const JobApplicationForm = () => {
 										id={'jobOption'}
 										name={'jobOption'}
 										options={jobOptions}
-										value={undefined}
 										customClass="bg-white  rounded-lg  p-2  "
 									/>
 								</div>
@@ -260,8 +255,7 @@ const JobApplicationForm = () => {
 									<FormDropdown
 										id={'jobDesireOptions'}
 										name={'jobDesireOptions'}
-										options={jobDesireOptions}
-										value={undefined}
+										options={employmentTypes}
 										customClass="bg-white"
 									/>
 								</div>
@@ -313,7 +307,7 @@ const JobApplicationForm = () => {
 						</div>
 					</div>
 				</form>
-				<div className="container container	 sticky top-0 mx-auto">
+				<div className="container sticky top-0 mx-auto">
 					<Modal
 						isVisible={isOpen}
 						onClose={() => setIsOpen(false)}
@@ -328,7 +322,7 @@ const JobApplicationForm = () => {
 				height={290}
 				width={350}
 				alt="Bottom Blob Mobile "
-				className=" absolute bottom-0 right-0 z-10 lg:block hidden translate-x-[27%]  translate-y-[250%]  transform   "
+				className=" absolute bottom-0 right-0 z-10 hidden translate-x-[27%] translate-y-[250%]  transform  lg:block   "
 			/>
 			<Image
 				src={'/images/job-application/left-blob.svg'}
@@ -342,5 +336,3 @@ const JobApplicationForm = () => {
 };
 
 export default JobApplicationForm;
-
-

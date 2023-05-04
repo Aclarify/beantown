@@ -35,7 +35,7 @@ const JobApplicationHeroContent = () => {
 								<h2 className=" text-primary-black ">{applicationTitle}</h2>
 							</Animate>
 						</ContentWrapper.Title>
-						<ContentWrapper.Description className="rich-text  text-center !font-thin md:text-left lg:pr-4">
+						<ContentWrapper.Description className="rich-text text-gray-shade-1  text-center !font-thin md:text-left lg:pr-4">
 							<Animate>
 								<p>{applicationDescription}</p>
 							</Animate>
