@@ -3,7 +3,7 @@ import { FieldError, UseFormRegister } from 'react-hook-form';
 import clsx from 'clsx';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faPaperclip } from '@fortawesome/free-solid-svg-icons';
-import  { useRef, useState } from 'react';
+import { useRef, useState } from 'react';
 
 interface Props {
 	id?: string;
@@ -38,28 +38,24 @@ const FormUploadFile: React.FC<Props> = ({
 	error,
 	showErrorText = true,
 }) => {
-	
 	const inputFile = useRef<HTMLInputElement | null>(null);
 	const [fileName, setFileName] = useState('Choose a file');
-	function chooseFile() {		
-	  	 inputFile.current?.click()
-		 
+	function chooseFile() {
+		inputFile.current?.click();
 	}
-	const handleFileChange = (event:any) => {
-
+	const handleFileChange = (event: any) => {
 		const fileObj = event.target.files && event.target.files[0];
-			if (!fileObj) {
+		if (!fileObj) {
 			return;
-			}
-			event.target.value = null;
-			setFileName(fileObj.name);	 	
-			alert(fileObj.name);
-			
-	}
+		}
+		event.target.value = null;
+		setFileName(fileObj.name);
+		alert(fileObj.name);
+	};
 
 	return (
 		<>
-			<div className=" text-placeholder-gray-shade-2 ">
+			<div className=" text-gray-shade-2 ">
 				<button onClick={chooseFile} className="w-full md:w-1/2 ">
 					<input
 						id={id}
@@ -69,7 +65,7 @@ const FormUploadFile: React.FC<Props> = ({
 						autoComplete={autoComplete}
 						{...(register ? register(name) : {})}
 						className={clsx(
-							'relative w-full   rounded-lg border p-2 px-6 focus:outline-0',
+							'relative w-full rounded-lg   border p-2 px-6 tracking-wide focus:outline-0',
 							bgColor,
 							fontColor,
 							className,
@@ -85,7 +81,7 @@ const FormUploadFile: React.FC<Props> = ({
 					/>
 					<FontAwesomeIcon
 						icon={faPaperclip}
-						className=" text-gray-shade-2 absolute left-1 top-3 pr-2  "
+						className=" text-gray-shade-2 absolute left-1 top-3   "
 					/>
 				</button>
 			</div>
@@ -97,4 +93,3 @@ const FormUploadFile: React.FC<Props> = ({
 	);
 };
 export default FormUploadFile;
-

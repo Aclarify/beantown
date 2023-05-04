@@ -14,6 +14,7 @@ import Image from 'next/image';
 import FormUploadFile from 'components/atoms/form-file-upload.atom';
 import Modal from 'components/organisms/modal.organism';
 import JobApplicationModal from './job-application-modal';
+import ComboBox from 'components/atoms/form-combo-box.atom';
 
 interface Props {
 	onSumissionSuccess: () => void;
@@ -68,6 +69,7 @@ const JobApplicationForm: React.FC<Props> = () => {
 	} = useForm<JobApplicationFormValues>(formOptions);
 	const [isOpen, setIsOpen] = useState(false);
 
+	const [formValue, setFormValue] = useState<Record<string, any>>({});
 	if (!pageContent) {
 		return null;
 	}
@@ -78,11 +80,11 @@ const JobApplicationForm: React.FC<Props> = () => {
 		return null;
 	}
 	const jobOptions: any = ([] = jobList.map((data: any) => {
-		return data?.positionName;
+		return { label: data?.positionName, value: data?.positionName };
 	}));
 
 	const employmentTypes: any = employmentTypeOptions?.map((data) => {
-		return data?.value;
+		return { label: data?.label, value: data?.value };
 	});
 
 	const onSubmit = (data: any) => alert(JSON.stringify(data));
@@ -250,6 +252,13 @@ const JobApplicationForm: React.FC<Props> = () => {
 												name={'jobDesireOptions'}
 												options={employmentTypes}
 												customClass="bg-white"
+											/>
+											<ComboBox
+												label="Employment Desired"
+												name="jobDesired"
+												selectedValue="Select One"
+												options={employmentTypes}
+												showError={false}
 											/>
 										</div>
 									</div>

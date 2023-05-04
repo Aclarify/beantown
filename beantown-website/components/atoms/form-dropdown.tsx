@@ -5,7 +5,7 @@ interface IPorps {
 	id?: string;
 	name: string;
 	type?: string;
-	options?: Option[];
+	options?: Array<{ label: string; value: string }>;
 	value?: any;
 	width?: string;
 	customClass?: string;
@@ -13,15 +13,11 @@ interface IPorps {
 	error?: FieldError;
 	showErrorText?: boolean;
 }
-interface Option {
-	value?: string;
-}
 
 const FormDropdown: React.FC<IPorps> = ({
 	id,
 	name,
 	options,
-	value,
 	customClass = '',
 	disabled = false,
 	error,
@@ -32,7 +28,7 @@ const FormDropdown: React.FC<IPorps> = ({
 			<select
 				id={id}
 				name={name}
-				className={` ${customClass}  text-gray-shade-2 invalid:text-gray-shade-2 focus:border-secondary-shade-3  mt-1.5 block   rounded-lg border  px-3 py-4   tracking-wide focus:outline-none`}
+				className={` ${customClass}  text-gray-shade-2 invalid:text-gray-shade-2 focus:border-gray-shade-3  light:bg-white mt-1.5 block  rounded-lg border bg-white  px-3 py-4   tracking-wide focus:outline-none`}
 				disabled={disabled}
 				required
 			>
@@ -42,10 +38,11 @@ const FormDropdown: React.FC<IPorps> = ({
 				{options?.map((option: any, id: number) => (
 					<option
 						className="!font-neuePlak "
-						value={option}
+						value={option.value}
 						key={`${option}_${id}`}
+						style={{ color: 'white', fontFamily: 'neuePlak' }}
 					>
-						{option}
+						{option.label}
 					</option>
 				))}
 			</select>
