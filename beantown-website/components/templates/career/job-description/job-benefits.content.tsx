@@ -50,10 +50,10 @@ const JobBenefitsContent = () => {
 					<h3 className="text-primary-black mx-auto py-4 px-8 text-center ">
 						{globaljobBenefitSectionTitle}
 					</h3>				
-					<div className="container mx-auto  flex  h-auto   w-full flex-wrap items-center justify-center gap-8  p-8  ">
+					<div className="container mx-auto  flex   flex-wrap items-center justify-center gap-8   ">
 						{allBenefits?.map((benefitsCard, index) => {
 							return (
-								<div  key={index} className="md:[w-480px]   justify-stretch mb-8 flex h-auto  w-[380px] flex-col    items-center gap-4 rounded-2xl bg-white p-8 shadow-[rgba(44,_48,_88,_0.16)_0px_8px_200px] lg:h-[600px] lg:rounded-3xl  ">
+								<div  key={index} className="lg:[w-480px]   justify-stretch  flex h-[348px]  w-[380px] flex-col    items-center md:gap-4 rounded-2xl bg-white p-2  md:p-8 shadow-[rgba(44,_48,_88,_0.16)_0px_8px_200px] lg:h-[600px] lg:rounded-3xl  ">
 								
 									<BenefitsCard
 										briefcaseIconImage={benefitsCard?.image || ''}
