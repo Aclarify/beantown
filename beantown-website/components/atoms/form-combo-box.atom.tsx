@@ -62,9 +62,9 @@ const ComboBox: React.FC<Props> = ({
 			as="div"
 			ref={wrapperRef}
 			value={selectedOption ? selectedOption.label : ''}
-			onChange={(event) => {
+			onChange={(event: any) => {
 				setShowOptions(false);
-				//onChange(event);
+				// onChange(event);
 				setQuery('');
 			}}
 		>
