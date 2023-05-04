@@ -17,8 +17,6 @@ interface Option {
 	value?: string;
 }
 
-
-
 const FormDropdown: React.FC<IPorps> = ({
 	id,
 	name,
@@ -34,17 +32,16 @@ const FormDropdown: React.FC<IPorps> = ({
 			<select
 				id={id}
 				name={name}
-				className={` ${customClass}  text-gray-shade-2 invalid:text-gray-shade-2 focus:border-secondary-shade-3 mt-1.5 block rounded-lg   border p-3  py-4 pl-3 pr-10 focus:outline-none sm:text-sm`}
+				className={` ${customClass}  text-gray-shade-2 invalid:text-gray-shade-2 focus:border-secondary-shade-3  mt-1.5 block   rounded-lg border  px-3 py-4   tracking-wide focus:outline-none`}
 				disabled={disabled}
 				required
-				
 			>
-				<option disabled selected value={''} hidden>
+				<option disabled selected value={''} hidden className="!font-neuePlak ">
 					{'Select One'}
 				</option>
 				{options?.map((option: any, id: number) => (
 					<option
-						className="!font-neuePlak"
+						className="!font-neuePlak "
 						value={option}
 						key={`${option}_${id}`}
 					>

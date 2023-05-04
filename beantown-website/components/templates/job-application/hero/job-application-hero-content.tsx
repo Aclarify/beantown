@@ -9,7 +9,7 @@ import MaskedImageWithBackground from 'components/organisms/masked-image-with-ba
 const JobApplicationHeroContent = () => {
 	const { pageContent } =
 		useContext<GlobalContextProps<CareersContentProps>>(GlobalContext);
-	
+
 	if (!pageContent) {
 		return null;
 	}
@@ -50,7 +50,7 @@ const JobApplicationHeroContent = () => {
 						image={applicationImage || null}
 						imgAltText={applicationImage?.asset?.altText || ''}
 						maskImg="./images/job-application/hero/blob-mask.svg"
-						bgImg="./images/job-application/hero/bg-blob-shape.svg"
+						bgImg="./images/job-application/right-blob.svg"
 					/>
 				</div>
 			</div>

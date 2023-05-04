@@ -45,7 +45,7 @@ const FormInput: React.FC<Props> = ({
 				autoComplete={autoComplete}
 				{...(register ? register(name) : {})}
 				className={clsx(
-					'w-full rounded-lg border p-3 focus:outline-none',
+					'w-full rounded-lg border p-3 placeholder:tracking-wide focus:outline-none',
 					bgColor,
 					fontColor,
 					placeholderColor,
