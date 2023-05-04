@@ -58,7 +58,8 @@ const validationSchema = Yup.object().shape({
 		.required('Your phone number is required'),
 });
 
-const JobApplicationForm = () => {
+
+	export const JobApplicationForm: React.FC<Props> = ({ onSumissionSuccess }) => {
 	const { pageContent } =
 		useContext<GlobalContextProps<CareersContentProps>>(GlobalContext);
 
@@ -75,10 +76,10 @@ const JobApplicationForm = () => {
 		return data?.positionName;
 	}));
 
-	const employmentTypes: any = employmentTypeOptions?.map((data)=>{
-		return data?.value
-	})
-	
+	const employmentTypes: any = employmentTypeOptions?.map((data) => {
+		return data?.value;
+	});
+
 	const formOptions = { resolver: yupResolver(validationSchema) };
 	const {
 		register,
@@ -86,14 +87,14 @@ const JobApplicationForm = () => {
 		formState: { errors },
 	} = useForm<JobApplicationFormValues>(formOptions);
 	const [isOpen, setIsOpen] = useState(false);
-	const onSubmit = (data: any) => alert(JSON.stringify(data));	
+	const onSubmit = (data: any) => alert(JSON.stringify(data));
 
 	return (
 		<>
 			<SectionContentWrapper>
 				<form
 					onSubmit={handleSubmit(onSubmit)}
-					className=" container z-20 mb-96 "
+					className=" container z-20 mb-96  "
 				>
 					<div className=" border-gray-shade-6  container  mx-auto flex flex-col rounded-2xl  border  bg-white p-2 shadow-[rgba(29,_39,_87,_0.04)_0px_8px_200px]  2xl:rounded-[40px]">
 						<div className="container  m-4 flex items-center p-4">
