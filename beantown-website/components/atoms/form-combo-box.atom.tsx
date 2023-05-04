@@ -8,7 +8,7 @@ interface Props {
 	name: string;
 	selectedValue: string;
 	options: Array<{ label: string; value: string }>;
-	onChange: (event: React.ChangeEvent<any>) => void;
+	onChange?: (event: React.ChangeEvent<any>) => void;
 	showError: boolean;
 }
 
@@ -64,7 +64,7 @@ const ComboBox: React.FC<Props> = ({
 			value={selectedOption ? selectedOption.label : ''}
 			onChange={(event) => {
 				setShowOptions(false);
-				onChange(event);
+				//onChange(event);
 				setQuery('');
 			}}
 		>
