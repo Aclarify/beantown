@@ -1,4 +1,6 @@
 import React, { useContext, useRef, useState } from 'react';
+import toast from 'react-hot-toast';
+
 import FormLabel from 'components/atoms/form-label.atom';
 import FormInput from 'components/atoms/form-input.atom';
 import FormTextArea from 'components/atoms/form-textarea.atoms';
@@ -9,11 +11,13 @@ import { CareersContentProps } from 'pages/careers';
 import FormDropdown from 'components/atoms/form-dropdown';
 import { yupResolver } from '@hookform/resolvers/yup';
 import * as Yup from 'yup';
-import { useForm } from 'react-hook-form';
+import { SubmitHandler, useForm } from 'react-hook-form';
 import Image from 'next/image';
 import FormUploadFile from 'components/atoms/form-file-upload.atom';
 import Modal from 'components/organisms/modal.organism';
 import JobApplicationModal from './job-application-modal';
+import { CreateJobApplicationInboundDto } from '@lib/api/careers/jobApplication.handler';
+import { createJobApplication } from '@lib/clients/services/careers/job-application.service';
 
 type JobApplicationFormValues = {
 	email: string;
@@ -26,6 +30,8 @@ type JobApplicationFormValues = {
 	zipCode: string;
 	resume: string;
 	experience: string;
+	positionApplyingFor: string;
+	employmentDesired: string;
 };
 
 const validationSchema = Yup.object().shape({
@@ -37,10 +43,10 @@ const validationSchema = Yup.object().shape({
 	address: Yup.string().required('Your address is required'),
 	city: Yup.string().required('Your city is required'),
 	state: Yup.string().required('Your state is required'),
-	resume: Yup.string().required('Please Choose Your File'),
+	// resume: Yup.string().required('Please Choose Your File'),
 	experience: Yup.string()
 		.required('Please Enter Your Experience')
-		.min(20)
+		.min(20, 'Please enter data, at least 20 words')
 		.max(250, 'Please enter data, at most 250 words'),
 	// The regular expression ^\d{5}(-\d{4})?$ matches a 5-digit ZIP code
 	// with an optional 4-digit extension
@@ -52,6 +58,8 @@ const validationSchema = Yup.object().shape({
 	phoneNumber: Yup.string()
 		.matches(/^\+?\d{10,14}$/, 'Phone number is not valid') //
 		.required('Your phone number is required'),
+	// positionApplyingFor: Yup.string().required('Please select a position'),
+	// employmentDesired: Yup.string().required('Please select an employment type'),
 });
 
 const JobApplicationForm: React.FC = () => {
@@ -82,9 +90,54 @@ const JobApplicationForm: React.FC = () => {
 		return data?.value;
 	});
 
-	const onSubmit = (data: any) => {
-		console.log(data);
-		setShowConfirmationDialog(true);
+	const onSubmit: SubmitHandler<JobApplicationFormValues> = async (data) => {
+		// Submit form data to server
+		console.log('data in submit:::', data);
+		if (data) {
+			const jobApplicationDetails: CreateJobApplicationInboundDto = {
+				name: `${data.firstName} ${data.lastName}`,
+				contactInfo: {
+					email: data.email,
+					phoneNumber: data.phoneNumber,
+				},
+				address: {
+					address1: data.address,
+					address2: data.address,
+					city: data.city,
+					state: data.state,
+					zip: data.zipCode,
+					country: 'USA',
+				},
+				jobDetail: {
+					positionApplyingFor: data.positionApplyingFor,
+					employmentDesired: data.employmentDesired,
+					aboutApplicant: data.experience,
+					resumeURL: data.resume,
+				},
+			};
+			console.log('jobApplicationDetails', jobApplicationDetails);
+			const jobApplicationPromise = createJobApplication(jobApplicationDetails);
+
+			toast.promise(
+				jobApplicationPromise,
+				{
+					loading: 'Loading',
+					error: (err) => {
+						console.error('Error: ', err);
+						return `Cannot complete this operation, please try again later`;
+					},
+					success: () => {
+						setShowConfirmationDialog(true);
+						return `Successfully submitted`;
+					},
+				},
+				{
+					style: {
+						minWidth: '250px',
+					},
+				}
+			);
+		}
 	};
 
 	return (
@@ -188,7 +241,7 @@ const JobApplicationForm: React.FC = () => {
 									<FormInput
 										id="zip-code"
 										placeholderText="Enter your Zip Code"
-										name={'zip'}
+										name={'zipCode'}
 										bgColor="white"
 										error={errors.zipCode}
 										register={register}
@@ -250,7 +303,7 @@ const JobApplicationForm: React.FC = () => {
 								</div>
 							</div>
 
-							<div className="mx-auto flex w-full px-2 md:w-5/6 ">
+							{/* <div className="mx-auto flex w-full px-2 md:w-5/6 ">
 								<div className={'flex w-full  flex-col gap-2'}>
 									<FormLabel inputId="resume" labelText="Upload your resume" />
 									<div className="relative block  ">
@@ -262,7 +315,7 @@ const JobApplicationForm: React.FC = () => {
 										/>
 									</div>
 								</div>
-							</div>
+							</div> */}
 							<div className="mx-auto w-full px-2 md:w-5/6">
 								<div className={'flex w-full flex-col gap-2'}>
 									<FormLabel
