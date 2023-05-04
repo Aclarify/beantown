@@ -1,5 +1,5 @@
 import React, { useContext } from 'react';
-import { Careers, Nav, Footer} from '@typing/gql/graphql';
+import { Careers, Nav, Footer } from '@typing/gql/graphql';
 import Head from 'next/head';
 import pageQuery from '@lib/queries/pages/get-careers-query';
 import WithGlobalContent, {
@@ -39,7 +39,7 @@ const CareerPage: React.FC = () => {
 	const { logoLight, logoDark, pageTitle, metaDescription } = pageData;
 	const PageHead = () => {
 		return (
-			<Head>			
+			<Head>
 				<title>{pageTitle}</title>
 				<meta name="description" content={metaDescription || ''} />
 			</Head>
@@ -66,10 +66,8 @@ const CareerPage: React.FC = () => {
 					</BookNowButton>
 				</div>
 			</Header>
-			<JobApplicationHeroSection/>
-			<JobApplicationForm onSumissionSuccess={function (): void {
-				throw new Error('Function not implemented.');
-			} }/>		
+			<JobApplicationHeroSection />
+			<JobApplicationForm />
 			<FooterSection logoDesktop={logoLight?.image} content={footerData} />
 		</div>
 	);

@@ -15,9 +15,6 @@ import FormUploadFile from 'components/atoms/form-file-upload.atom';
 import Modal from 'components/organisms/modal.organism';
 import JobApplicationModal from './job-application-modal';
 
-interface Props {
-	onSumissionSuccess: () => void;
-}
 type JobApplicationFormValues = {
 	email: string;
 	firstName: string;
@@ -57,7 +54,7 @@ const validationSchema = Yup.object().shape({
 		.required('Your phone number is required'),
 });
 
-const JobApplicationForm: React.FC<Props> = () => {
+const JobApplicationForm: React.FC = () => {
 	const { pageContent } =
 		useContext<GlobalContextProps<CareersContentProps>>(GlobalContext);
 	const formOptions = { resolver: yupResolver(validationSchema) };
@@ -66,7 +63,7 @@ const JobApplicationForm: React.FC<Props> = () => {
 		handleSubmit,
 		formState: { errors },
 	} = useForm<JobApplicationFormValues>(formOptions);
-	const [isOpen, setIsOpen] = useState(false);
+	const [showConfirmationDialog, setShowConfirmationDialog] = useState(false);
 
 	if (!pageContent) {
 		return null;
@@ -85,7 +82,10 @@ const JobApplicationForm: React.FC<Props> = () => {
 		return data?.value;
 	});
 
-	const onSubmit = (data: any) => alert(JSON.stringify(data));
+	const onSubmit = (data: any) => {
+		console.log(data);
+		setShowConfirmationDialog(true);
+	};
 
 	return (
 		<>
@@ -288,7 +288,6 @@ const JobApplicationForm: React.FC<Props> = () => {
 						<div className="container m-4 mx-auto flex items-center p-4">
 							<button
 								type="submit"
-								onClick={() => setIsOpen(true)}
 								className="bg-primary-shade-1 para-2 mx-auto mt-2 w-3/4  rounded-xl py-3 text-white md:w-2/6 "
 							>
 								Submit
@@ -297,7 +296,10 @@ const JobApplicationForm: React.FC<Props> = () => {
 					</div>
 				</form>
 				<div className="container sticky top-0 mx-auto">
-					<Modal isVisible={isOpen} onClose={() => setIsOpen(false)}>
+					<Modal
+						isVisible={showConfirmationDialog}
+						onClose={() => setShowConfirmationDialog(false)}
+					>
 						<JobApplicationModal logoImage={logoDark?.image} />
 					</Modal>
 				</div>
