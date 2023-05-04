@@ -60,7 +60,7 @@ const FormUploadFile: React.FC<Props> = ({
 	return (
 		<>
 			<div className=" text-placeholder-gray-shade-2 ">
-				<button onClick={chooseFile} className="w-full md:w-1/2">
+				<button onClick={chooseFile} className="w-full md:w-1/2 ">
 					<input
 						id={id}
 						type={type}
@@ -69,13 +69,12 @@ const FormUploadFile: React.FC<Props> = ({
 						autoComplete={autoComplete}
 						{...(register ? register(name) : {})}
 						className={clsx(
-							'relative w-full   rounded-lg border p-3 pl-6 focus:outline-0',
+							'relative w-full   rounded-lg border p-3 pl-6 pr-2 focus:outline-0',
 							bgColor,
 							fontColor,
 							className,
 							error ? 'border-service-red' : borderColor
 						)}
-						
 					/>
 					<input
 						id="resume-upload"
@@ -86,7 +85,7 @@ const FormUploadFile: React.FC<Props> = ({
 					/>
 					<FontAwesomeIcon
 						icon={faPaperclip}
-						className=" absolute left-2 top-4"
+						className=" text-gray-shade-2 absolute left-2 top-4  "
 					/>
 				</button>
 			</div>
