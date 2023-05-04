@@ -17,11 +17,7 @@ interface Option {
 	value?: string;
 }
 
-// const customStyles = {
-//   menuList: (base: any) => {
-//     return { ...base, zIndex: '9999', height: '120px', fontSize: '15px' }
-//   },
-// }
+
 
 const FormDropdown: React.FC<IPorps> = ({
 	id,

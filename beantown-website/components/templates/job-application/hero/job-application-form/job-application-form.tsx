@@ -12,11 +12,9 @@ import * as Yup from 'yup';
 import { useForm } from 'react-hook-form';
 import Image from 'next/image';
 import FormUploadFile from 'components/atoms/form-file-upload.atom';
-import { config } from '@lib/config';
 import Modal from 'components/organisms/modal.organism';
 import JobApplicationModal from './job-application-modal';
-import useEscapeKey from '@lib/hooks/handle-escape-key.hook';
-import useOutsideClick from '@lib/hooks/handle-outside-click.hook';
+
 
 interface Props {
 	onSumissionSuccess: () => void;
@@ -77,26 +75,18 @@ const JobApplicationForm = () => {
 		return data?.positionName;
 	}));
 
-	const employmentTypes: any = employmentTypeOptions.map(
-		(data: any) => {
-
-			return data?.value;
-		}
-	);
-	//const jobDesireOptions: any = ['Part Time', 'Full Time'];
-
+	const employmentTypes: any = employmentTypeOptions?.map((data)=>{
+		return data?.value
+	})
+	
 	const formOptions = { resolver: yupResolver(validationSchema) };
 	const {
 		register,
 		handleSubmit,
 		formState: { errors },
 	} = useForm<JobApplicationFormValues>(formOptions);
-
 	const [isOpen, setIsOpen] = useState(false);
-
-	const onSubmit = (data: any) => alert(JSON.stringify(data));
-
-	
+	const onSubmit = (data: any) => alert(JSON.stringify(data));	
 
 	return (
 		<>
@@ -105,12 +95,12 @@ const JobApplicationForm = () => {
 					onSubmit={handleSubmit(onSubmit)}
 					className=" container z-20 mb-96 "
 				>
-					<div className=" border-gray-shade-6  container m-2 mx-auto flex flex-col rounded-2xl  border  bg-white p-2 shadow-[rgba(29,_39,_87,_0.04)_0px_8px_200px] md:m-8  md:p-8 2xl:rounded-[40px]">
+					<div className=" border-gray-shade-6  container  mx-auto flex flex-col rounded-2xl  border  bg-white p-2 shadow-[rgba(29,_39,_87,_0.04)_0px_8px_200px]  2xl:rounded-[40px]">
 						<div className="container  m-4 flex items-center p-4">
 							<h3 className="text-primary-shade-1 mx-auto">Job Application</h3>
 						</div>
 						<div className="mt-2 flex flex-col gap-4 py-2 md:mt-6 lg:py-5  ">
-							<div className="mx-auto flex w-3/4   flex-col gap-4 md:w-5/6  md:flex-row">
+							<div className="mx-auto flex w-full flex-col  gap-4 px-2 md:w-5/6  md:flex-row">
 								<div className="flex  w-full flex-col gap-2 ">
 									<FormLabel inputId="first-name" labelText="First Name" />
 									<FormInput
@@ -135,7 +125,7 @@ const JobApplicationForm = () => {
 								</div>
 							</div>
 
-							<div className="mx-auto flex w-3/4  flex-col gap-4 md:w-5/6  md:flex-row">
+							<div className="mx-auto flex w-full flex-col gap-4 px-2 md:w-5/6  md:flex-row">
 								<div className={`flex w-full flex-col gap-2`}>
 									<FormLabel inputId="address-1" labelText="Address1" />
 
@@ -165,7 +155,7 @@ const JobApplicationForm = () => {
 									/>
 								</div>
 							</div>
-							<div className="mx-auto flex w-3/4  flex-col gap-4 md:w-5/6  md:flex-row">
+							<div className="mx-auto flex w-full flex-col gap-4 px-2 md:w-5/6  md:flex-row">
 								<div className="flex w-full flex-col gap-2">
 									<FormLabel inputId="city" labelText="City" />
 									<FormInput
@@ -193,7 +183,7 @@ const JobApplicationForm = () => {
 									/>
 								</div>
 							</div>
-							<div className="mx-auto flex w-3/4  flex-col gap-4 md:w-5/6  md:flex-row">
+							<div className="mx-auto flex w-full flex-col  gap-4 px-2 md:w-5/6  md:flex-row">
 								<div className=" flex w-full  flex-col md:w-1/2">
 									<FormLabel inputId="zip-code" labelText="Zip Code" />
 									<FormInput
@@ -206,7 +196,7 @@ const JobApplicationForm = () => {
 									/>
 								</div>
 							</div>
-							<div className="mx-auto flex w-3/4  flex-col gap-4 md:w-5/6 md:flex-row">
+							<div className="mx-auto flex w-full flex-col gap-4 px-2 md:w-5/6 md:flex-row">
 								<div className="flex w-full flex-col gap-2">
 									<FormLabel inputId="phone-number" labelText="Phone number" />
 									<FormInput
@@ -233,7 +223,7 @@ const JobApplicationForm = () => {
 								</div>
 							</div>
 
-							<div className="mx-auto flex w-3/4  flex-col gap-4 md:w-5/6 md:flex-row">
+							<div className="mx-auto flex w-full flex-col  gap-4 px-2 md:w-5/6 md:flex-row">
 								<div className=" flex w-full flex-col gap-2">
 									<FormLabel
 										inputId="position"
@@ -261,7 +251,7 @@ const JobApplicationForm = () => {
 								</div>
 							</div>
 
-							<div className="mx-auto flex w-3/4  md:w-5/6 ">
+							<div className="mx-auto flex w-full px-2 md:w-5/6 ">
 								<div className={'flex w-full  flex-col gap-2'}>
 									<FormLabel inputId="resume" labelText="Upload your resume" />
 									<div className="relative block  ">
@@ -274,7 +264,7 @@ const JobApplicationForm = () => {
 									</div>
 								</div>
 							</div>
-							<div className="mx-auto w-3/4  md:w-5/6">
+							<div className="mx-auto w-full px-2 md:w-5/6">
 								<div className={'flex w-full flex-col gap-2'}>
 									<FormLabel
 										inputId="experiencelabel"
@@ -311,19 +301,17 @@ const JobApplicationForm = () => {
 					<Modal
 						isVisible={isOpen}
 						onClose={() => setIsOpen(false)}
-						children={
-							<JobApplicationModal logoImage={logoDark?.image?.asset?.url} />
-						}
+						children={<JobApplicationModal logoImage={logoDark?.image} />}
 					></Modal>
 				</div>
 			</SectionContentWrapper>
-			<Image
+			{/* <Image
 				src={'/images/job-application/right-blob.svg'}
 				height={290}
 				width={350}
 				alt="Bottom Blob Mobile "
 				className=" absolute bottom-0 right-0 z-10 hidden translate-x-[27%] translate-y-[250%]  transform  lg:block   "
-			/>
+			/> */}
 			<Image
 				src={'/images/job-application/left-blob.svg'}
 				height={300}
