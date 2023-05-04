@@ -13,7 +13,7 @@ export const BenefitsCard: React.FC<Props> = (props) => {
 	return (
 		<>
 			<div className='flex flex-col items-center'>
-				<div className="mt-4 h-[80px]  w-[80px] lg:h-[120px] :w-[120px] ">
+				<div className="mt-4 h-[80px]  w-[80px] lg:h-[120px] lg:w-[120px] ">
 					<CMSImageWrapper
 						altText={props.briefcaseIconImage.image?.asset?.altText || ''}
 						image={props.briefcaseIconImage || null}
