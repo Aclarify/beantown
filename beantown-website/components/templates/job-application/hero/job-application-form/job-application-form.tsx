@@ -328,7 +328,7 @@ const JobApplicationForm = () => {
 				height={290}
 				width={350}
 				alt="Bottom Blob Mobile "
-				className=" absolute bottom-0 right-0 z-10 block hidden translate-x-[27%]  translate-y-[250%]  transform   "
+				className=" absolute bottom-0 right-0 z-10 lg:block hidden translate-x-[27%]  translate-y-[250%]  transform   "
 			/>
 			<Image
 				src={'/images/job-application/left-blob.svg'}
