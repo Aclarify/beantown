@@ -69,7 +69,7 @@ const FormUploadFile: React.FC<Props> = ({
 						autoComplete={autoComplete}
 						{...(register ? register(name) : {})}
 						className={clsx(
-							'relative w-full   rounded-lg border p-3 pl-6 pr-2 focus:outline-0',
+							'relative w-full   rounded-lg border p-2 px-6 focus:outline-0',
 							bgColor,
 							fontColor,
 							className,
@@ -85,7 +85,7 @@ const FormUploadFile: React.FC<Props> = ({
 					/>
 					<FontAwesomeIcon
 						icon={faPaperclip}
-						className=" text-gray-shade-2 absolute left-2 top-4  "
+						className=" text-gray-shade-2 absolute left-1 top-3 pr-2  "
 					/>
 				</button>
 			</div>
