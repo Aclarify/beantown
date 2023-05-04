@@ -26,7 +26,7 @@ const PrivacyPolicyHeroContent = () => {
 						<h1>{heroTitle}</h1>
 					</ContentWrapper.Title>
 					<ContentWrapper.Description>
-						<p className={clsx('text-3xl')}>{heroDescription}</p>
+						<p>{heroDescription}</p>
 					</ContentWrapper.Description>
 				</ContentWrapper>
 			</div>
