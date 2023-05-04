@@ -15,7 +15,6 @@ import FormUploadFile from 'components/atoms/form-file-upload.atom';
 import Modal from 'components/organisms/modal.organism';
 import JobApplicationModal from './job-application-modal';
 
-
 interface Props {
 	onSumissionSuccess: () => void;
 }
@@ -58,10 +57,16 @@ const validationSchema = Yup.object().shape({
 		.required('Your phone number is required'),
 });
 
-
-	export const JobApplicationForm: React.FC<Props> = ({ onSumissionSuccess }) => {
+const JobApplicationForm: React.FC<Props> = () => {
 	const { pageContent } =
 		useContext<GlobalContextProps<CareersContentProps>>(GlobalContext);
+	const formOptions = { resolver: yupResolver(validationSchema) };
+	const {
+		register,
+		handleSubmit,
+		formState: { errors },
+	} = useForm<JobApplicationFormValues>(formOptions);
+	const [isOpen, setIsOpen] = useState(false);
 
 	if (!pageContent) {
 		return null;
@@ -80,13 +85,6 @@ const validationSchema = Yup.object().shape({
 		return data?.value;
 	});
 
-	const formOptions = { resolver: yupResolver(validationSchema) };
-	const {
-		register,
-		handleSubmit,
-		formState: { errors },
-	} = useForm<JobApplicationFormValues>(formOptions);
-	const [isOpen, setIsOpen] = useState(false);
 	const onSubmit = (data: any) => alert(JSON.stringify(data));
 
 	return (
@@ -299,11 +297,9 @@ const validationSchema = Yup.object().shape({
 					</div>
 				</form>
 				<div className="container sticky top-0 mx-auto">
-					<Modal
-						isVisible={isOpen}
-						onClose={() => setIsOpen(false)}
-						children={<JobApplicationModal logoImage={logoDark?.image} />}
-					></Modal>
+					<Modal isVisible={isOpen} onClose={() => setIsOpen(false)}>
+						<JobApplicationModal logoImage={logoDark?.image} />
+					</Modal>
 				</div>
 			</SectionContentWrapper>
 			{/* <Image

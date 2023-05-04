@@ -67,7 +67,9 @@ const CareerPage: React.FC = () => {
 				</div>
 			</Header>
 			<JobApplicationHeroSection/>
-			<JobApplicationForm/>		
+			<JobApplicationForm onSumissionSuccess={function (): void {
+				throw new Error('Function not implemented.');
+			} }/>		
 			<FooterSection logoDesktop={logoLight?.image} content={footerData} />
 		</div>
 	);
