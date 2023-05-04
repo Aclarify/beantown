@@ -296,7 +296,7 @@ const JobApplicationForm: React.FC<Props> = () => {
 									<button
 										type="submit"
 										onClick={() => setIsOpen(true)}
-										className="bg-primary-shade-1 para-2 mx-auto mt-2 w-3/4  rounded-xl py-3 text-white md:w-2/6 "
+										className="bg-primary-shade-1 para-2 mx-auto mt-2 w-full  rounded-xl py-3 text-white md:w-2/6 "
 									>
 										Submit
 									</button>
