@@ -32,23 +32,14 @@ const JobBenefitsContent = () => {
 		: activeJobDetails?.jobBenefitCards || [];
 
 	
-
 	const handleOnClose = () => {
 			setShowBenefitCardModel(false);		
-			document.body.style.overflow = 'unset';
+			
 	};
 
-	const onBenefitsCardClick = (benefitsCard:any) => {	
-		console.log('onClick data' + benefitsCard)		
+	const onBenefitsCardClick = (benefitsCard:any) => {			
 			setShowBenefitCardModel(true);
-			setSelectedBenefitCard(benefitsCard);
-			
-			console.log('Selected card data    :' + selectedBenefitCard);
-		// Disables Background Scrolling whilst the SideDrawer/Modal is open
-		if (typeof window != 'undefined' && window.document) {
-			document.body.style.overflow = 'hidden';
-		}
-		
+			setSelectedBenefitCard(benefitsCard);			
 	};
 		
 	
@@ -58,13 +49,12 @@ const JobBenefitsContent = () => {
 				<div className="flex flex-col items-center justify-center ">
 					<h3 className="text-primary-black mx-auto py-4 px-8 text-center ">
 						{globaljobBenefitSectionTitle}
-					</h3>
-
-					{/* Job Selected Benefits */}
+					</h3>				
 					<div className="container mx-auto  flex  h-auto   w-full flex-wrap items-center justify-center gap-8  p-8  ">
 						{allBenefits?.map((benefitsCard, index) => {
 							return (
-								<div key={index}>
+								<div  key={index} className="md:[w-480px]   justify-stretch mb-8 flex h-auto  w-[380px] flex-col    items-center gap-4 rounded-2xl bg-white p-8 shadow-[rgba(44,_48,_88,_0.16)_0px_8px_200px] lg:h-[600px] lg:rounded-3xl  ">
+								
 									<BenefitsCard
 										briefcaseIconImage={benefitsCard?.image || ''}
 										benefitTitle={benefitsCard?.titleText || ''}
@@ -75,12 +65,12 @@ const JobBenefitsContent = () => {
 							);
 						})}
 					</div>
-					<JobBenefitsModal
+					<JobBenefitsModal					
 						onClose={handleOnClose}
 						visible={showBenefitCardModel}
-						benefitsIconImage={selectedBenefitCard?.image || ''}
-						benefitsCardTitle={selectedBenefitCard?.title || ''}
-						benefitsCardDescription={selectedBenefitCard?.description || ''}
+						benefitsIconImage={selectedBenefitCard?.image || ''}					
+						benefitCardTitle={selectedBenefitCard?.titleText || ''}
+						benefitCardDescription={selectedBenefitCard?.description || ''}
 					/>
 					<Button fontColor="text-white" bgColor="bg-primary-shade-1">
 						<Link href={'/jobApplication'}>{'Apply'}</Link>
