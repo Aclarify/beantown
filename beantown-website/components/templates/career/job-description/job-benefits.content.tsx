@@ -49,12 +49,14 @@ const JobBenefitsContent = () => {
 				<div className="flex flex-col items-center justify-center ">
 					<h3 className="text-primary-black mx-auto py-4 px-8 text-center ">
 						{globaljobBenefitSectionTitle}
-					</h3>				
+					</h3>
 					<div className="container mx-auto  flex   flex-wrap items-center justify-center gap-8   ">
 						{allBenefits?.map((benefitsCard, index) => {
 							return (
-								<div  key={index} className="lg:[w-480px]   justify-stretch  flex h-[348px]  w-[380px] flex-col    items-center md:gap-4 rounded-2xl bg-white p-2  md:p-8 shadow-[rgba(44,_48,_88,_0.16)_0px_8px_200px] lg:h-[600px] lg:rounded-3xl  ">
-								
+								<div
+									key={index}
+									className="lg:[w-480px]   justify-stretch  flex h-[348px]  w-[380px] flex-col    items-center rounded-2xl bg-white p-2 shadow-[rgba(44,_48,_88,_0.16)_0px_8px_200px]  md:gap-4 md:p-8 lg:h-[600px] lg:rounded-3xl  "
+								>
 									<BenefitsCard
 										briefcaseIconImage={benefitsCard?.image || ''}
 										benefitTitle={benefitsCard?.titleText || ''}
@@ -65,16 +67,18 @@ const JobBenefitsContent = () => {
 							);
 						})}
 					</div>
-					<JobBenefitsModal					
+					<JobBenefitsModal
 						onClose={handleOnClose}
 						visible={showBenefitCardModel}
-						benefitsIconImage={selectedBenefitCard?.image || ''}					
+						benefitsIconImage={selectedBenefitCard?.image || ''}
 						benefitCardTitle={selectedBenefitCard?.titleText || ''}
 						benefitCardDescription={selectedBenefitCard?.description || ''}
 					/>
-					<Button fontColor="text-white" bgColor="bg-primary-shade-1">
-						<Link href={'/jobApplication'}>{'Apply'}</Link>
-					</Button>
+					<div className='mt-12'>
+						<Button fontColor="text-white" bgColor="bg-primary-shade-1">
+							<Link href={'/jobApplication'}>{'Apply'}</Link>
+						</Button>
+					</div>
 				</div>
 			</Animate>
 
