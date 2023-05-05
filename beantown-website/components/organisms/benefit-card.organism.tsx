@@ -25,15 +25,15 @@ export const BenefitsCard: React.FC<Props> = (props) => {
 						}}
 					/>
 				</div>
-				<h3 className="text-primary-shade-1 p-6 text-center">
+				<h3 className="text-primary-shade-1 p-2  lg:p-6 text-center">
 					{props.benefitTitle}
 				</h3>
 
-				<div className="text-primary-shade-1 para p-2 cursor-pointer text-center">
+				<div className="text-primary-shade-1 para p-2 cursor-pointer text-center ">
 					{props.onShowMore && (
 						<ReadMore
 							content={props.benefitDescription}
-							limit={200}
+							limit={250}
 							onShowMore={props.onShowMore}
 						/>
 					)}

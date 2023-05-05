@@ -44,18 +44,18 @@ const JobBenefitsContent = () => {
 		
 	
 	return (
-		<section className="mb-72 mt-12 md:mt-28">
+		<section className="mb-72 mt-12 md:mt-28 2xl:mt-40">
 			<Animate>
 				<div className="flex flex-col items-center justify-center ">
-					<h3 className="text-primary-black mx-auto py-4 px-8 text-center ">
+					<h3 className="text-primary-black mx-auto mb-12 py-4 px-8 text-center ">
 						{globaljobBenefitSectionTitle}
 					</h3>
-					<div className="container mx-auto  flex   flex-wrap items-center justify-center gap-8   ">
+					<div className="container mx-auto  flex  flex-wrap  items-center justify-center gap-8">
 						{allBenefits?.map((benefitsCard, index) => {
 							return (
 								<div
 									key={index}
-									className="lg:[w-480px]   justify-stretch  flex h-[348px]  w-[380px] flex-col    items-center rounded-2xl bg-white p-2 shadow-[rgba(44,_48,_88,_0.16)_0px_8px_200px]  md:gap-4 md:p-8 lg:h-[600px] lg:rounded-3xl  "
+									className="lg:[w-480px]   justify-stretch  flex h-[348px]  w-[380px] flex-col    items-center rounded-2xl bg-white p-2 shadow-[rgba(44,_48,_88,_0.16)_0px_8px_200px]  md:gap-4 md:p-8 lg:h-[600px] lg:rounded-3xl   "
 								>
 									<BenefitsCard
 										briefcaseIconImage={benefitsCard?.image || ''}
@@ -67,21 +67,21 @@ const JobBenefitsContent = () => {
 							);
 						})}
 					</div>
-					<JobBenefitsModal
-						onClose={handleOnClose}
-						visible={showBenefitCardModel}
-						benefitsIconImage={selectedBenefitCard?.image || ''}
-						benefitCardTitle={selectedBenefitCard?.titleText || ''}
-						benefitCardDescription={selectedBenefitCard?.description || ''}
-					/>
-					<div className='mt-12'>
+
+					<div className="mt-12">
 						<Button fontColor="text-white" bgColor="bg-primary-shade-1">
 							<Link href={'/jobApplication'}>{'Apply'}</Link>
 						</Button>
 					</div>
 				</div>
 			</Animate>
-
+			<JobBenefitsModal
+				onClose={handleOnClose}
+				visible={showBenefitCardModel}
+				benefitsIconImage={selectedBenefitCard?.image || ''}
+				benefitCardTitle={selectedBenefitCard?.titleText || ''}
+				benefitCardDescription={selectedBenefitCard?.description || ''}
+			/>
 			<Image
 				src={'/images/career/jobs/career-top-left-blob.svg'}
 				height={290}
