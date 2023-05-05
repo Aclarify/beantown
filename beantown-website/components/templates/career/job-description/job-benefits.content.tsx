@@ -1,15 +1,20 @@
-import React, { useContext } from 'react';
+import React, { useContext, useState } from 'react';
 import { GlobalContext } from '@contexts/global/global.context';
 import { GlobalContextProps } from '@typing/common/interfaces/contexts.interface';
 import Image from 'next/image';
 import Animate from 'components/molecules/animate.molecule';
 import { CareersContentProps } from 'pages/careers';
-import CMSImageWrapper from 'components/molecules/cms-image-wrapper.molecule';
 import { jobsContext } from '@contexts/jobs/Job-benefits-context';
 import Link from 'next/link';
 import Button from 'components/atoms/button.atom';
+import BenefitsCard from 'components/organisms/benefit-card.organism';
+import JobBenefitsModal from 'components/organisms/job-benefits-card-model';
+
 
 const JobBenefitsContent = () => {
+	const [showBenefitCardModel, setShowBenefitCardModel] = useState(false);
+	const [selectedBenefitCard, setSelectedBenefitCard] = useState<any>(null);
+
 	const { pageContent } =
 		useContext<GlobalContextProps<CareersContentProps>>(GlobalContext);
 	const { activeJobDetails } = useContext(jobsContext);
@@ -26,6 +31,18 @@ const JobBenefitsContent = () => {
 		? [...careerBenefits, ...(activeJobDetails?.jobBenefitCards || [])]
 		: activeJobDetails?.jobBenefitCards || [];
 
+	
+	const handleOnClose = () => {
+			setShowBenefitCardModel(false);		
+			
+	};
+
+	const onBenefitsCardClick = (benefitsCard:any) => {			
+			setShowBenefitCardModel(true);
+			setSelectedBenefitCard(benefitsCard);			
+	};
+		
+	
 	return (
 		<section className="mb-72 mt-12 md:mt-28">
 			<Animate>
@@ -33,42 +50,35 @@ const JobBenefitsContent = () => {
 					<h3 className="text-primary-black mx-auto py-4 px-8 text-center ">
 						{globaljobBenefitSectionTitle}
 					</h3>
-
-					{/* Job Selected Benefits */}
-					<div className=" container mx-auto  flex  h-auto   w-full flex-wrap items-center justify-center gap-8  p-8  ">
-						{allBenefits?.map((benefitsCard: any, index: number) => {
+					<div className="container mx-auto  flex   flex-wrap items-center justify-center gap-8   ">
+						{allBenefits?.map((benefitsCard, index) => {
 							return (
 								<div
 									key={index}
-									className="md:[w-480px]   justify-stretch mb-8 flex h-auto  w-[380px] flex-col    items-center gap-4 rounded-2xl bg-white p-8 shadow-[rgba(44,_48,_88,_0.16)_0px_8px_200px] lg:h-[600px] lg:rounded-3xl  "
+									className="lg:[w-480px]   justify-stretch  flex h-[348px]  w-[380px] flex-col    items-center rounded-2xl bg-white p-2 shadow-[rgba(44,_48,_88,_0.16)_0px_8px_200px]  md:gap-4 md:p-8 lg:h-[600px] lg:rounded-3xl  "
 								>
-									<div className="mt-4 h-[80px]  w-[80px] md:h-[120px] md:w-[120px] ">
-										<CMSImageWrapper
-											altText={benefitsCard?.image?.asset?.altText || ''}
-											image={benefitsCard?.image || null}
-											shouldBePrefetched={true}
-											style={{
-												width: '100%',
-												height: 'auto',
-												objectFit: 'contain',
-											}}
-										/>
-									</div>
-									<h3 className="text-primary-shade-1 p-6 text-center">
-										{benefitsCard?.titleText}
-									</h3>
-
-									<div className="text-primary-shade-1 para  text-center">
-										{benefitsCard?.description}
-									</div>
+									<BenefitsCard
+										briefcaseIconImage={benefitsCard?.image || ''}
+										benefitTitle={benefitsCard?.titleText || ''}
+										benefitDescription={benefitsCard?.description || ''}
+										onShowMore={() => onBenefitsCardClick(benefitsCard)}
+									/>
 								</div>
 							);
 						})}
 					</div>
-
-					<Button fontColor="text-white" bgColor="bg-primary-shade-1">
-						<Link href={'/jobApplication'}>{'Apply'}</Link>
-					</Button>
+					<JobBenefitsModal
+						onClose={handleOnClose}
+						visible={showBenefitCardModel}
+						benefitsIconImage={selectedBenefitCard?.image || ''}
+						benefitCardTitle={selectedBenefitCard?.titleText || ''}
+						benefitCardDescription={selectedBenefitCard?.description || ''}
+					/>
+					<div className='mt-12'>
+						<Button fontColor="text-white" bgColor="bg-primary-shade-1">
+							<Link href={'/jobApplication'}>{'Apply'}</Link>
+						</Button>
+					</div>
 				</div>
 			</Animate>
 
@@ -89,5 +99,5 @@ const JobBenefitsContent = () => {
 		</section>
 	);
 };
-
 export default JobBenefitsContent;
+
