@@ -1,23 +1,29 @@
 import React, { useState, useEffect, useRef } from 'react';
 import { CheckIcon, ChevronDownIcon } from '@heroicons/react/20/solid';
 import { Combobox } from '@headlessui/react';
+import { FieldError, UseFormRegister } from 'react-hook-form';
 import clsx from 'clsx';
 
 interface Props {
-	label: string;
+	id?: string;
 	name: string;
 	selectedValue: string;
 	options: Array<{ label: string; value: string }>;
 	onChange?: (event: React.ChangeEvent<any>) => void;
-	showError: boolean;
+	register?: UseFormRegister<any>;
+	error?: FieldError;
+	showErrorText?: boolean;
 }
 
 const ComboBox: React.FC<Props> = ({
-	label,
+	id,
+	name,
 	selectedValue,
 	options,
 	onChange,
-	showError,
+	register,
+	error,
+	showErrorText = true,
 }) => {
 	const [query, setQuery] = useState('');
 	const [showOptions, setShowOptions] = useState(false);
@@ -59,23 +65,18 @@ const ComboBox: React.FC<Props> = ({
 	useOutsideAlerter(wrapperRef);
 	return (
 		<Combobox
+			id={id}
 			as="div"
 			ref={wrapperRef}
 			value={selectedOption ? selectedOption.label : ''}
-			onChange={(event: any) => {
-				setShowOptions(false);
-				// onChange(event);
-				setQuery('');
-			}}
+			{...(register ? register(name) : {})}
+			// onChange={(event: any) => {
+			// 	setShowOptions(false);
+			// 	//onChange(event);
+			// 	setQuery('');
+			// }}
 		>
-			<Combobox.Label className=" text-primary-shade-1 mb-2 ">
-				{label}
-			</Combobox.Label>
-			{showError && (
-				<span className="ml-2 text-sm text-red-500">* Required</span>
-			)}
-
-			<div className="relative mt-1.5  py-4 ">
+			<div className="relative mb-2 ">
 				<Combobox.Input
 					className="border-mgh-light-grey focus:border-mgh-primary focus:ring-mgh-primary w-full rounded-md border bg-white py-2 pl-3 pr-10 tracking-wide shadow-sm focus:outline-none focus:ring-1"
 					onChange={(event) => {
@@ -141,6 +142,9 @@ const ComboBox: React.FC<Props> = ({
 					</Combobox.Options>
 				)}
 			</div>
+			{error && showErrorText && (
+				<p className="text-service-red -mt-1 text-sm">{error.message}</p>
+			)}
 		</Combobox>
 	);
 };

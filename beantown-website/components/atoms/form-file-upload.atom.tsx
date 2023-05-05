@@ -55,7 +55,7 @@ const FormUploadFile: React.FC<Props> = ({
 
 	return (
 		<>
-			<div className=" text-gray-shade-2 ">
+			<div className=" text-gray-shade-2 mb-2 ">
 				<button onClick={chooseFile} className="w-full md:w-1/2 ">
 					<input
 						id={id}

@@ -30,6 +30,8 @@ type JobApplicationFormValues = {
 	zipCode: string;
 	resume: string;
 	experience: string;
+	jobOption: string;
+	jobDesired: string;
 };
 
 const validationSchema = Yup.object().shape({
@@ -56,6 +58,8 @@ const validationSchema = Yup.object().shape({
 	phoneNumber: Yup.string()
 		.matches(/^\+?\d{10,14}$/, 'Phone number is not valid') //
 		.required('Your phone number is required'),
+	jobOption: Yup.string().required('Please select a job position'),
+	jobDesired: Yup.string().required('Please select the employment desired'),
 });
 
 const JobApplicationForm: React.FC<Props> = () => {
@@ -215,7 +219,7 @@ const JobApplicationForm: React.FC<Props> = () => {
 											/>
 										</div>
 										<div className=" flex w-full flex-col gap-2">
-											<FormLabel inputId="email" labelText="Mail Adress" />
+											<FormLabel inputId="email" labelText="Mail Address" />
 											<FormInput
 												id="email"
 												type="email"
@@ -234,31 +238,27 @@ const JobApplicationForm: React.FC<Props> = () => {
 												inputId="position"
 												labelText="Position Applying for"
 											/>
-
-											<FormDropdown
-												id={'jobOption'}
-												name={'jobOption'}
+											<ComboBox
+												id="jobOption"
+												name="jobOption"
+												selectedValue="Select One"
 												options={jobOptions}
-												customClass="bg-white  rounded-lg    "
+												register={register}
+												error={errors.jobOption}
 											/>
 										</div>
 										<div className="flex w-full flex-col gap-2">
 											<FormLabel
-												inputId="employmentDesire"
+												inputId="employmentDesired"
 												labelText="Employment Desired"
 											/>
-											<FormDropdown
-												id={'jobDesireOptions'}
-												name={'jobDesireOptions'}
-												options={employmentTypes}
-												customClass="bg-white"
-											/>
 											<ComboBox
-												label="Employment Desired"
+												id="jobDesired"
 												name="jobDesired"
 												selectedValue="Select One"
 												options={employmentTypes}
-												showError={false}
+												register={register}
+												error={errors.jobDesired}
 											/>
 										</div>
 									</div>
