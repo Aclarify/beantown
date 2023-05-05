@@ -15,6 +15,7 @@ import FormUploadFile from 'components/atoms/form-file-upload.atom';
 import Modal from 'components/organisms/modal.organism';
 import JobApplicationModal from './job-application-modal';
 import ComboBox from 'components/atoms/form-combo-box.atom';
+import { useRouter } from 'next/router';
 
 interface Props {
 	onSumissionSuccess: () => void;
@@ -72,7 +73,9 @@ const JobApplicationForm: React.FC<Props> = () => {
 		formState: { errors },
 	} = useForm<JobApplicationFormValues>(formOptions);
 	const [isOpen, setIsOpen] = useState(false);
-
+	const router = useRouter();
+	const selectedPositionName = router.query;
+	console.log('Position Name :', selectedPositionName);
 	const [formValue, setFormValue] = useState<Record<string, any>>({});
 	if (!pageContent) {
 		return null;
@@ -92,7 +95,7 @@ const JobApplicationForm: React.FC<Props> = () => {
 	});
 
 	const onSubmit = (data: any) => alert(JSON.stringify(data));
-
+	
 	return (
 		<>
 			<div className="relative z-20 mb-96 ">
@@ -241,10 +244,11 @@ const JobApplicationForm: React.FC<Props> = () => {
 											<ComboBox
 												id="jobOption"
 												name="jobOption"
-												selectedValue="Select One"
+												//selectedValue="Select One"
 												options={jobOptions}
 												register={register}
 												error={errors.jobOption}
+												selectedValue={`${selectedPositionName}`}
 											/>
 										</div>
 										<div className="flex w-full flex-col gap-2">

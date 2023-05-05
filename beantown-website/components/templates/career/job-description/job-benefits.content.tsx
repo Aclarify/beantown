@@ -11,6 +11,7 @@ import BenefitsCard from 'components/organisms/benefit-card.organism';
 import JobBenefitsModal from 'components/organisms/job-benefits-card-model';
 
 
+
 const JobBenefitsContent = () => {
 	const [showBenefitCardModel, setShowBenefitCardModel] = useState(false);
 	const [selectedBenefitCard, setSelectedBenefitCard] = useState<any>(null);
@@ -70,7 +71,15 @@ const JobBenefitsContent = () => {
 
 					<div className="mt-12">
 						<Button fontColor="text-white" bgColor="bg-primary-shade-1">
-							<Link href={applyButton?.href || ''}>{applyButton?.text}</Link>
+							{/* <Link href={applyButton?.href || ''}>{applyButton?.text}</Link> */}
+							<Link
+								href={{
+									pathname: `${applyButton?.href}`,
+									query: `${activeJobDetails.positionName}`,
+								}}
+							>
+								{applyButton?.text}
+							</Link>
 						</Button>
 					</div>
 				</div>
