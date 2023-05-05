@@ -67,14 +67,14 @@ const ComboBox: React.FC<Props> = ({
 		<Combobox
 			id={id}
 			as="div"
-			ref={wrapperRef}
+			//ref={wrapperRef}
 			value={selectedOption ? selectedOption.label : ''}
 			{...(register ? register(name) : {})}
-			// onChange={(event: any) => {
-			// 	setShowOptions(false);
-			// 	//onChange(event);
-			// 	setQuery('');
-			// }}
+			onChange={(event: any) => {
+				setShowOptions(false);
+				//onChange(event);
+				setQuery('');
+			}}
 		>
 			<div className="relative mb-2 ">
 				<Combobox.Input
