@@ -29,7 +29,7 @@ export const BenefitsCard: React.FC<Props> = (props) => {
 					{props.benefitTitle}
 				</h3>
 
-				<div className="text-primary-shade-1 para p-2    cursor-pointer text-center ">
+				<div className="text-primary-shade-1 para xs:p-2 p-4 md:p-2    cursor-pointer text-center ">
 					{props.onShowMore && (
 						<ReadMore
 							content={props.benefitDescription}
