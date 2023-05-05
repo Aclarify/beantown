@@ -55,7 +55,7 @@ const JobBenefitsContent = () => {
 							return (
 								<div
 									key={index}
-									className="lg:[w-480px]   justify-stretch  flex h-[348px]  w-[380px] flex-col    items-center rounded-2xl bg-white p-2 shadow-[rgba(44,_48,_88,_0.16)_0px_8px_200px]  md:gap-4 md:p-8 lg:h-[600px] lg:rounded-3xl   "
+									className="lg:w-[480px]   justify-stretch  flex h-[348px]  w-[380px] flex-col    items-center rounded-2xl bg-white p-2 shadow-[rgba(44,_48,_88,_0.16)_0px_8px_200px]  md:gap-4 md:p-8  lg:h-[570px]   lg:rounded-3xl   "
 								>
 									<BenefitsCard
 										briefcaseIconImage={benefitsCard?.image || ''}
