@@ -1,7 +1,7 @@
 import React, { useContext } from 'react';
 import { Nav, Footer, Blogs } from '@typing/gql/graphql';
 import Head from 'next/head';
-import pageQuery from '@lib/queries/pages/get-blogs.query';
+import pageQuery from '@lib/queries/pages/get-blog.query';
 import WithGlobalContent, {
 	generateGetStaticProps,
 } from 'components/containers/global-content/global-content.container';

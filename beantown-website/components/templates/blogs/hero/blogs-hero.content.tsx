@@ -30,8 +30,6 @@ const BlogsContent = () => {
 				alt="Left Blob "
 				className="absolute  bottom-0 left-0 z-[-1] hidden -translate-x-[10%] transform md:block md:translate-y-[10%] lg:translate-y-[15%]"
 			/>
-
-			{/* className="z-1 2xl:padding-for-section text-primary-shade-1 flex w-full items-center justify-center  px-14" */}
 			<div
 				id="content-image-wrapper"
 				className="mb-8 flex w-full flex-col-reverse items-center pt-[3em]  md:pt-0 lg:mb-4 lg:flex lg:flex-row"

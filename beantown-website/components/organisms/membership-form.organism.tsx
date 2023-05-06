@@ -121,7 +121,6 @@ export const MembershipForm: React.FC<Props> = ({ onSumissionSuccess }) => {
 					country: 'USA',
 				},
 			};
-			console.log('bookDetails', bookingDetails);
 			const bookingPromise = createBooking(bookingDetails);
 
 			// Identify  User for LogRocket
