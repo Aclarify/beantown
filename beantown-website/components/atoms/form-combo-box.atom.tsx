@@ -13,12 +13,20 @@ interface Props {
 	register?: UseFormRegister<any>;
 	error?: FieldError;
 	showErrorText?: boolean;
+	bgColor?: string;
+	fontColor?: string;
+	placeholderColor?: string;
+	borderColor?: string;
 }
 
 const ComboBox: React.FC<Props> = ({
 	id,
 	name,
 	selectedValue,
+	bgColor = 'bg-white',
+	fontColor = 'text-primary-shade-1',
+	placeholderColor = 'placeholder-gray-shade-2',
+	borderColor = 'border-primary-shade-3',
 	options,
 	onChange,
 	register,
@@ -78,7 +86,13 @@ const ComboBox: React.FC<Props> = ({
 		>
 			<div className="relative mb-2 ">
 				<Combobox.Input
-					className="border-mgh-light-grey focus:border-mgh-primary focus:ring-mgh-primary w-full rounded-md border bg-white py-2 pl-3 pr-10 tracking-wide shadow-sm focus:outline-none focus:ring-1"
+					className={clsx(
+						' w-full rounded-lg border py-2 pl-3 pr-10 placeholder:tracking-wide focus:outline-none',
+						bgColor,
+						fontColor,
+						placeholderColor,
+						error ? 'border-service-red' : borderColor
+					)}
 					onChange={(event) => {
 						setQuery(event.target.value);
 					}}
