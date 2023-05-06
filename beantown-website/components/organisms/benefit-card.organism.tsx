@@ -13,7 +13,7 @@ export const BenefitsCard: React.FC<Props> = (props) => {
 	return (
 		<>
 			<div className='flex flex-col items-center'>
-				<div className="mt-4 h-[80px]  w-[80px] lg:h-[120px] lg:w-[120px] ">
+				<div className="p-2 mt-4 h-[80px]   w-[80px] lg:h-[120px] lg:w-[120px] ">
 					<CMSImageWrapper
 						altText={props.briefcaseIconImage.image?.asset?.altText || ''}
 						image={props.briefcaseIconImage || null}
@@ -29,7 +29,7 @@ export const BenefitsCard: React.FC<Props> = (props) => {
 					{props.benefitTitle}
 				</h3>
 
-				<div className="text-primary-shade-1 para p-2 cursor-pointer text-center ">
+				<div className="text-primary-shade-1 para xs:p-2 p-4 md:p-2    cursor-pointer text-center ">
 					{props.onShowMore && (
 						<ReadMore
 							content={props.benefitDescription}

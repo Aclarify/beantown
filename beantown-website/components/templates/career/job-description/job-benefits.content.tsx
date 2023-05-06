@@ -11,6 +11,7 @@ import BenefitsCard from 'components/organisms/benefit-card.organism';
 import JobBenefitsModal from 'components/organisms/job-benefits-card-model';
 
 
+
 const JobBenefitsContent = () => {
 	const [showBenefitCardModel, setShowBenefitCardModel] = useState(false);
 	const [selectedBenefitCard, setSelectedBenefitCard] = useState<any>(null);
@@ -22,7 +23,7 @@ const JobBenefitsContent = () => {
 		return null;
 	}
 	const pageData = pageContent.page[0];
-	const { careerBenefits, globaljobBenefitSectionTitle } = pageData;
+	const { careerBenefits, globaljobBenefitSectionTitle,applyButton } = pageData;
 	if (!activeJobDetails) {
 		return null;
 	}
@@ -55,7 +56,7 @@ const JobBenefitsContent = () => {
 							return (
 								<div
 									key={index}
-									className="lg:[w-480px]   justify-stretch  flex h-[348px]  w-[380px] flex-col    items-center rounded-2xl bg-white p-2 shadow-[rgba(44,_48,_88,_0.16)_0px_8px_200px]  md:gap-4 md:p-8 lg:h-[600px] lg:rounded-3xl   "
+									className="justify-stretch   flex  h-[348px] w-[380px]  flex-col items-center    rounded-2xl bg-white p-2 shadow-[rgba(44,_48,_88,_0.16)_0px_8px_200px] md:h-[380px]  md:gap-4 md:p-8 lg:h-[570px]  lg:w-[480px]   lg:rounded-3xl   "
 								>
 									<BenefitsCard
 										briefcaseIconImage={benefitsCard?.image || ''}
@@ -70,7 +71,15 @@ const JobBenefitsContent = () => {
 
 					<div className="mt-12">
 						<Button fontColor="text-white" bgColor="bg-primary-shade-1">
-							<Link href={'/jobApplication'}>{'Apply'}</Link>
+							{/* <Link href={applyButton?.href || ''}>{applyButton?.text}</Link> */}
+							<Link
+								href={{
+									pathname: `${applyButton?.href}`,
+									query: `${activeJobDetails.positionName}`,
+								}}
+							>
+								{applyButton?.text}
+							</Link>
 						</Button>
 					</div>
 				</div>
