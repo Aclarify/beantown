@@ -1,8 +1,10 @@
+/* eslint-disable @typescript-eslint/no-unnecessary-type-constraint */
 import { createContext } from 'react';
 import { GlobalContextProps } from '@typing/common/interfaces/contexts.interface';
 import { DocumentNode } from 'graphql';
 import { PageNames } from '@configs/client/pages/pages.config';
 import { getPage } from '@typing/api/api';
+import { OperationVariables } from '@apollo/client';
 export const GlobalContext = createContext({});
 
 // const composeCmsContent = ({
@@ -18,7 +20,8 @@ export const constructGlobalContextProps = async <
 	CustomPageContentProps extends unknown
 >(
 	pageQuery?: DocumentNode,
-	pageName?: PageNames[keyof PageNames]
+	pageName?: PageNames[keyof PageNames],
+	variables?: OperationVariables | undefined
 ): Promise<GlobalContextProps<CustomPageContentProps>> => {
 	const globalData: Record<string, unknown> = {};
 	//   const cmsContent = composeCmsContent(
@@ -32,7 +35,7 @@ export const constructGlobalContextProps = async <
 	//     globalData.socialConfigContent = socialConfigContent;
 	//   }
 	if (pageQuery) {
-		const pageContent = await getPage(pageQuery);
+		const pageContent = await getPage(pageQuery, variables);
 		if (pageContent) {
 			globalData.pageContent = pageContent;
 		}

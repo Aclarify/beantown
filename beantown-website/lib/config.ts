@@ -20,4 +20,12 @@ export const config = {
 	 * MapBox accesstoken for address research
 	 **/
 	mapBoxAccessToken: process.env.NEXT_PUBLIC_MAPBOX_ACCESS_TOKEN,
+	/**
+	 * Algolia
+	 **/
+	algoliaAppId: process.env.NEXT_PUBLIC_ALGOLIA_APP_ID || '',
+	algoliaSearchApiKey: process.env.NEXT_PUBLIC_ALGOLIA_SEARCH_API_KEY || '',
+	algoliaWriteApiKey: process.env.NEXT_PUBLIC_ALGOLIA_WRITE_API_KEY || '',
+	algoliaBlogSearchIndexName:
+		process.env.NEXT_PUBLIC_ALGOLIA_BLOG_SEARCH_INDEX_NAME || '',
 };
