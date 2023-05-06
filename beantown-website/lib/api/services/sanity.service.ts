@@ -12,22 +12,30 @@ const config: ClientConfig = {
 	apiVersion: process.env.SANITY_API_VERSION, // or today's date for latest
 	token: process.env.SANITY_READ_WRITE_TOKEN,
 };
-const client = createClient(config);
+// const client = createClient(config);
+const client: any = {};
 
 export const insertJobApplicationToSanity = async (
 	jobApplication: CreateJobApplicationInboundDto
 ): Promise<SanityDocument> => {
 	const { name, contactInfo } = jobApplication;
-	try {
-		const doc = await client.create({
-			_type: 'jobApplication',
-			name,
-			email: contactInfo?.email,
-			phoneNumber: contactInfo?.phoneNumber,
-		});
-		return doc;
-	} catch (error) {
-		console.error(error);
-		throw new Error('Failed to insert document');
-	}
+	return {
+		_type: 'jobApplication',
+		name,
+		email: contactInfo?.email,
+		phoneNumber: contactInfo?.phoneNumber,
+	} as any;
+
+	// try {
+	// 	const doc = await client.create({
+	// 		_type: 'jobApplication',
+	// 		name,
+	// 		email: contactInfo?.email,
+	// 		phoneNumber: contactInfo?.phoneNumber,
+	// 	});
+	// 	return doc;
+	// } catch (error) {
+	// 	console.error(error);
+	// 	throw new Error('Failed to insert document');
+	// }
 };

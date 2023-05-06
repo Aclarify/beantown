@@ -3,7 +3,7 @@ import { FieldError, UseFormRegister } from 'react-hook-form';
 import clsx from 'clsx';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faPaperclip } from '@fortawesome/free-solid-svg-icons';
-import  { useRef, useState } from 'react';
+import { useRef, useState } from 'react';
 
 interface Props {
 	id?: string;
@@ -18,14 +18,14 @@ interface Props {
 	placeholderText?: string;
 	value?: string;
 	autoComplete?: string;
-	register?: UseFormRegister<any>;
+	register: UseFormRegister<any>;
 	error?: FieldError;
 	showErrorText?: boolean;
+	onFileChange: (file: File) => void;
 }
 const FormUploadFile: React.FC<Props> = ({
 	id,
 	name,
-	type = 'text',
 	bgColor = 'bg-secondary-shade-3',
 	fontColor = 'text-primary-shade-1',
 	placeholderColor = 'placeholder-gray-shade-2',
@@ -37,25 +37,25 @@ const FormUploadFile: React.FC<Props> = ({
 	register,
 	error,
 	showErrorText = true,
+	onFileChange,
 }) => {
-	
-	const inputFile = useRef<HTMLInputElement | null>(null);
-	const [fileName, setFileName] = useState('Choose a file');
-	function chooseFile() {		
-	  	 inputFile.current?.click()
-		 
-	}
-	const handleFileChange = (event:any) => {
+	console.log('Form File upload props', value);
 
-		const fileObj = event.target.files && event.target.files[0];
-			if (!fileObj) {
-			return;
-			}
-			event.target.value = null;
-			setFileName(fileObj.name);	 	
-			alert(fileObj.name);
-			
+	const inputFile = useRef<HTMLInputElement | null>(null);
+	const [fileName, setFileName] = useState(null);
+	function chooseFile() {
+		inputFile.current?.click();
 	}
+	const handleFileChange = (event: any) => {
+		console.log('Handle file change triggered', event.target.files[0]);
+		const fileObj = event.target.files && event.target.files[0];
+		if (!fileObj) {
+			return;
+		}
+		event.target.value = null;
+		setFileName(fileObj.name);
+		onFileChange(fileObj);
+	};
 
 	return (
 		<>
@@ -63,13 +63,13 @@ const FormUploadFile: React.FC<Props> = ({
 				<button onClick={chooseFile} className="w-full md:w-1/2 ">
 					<input
 						id={id}
-						type={type}
-						value={value}
-						placeholder={fileName}
+						type={'text'}
+						// value={fileName || ''}
+						placeholder={'Upload your resume'}
 						autoComplete={autoComplete}
 						{...(register ? register(name) : {})}
 						className={clsx(
-							'relative w-full   rounded-lg border p-2 px-6 focus:outline-0',
+							'relative w-full rounded-lg border p-2 px-6 focus:outline-0',
 							bgColor,
 							fontColor,
 							className,
@@ -97,4 +97,3 @@ const FormUploadFile: React.FC<Props> = ({
 	);
 };
 export default FormUploadFile;
-
