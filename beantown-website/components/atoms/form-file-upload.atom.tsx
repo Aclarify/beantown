@@ -28,19 +28,16 @@ const FormUploadFile: React.FC<Props> = ({
 	name,
 	bgColor = 'bg-secondary-shade-3',
 	fontColor = 'text-primary-shade-1',
-	placeholderColor = 'placeholder-gray-shade-2',
 	borderColor = 'border-primary-shade-3',
 	className,
-	placeholderText,
 	autoComplete,
-	value,
 	register,
 	error,
 	showErrorText = true,
 	onFileChange,
 }) => {
 	const inputFile = useRef<HTMLInputElement | null>(null);
-	const [fileName, setFileName] = useState('Choose a file');
+	const [file, setFile] = useState<File | null>(null);
 	function chooseFile() {
 		inputFile.current?.click();
 	}
@@ -50,7 +47,7 @@ const FormUploadFile: React.FC<Props> = ({
 			return;
 		}
 		event.target.value = null;
-		setFileName(fileObj.name);
+		setFile(fileObj);
 		onFileChange(fileObj);
 	};
 
@@ -61,7 +58,7 @@ const FormUploadFile: React.FC<Props> = ({
 					<input
 						id={id}
 						type={'text'}
-						// value={fileName || ''}
+						value={file ? file.name : ''}
 						placeholder={'Upload your resume'}
 						autoComplete={autoComplete}
 						{...(register ? register(name) : {})}

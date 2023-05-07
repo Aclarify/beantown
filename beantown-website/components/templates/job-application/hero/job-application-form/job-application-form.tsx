@@ -56,7 +56,6 @@ const validationSchema = Yup.object().shape({
 			'is-valid-type',
 			'Not a valid resume type. Allowed types are pdf, doc, docx, jpeg, jpg, png',
 			(value: any) => {
-				console.log('In test, value is', value);
 				return value && isValidFileType(value.name.toLowerCase());
 			}
 		)
@@ -98,7 +97,6 @@ const JobApplicationForm: React.FC = () => {
 		// Get the access token from the server
 		const accessTokenPromise = getAuthToken();
 		accessTokenPromise.then((token) => {
-			console.log('token is:::', token);
 			accessToken.current = token;
 		});
 	}, []);
@@ -128,7 +126,6 @@ const JobApplicationForm: React.FC = () => {
 
 	const onSubmit: SubmitHandler<JobApplicationFormValues> = async (data) => {
 		// Submit form data to server
-		console.log('data in submit:::', data);
 		if (data) {
 			// Frame the form data to be sent to server
 			const formData = new FormData();
@@ -160,13 +157,12 @@ const JobApplicationForm: React.FC = () => {
 				JSON.stringify(jobApplicationDetails)
 			);
 
-			console.log('jobApplicationDetails', jobApplicationDetails);
-			const jobApplicationPromise = createJobApplication(formData);
+			const jobApplicationPromise = createJobApplication(jobApplicationDetails);
 
 			toast.promise(
 				jobApplicationPromise,
 				{
-					loading: 'Loading',
+					loading: 'Submitting...',
 					error: (err) => {
 						console.error('Error: ', err);
 						return `Cannot complete this operation, please try again later`;
@@ -186,10 +182,9 @@ const JobApplicationForm: React.FC = () => {
 	};
 
 	const onResumeFileChange = (file: File) => {
-		console.log('file', file);
 		if (file && accessToken.current) {
 			setValue('resume', file);
-			uploadFileToOneDrive(file, accessToken.current);
+			// uploadFileToOneDrive(file, accessToken.current);
 		}
 	};
 

@@ -103,8 +103,8 @@ export const uploadFileToOneDrive = async (file: any, accessToken: string) => {
 		});
 
 		// Construct the destination URL for the file upload
-		// const uploadUrl = '/drive/root:/job-applications/${file.name}:/content';
-		const uploadUrl = `/sites/123/drives/:1/${file.name}:/content`;
+		const uploadUrl = '/drive/root:/uploads/${file.name}:/content';
+		// const uploadUrl = `/sites/123/drives/:1/${file.name}:/content`;
 
 		// Upload the file using the PUT request
 		const rsp = await client.api(uploadUrl).put(file);

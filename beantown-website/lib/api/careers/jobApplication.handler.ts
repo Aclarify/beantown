@@ -43,11 +43,11 @@ export const applyJob = async (
 		if (!rsp1) {
 			throw new Error('Failed to insert job application to Sanity');
 		}
-		// Insert job application to Sanity or MongoDB
-		const rsp2 = await insertJobApplicationToMongo(createJobApplicationDto);
-		if (!rsp2) {
-			throw new Error('Failed to insert job application to MongoDB');
-		}
+		// // Insert job application to Sanity or MongoDB
+		// const rsp2 = await insertJobApplicationToMongo(createJobApplicationDto);
+		// if (!rsp2) {
+		// 	throw new Error('Failed to insert job application to MongoDB');
+		// }
 
 		const notificationRsp = await sendEmailNotification(
 			createJobApplicationDto
