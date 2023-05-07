@@ -10,7 +10,7 @@ import { GlobalContextProps } from '@typing/common/interfaces/contexts.interface
 import { CareersContentProps } from 'pages/careers';
 import { yupResolver } from '@hookform/resolvers/yup';
 import * as Yup from 'yup';
-import { SubmitHandler, useForm } from 'react-hook-form';
+import { Controller, SubmitHandler, useForm } from 'react-hook-form';
 import Image from 'next/image';
 import FormUploadFile from 'components/atoms/form-file-upload.atom';
 import Modal from 'components/organisms/modal.organism';
@@ -89,8 +89,10 @@ const JobApplicationForm: React.FC = () => {
 		handleSubmit,
 		formState: { errors },
 		setValue,
+		control,
 	} = useForm<JobApplicationFormValues>(formOptions);
 	const [showConfirmationDialog, setShowConfirmationDialog] = useState(false);
+	const router = useRouter();
 
 	useEffect(() => {
 		// Get the access token from the server
@@ -100,12 +102,13 @@ const JobApplicationForm: React.FC = () => {
 			accessToken.current = token;
 		});
 	}, []);
-	const router = useRouter();
-	const selectedPositionName = router.query;
-	const defaultPositionName = selectedPositionName['positionName']
-		? selectedPositionName['positionName']
-		: 'Select One';
-	const [formValue, setFormValue] = useState<Record<string, any>>({});
+
+	useEffect(() => {
+		if (router.query['positionName']) {
+			setValue('jobOption', router.query['positionName'] as string);
+		}
+	}, [router.query, setValue]);
+
 	if (!pageContent) {
 		return null;
 	}
@@ -146,8 +149,8 @@ const JobApplicationForm: React.FC = () => {
 					country: 'USA',
 				},
 				jobDetail: {
-					positionApplyingFor: data.positionApplyingFor,
-					employmentDesired: data.employmentDesired,
+					positionApplyingFor: data.jobOption,
+					employmentDesired: data.jobDesired,
 					aboutApplicant: data.experience,
 					resumeURL: '', // Convert this to Form data
 				},
@@ -291,8 +294,8 @@ const JobApplicationForm: React.FC = () => {
 											<FormLabel inputId="zip-code" labelText="Zip Code" />
 											<FormInput
 												id="zip-code"
-												placeholderText="Enter your Zip Code"
-												name={'zip'}
+												placeholderText="Enter your zip code"
+												name={'zipCode'}
 												bgColor="white"
 												error={errors.zipCode}
 												register={register}
@@ -335,13 +338,18 @@ const JobApplicationForm: React.FC = () => {
 												inputId="position"
 												labelText="Position Applying for"
 											/>
-											<ComboBox
-												id="jobOption"
+											<Controller
 												name="jobOption"
-												options={jobOptions}
-												register={register}
-												error={errors.jobOption}
-												selectedValue={`${defaultPositionName}`}
+												control={control}
+												rules={{ required: true }}
+												render={({ field }) => (
+													<ComboBox
+														id="jobOption"
+														options={jobOptions}
+														error={errors.jobOption}
+														{...field}
+													/>
+												)}
 											/>
 										</div>
 										<div className="flex w-full flex-col gap-2">
@@ -349,13 +357,18 @@ const JobApplicationForm: React.FC = () => {
 												inputId="employmentDesired"
 												labelText="Employment Desired"
 											/>
-											<ComboBox
-												id="jobDesired"
+											<Controller
 												name="jobDesired"
-												selectedValue="Select One"
-												options={employmentTypes}
-												register={register}
-												error={errors.jobDesired}
+												control={control}
+												rules={{ required: true }}
+												render={({ field }) => (
+													<ComboBox
+														id="jobDesired"
+														options={employmentTypes}
+														error={errors.jobDesired}
+														{...field}
+													/>
+												)}
 											/>
 										</div>
 									</div>
@@ -408,15 +421,15 @@ const JobApplicationForm: React.FC = () => {
 									</button>
 								</div>
 							</div>
+							<div className="container sticky top-0 mx-auto">
+								<Modal
+									isVisible={showConfirmationDialog}
+									onClose={() => setShowConfirmationDialog(false)}
+								>
+									<JobApplicationModal logoImage={logoDark?.image} />
+								</Modal>
+							</div>
 						</form>
-						<div className="container sticky top-0 mx-auto">
-							<Modal
-								isVisible={showConfirmationDialog}
-								onClose={() => setShowConfirmationDialog(false)}
-							>
-								<JobApplicationModal logoImage={logoDark?.image} />
-							</Modal>
-						</div>
 					</div>
 				</SectionContentWrapper>
 			</div>

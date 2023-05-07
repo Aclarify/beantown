@@ -66,16 +66,16 @@ const JobBenefitsContent = () => {
 					</div>
 
 					<div className="mt-12">
-						<Button fontColor="text-white" bgColor="bg-primary-shade-1">
-							<Link
-								href={{
-									pathname: `${applyButton?.href}`,
-									query: `positionName=${activeJobDetails.positionName}`,
-								}}
-							>
+						<Link
+							href={{
+								pathname: `${applyButton?.href}`,
+								query: `positionName=${activeJobDetails.positionName}`,
+							}}
+						>
+							<Button fontColor="text-white" bgColor="bg-primary-shade-1">
 								{applyButton?.text}
-							</Link>
-						</Button>
+							</Button>
+						</Link>
 					</div>
 				</div>
 			</Animate>

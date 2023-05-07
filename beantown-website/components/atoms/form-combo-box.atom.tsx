@@ -7,9 +7,10 @@ import clsx from 'clsx';
 interface Props {
 	id?: string;
 	name: string;
-	selectedValue: string;
+	selectedValue?: string;
+	value?: string;
 	options: Array<{ label: string; value: string }>;
-	onChange?: (event: React.ChangeEvent<any>) => void;
+	onChange: (event: React.ChangeEvent<any>) => void;
 	register?: UseFormRegister<any>;
 	error?: FieldError;
 	showErrorText?: boolean;
@@ -30,6 +31,7 @@ const ComboBox: React.FC<Props> = ({
 	options,
 	onChange,
 	register,
+	value,
 	error,
 	showErrorText = true,
 }) => {
@@ -37,9 +39,6 @@ const ComboBox: React.FC<Props> = ({
 	const [showOptions, setShowOptions] = useState(false);
 	const wrapperRef = useRef(null);
 
-	const selectedOption = options.find(
-		(option) => option.value === selectedValue
-	);
 	const filteredOption =
 		query === ''
 			? options
@@ -75,12 +74,11 @@ const ComboBox: React.FC<Props> = ({
 		<Combobox
 			id={id}
 			as="div"
-			//ref={wrapperRef}
-			value={selectedOption ? selectedOption.label : ''}
-			{...(register ? register(name) : {})}
+			value={value}
+			ref={wrapperRef}
 			onChange={(event: any) => {
 				setShowOptions(false);
-				//onChange(event);
+				onChange(event);
 				setQuery('');
 			}}
 		>
@@ -97,7 +95,7 @@ const ComboBox: React.FC<Props> = ({
 						setQuery(event.target.value);
 					}}
 					onClick={() => setShowOptions(true)}
-					placeholder={selectedOption ? selectedOption.label : selectedValue}
+					placeholder={'Select an option'}
 				/>
 
 				<Combobox.Button
