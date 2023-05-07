@@ -21,6 +21,7 @@ const JobApplicationHeroSection = () => {
 				height={300}
 				width={400}
 				alt="Right Blob "
+				priority
 				className="absolute right-0 top-0 -z-10 hidden translate-y-[1%] translate-x-[86%] transform lg:block 2xl:translate-x-[80%]"
 			/>
 			<Image

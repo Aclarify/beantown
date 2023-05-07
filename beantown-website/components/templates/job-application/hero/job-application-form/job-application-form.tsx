@@ -75,6 +75,9 @@ const JobApplicationForm: React.FC<Props> = () => {
 	const [isOpen, setIsOpen] = useState(false);
 	const router = useRouter();
 	const selectedPositionName = router.query;
+	const defaultPositionName = selectedPositionName['positionName']
+		? selectedPositionName['positionName']
+		: 'Select One';
 	const [formValue, setFormValue] = useState<Record<string, any>>({});
 	if (!pageContent) {
 		return null;
@@ -246,7 +249,7 @@ const JobApplicationForm: React.FC<Props> = () => {
 												options={jobOptions}
 												register={register}
 												error={errors.jobOption}
-												selectedValue={`${selectedPositionName['positionName']}`}
+												selectedValue={`${defaultPositionName}`}
 											/>
 										</div>
 										<div className="flex w-full flex-col gap-2">
