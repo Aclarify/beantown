@@ -147,7 +147,7 @@ const JobsSliderContent = () => {
 					{jobList?.map((jobDetails, index) => {
 						return (
 							jobDetails && (
-								<Animate>
+								<Animate key={index}>
 									<div
 										key={index}
 										onClick={() => setActiveJobDetails(jobDetails)}

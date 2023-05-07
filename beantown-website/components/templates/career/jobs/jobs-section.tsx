@@ -11,11 +11,7 @@ import Image from 'next/image';
 const JobSection = () => {
 	const { pageContent } =
 		useContext<GlobalContextProps<CareersContentProps>>(GlobalContext);
-	const [activeJobDetails, setActiveJobDetails] = useState<JobDetails>();
-	const [selectedJobDetails, setSelectedJobDetails] = useState<
-		JobDetails | any
-	>();
-
+	const [activeJobDetails, setActiveJobDetails] = useState<JobDetails>();	
 	const [show, setShow] = useState(true);
 
 	useEffect(() => {
@@ -53,7 +49,7 @@ const JobSection = () => {
 				height={100}
 				width={150}
 				alt="Left Blob Mobile"
-				className="  xs:translate-y-[-40%] absolute left-0 bottom-0 translate-y-[-29%] translate-x-[-27%] transform  sm:translate-y-[-9%]    lg:hidden"
+				className=" xs:translate-y-[-40%] absolute left-0 bottom-0 translate-y-[-29%] translate-x-[-27%] transform  sm:translate-y-[-9%]    lg:hidden"
 			/>
 			<section id="JobsSlider" className=" md:mt-32 ">
 				<JobsSliderContent />

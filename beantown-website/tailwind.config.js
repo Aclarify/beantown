@@ -42,6 +42,7 @@ module.exports = {
 				'gray-shade-3': '#E3E5EA',
 				'gray-shade-4': '#0000000',
 				'gray-shade-5': '#2C305829',
+				'gray-shade-6': '#E4E4E4',
 				'service-red': 'var(--services-red-color-hex)',
 				'service-red-bg': '#FCF7F7',
 				'service-yellow-bg': '#FEFCE6',

@@ -4,21 +4,18 @@ import { GlobalContextProps } from '@typing/common/interfaces/contexts.interface
 import ContentWrapper from '../../../organisms/content-wrapper.organism';
 import Animate from 'components/molecules/animate.molecule';
 import { CareersContentProps } from 'pages/careers';
-import Link from 'next/link';
-import Button from 'components/atoms/button.atom';
 import MaskedImageWithBackground from 'components/organisms/masked-image-with-background.organism';
 
-const CareerHeroContent = () => {
+const JobApplicationHeroContent = () => {
 	const { pageContent } =
-		useContext<GlobalContextProps<CareersContentProps>>(GlobalContext);	
-	
+		useContext<GlobalContextProps<CareersContentProps>>(GlobalContext);
+
 	if (!pageContent) {
 		return null;
 	}
 	const pageData = pageContent.page[0];
-	const { heroTitle,heroDescription,careerHeroImage,heroButton  } =
+	const { applicationTitle, applicationDescription, applicationImage } =
 		pageData;
-		
 	return (
 		<div
 			id="section-wrapper"
@@ -30,24 +27,19 @@ const CareerHeroContent = () => {
 			>
 				<div
 					id="content-wrapper"
-					className=" flex w-full basis-1/2 flex-col items-center  md:items-start text-center  md:text-left lg:pt-20 "
+					className=" flex basis-1/2 flex-col text-center md:items-start md:text-left lg:pt-20 "
 				>
-					<ContentWrapper className="">
+					<ContentWrapper>
 						<ContentWrapper.Title>
 							<Animate bottom>
-								<h2 className=" text-primary-black ">{heroTitle}</h2>
+								<h2 className=" text-primary-black ">{applicationTitle}</h2>
 							</Animate>
 						</ContentWrapper.Title>
-						<ContentWrapper.Description className="rich-text  text-center md:text-left !font-thin lg:pr-4">
+						<ContentWrapper.Description className="rich-text text-gray-shade-1  text-center !font-thin md:text-left lg:pr-4">
 							<Animate>
-								<p>{heroDescription}</p>
+								<p>{applicationDescription}</p>
 							</Animate>
 						</ContentWrapper.Description>
-					</ContentWrapper>
-					<ContentWrapper className=" mt-4 lg:mt-8">
-						<Button fontColor="text-white" bgColor="bg-primary-shade-1">
-							<Link href={heroButton?.href || ''}>{heroButton?.text}</Link>
-						</Button>
 					</ContentWrapper>
 				</div>
 				<div
@@ -55,10 +47,10 @@ const CareerHeroContent = () => {
 					className="mb-8 md:mt-12  md:basis-1/2 md:px-20 lg:px-10  "
 				>
 					<MaskedImageWithBackground
-						image={careerHeroImage || null}
-						imgAltText={careerHeroImage?.asset?.altText || ''}
-						maskImg="./images/career/hero/blob-mask.svg"
-						bgImg="./images/career/hero/bg-blob-shape.svg"
+						image={applicationImage || null}
+						imgAltText={applicationImage?.asset?.altText || ''}
+						maskImg="./images/job-application/hero/blob-mask.svg"
+						bgImg="./images/job-application/right-blob.svg"
 					/>
 				</div>
 			</div>
@@ -66,4 +58,4 @@ const CareerHeroContent = () => {
 	);
 };
 
-export default CareerHeroContent;
+export default JobApplicationHeroContent;
