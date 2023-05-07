@@ -10,8 +10,6 @@ import Button from 'components/atoms/button.atom';
 import BenefitsCard from 'components/organisms/benefit-card.organism';
 import JobBenefitsModal from 'components/organisms/job-benefits-card-model';
 
-
-
 const JobBenefitsContent = () => {
 	const [showBenefitCardModel, setShowBenefitCardModel] = useState(false);
 	const [selectedBenefitCard, setSelectedBenefitCard] = useState<any>(null);
@@ -23,7 +21,8 @@ const JobBenefitsContent = () => {
 		return null;
 	}
 	const pageData = pageContent.page[0];
-	const { careerBenefits, globaljobBenefitSectionTitle,applyButton } = pageData;
+	const { careerBenefits, globaljobBenefitSectionTitle, applyButton } =
+		pageData;
 	if (!activeJobDetails) {
 		return null;
 	}
@@ -32,18 +31,15 @@ const JobBenefitsContent = () => {
 		? [...careerBenefits, ...(activeJobDetails?.jobBenefitCards || [])]
 		: activeJobDetails?.jobBenefitCards || [];
 
-	
 	const handleOnClose = () => {
-			setShowBenefitCardModel(false);		
-			
+		setShowBenefitCardModel(false);
 	};
 
-	const onBenefitsCardClick = (benefitsCard:any) => {			
-			setShowBenefitCardModel(true);
-			setSelectedBenefitCard(benefitsCard);			
+	const onBenefitsCardClick = (benefitsCard: any) => {
+		setShowBenefitCardModel(true);
+		setSelectedBenefitCard(benefitsCard);
 	};
-		
-	
+
 	return (
 		<section className="mb-72 mt-12 md:mt-28 2xl:mt-40">
 			<Animate>
@@ -71,11 +67,10 @@ const JobBenefitsContent = () => {
 
 					<div className="mt-12">
 						<Button fontColor="text-white" bgColor="bg-primary-shade-1">
-							{/* <Link href={applyButton?.href || ''}>{applyButton?.text}</Link> */}
 							<Link
 								href={{
 									pathname: `${applyButton?.href}`,
-									query: `${activeJobDetails.positionName}`,
+									query: `positionName=${activeJobDetails.positionName}`,
 								}}
 							>
 								{applyButton?.text}
@@ -109,4 +104,3 @@ const JobBenefitsContent = () => {
 	);
 };
 export default JobBenefitsContent;
-
