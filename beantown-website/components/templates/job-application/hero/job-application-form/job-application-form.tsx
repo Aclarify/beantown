@@ -6,7 +6,6 @@ import SectionContentWrapper from 'components/molecules/section-content-wrapper.
 import { GlobalContext } from '@contexts/global/global.context';
 import { GlobalContextProps } from '@typing/common/interfaces/contexts.interface';
 import { CareersContentProps } from 'pages/careers';
-import FormDropdown from 'components/atoms/form-dropdown';
 import { yupResolver } from '@hookform/resolvers/yup';
 import * as Yup from 'yup';
 import { useForm } from 'react-hook-form';
