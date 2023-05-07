@@ -24,7 +24,7 @@ const FormTextArea: React.FC<Props> = ({
 	type = 'text',
 	bgColor = 'bg-secondary-shade-3',
 	fontColor = 'text-primary-shade-1',
-	placeholderColor = 'placeholder-gray-shade-2',	
+	placeholderColor = 'placeholder-gray-shade-2',
 	placeholderText,
 	autoComplete,
 	value,
@@ -41,7 +41,7 @@ const FormTextArea: React.FC<Props> = ({
 				autoComplete={autoComplete}
 				{...(register ? register(name) : {})}
 				className={clsx(
-					'h-[200px] w-full   rounded-lg border p-3 focus:outline-none',
+					'h-[200px] w-full rounded-lg border p-3 placeholder:tracking-wide focus:outline-none',
 					bgColor,
 					fontColor,
 					placeholderColor,
@@ -49,7 +49,7 @@ const FormTextArea: React.FC<Props> = ({
 				)}
 				maxLength={200}
 			/>
-		
+
 			{error && showErrorText && (
 				<p className="text-service-red -mt-1 text-sm">{error.message}</p>
 			)}

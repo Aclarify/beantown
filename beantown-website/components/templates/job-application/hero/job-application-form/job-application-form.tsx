@@ -8,7 +8,6 @@ import SectionContentWrapper from 'components/molecules/section-content-wrapper.
 import { GlobalContext } from '@contexts/global/global.context';
 import { GlobalContextProps } from '@typing/common/interfaces/contexts.interface';
 import { CareersContentProps } from 'pages/careers';
-import FormDropdown from 'components/atoms/form-dropdown';
 import { yupResolver } from '@hookform/resolvers/yup';
 import * as Yup from 'yup';
 import { SubmitHandler, useForm } from 'react-hook-form';
@@ -24,6 +23,8 @@ import {
 	uploadFileToOneDrive,
 } from 'utils/file-upload.helper';
 import { getAuthToken } from '@lib/clients/services/auth/auth.service';
+import ComboBox from 'components/atoms/form-combo-box.atom';
+import { useRouter } from 'next/router';
 
 type JobApplicationFormValues = {
 	email: string;
@@ -36,8 +37,8 @@ type JobApplicationFormValues = {
 	zipCode: string;
 	resume: File;
 	experience: string;
-	positionApplyingFor: string;
-	employmentDesired: string;
+	jobOption: string;
+	jobDesired: string;
 };
 
 const validationSchema = Yup.object().shape({
@@ -74,8 +75,8 @@ const validationSchema = Yup.object().shape({
 	phoneNumber: Yup.string()
 		.matches(/^\+?\d{10,14}$/, 'Phone number is not valid') //
 		.required('Your phone number is required'),
-	positionApplyingFor: Yup.string().required('Please select a position'),
-	employmentDesired: Yup.string().required('Please select an employment type'),
+	jobOption: Yup.string().required('Please select a job position'),
+	jobDesired: Yup.string().required('Please select the employment desired'),
 });
 
 const JobApplicationForm: React.FC = () => {
@@ -99,7 +100,12 @@ const JobApplicationForm: React.FC = () => {
 			accessToken.current = token;
 		});
 	}, []);
-
+	const router = useRouter();
+	const selectedPositionName = router.query;
+	const defaultPositionName = selectedPositionName['positionName']
+		? selectedPositionName['positionName']
+		: 'Select One';
+	const [formValue, setFormValue] = useState<Record<string, any>>({});
 	if (!pageContent) {
 		return null;
 	}
@@ -110,11 +116,11 @@ const JobApplicationForm: React.FC = () => {
 		return null;
 	}
 	const jobOptions: any = ([] = jobList.map((data: any) => {
-		return data?.positionName;
+		return { label: data?.positionName, value: data?.positionName };
 	}));
 
 	const employmentTypes: any = employmentTypeOptions?.map((data) => {
-		return data?.value;
+		return { label: data?.label, value: data?.value };
 	});
 
 	const onSubmit: SubmitHandler<JobApplicationFormValues> = async (data) => {
@@ -186,239 +192,241 @@ const JobApplicationForm: React.FC = () => {
 
 	return (
 		<>
-			<SectionContentWrapper>
-				<form
-					onSubmit={handleSubmit(onSubmit)}
-					className=" container z-20 mb-96  "
-				>
-					<div className=" border-gray-shade-6  container  mx-auto flex flex-col rounded-2xl  border  bg-white p-2 shadow-[rgba(29,_39,_87,_0.04)_0px_8px_200px]  2xl:rounded-[40px]">
-						<div className="container  m-4 flex items-center p-4">
-							<h3 className="text-primary-shade-1 mx-auto">Job Application</h3>
-						</div>
-						<div className="mt-2 flex flex-col gap-4 py-2 md:mt-6 lg:py-5  ">
-							<div className="mx-autMeo flex w-full flex-col  gap-4 px-2 md:w-5/6  md:flex-row">
-								<div className="flex  w-full flex-col gap-2 ">
-									<FormLabel inputId="first-name" labelText="First Name" />
-									<FormInput
-										id="first-name"
-										placeholderText="Enter your first name"
-										name={'firstName'}
-										bgColor="white"
-										register={register}
-										error={errors.firstName}
-									/>
+			<div className="relative z-20 mb-96 ">
+				<SectionContentWrapper>
+					<div className="flex justify-center">
+						<form onSubmit={handleSubmit(onSubmit)} className="  container  ">
+							<div className=" border-gray-shade-6  container  flex flex-col rounded-2xl  border  bg-white p-2 shadow-[rgba(29,_39,_87,_0.04)_0px_8px_200px]  2xl:rounded-[40px]">
+								<div className="container  m-4 flex items-center p-4">
+									<h3 className="text-primary-shade-1 mx-auto">
+										Job Application
+									</h3>
 								</div>
-								<div className="flex w-full flex-col gap-2">
-									<FormLabel inputId="last-name" labelText="Last Name" />
-									<FormInput
-										id="last-name"
-										placeholderText="Enter your last name"
-										name={'lastName'}
-										bgColor="white"
-										register={register}
-										error={errors.lastName}
-									/>
-								</div>
-							</div>
+								<div className="mt-2 flex flex-col gap-4 py-2 md:mt-6 lg:py-5  ">
+									<div className="mx-auto flex w-full flex-col  gap-4 px-2 md:w-5/6  md:flex-row">
+										<div className="flex  w-full flex-col gap-2  ">
+											<FormLabel inputId="first-name" labelText="First Name" />
+											<FormInput
+												id="first-name"
+												placeholderText="Enter your first name"
+												name={'firstName'}
+												bgColor="white"
+												register={register}
+												error={errors.firstName}
+											/>
+										</div>
+										<div className="flex w-full flex-col gap-2">
+											<FormLabel inputId="last-name" labelText="Last Name" />
+											<FormInput
+												id="last-name"
+												placeholderText="Enter your last name"
+												name={'lastName'}
+												bgColor="white"
+												register={register}
+												error={errors.lastName}
+											/>
+										</div>
+									</div>
 
-							<div className="mx-auto flex w-full flex-col gap-4 px-2 md:w-5/6  md:flex-row">
-								<div className={`flex w-full flex-col gap-2`}>
-									<FormLabel inputId="address-1" labelText="Address1" />
+									<div className="mx-auto flex w-full flex-col gap-4 px-2 md:w-5/6  md:flex-row">
+										<div className={`flex w-full flex-col gap-2`}>
+											<FormLabel inputId="address-1" labelText="Address1" />
 
-									<FormInput
-										id="address-1"
-										type="text"
-										placeholderText="Enter your address"
-										autoComplete="address-line1"
-										name={'address'}
-										error={errors.address}
-										register={register}
-										bgColor="white"
-									/>
-								</div>
-								<div className={`flex w-full flex-col gap-2`}>
-									<FormLabel inputId="address2" labelText="Address2" />
+											<FormInput
+												id="address-1"
+												type="text"
+												placeholderText="Enter your address"
+												autoComplete="address-line1"
+												name={'address'}
+												error={errors.address}
+												register={register}
+												bgColor="white"
+											/>
+										</div>
+										<div className={`flex w-full flex-col gap-2`}>
+											<FormLabel inputId="address2" labelText="Address2" />
 
-									<FormInput
-										id="address-2"
-										type="text"
-										placeholderText="Enter your  address"
-										autoComplete="address-line2"
-										name={'address'}
-										error={errors.address}
-										register={register}
-										bgColor="white"
-									/>
-								</div>
-							</div>
-							<div className="mx-auto flex w-full flex-col gap-4 px-2 md:w-5/6  md:flex-row">
-								<div className="flex w-full flex-col gap-2">
-									<FormLabel inputId="city" labelText="City" />
-									<FormInput
-										id="city"
-										type="text"
-										placeholderText="Enter your city"
-										autoComplete="address-level2"
-										name={'city'}
-										bgColor="white"
-										register={register}
-										error={errors.city}
-									/>
-								</div>
-								<div className="flex w-full flex-col gap-2">
-									<FormLabel inputId="state" labelText="State" />
-									<FormInput
-										id="state"
-										type="text"
-										placeholderText="Enter your state"
-										autoComplete="address-level1"
-										name={'state'}
-										bgColor="white"
-										register={register}
-										error={errors.state}
-									/>
-								</div>
-							</div>
-							<div className="mx-auto flex w-full flex-col  gap-4 px-2 md:w-5/6  md:flex-row">
-								<div className=" flex w-full  flex-col md:w-1/2">
-									<FormLabel inputId="zip-code" labelText="Zip Code" />
-									<FormInput
-										id="zip-code"
-										placeholderText="Enter your Zip Code"
-										name={'zipCode'}
-										bgColor="white"
-										error={errors.zipCode}
-										register={register}
-									/>
-								</div>
-							</div>
-							<div className="mx-auto flex w-full flex-col gap-4 px-2 md:w-5/6 md:flex-row">
-								<div className="flex w-full flex-col gap-2">
-									<FormLabel inputId="phone-number" labelText="Phone number" />
-									<FormInput
-										id="phone-number"
-										type="phone"
-										placeholderText="Enter your phone number"
-										name={'phoneNumber'}
-										bgColor="white"
-										register={register}
-										error={errors.phoneNumber}
-									/>
-								</div>
-								<div className=" flex w-full flex-col gap-2">
-									<FormLabel inputId="email" labelText="Mail Adress" />
-									<FormInput
-										id="email"
-										type="email"
-										placeholderText="Enter your email"
-										name={'email'}
-										bgColor="white"
-										register={register}
-										error={errors.email}
-									/>
-								</div>
-							</div>
+											<FormInput
+												id="address-2"
+												type="text"
+												placeholderText="Enter your  address"
+												autoComplete="address-line2"
+												name={'address'}
+												error={errors.address}
+												register={register}
+												bgColor="white"
+											/>
+										</div>
+									</div>
+									<div className="mx-auto flex w-full flex-col gap-4 px-2 md:w-5/6  md:flex-row">
+										<div className="flex w-full flex-col gap-2">
+											<FormLabel inputId="city" labelText="City" />
+											<FormInput
+												id="city"
+												type="text"
+												placeholderText="Enter your city"
+												autoComplete="address-level2"
+												name={'city'}
+												bgColor="white"
+												register={register}
+												error={errors.city}
+											/>
+										</div>
+										<div className="flex w-full flex-col gap-2">
+											<FormLabel inputId="state" labelText="State" />
+											<FormInput
+												id="state"
+												type="text"
+												placeholderText="Enter your state"
+												autoComplete="address-level1"
+												name={'state'}
+												bgColor="white"
+												register={register}
+												error={errors.state}
+											/>
+										</div>
+									</div>
+									<div className="mx-auto flex w-full flex-col  gap-4 px-2 md:w-5/6  md:flex-row">
+										<div className=" flex w-full  flex-col md:w-1/2">
+											<FormLabel inputId="zip-code" labelText="Zip Code" />
+											<FormInput
+												id="zip-code"
+												placeholderText="Enter your Zip Code"
+												name={'zip'}
+												bgColor="white"
+												error={errors.zipCode}
+												register={register}
+											/>
+										</div>
+									</div>
+									<div className="mx-auto flex w-full flex-col gap-4 px-2 md:w-5/6 md:flex-row">
+										<div className="flex w-full flex-col gap-2">
+											<FormLabel
+												inputId="phone-number"
+												labelText="Phone number"
+											/>
+											<FormInput
+												id="phone-number"
+												type="phone"
+												placeholderText="Enter your phone number"
+												name={'phoneNumber'}
+												bgColor="white"
+												register={register}
+												error={errors.phoneNumber}
+											/>
+										</div>
+										<div className=" flex w-full flex-col gap-2">
+											<FormLabel inputId="email" labelText="Mail Address" />
+											<FormInput
+												id="email"
+												type="email"
+												placeholderText="Enter your email"
+												name={'email'}
+												bgColor="white"
+												register={register}
+												error={errors.email}
+											/>
+										</div>
+									</div>
 
-							<div className="mx-auto flex w-full flex-col  gap-4 px-2 md:w-5/6 md:flex-row">
-								<div className=" flex w-full flex-col gap-2">
-									<FormLabel
-										inputId="postionApplyingFor"
-										labelText="Position Applying for"
-									/>
+									<div className="mx-auto flex w-full flex-col  gap-4 px-2 md:w-5/6 md:flex-row">
+										<div className=" flex w-full flex-col gap-2">
+											<FormLabel
+												inputId="position"
+												labelText="Position Applying for"
+											/>
+											<ComboBox
+												id="jobOption"
+												name="jobOption"
+												options={jobOptions}
+												register={register}
+												error={errors.jobOption}
+												selectedValue={`${defaultPositionName}`}
+											/>
+										</div>
+										<div className="flex w-full flex-col gap-2">
+											<FormLabel
+												inputId="employmentDesired"
+												labelText="Employment Desired"
+											/>
+											<ComboBox
+												id="jobDesired"
+												name="jobDesired"
+												selectedValue="Select One"
+												options={employmentTypes}
+												register={register}
+												error={errors.jobDesired}
+											/>
+										</div>
+									</div>
 
-									<FormDropdown
-										id="positionApplyingFor"
-										name="positionApplyingFor"
-										options={jobOptions}
-										customClass="bg-white  rounded-lg  p-2 "
-										register={register}
-										error={errors.positionApplyingFor}
-									/>
-								</div>
-								<div className="flex w-full flex-col gap-2">
-									<FormLabel
-										inputId="employmentDesired"
-										labelText="Employment Desired"
-									/>
-									<FormDropdown
-										id={'employmentDesired'}
-										name={'employmentDesired'}
-										options={employmentTypes}
-										customClass="bg-white"
-										register={register}
-										error={errors.employmentDesired}
-									/>
-								</div>
-							</div>
+									<div className="mx-auto flex w-full px-2 md:w-5/6 ">
+										<div className={'flex w-full  flex-col gap-2'}>
+											<FormLabel
+												inputId="resume"
+												labelText="Upload your resume"
+											/>
+											<div className="relative block  ">
+												<FormUploadFile
+													id="resume"
+													name={'resume'}
+													register={register}
+													error={errors.resume}
+													onFileChange={onResumeFileChange}
+												/>
+											</div>
+										</div>
+									</div>
+									<div className="mx-auto w-full px-2 md:w-5/6">
+										<div className={'flex w-full flex-col gap-2'}>
+											<FormLabel
+												inputId="experiencelabel"
+												labelText="Tell Us About Yourself & Your Experience"
+											/>
 
-							<div className="mx-auto flex w-full px-2 md:w-5/6 ">
-								<div className={'flex w-full  flex-col gap-2'}>
-									<FormLabel inputId="resume" labelText="Upload your resume" />
-									<div className="relative block  ">
-										<FormUploadFile
-											id="resume"
-											name={'resume'}
-											register={register}
-											error={errors.resume}
-											onFileChange={onResumeFileChange}
-										/>
+											<FormTextArea
+												id="experience"
+												type="text"
+												placeholderText="Describe your Experience Here"
+												autoComplete="experience"
+												name={'experience'}
+												showErrorText={false}
+												bgColor="white"
+												error={errors.experience}
+												register={register}
+											/>
+										</div>
 									</div>
 								</div>
-							</div>
-							<div className="mx-auto w-full px-2 md:w-5/6">
-								<div className={'flex w-full flex-col gap-2'}>
-									<FormLabel
-										inputId="experiencelabel"
-										labelText="Tell Us About Yourself & Your Experience"
-									/>
 
-									<FormTextArea
-										id="experience"
-										type="text"
-										placeholderText="Describe your Experience Here"
-										autoComplete="experience"
-										name={'experience'}
-										showErrorText={false}
-										bgColor="white"
-										error={errors.experience}
-										register={register}
-									/>
+								<div className="container m-4 mx-auto flex items-center p-4">
+									<button
+										type="submit"
+										className="bg-primary-shade-1 para-2 mx-auto mt-2 w-full rounded-xl py-3 text-white md:w-2/6 "
+									>
+										Submit
+									</button>
 								</div>
 							</div>
-						</div>
-
-						<div className="container m-4 mx-auto flex items-center p-4">
-							<button
-								type="submit"
-								className="bg-primary-shade-1 para-2 mx-auto mt-2 w-3/4  rounded-xl py-3 text-white md:w-2/6 "
+						</form>
+						<div className="container sticky top-0 mx-auto">
+							<Modal
+								isVisible={showConfirmationDialog}
+								onClose={() => setShowConfirmationDialog(false)}
 							>
-								Submit
-							</button>
+								<JobApplicationModal logoImage={logoDark?.image} />
+							</Modal>
 						</div>
 					</div>
-				</form>
-				<div className="container sticky top-0 mx-auto">
-					<Modal
-						isVisible={showConfirmationDialog}
-						onClose={() => setShowConfirmationDialog(false)}
-					>
-						<JobApplicationModal logoImage={logoDark?.image} />
-					</Modal>
-				</div>
-			</SectionContentWrapper>
-			{/* <Image
-				src={'/images/job-application/right-blob.svg'}
-				height={290}
-				width={350}
-				alt="Bottom Blob Mobile "
-				className=" absolute bottom-0 right-0 z-10 hidden translate-x-[27%] translate-y-[250%]  transform  lg:block   "
-			/> */}
+				</SectionContentWrapper>
+			</div>
+
 			<Image
-				src={'/images/job-application/left-blob.svg'}
-				height={300}
-				width={400}
-				alt="Left Blob "
-				className="	absolute left-0 z-10 hidden -translate-y-[115%] -translate-x-[45%]  transform lg:block"
+				src={'/images/job-application/right-blob.svg'}
+				height={400}
+				width={500}
+				alt="Bottom Left Blob "
+				className="absolute	left-0   z-10 hidden -translate-y-[98%] -translate-x-[40%] transform lg:block 2xl:-translate-y-[105%]"
 			/>
 		</>
 	);

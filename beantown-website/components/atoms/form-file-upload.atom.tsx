@@ -39,15 +39,12 @@ const FormUploadFile: React.FC<Props> = ({
 	showErrorText = true,
 	onFileChange,
 }) => {
-	console.log('Form File upload props', value);
-
 	const inputFile = useRef<HTMLInputElement | null>(null);
-	const [fileName, setFileName] = useState(null);
+	const [fileName, setFileName] = useState('Choose a file');
 	function chooseFile() {
 		inputFile.current?.click();
 	}
 	const handleFileChange = (event: any) => {
-		console.log('Handle file change triggered', event.target.files[0]);
 		const fileObj = event.target.files && event.target.files[0];
 		if (!fileObj) {
 			return;
@@ -59,7 +56,7 @@ const FormUploadFile: React.FC<Props> = ({
 
 	return (
 		<>
-			<div className=" text-placeholder-gray-shade-2 ">
+			<div className=" text-gray-shade-2 mb-2 ">
 				<button onClick={chooseFile} className="w-full md:w-1/2 ">
 					<input
 						id={id}
@@ -69,7 +66,7 @@ const FormUploadFile: React.FC<Props> = ({
 						autoComplete={autoComplete}
 						{...(register ? register(name) : {})}
 						className={clsx(
-							'relative w-full rounded-lg border p-2 px-6 focus:outline-0',
+							'relative w-full rounded-lg   border p-2 px-6 tracking-wide focus:outline-0',
 							bgColor,
 							fontColor,
 							className,
@@ -85,7 +82,7 @@ const FormUploadFile: React.FC<Props> = ({
 					/>
 					<FontAwesomeIcon
 						icon={faPaperclip}
-						className=" text-gray-shade-2 absolute left-1 top-3 pr-2  "
+						className=" text-gray-shade-2 absolute left-1 top-3   "
 					/>
 				</button>
 			</div>
