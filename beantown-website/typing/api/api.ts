@@ -17,6 +17,9 @@ export const getCMSDocs = async <Response = any>(
 	}
 };
 
-export const getPage = (pageQuery: DocumentNode): Promise<unknown | null> => {
-	return getCMSDocs(pageQuery);
+export const getPage = (
+	pageQuery: DocumentNode,
+	variables?: OperationVariables | undefined
+): Promise<unknown | null> => {
+	return getCMSDocs(pageQuery, variables);
 };

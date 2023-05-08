@@ -1,8 +1,20 @@
+import { useContext } from 'react';
 import Image from 'next/image';
 import FormInput from 'components/atoms/form-input.atom';
 import FormLabel from 'components/atoms/form-label.atom';
+import { SearchContext } from 'contexts/blogs/blog.context';
+import { connectSearchBox } from 'react-instantsearch-dom';
 
-const BlogSearchInput: React.FC = () => {
+const CustomSearchBox: React.FC = () => {
+	const { query, setQuery, setPage, handleSearch } = useContext(SearchContext);
+
+	const handleInputChange = (e: React.SyntheticEvent<HTMLInputElement>) => {
+		const value = e.currentTarget.value;
+		setQuery(value);
+		setPage(0);
+		handleSearch(value);
+	};
+
 	return (
 		<div className="md: mb-8 flex w-[310px] items-center gap-4 md:w-[480px] xl:w-[640px]">
 			<FormLabel inputId="search" labelText="Search" className="rich-text" />
@@ -21,6 +33,8 @@ const BlogSearchInput: React.FC = () => {
 					type="search"
 					placeholderText=""
 					name={'search'}
+					value={query}
+					onChange={handleInputChange}
 					borderColor="gray-shade-3"
 					className="rich-text py-0 pl-8 leading-[2em] md:pl-12"
 				/>
@@ -29,4 +43,4 @@ const BlogSearchInput: React.FC = () => {
 	);
 };
 
-export default BlogSearchInput;
+export default connectSearchBox(CustomSearchBox);
