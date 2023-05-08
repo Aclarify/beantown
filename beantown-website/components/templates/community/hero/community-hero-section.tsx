@@ -6,7 +6,7 @@ const CommunityHeroSection = () => {
 	return (
 		<section
 			id="community-hero-section"
-			className="bg-secondary-shade-3 relative  "
+			className="bg-secondary-shade-3 relative pb-2 "
 		>
 			<SectionContentWrapper>
 				<CommunityHeroContent />

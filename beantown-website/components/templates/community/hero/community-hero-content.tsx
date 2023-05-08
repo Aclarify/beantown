@@ -4,7 +4,6 @@ import { GlobalContextProps } from '@typing/common/interfaces/contexts.interface
 import ContentWrapper from '../../../organisms/content-wrapper.organism';
 import Animate from 'components/molecules/animate.molecule';
 import { CommunityContentProps } from 'pages/community';
-import Link from 'next/link';
 import MaskedImageWithBackground from 'components/organisms/masked-image-with-background.organism';
 
 const CommunityHeroContent = () => {

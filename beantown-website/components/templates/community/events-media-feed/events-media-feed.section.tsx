@@ -23,7 +23,7 @@ export default function EventsMediaFeedSection() {
 	}
 	const pageData = pageContent.page[0];
 	return (
-		<section id="events-media-feed-section" className="relative z-20 ">
+		<section id="events-media-feed-section" className="z-5 relative ">
 			<WaveWrapper waveURL={topWave}></WaveWrapper>
 			<div className="2xl:padding-for-section  ">
 				<div className="flex flex-col overflow-hidden px-6 sm:px-24 sm:pb-10 md:px-40 md:pb-0 lg:px-8 lg:pb-6">

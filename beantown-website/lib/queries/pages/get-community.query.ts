@@ -32,6 +32,8 @@ const communityQuery = `
             _key
           }
         }
+        viewEventButtonText
+        loadMoreButtonText
         upcomingEvents{
           eventTitle
           eventUrl
