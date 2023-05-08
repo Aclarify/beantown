@@ -17,4 +17,5 @@ export enum PageNames {
 	MASSSAVE = 'massSave',
 	PRIVACYPOLICY = 'privacyPolicy',
 	UNDERCONSTRUCTION = 'underConstruction',
+	JOBAPPLICATION = 'jobApplication',
 }

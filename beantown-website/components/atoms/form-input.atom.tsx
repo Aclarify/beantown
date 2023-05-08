@@ -48,7 +48,7 @@ const FormInput: React.FC<Props> = ({
 				{...(register ? register(name) : {})}
 				onChange={onChange}
 				className={clsx(
-					'w-full rounded-lg border p-3 focus:outline-none',
+					'w-full rounded-lg border p-3 placeholder:tracking-wide focus:outline-none',
 					bgColor,
 					fontColor,
 					placeholderColor,
