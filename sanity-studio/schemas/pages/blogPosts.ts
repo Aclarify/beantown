@@ -77,6 +77,12 @@ export default defineType({
       ],
     }),
     defineField({
+      name: 'views',
+      title: 'Number of views',
+      type: 'number',
+      initialValue: 0,
+    }),
+    defineField({
       name: 'publishedAt',
       title: 'Published at',
       type: 'datetime',

@@ -18,6 +18,7 @@ interface Props {
 	register?: UseFormRegister<any>;
 	error?: FieldError;
 	showErrorText?: boolean;
+	onChange?: (event: React.ChangeEvent<HTMLInputElement>) => void;
 }
 const FormInput: React.FC<Props> = ({
 	id,
@@ -34,6 +35,7 @@ const FormInput: React.FC<Props> = ({
 	register,
 	error,
 	showErrorText = true,
+	onChange,
 }) => {
 	return (
 		<>
@@ -44,6 +46,7 @@ const FormInput: React.FC<Props> = ({
 				placeholder={placeholderText}
 				autoComplete={autoComplete}
 				{...(register ? register(name) : {})}
+				onChange={onChange}
 				className={clsx(
 					'w-full rounded-lg border p-3 placeholder:tracking-wide focus:outline-none',
 					bgColor,

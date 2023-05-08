@@ -7,6 +7,7 @@ interface IProps extends React.HTMLAttributes<HTMLDivElement> {
 	width: number;
 	height: number;
 	maskImg: string;
+	maskPosition?: string;
 	bgImg: string;
 }
 const MaskedImageWithBackgroundVector: React.FC<IProps> = (props) => {
@@ -29,11 +30,11 @@ const MaskedImageWithBackgroundVector: React.FC<IProps> = (props) => {
 					WebkitMaskImage: `url(${props.maskImg})`,
 					WebkitMaskSize: 'contain',
 					WebkitMaskRepeat: 'no-repeat',
-					WebkitMaskPosition: 'center',
+					WebkitMaskPosition: `${props.maskPosition ?? 'center'}`,
 					maskImage: `url(${props.maskImg})`,
 					maskSize: 'contain',
 					maskRepeat: 'no-repeat',
-					maskPosition: 'center',
+					maskPosition: `${props.maskPosition ?? 'center'}`,
 				}}
 			/>
 		</div>

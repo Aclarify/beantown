@@ -3,11 +3,13 @@ import '../styles/globals.css';
 import type { AppProps } from 'next/app';
 import Script from 'next/script';
 import { ApolloProvider } from '@apollo/client/react';
+import { QueryClientProvider } from 'react-query';
 import { config } from '@fortawesome/fontawesome-svg-core';
 import '@fortawesome/fontawesome-svg-core/styles.css';
 config.autoAddCss = false;
 import localFont from '@next/font/local';
 import { graphQLClient } from '@lib/clients/apollo/apollo.client';
+import { queryClient } from '@lib/clients/react-query/react-query.client';
 import Toast from 'components/molecules/toast.molecule';
 import Head from 'next/head';
 import { GA_TRACKING_ID_UA, isGAEnabled } from '@lib/tracking/gtag.tracking';
@@ -119,12 +121,14 @@ export default function App({ Component, pageProps }: AppProps) {
 				src="https://embed.scheduleengine.net/schedule-engine-v3.js"
 			/>
 			<ApolloProvider client={graphQLClient}>
-				<main
-					className={`${neuePlak.className}  overflow-hidden tracking-wide lg:tracking-wider`}
-				>
-					<Component {...pageProps} />
-					<Toast />
-				</main>
+				<QueryClientProvider client={queryClient}>
+					<main
+						className={`${neuePlak.className}  overflow-hidden tracking-wide lg:tracking-wider`}
+					>
+						<Component {...pageProps} />
+						<Toast />
+					</main>
+				</QueryClientProvider>
 			</ApolloProvider>
 		</>
 	);
