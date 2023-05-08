@@ -200,6 +200,7 @@ export type BlogPosts = Document & {
 	blogTitle?: Maybe<Scalars['String']>;
 	name?: Maybe<Scalars['String']>;
 	publishedAt?: Maybe<Scalars['DateTime']>;
+	views?: Maybe<Scalars['Float']>;
 };
 
 export type BlogPostsFilter = {
@@ -216,6 +217,7 @@ export type BlogPostsFilter = {
 	blogTitle?: InputMaybe<StringFilter>;
 	name?: InputMaybe<StringFilter>;
 	publishedAt?: InputMaybe<DatetimeFilter>;
+	views?: InputMaybe<FloatFilter>;
 };
 
 export type BlogPostsSorting = {
@@ -230,6 +232,7 @@ export type BlogPostsSorting = {
 	blogTitle?: InputMaybe<SortOrder>;
 	name?: InputMaybe<SortOrder>;
 	publishedAt?: InputMaybe<SortOrder>;
+	views?: InputMaybe<SortOrder>;
 };
 
 export type BlogSorting = {
