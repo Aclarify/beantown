@@ -24,11 +24,5 @@ export default defineType({
         hotspot: true,
       },
     }),
-    defineField({
-      name: 'socialMediaIcons',
-      title: 'Social Media Icons',
-      type: 'array',
-      of: [{type: 'reference', to: [{type: 'imageIcon', weak: true}]}],
-    }),
   ],
 })

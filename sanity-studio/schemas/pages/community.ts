@@ -82,6 +82,12 @@ export default defineType({
       ],
     }),
     defineField({
+      name: 'socialMediaIcons',
+      title: 'Social Media Icons',
+      type: 'array',
+      of: [{type: 'reference', to: [{type: 'imageIcon', weak: true}]}],
+    }),
+    defineField({
       name: 'ctaTitle',
       title: 'CTA Title',
       type: 'string',
