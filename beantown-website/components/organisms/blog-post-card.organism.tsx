@@ -23,14 +23,16 @@ const BlogPostCard: React.FC<Props> = ({ blogPost }) => {
 					</div>
 
 					<div className="mt-6 flex flex-wrap gap-4 px-6">
-						{blogPost.blogTags?.map((categoryTag, index) => (
-							<button
-								key={index}
-								className="bg-secondary-shade-3 para text-primary-black rounded-lg py-1 px-6"
-							>
-								{categoryTag?.name}
-							</button>
-						))}
+						{blogPost.blogTags?.map((categoryTag, index) =>
+							categoryTag?.name ? (
+								<button
+									key={index}
+									className="bg-secondary-shade-3 para text-primary-black rounded-lg py-1 px-6"
+								>
+									{categoryTag?.name}
+								</button>
+							) : null
+						)}
 					</div>
 
 					<div className="px-6">

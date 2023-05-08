@@ -9,7 +9,7 @@ import MaskedImageWithBackgroundVector from 'components/organisms/masked-image-w
 import { SCREEN_BREAKPOINTS } from '@typing/common/interfaces/devices.interface';
 import useWindowDimensions from 'lib/hooks/use-window-dimensions.hook';
 import { formatDate } from 'utils/helper';
-import RelatedPosts from 'components/organisms/related-posts.organism';
+import RelatedBlogPosts from 'components/organisms/related-posts.organism';
 import { toastBuilder } from 'components/molecules/toast.molecule';
 import PostTextContent from 'components/molecules/post-text-content.molecule';
 
@@ -25,11 +25,6 @@ const PostContent = () => {
 	const contentData = pageContent.content[0];
 	const { blogImage, blogTitle, blogContentRaw, blogTags, views, publishedAt } =
 		contentData;
-	const relatedPosts: any = [
-		// contentData,
-		// contentData,
-		// contentData,
-	];
 
 	const handleShareButtonClick = async () => {
 		const currentUrl = window.location.href;
@@ -138,11 +133,9 @@ const PostContent = () => {
 				</ContentWrapper>
 			</div>
 
-			{Boolean(relatedPosts?.length) && (
-				<Animate>
-					<RelatedPosts relatedPosts={relatedPosts} />
-				</Animate>
-			)}
+			<Animate>
+				<RelatedBlogPosts currentBlogPost={contentData} />
+			</Animate>
 		</div>
 	);
 };

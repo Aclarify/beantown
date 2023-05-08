@@ -8,6 +8,9 @@ import { SearchContext } from 'contexts/blogs/blog.context';
 import BlogPostCard from './blog-post-card.organism';
 import { useIsFetching } from 'react-query';
 import { toast } from 'react-hot-toast';
+import clsx from 'clsx';
+import CtaWrapper from 'components/molecules/cta-wrapper.molecule';
+import useSearch from '../../lib/hooks/useSearch.hook';
 
 type IProps = HitsProvided<BlogPosts>;
 
@@ -126,22 +129,33 @@ type IProps = HitsProvided<BlogPosts>;
 // 					<p>No posts found.</p>
 // 				)}
 // 			</div>
-// 			{/* {hasMore && (
-// 				<div className="mt-6 items-center  pb-6 text-center lg:mt-12 lg:mb-0">
-// 					<CtaWrapper.CTA
-// 						onClick={handleLoadMore}
-// 						className={clsx(`bg-primary-shade-1 button text-white`)}
-// 					>
-// 						<p className={clsx('font-normal')}>Load More</p>
-// 					</CtaWrapper.CTA>
-// 				</div>
-// 			)} */}
+{
+	/* {hasMore && (
+				<div className="mt-6 items-center  pb-6 text-center lg:mt-12 lg:mb-0">
+					<CtaWrapper.CTA
+						onClick={handleLoadMore}
+						className={clsx(`bg-primary-shade-1 button text-white`)}
+					>
+						<p className={clsx('font-normal')}>Load More</p>
+					</CtaWrapper.CTA>
+				</div>
+			)} */
+}
 // 		</>
 // 	);
 // };
 
 const BlogPostHits: React.FC<IProps> = () => {
-	const { page, hits, nbPages, setPage } = useContext(SearchContext);
+	const { page, hits, query, handleSearch } = useContext(SearchContext);
+	const { loadMore, hasNextPage } = useSearch(
+		query,
+		page,
+		9,
+		[],
+		undefined,
+		true
+	);
+
 	const isFetching = useIsFetching();
 
 	// Show toast when there are active queries
@@ -157,18 +171,35 @@ const BlogPostHits: React.FC<IProps> = () => {
 		return null;
 	}
 
+	const handleLoadMore = () => {
+		loadMore();
+		handleSearch(query);
+	};
+
 	return (
-		<div className="mb-5 grid w-full grid-cols-1 gap-x-8 gap-y-6 lg:grid-cols-3 lg:gap-y-12">
-			{hits?.length > 0 ? (
-				hits.map((blogPost, index) => (
-					<div key={index} className="w-full">
-						<BlogPostCard blogPost={blogPost} />
-					</div>
-				))
-			) : (
-				<p>No posts found.</p>
+		<>
+			<div className="mb-5 grid w-full grid-cols-1 gap-x-8 gap-y-6 lg:grid-cols-3 lg:gap-y-12">
+				{hits?.length > 0 ? (
+					hits.map((blogPost, index) => (
+						<div key={index} className="w-full">
+							<BlogPostCard blogPost={blogPost} />
+						</div>
+					))
+				) : (
+					<p>No posts found.</p>
+				)}
+			</div>
+			{hasNextPage && (
+				<div className="mt-6 items-center  pb-6 text-center lg:mt-12 lg:mb-0">
+					<CtaWrapper.CTA
+						onClick={handleLoadMore}
+						className={clsx(`bg-primary-shade-1 button text-white`)}
+					>
+						<p className={clsx('font-normal')}>Load More</p>
+					</CtaWrapper.CTA>
+				</div>
 			)}
-		</div>
+		</>
 	);
 };
 

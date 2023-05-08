@@ -12,14 +12,11 @@ export const increasePostViews = async (slug: string) => {
 			{ slug }
 		);
 
-		console.log('Post: ', post);
-
 		if (post) {
-			const result = await sanityWriteClient
+			await sanityWriteClient
 				.patch(post._id)
 				.set({ views: (post.views ?? 0) + 1 })
 				.commit();
-			console.log('Result: ', result);
 		}
 	} catch (error) {
 		console.error('Cannot increase blog post views: ', error);

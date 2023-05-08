@@ -51,7 +51,7 @@ const saveExistingBlogPosts = async () => {
   try {
     console.time(`Saving ${documents.length} documents to index:`)
     await index.saveObjects(documents)
-    console.timeEnd(`Saving ${documents.length} documents to index:`)
+    console.timeEnd(`Saved ${documents.length} documents to index:`)
   } catch (error) {
     console.error(error)
   }

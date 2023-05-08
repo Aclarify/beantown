@@ -8,13 +8,18 @@ import 'slick-carousel/slick/slick-theme.css';
 import BlogPostCard from './blog-post-card.organism';
 import Animate from 'components/molecules/animate.molecule';
 import { SCREEN_BREAKPOINTS } from '@typing/common/interfaces/devices.interface';
+import useSearch from 'lib/hooks/useSearch.hook';
 
 interface IProps extends React.HTMLAttributes<HTMLDivElement> {
-	relatedPosts: BlogPosts[];
+	currentBlogPost: BlogPosts;
 }
 
-const RelatedPosts: React.FC<IProps> = (props) => {
+const RelatedBlogPosts: React.FC<IProps> = ({ currentBlogPost }) => {
 	const slider = React.useRef<Slider | null>(null);
+	const tags =
+		currentBlogPost.blogTags?.map((item) => item?.category || '') ?? [];
+	const currentPostId = currentBlogPost._id || undefined;
+	const { hits: relatedPosts } = useSearch('', 0, 9, tags, currentPostId);
 
 	const previous = () => {
 		if (slider.current) {
@@ -67,6 +72,10 @@ const RelatedPosts: React.FC<IProps> = (props) => {
 		],
 	};
 
+	if (!relatedPosts) {
+		return null;
+	}
+
 	return (
 		<div>
 			<div className="mb-16 w-full">
@@ -96,7 +105,7 @@ const RelatedPosts: React.FC<IProps> = (props) => {
 
 			<div className="slider-wrapper w-full">
 				<Slider ref={slider} {...settings}>
-					{props.relatedPosts?.map((blogPost, index) => {
+					{relatedPosts?.map((blogPost, index) => {
 						return (
 							<div className="w-1/3 px-3" key={index}>
 								<BlogPostCard blogPost={blogPost} />
@@ -109,4 +118,4 @@ const RelatedPosts: React.FC<IProps> = (props) => {
 	);
 };
 
-export default RelatedPosts;
+export default RelatedBlogPosts;
