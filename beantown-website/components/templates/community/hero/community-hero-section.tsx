@@ -4,7 +4,10 @@ import CommunityHeroContent from './community-hero-content';
 
 const CommunityHeroSection = () => {
 	return (
-		<section id="career-hero-section" className="relative z-10  ">
+		<section
+			id="community-hero-section"
+			className="bg-secondary-shade-3 relative  "
+		>
 			<SectionContentWrapper>
 				<CommunityHeroContent />
 			</SectionContentWrapper>

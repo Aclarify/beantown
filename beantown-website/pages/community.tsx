@@ -1,7 +1,7 @@
 import React, { useContext } from 'react';
 import { Community, Nav, Footer } from '@typing/gql/graphql';
 import Head from 'next/head';
-import pageQuery from '@lib/queries/pages/get-careers-query';
+import pageQuery from '@lib/queries/pages/get-community.query';
 import WithGlobalContent, {
 	generateGetStaticProps,
 } from '../components/containers/global-content/global-content.container';
@@ -12,6 +12,8 @@ import Header from 'components/organisms/nav';
 import FooterSection from 'components/organisms/footer';
 import BookNowButton from 'components/atoms/book-now-button.atom';
 import CommunityHeroSection from 'components/templates/community/hero/community-hero-section';
+import CommunityCTASection from 'components/templates/community/cta/community-cta.section';
+import EventsMediaFeedSection from 'components/templates/community/events-media-feed/events-media-feed.section';
 
 export interface CommunityContentProps {
 	page: Community[];
@@ -45,7 +47,7 @@ const CommunityPage: React.FC = () => {
 		);
 	};
 	return (
-		<div id="community" className="bg-primary-white-shade-1">
+		<div id="community" className="bg-white">
 			<PageHead />
 			<Header
 				mobileBgColor="bg-primary-white-shade-1"
@@ -66,6 +68,8 @@ const CommunityPage: React.FC = () => {
 				</div>
 			</Header>
 			<CommunityHeroSection />
+			<EventsMediaFeedSection />
+			<CommunityCTASection />
 			<FooterSection logoDesktop={logoLight?.image} content={footerData} />
 		</div>
 	);
