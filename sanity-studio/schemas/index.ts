@@ -37,6 +37,9 @@ import blogPosts from './pages/blogPosts'
 import privacyPolicy from './pages/privacyPolicy'
 import dropdownOptions from './organism/dropdownOptions'
 import submittedApplications from './pages/submittedApplications'
+import mediaFeed from './organism/mediaFeed'
+import eventsList from './organism/eventsList'
+import community from './pages/community'
 
 export const schemaTypes = [
   //Document Types
@@ -63,7 +66,10 @@ export const schemaTypes = [
   categories,
   privacyPolicy,
   submittedApplications,
+  community,
   //Other Types
+  mediaFeed,
+  eventsList,
   jobDetails,
   breakType,
   cta,
