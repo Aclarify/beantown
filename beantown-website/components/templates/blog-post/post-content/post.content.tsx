@@ -81,14 +81,16 @@ const PostContent = () => {
 
 						<Animate bottom>
 							<div className="mt-4 mb-16 flex w-full flex-wrap gap-4">
-								{blogTags?.map((categoryTag, index) => (
-									<p
-										key={index}
-										className="bg-secondary-shade-3 rich-text text-primary-black rounded-lg py-2 px-6 font-light"
-									>
-										{categoryTag?.name}
-									</p>
-								))}
+								{blogTags?.map((categoryTag, index) =>
+									categoryTag?.name ? (
+										<p
+											key={index}
+											className="bg-secondary-shade-3 rich-text text-primary-black rounded-lg py-2 px-6 font-light"
+										>
+											{categoryTag?.name}
+										</p>
+									) : null
+								)}
 								<p className="bg-secondary-shade-3 rich-text text-primary-black flex items-center gap-2 rounded-lg py-2 px-6 font-light">
 									<Image
 										src={'/images/blog-post/icons/calendar.svg'}
@@ -133,9 +135,9 @@ const PostContent = () => {
 				</ContentWrapper>
 			</div>
 
-			<Animate>
+			<div className="mt-20 md:mt-32">
 				<RelatedBlogPosts currentBlogPost={contentData} />
-			</Animate>
+			</div>
 		</div>
 	);
 };

@@ -1,4 +1,4 @@
-import React, { useContext } from 'react';
+import React, { useContext, useEffect, useState } from 'react';
 import { Nav, Footer, Blogs, BlogPosts } from '@typing/gql/graphql';
 import Head from 'next/head';
 import pageQuery from '@lib/queries/pages/get-blog-post.query';
@@ -16,7 +16,6 @@ import { GetStaticPaths } from 'next';
 import PostContentSection from 'components/templates/blog-post/post-content/post.section';
 import { getExcerpt } from 'utils/helper';
 import { useRouter } from 'next/router';
-import { increasePostViews } from 'lib/api/cms/blog/increase-views.handler';
 
 export interface BlogPostContentProps {
 	page: Blogs[];
@@ -43,13 +42,24 @@ const BlogPostPage: React.FC = () => {
 	const { pageContent } =
 		useContext<GlobalContextProps<BlogPostContentProps>>(GlobalContext);
 	const router = useRouter();
+	// to prevent  the useffect running twice
+	const [previousSlug, setPreviousSlug] = useState<string>('');
 
-	React.useEffect(() => {
-		if (router.query.slug) {
+	useEffect(() => {
+		async function increaseCurrentPostViews() {
 			const slug = router.query.slug as string;
-			increasePostViews(slug);
+			if (slug && slug !== previousSlug) {
+				await fetch(`/api/blog-posts/increase-views/${slug}`, {
+					method: 'POST',
+					headers: {
+						'Content-Type': 'application/json',
+					},
+				});
+			}
+			setPreviousSlug(slug);
 		}
-	}, [router.query.slug]);
+		increaseCurrentPostViews();
+	}, [router.query.slug, previousSlug]);
 
 	if (!pageContent) {
 		return null;

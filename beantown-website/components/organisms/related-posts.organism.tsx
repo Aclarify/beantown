@@ -34,7 +34,7 @@ const RelatedBlogPosts: React.FC<IProps> = ({ currentBlogPost }) => {
 
 	const settings = {
 		dots: false,
-		infinite: false,
+		infinite: true,
 		speed: 800,
 		slidesToShow: 3,
 		slidesToScroll: 1,
@@ -63,6 +63,14 @@ const RelatedBlogPosts: React.FC<IProps> = ({ currentBlogPost }) => {
 			},
 			{
 				breakpoint: SCREEN_BREAKPOINTS.LG,
+				settings: {
+					slidesToShow: 2.5,
+					slidesToScroll: 1,
+					variableWidth: false,
+				},
+			},
+			{
+				breakpoint: SCREEN_BREAKPOINTS.XL,
 				settings: {
 					slidesToShow: 3,
 					slidesToScroll: 1,
@@ -107,7 +115,7 @@ const RelatedBlogPosts: React.FC<IProps> = ({ currentBlogPost }) => {
 				<Slider ref={slider} {...settings}>
 					{relatedPosts?.map((blogPost, index) => {
 						return (
-							<div className="w-1/3 px-3" key={index}>
+							<div className="px-3" key={index}>
 								<BlogPostCard blogPost={blogPost} />
 							</div>
 						);

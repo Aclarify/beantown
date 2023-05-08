@@ -1,5 +1,6 @@
+/* eslint-disable @typescript-eslint/no-explicit-any */
 import { NextApiRequest, NextApiResponse } from 'next';
-import sanityWriteClient from 'lib/clients/sanity/sanity.client';
+import sanityClient from 'lib/clients/sanity/sanity.client';
 import indexer from 'sanity-algolia';
 import { algoliaAdminClient } from 'lib/clients/algolia/algolia.client';
 import { config } from 'lib/config';
@@ -48,7 +49,7 @@ const handlePost = async (req: NextApiRequest, res: NextApiResponse) => {
 		);
 
 		console.time('Syncing documents algolia to index:');
-		await sanityAlgolia.webhookSync(sanityWriteClient, req.body);
+		await sanityAlgolia.webhookSync(sanityClient, req.body);
 		console.timeEnd('Syncing documents algolia to index:');
 
 		res.status(200).json({ success: true });

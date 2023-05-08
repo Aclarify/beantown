@@ -73,7 +73,7 @@ const useSearch = (
 		// Return a function to load more search
 		loadMore: fetchNextPage,
 		// Return a boolean to know wether we have next page to load
-		hasNextPage,
+		hasNextPage: hasNextPage ?? false,
 	};
 };
 

@@ -11,7 +11,7 @@ const BlogPostCard: React.FC<Props> = ({ blogPost }) => {
 	return (
 		<Animate cascade>
 			<Link href={`/blog/${blogPost.blogSlug?.current}`}>
-				<div className="cursor-pointer flex-col justify-center rounded-3xl border-none bg-white pb-8">
+				<div className="flex cursor-pointer flex-col justify-center rounded-3xl border-none bg-white pb-8">
 					<div className="flex transform justify-center transition duration-500 hover:scale-105 ">
 						<Image
 							src={blogPost.blogImage?.asset?.url || ''}
@@ -35,24 +35,22 @@ const BlogPostCard: React.FC<Props> = ({ blogPost }) => {
 						)}
 					</div>
 
-					<div className="px-6">
-						<Animate>
-							<h5 className=" text-primary-black py-4">{blogPost.blogTitle}</h5>
-						</Animate>
+					<div className="md:h-30 h-24 overflow-hidden px-6 py-4 lg:h-48">
+						<h5 className="text-primary-black">{blogPost.blogTitle}</h5>
+					</div>
 
-						<div className="mt-4 flex justify-between align-middle lg:pb-2 ">
-							<Animate>
-								<button className="para text-primary-black underline ">
-									Read Article
-								</button>
-							</Animate>
-							<Image
-								src="/images/home/blog-arrow.svg"
-								width="75"
-								height="20"
-								alt="Blog Arrow"
-							/>
-						</div>
+					<div className="mt-4 flex justify-between px-6 align-middle lg:pb-2 ">
+						<Animate>
+							<button className="para text-primary-black underline ">
+								Read Article
+							</button>
+						</Animate>
+						<Image
+							src="/images/home/blog-arrow.svg"
+							width="75"
+							height="20"
+							alt="Blog Arrow"
+						/>
 					</div>
 				</div>
 			</Link>

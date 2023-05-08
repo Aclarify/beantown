@@ -1,5 +1,5 @@
 import { toastBuilder } from 'components/molecules/toast.molecule';
-import moment from 'moment';
+import { DateTime } from 'luxon';
 
 export const limitText = (text: string, limit = 20): string => {
 	if (text.length > limit) {
@@ -13,8 +13,8 @@ export const showUnderConstructionMsg = () => {
 };
 
 export const formatDate = (dateStr: string) => {
-	const formattedDate = moment(dateStr).format('DD-MM-YYYY');
-	return formattedDate;
+	const date = DateTime.fromISO(dateStr);
+	return date.toFormat('dd-MM-yyyy');
 };
 
 export const getExcerpt = (content: any = [], maxLength = 100): string => {

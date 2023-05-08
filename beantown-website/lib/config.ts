@@ -25,11 +25,11 @@ export const config = {
 	 **/
 	algoliaAppId: process.env.NEXT_PUBLIC_ALGOLIA_APP_ID || '',
 	algoliaSearchApiKey: process.env.NEXT_PUBLIC_ALGOLIA_SEARCH_API_KEY || '',
-	algoliaWriteApiKey: process.env.NEXT_PUBLIC_ALGOLIA_WRITE_API_KEY || '',
+	algoliaWriteApiKey: process.env.ALGOLIA_WRITE_API_KEY || '',
 	algoliaBlogSearchIndexName:
 		process.env.NEXT_PUBLIC_ALGOLIA_BLOG_SEARCH_INDEX_NAME || '',
 	/**
 	 * Sanity Webhook secret key
 	 */
-	sanityWebhookSecret: process.env.NEXT_PUBLIC_SANITY_WEBHOOK_SECRET || '',
+	sanityWebhookSecret: process.env.SANITY_WEBHOOK_SECRET || '',
 };

@@ -8,7 +8,7 @@ if (!config.projectId) {
 
 export const client = createClient({
 	...config,
-	token: process.env.NEXT_PUBLIC_SANITY_API_WRITE_TOKEN,
+	token: process.env.SANITY_READ_WRITE_TOKEN,
 });
 
 export const previewClient = createClient({

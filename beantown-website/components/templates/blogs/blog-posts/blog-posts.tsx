@@ -36,6 +36,7 @@ export default function BlogPosts() {
 	const [query, setQuery] = useState<string>('');
 	const [page, setPage] = useState<number>(0);
 	const [debouncedQuery, setDebouncedQuery] = useState<string>('');
+	const [shouldLoadMore, setShouldLoadMore] = useState<boolean>(false);
 
 	// Load the initial blog categories on component mount
 	useEffect(() => {
@@ -67,25 +68,35 @@ export default function BlogPosts() {
 		setTags(categories);
 	};
 
-	const { hits, nbPages } = useSearch(
+	const { hits, nbPages, hasNextPage, loadMore } = useSearch(
 		debouncedQuery,
 		page,
 		maxBlogPostPerPage,
-		tags.map((item) => item.name ?? '')
+		tags.map((item) => item.name ?? ''),
+		undefined,
+		shouldLoadMore
 	);
 
 	const handleSearch = debounce((query: string) => {
 		setDebouncedQuery(query);
 	}, 500);
 
+	const handleLoadMore = () => {
+		setShouldLoadMore(true);
+		setPage(page + 1);
+		loadMore();
+	};
+
 	const contextValue = {
 		query,
 		setQuery,
+		hits,
 		page,
 		setPage,
-		hits,
 		nbPages,
+		hasNextPage,
 		handleSearch,
+		handleLoadMore,
 	};
 
 	return (
