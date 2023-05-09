@@ -561,7 +561,7 @@ export type Community = Document & {
 	ctaDescription?: Maybe<PortableText>;
 	ctaImage?: Maybe<Image>;
 	ctaTitle?: Maybe<Scalars['String']>;
-	eventsTitle?: Maybe<Scalars['String']>;
+	eventSectionTitle?: Maybe<Scalars['String']>;
 	heroDescription?: Maybe<Scalars['String']>;
 	heroImage?: Maybe<Image>;
 	heroTitle?: Maybe<Scalars['String']>;
@@ -590,7 +590,7 @@ export type CommunityFilter = {
 	ctaDescription?: InputMaybe<PortableTextFilter>;
 	ctaImage?: InputMaybe<ImageFilter>;
 	ctaTitle?: InputMaybe<StringFilter>;
-	eventsTitle?: InputMaybe<StringFilter>;
+	eventSectionTitle?: InputMaybe<StringFilter>;
 	heroDescription?: InputMaybe<StringFilter>;
 	heroImage?: InputMaybe<ImageFilter>;
 	heroTitle?: InputMaybe<StringFilter>;
@@ -614,7 +614,7 @@ export type CommunitySorting = {
 	ctaDescription?: InputMaybe<PortableTextSorting>;
 	ctaImage?: InputMaybe<ImageSorting>;
 	ctaTitle?: InputMaybe<SortOrder>;
-	eventsTitle?: InputMaybe<SortOrder>;
+	eventSectionTitle?: InputMaybe<SortOrder>;
 	heroDescription?: InputMaybe<SortOrder>;
 	heroImage?: InputMaybe<ImageSorting>;
 	heroTitle?: InputMaybe<SortOrder>;
@@ -809,9 +809,9 @@ export type EventsList = Document & {
 	_updatedAt?: Maybe<Scalars['DateTime']>;
 	eventDate?: Maybe<Scalars['DateTime']>;
 	eventImage?: Maybe<Image>;
+	eventTitle?: Maybe<Scalars['String']>;
 	eventUrl?: Maybe<Scalars['String']>;
 	name?: Maybe<Scalars['String']>;
-	title?: Maybe<Scalars['String']>;
 };
 
 export type EventsListFilter = {
@@ -825,9 +825,9 @@ export type EventsListFilter = {
 	_updatedAt?: InputMaybe<DatetimeFilter>;
 	eventDate?: InputMaybe<DatetimeFilter>;
 	eventImage?: InputMaybe<ImageFilter>;
+	eventTitle?: InputMaybe<StringFilter>;
 	eventUrl?: InputMaybe<StringFilter>;
 	name?: InputMaybe<StringFilter>;
-	title?: InputMaybe<StringFilter>;
 };
 
 export type EventsListSorting = {
@@ -839,9 +839,9 @@ export type EventsListSorting = {
 	_updatedAt?: InputMaybe<SortOrder>;
 	eventDate?: InputMaybe<SortOrder>;
 	eventImage?: InputMaybe<ImageSorting>;
+	eventTitle?: InputMaybe<SortOrder>;
 	eventUrl?: InputMaybe<SortOrder>;
 	name?: InputMaybe<SortOrder>;
-	title?: InputMaybe<SortOrder>;
 };
 
 export type Faq = Document & {
