@@ -561,28 +561,19 @@ export type Community = Document & {
 	ctaDescription?: Maybe<PortableText>;
 	ctaImage?: Maybe<Image>;
 	ctaTitle?: Maybe<Scalars['String']>;
-<<<<<<< HEAD
-=======
 	eventsTitle?: Maybe<Scalars['String']>;
->>>>>>> 5c555fcbce6a30e8fd280bc325626b93ad8fbff2
+	eventSectionTitle?: Maybe<Scalars['String']>;
 	heroDescription?: Maybe<Scalars['String']>;
 	heroImage?: Maybe<Image>;
 	heroTitle?: Maybe<Scalars['String']>;
 	loadMoreButtonText?: Maybe<Scalars['String']>;
 	logoDark?: Maybe<ImageIcon>;
 	logoLight?: Maybe<ImageIcon>;
-<<<<<<< HEAD
-=======
 	mediaFeedTitle?: Maybe<Scalars['String']>;
->>>>>>> 5c555fcbce6a30e8fd280bc325626b93ad8fbff2
 	metaDescription?: Maybe<Scalars['String']>;
 	name?: Maybe<Scalars['String']>;
 	pageTitle?: Maybe<Scalars['String']>;
 	socialMediaFeed?: Maybe<Array<Maybe<MediaFeed>>>;
-<<<<<<< HEAD
-	socialMediaIcons?: Maybe<Array<Maybe<ImageIcon>>>;
-=======
->>>>>>> 5c555fcbce6a30e8fd280bc325626b93ad8fbff2
 	upcomingEvents?: Maybe<Array<Maybe<EventsList>>>;
 	viewEventButtonText?: Maybe<Scalars['String']>;
 };
@@ -600,20 +591,15 @@ export type CommunityFilter = {
 	ctaDescription?: InputMaybe<PortableTextFilter>;
 	ctaImage?: InputMaybe<ImageFilter>;
 	ctaTitle?: InputMaybe<StringFilter>;
-<<<<<<< HEAD
-=======
 	eventsTitle?: InputMaybe<StringFilter>;
->>>>>>> 5c555fcbce6a30e8fd280bc325626b93ad8fbff2
+	eventSectionTitle?: InputMaybe<StringFilter>;
 	heroDescription?: InputMaybe<StringFilter>;
 	heroImage?: InputMaybe<ImageFilter>;
 	heroTitle?: InputMaybe<StringFilter>;
 	loadMoreButtonText?: InputMaybe<StringFilter>;
 	logoDark?: InputMaybe<ImageIconFilter>;
 	logoLight?: InputMaybe<ImageIconFilter>;
-<<<<<<< HEAD
-=======
 	mediaFeedTitle?: InputMaybe<StringFilter>;
->>>>>>> 5c555fcbce6a30e8fd280bc325626b93ad8fbff2
 	metaDescription?: InputMaybe<StringFilter>;
 	name?: InputMaybe<StringFilter>;
 	pageTitle?: InputMaybe<StringFilter>;
@@ -630,18 +616,13 @@ export type CommunitySorting = {
 	ctaDescription?: InputMaybe<PortableTextSorting>;
 	ctaImage?: InputMaybe<ImageSorting>;
 	ctaTitle?: InputMaybe<SortOrder>;
-<<<<<<< HEAD
-=======
 	eventsTitle?: InputMaybe<SortOrder>;
->>>>>>> 5c555fcbce6a30e8fd280bc325626b93ad8fbff2
+	eventSectionTitle?: InputMaybe<SortOrder>;
 	heroDescription?: InputMaybe<SortOrder>;
 	heroImage?: InputMaybe<ImageSorting>;
 	heroTitle?: InputMaybe<SortOrder>;
 	loadMoreButtonText?: InputMaybe<SortOrder>;
-<<<<<<< HEAD
-=======
 	mediaFeedTitle?: InputMaybe<SortOrder>;
->>>>>>> 5c555fcbce6a30e8fd280bc325626b93ad8fbff2
 	metaDescription?: InputMaybe<SortOrder>;
 	name?: InputMaybe<SortOrder>;
 	pageTitle?: InputMaybe<SortOrder>;
@@ -831,15 +812,10 @@ export type EventsList = Document & {
 	_updatedAt?: Maybe<Scalars['DateTime']>;
 	eventDate?: Maybe<Scalars['DateTime']>;
 	eventImage?: Maybe<Image>;
-<<<<<<< HEAD
 	eventTitle?: Maybe<Scalars['String']>;
 	eventUrl?: Maybe<Scalars['String']>;
 	name?: Maybe<Scalars['String']>;
-=======
-	eventUrl?: Maybe<Scalars['String']>;
-	name?: Maybe<Scalars['String']>;
 	title?: Maybe<Scalars['String']>;
->>>>>>> 5c555fcbce6a30e8fd280bc325626b93ad8fbff2
 };
 
 export type EventsListFilter = {
@@ -853,15 +829,9 @@ export type EventsListFilter = {
 	_updatedAt?: InputMaybe<DatetimeFilter>;
 	eventDate?: InputMaybe<DatetimeFilter>;
 	eventImage?: InputMaybe<ImageFilter>;
-<<<<<<< HEAD
 	eventTitle?: InputMaybe<StringFilter>;
 	eventUrl?: InputMaybe<StringFilter>;
 	name?: InputMaybe<StringFilter>;
-=======
-	eventUrl?: InputMaybe<StringFilter>;
-	name?: InputMaybe<StringFilter>;
-	title?: InputMaybe<StringFilter>;
->>>>>>> 5c555fcbce6a30e8fd280bc325626b93ad8fbff2
 };
 
 export type EventsListSorting = {
@@ -873,15 +843,9 @@ export type EventsListSorting = {
 	_updatedAt?: InputMaybe<SortOrder>;
 	eventDate?: InputMaybe<SortOrder>;
 	eventImage?: InputMaybe<ImageSorting>;
-<<<<<<< HEAD
 	eventTitle?: InputMaybe<SortOrder>;
 	eventUrl?: InputMaybe<SortOrder>;
 	name?: InputMaybe<SortOrder>;
-=======
-	eventUrl?: InputMaybe<SortOrder>;
-	name?: InputMaybe<SortOrder>;
-	title?: InputMaybe<SortOrder>;
->>>>>>> 5c555fcbce6a30e8fd280bc325626b93ad8fbff2
 };
 
 export type Faq = Document & {
@@ -1824,17 +1788,11 @@ export type MediaFeed = Document & {
 	_type?: Maybe<Scalars['String']>;
 	/** Date the document was last modified */
 	_updatedAt?: Maybe<Scalars['DateTime']>;
-<<<<<<< HEAD
-	feedImage?: Maybe<Image>;
-	feedUrl?: Maybe<Scalars['String']>;
-	name?: Maybe<Scalars['String']>;
-=======
 	fbURL?: Maybe<Scalars['String']>;
 	feedImage?: Maybe<Image>;
 	instaURL?: Maybe<Scalars['String']>;
 	name?: Maybe<Scalars['String']>;
 	twitterURL?: Maybe<Scalars['String']>;
->>>>>>> 5c555fcbce6a30e8fd280bc325626b93ad8fbff2
 };
 
 export type MediaFeedFilter = {
@@ -1846,17 +1804,11 @@ export type MediaFeedFilter = {
 	_rev?: InputMaybe<StringFilter>;
 	_type?: InputMaybe<StringFilter>;
 	_updatedAt?: InputMaybe<DatetimeFilter>;
-<<<<<<< HEAD
-	feedImage?: InputMaybe<ImageFilter>;
-	feedUrl?: InputMaybe<StringFilter>;
-	name?: InputMaybe<StringFilter>;
-=======
 	fbURL?: InputMaybe<StringFilter>;
 	feedImage?: InputMaybe<ImageFilter>;
 	instaURL?: InputMaybe<StringFilter>;
 	name?: InputMaybe<StringFilter>;
 	twitterURL?: InputMaybe<StringFilter>;
->>>>>>> 5c555fcbce6a30e8fd280bc325626b93ad8fbff2
 };
 
 export type MediaFeedSorting = {
@@ -1866,17 +1818,11 @@ export type MediaFeedSorting = {
 	_rev?: InputMaybe<SortOrder>;
 	_type?: InputMaybe<SortOrder>;
 	_updatedAt?: InputMaybe<SortOrder>;
-<<<<<<< HEAD
-	feedImage?: InputMaybe<ImageSorting>;
-	feedUrl?: InputMaybe<SortOrder>;
-	name?: InputMaybe<SortOrder>;
-=======
 	fbURL?: InputMaybe<SortOrder>;
 	feedImage?: InputMaybe<ImageSorting>;
 	instaURL?: InputMaybe<SortOrder>;
 	name?: InputMaybe<SortOrder>;
 	twitterURL?: InputMaybe<SortOrder>;
->>>>>>> 5c555fcbce6a30e8fd280bc325626b93ad8fbff2
 };
 
 export type Memberships = Document & {
