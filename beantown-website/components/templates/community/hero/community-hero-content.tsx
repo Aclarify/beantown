@@ -19,7 +19,7 @@ const CommunityHeroContent = () => {
 	return (
 		<div
 			id="section-wrapper"
-			className=" mb-[6em]  flex flex-col  overflow-hidden "
+			className="mb-[3em] flex  flex-col overflow-hidden  lg:mb-[6em] "
 		>
 			<div
 				id="content-image-wrapper"
