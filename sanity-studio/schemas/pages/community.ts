@@ -50,6 +50,11 @@ export default defineType({
       type: 'string',
     }),
     defineField({
+      name: 'eventsTitle',
+      title: 'Events Section Title',
+      type: 'string',
+    }),
+    defineField({
       name: 'upcomingEvents',
       title: 'List of Upcoming Events',
       type: 'array',
@@ -71,6 +76,11 @@ export default defineType({
       type: 'string',
     }),
     defineField({
+      name: 'mediaFeedTitle',
+      title: 'Social Media Feed Section Title',
+      type: 'string',
+    }),
+    defineField({
       name: 'socialMediaFeed',
       title: 'Social Media Feed',
       type: 'array',
@@ -80,12 +90,6 @@ export default defineType({
           to: [{type: 'mediaFeed'}],
         },
       ],
-    }),
-    defineField({
-      name: 'socialMediaIcons',
-      title: 'Social Media Icons',
-      type: 'array',
-      of: [{type: 'reference', to: [{type: 'imageIcon', weak: true}]}],
     }),
     defineField({
       name: 'ctaTitle',
