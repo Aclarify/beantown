@@ -50,7 +50,7 @@ const CommunityHeroContent = () => {
 						image={heroImage || null}
 						imgAltText={heroImage?.asset?.altText || ''}
 						maskImg="./images/community/hero/community-hero-mask-blob.svg"
-						bgImg="./images/comunity/hero/community-hero-bg-blob.svg"
+						bgImg="./images/community/hero/community-hero-bg-blob.svg"
 					/>
 				</div>
 			</div>

@@ -11,12 +11,12 @@ const UpcomingEventsContent = () => {
 		return null;
 	}
 	const pageData = pageContent.page[0];
-	const { upcomingEvents, viewEventButtonText } = pageData;
+	const { eventSectionTitle, upcomingEvents, viewEventButtonText } = pageData;
 
 	return (
 		<div className="w-full p-6">
 			<h1 className="mb-[20px] text-center  text-2xl lg:text-[40px]">
-				Upcoming Events
+				{eventSectionTitle}
 			</h1>
 
 			<div className="grid grid-cols-1 gap-4 lg:grid-cols-3">
@@ -44,7 +44,7 @@ const UpcomingEventsContent = () => {
 
 							<h5>{eventsCard?.eventTitle}</h5>
 							<button className="bg-primary-shade-1 mt-[10px] w-full rounded-lg p-[10px] text-white">
-								{viewEventButtonText}&rarr;
+								{viewEventButtonText} &rarr;
 							</button>
 						</div>
 					);

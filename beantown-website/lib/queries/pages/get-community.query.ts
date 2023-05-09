@@ -34,6 +34,7 @@ const communityQuery = `
         }
         viewEventButtonText
         loadMoreButtonText
+    		eventSectionTitle
         upcomingEvents{
           eventTitle
           eventUrl
@@ -46,9 +47,12 @@ const communityQuery = `
               }
             }
         }
+    		mediaFeedTitle
         socialMediaFeed{
           name
-          feedUrl
+          fbURL
+          instaURL
+          twitterURL
           feedImage{
             asset{
               url
@@ -57,16 +61,7 @@ const communityQuery = `
             }
           }
         }
-        socialMediaIcons{
-          href
-          image{
-            asset{
-              url
-              _id
-              _key
-            }
-          }
-        } 
+        
     ctaTitle
     ctaDescription{
       contentRaw
