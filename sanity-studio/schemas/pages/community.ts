@@ -50,7 +50,7 @@ export default defineType({
       type: 'string',
     }),
     defineField({
-      name: 'eventsTitle',
+      name: 'eventSectionTitle',
       title: 'Events Section Title',
       type: 'string',
     }),
