@@ -50,6 +50,11 @@ export default defineType({
       type: 'string',
     }),
     defineField({
+      name: 'eventsTitle',
+      title: 'Events Section Title',
+      type: 'string',
+    }),
+    defineField({
       name: 'upcomingEvents',
       title: 'List of Upcoming Events',
       type: 'array',
@@ -68,6 +73,11 @@ export default defineType({
     defineField({
       name: 'loadMoreButtonText',
       title: 'Button Text to view more events',
+      type: 'string',
+    }),
+    defineField({
+      name: 'mediaFeedTitle',
+      title: 'Social Media Feed Section Title',
       type: 'string',
     }),
     defineField({
