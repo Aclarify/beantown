@@ -12,11 +12,10 @@ export const withFeatureFlag = <WrapperComponentProps extends object>(
 	envVariable: string
 ): React.FC<WrapperComponentProps> => {
 	const ComponentWithFeatureFlag: React.FC<WrapperComponentProps> = (props) => {
-		if (envVariable === FEATURE_FLAG.OFF) {
-			return <UnderConstructionSection />;
+		if (envVariable === FEATURE_FLAG.ON) {
+			return <WrappedComponent {...(props as WrapperComponentProps)} />;
 		}
-
-		return <WrappedComponent {...(props as WrapperComponentProps)} />;
+		return <UnderConstructionSection />;
 	};
 
 	return ComponentWithFeatureFlag;
@@ -29,9 +28,9 @@ export const FeatureFlagComponent: React.FC<FeatureFlagComponentProps> = ({
 	envVariable,
 	children,
 }) => {
-	if (envVariable === FEATURE_FLAG.OFF) {
-		return <UnderConstructionSection />;
+	if (envVariable === FEATURE_FLAG.ON) {
+		return <>{children}</>;
 	}
 
-	return <>{children}</>;
+	return <UnderConstructionSection />;
 };
