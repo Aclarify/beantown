@@ -32,4 +32,8 @@ export const config = {
 	 * Sanity Webhook secret key
 	 */
 	sanityWebhookSecret: process.env.SANITY_WEBHOOK_SECRET || '',
+	/**
+	 * feture flag
+	 */
+	featureFlag: process.env.NEXT_PUBLIC_FEATURE_FLAG || '',
 };
