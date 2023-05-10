@@ -7,25 +7,28 @@ import { CommunityContentProps } from 'pages/community';
 import Link from 'next/link';
 
 const SocialMediaFeedContent = () => {
-		
+	
 	const { pageContent } =
 		useContext<GlobalContextProps<CommunityContentProps>>(GlobalContext);
 	if (!pageContent) {
 		return null;
 	}
 	const pageData = pageContent.page[0];
-	const { socialMediaFeed } = pageData;
+	const { socialMediaFeed, mediaFeedTitle } = pageData;
+	const totalRecords:any = socialMediaFeed?.length
+	const halfWayIndex = Math.ceil(totalRecords / 2);
+	const firstHalfOfArray = socialMediaFeed?.slice(0, halfWayIndex);
+	const secondHalfOfArray = socialMediaFeed?.slice(halfWayIndex);
 	
-
 	return (
-		<div id="SocialMediaSliderContainer" className="mb-40  w-full p-6">
+		<div id="SocialMediaSliderContainer" className="mb-40  h-auto w-full p-6">
 			<h1 className="mb-20 text-center  text-2xl lg:text-[40px]">
-				{'Social Media Feed'}
+				{mediaFeedTitle}
 			</h1>
 
-			<div id="media-feed-container" className=" flex w-full flex-col gap-8 ">
-				<div className="no-scrollbar  flex w-full snap-x snap-mandatory flex-nowrap gap-8  overflow-x-auto  ">
-					{socialMediaFeed?.map((data, index) => {
+			<div id="media-feed-container" className=" flex w-full flex-col gap-8  ">
+				<div className="no-scrollbar  flex w-full snap-x snap-mandatory flex-nowrap gap-8  overflow-x-auto   ">
+					{firstHalfOfArray?.map((data, index) => {
 						return (
 							<div
 								key={index}
@@ -47,8 +50,8 @@ const SocialMediaFeedContent = () => {
 									id="socialMediaIconGroupMobile"
 									className="bg-primary-shade-1/80    invisible  absolute inset-0  z-10 flex items-center justify-center rounded-3xl  border backdrop-blur-sm  group-hover:visible  "
 								>
-									<div className=" inset-0 flex  text-xl">
-										<div className=" m-8 flex items-center rounded-full bg-white p-8 ">
+									<div className=" inset-0 flex justify-center  text-xl">
+										<div className=" m-8 flex items-center  rounded-full bg-white p-8 ">
 											<Link href={''}>
 												<Image
 													src={
@@ -60,7 +63,7 @@ const SocialMediaFeedContent = () => {
 												/>
 											</Link>
 										</div>
-										<div className="m-8 flex items-center rounded-full bg-white p-8 ">
+										<div className="m-8 flex items-center  rounded-full bg-white p-8 ">
 											<Link href={''}>
 												<Image
 													src={
@@ -72,7 +75,7 @@ const SocialMediaFeedContent = () => {
 												/>
 											</Link>
 										</div>
-										<div className=" m-8 flex items-center rounded-full bg-white p-8">
+										<div className=" m-8 flex items-center  rounded-full bg-white p-8">
 											<Link href={''}>
 												<Image
 													src={
@@ -92,7 +95,7 @@ const SocialMediaFeedContent = () => {
 				</div>
 
 				<div className="no-scrollbar  flex  snap-x snap-mandatory flex-nowrap gap-8 overflow-x-auto ">
-					{socialMediaFeed?.map((data, index) => {
+					{secondHalfOfArray?.map((data, index) => {
 						return (
 							<div
 								key={index}
@@ -114,8 +117,8 @@ const SocialMediaFeedContent = () => {
 									id="socialMediaIconGroupMobile"
 									className="bg-primary-shade-1/80  container  invisible  absolute inset-0  z-10 flex items-center justify-center rounded-3xl  border backdrop-blur-sm  group-hover:visible  "
 								>
-									<div className=" inset-0 flex   text-xl">
-										<div className=" m-8 flex items-center rounded-full bg-white p-8 ">
+									<div className=" inset-0 flex  justify-center  text-xl">
+										<div className=" m-8 flex items-center  rounded-full bg-white p-8 ">
 											<Link href={''}>
 												<Image
 													src={
