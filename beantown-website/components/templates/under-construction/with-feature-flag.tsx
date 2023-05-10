@@ -22,7 +22,7 @@ export const withFeatureFlag = <WrapperComponentProps extends object>(
 };
 
 // usage
-// export default withFeatureFlag(WithGlobalContent<CareersContentProps>(CareerPage), 'DISABLE');
+// export default withFeatureFlag(WithGlobalContent<CareersContentProps>(CareerPage), 'ON');
 
 export const FeatureFlagComponent: React.FC<FeatureFlagComponentProps> = ({
 	envVariable,
