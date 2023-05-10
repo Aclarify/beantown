@@ -68,7 +68,7 @@ const CareerPage: React.FC = () => {
 					</BookNowButton>
 				</div>
 			</Header>
-			<FeatureFlagComponent envVariable={config.featureFlag || 'DISABLE'}>
+			<FeatureFlagComponent envVariable={config.featureFlag || 'ON'}>
 				<CareerHeroSection />
 				<JobSection />
 			</FeatureFlagComponent>
