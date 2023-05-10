@@ -13,6 +13,8 @@ import FooterSection from 'components/organisms/footer';
 import BookNowButton from 'components/atoms/book-now-button.atom';
 import CareerHeroSection from 'components/templates/career/hero/career-hero-section';
 import JobSection from 'components/templates/career/jobs/jobs-section';
+import { FeatureFlagComponent } from 'components/templates/under-construction/with-feature-flag';
+import { config } from '@lib/config';
 
 export interface CareersContentProps {
 	page: Careers[];
@@ -66,8 +68,10 @@ const CareerPage: React.FC = () => {
 					</BookNowButton>
 				</div>
 			</Header>
-			<CareerHeroSection />
-			<JobSection />
+			<FeatureFlagComponent envVariable={config.featureFlag || 'OFF'}>
+				<CareerHeroSection />
+				<JobSection />
+			</FeatureFlagComponent>
 			<FooterSection logoDesktop={logoLight?.image} content={footerData} />
 		</div>
 	);
