@@ -8,6 +8,9 @@ import useWindowDimensions from '@lib/hooks/use-window-dimensions.hook';
 import { buttonHoverStyle } from '@lib/styles/button.style';
 import clsx from 'clsx';
 import CtaWrapper from 'components/molecules/cta-wrapper.molecule';
+import Animate from 'components/molecules/animate.molecule';
+import Image from 'next/image';
+import { formatDateFromISO } from 'utils/helper';
 
 const UpcomingEventsContent = () => {
 	const [cardsToShow, setCardsToShow] = useState(0);
@@ -82,14 +85,25 @@ const UpcomingEventsContent = () => {
 									}}
 								/>
 								<span className="subtitle-3 absolute bottom-3 left-4 w-max rounded-lg bg-[#FFFFFF] px-2 py-1">
-									{eventsCard?.eventDate}
+									{formatDateFromISO(eventsCard?.eventDate, 'dd MMMM, yyyy')}
 								</span>
 							</div>
+							<Animate>
+								<h5>{eventsCard?.eventTitle}</h5>
+							</Animate>
 
-							<h5>{eventsCard?.eventTitle}</h5>
-							<button className="bg-primary-shade-1 mt-[10px] w-full rounded-lg p-[10px] text-white">
-								{viewEventButtonText} &rarr;
-							</button>
+							<div className="bg-primary-shade-1 mt-[10px] flex justify-center rounded-lg p-2 align-middle ">
+								<button className=" para  pr-4 tracking-wide text-white lg:tracking-wider">
+									{viewEventButtonText}
+								</button>
+
+								<Image
+									src="/images/community/media-feed-arrow.svg"
+									width="32"
+									height="20"
+									alt="Arrow"
+								/>
+							</div>
 						</div>
 					);
 				})}
