@@ -23,10 +23,10 @@ export interface UnderConstructionContentProps {
 const PageHead = () => {
 	return (
 		<Head>
-			<title>UnderConstruction - Beantown Home Services</title>
+			<title>Under Construction - Beantown Home Services</title>
 			<meta
 				name="description"
-				content="Beantown Services is a full-service cleaning company that provides residential and commercial cleaning services in the Boston area."
+				content="Beantown Services is a full-service HVAC, electrical and plumbing company that provides residential and commercial services in the Greater Plymouth area."
 			/>
 		</Head>
 	);
