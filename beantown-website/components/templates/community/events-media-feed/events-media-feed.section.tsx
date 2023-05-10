@@ -10,6 +10,8 @@ import { CommunityContentProps } from 'pages/community';
 import { GlobalContextProps } from '@typing/common/interfaces/contexts.interface';
 import UpcomingEventsContent from './events-media-feed.content';
 import { SCREEN_BREAKPOINTS } from '@typing/common/interfaces/devices.interface';
+import SocialMediaFeedContent from './media-feed.content';
+
 
 export default function EventsMediaFeedSection() {
 	const { width } = useWindowDimensions();
@@ -30,7 +32,7 @@ export default function EventsMediaFeedSection() {
 					<UpcomingEventsContent />
 				</div>
 			</div>
-
+			<SocialMediaFeedContent />
 			<WaveWrapper
 				waveURL={width > SCREEN_BREAKPOINTS.MD ? bottomWave : bottomWaveMobile}
 			></WaveWrapper>
