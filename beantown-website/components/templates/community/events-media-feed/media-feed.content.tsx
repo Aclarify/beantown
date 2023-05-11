@@ -23,7 +23,7 @@ const SocialMediaFeedContent = () => {
 	const secondHalfOfArray = socialMediaFeed?.slice(halfWayIndex);
 	
 	return (
-		<div id="SocialMediaSliderContainer" className="mb-24  h-auto w-full p-6">
+		<div id="SocialMediaSliderContainer" className="2xl:-mb-96 mb-24 lg:-mb-44   h-auto w-full p-6">
 			<h1 className="mb-12 text-center  text-2xl lg:text-[40px]">
 				{mediaFeedTitle}
 			</h1>
@@ -32,12 +32,12 @@ const SocialMediaFeedContent = () => {
 				id="media-feed-container"
 				className=" flex h-auto w-full flex-col gap-6  "
 			>
-				<div className="no-scrollbar flex  h-auto w-full snap-x snap-mandatory snap-center flex-nowrap gap-2  overflow-x-auto  md:gap-8">
+				<div className="no-scrollbar flex  h-auto w-full snap-x snap-mandatory  flex-nowrap gap-2  overflow-x-auto  md:gap-8">
 					{firstHalfOfArray?.map((data, index) => {
 						return (
 							<div
 								key={index}
-								className="group relative  h-[200px]  w-[281px]  flex-none snap-end snap-always rounded-xl md:h-[360px] md:w-[480px] md:rounded-3xl "
+								className="group relative  h-[200px]  w-[281px]  flex-none snap-center snap-always rounded-xl md:h-[360px] md:w-[480px] md:rounded-3xl "
 							>
 								<CMSImageWrapper
 									image={data?.feedImage || null}
@@ -97,7 +97,7 @@ const SocialMediaFeedContent = () => {
 					})}
 				</div>
 
-				<div className="no-scrollbar flex h-auto  w-full snap-x snap-mandatory snap-center flex-nowrap  gap-2  overflow-x-auto md:gap-8 ">
+				<div className="no-scrollbar flex h-auto  w-full snap-x snap-mandatory  flex-nowrap  gap-2  overflow-x-auto md:gap-8 ">
 					{secondHalfOfArray?.map((data, index) => {
 						return (
 							<div
