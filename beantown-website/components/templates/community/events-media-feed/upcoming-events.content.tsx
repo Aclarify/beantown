@@ -107,7 +107,7 @@ const UpcomingEventsContent = () => {
 				})}
 			</div>
 
-			<div className="mt-12 mb-20 items-center text-center lg:mt-[60px]">
+			<div className="mt-12 mb-12 md:mb-20 items-center text-center lg:mt-[60px]">
 				{getShouldShowLoadMore() && (
 					<CtaWrapper.CTA
 						onClick={onLoadMore}
