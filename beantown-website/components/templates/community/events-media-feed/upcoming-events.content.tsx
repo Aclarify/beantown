@@ -30,7 +30,7 @@ const UpcomingEventsContent = () => {
 		} else if (width >= SCREEN_BREAKPOINTS.MD && width < 1280) {
 			setCardsToShow(6);
 		} else if (width >= 1280) {
-			setCardsToShow(6);
+			setCardsToShow(8);
 		}
 	}, [width, setCardsToShow]);
 
@@ -62,18 +62,18 @@ const UpcomingEventsContent = () => {
 
 	return (
 		<div className="w-full p-6">
-			<h1 className="mb-[20px] text-center  text-2xl lg:text-[40px]">
+			<h1 className="mb-[20px] p-8  text-center  text-2xl lg:text-[40px] 2xl:mb-[54px]">
 				{eventSectionTitle}
 			</h1>
 
-			<div className="grid grid-cols-1 gap-4 lg:grid-cols-3">
+			<div className=" grid grid-cols-1 gap-4 lg:grid-cols-3 3xl:grid-cols-4">
 				{eventCardsToDisplay?.map((eventsCard, index) => {
 					return (
 						<div
 							key={index}
-							className="border-gray-shade-3 rounded-2xl border  p-4  lg:rounded-3xl "
+							className="border-gray-shade-3 rounded-2xl border  p-4  lg:rounded-3xl max-w-[480px]"
 						>
-							<div className="relative mb-2">
+							<div className="relative mb-2 ">
 								<CMSImageWrapper
 									altText={eventsCard?.eventImage?.asset?.altText || ''}
 									image={eventsCard?.eventImage || null}
