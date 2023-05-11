@@ -31,7 +31,7 @@ const SocialMediaFeedContent = () => {
 				id="media-feed-container"
 				className=" flex h-auto w-full flex-col gap-6  "
 			>
-				<div className="no-scrollbar flex  h-auto w-full snap-x snap-mandatory snap-center flex-nowrap gap-2  overflow-x-auto  md:gap-6">
+				<div className="no-scrollbar flex  h-auto w-full snap-x snap-mandatory snap-center flex-nowrap gap-2  overflow-x-auto  md:gap-8">
 					{firstHalfOfArray?.map((data, index) => {
 						return (
 							<div
@@ -96,7 +96,7 @@ const SocialMediaFeedContent = () => {
 					})}
 				</div>
 
-				<div className="no-scrollbar flex h-auto  w-full snap-x snap-mandatory snap-center flex-nowrap  gap-2  overflow-x-auto md:gap-6 ">
+				<div className="no-scrollbar flex h-auto  w-full snap-x snap-mandatory snap-center flex-nowrap  gap-2  overflow-x-auto md:gap-8 ">
 					{secondHalfOfArray?.map((data, index) => {
 						return (
 							<div
