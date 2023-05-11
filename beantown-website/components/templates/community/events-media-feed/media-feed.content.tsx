@@ -6,6 +6,7 @@ import { GlobalContextProps } from '@typing/common/interfaces/contexts.interface
 import { CommunityContentProps } from 'pages/community';
 import Link from 'next/link';
 import StaticImageWrapper from 'components/molecules/static-image-wrapper.molecule';
+import Animate from 'components/molecules/animate.molecule';
 
 const SocialMediaFeedContent = () => {
 	
@@ -50,7 +51,7 @@ const SocialMediaFeedContent = () => {
 
 								<div
 									id="socialMediaIconGroupMobile"
-									className="bg-primary-shade-1/80    invisible  absolute inset-0  z-10 flex items-center justify-center rounded-lg  border  backdrop-blur-sm group-hover:visible  md:rounded-2xl  "
+									className="bg-primary-shade-1/80 invisible absolute   inset-0  z-10 flex  items-center justify-center rounded-lg border backdrop-blur-sm group-hover:visible  group-hover:delay-300  md:rounded-2xl  "
 								>
 									<div className=" item-center flex  gap-2  text-xl">
 										<div className="">
@@ -115,7 +116,7 @@ const SocialMediaFeedContent = () => {
 
 								<div
 									id="socialMediaIconGroupMobile"
-									className="bg-primary-shade-1/80  container  invisible  absolute inset-0  z-10 flex items-center justify-center rounded-lg  md:rounded-2xl  border backdrop-blur-sm  group-hover:visible  "
+									className="bg-primary-shade-1/80  container  invisible  absolute inset-0  z-10 flex items-center justify-center rounded-lg  md:rounded-2xl  border backdrop-blur-sm  group-hover:delay-300  group-hover:visible  "
 								>
 									<div className=" flex gap-2 text-xl">
 										<div className="">
