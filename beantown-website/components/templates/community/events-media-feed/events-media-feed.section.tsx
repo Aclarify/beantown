@@ -57,7 +57,7 @@ export default function EventsMediaFeedSection() {
 				height={200}
 				width={200}
 				alt="Left Blob Mobile"
-				className=" xs:translate-y-[160%] xs:translate-x-[40%]  absolute left-0 bottom-0 z-[-1] block translate-y-[154%] translate-x-[40%] transform sm:translate-y-[156%] lg:hidden "
+				className=" translate-y-[-268%] translate-x-[-55%]  absolute left-0 bottom-0 z-[-1] block transform sm:translate-y-[-270%] lg:hidden "
 			/>
 			<WaveWrapper
 				waveURL={width > SCREEN_BREAKPOINTS.MD ? bottomWave : bottomWaveMobile}

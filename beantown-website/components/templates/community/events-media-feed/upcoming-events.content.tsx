@@ -19,17 +19,16 @@ const UpcomingEventsContent = () => {
 	useEffect(() => {
 		
 		if (width < 640) {
-			setCardsToShow(3);
-		} else if (width >= 640 && width < SCREEN_BREAKPOINTS.SM) {
-			setCardsToShow(3);
+			setCardsToShow(3);		
 		} else if (
 			width >= SCREEN_BREAKPOINTS.SM &&
-			width < SCREEN_BREAKPOINTS.MD
+			width < SCREEN_BREAKPOINTS.LG
 		) {
 			setCardsToShow(3);
-		} else if (width >= SCREEN_BREAKPOINTS.MD && width < 1280) {
+		} else if (width >= SCREEN_BREAKPOINTS.LG && 
+			width < SCREEN_BREAKPOINTS.XXL) {
 			setCardsToShow(6);
-		} else if (width >= 1280) {
+		} else if (width >= SCREEN_BREAKPOINTS.XXL) {
 			setCardsToShow(8);
 		}
 	}, [width, setCardsToShow]);
@@ -50,8 +49,7 @@ const UpcomingEventsContent = () => {
 				return;
 			}
 			setCardsToShow(eventCardsToDisplay.length + cardsToShow);
-			console.log('After', cardsToShow);
-			console.log('event cards to disply', eventCardsToDisplay);
+			
 		}
 	};
 
