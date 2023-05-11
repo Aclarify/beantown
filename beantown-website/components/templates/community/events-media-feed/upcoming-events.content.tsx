@@ -66,12 +66,12 @@ const UpcomingEventsContent = () => {
 				{eventSectionTitle}
 			</h1>
 
-			<div className=" grid grid-cols-1 gap-4 lg:grid-cols-3 3xl:grid-cols-4">
+			<div className=" 3xl:grid-cols-4 grid grid-cols-1 gap-4 lg:grid-cols-3">
 				{eventCardsToDisplay?.map((eventsCard, index) => {
 					return (
 						<div
 							key={index}
-							className="border-gray-shade-3 rounded-2xl border  p-4  lg:rounded-3xl max-w-[480px]"
+							className="border-gray-shade-3 max-w-[480px] rounded-2xl  border  p-4 lg:rounded-3xl"
 						>
 							<div className="relative mb-2 ">
 								<CMSImageWrapper
@@ -114,7 +114,7 @@ const UpcomingEventsContent = () => {
 					<CtaWrapper.CTA
 						onClick={onLoadMore}
 						className={clsx(
-							'bg-primary-shade-1 button text-white',
+							'button text-primary-shade-1 border-primary-shade-1 border bg-white',
 							buttonHoverStyle
 						)}
 					>
