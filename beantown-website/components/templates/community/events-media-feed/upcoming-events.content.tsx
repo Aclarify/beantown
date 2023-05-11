@@ -109,12 +109,12 @@ const UpcomingEventsContent = () => {
 				})}
 			</div>
 
-			<div className="mt-8 mb-20 items-center text-center lg:mt-[60px]">
+			<div className="mt-12 mb-20 items-center text-center lg:mt-[60px]">
 				{getShouldShowLoadMore() && (
 					<CtaWrapper.CTA
 						onClick={onLoadMore}
 						className={clsx(
-							'button text-primary-shade-1 border-primary-shade-1 border bg-white',
+							'button text-primary-shade-1 border-primary-shade-1 border-2 bg-white',
 							buttonHoverStyle
 						)}
 					>
