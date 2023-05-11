@@ -37,14 +37,14 @@ export default function EventsMediaFeedSection() {
 				height={600}
 				width={500}
 				alt="Right Blob"
-				className=" xs:translate-y-[160%] xs:translate-x-[40%] 3xl:translate-y-[125%] 4xl:translate-y-[185%] absolute right-0 top-0 z-[-1] translate-y-[154%] translate-x-[40%] transform sm:translate-y-[156%] lg:translate-y-[90%] lg:translate-x-[69%] 2xl:translate-y-[95%] 2xl:translate-x-[45%]"
+				className=" xs:translate-y-[160%] xs:translate-x-[66%] 3xl:translate-y-[125%] 4xl:translate-y-[185%] absolute right-0 top-0 z-[-1] translate-y-[154%] translate-x-[40%] transform sm:translate-y-[156%] lg:translate-y-[90%] lg:translate-x-[69%] 2xl:translate-y-[95%] 2xl:translate-x-[45%]"
 			/>
 			<Image
 				src={'/images/community/community-left-blob.svg'}
 				height={600}
 				width={500}
 				alt="Left Blob"
-				className=" md:translate-y-[-262%] absolute left-0 bottom-0 z-[-1] hidden  transform  lg:block lg:translate-y-[-252%] lg:translate-x-[-45%] 2xl:translate-y-[-298%] "
+				className=" md:translate-y-[-262%] absolute left-0 bottom-0 z-[-1] hidden  transform  lg:block lg:translate-y-[-252%] lg:translate-x-[-45%] 2xl:translate-y-[-187%] "
 			/>
 			<div className="2xl:padding-for-section  ">
 				<div className="flex flex-col overflow-hidden px-6 sm:px-24 sm:pb-10 md:px-40 md:pb-0 lg:px-8 lg:pb-6">

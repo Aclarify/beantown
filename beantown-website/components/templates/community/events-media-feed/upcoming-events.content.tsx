@@ -113,7 +113,7 @@ const UpcomingEventsContent = () => {
 						onClick={onLoadMore}
 						className={clsx(
 							'button text-primary-shade-1 border-primary-shade-1 focus:ring-primary-shade-1 border-2 bg-white focus:ring',
-							buttonHoverStyle
+							
 						)}
 					>
 						<p>{'Load More'}</p>
