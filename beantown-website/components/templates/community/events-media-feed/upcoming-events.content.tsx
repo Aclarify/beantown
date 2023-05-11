@@ -19,7 +19,7 @@ const UpcomingEventsContent = () => {
 	useEffect(() => {
 		
 		if (width < 640) {
-			setCardsToShow(2);
+			setCardsToShow(3);
 		} else if (width >= 640 && width < SCREEN_BREAKPOINTS.SM) {
 			setCardsToShow(3);
 		} else if (
@@ -28,9 +28,9 @@ const UpcomingEventsContent = () => {
 		) {
 			setCardsToShow(3);
 		} else if (width >= SCREEN_BREAKPOINTS.MD && width < 1280) {
-			setCardsToShow(3);
+			setCardsToShow(6);
 		} else if (width >= 1280) {
-			setCardsToShow(3);
+			setCardsToShow(6);
 		}
 	}, [width, setCardsToShow]);
 
