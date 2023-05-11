@@ -54,42 +54,48 @@ const SocialMediaFeedContent = () => {
 									className="bg-primary-shade-1/80 invisible absolute   inset-0  z-10 flex  items-center justify-center rounded-lg border backdrop-blur-sm group-hover:visible  group-hover:delay-300  md:rounded-2xl  "
 								>
 									<div className=" item-center flex  gap-2  text-xl">
-										<div className="">
-											<Link href={data?.fbURL || ''}>
-												<Image
-													src={
-														'/images/community/social-media-icons/facebook.svg'
-													}
-													alt={''}
-													width={40}
-													height={40}
-												/>
-											</Link>
-										</div>
-										<div className="">
-											<Link href={data?.instaURL || ''}>
-												<Image
-													src={
-														'/images/community/social-media-icons/instagram.svg'
-													}
-													alt={''}
-													width={40}
-													height={40}
-												/>
-											</Link>
-										</div>
-										<div className="">
-											<Link href={data?.twitterURL || ''}>
-												<Image
-													src={
-														'/images/community/social-media-icons/twitter.svg'
-													}
-													alt={''}
-													width={40}
-													height={40}
-												/>
-											</Link>
-										</div>
+										{data?.fbURL && (
+											<div className="">
+												<Link href={data?.fbURL || ''}>
+													<Image
+														src={
+															'/images/community/social-media-icons/facebook.svg'
+														}
+														alt={''}
+														width={40}
+														height={40}
+													/>
+												</Link>
+											</div>
+										)}
+										{data?.instaURL && (
+											<div className="">
+												<Link href={data?.instaURL || ''}>
+													<Image
+														src={
+															'/images/community/social-media-icons/instagram.svg'
+														}
+														alt={''}
+														width={40}
+														height={40}
+													/>
+												</Link>
+											</div>
+										)}
+										{data?.twitterURL && (
+											<div className="">
+												<Link href={data?.twitterURL || ''}>
+													<Image
+														src={
+															'/images/community/social-media-icons/twitter.svg'
+														}
+														alt={''}
+														width={40}
+														height={40}
+													/>
+												</Link>
+											</div>
+										)}
 									</div>
 								</div>
 							</div>
@@ -102,7 +108,7 @@ const SocialMediaFeedContent = () => {
 						return (
 							<div
 								key={index}
-								className="group relative h-[200px] w-[281px]  flex-none   snap-center snap-always rounded-xl  md:rounded-3xl  md:h-[360px] md:w-[480px] "
+								className="group relative h-[200px] w-[281px]  flex-none   snap-center snap-always rounded-xl  md:h-[360px]  md:w-[480px] md:rounded-3xl "
 							>
 								<CMSImageWrapper
 									image={data?.feedImage || null}
@@ -116,45 +122,51 @@ const SocialMediaFeedContent = () => {
 
 								<div
 									id="socialMediaIconGroupMobile"
-									className="bg-primary-shade-1/80  container  invisible  absolute inset-0  z-10 flex items-center justify-center rounded-lg  md:rounded-2xl  border backdrop-blur-sm  group-hover:delay-300  group-hover:visible  "
+									className="bg-primary-shade-1/80  container  invisible  absolute inset-0  z-10 flex items-center justify-center rounded-lg  border  backdrop-blur-sm group-hover:visible  group-hover:delay-300  md:rounded-2xl  "
 								>
 									<div className=" flex gap-2 text-xl">
-										<div className="">
-											<Link href={data?.fbURL || ''}>
-												<Image
-													src={
-														'/images/community/social-media-icons/facebook.svg'
-													}
-													alt={''}
-													width={40}
-													height={40}
-												/>
-											</Link>
-										</div>
-										<div className="">
-											<Link href={data?.instaURL || ''}>
-												<Image
-													src={
-														'/images/community/social-media-icons/instagram.svg'
-													}
-													alt={''}
-													width={40}
-													height={40}
-												/>
-											</Link>
-										</div>
-										<div className="">
-											<Link href={data?.twitterURL || ''}>
-												<Image
-													src={
-														'/images/community/social-media-icons/twitter.svg'
-													}
-													alt={''}
-													width={40}
-													height={40}
-												/>
-											</Link>
-										</div>
+										{data?.fbURL && (
+											<div className="">
+												<Link href={data?.fbURL || ''}>
+													<Image
+														src={
+															'/images/community/social-media-icons/facebook.svg'
+														}
+														alt={''}
+														width={40}
+														height={40}
+													/>
+												</Link>
+											</div>
+										)}
+										{data?.instaURL && (
+											<div className="">
+												<Link href={data?.instaURL || ''}>
+													<Image
+														src={
+															'/images/community/social-media-icons/instagram.svg'
+														}
+														alt={''}
+														width={40}
+														height={40}
+													/>
+												</Link>
+											</div>
+										)}
+										{data?.twitterURL && (
+											<div className="">
+												<Link href={data?.twitterURL || ''}>
+													<Image
+														src={
+															'/images/community/social-media-icons/twitter.svg'
+														}
+														alt={''}
+														width={40}
+														height={40}
+													/>
+												</Link>
+											</div>
+										)}
 									</div>
 								</div>
 							</div>
