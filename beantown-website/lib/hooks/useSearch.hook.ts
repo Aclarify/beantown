@@ -18,11 +18,6 @@ const useSearch = (
 	categories: string[] = [],
 	loadMore = false
 ) => {
-	console.log(
-		`QUER: ${query}, PAGE: ${page}, MAX: ${maxPerPage}, FILTERS: ${filters}, CATEGORIES: ${categories.map(
-			(serviceCategory) => `blogTags.name:${serviceCategory}`
-		)}, LOAD: ${loadMore}`
-	);
 	const { data, fetchNextPage, hasNextPage } = useInfiniteQuery<SearchResult>(
 		['search', query, categories, filters],
 		async ({ pageParam = 0 }): Promise<SearchResult> => {

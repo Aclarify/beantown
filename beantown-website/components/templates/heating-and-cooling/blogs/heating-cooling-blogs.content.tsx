@@ -11,7 +11,7 @@ const HeatingCoolingBlogsContent = () => {
 		return null;
 	}
 	const hcData = pageContent.page[0];
-	const { blogsTitle, blogsDescription, blogButton } = hcData;
+	const { blogsTitle, blogsDescription, blogButton, blogCategories } = hcData;
 	return (
 		<Blogs
 			blogsTitle={blogsTitle || ''}
@@ -20,12 +20,7 @@ const HeatingCoolingBlogsContent = () => {
 			blogsButtonTextColour="text-white"
 			blogsButtonBgColour="bg-service-red"
 			blogsButtonHref={blogButton?.href || ''}
-			categories={[
-				'Heating',
-				'Cooling',
-				'Heating and Cooling',
-				'Heating & Cooling',
-			]}
+			categories={blogCategories || []}
 		></Blogs>
 	);
 };

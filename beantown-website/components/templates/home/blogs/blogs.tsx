@@ -15,7 +15,7 @@ export default function HomeBlogs() {
 		return null;
 	}
 	const homeData = pageContent.page[0];
-	const { blogsTitle, blogsDescription, blogButton } = homeData;
+	const { blogsTitle, blogsDescription, blogButton, blogCategories } = homeData;
 	return (
 		<section id="blogs" className="relative  z-10 -mb-[9em]">
 			<Image
@@ -49,7 +49,7 @@ export default function HomeBlogs() {
 						blogsButtonTextColour="text-white"
 						blogsButtonBgColour="bg-primary-shade-1"
 						blogsButtonHref={blogButton?.href || ''}
-						categories={['General']}
+						categories={blogCategories || []}
 					></Blogs>
 				</SectionContentWrapper>
 			</div>

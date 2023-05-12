@@ -24,14 +24,6 @@ const RelatedBlogPosts: React.FC<IProps> = ({ currentBlogPost }) => {
 	const currentPostId = currentBlogPost._id || undefined;
 	const { hits: relatedPosts } = useSearchByCategory(0, 9, tags, currentPostId);
 
-	console.log(
-		'RELATED POSTS',
-		relatedPosts,
-		relatedPosts?.map((blogPost, index) => {
-			return blogPost;
-		})
-	);
-
 	const previous = () => {
 		if (slider.current) {
 			slider.current.slickPrev();

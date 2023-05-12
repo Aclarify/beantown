@@ -5,6 +5,7 @@ import { getExcerpt } from 'utils/helper';
 import Animate from 'components/molecules/animate.molecule';
 import useSearchByCategory from 'lib/hooks/useSearchByCategory';
 import { CTAButton } from './cta-text-content.organism';
+import { Categories, Maybe } from '@typing/gql/graphql';
 
 interface IProps extends React.HTMLAttributes<HTMLDivElement> {
 	blogsTitle: string;
@@ -13,14 +14,16 @@ interface IProps extends React.HTMLAttributes<HTMLDivElement> {
 	blogsButtonTextColour: string;
 	blogsButtonBgColour: string;
 	blogsButtonHref: string;
-	categories: string[];
+	categories: Maybe<Array<Maybe<Categories>>>;
 }
 
 const Blogs: React.FC<IProps> = (props) => {
 	const { hits: blogPosts } = useSearchByCategory(
 		0,
 		3,
-		props.categories,
+		props.categories
+			?.filter((category) => category !== null)
+			.map((item) => item?.category) as string[],
 		undefined
 	);
 

@@ -11,7 +11,7 @@ const ElectricalBlogsContent = () => {
 		return null;
 	}
 	const homeData = pageContent.page[0];
-	const { blogsTitle, blogsDescription, blogButton } = homeData;
+	const { blogsTitle, blogsDescription, blogButton, blogCategories } = homeData;
 
 	return (
 		<Blogs
@@ -21,7 +21,7 @@ const ElectricalBlogsContent = () => {
 			blogsButtonTextColour="text-primary-black"
 			blogsButtonBgColour="bg-service-yellow"
 			blogsButtonHref={blogButton?.href || ''}
-			categories={['Electrical']}
+			categories={blogCategories || []}
 		></Blogs>
 	);
 };
