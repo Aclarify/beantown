@@ -20,8 +20,6 @@ const authRequest = {
 };
 
 export const getAccessToken = async () => {
-	console.log('Getting access token using msal');
-
 	return pca
 		.acquireTokenByClientCredential(authRequest)
 		.then((response) => {
