@@ -3,7 +3,9 @@ import {
 	type ClientConfig,
 	SanityDocument,
 } from '@sanity/client';
-import { CreateJobApplicationInboundDto } from '../careers/jobApplication.handler';
+import { JobApplicationFormDto } from '@typing/api/dto';
+import { File } from 'formidable';
+import fs from 'fs';
 
 const config: ClientConfig = {
 	projectId: process.env.NEXT_PUBLIC_SANITY_PROJECT_ID,
@@ -15,29 +17,59 @@ const config: ClientConfig = {
 const client = createClient(config);
 
 export const insertJobApplicationToSanity = async (
-	jobApplication: CreateJobApplicationInboundDto
+	jobApplication: JobApplicationFormDto,
+	resumeURL = ''
 ): Promise<SanityDocument> => {
-	const { name, contactInfo, address, jobDetail } = jobApplication;
+	const {
+		firstName,
+		lastName,
+		address1,
+		address2,
+		city,
+		state,
+		zipCode,
+		email,
+		phoneNumber,
+		experience,
+		jobOption,
+		jobDesired,
+	} = jobApplication;
 
 	try {
 		const doc = await client.create({
 			_type: 'submittedApplications',
-			name,
-			address1: address?.address1,
-			address2: address?.address2,
-			city: address?.city,
-			state: address?.state,
-			zipCode: address?.zip,
-			email: contactInfo?.email,
-			phoneNumber: contactInfo?.phoneNumber,
-			jobPosition: jobDetail?.positionApplyingFor,
-			employmentDesired: jobDetail?.employmentDesired,
-			aboutApplicant: jobDetail?.aboutApplicant,
-			resume: jobDetail?.resumeURL,
+			name: firstName + ' ' + lastName,
+			address1,
+			address2,
+			city,
+			state,
+			zipCode,
+			email,
+			phoneNumber,
+			jobPosition: jobOption,
+			employmentDesired: jobDesired,
+			aboutApplicant: experience,
+			resume: resumeURL,
 		});
 		return doc;
 	} catch (error) {
 		console.error(error);
 		throw new Error('Failed to insert document');
+	}
+};
+
+export const uploadFileToSanity = async (file: File): Promise<string> => {
+	try {
+		const stream = fs.createReadStream(file.filepath);
+		const doc = await client.assets.upload('file', stream, {
+			filename: file.newFilename,
+		});
+		if (!doc) {
+			throw new Error('Failed to upload file');
+		}
+		return doc.url;
+	} catch (error) {
+		console.error(error);
+		throw new Error('Failed to upload file');
 	}
 };

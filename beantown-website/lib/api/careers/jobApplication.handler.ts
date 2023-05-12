@@ -1,6 +1,10 @@
-import { insertJobApplicationToMongo } from '../services/db.service';
+import { JobApplicationFormDto } from '@typing/api/dto';
 import { sendEmailNotification } from '../services/mail.service';
-import { insertJobApplicationToSanity } from '../services/sanity.service';
+import {
+	insertJobApplicationToSanity,
+	uploadFileToSanity,
+} from '../services/sanity.service';
+import { File } from 'formidable';
 
 export type Address = {
 	address1: string;
@@ -32,29 +36,35 @@ export type CreateJobApplicationInboundDto = {
 };
 
 export const applyJob = async (
-	createJobApplicationDto: CreateJobApplicationInboundDto
+	createJobApplicationDto: JobApplicationFormDto,
+	file: File
 ) => {
 	try {
 		console.log('createJobApplicationDto', createJobApplicationDto);
 		// TODO: Add validation rules for the event body
 
+		// Upload resume to Sanity
+		const resumeURL = await uploadFileToSanity(file);
+		if (!resumeURL) {
+			throw new Error('Failed to upload resume');
+		}
+
 		// Insert job application to Sanity or MongoDB
-		const rsp1 = await insertJobApplicationToSanity(createJobApplicationDto);
+		const rsp1 = await insertJobApplicationToSanity(
+			createJobApplicationDto,
+			resumeURL
+		);
 		if (!rsp1) {
 			throw new Error('Failed to insert job application to Sanity');
 		}
-		// // Insert job application to Sanity or MongoDB
-		// const rsp2 = await insertJobApplicationToMongo(createJobApplicationDto);
-		// if (!rsp2) {
-		// 	throw new Error('Failed to insert job application to MongoDB');
-		// }
-
 		const notificationRsp = await sendEmailNotification(
-			createJobApplicationDto
+			createJobApplicationDto,
+			resumeURL
 		);
 		if (!notificationRsp) {
 			return {
-				message: 'Unable to send notification. Please try again',
+				message:
+					'Unable to send email notification but resumve saved successfully',
 			};
 		}
 

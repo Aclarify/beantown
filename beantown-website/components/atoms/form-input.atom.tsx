@@ -1,5 +1,5 @@
 import React from 'react';
-import { FieldError, UseFormRegister } from 'react-hook-form';
+import { UseFormRegister } from 'react-hook-form';
 import clsx from 'clsx';
 
 interface Props {
@@ -16,7 +16,7 @@ interface Props {
 	value?: string;
 	autoComplete?: string;
 	register?: UseFormRegister<any>;
-	error?: FieldError;
+	error?: any;
 	showErrorText?: boolean;
 	onChange?: (event: React.ChangeEvent<HTMLInputElement>) => void;
 	onKeyDown?: (event: React.KeyboardEvent<HTMLInputElement>) => void;
