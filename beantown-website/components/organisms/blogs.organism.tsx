@@ -1,11 +1,8 @@
-import React, { useState } from 'react';
+import React from 'react';
 
 import BlogCard from './blog-card.organism';
-import CtaWrapper from 'components/molecules/cta-wrapper.molecule';
 import { getExcerpt } from 'utils/helper';
 import Animate from 'components/molecules/animate.molecule';
-import clsx from 'clsx';
-import { buttonHoverStyle } from '@lib/styles/button.style';
 import useSearchByCategory from 'lib/hooks/useSearchByCategory';
 import { CTAButton } from './cta-text-content.organism';
 
@@ -24,8 +21,7 @@ const Blogs: React.FC<IProps> = (props) => {
 		0,
 		3,
 		props.categories,
-		undefined,
-		false
+		undefined
 	);
 
 	return (
@@ -43,7 +39,7 @@ const Blogs: React.FC<IProps> = (props) => {
 						</Animate>
 					</div>
 				</div>
-				<Animate className="pb-6 sm:pb-10">
+				<div className="pb-6 sm:pb-10">
 					<div className="no-scrollbar  flex snap-x snap-mandatory flex-nowrap gap-4 overflow-x-auto ">
 						{blogPosts?.map((blog, index) => {
 							return (
@@ -54,7 +50,7 @@ const Blogs: React.FC<IProps> = (props) => {
 									<BlogCard
 										blogName={blog?.blogTitle || ''}
 										blogSlug={blog?.blogSlug?.current || ''}
-										buttonText={'Read Article'}
+										buttonText={'Read More'}
 										blogDescription={getExcerpt(blog?.blogContentRaw)}
 										thumbnailSrc={blog?.blogImage?.asset?.url || ''}
 										thumbnailAltText={blog?.blogImage?.asset?.altText || ''}
@@ -63,9 +59,9 @@ const Blogs: React.FC<IProps> = (props) => {
 							);
 						})}
 					</div>
-				</Animate>
+				</div>
 
-				<div className="items-center text-center">
+				<div className="mt-4 items-center text-center lg:mt-8">
 					<CTAButton
 						textColor={props.blogsButtonTextColour}
 						bgColor={props.blogsButtonBgColour}

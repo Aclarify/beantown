@@ -15,18 +15,26 @@ const useSearch = (
 	page = 0,
 	maxPerPage = 9,
 	filters: string[] = [],
+	categories: string[] = [],
 	loadMore = false
 ) => {
 	console.log(
-		`QUER: ${query}, PAGE: ${page}, MAX: ${maxPerPage}, FILTERS: ${filters}, LOAD: ${loadMore}`
+		`QUER: ${query}, PAGE: ${page}, MAX: ${maxPerPage}, FILTERS: ${filters}, CATEGORIES: ${categories.map(
+			(serviceCategory) => `blogTags.name:${serviceCategory}`
+		)}, LOAD: ${loadMore}`
 	);
 	const { data, fetchNextPage, hasNextPage } = useInfiniteQuery<SearchResult>(
-		['search', query, filters],
+		['search', query, categories, filters],
 		async ({ pageParam = 0 }): Promise<SearchResult> => {
 			const searchResults = await index.search(query, {
 				hitsPerPage: maxPerPage,
 				page: pageParam,
 				facets: ['blogTitle', 'blogContent.children.text', 'blogTags.name'],
+				facetFilters: [
+					categories.map(
+						(serviceCategory) => `blogTags.name:${serviceCategory}`
+					),
+				],
 				filters: filters
 					.map((filterTerm) => {
 						return `blogTitle:${filterTerm} OR blogContent.children.text:${filterTerm} OR blogTags.name:${filterTerm}`;

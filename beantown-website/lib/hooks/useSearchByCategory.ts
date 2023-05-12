@@ -56,8 +56,6 @@ const useSearchByCategory = (
 	// Get the total number of pages of search results
 	const nbPages: number = data?.pages ? data.pages[0].nbPages : 0;
 
-	console.log('hits', hits);
-
 	return {
 		// Return the first maxPerPage * (page + 1) hits if loadMore is true, else return the first maxPerPage hits
 		hits: hits,
