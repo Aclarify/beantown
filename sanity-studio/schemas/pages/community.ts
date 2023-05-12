@@ -55,17 +55,6 @@ export default defineType({
       type: 'string',
     }),
     defineField({
-      name: 'upcomingEvents',
-      title: 'List of Upcoming Events',
-      type: 'array',
-      of: [
-        {
-          type: 'reference',
-          to: [{type: 'eventsList'}],
-        },
-      ],
-    }),
-    defineField({
       name: 'viewEventButtonText',
       title: 'View Events Details Button Text',
       type: 'string',

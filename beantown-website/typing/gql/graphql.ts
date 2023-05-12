@@ -574,7 +574,6 @@ export type Community = Document & {
 	name?: Maybe<Scalars['String']>;
 	pageTitle?: Maybe<Scalars['String']>;
 	socialMediaFeed?: Maybe<Array<Maybe<MediaFeed>>>;
-	upcomingEvents?: Maybe<Array<Maybe<EventsList>>>;
 	viewEventButtonText?: Maybe<Scalars['String']>;
 };
 
