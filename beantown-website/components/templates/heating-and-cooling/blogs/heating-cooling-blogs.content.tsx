@@ -19,7 +19,12 @@ const HeatingCoolingBlogsContent = () => {
 			blogsButtonText={blogButton?.text || ''}
 			blogsButtonTextColour="text-white"
 			blogsButtonBgColour="bg-service-red"
-			categories={[]}
+			categories={[
+				'Heating',
+				'Cooling',
+				'Heating and Cooling',
+				'Heating & Cooling',
+			]}
 		></Blogs>
 	);
 };

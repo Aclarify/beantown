@@ -11,7 +11,7 @@ const PlumbingBlogsContent = () => {
 		return null;
 	}
 	const homeData = pageContent.page[0];
-	const { blogsTitle, blogsDescription, blogButton, blogCards } = homeData;
+	const { blogsTitle, blogsDescription, blogButton } = homeData;
 	return (
 		<Blogs
 			blogsTitle={blogsTitle || ''}
@@ -19,7 +19,7 @@ const PlumbingBlogsContent = () => {
 			blogsButtonText={blogButton?.text || ''}
 			blogsButtonTextColour="text-white"
 			blogsButtonBgColour="bg-service-green"
-			categories={[]}
+			categories={['Plumbing']}
 		></Blogs>
 	);
 };
