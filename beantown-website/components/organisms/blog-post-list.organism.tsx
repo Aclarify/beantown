@@ -27,13 +27,9 @@ const BlogPostHits: React.FC<IProps> = () => {
 		}
 	}, [isFetching]);
 
-	if (isFetching) {
-		return null;
-	}
-
 	return (
 		<>
-			<div className="mb-5 grid w-full grid-cols-1 gap-x-8 gap-y-6 lg:grid-cols-3 lg:gap-y-12">
+			<div className="mb-5 grid min-h-[400px] w-full grid-cols-1 gap-x-8 gap-y-6 lg:min-h-[600px] lg:grid-cols-3 lg:gap-y-12">
 				{hits?.length > 0 ? (
 					hits.map((blogPost, index) => (
 						<div key={index} className="w-full">

@@ -8,7 +8,7 @@ import 'slick-carousel/slick/slick-theme.css';
 import BlogPostCard from './blog-post-card.organism';
 import Animate from 'components/molecules/animate.molecule';
 import { SCREEN_BREAKPOINTS } from '@typing/common/interfaces/devices.interface';
-import useSearch from 'lib/hooks/useSearch.hook';
+import useSearchByCategory from 'lib/hooks/useSearchByCategory';
 
 interface IProps extends React.HTMLAttributes<HTMLDivElement> {
 	currentBlogPost: BlogPosts;
@@ -19,7 +19,7 @@ const RelatedBlogPosts: React.FC<IProps> = ({ currentBlogPost }) => {
 	const tags =
 		currentBlogPost.blogTags?.map((item) => item?.category || '') ?? [];
 	const currentPostId = currentBlogPost._id || undefined;
-	const { hits: relatedPosts } = useSearch('', 0, 9, tags, currentPostId);
+	const { hits: relatedPosts } = useSearchByCategory(0, 9, tags, currentPostId);
 
 	const previous = () => {
 		if (slider.current) {
@@ -43,7 +43,7 @@ const RelatedBlogPosts: React.FC<IProps> = ({ currentBlogPost }) => {
 		variableWidth: false,
 		focusOnSelect: true,
 		useTransform: false,
-		swipe: true,
+		swipe: false,
 		responsive: [
 			{
 				breakpoint: SCREEN_BREAKPOINTS.SM,

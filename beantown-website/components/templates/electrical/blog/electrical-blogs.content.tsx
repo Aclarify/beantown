@@ -20,7 +20,7 @@ const ElectricalBlogsContent = () => {
 			blogsButtonText={blogButton?.text || ''}
 			blogsButtonTextColour="text-primary-black"
 			blogsButtonBgColour="bg-service-yellow"
-			blogCards={blogCards || []}
+			categories={[]}
 		></Blogs>
 	);
 };

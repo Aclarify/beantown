@@ -19,7 +19,7 @@ const HeatingCoolingBlogsContent = () => {
 			blogsButtonText={blogButton?.text || ''}
 			blogsButtonTextColour="text-white"
 			blogsButtonBgColour="bg-service-red"
-			blogCards={blogCards || []}
+			categories={[]}
 		></Blogs>
 	);
 };

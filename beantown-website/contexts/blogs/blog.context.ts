@@ -9,8 +9,9 @@ interface SearchContextProps {
 	setPage: React.Dispatch<React.SetStateAction<number>>;
 	hits: BlogPosts[];
 	nbPages: number;
+	filters: string[];
+	setFilters: React.Dispatch<React.SetStateAction<string[]>>;
 	hasNextPage: boolean;
-	handleSearch: (query: string) => void;
 	handleLoadMore: () => void;
 }
 
@@ -21,7 +22,8 @@ export const SearchContext = createContext<SearchContextProps>({
 	setPage: () => {},
 	hits: [],
 	nbPages: 0,
+	filters: [],
+	setFilters: () => {},
 	hasNextPage: false,
-	handleSearch: () => {},
 	handleLoadMore: () => {},
 });

@@ -23,6 +23,7 @@ const blogPostContentQuery = `
         blogTags {
             _id
             name
+            category
         }
         views
         publishedAt

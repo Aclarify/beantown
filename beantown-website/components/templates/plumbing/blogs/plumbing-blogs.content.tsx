@@ -19,7 +19,7 @@ const PlumbingBlogsContent = () => {
 			blogsButtonText={blogButton?.text || ''}
 			blogsButtonTextColour="text-white"
 			blogsButtonBgColour="bg-service-green"
-			blogCards={blogCards || []}
+			categories={[]}
 		></Blogs>
 	);
 };
