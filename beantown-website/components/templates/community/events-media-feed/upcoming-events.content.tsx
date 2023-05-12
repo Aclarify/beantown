@@ -11,22 +11,35 @@ import CtaWrapper from 'components/molecules/cta-wrapper.molecule';
 import Animate from 'components/molecules/animate.molecule';
 import Image from 'next/image';
 import { formatDateFromISO } from 'utils/helper';
+import { EventsList } from '@typing/gql/graphql';
+import { upcomingEventsQuery } from '@lib/queries/pages/get-community.query';
+import { getCMSDocs } from '@typing/api/api';
 
 const UpcomingEventsContent = () => {
 	const [cardsToShow, setCardsToShow] = useState(0);
+	const [eventsToShow, setEventsToShow] = useState<EventsList[]>([]);
 	const { width } = useWindowDimensions();
 
 	useEffect(() => {
-		
-		if (width < 640) {
-			setCardsToShow(3);		
-		} else if (
-			width >= SCREEN_BREAKPOINTS.SM &&
-			width < SCREEN_BREAKPOINTS.LG
-		) {
+		// Fetch events from CMS
+		const fetchEvents = async () => {
+			const response = await getCMSDocs(upcomingEventsQuery, {
+				currentDate: new Date().toISOString(),
+			});
+			if (response && response.events) {
+				setEventsToShow(response.events);
+			}
+		};
+		fetchEvents();
+	}, []);
+
+	useEffect(() => {
+		if (width < SCREEN_BREAKPOINTS.LG) {
 			setCardsToShow(3);
-		} else if (width >= SCREEN_BREAKPOINTS.LG && 
-			width < SCREEN_BREAKPOINTS.XXL) {
+		} else if (
+			width >= SCREEN_BREAKPOINTS.LG &&
+			width < SCREEN_BREAKPOINTS.XXL
+		) {
 			setCardsToShow(6);
 		} else if (width >= SCREEN_BREAKPOINTS.XXL) {
 			setCardsToShow(8);
@@ -38,25 +51,24 @@ const UpcomingEventsContent = () => {
 	if (!pageContent) {
 		return null;
 	}
-	const pageData = pageContent.page[0];	
-	const { eventSectionTitle, upcomingEvents, viewEventButtonText } = pageData;
-	const eventCardsToDisplay = upcomingEvents?.slice(0, cardsToShow);
-	
-	const onLoadMore = () => {		
-		if (eventCardsToDisplay && upcomingEvents) {
+	const pageData = pageContent.page[0];
+	const { eventSectionTitle, viewEventButtonText } = pageData;
+	const eventCardsToDisplay = eventsToShow?.slice(0, cardsToShow);
+
+	const onLoadMore = () => {
+		if (eventCardsToDisplay && eventsToShow) {
 			// Check if there are more cards to display
-			if (eventCardsToDisplay.length >= upcomingEvents.length) {				
+			if (eventCardsToDisplay.length >= eventsToShow.length) {
 				return;
 			}
 			setCardsToShow(eventCardsToDisplay.length + cardsToShow);
-			
 		}
 	};
 
 	const getShouldShowLoadMore = () =>
 		eventCardsToDisplay &&
-		upcomingEvents &&
-		eventCardsToDisplay.length < upcomingEvents.length;
+		eventsToShow &&
+		eventCardsToDisplay.length < eventsToShow.length;
 
 	return (
 		<div className="w-full p-6">
@@ -107,13 +119,12 @@ const UpcomingEventsContent = () => {
 				})}
 			</div>
 
-			<div className="mt-12 mb-12 md:mb-20 items-center text-center lg:mt-[60px]">
+			<div className="mt-12 mb-12 items-center text-center md:mb-20 lg:mt-[60px]">
 				{getShouldShowLoadMore() && (
 					<CtaWrapper.CTA
 						onClick={onLoadMore}
 						className={clsx(
-							'button text-primary-shade-1 border-primary-shade-1 focus:ring-primary-shade-1 border-2 bg-white focus:ring',
-							
+							'button text-primary-shade-1 border-primary-shade-1 focus:ring-primary-shade-1 border-2 bg-white focus:ring'
 						)}
 					>
 						<p>{'Load More'}</p>
