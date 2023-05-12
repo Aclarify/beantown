@@ -13,7 +13,6 @@ import Image from 'next/image';
 import { SCREEN_BREAKPOINTS } from '@typing/common/interfaces/devices.interface';
 import SocialMediaFeedContent from './media-feed.content';
 
-
 export default function EventsMediaFeedSection() {
 	const { width } = useWindowDimensions();
 	// Get the page content from the global context
@@ -37,21 +36,21 @@ export default function EventsMediaFeedSection() {
 				height={600}
 				width={500}
 				alt="Right Blob"
-				className=" hidden lg:block xs:translate-y-[160%] xs:translate-x-[66%] 3xl:translate-y-[125%] 4xl:translate-y-[185%] absolute right-0 top-0 z-[-1] translate-y-[154%] translate-x-[40%] transform sm:translate-y-[156%] lg:translate-y-[90%] lg:translate-x-[69%] 2xl:translate-y-[95%] 2xl:translate-x-[45%]"
+				className=" xs:translate-y-[160%] xs:translate-x-[66%] 3xl:translate-y-[125%] 4xl:translate-y-[185%] absolute right-0 top-0 z-[-1] hidden translate-y-[154%] translate-x-[40%] transform sm:translate-y-[156%] lg:block lg:translate-y-[90%] lg:translate-x-[69%] 2xl:translate-y-[95%] 2xl:translate-x-[45%]"
 			/>
 			<Image
 				src={'/images/community/community-right-blob.svg'}
 				height={300}
 				width={350}
 				alt="Right Blob mobile"
-				className="block lg:hidden translate-y-[210%] translate-x-[66%]  absolute right-0 top-0 z-[-1]  transform "
+				className="absolute right-0 top-0 z-[-1]  block translate-y-[210%] translate-x-[66%] transform  lg:hidden "
 			/>
 			<Image
 				src={'/images/community/community-left-blob.svg'}
 				height={600}
 				width={500}
 				alt="Left Blob"
-				className=" absolute left-0 bottom-0 z-[-1] hidden transform  md:translate-y-[-262%]  lg:block lg:translate-y-[-252%] lg:translate-x-[-45%] 2xl:translate-y-[-187%] "
+				className=" 3xl:translate-y-[-220%] absolute left-0 bottom-0 z-[-1] hidden   transform lg:block lg:translate-y-[-163%] lg:translate-x-[-56%] 2xl:translate-y-[-160%] "
 			/>
 			<div className="2xl:padding-for-section  ">
 				<div className="flex flex-col overflow-hidden px-6 sm:px-24 sm:pb-10 md:px-40 md:pb-0 lg:px-8 lg:pb-6">
