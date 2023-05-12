@@ -56,18 +56,6 @@ const communityQuery = `
        viewEventButtonText
        loadMoreButtonText
        eventSectionTitle
-       upcomingEvents{
-         eventTitle
-         eventUrl
-         eventDate
-         eventImage{
-           asset{
-               url
-               _id
-               _key
-             }
-           }
-       }
        mediaFeedTitle
        socialMediaFeed{
          name
