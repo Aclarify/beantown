@@ -13,7 +13,7 @@ export default defineType({
     }),
     defineField({
       name: 'eventTitle',
-      title: 'EventTitle',
+      title: 'Event Title',
       type: 'string',
     }),
     defineField({

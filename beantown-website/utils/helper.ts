@@ -17,6 +17,11 @@ export const formatDate = (dateStr: string) => {
 	return date.toFormat('dd-MM-yyyy');
 };
 
+export const formatDateFromISO = (dateStr: string, expectedFormat: string) => {
+	const date = DateTime.fromISO(dateStr);
+	return date.toFormat(expectedFormat);
+};
+
 export const getExcerpt = (content: any = [], maxLength = 100): string => {
 	let plainText = '';
 
