@@ -9,7 +9,6 @@ import StaticImageWrapper from 'components/molecules/static-image-wrapper.molecu
 import Animate from 'components/molecules/animate.molecule';
 
 const SocialMediaFeedContent = () => {
-	
 	const { pageContent } =
 		useContext<GlobalContextProps<CommunityContentProps>>(GlobalContext);
 	if (!pageContent) {
@@ -17,13 +16,16 @@ const SocialMediaFeedContent = () => {
 	}
 	const pageData = pageContent.page[0];
 	const { socialMediaFeed, mediaFeedTitle } = pageData;
-	const totalRecords:any = socialMediaFeed?.length
+	const totalRecords: any = socialMediaFeed?.length;
 	const halfWayIndex = Math.ceil(totalRecords / 2);
 	const firstHalfOfArray = socialMediaFeed?.slice(0, halfWayIndex);
 	const secondHalfOfArray = socialMediaFeed?.slice(halfWayIndex);
-	
+
 	return (
-		<div id="SocialMediaSliderContainer" className="2xl:-mb-96 mb-24 lg:-mb-44   h-auto w-full p-6">
+		<div
+			id="SocialMediaSliderContainer"
+			className="3xl:mb-[-35rem] mb-[1rem] h-auto   w-full p-6 lg:mb-[-14rem] xl:mb-[-17rem] 2xl:mb-[-23rem]"
+		>
 			<h1 className="mb-12 text-center  text-2xl lg:text-[40px]">
 				{mediaFeedTitle}
 			</h1>

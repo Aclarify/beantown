@@ -71,12 +71,12 @@ const UpcomingEventsContent = () => {
 		eventCardsToDisplay.length < eventsToShow.length;
 
 	return (
-		<div className="w-full p-6">
+		<div className="w-full">
 			<h1 className="mb-[20px] p-8  text-center  text-2xl lg:text-[40px] 2xl:mb-[54px]">
 				{eventSectionTitle}
 			</h1>
 
-			<div className=" 3xl:grid-cols-4 grid grid-cols-1 gap-4 lg:grid-cols-3">
+			<div className=" 3xl:grid-cols-4 grid grid-cols-1 place-items-center gap-4 lg:grid-cols-3">
 				{eventCardsToDisplay?.map((eventsCard, index) => {
 					return (
 						<div

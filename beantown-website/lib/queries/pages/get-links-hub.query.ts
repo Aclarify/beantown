@@ -26,6 +26,7 @@ const linksHubQuery = `allLinksHub{
     linksHubTitle
     linksHubDescription
     socialMediaIcons{
+      href
       image{
         asset{
           url
