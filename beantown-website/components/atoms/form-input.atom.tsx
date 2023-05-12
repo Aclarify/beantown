@@ -14,7 +14,7 @@ interface Props {
 	className?: string;
 	placeholderText?: string;
 	value?: string;
-	autoComplete?: string;
+	autoComplete?: 'on' | 'off';
 	register?: UseFormRegister<any>;
 	error?: FieldError;
 	showErrorText?: boolean;
