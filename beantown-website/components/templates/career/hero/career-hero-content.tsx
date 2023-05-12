@@ -10,15 +10,14 @@ import MaskedImageWithBackground from 'components/organisms/masked-image-with-ba
 
 const CareerHeroContent = () => {
 	const { pageContent } =
-		useContext<GlobalContextProps<CareersContentProps>>(GlobalContext);	
-	
+		useContext<GlobalContextProps<CareersContentProps>>(GlobalContext);
+
 	if (!pageContent) {
 		return null;
 	}
 	const pageData = pageContent.page[0];
-	const { heroTitle,heroDescription,careerHeroImage,heroButton  } =
-		pageData;
-		
+	const { heroTitle, heroDescription, careerHeroImage, heroButton } = pageData;
+
 	return (
 		<div
 			id="section-wrapper"
@@ -30,7 +29,7 @@ const CareerHeroContent = () => {
 			>
 				<div
 					id="content-wrapper"
-					className=" flex w-full basis-1/2 flex-col items-center  md:items-start text-center  md:text-left lg:pt-20 "
+					className=" flex w-full basis-1/2 flex-col items-center  text-center md:items-start  md:text-left lg:pt-20 "
 				>
 					<ContentWrapper className="">
 						<ContentWrapper.Title>
@@ -38,16 +37,18 @@ const CareerHeroContent = () => {
 								<h2 className=" text-primary-black ">{heroTitle}</h2>
 							</Animate>
 						</ContentWrapper.Title>
-						<ContentWrapper.Description className="rich-text  text-center md:text-left !font-thin lg:pr-4">
+						<ContentWrapper.Description className="rich-text  text-center !font-thin md:text-left lg:pr-4">
 							<Animate>
 								<p>{heroDescription}</p>
 							</Animate>
 						</ContentWrapper.Description>
 					</ContentWrapper>
 					<ContentWrapper className=" mt-4 lg:mt-8">
-						<Button fontColor="text-white" bgColor="bg-primary-shade-1">
-							<Link href={heroButton?.href || ''}>{heroButton?.text}</Link>
-						</Button>
+						<Link href={heroButton?.href || ''}>
+							<Button fontColor="text-white" bgColor="bg-primary-shade-1">
+								{heroButton?.text}
+							</Button>
+						</Link>
 					</ContentWrapper>
 				</div>
 				<div
