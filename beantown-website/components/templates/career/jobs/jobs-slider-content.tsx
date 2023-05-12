@@ -45,27 +45,23 @@ const JobsSliderContent = () => {
 		}
 	};
 	const next = () => {
-		 
-				if (slider.current) {
-					slider.current.slickNext();
-					// Update the active job details to the next job details
-					const activeJobIndex = jobList.findIndex(
-						(jobDetails) => jobDetails?._key == activeJobDetails?._key
-					);
-					if (
-						activeJobIndex < jobList.length - 1 &&
-						jobList[activeJobIndex + 1]
-					) {
-						setActiveJobDetails(jobList[activeJobIndex + 1] as any);
-					}
-					// Handle the case when the active job is the last job in the list
-					if (activeJobIndex == jobList.length - 1) {
-						setActiveJobDetails(jobList[0] as any);
-					}
-				}
+		if (slider.current) {
+			slider.current.slickNext();
+			// Update the active job details to the next job details
+			const activeJobIndex = jobList.findIndex(
+				(jobDetails) => jobDetails?._key == activeJobDetails?._key
+			);
+			if (activeJobIndex < jobList.length - 1 && jobList[activeJobIndex + 1]) {
+				setActiveJobDetails(jobList[activeJobIndex + 1] as any);
+			}
+			// Handle the case when the active job is the last job in the list
+			if (activeJobIndex == jobList.length - 1) {
+				setActiveJobDetails(jobList[0] as any);
+			}
+		}
 	};
-	const debouncedOnClickNext = debounce(next, 500);
-	const debounceOnClickprevious = debounce(previous,500);
+	const debouncedNext = debounce(next, 500);
+	const debouncedPrevious = debounce(previous, 500);
 	const settings = {
 		dots: false,
 		infinite: true,
@@ -205,14 +201,14 @@ const JobsSliderContent = () => {
 				<div className="relative mt-0 flex justify-between   p-2 pr-4 md:pr-24 ">
 					<button
 						aria-label={'left-arrow'}
-						onClick={debounceOnClickprevious}
+						onClick={debouncedPrevious}
 						className=" text-primary-shade-1 bg-secondary-shade-3 flex  h-12 w-20 justify-center rounded-full  px-6  py-4 md:px-12 "
 					>
 						<FontAwesomeIcon icon={faArrowLeft} />
 					</button>
 					<button
 						aria-label={'right-arrow'}
-						onClick={debouncedOnClickNext}
+						onClick={debouncedNext}
 						className="bg-primary-shade-1 text-secondary-shade-3 flex h-12 w-20 justify-center rounded-full px-6  py-4  md:px-12 "
 					>
 						<FontAwesomeIcon icon={faArrowRight} />
