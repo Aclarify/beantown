@@ -34,7 +34,7 @@ const RelatedBlogPosts: React.FC<IProps> = ({ currentBlogPost }) => {
 
 	const settings = {
 		dots: false,
-		infinite: true,
+		infinite: false,
 		speed: 800,
 		slidesToShow: 3,
 		slidesToScroll: 1,
@@ -115,7 +115,7 @@ const RelatedBlogPosts: React.FC<IProps> = ({ currentBlogPost }) => {
 				<Slider ref={slider} {...settings}>
 					{relatedPosts?.map((blogPost, index) => {
 						return (
-							<div className="px-3" key={index}>
+							<div className="w-1/3 px-3" key={index}>
 								<BlogPostCard blogPost={blogPost} />
 							</div>
 						);

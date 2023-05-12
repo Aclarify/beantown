@@ -55,6 +55,7 @@ const Blogs: React.FC<IProps> = (props) => {
 								>
 									<BlogCard
 										blogName={blog?.blogTitle || ''}
+										blogSlug={blog?.blogSlug?.current || ''}
 										buttonText={'Read Article'}
 										blogDescription={getExcerpt(blog?.blogContentRaw)}
 										thumbnailSrc={blog?.blogImage?.asset?.url || ''}
