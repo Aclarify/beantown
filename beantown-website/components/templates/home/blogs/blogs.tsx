@@ -48,6 +48,7 @@ export default function HomeBlogs() {
 						blogsButtonText={blogButton?.text || ''}
 						blogsButtonTextColour="text-white"
 						blogsButtonBgColour="bg-primary-shade-1"
+						blogsButtonHref={blogButton?.href || ''}
 						categories={['General']}
 					></Blogs>
 				</SectionContentWrapper>

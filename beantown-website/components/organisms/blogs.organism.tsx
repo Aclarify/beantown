@@ -7,6 +7,7 @@ import Animate from 'components/molecules/animate.molecule';
 import clsx from 'clsx';
 import { buttonHoverStyle } from '@lib/styles/button.style';
 import useSearchByCategory from 'lib/hooks/useSearchByCategory';
+import { CTAButton } from './cta-text-content.organism';
 
 interface IProps extends React.HTMLAttributes<HTMLDivElement> {
 	blogsTitle: string;
@@ -14,21 +15,18 @@ interface IProps extends React.HTMLAttributes<HTMLDivElement> {
 	blogsButtonText: string;
 	blogsButtonTextColour: string;
 	blogsButtonBgColour: string;
+	blogsButtonHref: string;
 	categories: string[];
 }
 
 const Blogs: React.FC<IProps> = (props) => {
-	const [shouldFetchMore, setShouldFetchMore] = useState<boolean>(false);
-	const {
-		hits: blogPosts,
-		loadMore,
-		hasNextPage,
-	} = useSearchByCategory(0, 3, props.categories, undefined, shouldFetchMore);
-
-	const handleLoadMore = () => {
-		setShouldFetchMore(true);
-		loadMore();
-	};
+	const { hits: blogPosts } = useSearchByCategory(
+		0,
+		3,
+		props.categories,
+		undefined,
+		false
+	);
 
 	return (
 		<Animate cascade>
@@ -67,20 +65,14 @@ const Blogs: React.FC<IProps> = (props) => {
 					</div>
 				</Animate>
 
-				{hasNextPage && (
-					<div className="items-center text-center">
-						<CtaWrapper.CTA
-							onClick={handleLoadMore}
-							className={clsx(
-								`${props.blogsButtonTextColour} ${props.blogsButtonBgColour}
-					 button`,
-								buttonHoverStyle
-							)}
-						>
-							<p className={clsx('font-normal')}>{props.blogsButtonText}</p>
-						</CtaWrapper.CTA>
-					</div>
-				)}
+				<div className="items-center text-center">
+					<CTAButton
+						textColor={props.blogsButtonTextColour}
+						bgColor={props.blogsButtonBgColour}
+						href={props.blogsButtonHref}
+						text={props.blogsButtonText || ''}
+					/>
+				</div>
 			</section>
 		</Animate>
 	);

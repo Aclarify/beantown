@@ -20,7 +20,7 @@ const BlogCard: React.FC<Props> = (props) => {
 						alt={props.thumbnailAltText}
 						width="600"
 						height="600"
-						className="w-full rounded-3xl border-2"
+						className="w-full rounded-3xl"
 					/>
 				</div>
 

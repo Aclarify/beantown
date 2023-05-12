@@ -19,6 +19,7 @@ const HeatingCoolingBlogsContent = () => {
 			blogsButtonText={blogButton?.text || ''}
 			blogsButtonTextColour="text-white"
 			blogsButtonBgColour="bg-service-red"
+			blogsButtonHref={blogButton?.href || ''}
 			categories={[
 				'Heating',
 				'Cooling',

@@ -19,6 +19,7 @@ const PlumbingBlogsContent = () => {
 			blogsButtonText={blogButton?.text || ''}
 			blogsButtonTextColour="text-white"
 			blogsButtonBgColour="bg-service-green"
+			blogsButtonHref={blogButton?.href || ''}
 			categories={['Plumbing']}
 		></Blogs>
 	);
