@@ -1,8 +1,5 @@
 /* eslint-disable react-hooks/rules-of-hooks */
-import React, { useContext, useEffect, useState } from 'react';
-import { Categories } from '@typing/gql/graphql';
-import { getCMSDocs } from '@typing/api/api';
-import blogCategoriesQuery from '@lib/queries/organisms/get-blog-categories.query';
+import React, { useContext, useState, useEffect } from 'react';
 import WaveWrapper from 'components/molecules/wave-wrapper.molecule';
 import topWave from 'public/images/blogs/blog-posts/blog-posts-top-wave.svg';
 import bottomWave from 'public/images/blogs/blog-posts/blog-posts-bottom-wave.svg';
@@ -11,13 +8,15 @@ import BlogCategoryList from 'components/organisms/blog-category-list.organism';
 import BlogSearchInput from 'components/organisms/blog-search.organism';
 import { SearchContext } from 'contexts/blogs/blog.context';
 import useSearch from 'lib/hooks/useSearch.hook';
-import debounce from 'lodash/debounce';
 import { InstantSearch } from 'react-instantsearch-dom';
 import { config } from '@lib/config';
 import algoliasearch from 'algoliasearch';
 import { GlobalContext } from 'contexts/global/global.context';
 import { BlogsContentProps } from 'pages/blog';
 import { GlobalContextProps } from '@typing/common/interfaces/contexts.interface';
+import { getCMSDocs } from '@typing/api/api';
+import blogCategoriesQuery from '@lib/queries/organisms/get-blog-categories.query';
+import { Categories } from '@typing/gql/graphql';
 
 const searchClient = algoliasearch(
 	config.algoliaAppId,
@@ -33,16 +32,22 @@ export default function BlogPosts() {
 	const [categories, setCategories] = useState<Categories[]>([]);
 	const [tags, setTags] = useState<Categories[]>([]);
 
-	const [query, setQuery] = useState<string>('');
-	const [page, setPage] = useState<number>(0);
-	const [debouncedQuery, setDebouncedQuery] = useState<string>('');
-	const [shouldLoadMore, setShouldLoadMore] = useState<boolean>(false);
-
 	// Load the initial blog categories on component mount
 	useEffect(() => {
+		const loadCategories = async () => {
+			const res = await getCMSDocs(blogCategoriesQuery);
+			const data = res.allCategories || [];
+			setCategories(data);
+		};
 		loadCategories();
-		setDebouncedQuery('');
 	}, []);
+
+	// Initialize state for the blog filters and whether there are more to load
+	const [filters, setFilters] = useState<string[]>([]);
+
+	const [query, setQuery] = useState<string>('');
+	const [page, setPage] = useState<number>(0);
+	const [shouldLoadMore, setShouldLoadMore] = useState<boolean>(false);
 
 	// If there is no page content, don't render anything
 	if (!pageContent) {
@@ -53,13 +58,6 @@ export default function BlogPosts() {
 	const pageData = pageContent.page[0];
 	const maxBlogPostPerPage = pageData.maxBlogPostPerPage || 9;
 
-	// Define a function to load blog categories from the CMS
-	const loadCategories = async () => {
-		const res = await getCMSDocs(blogCategoriesQuery);
-		const data = res.allCategories || [];
-		setCategories(data);
-	};
-
 	// This function takes a category as input and removes it from the categories state array
 	const handleExcludeCategory = (category: Categories) => {
 		setCategories((prevCategories) =>
@@ -69,17 +67,13 @@ export default function BlogPosts() {
 	};
 
 	const { hits, nbPages, hasNextPage, loadMore } = useSearch(
-		debouncedQuery,
+		query,
 		page,
 		maxBlogPostPerPage,
-		tags.map((item) => item.name ?? ''),
-		undefined,
+		[],
+		categories.map((item) => item.category || ''),
 		shouldLoadMore
 	);
-
-	const handleSearch = debounce((query: string) => {
-		setDebouncedQuery(query);
-	}, 500);
 
 	const handleLoadMore = () => {
 		setShouldLoadMore(true);
@@ -95,7 +89,8 @@ export default function BlogPosts() {
 		setPage,
 		nbPages,
 		hasNextPage,
-		handleSearch,
+		filters,
+		setFilters,
 		handleLoadMore,
 	};
 

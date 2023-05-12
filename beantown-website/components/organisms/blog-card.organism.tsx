@@ -1,22 +1,19 @@
 import React from 'react';
 import Image from 'next/image';
-import { showUnderConstructionMsg } from 'utils/helper';
 import Animate from 'components/molecules/animate.molecule';
-
+import Link from 'next/link';
 interface Props {
 	blogName: string;
 	buttonText: string;
+	blogSlug: string;
 	blogDescription: string;
 	thumbnailSrc: string;
 	thumbnailAltText: string;
 }
 const BlogCard: React.FC<Props> = (props) => {
 	return (
-		<>
-			<div
-				className=" cursor-pointer flex-col justify-center border-none p-1"
-				onClick={showUnderConstructionMsg}
-			>
+		<Link href={`/blog/${props.blogSlug}`}>
+			<div className=" cursor-pointer flex-col justify-center border-none p-1">
 				<div className="flex transform justify-center transition duration-500 hover:scale-105 ">
 					<Image
 						src={props.thumbnailSrc}
@@ -52,7 +49,7 @@ const BlogCard: React.FC<Props> = (props) => {
 					</div>
 				</div>
 			</div>
-		</>
+		</Link>
 	);
 };
 export default BlogCard;

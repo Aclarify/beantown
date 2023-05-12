@@ -7,7 +7,7 @@ import { config } from 'lib/config';
 import { SIGNATURE_HEADER_NAME, isValidSignature } from '@sanity/webhook';
 
 export const BLOG_POSTS_PROJECTION = /* groq */ `{
-  _type,
+  	_type,
     _rev,
     _id,
     "objectID": _id,
@@ -18,9 +18,9 @@ export const BLOG_POSTS_PROJECTION = /* groq */ `{
     blogSlug {
       current
     },
-    blogContent,
+	"blogContentRaw": blogContent,
     blogTags [] -> {
-      _id, name,
+      _id, name, category
     },
     publishedAt,
 }`;

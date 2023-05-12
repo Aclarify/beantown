@@ -48,7 +48,7 @@ export default function HomeBlogs() {
 						blogsButtonText={blogButton?.text || ''}
 						blogsButtonTextColour="text-white"
 						blogsButtonBgColour="bg-primary-shade-1"
-						blogCards={blogCards || []}
+						categories={[]}
 					></Blogs>
 				</SectionContentWrapper>
 			</div>

@@ -8,7 +8,8 @@ import 'slick-carousel/slick/slick-theme.css';
 import BlogPostCard from './blog-post-card.organism';
 import Animate from 'components/molecules/animate.molecule';
 import { SCREEN_BREAKPOINTS } from '@typing/common/interfaces/devices.interface';
-import useSearch from 'lib/hooks/useSearch.hook';
+import useSearchByCategory from 'lib/hooks/useSearchByCategory';
+import useWindowDimensions from 'lib/hooks/use-window-dimensions.hook';
 
 interface IProps extends React.HTMLAttributes<HTMLDivElement> {
 	currentBlogPost: BlogPosts;
@@ -16,10 +17,20 @@ interface IProps extends React.HTMLAttributes<HTMLDivElement> {
 
 const RelatedBlogPosts: React.FC<IProps> = ({ currentBlogPost }) => {
 	const slider = React.useRef<Slider | null>(null);
+	const { width } = useWindowDimensions();
+
 	const tags =
 		currentBlogPost.blogTags?.map((item) => item?.category || '') ?? [];
 	const currentPostId = currentBlogPost._id || undefined;
-	const { hits: relatedPosts } = useSearch('', 0, 9, tags, currentPostId);
+	const { hits: relatedPosts } = useSearchByCategory(0, 9, tags, currentPostId);
+
+	console.log(
+		'RELATED POSTS',
+		relatedPosts,
+		relatedPosts?.map((blogPost, index) => {
+			return blogPost;
+		})
+	);
 
 	const previous = () => {
 		if (slider.current) {
@@ -34,16 +45,13 @@ const RelatedBlogPosts: React.FC<IProps> = ({ currentBlogPost }) => {
 
 	const settings = {
 		dots: false,
-		infinite: true,
+		infinite: false,
 		speed: 800,
 		slidesToShow: 3,
 		slidesToScroll: 1,
 		arrows: false,
 		initialSlide: 0,
 		variableWidth: false,
-		focusOnSelect: true,
-		useTransform: false,
-		swipe: true,
 		responsive: [
 			{
 				breakpoint: SCREEN_BREAKPOINTS.SM,
@@ -113,13 +121,19 @@ const RelatedBlogPosts: React.FC<IProps> = ({ currentBlogPost }) => {
 
 			<div className="slider-wrapper w-full">
 				<Slider ref={slider} {...settings}>
-					{relatedPosts?.map((blogPost, index) => {
+					{relatedPosts?.map((blogPost) => {
 						return (
-							<div className="px-3" key={index}>
+							<div className="px-3" key={blogPost?._id}>
 								<BlogPostCard blogPost={blogPost} />
 							</div>
 						);
 					})}
+					{/* Add empty divs if relatedPosts has less than 3 items */}
+					{relatedPosts &&
+						relatedPosts.length < 3 &&
+						Array.from(Array(3 - relatedPosts.length)).map((_, index) => (
+							<div className="w-1/3 px-3" key={`empty_${index}`}></div>
+						))}
 				</Slider>
 			</div>
 		</div>

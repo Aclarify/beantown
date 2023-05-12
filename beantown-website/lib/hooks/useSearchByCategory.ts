@@ -2,45 +2,36 @@ import { useInfiniteQuery } from 'react-query';
 import { BlogPosts } from '@typing/gql/graphql';
 import { config } from 'lib/config';
 import { algoliaClient } from 'lib/clients/algolia/algolia.client';
+import { SearchResult } from './useSearch.hook';
 
 const index = algoliaClient.initIndex(config.algoliaBlogSearchIndexName);
 
-export type SearchResult = {
-	hits: BlogPosts[];
-	nbPages: number;
-};
-
-const useSearch = (
-	query: string,
+const useSearchByCategory = (
 	page = 0,
 	maxPerPage = 9,
-	filters: string[] = [],
 	categories: string[] = [],
+	objectIdToExclude?: string,
 	loadMore = false
 ) => {
 	console.log(
-		`QUER: ${query}, PAGE: ${page}, MAX: ${maxPerPage}, FILTERS: ${filters}, CATEGORIES: ${categories.map(
-			(serviceCategory) => `blogTags.name:${serviceCategory}`
-		)}, LOAD: ${loadMore}`
+		`PAGE: ${page}, MAX: ${maxPerPage}, CATEGORIES: ${categories}, OBJ: ${objectIdToExclude}, LOAD: ${loadMore}`
 	);
+
 	const { data, fetchNextPage, hasNextPage } = useInfiniteQuery<SearchResult>(
-		['search', query, categories, filters],
+		['search', categories],
 		async ({ pageParam = 0 }): Promise<SearchResult> => {
-			const searchResults = await index.search(query, {
+			const searchResults = await index.search('', {
 				hitsPerPage: maxPerPage,
 				page: pageParam,
-				facets: ['blogTitle', 'blogContent.children.text', 'blogTags.name'],
+				facets: ['blogTags.name'],
 				facetFilters: [
 					categories.map(
 						(serviceCategory) => `blogTags.name:${serviceCategory}`
 					),
-				],
-				filters: filters
-					.map((filterTerm) => {
-						return `blogTitle:${filterTerm} OR blogContent.children.text:${filterTerm} OR blogTags.name:${filterTerm}`;
-					})
-					.join(' OR '),
-				sumOrFiltersScores: true,
+				], // apply facet filters based on selected tags
+				filters: objectIdToExclude
+					? `NOT objectID:${objectIdToExclude}`
+					: undefined,
 			});
 			return {
 				hits: searchResults.hits as BlogPosts[],
@@ -67,9 +58,7 @@ const useSearch = (
 
 	return {
 		// Return the first maxPerPage * (page + 1) hits if loadMore is true, else return the first maxPerPage hits
-		hits: loadMore
-			? hits.slice(0, maxPerPage * (page + 1))
-			: hits.slice(0, maxPerPage),
+		hits: hits,
 		// Return the total number of pages of search results
 		nbPages,
 		// Return a function to load more search
@@ -79,4 +68,4 @@ const useSearch = (
 	};
 };
 
-export default useSearch;
+export default useSearchByCategory;

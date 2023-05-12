@@ -19,6 +19,7 @@ interface Props {
 	error?: FieldError;
 	showErrorText?: boolean;
 	onChange?: (event: React.ChangeEvent<HTMLInputElement>) => void;
+	onKeyDown?: (event: React.KeyboardEvent<HTMLInputElement>) => void;
 }
 const FormInput: React.FC<Props> = ({
 	id,
@@ -36,6 +37,7 @@ const FormInput: React.FC<Props> = ({
 	error,
 	showErrorText = true,
 	onChange,
+	onKeyDown,
 }) => {
 	return (
 		<>
@@ -47,6 +49,7 @@ const FormInput: React.FC<Props> = ({
 				autoComplete={autoComplete}
 				{...(register ? register(name) : {})}
 				onChange={onChange}
+				onKeyDown={onKeyDown}
 				className={clsx(
 					'w-full rounded-lg border p-3 placeholder:tracking-wide focus:outline-none',
 					bgColor,
