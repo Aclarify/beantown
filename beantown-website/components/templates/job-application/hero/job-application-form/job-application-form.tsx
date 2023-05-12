@@ -25,6 +25,15 @@ import {
 import { getAuthToken } from '@lib/clients/services/auth/auth.service';
 import ComboBox from 'components/atoms/form-combo-box.atom';
 import { useRouter } from 'next/router';
+import dynamic from 'next/dynamic';
+import { config } from '@lib/config';
+
+const AddressAutofill = dynamic(
+	() => import('@mapbox/search-js-react').then((c) => c.AddressAutofill),
+	{
+		ssr: false,
+	}
+);
 
 type JobApplicationFormValues = {
 	email: string;
@@ -102,6 +111,8 @@ const JobApplicationForm: React.FC = () => {
 		},
 	};
 	const accessToken = useRef<string | null>(null);
+	const mapBoxAccessToken = config.mapBoxAccessToken;
+
 	const {
 		handleSubmit,
 		formState: { errors },
@@ -230,7 +241,6 @@ const JobApplicationForm: React.FC = () => {
 													<FormInput
 														id="first-name"
 														placeholderText="Enter your first name"
-														autoComplete="on"
 														bgColor="white"
 														{...field}
 														error={errors.firstName}
@@ -248,7 +258,6 @@ const JobApplicationForm: React.FC = () => {
 													<FormInput
 														id="last-name"
 														placeholderText="Enter your last name"
-														autoComplete="on"
 														bgColor="white"
 														{...field}
 														error={errors.lastName}
@@ -265,17 +274,35 @@ const JobApplicationForm: React.FC = () => {
 												name="address1"
 												control={control}
 												rules={{ required: true }}
-												render={({ field }) => (
-													<FormInput
-														id="address-1"
-														type="text"
-														placeholderText="Enter your address"
-														autoComplete="on"
-														error={errors.address1}
-														{...field}
-														bgColor="white"
-													/>
-												)}
+												render={({ field }) =>
+													mapBoxAccessToken ? (
+														<AddressAutofill
+															{...field}
+															accessToken={mapBoxAccessToken}
+														>
+															<FormInput
+																id="address-1"
+																type="text"
+																placeholderText="Enter your address"
+																autoComplete="address-line1"
+																showErrorText={false}
+																error={errors.address1}
+																{...field}
+																bgColor="white"
+															/>
+														</AddressAutofill>
+													) : (
+														<FormInput
+															id="address-1"
+															type="text"
+															placeholderText="Enter your address"
+															autoComplete="address-line1"
+															error={errors.address1}
+															{...field}
+															bgColor="white"
+														/>
+													)
+												}
 											/>
 										</div>
 										<div className={`flex w-full flex-col gap-2`}>
@@ -288,7 +315,7 @@ const JobApplicationForm: React.FC = () => {
 														id="address-1"
 														type="text"
 														placeholderText="Enter your address"
-														autoComplete="on"
+														autoComplete="address-line2"
 														error={errors.address2}
 														{...field}
 														bgColor="white"
@@ -308,7 +335,7 @@ const JobApplicationForm: React.FC = () => {
 														id="city"
 														type="text"
 														placeholderText="Enter your city"
-														autoComplete="on"
+														autoComplete="address-level2"
 														bgColor="white"
 														{...field}
 														error={errors.city}
@@ -326,7 +353,7 @@ const JobApplicationForm: React.FC = () => {
 														id="state"
 														type="text"
 														placeholderText="Enter your state"
-														autoComplete="on"
+														autoComplete="address-level1"
 														bgColor="white"
 														{...field}
 														error={errors.state}
@@ -345,7 +372,7 @@ const JobApplicationForm: React.FC = () => {
 													<FormInput
 														id="zip-code"
 														placeholderText="Enter your zip code"
-														autoComplete="on"
+														autoComplete="postal-code"
 														bgColor="white"
 														error={errors.zipCode}
 														{...field}
@@ -370,7 +397,6 @@ const JobApplicationForm: React.FC = () => {
 														type="phone"
 														placeholderText="Enter your phone number"
 														bgColor="white"
-														autoComplete="on"
 														{...field}
 														error={errors.phoneNumber}
 													/>

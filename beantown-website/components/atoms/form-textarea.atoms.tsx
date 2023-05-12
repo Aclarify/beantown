@@ -17,6 +17,7 @@ interface Props {
 	register?: UseFormRegister<any>;
 	error?: FieldError;
 	showErrorText?: boolean;
+	onChange: (event: React.ChangeEvent<HTMLTextAreaElement>) => void;
 }
 const FormTextArea: React.FC<Props> = ({
 	id,
@@ -31,6 +32,7 @@ const FormTextArea: React.FC<Props> = ({
 	register,
 	error,
 	showErrorText = true,
+	onChange,
 }) => {
 	return (
 		<>
@@ -40,6 +42,7 @@ const FormTextArea: React.FC<Props> = ({
 				placeholder={placeholderText}
 				autoComplete={autoComplete}
 				{...(register ? register(name) : {})}
+				onChange={onChange}
 				className={clsx(
 					'h-[200px] w-full rounded-lg border p-3 placeholder:tracking-wide focus:outline-none',
 					bgColor,
