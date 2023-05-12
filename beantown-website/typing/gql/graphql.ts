@@ -561,6 +561,7 @@ export type Community = Document & {
 	ctaDescription?: Maybe<PortableText>;
 	ctaImage?: Maybe<Image>;
 	ctaTitle?: Maybe<Scalars['String']>;
+	eventsTitle?: Maybe<Scalars['String']>;
 	eventSectionTitle?: Maybe<Scalars['String']>;
 	heroDescription?: Maybe<Scalars['String']>;
 	heroImage?: Maybe<Image>;
@@ -573,7 +574,6 @@ export type Community = Document & {
 	name?: Maybe<Scalars['String']>;
 	pageTitle?: Maybe<Scalars['String']>;
 	socialMediaFeed?: Maybe<Array<Maybe<MediaFeed>>>;
-	upcomingEvents?: Maybe<Array<Maybe<EventsList>>>;
 	viewEventButtonText?: Maybe<Scalars['String']>;
 };
 
@@ -590,6 +590,7 @@ export type CommunityFilter = {
 	ctaDescription?: InputMaybe<PortableTextFilter>;
 	ctaImage?: InputMaybe<ImageFilter>;
 	ctaTitle?: InputMaybe<StringFilter>;
+	eventsTitle?: InputMaybe<StringFilter>;
 	eventSectionTitle?: InputMaybe<StringFilter>;
 	heroDescription?: InputMaybe<StringFilter>;
 	heroImage?: InputMaybe<ImageFilter>;
@@ -614,6 +615,7 @@ export type CommunitySorting = {
 	ctaDescription?: InputMaybe<PortableTextSorting>;
 	ctaImage?: InputMaybe<ImageSorting>;
 	ctaTitle?: InputMaybe<SortOrder>;
+	eventsTitle?: InputMaybe<SortOrder>;
 	eventSectionTitle?: InputMaybe<SortOrder>;
 	heroDescription?: InputMaybe<SortOrder>;
 	heroImage?: InputMaybe<ImageSorting>;
@@ -812,6 +814,7 @@ export type EventsList = Document & {
 	eventTitle?: Maybe<Scalars['String']>;
 	eventUrl?: Maybe<Scalars['String']>;
 	name?: Maybe<Scalars['String']>;
+	title?: Maybe<Scalars['String']>;
 };
 
 export type EventsListFilter = {

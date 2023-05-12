@@ -31,6 +31,6 @@ export const FeatureFlagComponent: React.FC<FeatureFlagComponentProps> = ({
 	if (envVariable === FEATURE_FLAG.ON) {
 		return <>{children}</>;
 	}
-
-	return <UnderConstructionSection />;
+	// If feature flag is off, return null
+	return null;
 };

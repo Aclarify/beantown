@@ -25,17 +25,27 @@ import {
 import { getAuthToken } from '@lib/clients/services/auth/auth.service';
 import ComboBox from 'components/atoms/form-combo-box.atom';
 import { useRouter } from 'next/router';
+import dynamic from 'next/dynamic';
+import { config } from '@lib/config';
+
+const AddressAutofill = dynamic(
+	() => import('@mapbox/search-js-react').then((c) => c.AddressAutofill),
+	{
+		ssr: false,
+	}
+);
 
 type JobApplicationFormValues = {
 	email: string;
 	firstName: string;
 	lastName: string;
 	phoneNumber: string;
-	address: string;
+	address1: string;
+	address2: string;
 	city: string;
 	state: string;
 	zipCode: string;
-	resume: File;
+	resume: File | null;
 	experience: string;
 	jobOption: string;
 	jobDesired: string;
@@ -47,7 +57,8 @@ const validationSchema = Yup.object().shape({
 		.email('Email is invalid'),
 	firstName: Yup.string().required('Your first name is required'),
 	lastName: Yup.string().required('Your last name is required'),
-	address: Yup.string().required('Your address is required'),
+	address1: Yup.string().required('Your address is required'),
+	address2: Yup.string(),
 	city: Yup.string().required('Your city is required'),
 	state: Yup.string().required('Your state is required'),
 	resume: Yup.mixed()
@@ -72,8 +83,8 @@ const validationSchema = Yup.object().shape({
 		.matches(/^\d{5}(-\d{4})?$/, 'Zip code is not valid')
 		.required('Your zip code is required'),
 	phoneNumber: Yup.string()
-		.matches(/^\+?\d{10,14}$/, 'Phone number is not valid') //
-		.required('Your phone number is required'),
+		.required('Your phone number is required')
+		.matches(/^\+?\d{10,14}$/, 'Phone number is not valid'),
 	jobOption: Yup.string().required('Please select a job position'),
 	jobDesired: Yup.string().required('Please select the employment desired'),
 });
@@ -81,10 +92,28 @@ const validationSchema = Yup.object().shape({
 const JobApplicationForm: React.FC = () => {
 	const { pageContent } =
 		useContext<GlobalContextProps<CareersContentProps>>(GlobalContext);
-	const formOptions = { resolver: yupResolver(validationSchema) };
+	const formOptions = {
+		resolver: yupResolver(validationSchema),
+		defaultValues: {
+			email: '',
+			firstName: '',
+			lastName: '',
+			phoneNumber: '',
+			address1: '',
+			address2: '',
+			city: '',
+			state: '',
+			zipCode: '',
+			resume: null,
+			experience: '',
+			jobOption: '',
+			jobDesired: '',
+		},
+	};
 	const accessToken = useRef<string | null>(null);
+	const mapBoxAccessToken = config.mapBoxAccessToken;
+
 	const {
-		register,
 		handleSubmit,
 		formState: { errors },
 		setValue,
@@ -129,7 +158,7 @@ const JobApplicationForm: React.FC = () => {
 		if (data) {
 			// Frame the form data to be sent to server
 			const formData = new FormData();
-			formData.append('file', data.resume);
+			// formData.append('file', data.resume);
 
 			const jobApplicationDetails: CreateJobApplicationInboundDto = {
 				name: `${data.firstName} ${data.lastName}`,
@@ -138,8 +167,8 @@ const JobApplicationForm: React.FC = () => {
 					phoneNumber: data.phoneNumber,
 				},
 				address: {
-					address1: data.address,
-					address2: data.address,
+					address1: data.address1,
+					address2: data.address2,
 					city: data.city,
 					state: data.state,
 					zip: data.zipCode,
@@ -183,7 +212,7 @@ const JobApplicationForm: React.FC = () => {
 
 	const onResumeFileChange = (file: File) => {
 		if (file && accessToken.current) {
-			setValue('resume', file);
+			setValue('resume', file, { shouldValidate: true });
 			// uploadFileToOneDrive(file, accessToken.current);
 		}
 	};
@@ -202,26 +231,38 @@ const JobApplicationForm: React.FC = () => {
 								</div>
 								<div className="mt-2 flex flex-col gap-4 py-2 md:mt-6 lg:py-5  ">
 									<div className="mx-auto flex w-full flex-col  gap-4 px-2 md:w-5/6  md:flex-row">
-										<div className="flex  w-full flex-col gap-2  ">
+										<div className="flex  w-full flex-col gap-2">
 											<FormLabel inputId="first-name" labelText="First Name" />
-											<FormInput
-												id="first-name"
-												placeholderText="Enter your first name"
-												name={'firstName'}
-												bgColor="white"
-												register={register}
-												error={errors.firstName}
+											<Controller
+												name="firstName"
+												control={control}
+												rules={{ required: true }}
+												render={({ field }) => (
+													<FormInput
+														id="first-name"
+														placeholderText="Enter your first name"
+														bgColor="white"
+														{...field}
+														error={errors.firstName}
+													/>
+												)}
 											/>
 										</div>
 										<div className="flex w-full flex-col gap-2">
 											<FormLabel inputId="last-name" labelText="Last Name" />
-											<FormInput
-												id="last-name"
-												placeholderText="Enter your last name"
-												name={'lastName'}
-												bgColor="white"
-												register={register}
-												error={errors.lastName}
+											<Controller
+												name="lastName"
+												control={control}
+												rules={{ required: true }}
+												render={({ field }) => (
+													<FormInput
+														id="last-name"
+														placeholderText="Enter your last name"
+														bgColor="white"
+														{...field}
+														error={errors.lastName}
+													/>
+												)}
 											/>
 										</div>
 									</div>
@@ -229,71 +270,114 @@ const JobApplicationForm: React.FC = () => {
 									<div className="mx-auto flex w-full flex-col gap-4 px-2 md:w-5/6  md:flex-row">
 										<div className={`flex w-full flex-col gap-2`}>
 											<FormLabel inputId="address-1" labelText="Address1" />
-
-											<FormInput
-												id="address-1"
-												type="text"
-												placeholderText="Enter your address"
-												autoComplete="address-line1"
-												name={'address'}
-												error={errors.address}
-												register={register}
-												bgColor="white"
+											<Controller
+												name="address1"
+												control={control}
+												rules={{ required: true }}
+												render={({ field }) =>
+													mapBoxAccessToken ? (
+														<AddressAutofill
+															{...field}
+															accessToken={mapBoxAccessToken}
+														>
+															<FormInput
+																id="address-1"
+																type="text"
+																placeholderText="Enter your address"
+																autoComplete="address-line1"
+																showErrorText={false}
+																error={errors.address1}
+																{...field}
+																bgColor="white"
+															/>
+														</AddressAutofill>
+													) : (
+														<FormInput
+															id="address-1"
+															type="text"
+															placeholderText="Enter your address"
+															autoComplete="address-line1"
+															error={errors.address1}
+															{...field}
+															bgColor="white"
+														/>
+													)
+												}
 											/>
 										</div>
 										<div className={`flex w-full flex-col gap-2`}>
 											<FormLabel inputId="address2" labelText="Address2" />
-
-											<FormInput
-												id="address-2"
-												type="text"
-												placeholderText="Enter your  address"
-												autoComplete="address-line2"
-												name={'address'}
-												error={errors.address}
-												register={register}
-												bgColor="white"
+											<Controller
+												name="address2"
+												control={control}
+												render={({ field }) => (
+													<FormInput
+														id="address-1"
+														type="text"
+														placeholderText="Enter your address"
+														autoComplete="address-line2"
+														error={errors.address2}
+														{...field}
+														bgColor="white"
+													/>
+												)}
 											/>
 										</div>
 									</div>
 									<div className="mx-auto flex w-full flex-col gap-4 px-2 md:w-5/6  md:flex-row">
 										<div className="flex w-full flex-col gap-2">
 											<FormLabel inputId="city" labelText="City" />
-											<FormInput
-												id="city"
-												type="text"
-												placeholderText="Enter your city"
-												autoComplete="address-level2"
-												name={'city'}
-												bgColor="white"
-												register={register}
-												error={errors.city}
+											<Controller
+												name="city"
+												control={control}
+												render={({ field }) => (
+													<FormInput
+														id="city"
+														type="text"
+														placeholderText="Enter your city"
+														autoComplete="address-level2"
+														bgColor="white"
+														{...field}
+														error={errors.city}
+													/>
+												)}
 											/>
 										</div>
 										<div className="flex w-full flex-col gap-2">
 											<FormLabel inputId="state" labelText="State" />
-											<FormInput
-												id="state"
-												type="text"
-												placeholderText="Enter your state"
-												autoComplete="address-level1"
-												name={'state'}
-												bgColor="white"
-												register={register}
-												error={errors.state}
+											<Controller
+												name="state"
+												control={control}
+												render={({ field }) => (
+													<FormInput
+														id="state"
+														type="text"
+														placeholderText="Enter your state"
+														autoComplete="address-level1"
+														bgColor="white"
+														{...field}
+														error={errors.state}
+													/>
+												)}
 											/>
 										</div>
 									</div>
 									<div className="mx-auto flex w-full flex-col  gap-4 px-2 md:w-5/6  md:flex-row">
-										<div className=" flex w-full  flex-col md:w-1/2">
+										<div className=" flex w-full  flex-col gap-2 md:w-1/2">
 											<FormLabel inputId="zip-code" labelText="Zip Code" />
-											<FormInput
-												id="zip-code"
-												placeholderText="Enter your zip code"
-												name={'zipCode'}
-												bgColor="white"
-												error={errors.zipCode}
-												register={register}
+											<Controller
+												name="zipCode"
+												control={control}
+												render={({ field }) => (
+													<FormInput
+														id="zip-code"
+														placeholderText="Enter your zip code"
+														autoComplete="postal-code"
+														bgColor="white"
+														error={errors.zipCode}
+														{...field}
+													/>
+												)}
 											/>
 										</div>
 									</div>
@@ -303,26 +387,38 @@ const JobApplicationForm: React.FC = () => {
 												inputId="phone-number"
 												labelText="Phone number"
 											/>
-											<FormInput
-												id="phone-number"
-												type="phone"
-												placeholderText="Enter your phone number"
-												name={'phoneNumber'}
-												bgColor="white"
-												register={register}
-												error={errors.phoneNumber}
+											<Controller
+												name="phoneNumber"
+												control={control}
+												rules={{ required: true }}
+												render={({ field }) => (
+													<FormInput
+														id="phone-number"
+														type="phone"
+														placeholderText="Enter your phone number"
+														bgColor="white"
+														{...field}
+														error={errors.phoneNumber}
+													/>
+												)}
 											/>
 										</div>
 										<div className=" flex w-full flex-col gap-2">
 											<FormLabel inputId="email" labelText="Mail Address" />
-											<FormInput
-												id="email"
-												type="email"
-												placeholderText="Enter your email"
-												name={'email'}
-												bgColor="white"
-												register={register}
-												error={errors.email}
+											<Controller
+												name="email"
+												control={control}
+												rules={{ required: true }}
+												render={({ field }) => (
+													<FormInput
+														id="email"
+														type="email"
+														placeholderText="Enter your email"
+														bgColor="white"
+														{...field}
+														error={errors.email}
+													/>
+												)}
 											/>
 										</div>
 									</div>
@@ -375,12 +471,17 @@ const JobApplicationForm: React.FC = () => {
 												labelText="Upload your resume"
 											/>
 											<div className="relative block  ">
-												<FormUploadFile
-													id="resume"
-													name={'resume'}
-													register={register}
-													error={errors.resume}
-													onFileChange={onResumeFileChange}
+												<Controller
+													name="resume"
+													control={control}
+													render={({ field }) => (
+														<FormUploadFile
+															id="resume"
+															error={errors.resume}
+															{...field}
+															onFileChange={onResumeFileChange}
+														/>
+													)}
 												/>
 											</div>
 										</div>
@@ -391,17 +492,19 @@ const JobApplicationForm: React.FC = () => {
 												inputId="experiencelabel"
 												labelText="Tell Us About Yourself & Your Experience"
 											/>
-
-											<FormTextArea
-												id="experience"
-												type="text"
-												placeholderText="Describe your Experience Here"
-												autoComplete="experience"
-												name={'experience'}
-												showErrorText={false}
-												bgColor="white"
-												error={errors.experience}
-												register={register}
+											<Controller
+												name="experience"
+												control={control}
+												render={({ field }) => (
+													<FormTextArea
+														id="experience"
+														type="text"
+														placeholderText="Describe your Experience Here"
+														bgColor="white"
+														error={errors.experience}
+														{...field}
+													/>
+												)}
 											/>
 										</div>
 									</div>

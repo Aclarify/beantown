@@ -15,6 +15,7 @@ export enum PageNames {
 	BOOKNOW = 'bookNow',
 	LINKSHUB = 'linksHub',
 	MASSSAVE = 'massSave',
+	COMMUNITY = 'community',
 	PRIVACYPOLICY = 'privacyPolicy',
 	UNDERCONSTRUCTION = 'underConstruction',
 	JOBAPPLICATION = 'jobApplication',

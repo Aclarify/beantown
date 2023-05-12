@@ -3,25 +3,23 @@ import { GlobalContext } from '@contexts/global/global.context';
 import { GlobalContextProps } from '@typing/common/interfaces/contexts.interface';
 import ContentWrapper from '../../../organisms/content-wrapper.organism';
 import Animate from 'components/molecules/animate.molecule';
-import { CareersContentProps } from 'pages/careers';
-import Link from 'next/link';
-import Button from 'components/atoms/button.atom';
+import { CommunityContentProps } from 'pages/community';
 import MaskedImageWithBackground from 'components/organisms/masked-image-with-background.organism';
 
-const CareerHeroContent = () => {
+const CommunityHeroContent = () => {
 	const { pageContent } =
-		useContext<GlobalContextProps<CareersContentProps>>(GlobalContext);
+		useContext<GlobalContextProps<CommunityContentProps>>(GlobalContext);
 
 	if (!pageContent) {
 		return null;
 	}
 	const pageData = pageContent.page[0];
-	const { heroTitle, heroDescription, careerHeroImage, heroButton } = pageData;
+	const { heroTitle, heroDescription, heroImage } = pageData;
 
 	return (
 		<div
 			id="section-wrapper"
-			className=" mb-[6em]  flex flex-col  overflow-hidden "
+			className="mb-[3em] flex  flex-col overflow-hidden  lg:mb-[6em] "
 		>
 			<div
 				id="content-image-wrapper"
@@ -43,23 +41,16 @@ const CareerHeroContent = () => {
 							</Animate>
 						</ContentWrapper.Description>
 					</ContentWrapper>
-					<ContentWrapper className=" mt-4 lg:mt-8">
-						<Link href={heroButton?.href || ''}>
-							<Button fontColor="text-white" bgColor="bg-primary-shade-1">
-								{heroButton?.text}
-							</Button>
-						</Link>
-					</ContentWrapper>
 				</div>
 				<div
 					id="image-wrapper"
 					className="mb-8 md:mt-12  md:basis-1/2 md:px-20 lg:px-10  "
 				>
 					<MaskedImageWithBackground
-						image={careerHeroImage || null}
-						imgAltText={careerHeroImage?.asset?.altText || ''}
-						maskImg="./images/career/hero/blob-mask.svg"
-						bgImg="./images/career/hero/bg-blob-shape.svg"
+						image={heroImage || null}
+						imgAltText={heroImage?.asset?.altText || ''}
+						maskImg="./images/community/hero/community-hero-mask-blob.svg"
+						bgImg="./images/community/hero/community-hero-bg-blob.svg"
 					/>
 				</div>
 			</div>
@@ -67,4 +58,4 @@ const CareerHeroContent = () => {
 	);
 };
 
-export default CareerHeroContent;
+export default CommunityHeroContent;
