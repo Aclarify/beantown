@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React from 'react';
 
 import BlogCard from './blog-card.organism';
 import CtaWrapper from 'components/molecules/cta-wrapper.molecule';
@@ -18,17 +18,12 @@ interface IProps extends React.HTMLAttributes<HTMLDivElement> {
 }
 
 const Blogs: React.FC<IProps> = (props) => {
-	const [shouldFetchMore, setShouldFetchMore] = useState<boolean>(false);
-	const {
-		hits: blogPosts,
-		loadMore,
-		hasNextPage,
-	} = useSearchByCategory(0, 3, props.categories, undefined, shouldFetchMore);
-
-	const handleLoadMore = () => {
-		setShouldFetchMore(true);
-		loadMore();
-	};
+	const { hits: blogPosts } = useSearchByCategory(
+		0,
+		3,
+		props.categories,
+		undefined
+	);
 
 	return (
 		<Animate cascade>
@@ -67,20 +62,17 @@ const Blogs: React.FC<IProps> = (props) => {
 					</div>
 				</Animate>
 
-				{hasNextPage && (
-					<div className="items-center text-center">
-						<CtaWrapper.CTA
-							onClick={handleLoadMore}
-							className={clsx(
-								`${props.blogsButtonTextColour} ${props.blogsButtonBgColour}
+				<div className="items-center text-center">
+					<CtaWrapper.CTA
+						className={clsx(
+							`${props.blogsButtonTextColour} ${props.blogsButtonBgColour}
 					 button`,
-								buttonHoverStyle
-							)}
-						>
-							<p className={clsx('font-normal')}>{props.blogsButtonText}</p>
-						</CtaWrapper.CTA>
-					</div>
-				)}
+							buttonHoverStyle
+						)}
+					>
+						<p className={clsx('font-normal')}>{props.blogsButtonText}</p>
+					</CtaWrapper.CTA>
+				</div>
 			</section>
 		</Animate>
 	);

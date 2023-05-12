@@ -7,7 +7,7 @@ import { connectSearchBox } from 'react-instantsearch-dom';
 import { debounce } from 'lodash';
 
 const CustomSearchBox: React.FC = () => {
-	const { setQuery, setPage, setFilters } = useContext(SearchContext);
+	const { setQuery, setPage } = useContext(SearchContext);
 	const [input, setInput] = useState<string>('');
 
 	const handleSearch = useMemo(() => {
@@ -21,15 +21,6 @@ const CustomSearchBox: React.FC = () => {
 		const value = e.currentTarget.value;
 		setInput(value);
 		handleSearch(value);
-	};
-
-	const handleInputKeyDown = (e: React.KeyboardEvent<HTMLInputElement>) => {
-		if (e.key === 'Enter' && e.currentTarget.value) {
-			const value = e.currentTarget.value;
-			setFilters((prevFilters) => [...prevFilters, value]);
-			setInput('');
-			setQuery('');
-		}
 	};
 
 	return (
@@ -51,7 +42,6 @@ const CustomSearchBox: React.FC = () => {
 					placeholderText=""
 					name={'search'}
 					value={input}
-					onKeyDown={handleInputKeyDown}
 					onChange={handleInputChange}
 					borderColor="gray-shade-3"
 					className="rich-text py-0 pl-8 leading-[2em] lg:pl-12"

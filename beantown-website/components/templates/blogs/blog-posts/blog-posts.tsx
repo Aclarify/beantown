@@ -1,13 +1,10 @@
 /* eslint-disable react-hooks/rules-of-hooks */
-import React, { useContext, useEffect, useState } from 'react';
-import { Categories } from '@typing/gql/graphql';
-import { getCMSDocs } from '@typing/api/api';
-import blogCategoriesQuery from '@lib/queries/organisms/get-blog-categories.query';
+import React, { useContext, useState, useEffect } from 'react';
 import WaveWrapper from 'components/molecules/wave-wrapper.molecule';
 import topWave from 'public/images/blogs/blog-posts/blog-posts-top-wave.svg';
 import bottomWave from 'public/images/blogs/blog-posts/blog-posts-bottom-wave.svg';
 import BlogPostList from 'components/organisms/blog-post-list.organism';
-import BlogFilters from 'components/organisms/blog-category-list.organism';
+import BlogCategoryList from 'components/organisms/blog-category-list.organism';
 import BlogSearchInput from 'components/organisms/blog-search.organism';
 import { SearchContext } from 'contexts/blogs/blog.context';
 import useSearch from 'lib/hooks/useSearch.hook';
@@ -17,6 +14,9 @@ import algoliasearch from 'algoliasearch';
 import { GlobalContext } from 'contexts/global/global.context';
 import { BlogsContentProps } from 'pages/blog';
 import { GlobalContextProps } from '@typing/common/interfaces/contexts.interface';
+import { getCMSDocs } from '@typing/api/api';
+import blogCategoriesQuery from '@lib/queries/organisms/get-blog-categories.query';
+import { Categories } from '@typing/gql/graphql';
 
 const searchClient = algoliasearch(
 	config.algoliaAppId,
@@ -27,6 +27,20 @@ export default function BlogPosts() {
 	// Get the page content from the global context
 	const { pageContent } =
 		useContext<GlobalContextProps<BlogsContentProps>>(GlobalContext);
+
+	// Initialize state for the blog categories and whether there are more to load
+	const [categories, setCategories] = useState<Categories[]>([]);
+	const [tags, setTags] = useState<Categories[]>([]);
+
+	// Load the initial blog categories on component mount
+	useEffect(() => {
+		const loadCategories = async () => {
+			const res = await getCMSDocs(blogCategoriesQuery);
+			const data = res.allCategories || [];
+			setCategories(data);
+		};
+		loadCategories();
+	}, []);
 
 	// Initialize state for the blog filters and whether there are more to load
 	const [filters, setFilters] = useState<string[]>([]);
@@ -45,17 +59,19 @@ export default function BlogPosts() {
 	const maxBlogPostPerPage = pageData.maxBlogPostPerPage || 9;
 
 	// This function takes a category as input and removes it from the categories state array
-	const handleRemoveFilterTerm = (filterTerm: string) => {
-		setFilters((prevFilters) =>
-			prevFilters.filter((item) => filterTerm !== item)
+	const handleExcludeCategory = (category: Categories) => {
+		setCategories((prevCategories) =>
+			prevCategories.filter((item) => category._id !== item._id)
 		);
+		setTags(categories);
 	};
 
 	const { hits, nbPages, hasNextPage, loadMore } = useSearch(
 		query,
 		page,
 		maxBlogPostPerPage,
-		filters,
+		[],
+		categories.map((item) => item.category || ''),
 		shouldLoadMore
 	);
 
@@ -89,9 +105,9 @@ export default function BlogPosts() {
 							indexName={config.algoliaBlogSearchIndexName}
 						>
 							<BlogSearchInput />
-							<BlogFilters
-								filters={filters}
-								onRemoveTerm={handleRemoveFilterTerm}
+							<BlogCategoryList
+								categories={categories}
+								onExcludeCategory={handleExcludeCategory}
 							/>
 							<BlogPostList />
 						</InstantSearch>

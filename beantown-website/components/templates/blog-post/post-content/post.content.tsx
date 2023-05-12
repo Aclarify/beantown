@@ -128,9 +128,7 @@ const PostContent = () => {
 						</Animate>
 					</ContentWrapper.Title>
 					<ContentWrapper.Description className="text-primary-shade-1 text-left">
-						<Animate>
-							<PostTextContent value={blogContentRaw} />
-						</Animate>
+						<PostTextContent value={blogContentRaw} />
 					</ContentWrapper.Description>
 				</ContentWrapper>
 			</div>

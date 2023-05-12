@@ -24,16 +24,12 @@ const PostTextContent: React.FC<Props> = (props) => {
 			},
 			image: (props: any) => {
 				return (
-					<div className="image-wrapper my-[3em] w-full md:-my-[5em]">
+					<div className="image-wrapper my-[3em] w-full">
 						<MaskedImageWithBackground
 							className="h-full w-full rounded-3xl object-cover"
 							image={props.value}
 							imgAltText={props.value?.asset?.altText || ''}
-							maskImg={
-								width > SCREEN_BREAKPOINTS.SM
-									? '/images/blog-post/blog-image-mask.svg'
-									: '/images/blog-post/blog-image-mask-mobile.svg'
-							}
+							maskImg={'/images/blog-post/blog-image-mask.svg'}
 							bgImg={''}
 						/>
 					</div>
