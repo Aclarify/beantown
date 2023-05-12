@@ -11,7 +11,7 @@ const HeatingCoolingBlogsContent = () => {
 		return null;
 	}
 	const hcData = pageContent.page[0];
-	const { blogsTitle, blogsDescription, blogButton, blogCards } = hcData;
+	const { blogsTitle, blogsDescription, blogButton } = hcData;
 	return (
 		<Blogs
 			blogsTitle={blogsTitle || ''}
