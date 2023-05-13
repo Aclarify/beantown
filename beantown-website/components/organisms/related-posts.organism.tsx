@@ -19,17 +19,13 @@ const RelatedBlogPosts: React.FC<IProps> = ({ currentBlogPost }) => {
 	const slider = React.useRef<Slider | null>(null);
 	const { width } = useWindowDimensions();
 
-	const tags =
+	const categories =
 		currentBlogPost.blogTags?.map((item) => item?.category || '') ?? [];
 	const currentPostId = currentBlogPost._id || undefined;
-	const { hits: relatedPosts } = useSearchByCategory(0, 9, tags, currentPostId);
-
-	console.log(
-		'RELATED POSTS',
-		relatedPosts,
-		relatedPosts?.map((blogPost, index) => {
-			return blogPost;
-		})
+	const { hits: relatedPosts } = useSearchByCategory(
+		9,
+		categories,
+		currentPostId
 	);
 
 	const previous = () => {

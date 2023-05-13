@@ -7,16 +7,10 @@ import { SearchResult } from './useSearch.hook';
 const index = algoliaClient.initIndex(config.algoliaBlogSearchIndexName);
 
 const useSearchByCategory = (
-	page = 0,
 	maxPerPage = 9,
 	categories: string[] = [],
-	objectIdToExclude?: string,
-	loadMore = false
+	objectIdToExclude?: string
 ) => {
-	console.log(
-		`PAGE: ${page}, MAX: ${maxPerPage}, CATEGORIES: ${categories}, OBJ: ${objectIdToExclude}, LOAD: ${loadMore}`
-	);
-
 	const { data, fetchNextPage, hasNextPage } = useInfiniteQuery<SearchResult>(
 		['search', categories],
 		async ({ pageParam = 0 }): Promise<SearchResult> => {

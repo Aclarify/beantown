@@ -1,12 +1,11 @@
 import React from 'react';
 
 import BlogCard from './blog-card.organism';
-import CtaWrapper from 'components/molecules/cta-wrapper.molecule';
 import { getExcerpt } from 'utils/helper';
 import Animate from 'components/molecules/animate.molecule';
-import clsx from 'clsx';
-import { buttonHoverStyle } from '@lib/styles/button.style';
 import useSearchByCategory from 'lib/hooks/useSearchByCategory';
+import { CTAButton } from './cta-text-content.organism';
+import { Categories, Maybe } from '@typing/gql/graphql';
 
 interface IProps extends React.HTMLAttributes<HTMLDivElement> {
 	blogsTitle: string;
@@ -14,15 +13,16 @@ interface IProps extends React.HTMLAttributes<HTMLDivElement> {
 	blogsButtonText: string;
 	blogsButtonTextColour: string;
 	blogsButtonBgColour: string;
-	categories: string[];
+	blogsButtonHref: string;
+	categories: Maybe<Array<Maybe<Categories>>>;
 }
 
 const Blogs: React.FC<IProps> = (props) => {
 	const { hits: blogPosts } = useSearchByCategory(
-		0,
 		3,
-		props.categories,
-		undefined
+		props.categories
+			?.filter((category) => category !== null)
+			.map((item) => item?.category) as string[]
 	);
 
 	return (
@@ -40,7 +40,7 @@ const Blogs: React.FC<IProps> = (props) => {
 						</Animate>
 					</div>
 				</div>
-				<Animate className="pb-6 sm:pb-10">
+				<div className="pb-6 sm:pb-10">
 					<div className="no-scrollbar  flex snap-x snap-mandatory flex-nowrap gap-4 overflow-x-auto ">
 						{blogPosts?.map((blog, index) => {
 							return (
@@ -51,7 +51,7 @@ const Blogs: React.FC<IProps> = (props) => {
 									<BlogCard
 										blogName={blog?.blogTitle || ''}
 										blogSlug={blog?.blogSlug?.current || ''}
-										buttonText={'Read Article'}
+										buttonText={'Read More'}
 										blogDescription={getExcerpt(blog?.blogContentRaw)}
 										thumbnailSrc={blog?.blogImage?.asset?.url || ''}
 										thumbnailAltText={blog?.blogImage?.asset?.altText || ''}
@@ -60,18 +60,15 @@ const Blogs: React.FC<IProps> = (props) => {
 							);
 						})}
 					</div>
-				</Animate>
+				</div>
 
-				<div className="items-center text-center">
-					<CtaWrapper.CTA
-						className={clsx(
-							`${props.blogsButtonTextColour} ${props.blogsButtonBgColour}
-					 button`,
-							buttonHoverStyle
-						)}
-					>
-						<p className={clsx('font-normal')}>{props.blogsButtonText}</p>
-					</CtaWrapper.CTA>
+				<div className="mt-4 items-center text-center lg:mt-8">
+					<CTAButton
+						textColor={props.blogsButtonTextColour}
+						bgColor={props.blogsButtonBgColour}
+						href={props.blogsButtonHref}
+						text={props.blogsButtonText || ''}
+					/>
 				</div>
 			</section>
 		</Animate>

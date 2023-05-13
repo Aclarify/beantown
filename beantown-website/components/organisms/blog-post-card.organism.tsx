@@ -18,7 +18,7 @@ const BlogPostCard: React.FC<Props> = ({ blogPost }) => {
 							alt={blogPost.blogImage?.asset?.altText || ''}
 							width="600"
 							height="600"
-							className="h-60 w-full  rounded-t-3xl object-cover  md:h-72 xl:h-80 "
+							className="h-60 w-full rounded-t-3xl object-cover md:h-72 xl:h-80"
 						/>
 					</div>
 
