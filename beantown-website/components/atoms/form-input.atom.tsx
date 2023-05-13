@@ -18,7 +18,9 @@ interface Props {
 	register?: UseFormRegister<any>;
 	error?: any;
 	showErrorText?: boolean;
-	onChange?: (event: React.ChangeEvent<HTMLInputElement>) => void;
+	onChange?: (
+		event: React.ChangeEvent<HTMLInputElement> & { key: string }
+	) => void;
 	onKeyDown?: (event: React.KeyboardEvent<HTMLInputElement>) => void;
 }
 const FormInput: React.FC<Props> = ({

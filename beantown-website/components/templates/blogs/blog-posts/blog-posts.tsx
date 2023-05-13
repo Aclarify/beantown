@@ -53,7 +53,6 @@ export default function BlogPosts() {
 		page,
 		maxBlogPostPerPage,
 		filters,
-		[],
 		shouldLoadMore
 	);
 
