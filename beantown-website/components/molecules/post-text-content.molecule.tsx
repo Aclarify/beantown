@@ -1,7 +1,7 @@
 import React from 'react';
 import { PortableText } from '@portabletext/react';
 import clsx from 'clsx';
-import MaskedImageWithBackground from '../organisms/masked-image-with-background.organism';
+import MaskedImageWithBackground from 'components/organisms/masked-image-with-background.organism';
 import useWindowDimensions from 'lib/hooks/use-window-dimensions.hook';
 import { SCREEN_BREAKPOINTS } from '@typing/common/interfaces/devices.interface';
 

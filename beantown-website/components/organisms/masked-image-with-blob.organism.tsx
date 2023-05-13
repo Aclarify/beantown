@@ -6,6 +6,8 @@ interface IProps extends React.HTMLAttributes<HTMLDivElement> {
 	imgAltText: string;
 	width: number;
 	height: number;
+	maxHeight?: number;
+	minHeight?: number;
 	maskImg: string;
 	maskPosition?: string;
 	bgImg: string;
@@ -35,6 +37,8 @@ const MaskedImageWithBackgroundVector: React.FC<IProps> = (props) => {
 					maskSize: 'contain',
 					maskRepeat: 'no-repeat',
 					maskPosition: `${props.maskPosition ?? 'center'}`,
+					...(props.minHeight && { minHeight: `${props.minHeight}px` }),
+					...(props.maxHeight && { maxHeight: `${props.maxHeight}px` }),
 				}}
 			/>
 		</div>

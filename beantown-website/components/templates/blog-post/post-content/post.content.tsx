@@ -56,13 +56,33 @@ const PostContent = () => {
 			id="section-wrapper"
 			className="z-20 mb-10 flex flex-col overflow-hidden pt-24 pb-20  sm:gap-y-24  sm:pt-32 lg:pt-40 "
 		>
-			<div className="image-wrapper  3xl:max-h-[960px] 3xl:min-h-[720px] w-full sm:max-h-[420px] sm:min-h-[320px] lg:max-h-[580px] xl:max-h-[580px]">
+			<div className="image-wrapper 3xl:max-h-[960px] 3xl:min-h-[720px] max-h-[300px] w-full sm:max-h-[256px] sm:min-h-[250px] md:max-h-[300px] md:min-h-[300px] lg:max-h-[500px] lg:min-h-[500px] xl:max-h-[580px]">
 				<MaskedImageWithBackgroundVector
 					className="h-full w-full rounded-3xl object-cover"
 					imageURL={blogImage?.asset?.url || ''}
 					imgAltText={blogImage?.asset?.altText || ''}
-					width={width > SCREEN_BREAKPOINTS.SM ? 1000 : 500}
-					height={width > SCREEN_BREAKPOINTS.SM ? 580 : 280}
+					width={1000}
+					height={1000}
+					minHeight={
+						width > SCREEN_BREAKPOINTS.LG
+							? 650
+							: width > SCREEN_BREAKPOINTS.MD
+							? 500
+							: width > SCREEN_BREAKPOINTS.SM
+							? 480
+							: width > 450
+							? 400
+							: width > 380
+							? 200
+							: 180
+					}
+					maxHeight={
+						width > SCREEN_BREAKPOINTS.MD
+							? 580
+							: width > SCREEN_BREAKPOINTS.SM
+							? 260
+							: 260
+					}
 					maskImg={
 						width > SCREEN_BREAKPOINTS.SM
 							? '/images/blog-post/blog-image-mask.svg'
@@ -72,7 +92,7 @@ const PostContent = () => {
 					bgImg={''}
 				/>
 			</div>
-			<div className="mt-12 rounded-xl bg-white py-16 px-5 text-center lg:rounded-3xl lg:px-20">
+			<div className="mt-4 rounded-xl bg-white py-16 px-5 text-center md:mt-8 lg:rounded-3xl lg:px-20 2xl:mt-12">
 				<ContentWrapper>
 					<ContentWrapper.Title className="text-left ">
 						<Animate bottom>
