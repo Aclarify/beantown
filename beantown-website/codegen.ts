@@ -5,7 +5,7 @@ dotenv.config({ path: `.env.${process.env.NODE_ENV}` });
 const config: CodegenConfig = {
 	overwrite: true,
 	schema: process.env.NEXT_PUBLIC_SANITY_URL,
-	documents: 'lib/queries/pages/get-memberships.query.ts',
+	documents: 'lib/queries/**/*.ts',
 	generates: {
 		'typing/gql/': {
 			preset: 'client',

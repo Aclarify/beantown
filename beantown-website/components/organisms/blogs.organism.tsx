@@ -19,12 +19,10 @@ interface IProps extends React.HTMLAttributes<HTMLDivElement> {
 
 const Blogs: React.FC<IProps> = (props) => {
 	const { hits: blogPosts } = useSearchByCategory(
-		0,
 		3,
 		props.categories
 			?.filter((category) => category !== null)
-			.map((item) => item?.category) as string[],
-		undefined
+			.map((item) => item?.category) as string[]
 	);
 
 	return (
