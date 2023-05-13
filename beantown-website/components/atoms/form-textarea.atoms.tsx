@@ -15,7 +15,7 @@ interface Props {
 	value?: string;
 	autoComplete?: string;
 	register?: UseFormRegister<any>;
-	error?: FieldError;
+	error?: any;
 	showErrorText?: boolean;
 	onChange: (event: React.ChangeEvent<HTMLTextAreaElement>) => void;
 }

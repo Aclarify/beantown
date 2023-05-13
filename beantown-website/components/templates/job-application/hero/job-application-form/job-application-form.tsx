@@ -15,18 +15,13 @@ import Image from 'next/image';
 import FormUploadFile from 'components/atoms/form-file-upload.atom';
 import Modal from 'components/organisms/modal.organism';
 import JobApplicationModal from './job-application-modal';
-import { CreateJobApplicationInboundDto } from '@lib/api/careers/jobApplication.handler';
 import { createJobApplication } from '@lib/clients/services/careers/job-application.service';
-import {
-	isValidFileSize,
-	isValidFileType,
-	uploadFileToOneDrive,
-} from 'utils/file-upload.helper';
-import { getAuthToken } from '@lib/clients/services/auth/auth.service';
+import { isValidFileSize, isValidFileType } from 'utils/file-upload.helper';
 import ComboBox from 'components/atoms/form-combo-box.atom';
 import { useRouter } from 'next/router';
 import dynamic from 'next/dynamic';
 import { config } from '@lib/config';
+import { JobApplicationFormDto } from '@typing/api/dto';
 
 const AddressAutofill = dynamic(
 	() => import('@mapbox/search-js-react').then((c) => c.AddressAutofill),
@@ -34,22 +29,6 @@ const AddressAutofill = dynamic(
 		ssr: false,
 	}
 );
-
-type JobApplicationFormValues = {
-	email: string;
-	firstName: string;
-	lastName: string;
-	phoneNumber: string;
-	address1: string;
-	address2: string;
-	city: string;
-	state: string;
-	zipCode: string;
-	resume: File | null;
-	experience: string;
-	jobOption: string;
-	jobDesired: string;
-};
 
 const validationSchema = Yup.object().shape({
 	email: Yup.string()
@@ -110,7 +89,6 @@ const JobApplicationForm: React.FC = () => {
 			jobDesired: '',
 		},
 	};
-	const accessToken = useRef<string | null>(null);
 	const mapBoxAccessToken = config.mapBoxAccessToken;
 
 	const {
@@ -118,17 +96,9 @@ const JobApplicationForm: React.FC = () => {
 		formState: { errors },
 		setValue,
 		control,
-	} = useForm<JobApplicationFormValues>(formOptions);
+	} = useForm<JobApplicationFormDto>(formOptions);
 	const [showConfirmationDialog, setShowConfirmationDialog] = useState(false);
 	const router = useRouter();
-
-	useEffect(() => {
-		// Get the access token from the server
-		const accessTokenPromise = getAuthToken();
-		accessTokenPromise.then((token) => {
-			accessToken.current = token;
-		});
-	}, []);
 
 	useEffect(() => {
 		if (router.query['positionName']) {
@@ -153,67 +123,58 @@ const JobApplicationForm: React.FC = () => {
 		return { label: data?.label, value: data?.value };
 	});
 
-	const onSubmit: SubmitHandler<JobApplicationFormValues> = async (data) => {
-		// Submit form data to server
-		if (data) {
-			// Frame the form data to be sent to server
-			const formData = new FormData();
-			// formData.append('file', data.resume);
+	const onSubmit: SubmitHandler<JobApplicationFormDto> = async (data) => {
+		try {
+			// Submit form data to server
+			if (data) {
+				// Frame the form data to be sent to server
+				const formData = new FormData();
+				formData.append('file', data.resume || '');
+				// Append all the other form data
+				formData.append('firstName', data.firstName);
+				formData.append('lastName', data.lastName);
+				formData.append('email', data.email);
+				formData.append('phoneNumber', data.phoneNumber);
+				formData.append('address1', data.address1);
+				formData.append('address2', data.address2);
+				formData.append('city', data.city);
+				formData.append('state', data.state);
+				formData.append('zipCode', data.zipCode);
+				formData.append('experience', data.experience);
+				formData.append('jobOption', data.jobOption);
+				formData.append('jobDesired', data.jobDesired);
 
-			const jobApplicationDetails: CreateJobApplicationInboundDto = {
-				name: `${data.firstName} ${data.lastName}`,
-				contactInfo: {
-					email: data.email,
-					phoneNumber: data.phoneNumber,
-				},
-				address: {
-					address1: data.address1,
-					address2: data.address2,
-					city: data.city,
-					state: data.state,
-					zip: data.zipCode,
-					country: 'USA',
-				},
-				jobDetail: {
-					positionApplyingFor: data.jobOption,
-					employmentDesired: data.jobDesired,
-					aboutApplicant: data.experience,
-					resumeURL: '', // Convert this to Form data
-				},
-			};
-			formData.append(
-				'jobApplicationData',
-				JSON.stringify(jobApplicationDetails)
-			);
+				const jobApplicationPromise = createJobApplication(formData);
 
-			const jobApplicationPromise = createJobApplication(jobApplicationDetails);
-
-			toast.promise(
-				jobApplicationPromise,
-				{
-					loading: 'Submitting...',
-					error: (err) => {
-						console.error('Error: ', err);
-						return `Cannot complete this operation, please try again later`;
+				toast.promise(
+					jobApplicationPromise,
+					{
+						loading: 'Submitting...',
+						error: (err) => {
+							console.error('Error: ', err);
+							return `Cannot complete this operation, please try again later`;
+						},
+						success: () => {
+							setShowConfirmationDialog(true);
+							return `Successfully submitted`;
+						},
 					},
-					success: () => {
-						setShowConfirmationDialog(true);
-						return `Successfully submitted`;
-					},
-				},
-				{
-					style: {
-						minWidth: '250px',
-					},
-				}
-			);
+					{
+						style: {
+							minWidth: '250px',
+						},
+					}
+				);
+			}
+		} catch (error) {
+			console.error('Error: ', error);
+			toast.error('Cannot complete this operation, please try again later');
 		}
 	};
 
 	const onResumeFileChange = (file: File) => {
-		if (file && accessToken.current) {
+		if (file) {
 			setValue('resume', file, { shouldValidate: true });
-			// uploadFileToOneDrive(file, accessToken.current);
 		}
 	};
 
