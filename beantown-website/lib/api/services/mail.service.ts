@@ -1,5 +1,5 @@
 import nodemailer from 'nodemailer';
-import { CreateJobApplicationInboundDto } from '../careers/jobApplication.handler';
+import { JobApplicationFormDto } from '@typing/api/dto';
 
 const transporter = nodemailer.createTransport({
 	host: process.env.SMTP_HOST,
@@ -12,19 +12,34 @@ const transporter = nodemailer.createTransport({
 });
 
 export const sendEmailNotification = async (
-	jobApplication: CreateJobApplicationInboundDto
+	jobApplication: JobApplicationFormDto,
+	resumeURL: string
 ): Promise<boolean> => {
-	const { name, contactInfo } = jobApplication;
+	const { firstName, lastName, email, phoneNumber, jobOption } = jobApplication;
 
+	// TODO: Move the email template to a separate file or use templates from MailProvider
 	const message = {
 		from: process.env.SMTP_FROM_ADDRESS,
 		to: process.env.SMTP_TO_ADDRESS,
-		subject: 'New Job Application',
+		subject: `New Job Application for the post of ${jobOption}`,
 		text: `
-            Name: ${name}
-            Email: ${contactInfo?.email}
-            Phone: ${contactInfo?.phoneNumber}
-        `,
+    Dear HR Team,
+
+    A new job application has been received for the ${jobOption} position. Please find the candidate's information below:
+
+    Candidate's Name: ${firstName} ${lastName}
+    Position Applied For: ${jobOption}
+    Email: ${email}
+    Phone Number: ${phoneNumber}
+    Resume: ${resumeURL}
+
+    Please take the necessary steps to review the candidate's application and follow up with them as appropriate.
+
+    Thank you for your attention to this matter.
+
+    Best regards,
+    Beantown Team
+  `,
 	};
 
 	try {

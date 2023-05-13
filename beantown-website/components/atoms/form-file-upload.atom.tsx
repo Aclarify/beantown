@@ -15,7 +15,7 @@ interface Props {
 	className?: string;
 	placeholderText?: string;
 	value?: File | null;
-	error?: FieldError;
+	error?: any;
 	showErrorText?: boolean;
 	onFileChange: (file: File) => void;
 }

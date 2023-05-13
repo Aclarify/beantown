@@ -4,7 +4,7 @@ dotenv.config()
 
 const projectId = process.env.SANITY_STUDIO_PROJECT_ID
 const dataset = process.env.SANITY_STUDIO_DATASET
-const readToken = process.env.NEXT_PUBLIC_SANITY_API_READ_TOKEN
+const readToken = process.env.SANITY_READ_WRITE_TOKEN
 
 const client = createClient({
   projectId: projectId,
@@ -14,11 +14,16 @@ const client = createClient({
   useCdn: true, // `false` if you want to ensure fresh data
 })
 
+console.log('projectId', projectId)
+console.log('dataset', dataset)
+console.log('client', client)
+
 const query = `
   *[ _type in ["home"] ]
   {_id, "refs": count(*[ references(^._id) ])}
   [ refs == 0 ]
   ._id
+  
 `
 
 // To unset fields, use the following query:

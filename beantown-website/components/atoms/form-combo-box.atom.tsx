@@ -12,7 +12,7 @@ interface Props {
 	options: Array<{ label: string; value: string }>;
 	onChange: (event: React.ChangeEvent<any>) => void;
 	register?: UseFormRegister<any>;
-	error?: FieldError;
+	error?: any;
 	showErrorText?: boolean;
 	bgColor?: string;
 	fontColor?: string;
