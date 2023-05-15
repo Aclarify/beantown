@@ -2,7 +2,7 @@ import { gql } from '@apollo/client';
 import footerQuery from './get-footer.query';
 import navQuery from './get-nav.query';
 
-const financingQuery = `allFinancing {
+const financingQuery = ` allFinancing {
 			pageTitle
 			metaDescription
 			logoLight {
@@ -32,6 +32,17 @@ const financingQuery = `allFinancing {
 				}
 			}
 			heroDescription
+  		planIcon{
+        asset{
+          url
+          _id
+          _key
+        }
+      }
+  		planCards{
+        titleText
+        description
+      }
 			aboutSectionTitle
 			aboutSectionDescription {
 				contentRaw
@@ -43,41 +54,18 @@ const financingQuery = `allFinancing {
 					_key
 				}
 			}
-			benefitsTitle
-			benefitsDescription {
-				contentRaw
+		
+			faqTitle
+			faqDescription
+			faqButton {
+				text
+				href
 			}
-			benefitsImage {
-				asset {
-					url
-					_id
-					_key
-				}
+			faqList {
+				question
+                answer
 			}
-			serviceAreaSection {
-				serviceAreaTitle
-				serviceAreaDescription
-				serviceAreaImage {
-					asset {
-						url
-						_id
-						_key
-					}
-				}
-				serviceAreas {
-					title
-					listItem
-				}
-			}
-			testimonialSection {
-				testimonialTitle
-				testimonialDescription
-				testimonialCards {
-					titleText
-					subText
-					description
-				}
-			}
+		
 			ctaTitle
 			ctaDescription {
 				contentRaw
@@ -94,7 +82,8 @@ const financingQuery = `allFinancing {
 				href
 			}
 		
-		}`;
+		}
+`;
 export default gql`
 	query {
 		page: ${financingQuery}
