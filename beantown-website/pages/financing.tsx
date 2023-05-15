@@ -13,8 +13,6 @@ import { GlobalContext } from '@contexts/global/global.context';
 import BookNowButton from 'components/atoms/book-now-button.atom';
 import FinancingHeroSection from 'components/templates/financing/hero/financing-hero.section';
 import AboutFinancingSection from 'components/templates/financing/about-financing/about-financing.section';
-import FinancingServiceAreas from 'components/templates/financing/service-areas/service-areas';
-import FinancingTestimonials from 'components/templates/financing/testimonials/financing-testimonials';
 import FinancingCTASection from 'components/templates/financing/cta/financing-cta.section';
 export interface FinancingContentProps {
 	page: Financing[];
@@ -69,9 +67,7 @@ const FinancingPage: React.FC = (props) => {
 				</div>
 			</Header>
 			<FinancingHeroSection />
-			<AboutFinancingSection />
-			<FinancingServiceAreas />
-			<FinancingTestimonials />
+			<AboutFinancingSection />			
 			<FinancingCTASection />
 			<FooterSection logoDesktop={logoLight?.image} content={footerData} />
 		</div>
