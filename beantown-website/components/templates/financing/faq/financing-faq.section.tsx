@@ -8,9 +8,9 @@ const FinancingFaqSection = () => {
 		<>
 			<section
 				id="faq"
-				className=" z-5  relative mb-[-4em]  "
+				className=" z-5   relative mb-[-4em]  "
 			>
-				<div>
+				<div className='-mt-28 '>
 					<FinancingFaqContent />
 					<WaveWrapper waveURL={bottomWave}></WaveWrapper>
 				</div>
