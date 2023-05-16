@@ -8,7 +8,7 @@ const FinancingFaqSection = () => {
 		<>
 			<section
 				id="faq"
-				className=" z-5   relative mb-[-4em]  "
+				className=" z-5 -mb-2  relative md:mb-[-4em]  "
 			>
 				<div className='-mt-28 '>
 					<FinancingFaqContent />
