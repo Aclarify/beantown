@@ -5,6 +5,7 @@ import SectionContentWrapper from 'components/molecules/section-content-wrapper.
 import AboutMassSaveContent from './about-mass-save.content';
 import topWave from 'public/images/mass-save/mass-save-hero-wave-blob.svg';
 import MassSaveFeaturesContent from '../features/mass-save-features.content';
+import MassSaveAdditionalFeaturesContent from '../features/mass-save-additional-features.content';
 
 const AboutMassSaveSection = () => {
 	return (
@@ -24,6 +25,7 @@ const AboutMassSaveSection = () => {
 				<SectionContentWrapper>
 					<AboutMassSaveContent />
 					<MassSaveFeaturesContent />
+					<MassSaveAdditionalFeaturesContent/>
 				</SectionContentWrapper>
 			</div>
 			<Image

@@ -10,6 +10,7 @@ import MaskedImageWithBackground from 'components/organisms/masked-image-with-ba
 import PlanCard from 'components/organisms/financing-plan-card.organism';
 import { isNullish } from '@apollo/client/cache/inmemory/helpers';
 import PlanModal from 'components/organisms/financing-plan-card-model.organism';
+import { Index } from 'react-instantsearch-dom';
 
 const FinancingPlanCardsContent = () => {
 	const [showPlanCardModel, setShowPlanCardModel] = useState(false);
@@ -34,48 +35,30 @@ const FinancingPlanCardsContent = () => {
 	};
 
 	return (
-		<div id="section-wrapper" className="z-10 mb-[20em]  flex flex-col   ">
+		<div id="section-wrapper" className="z-10 mb-[6em]  flex flex-col   ">
 			<Animate>
-				<h2 className=" text-primary-black text-center ">{'Plan'}</h2>
+				<h2 className=" text-primary-black text-center pb-12 md:mb-16 mt-4 md:mt-8 ">{'Plan'}</h2>
 
-				<div className="container mx-auto  flex  flex-wrap  items-center justify-center gap-8">
-					<div className="justify-stretch   flex  h-[348px] w-[380px]  flex-col items-center    rounded-2xl bg-white p-2 shadow-[rgba(44,_48,_88,_0.16)_0px_8px_200px] md:h-[380px]  md:gap-4 md:p-8 lg:h-[570px]  lg:w-[480px]   lg:rounded-3xl   ">
-						<PlanCard
-							iconImage={benefitsImage || ''}
-							planTitle={benefitsTitle || ''}
-							planDescription={
-								'Lorem ipsum dolor sit amet consectetur adipisicing elit. Quia at quae suscipit quaerat magnam cum. Totam quaerat nobis ex similique.'
-							}
-							onShowMore={() => onPlanCardClick(PlanCard)}
-						/>
-					</div>
-					<div className="justify-stretch   flex  h-[348px] w-[380px]  flex-col items-center    rounded-2xl bg-white p-2 shadow-[rgba(44,_48,_88,_0.16)_0px_8px_200px] md:h-[380px]  md:gap-4 md:p-8 lg:h-[570px]  lg:w-[480px]   lg:rounded-3xl   ">
-						<PlanCard
-							iconImage={benefitsImage || ''}
-							planTitle={benefitsTitle || ''}
-							planDescription={
-								'Lorem ipsum dolor sit amet consectetur adipisicing elit. Quia at quae suscipit quaerat magnam cum. Totam quaerat nobis ex similique.'
-							}
-						/>
-					</div>
-					<div className="justify-stretch   flex  h-[348px] w-[380px]  flex-col items-center    rounded-2xl bg-white p-2 shadow-[rgba(44,_48,_88,_0.16)_0px_8px_200px] md:h-[380px]  md:gap-4 md:p-8 lg:h-[570px]  lg:w-[480px]   lg:rounded-3xl   ">
-						<PlanCard
-							iconImage={benefitsImage || ''}
-							planTitle={benefitsTitle || ''}
-							planDescription={
-								'Lorem ipsum dolor sit amet consectetur adipisicing elit. Quia at quae suscipit quaerat magnam cum. Totam quaerat nobis ex similique.'
-							}
-						/>
-					</div>
-					<div className="justify-stretch   flex  h-[348px] w-[380px]  flex-col items-center    rounded-2xl bg-white p-2 shadow-[rgba(44,_48,_88,_0.16)_0px_8px_200px] md:h-[380px]  md:gap-4 md:p-8 lg:h-[570px]  lg:w-[480px]   lg:rounded-3xl   ">
-						<PlanCard
-							iconImage={benefitsImage || ''}
-							planTitle={benefitsTitle || ''}
-							planDescription={
-								'Lorem ipsum dolor sit amet consectetur adipisicing elit. Quia at quae suscipit quaerat magnam cum. Totam quaerat nobis ex similique.'
-							}
-						/>
-					</div>
+				<div className="container mx-auto  max-w-[1200px] flex  flex-wrap  items-center justify-center gap-8">
+					{planCards?.map((cardData,index)=>{
+						return (
+							<div
+								key={index}
+								className="justify-stretch   flex  h-[348px] w-[380px]  flex-col items-center    rounded-2xl bg-white p-2 shadow-[rgba(44,_48,_88,_0.16)_0px_8px_200px] md:h-[380px]  md:gap-4 md:p-8 lg:h-[570px]  lg:w-[480px]   lg:rounded-3xl   "
+							>
+								<PlanCard
+									iconImage={planIcon || ''}
+									planTitle={cardData?.titleText || ''}
+									planDescription={
+										cardData?.description || ''
+									}
+									onShowMore={() => onPlanCardClick(PlanCard)}
+								/>
+							</div>
+						);
+					})}
+					
+					
 				</div>
 			</Animate>
 			<PlanModal

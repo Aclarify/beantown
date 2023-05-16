@@ -39,8 +39,7 @@ const FinancingPage: React.FC = (props) => {
 	const { logoLight, logoDark, pageTitle, metaDescription } = pageData;
 	const PageHead = () => {
 		return (
-			<Head>
-				{/* TODO to fetch from CMS */}
+			<Head>				
 				<title>{pageTitle}</title>
 				<meta name="description" content={metaDescription || ''} />
 			</Head>
