@@ -32,6 +32,7 @@ const financingQuery = ` allFinancing {
 				}
 			}
 			heroDescription
+			planSectionTitle
   		planIcon{
         asset{
           url

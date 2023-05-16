@@ -50,6 +50,11 @@ export default defineType({
         hotspot: true,
       },
     }),
+    defineField({
+      name: 'planSectionTitle',
+      title: 'plan Section Title',
+      type: 'string',
+    }),
 
     defineField({
       name: 'planIcon',

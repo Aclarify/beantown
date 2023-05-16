@@ -34,10 +34,10 @@ const MassSaveAdditionalFeaturesContent = () => {
 					className="mb-8 md:mt-12  md:basis-1/2 md:px-20 lg:px-10  "
 				>
 					<MaskedImageWithBackground
-						image={MassSaveSection3Image || null}
+						image={MassSaveSection3Image || null }
 						imgAltText={MassSaveSection3Image?.asset?.altText || ''}
-						maskImg="./images/about-us/mission/about-us-mission-mask-blob.svg"
-						bgImg="./images/about-us/mission/about-us-mission-bg-blob.svg"
+						maskImg="/images/about-us/mission/about-us-mission-mask-blob.svg"
+						bgImg="/images/about-us/mission/about-us-mission-bg-blob.svg"
 					/>
 				</div>
 				<div

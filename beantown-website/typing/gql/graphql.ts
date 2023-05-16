@@ -939,6 +939,7 @@ export type Financing = Document & {
 	pageTitle?: Maybe<Scalars['String']>;
 	planCards?: Maybe<Array<Maybe<TitleDescription>>>;
 	planIcon?: Maybe<Image>;
+	planSectionTitle?: Maybe<Scalars['String']>;
 };
 
 export type FinancingFilter = {
@@ -969,6 +970,7 @@ export type FinancingFilter = {
 	name?: InputMaybe<StringFilter>;
 	pageTitle?: InputMaybe<StringFilter>;
 	planIcon?: InputMaybe<ImageFilter>;
+	planSectionTitle?: InputMaybe<StringFilter>;
 };
 
 export type FinancingSorting = {
@@ -993,6 +995,7 @@ export type FinancingSorting = {
 	name?: InputMaybe<SortOrder>;
 	pageTitle?: InputMaybe<SortOrder>;
 	planIcon?: InputMaybe<ImageSorting>;
+	planSectionTitle?: InputMaybe<SortOrder>;
 };
 
 export type FloatFilter = {

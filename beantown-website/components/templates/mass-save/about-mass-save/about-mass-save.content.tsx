@@ -19,7 +19,7 @@ const AboutMassSaveContent = () => {
 	const pageData = pageContent.page[0];
 	const { aboutMassSaveTitle, aboutMassSaveDescription, aboutMassSaveImage } =
 		pageData;
-
+	
 	return (
 		<div
 			id="section-wrapper"

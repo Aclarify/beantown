@@ -59,6 +59,7 @@ const massSaveQuery = `allMassSave {
  			 MassSaveSection3Image{
 				asset{
 				url
+				_id
 				_key
 				}
 			}

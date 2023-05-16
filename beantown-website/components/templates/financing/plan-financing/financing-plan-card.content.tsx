@@ -23,7 +23,7 @@ const FinancingPlanCardsContent = () => {
 		return null;
 	}
 	const pageData = pageContent.page[0];
-	const { planCards,planIcon } = pageData;
+	const { planCards, planIcon, planSectionTitle } = pageData;
 
 	const handleOnClose = () => {
 		setShowPlanCardModel(false);
@@ -37,10 +37,12 @@ const FinancingPlanCardsContent = () => {
 	return (
 		<div id="section-wrapper" className="z-10 mb-[6em]  flex flex-col   ">
 			<Animate>
-				<h2 className=" text-primary-black text-center pb-12 md:mb-16 mt-4 md:mt-8 ">{'Plan'}</h2>
+				<h2 className=" text-primary-black mt-4 pb-12 text-center md:mb-16 md:mt-8 ">
+					{planSectionTitle}
+				</h2>
 
-				<div className="container mx-auto  max-w-[1200px] flex  flex-wrap  items-center justify-center gap-8">
-					{planCards?.map((cardData,index)=>{
+				<div className="container mx-auto  flex max-w-[1200px]  flex-wrap  items-center justify-center gap-8">
+					{planCards?.map((cardData, index) => {
 						return (
 							<div
 								key={index}
@@ -49,16 +51,12 @@ const FinancingPlanCardsContent = () => {
 								<PlanCard
 									iconImage={planIcon || ''}
 									planTitle={cardData?.titleText || ''}
-									planDescription={
-										cardData?.description || ''
-									}
+									planDescription={cardData?.description || ''}
 									onShowMore={() => onPlanCardClick(PlanCard)}
 								/>
 							</div>
 						);
 					})}
-					
-					
 				</div>
 			</Animate>
 			<PlanModal

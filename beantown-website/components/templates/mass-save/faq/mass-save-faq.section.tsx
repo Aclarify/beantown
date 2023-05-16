@@ -2,6 +2,7 @@ import React from 'react';
 import MassSaveFaqContent from './mass-save-faq.content';
 import bottomWave from 'public/images/mass-save/mass-save-faq-bottom-wave.svg';
 import WaveWrapper from 'components/molecules/wave-wrapper.molecule';
+import Image from 'next/image'
 
 const MassSaveFaqSection = () => {
 	return (
@@ -14,6 +15,7 @@ const MassSaveFaqSection = () => {
 					<MassSaveFaqContent />
 					<WaveWrapper waveURL={bottomWave}></WaveWrapper>
 				</div>
+				
 			</section>
 		</>
 	);
