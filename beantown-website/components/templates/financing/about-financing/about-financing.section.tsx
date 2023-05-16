@@ -30,8 +30,15 @@ const AboutFinancingSection = () => {
 				src={'/images/about-us/mission/about-us-mission-right-blob-mobile.svg'}
 				height={180}
 				width={200}
-				alt="Right Blob Mobile"
+				alt="Right Blob Mobile top"
 				className="xs:translate-x-[53%] xs:translate-y-[180%] absolute right-0 top-0 z-[-1] translate-x-[60%] translate-y-[188%] transform md:translate-x-[50%] md:translate-y-[206%] lg:hidden"
+			/>
+			<Image
+				src={'/images/about-us/mission/about-us-mission-right-blob-mobile.svg'}
+				height={180}
+				width={200}
+				alt="Right Blob Mobile bottom"
+				className="translate-x-[53%] translate-y-[843%] absolute right-0 top-0 z-[-1]  lg:hidden"
 			/>
 			<Image
 				src={'/images/about-us/mission/about-us-mission-right-blob.svg'}
