@@ -1,5 +1,6 @@
 import React, { useContext, useEffect, useRef, useState } from 'react';
 import toast from 'react-hot-toast';
+import { difference } from 'lodash';
 
 import FormLabel from 'components/atoms/form-label.atom';
 import FormInput from 'components/atoms/form-input.atom';
@@ -22,6 +23,7 @@ import { useRouter } from 'next/router';
 import dynamic from 'next/dynamic';
 import { config } from '@lib/config';
 import { JobApplicationFormDto } from '@typing/api/dto';
+import clsx from 'clsx';
 
 const AddressAutofill = dynamic(
 	() => import('@mapbox/search-js-react').then((c) => c.AddressAutofill),
@@ -29,6 +31,20 @@ const AddressAutofill = dynamic(
 		ssr: false,
 	}
 );
+
+const formFieldKeysRequired = [
+	'email',
+	'firstName',
+	'lastName',
+	'phoneNumber',
+	'address1',
+	'city',
+	'state',
+	'zipCode',
+	'experience',
+	'jobOption',
+	'jobDesired',
+];
 
 const validationSchema = Yup.object().shape({
 	email: Yup.string()
@@ -56,8 +72,8 @@ const validationSchema = Yup.object().shape({
 		),
 	experience: Yup.string()
 		.required('Please tell us about your experience')
-		.min(20, 'Please enter data, at least 20 words')
-		.max(250, 'Please enter data, at most 250 words'),
+		.min(20, 'Please enter data, at least 20 characters')
+		.max(2000, 'Please enter data, at most 2000 characters'),
 	zipCode: Yup.string()
 		.matches(/^\d{5}(-\d{4})?$/, 'Zip code is not valid')
 		.required('Your zip code is required'),
@@ -93,9 +109,10 @@ const JobApplicationForm: React.FC = () => {
 
 	const {
 		handleSubmit,
-		formState: { errors },
+		formState: { errors, dirtyFields },
 		setValue,
 		control,
+		getValues,
 	} = useForm<JobApplicationFormDto>(formOptions);
 	const [showConfirmationDialog, setShowConfirmationDialog] = useState(false);
 	const router = useRouter();
@@ -123,6 +140,10 @@ const JobApplicationForm: React.FC = () => {
 		return { label: data?.label, value: data?.value };
 	});
 
+	const isAllFieldsFilled =
+		difference(formFieldKeysRequired, Object.keys(dirtyFields)).length !== 0 ||
+		!getValues('resume');
+
 	const onSubmit: SubmitHandler<JobApplicationFormDto> = async (data) => {
 		try {
 			// Submit form data to server
@@ -143,9 +164,7 @@ const JobApplicationForm: React.FC = () => {
 				formData.append('experience', data.experience);
 				formData.append('jobOption', data.jobOption);
 				formData.append('jobDesired', data.jobDesired);
-
 				const jobApplicationPromise = createJobApplication(formData);
-
 				toast.promise(
 					jobApplicationPromise,
 					{
@@ -463,6 +482,7 @@ const JobApplicationForm: React.FC = () => {
 														placeholderText="Describe your Experience Here"
 														bgColor="white"
 														error={errors.experience}
+														maxLength={2000}
 														{...field}
 													/>
 												)}
@@ -474,7 +494,12 @@ const JobApplicationForm: React.FC = () => {
 								<div className="container m-4 mx-auto flex items-center p-4">
 									<button
 										type="submit"
-										className="bg-primary-shade-1 para-2 mx-auto mt-2 w-full rounded-xl py-3 text-white md:w-2/6 "
+										className={clsx(
+											'bg-primary-shade-1 para-2 mx-auto mt-2 w-full rounded-xl py-3 text-white md:w-2/6',
+											isAllFieldsFilled &&
+												'bg-primary-shade-2 cursor-not-allowed'
+										)}
+										disabled={isAllFieldsFilled}
 									>
 										Submit
 									</button>

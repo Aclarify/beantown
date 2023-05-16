@@ -18,6 +18,7 @@ interface Props {
 	error?: any;
 	showErrorText?: boolean;
 	onChange: (event: React.ChangeEvent<HTMLTextAreaElement>) => void;
+	maxLength?: number;
 }
 const FormTextArea: React.FC<Props> = ({
 	id,
@@ -33,6 +34,7 @@ const FormTextArea: React.FC<Props> = ({
 	error,
 	showErrorText = true,
 	onChange,
+	maxLength = 2000,
 }) => {
 	return (
 		<>
@@ -50,7 +52,7 @@ const FormTextArea: React.FC<Props> = ({
 					placeholderColor,
 					error ? 'border-service-red' : 'placeholder-gray-shade-2'
 				)}
-				maxLength={200}
+				maxLength={maxLength}
 			/>
 
 			{error && showErrorText && (
