@@ -10,7 +10,7 @@ import MassSaveAdditionalFeaturesContent from '../features/mass-save-additional-
 const AboutMassSaveSection = () => {
 	return (
 		<section
-			id="aboutMassSave"
+			id="about-mass-save"
 			className="  xs:-mt-[5em] 3xl:-mt-[32em] 4xl:-mt-[40em] relative z-10 -mt-[7em] sm:-mt-[9em] md:-mt-[11em] lg:-mt-[14em] xl:-mt-[17em] 2xl:-mt-[27em]"
 		>
 			<WaveWrapper waveURL={topWave}></WaveWrapper>

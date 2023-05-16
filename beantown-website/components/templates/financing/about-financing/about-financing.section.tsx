@@ -13,7 +13,7 @@ const AboutFinancingSection = () => {
 	const { width } = useWindowDimensions();
 	return (
 		<section
-			id="aboutFinancing"
+			id="about-financing"
 			className="  xs:-mt-[2em] 3xl:-mt-[12em] 4xl:-mt-[16em] relative z-10 -mt-[3em] sm:-mt-[3em] md:-mt-[5em] xl:-mt-[7em] 2xl:-mt-[9em]"
 		>
 			<WaveWrapper

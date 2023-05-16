@@ -8,7 +8,7 @@ const MassSaveFaqSection = () => {
 	return (
 		<>
 			<section
-				id="faq"
+				id="mass-save-faq"
 				className=" z-5  3xl:mt-[15em] relative mb-[6em] 2xl:mt-[10em]  "
 			>
 				<div>
