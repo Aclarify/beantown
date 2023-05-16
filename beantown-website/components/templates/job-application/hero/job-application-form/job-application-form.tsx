@@ -477,6 +477,7 @@ const JobApplicationForm: React.FC = () => {
 														placeholderText="Describe your Experience Here"
 														bgColor="white"
 														error={errors.experience}
+														maxLength={2000}
 														{...field}
 													/>
 												)}
