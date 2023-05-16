@@ -30,14 +30,14 @@ const AboutFinancingSection = () => {
 				src={'/images/about-us/mission/about-us-mission-right-blob-mobile.svg'}
 				height={180}
 				width={200}
-				alt="Right Blob Mobile top"
+				alt="Right top Blob Mobile"
 				className="xs:translate-x-[53%] xs:translate-y-[180%] absolute right-0 top-0 z-[-1] translate-x-[60%] translate-y-[188%] transform md:translate-x-[50%] md:translate-y-[206%] lg:hidden"
 			/>
 			<Image
 				src={'/images/about-us/mission/about-us-mission-right-blob-mobile.svg'}
 				height={180}
 				width={200}
-				alt="Right Blob Mobile bottom"
+				alt="Right bottom Blob Mobile "
 				className="translate-x-[53%] translate-y-[843%] absolute right-0 top-0 z-[-1]  lg:hidden"
 			/>
 			<Image
@@ -52,7 +52,7 @@ const AboutFinancingSection = () => {
 				height={600}
 				width={500}
 				alt="Left Blob"
-				className="  3xl:translate-x-[-45%] 3xl:translate-y-[-35%] absolute left-0 bottom-0 z-[-1] hidden translate-x-[-77%] translate-y-[-2%] transform lg:block xl:translate-x-[-75%] xl:translate-y-[4%] 2xl:translate-x-[-60%] 2xl:translate-y-[0%]"
+				className=" absolute left-0 bottom-0 z-[-1] hidden  lg:block  2xl:translate-x-[-60%] 2xl:translate-y-[-300%]"
 			/>
 			<Image
 				src={'/images/about-us/values/about-us-left-blob-mobile.svg'}
