@@ -4,19 +4,19 @@ import PlanCard from './financing-plan-card.organism';
 interface Props {
 	visible : boolean;
 	onClose: ()=>void;
-	benefitsIconImage : any;
-	benefitCardTitle :string;
-	benefitCardDescription:string;
+	planIconImage : any;
+	planCardTitle :string;
+	planCardDescription:string;
 }
 
 const PlanModal: React.FC<Props> = (props) => {	
-
+	console.log('inside modal', props.planIconImage);
 	return (
 		<Modal isVisible={props.visible} onClose={props.onClose}>
 			<PlanCard
-				iconImage={props.benefitsIconImage || ''}
-				planTitle={props.benefitCardTitle || ''}
-				planDescription={props.benefitCardDescription || ''}
+				iconImage={props.planIconImage || ''}
+				planTitle={props.planCardTitle || ''}
+				planDescription={props.planCardDescription || ''}
 			/>
 		</Modal>
 	);

@@ -1,23 +1,19 @@
 import React, { useContext, useState } from 'react';
 import { GlobalContext } from '@contexts/global/global.context';
 import { GlobalContextProps } from '@typing/common/interfaces/contexts.interface';
-import RichText from 'components/molecules/rich-text.molecule';
-import ContentWrapper from 'components/organisms/content-wrapper.organism';
-import useWindowDimensions from '@lib/hooks/use-window-dimensions.hook';
 import { FinancingContentProps } from 'pages/financing';
 import Animate from 'components/molecules/animate.molecule';
-import MaskedImageWithBackground from 'components/organisms/masked-image-with-background.organism';
 import PlanCard from 'components/organisms/financing-plan-card.organism';
-import { isNullish } from '@apollo/client/cache/inmemory/helpers';
 import PlanModal from 'components/organisms/financing-plan-card-model.organism';
-import { Index } from 'react-instantsearch-dom';
+
 
 const FinancingPlanCardsContent = () => {
 	const [showPlanCardModel, setShowPlanCardModel] = useState(false);
 	const [selectedPlanCard, setSelectedPlanCard] = useState<any>(null);
+
 	const { pageContent } =
 		useContext<GlobalContextProps<FinancingContentProps>>(GlobalContext);
-	const { width } = useWindowDimensions();
+
 
 	if (!pageContent) {
 		return null;
@@ -32,6 +28,7 @@ const FinancingPlanCardsContent = () => {
 	const onPlanCardClick = (planCard: any) => {
 		setShowPlanCardModel(true);
 		setSelectedPlanCard(planCard);
+		
 	};
 
 	return (
@@ -52,7 +49,7 @@ const FinancingPlanCardsContent = () => {
 									iconImage={planIcon || ''}
 									planTitle={cardData?.titleText || ''}
 									planDescription={cardData?.description || ''}
-									onShowMore={() => onPlanCardClick(PlanCard)}
+									onShowMore={() => onPlanCardClick(cardData)}
 								/>
 							</div>
 						);
@@ -62,9 +59,9 @@ const FinancingPlanCardsContent = () => {
 			<PlanModal
 				onClose={handleOnClose}
 				visible={showPlanCardModel}
-				benefitsIconImage={selectedPlanCard?.image || ''}
-				benefitCardTitle={selectedPlanCard?.titleText || ''}
-				benefitCardDescription={selectedPlanCard?.description || ''}
+				planIconImage={planIcon || ''}
+				planCardTitle={selectedPlanCard?.titleText || ''}
+				planCardDescription={selectedPlanCard?.description || ''}
 			/>
 		</div>
 	);

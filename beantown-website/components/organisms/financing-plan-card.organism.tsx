@@ -1,4 +1,3 @@
-
 import CMSImageWrapper from 'components/molecules/cms-image-wrapper.molecule';
 import ReadMore from 'components/molecules/read-more.molecule';
 import React from 'react'
@@ -9,6 +8,7 @@ interface Props {
 	onShowMore?: () => void;
 }
 export const PlanCard: React.FC<Props> = (props) => {	
+	console.log('inside card organism',props.iconImage)
 
 	return (
 		<>
