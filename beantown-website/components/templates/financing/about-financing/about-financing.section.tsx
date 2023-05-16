@@ -7,6 +7,7 @@ import AboutFinancingContent from './about-financing.content';
 import topWave from 'public/images/about-us/mission/about-us-mission-top-wave.svg';
 import topWaveMobile from 'public/images/about-us/mission/about-us-mission-top-wave-mobile.svg';
 import { SCREEN_BREAKPOINTS } from '@typing/common/interfaces/devices.interface';
+import FinancingPlanCardsContent from '../plan-financing/financing-plan-card.content';
 
 const AboutFinancingSection = () => {
 	const { width } = useWindowDimensions();
@@ -49,6 +50,7 @@ const AboutFinancingSection = () => {
 			/>
 			<div className="3xl:mt-[-10em] 4xl:-mt-[15em] 3xl:mb-[-10em] xs:mb-[0em] relative z-20 md:mt-[-4em] xl:mt-[-8em] xl:mb-[-3em] 2xl:mb-[-6em] ">
 				<SectionContentWrapper>
+					<FinancingPlanCardsContent/>
 					<AboutFinancingContent />
 				</SectionContentWrapper>
 			</div>

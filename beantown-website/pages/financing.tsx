@@ -14,6 +14,7 @@ import BookNowButton from 'components/atoms/book-now-button.atom';
 import FinancingHeroSection from 'components/templates/financing/hero/financing-hero.section';
 import AboutFinancingSection from 'components/templates/financing/about-financing/about-financing.section';
 import FinancingCTASection from 'components/templates/financing/cta/financing-cta.section';
+import FinancingFaqSection from 'components/templates/financing/faq/financing-faq.section';
 export interface FinancingContentProps {
 	page: Financing[];
 	header: Nav[];
@@ -67,7 +68,8 @@ const FinancingPage: React.FC = (props) => {
 				</div>
 			</Header>
 			<FinancingHeroSection />
-			<AboutFinancingSection />			
+			<AboutFinancingSection />	
+			<FinancingFaqSection/>		
 			<FinancingCTASection />
 			<FooterSection logoDesktop={logoLight?.image} content={footerData} />
 		</div>
