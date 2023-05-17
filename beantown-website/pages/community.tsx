@@ -14,6 +14,7 @@ import BookNowButton from 'components/atoms/book-now-button.atom';
 import CommunityHeroSection from 'components/templates/community/hero/community-hero-section';
 import CommunityCTASection from 'components/templates/community/cta/community-cta.section';
 import EventsMediaFeedSection from 'components/templates/community/events-media-feed/events-media-feed.section';
+import { withFeatureFlag } from 'components/templates/under-construction/with-feature-flag';
 
 export interface CommunityContentProps {
 	page: Community[];
@@ -46,6 +47,20 @@ const CommunityPage: React.FC = () => {
 			</Head>
 		);
 	};
+
+	const flagValue = process.env.NEXT_PUBLIC_COMMUNITY_PAGE;
+
+	const FlaggedContent = withFeatureFlag(
+		() => (
+			<>
+				<CommunityHeroSection />
+				<EventsMediaFeedSection />
+				<CommunityCTASection />
+			</>
+		),
+		flagValue
+	);
+
 	return (
 		<div id="community" className="bg-white">
 			<PageHead />
@@ -67,9 +82,7 @@ const CommunityPage: React.FC = () => {
 					</BookNowButton>
 				</div>
 			</Header>
-			<CommunityHeroSection />
-			<EventsMediaFeedSection />
-			<CommunityCTASection />
+			<FlaggedContent />
 			<FooterSection logoDesktop={logoLight?.image} content={footerData} />
 		</div>
 	);

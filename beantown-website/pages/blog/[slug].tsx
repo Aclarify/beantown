@@ -16,6 +16,7 @@ import { GetStaticPaths } from 'next';
 import PostContentSection from 'components/templates/blog-post/post-content/post.section';
 import { getExcerpt } from 'utils/helper';
 import { useRouter } from 'next/router';
+import { withFeatureFlag } from 'components/templates/under-construction/with-feature-flag';
 
 export interface BlogPostContentProps {
 	page: Blogs[];
@@ -84,6 +85,16 @@ const BlogPostPage: React.FC = () => {
 		);
 	};
 
+	const FlaggedContent = withFeatureFlag(
+		() => (
+			<>
+				<PostContentSection />
+				<BlogsPageCTASection />
+			</>
+		),
+		process.env.NEXT_PUBLIC_BLOG_POSTS_PAGE
+	);
+
 	return (
 		<div id="blog-post" className="bg-secondary-shade-3">
 			<PageHead />
@@ -105,8 +116,7 @@ const BlogPostPage: React.FC = () => {
 					</BookNowButton>
 				</div>
 			</Header>
-			<PostContentSection />
-			<BlogsPageCTASection />
+			<FlaggedContent />
 			<FooterSection logoDesktop={logoLight?.image} content={footerData} />
 		</div>
 	);
