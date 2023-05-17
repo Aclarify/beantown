@@ -7,18 +7,23 @@ interface FeatureFlagComponentProps {
 	children: React.ReactNode;
 }
 
+export const getIsFeatureFlagOn = (envVariable?: string): boolean =>
+	envVariable === FEATURE_FLAG.ON;
+
 /**
  * HOC to check if feature flag is on or off
  * @param WrappedComponent - Component to render if feature flag is on
  * @param envVariable - Environment variable to check if feature flag is on or off
  * @returns - WrappedComponent if feature flag is on, UnderConstructionSection if feature flag is off
  */
-export const withFeatureFlag = <WrapperComponentProps extends object>(
+export const withFeatureFlag = <
+	WrapperComponentProps extends Record<string, any>
+>(
 	WrappedComponent: React.ComponentType<WrapperComponentProps>,
 	envVariable?: string
 ): React.FC<WrapperComponentProps> => {
 	const ComponentWithFeatureFlag: React.FC<WrapperComponentProps> = (props) => {
-		if (envVariable === FEATURE_FLAG.ON) {
+		if (getIsFeatureFlagOn(envVariable)) {
 			return <WrappedComponent {...(props as WrapperComponentProps)} />;
 		}
 		return <UnderConstructionSection />;
@@ -37,7 +42,7 @@ export const FeatureFlagComponent: React.FC<FeatureFlagComponentProps> = ({
 	envVariable,
 	children,
 }) => {
-	if (envVariable === FEATURE_FLAG.ON) {
+	if (getIsFeatureFlagOn(envVariable)) {
 		return <>{children}</>;
 	}
 	// If feature flag is off, return null

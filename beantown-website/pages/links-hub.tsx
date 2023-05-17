@@ -12,6 +12,7 @@ import { GlobalContext } from '@contexts/global/global.context';
 import LinksHubSection from 'components/templates/links-hub/links-hub.section';
 import Header from 'components/organisms/nav';
 import BookNowButton from 'components/atoms/book-now-button.atom';
+import { withFeatureFlag } from 'components/templates/under-construction/with-feature-flag';
 
 export interface LinksHubContentProps {
 	page: LinksHub[];
@@ -44,6 +45,18 @@ const LinksHubPage: React.FC = (props) => {
 			</Head>
 		);
 	};
+
+	const flagValue = process.env.NEXT_PUBLIC_LINKS_HUB_PAGE;
+
+	const FlaggedContent = withFeatureFlag(
+		() => (
+			<>
+				<LinksHubSection />
+			</>
+		),
+		flagValue
+	);
+
 	return (
 		<div id="links-hub" className="bg-secondary-shade-3">
 			<PageHead />
@@ -65,7 +78,7 @@ const LinksHubPage: React.FC = (props) => {
 					</BookNowButton>
 				</div>
 			</Header>
-			<LinksHubSection />
+			<FlaggedContent />
 			<FooterSection
 				logoDesktop={logoLight?.image || ''}
 				content={footerData}

@@ -14,6 +14,7 @@ import Header from 'components/organisms/nav';
 import FooterSection from 'components/organisms/footer';
 import BookNowButton from 'components/atoms/book-now-button.atom';
 import BlogPosts from 'components/templates/blogs/blog-posts/blog-posts';
+import { withFeatureFlag } from 'components/templates/under-construction/with-feature-flag';
 
 export interface BlogsContentProps {
 	page: Blogs[];
@@ -46,6 +47,17 @@ const BlogPage: React.FC = () => {
 			</Head>
 		);
 	};
+
+	const FlaggedContent = withFeatureFlag(
+		() => (
+			<>
+				<BlogsHeroSection />
+				<BlogPosts />
+				<BlogsPageCTASection />
+			</>
+		),
+		process.env.NEXT_PUBLIC_BLOG_POSTS_PAGE
+	);
 	return (
 		<div id="blog" className="bg-primary-white-shade-1">
 			<PageHead />
@@ -67,9 +79,7 @@ const BlogPage: React.FC = () => {
 					</BookNowButton>
 				</div>
 			</Header>
-			<BlogsHeroSection />
-			<BlogPosts />
-			<BlogsPageCTASection />
+			<FlaggedContent />
 			<FooterSection logoDesktop={logoLight?.image} content={footerData} />
 		</div>
 	);
