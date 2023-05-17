@@ -173,7 +173,7 @@ const JobsSliderContent = () => {
 										key={index}
 										onClick={() => setActiveJobDetails(jobDetails)}
 										className={clsx(
-											'container  h-[410px]  w-[281px] cursor-pointer   p-4  lg:h-[650px] lg:w-[480px]',
+											'container    w-[281px] cursor-pointer   p-4   lg:w-[480px]',
 											jobDetails?._key == activeJobDetails?._key &&
 												'z-10 scale-105'
 										)}
@@ -217,7 +217,7 @@ const JobsSliderContent = () => {
 					})}
 				</Slider>
 
-				<div className="relative mt-0 flex justify-between   p-2 pr-4 md:pr-24 ">
+				<div className="relative mt-[76px] flex justify-between   p-2 pr-4 md:pr-24 ">
 					<button
 						aria-label={'left-arrow'}
 						onClick={debouncedPrevious}
