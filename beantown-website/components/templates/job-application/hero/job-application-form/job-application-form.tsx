@@ -8,7 +8,7 @@ import FormTextArea from 'components/atoms/form-textarea.atoms';
 import SectionContentWrapper from 'components/molecules/section-content-wrapper.molecule';
 import { GlobalContext } from '@contexts/global/global.context';
 import { GlobalContextProps } from '@typing/common/interfaces/contexts.interface';
-import { CareersContentProps } from 'pages/careers';
+import { CareersContentProps } from 'temporary-ondeck-pages/careers';
 import { yupResolver } from '@hookform/resolvers/yup';
 import * as Yup from 'yup';
 import { Controller, SubmitHandler, useForm } from 'react-hook-form';

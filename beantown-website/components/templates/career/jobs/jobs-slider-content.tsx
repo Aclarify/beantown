@@ -8,7 +8,7 @@ import 'slick-carousel/slick/slick.css';
 import 'slick-carousel/slick/slick-theme.css';
 import { SCREEN_BREAKPOINTS } from '@typing/common/interfaces/devices.interface';
 import Animate from 'components/molecules/animate.molecule';
-import { CareersContentProps } from 'pages/careers';
+import { CareersContentProps } from 'temporary-ondeck-pages/careers';
 import CMSImageWrapper from 'components/molecules/cms-image-wrapper.molecule';
 import { jobsContext } from '@contexts/jobs/Job-benefits-context';
 import clsx from 'clsx';

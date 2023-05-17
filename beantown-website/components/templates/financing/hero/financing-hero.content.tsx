@@ -1,7 +1,7 @@
 import React, { useContext } from 'react';
 import { GlobalContext } from '@contexts/global/global.context';
 import { GlobalContextProps } from '@typing/common/interfaces/contexts.interface';
-import { FinancingContentProps } from 'pages/financing';
+import { FinancingContentProps } from 'temporary-ondeck-pages/financing';
 import ContentWrapper from 'components/organisms/content-wrapper.organism';
 import Image from 'next/image';
 import clsx from 'clsx';
