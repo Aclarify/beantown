@@ -3,13 +3,19 @@ import UnderConstructionSection from './under-construction.section';
 import { FEATURE_FLAG } from '@typing/common/enums/flags';
 
 interface FeatureFlagComponentProps {
-	envVariable: string;
+	envVariable?: string;
 	children: React.ReactNode;
 }
 
+/**
+ * HOC to check if feature flag is on or off
+ * @param WrappedComponent - Component to render if feature flag is on
+ * @param envVariable - Environment variable to check if feature flag is on or off
+ * @returns - WrappedComponent if feature flag is on, UnderConstructionSection if feature flag is off
+ */
 export const withFeatureFlag = <WrapperComponentProps extends object>(
 	WrappedComponent: React.ComponentType<WrapperComponentProps>,
-	envVariable: string
+	envVariable?: string
 ): React.FC<WrapperComponentProps> => {
 	const ComponentWithFeatureFlag: React.FC<WrapperComponentProps> = (props) => {
 		if (envVariable === FEATURE_FLAG.ON) {
@@ -21,9 +27,12 @@ export const withFeatureFlag = <WrapperComponentProps extends object>(
 	return ComponentWithFeatureFlag;
 };
 
-// usage
-// export default withFeatureFlag(WithGlobalContent<CareersContentProps>(CareerPage), 'ON');
-
+/**
+ * Feature flag component
+ * @param envVariable - Environment variable to check if feature flag is on or off
+ * @param children - Children to render if feature flag is on
+ * @returns - Children if feature flag is on, null if feature flag is off
+ */
 export const FeatureFlagComponent: React.FC<FeatureFlagComponentProps> = ({
 	envVariable,
 	children,
