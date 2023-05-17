@@ -16,6 +16,8 @@ import MassSaveFaqSection from 'components/templates/mass-save/faq/mass-save-faq
 import AboutMassSaveSection from 'components/templates/mass-save/about-mass-save/about-mass-save.section';
 import MassSaveStagesSection from 'components/templates/mass-save/stages/mass-save-stages.section';
 import FooterCTASection from 'components/templates/mass-save/cta/mass-save-cta.section';
+import FeatureFlagDarkHeader from 'components/organisms/feature-flag-dark-header.organism';
+import { withFeatureFlag } from 'components/templates/under-construction/with-feature-flag';
 export interface MassSaveContentProps {
 	page: MassSave[];
 	header: Nav[];
@@ -46,32 +48,34 @@ const MassSavePage: React.FC = (props) => {
 			</Head>
 		);
 	};
+
+	const flagValue = process.env.NEXT_PUBLIC_MASS_SAVE_PAGE;
+
+	const FlaggedContent = withFeatureFlag(
+		() => (
+			<>
+				<MassSaveHeroSection />
+				<AboutMassSaveSection />
+				<MassSaveStagesSection />
+				<MassSaveFaqSection />
+				<FooterCTASection />
+			</>
+		),
+		flagValue
+	);
+
 	return (
 		<div id="mass-save" className="bg-primary-white-shade-1">
 			<PageHead />
-			<Header
-				fontColor="text-white"
-				logoDesktop={logoLight?.image}
-				logoMobile={logoDark?.image}
-				content={headerData}
-				mobileBgColor="bg-secondary-shade-3"
-				mobileButtonText={headerData.headerButton?.text || ''}
-			>
-				<div className=" hidden lg:flex lg:justify-end ">
-					<BookNowButton
-						fontColor="text-primary-shade-1"
-						bgColor="bg-white"
-						buttonStyle="headerButton"
-					>
-						{headerData.headerButton?.text}
-					</BookNowButton>
-				</div>
-			</Header>
-			<MassSaveHeroSection />
-			<AboutMassSaveSection />
-			<MassSaveStagesSection />
-			<MassSaveFaqSection />
-			<FooterCTASection />
+			<FeatureFlagDarkHeader
+				{...{
+					flagValue,
+					headerData,
+					logoLight,
+					logoDark,
+				}}
+			/>
+			<FlaggedContent />
 			<FooterSection logoDesktop={logoLight?.image} content={footerData} />
 		</div>
 	);
