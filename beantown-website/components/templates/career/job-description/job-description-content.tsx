@@ -2,7 +2,7 @@ import { GlobalContext } from '@contexts/global/global.context';
 import { jobsContext } from '@contexts/jobs/Job-benefits-context';
 import { GlobalContextProps } from '@typing/common/interfaces/contexts.interface';
 import RichText from 'components/molecules/rich-text.molecule';
-import { CareersContentProps } from 'pages/careers';
+import { CareersContentProps } from 'temporary-ondeck-pages/careers';
 import React, { useContext } from 'react';
 
 const JobDescriptionResponsibilityContent = () => {
