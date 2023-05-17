@@ -1,7 +1,7 @@
 import React, { useContext, useEffect, useState } from 'react';
 import { GlobalContext } from '@contexts/global/global.context';
 import { GlobalContextProps } from '@typing/common/interfaces/contexts.interface';
-import { CommunityContentProps } from 'pages/community';
+import { CommunityContentProps } from 'temporary-ondeck-pages/community';
 import CMSImageWrapper from 'components/molecules/cms-image-wrapper.molecule';
 import { SCREEN_BREAKPOINTS } from '@typing/common/interfaces/devices.interface';
 import useWindowDimensions from '@lib/hooks/use-window-dimensions.hook';

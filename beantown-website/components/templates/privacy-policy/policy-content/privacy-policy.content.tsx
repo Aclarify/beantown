@@ -1,7 +1,7 @@
 import React, { useContext } from 'react';
 import { GlobalContext } from '@contexts/global/global.context';
 import { GlobalContextProps } from '@typing/common/interfaces/contexts.interface';
-import { PrivacyPolicyContentProps } from 'pages/privacy-policy';
+import { PrivacyPolicyContentProps } from 'temporary-ondeck-pages/privacy-policy';
 import RichText from 'components/molecules/rich-text.molecule';
 import ContentWrapper from 'components/organisms/content-wrapper.organism';
 import Animate from 'components/molecules/animate.molecule';
