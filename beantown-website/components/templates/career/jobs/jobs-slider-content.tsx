@@ -13,11 +13,15 @@ import CMSImageWrapper from 'components/molecules/cms-image-wrapper.molecule';
 import { jobsContext } from '@contexts/jobs/Job-benefits-context';
 import clsx from 'clsx';
 import debounce from 'lodash/debounce';
+
+const animationSpeed = 500;
+
 const JobsSliderContent = () => {
 	const slider = React.useRef<Slider | null>(null);
 	const { pageContent } =
 		useContext<GlobalContextProps<CareersContentProps>>(GlobalContext);
 	const { activeJobDetails, setActiveJobDetails } = useContext(jobsContext);
+	const [isAnimating, setIsAnimating] = React.useState(false);
 
 	if (!pageContent) {
 		return null;
@@ -29,8 +33,11 @@ const JobsSliderContent = () => {
 		return null;
 	}
 	const previous = () => {
-		if (slider.current) {
+		// wait for animation to end before triggering next
+		if (slider.current && !isAnimating) {
 			slider.current.slickPrev();
+			setIsAnimating(true);
+
 			// Update the active job details to the previous job details
 			const activeJobIndex = jobList.findIndex(
 				(jobDetails) => jobDetails?._key == activeJobDetails?._key
@@ -42,11 +49,17 @@ const JobsSliderContent = () => {
 			if (activeJobIndex == 0) {
 				setActiveJobDetails(jobList[jobList.length - 1] as any);
 			}
+
+			setTimeout(() => {
+				setIsAnimating(false);
+			}, animationSpeed);
 		}
 	};
 	const next = () => {
-		if (slider.current) {
+		if (slider.current && !isAnimating) {
 			slider.current.slickNext();
+			setIsAnimating(true);
+
 			// Update the active job details to the next job details
 			const activeJobIndex = jobList.findIndex(
 				(jobDetails) => jobDetails?._key == activeJobDetails?._key
@@ -58,14 +71,18 @@ const JobsSliderContent = () => {
 			if (activeJobIndex == jobList.length - 1) {
 				setActiveJobDetails(jobList[0] as any);
 			}
+
+			setTimeout(() => {
+				setIsAnimating(false);
+			}, animationSpeed);
 		}
 	};
-	const debouncedNext = debounce(next, 500);
-	const debouncedPrevious = debounce(previous, 500);
+	const debouncedNext = debounce(next, 50);
+	const debouncedPrevious = debounce(previous, 50);
 	const settings = {
 		dots: false,
 		infinite: true,
-		speed: 1300,
+		speed: animationSpeed,
 		slidesToShow: 1,
 		slidesToScroll: 1,
 		arrows: false,
