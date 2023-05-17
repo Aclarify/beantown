@@ -1,41 +1,50 @@
 import {defineConfig} from 'sanity'
 import {deskTool} from 'sanity/desk'
 import {visionTool} from '@sanity/vision'
+import {crossDatasetDuplicator} from '@sanity/cross-dataset-duplicator'
 import {schemaTypes} from './schemas'
 
-export default defineConfig({
-  name: 'default',
-  title: 'Beantown Marketing Site',
-
-  projectId: import.meta.env
-    ? import.meta.env.SANITY_STUDIO_PROJECT_ID
-    : process.env.SANITY_STUDIO_PROJECT_ID || '',
-  dataset: import.meta.env
-    ? import.meta.env.SANITY_STUDIO_DATASET
-    : process.env.SANITY_STUDIO_DATASET || '',
-
-  plugins: [deskTool(), visionTool()],
-
-  schema: {
-    types: schemaTypes,
+export default defineConfig([
+  {
+    name: 'develop-workspace',
+    title: 'Develop Workspace',
+    basePath: '/develop',
+    projectId: process.env.SANITY_STUDIO_PROJECT_ID || '',
+    dataset: 'develop',
+    plugins: [
+      deskTool(),
+      visionTool(),
+      crossDatasetDuplicator({
+        // Required settings to show document action
+        types: [],
+        // Optional settings
+        tool: true,
+        follow: [],
+      }),
+    ],
+    schema: {
+      types: schemaTypes,
+    },
   },
-  __experimental_spaces: [
-    {
-      name: 'development',
-      title: 'Dev',
-      default: true,
-      api: {
-        projectId: process.env.SANITY_STUDIO_PROJECT_ID || '',
-        dataset: 'develop',
-      },
+  {
+    name: 'production-workspace',
+    title: 'Production Workspace',
+    basePath: '/production',
+    projectId: process.env.SANITY_STUDIO_PROJECT_ID || '',
+    dataset: 'production',
+    plugins: [
+      deskTool(),
+      visionTool(),
+      crossDatasetDuplicator({
+        // Required settings to show document action
+        types: [],
+        // Optional settings
+        tool: true,
+        follow: [],
+      }),
+    ],
+    schema: {
+      types: schemaTypes,
     },
-    {
-      name: 'staging',
-      title: 'Staging',
-      api: {
-        projectId: process.env.SANITY_STUDIO_PROJECT_ID || '',
-        dataset: 'production',
-      },
-    },
-  ],
-})
+  },
+])
