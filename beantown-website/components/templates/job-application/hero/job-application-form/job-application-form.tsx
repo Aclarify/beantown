@@ -23,6 +23,7 @@ import { useRouter } from 'next/router';
 import dynamic from 'next/dynamic';
 import { config } from '@lib/config';
 import { JobApplicationFormDto } from '@typing/api/dto';
+import clsx from 'clsx';
 
 const AddressAutofill = dynamic(
 	() => import('@mapbox/search-js-react').then((c) => c.AddressAutofill),
@@ -138,6 +139,10 @@ const JobApplicationForm: React.FC = () => {
 	const employmentTypes: any = employmentTypeOptions?.map((data) => {
 		return { label: data?.label, value: data?.value };
 	});
+
+	const isAllFieldsFilled =
+		difference(formFieldKeysRequired, Object.keys(dirtyFields)).length !== 0 ||
+		!getValues('resume');
 
 	const onSubmit: SubmitHandler<JobApplicationFormDto> = async (data) => {
 		try {
@@ -489,22 +494,12 @@ const JobApplicationForm: React.FC = () => {
 								<div className="container m-4 mx-auto flex items-center p-4">
 									<button
 										type="submit"
-										className={`bg-primary-shade-1 para-2 mx-auto mt-2 w-full rounded-xl py-3 text-white md:w-2/6 
-                                        ${
-																					(difference(
-																						formFieldKeysRequired,
-																						Object.keys(dirtyFields)
-																					).length !== 0 ||
-																						!getValues('resume')) &&
-																					'bg-primary-shade-2 cursor-not-allowed'
-																				}
-                                        `}
-										disabled={
-											difference(
-												formFieldKeysRequired,
-												Object.keys(dirtyFields)
-											).length !== 0 || !getValues('resume')
-										}
+										className={clsx(
+											'bg-primary-shade-1 para-2 mx-auto mt-2 w-full rounded-xl py-3 text-white md:w-2/6',
+											isAllFieldsFilled &&
+												'bg-primary-shade-2 cursor-not-allowed'
+										)}
+										disabled={isAllFieldsFilled}
 									>
 										Submit
 									</button>
