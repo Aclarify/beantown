@@ -1,18 +1,19 @@
 import React, { useContext } from 'react';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faArrowRight, faArrowLeft } from '@fortawesome/free-solid-svg-icons';
-import { GlobalContext } from '@contexts/global/global.context';
-import { GlobalContextProps } from '@typing/common/interfaces/contexts.interface';
 import Slider from 'react-slick';
 import 'slick-carousel/slick/slick.css';
 import 'slick-carousel/slick/slick-theme.css';
+import debounce from 'lodash/debounce';
+import clsx from 'clsx';
+
+import { GlobalContext } from '@contexts/global/global.context';
+import { GlobalContextProps } from '@typing/common/interfaces/contexts.interface';
 import { SCREEN_BREAKPOINTS } from '@typing/common/interfaces/devices.interface';
 import Animate from 'components/molecules/animate.molecule';
 import { CareersContentProps } from 'pages/careers';
 import CMSImageWrapper from 'components/molecules/cms-image-wrapper.molecule';
 import { jobsContext } from '@contexts/jobs/Job-benefits-context';
-import clsx from 'clsx';
-import debounce from 'lodash/debounce';
 
 const animationSpeed = 500;
 
@@ -33,7 +34,7 @@ const JobsSliderContent = () => {
 		return null;
 	}
 	const previous = () => {
-		// wait for animation to end before triggering next
+		// wait for animation to end before triggering prev
 		if (slider.current && !isAnimating) {
 			slider.current.slickPrev();
 			setIsAnimating(true);
@@ -56,6 +57,7 @@ const JobsSliderContent = () => {
 		}
 	};
 	const next = () => {
+		// wait for animation to end before triggering next
 		if (slider.current && !isAnimating) {
 			slider.current.slickNext();
 			setIsAnimating(true);
