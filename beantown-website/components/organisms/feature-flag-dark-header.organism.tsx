@@ -5,14 +5,14 @@ import BookNowButton from 'components/atoms/book-now-button.atom';
 import { getIsFeatureFlagOn } from 'components/templates/under-construction/with-feature-flag';
 import Header from './nav';
 
-type FeatureFlagHeaderProps = {
+type FeatureFlagDarkHeaderProps = {
 	flagValue?: string;
 	logoLight: Maybe<ImageIcon> | undefined;
 	logoDark: Maybe<ImageIcon> | undefined;
 	headerData: Nav;
 };
 
-const FeatureFlagHeader: React.FC<FeatureFlagHeaderProps> = ({
+const FeatureFlagDarkHeader: React.FC<FeatureFlagDarkHeaderProps> = ({
 	flagValue,
 	logoLight,
 	logoDark,
@@ -58,4 +58,4 @@ const FeatureFlagHeader: React.FC<FeatureFlagHeaderProps> = ({
 	);
 };
 
-export default FeatureFlagHeader;
+export default FeatureFlagDarkHeader;

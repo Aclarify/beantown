@@ -1,4 +1,4 @@
-import React, { useContext, useMemo } from 'react';
+import React, { useContext } from 'react';
 import { Nav, Footer, Financing } from '@typing/gql/graphql';
 import Head from 'next/head';
 import pageQuery from '@lib/queries/pages/get-financing.query';
@@ -6,21 +6,16 @@ import WithGlobalContent, {
 	generateGetStaticProps,
 } from '../components/containers/global-content/global-content.container';
 import { PageNames } from '@configs/client/pages/pages.config';
-import Header from 'components/organisms/nav';
 import FooterSection from 'components/organisms/footer';
 import { GlobalContextProps } from '@typing/common/interfaces/contexts.interface';
 import { GlobalContext } from '@contexts/global/global.context';
-import BookNowButton from 'components/atoms/book-now-button.atom';
 import FinancingHeroSection from 'components/templates/financing/hero/financing-hero.section';
 import AboutFinancingSection from 'components/templates/financing/about-financing/about-financing.section';
 import FinancingServiceAreas from 'components/templates/financing/service-areas/service-areas';
 import FinancingTestimonials from 'components/templates/financing/testimonials/financing-testimonials';
 import FinancingCTASection from 'components/templates/financing/cta/financing-cta.section';
-import {
-	getIsFeatureFlagOn,
-	withFeatureFlag,
-} from 'components/templates/under-construction/with-feature-flag';
-import FeatureFlagHeader from 'components/organisms/feature-flag-header.organism';
+import { withFeatureFlag } from 'components/templates/under-construction/with-feature-flag';
+import FeatureFlagDarkHeader from 'components/organisms/feature-flag-dark-header.organism';
 
 export interface FinancingContentProps {
 	page: Financing[];
@@ -72,7 +67,7 @@ const FinancingPage: React.FC = (props) => {
 	return (
 		<div id="financing" className="bg-primary-white-shade-1">
 			<PageHead />
-			<FeatureFlagHeader
+			<FeatureFlagDarkHeader
 				{...{
 					flagValue,
 					headerData,
