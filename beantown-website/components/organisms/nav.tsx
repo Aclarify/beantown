@@ -27,6 +27,7 @@ export default function Header(props: IProps) {
 	const { navLinks, navGroup } = props.content;
 	const iconColor = 'text-primary-shade-1';
 	const { logoDesktop, logoMobile } = props;
+	debugger;
 
 	const renderIconComponent = (iconName: string) => {
 		if (!iconName) return null;
