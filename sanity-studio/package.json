@@ -16,6 +16,7 @@
     "sanity"
   ],
   "dependencies": {
+    "@sanity/cross-dataset-duplicator": "^1.2.0",
     "@sanity/vision": "^3.0.0",
     "algoliasearch": "^4.17.0",
     "dotenv": "^16.0.3",
