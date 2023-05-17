@@ -26,6 +26,20 @@ import checkableItem from './molecules/checkableItem'
 import serviceMemberships from './organism/serviceMemberships'
 import serviceMembershipCard from './organism/serviceMembershipCard'
 import bookNow from './pages/bookNow'
+import financing from './pages/financing'
+import careers from './pages/careers'
+import jobDetails from './organism/jobDetails'
+import massSave from './pages/mass-save'
+import linksHub from './pages/links-hub'
+import blogs from './pages/blog'
+import categories from './organism/categories'
+import blogPosts from './pages/blogPosts'
+import privacyPolicy from './pages/privacyPolicy'
+import dropdownOptions from './organism/dropdownOptions'
+import submittedApplications from './pages/submittedApplications'
+import mediaFeed from './organism/mediaFeed'
+import eventsList from './organism/eventsList'
+import community from './pages/community'
 
 export const schemaTypes = [
   //Document Types
@@ -43,7 +57,20 @@ export const schemaTypes = [
   serviceMemberships,
   serviceMembershipCard,
   bookNow,
+  financing,
+  careers,
+  massSave,
+  linksHub,
+  blogs,
+  blogPosts,
+  categories,
+  privacyPolicy,
+  submittedApplications,
+  community,
   //Other Types
+  mediaFeed,
+  eventsList,
+  jobDetails,
   breakType,
   cta,
   images,
@@ -58,4 +85,5 @@ export const schemaTypes = [
   linkGroup,
   textList,
   checkableItem,
+  dropdownOptions,
 ]

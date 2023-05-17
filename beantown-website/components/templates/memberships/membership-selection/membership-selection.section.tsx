@@ -1,15 +1,12 @@
-import React, { Fragment, useContext, useEffect, useState } from 'react';
+import React, { useContext, useEffect, useState } from 'react';
 import SectionContentWrapper from 'components/molecules/section-content-wrapper.molecule';
 import MembershipsCardList from './memberships-card-list.content';
 import MembershipsDetailsSection from '../membership-details/memberships-details.section';
-import { MembershipsContentProps } from '../../../../pages/memberships';
-import { GlobalContextProps } from '../../../../typing/common/interfaces/contexts.interface';
-import { GlobalContext } from '../../../../contexts/global/global.context';
-import {
-	ServiceMemberships,
-	ServiceMembershipCard,
-} from '../../../../typing/gql/graphql';
-import { MembershipsContext } from '../../../../contexts/memberships/memberships.context';
+import { MembershipsContentProps } from 'pages/memberships';
+import { GlobalContextProps } from '@typing/common/interfaces/contexts.interface';
+import { GlobalContext } from 'contexts/global/global.context';
+import { ServiceMemberships, ServiceMembershipCard } from '@typing/gql/graphql';
+import { MembershipsContext } from 'contexts/memberships/memberships.context';
 import 'slick-carousel/slick/slick.css';
 import 'slick-carousel/slick/slick-theme.css';
 import MembershipServiceCategories from './membership-service-category.content';

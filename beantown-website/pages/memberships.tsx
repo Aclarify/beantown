@@ -41,7 +41,6 @@ const MembershipsServicePage: React.FC = () => {
 	const PageHead = () => {
 		return (
 			<Head>
-				{/* TODO to fetch from CMS */}
 				<title>{pageTitle}</title>
 				<meta name="description" content={metaDescription || ''} />
 			</Head>

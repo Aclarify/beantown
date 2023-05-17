@@ -1,3 +1,4 @@
+/* eslint-disable @typescript-eslint/no-unnecessary-type-constraint */
 import { PageNames } from '@configs/client/pages/pages.config';
 import {
 	constructGlobalContextProps,
@@ -5,6 +6,7 @@ import {
 } from '@contexts/global/global.context';
 import { GlobalContextProps } from '@typing/common/interfaces/contexts.interface';
 import { DocumentNode } from 'graphql';
+import { GetStaticPropsContext } from 'next';
 import React from 'react';
 
 export interface Props<CustomPageContentProps> {
@@ -43,6 +45,40 @@ export const generateGetStaticProps = <CustomPageContentProps extends unknown>(
 				await constructGlobalContextProps<CustomPageContentProps>(
 					pageQuery,
 					pageName
+				);
+			return {
+				props: {
+					globalContext: {
+						...globalContextProps,
+					},
+				},
+			};
+		} catch (error) {
+			return {
+				props: {
+					globalContext: {},
+				},
+			};
+		}
+	};
+};
+
+export const generateGetStaticPropsWithParam = <
+	CustomPageContentProps extends unknown
+>(
+	pageQuery?: DocumentNode,
+	pageName?: PageNames,
+	paramName?: string
+): (({
+	params,
+}: GetStaticPropsContext) => Promise<StaticProps<CustomPageContentProps>>) => {
+	return async ({ params }) => {
+		try {
+			const globalContextProps =
+				await constructGlobalContextProps<CustomPageContentProps>(
+					pageQuery,
+					pageName,
+					params && paramName ? { [paramName]: params[paramName] } : undefined
 				);
 			return {
 				props: {

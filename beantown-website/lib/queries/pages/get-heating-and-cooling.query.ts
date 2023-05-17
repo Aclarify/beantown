@@ -118,38 +118,25 @@ const heatingCoolingQuery = ` allHeatingAndCooling {
 			}
     blogsTitle
 		blogsDescription
-			blogCards {
-        blogTitle
-        description
-        blogImage{
-          image{
-            asset{
-              url
-              _id
-              _key
-            }
-          }
-        	href
-        }
-        button{
-          href
-        	text
-        }
-      }
-			blogButton {
-				text
-				href
-			}
-			faqTitle
-			faqDescription
-			faqButton {
-				text
-				href
-			}
-			faqList {
-				question
-        answer
-			}
+    blogCategories{
+      _id
+      name
+      category
+    }
+    blogButton {
+      text
+      href
+    }
+    faqTitle
+    faqDescription
+    faqButton {
+      text
+      href
+    }
+    faqList {
+      question
+      answer
+    }
 }`;
 
 export default gql`
