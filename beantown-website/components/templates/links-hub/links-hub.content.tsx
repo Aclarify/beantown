@@ -95,31 +95,28 @@ const LinksHubContent = () => {
 						{links &&
 							links?.map((link, index) => {
 								return (
-									<div
-										key={index}
-										className="bg-secondary-shade-3  h-[42px] w-[300px] rounded-xl  lg:h-[60px] lg:w-[370px] lg:rounded-2xl"
-									>
-										<div className=" flex items-center justify-center p-2 lg:p-4 ">
-											<div className="icon-wrapper  basis-[10%]">
-												{link &&
-													link.heroIconName &&
-													renderIconComponent(link.heroIconName)}
-											</div>
-											<div className="basis-[80%]">
-												<span className="text-primary-black  rounded-sm px-3">
-													{link?.linkName}
-												</span>
-											</div>
-											<div className="basis-[10%]">
-												<Link href={link?.href || ''}>
+									<Link key={index} href={link?.href || ''}>
+										<div className="bg-secondary-shade-3  h-[42px] w-[300px] rounded-xl  lg:h-[60px] lg:w-[370px] lg:rounded-2xl">
+											<div className=" flex items-center justify-center p-2 lg:p-4 ">
+												<div className="icon-wrapper  basis-[10%]">
+													{link &&
+														link.heroIconName &&
+														renderIconComponent(link.heroIconName)}
+												</div>
+												<div className="basis-[80%]">
+													<span className="text-primary-black  rounded-sm px-3">
+														{link?.linkName}
+													</span>
+												</div>
+												<div className="basis-[10%]">
 													<ChevronRightIcon
 														aria-hidden="true"
 														className="h-5 w-5"
 													/>
-												</Link>
+												</div>
 											</div>
 										</div>
-									</div>
+									</Link>
 								);
 							})}
 					</div>
