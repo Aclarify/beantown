@@ -1,13 +1,14 @@
 import React, { useContext } from 'react';
 import { GlobalContext } from '@contexts/global/global.context';
 import { GlobalContextProps } from '@typing/common/interfaces/contexts.interface';
-import ContentWrapper from '../../../organisms/content-wrapper.organism';
-import { MembershipsContentProps } from '../../../../pages/memberships';
-import RichText from '../../../molecules/rich-text.molecule';
-import MaskedImageWithBackgroundVector from '../../../organisms/masked-image-with-blob.organism';
-import useWindowDimensions from '../../../../lib/hooks/use-window-dimensions.hook';
-import { MembershipsContext } from '../../../../contexts/memberships/memberships.context';
+import ContentWrapper from 'components/organisms/content-wrapper.organism';
+import { MembershipsContentProps } from 'pages/memberships';
+import RichText from 'components/molecules/rich-text.molecule';
+import MaskedImageWithBackgroundVector from 'components/organisms/masked-image-with-blob.organism';
+import useWindowDimensions from 'lib/hooks/use-window-dimensions.hook';
+import { MembershipsContext } from 'contexts/memberships/memberships.context';
 import Animate from 'components/molecules/animate.molecule';
+import { SCREEN_BREAKPOINTS } from '@typing/common/interfaces/devices.interface';
 
 const MembersipsDetails = () => {
 	const { pageContent } =
@@ -70,15 +71,15 @@ const MembersipsDetails = () => {
 							activeServiceMembership?.serviceMembershipImage?.asset?.altText ||
 							''
 						}
-						width={width > 768 ? 1000 : 500}
-						height={width > 768 ? 1000 : 500}
+						width={width > SCREEN_BREAKPOINTS.SM ? 1000 : 500}
+						height={width > SCREEN_BREAKPOINTS.SM ? 1000 : 500}
 						maskImg={
-							width > 768
+							width > SCREEN_BREAKPOINTS.SM
 								? './images/memberships/membership-details/blob-mask.svg'
 								: './images/memberships/membership-details/blob-mask-mobile.svg'
 						}
 						bgImg={
-							width > 768
+							width > SCREEN_BREAKPOINTS.SM
 								? './images/memberships/membership-details/bg-blob-shape.svg'
 								: './images/memberships/membership-details/bg-blob-shape.svg'
 						}

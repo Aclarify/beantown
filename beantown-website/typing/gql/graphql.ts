@@ -142,6 +142,8 @@ export type Block = {
 
 export type BlockOrBreakType = Block | BreakType;
 
+export type BlockOrImage = Block | Image;
+
 export type Blog = Document & {
 	__typename?: 'Blog';
 	/** Date the document was created */
@@ -178,6 +180,61 @@ export type BlogFilter = {
 	name?: InputMaybe<StringFilter>;
 };
 
+export type BlogPosts = Document & {
+	__typename?: 'BlogPosts';
+	/** Date the document was created */
+	_createdAt?: Maybe<Scalars['DateTime']>;
+	/** Document ID */
+	_id?: Maybe<Scalars['ID']>;
+	_key?: Maybe<Scalars['String']>;
+	/** Current document revision */
+	_rev?: Maybe<Scalars['String']>;
+	/** Document type */
+	_type?: Maybe<Scalars['String']>;
+	/** Date the document was last modified */
+	_updatedAt?: Maybe<Scalars['DateTime']>;
+	blogContentRaw?: Maybe<Scalars['JSON']>;
+	blogImage?: Maybe<Image>;
+	blogSlug?: Maybe<Slug>;
+	blogTags?: Maybe<Array<Maybe<Categories>>>;
+	blogTitle?: Maybe<Scalars['String']>;
+	name?: Maybe<Scalars['String']>;
+	publishedAt?: Maybe<Scalars['DateTime']>;
+	views?: Maybe<Scalars['Float']>;
+};
+
+export type BlogPostsFilter = {
+	/** Apply filters on document level */
+	_?: InputMaybe<Sanity_DocumentFilter>;
+	_createdAt?: InputMaybe<DatetimeFilter>;
+	_id?: InputMaybe<IdFilter>;
+	_key?: InputMaybe<StringFilter>;
+	_rev?: InputMaybe<StringFilter>;
+	_type?: InputMaybe<StringFilter>;
+	_updatedAt?: InputMaybe<DatetimeFilter>;
+	blogImage?: InputMaybe<ImageFilter>;
+	blogSlug?: InputMaybe<SlugFilter>;
+	blogTitle?: InputMaybe<StringFilter>;
+	name?: InputMaybe<StringFilter>;
+	publishedAt?: InputMaybe<DatetimeFilter>;
+	views?: InputMaybe<FloatFilter>;
+};
+
+export type BlogPostsSorting = {
+	_createdAt?: InputMaybe<SortOrder>;
+	_id?: InputMaybe<SortOrder>;
+	_key?: InputMaybe<SortOrder>;
+	_rev?: InputMaybe<SortOrder>;
+	_type?: InputMaybe<SortOrder>;
+	_updatedAt?: InputMaybe<SortOrder>;
+	blogImage?: InputMaybe<ImageSorting>;
+	blogSlug?: InputMaybe<SlugSorting>;
+	blogTitle?: InputMaybe<SortOrder>;
+	name?: InputMaybe<SortOrder>;
+	publishedAt?: InputMaybe<SortOrder>;
+	views?: InputMaybe<SortOrder>;
+};
+
 export type BlogSorting = {
 	_createdAt?: InputMaybe<SortOrder>;
 	_id?: InputMaybe<SortOrder>;
@@ -189,6 +246,77 @@ export type BlogSorting = {
 	blogTitle?: InputMaybe<SortOrder>;
 	description?: InputMaybe<SortOrder>;
 	name?: InputMaybe<SortOrder>;
+};
+
+export type Blogs = Document & {
+	__typename?: 'Blogs';
+	/** Date the document was created */
+	_createdAt?: Maybe<Scalars['DateTime']>;
+	/** Document ID */
+	_id?: Maybe<Scalars['ID']>;
+	_key?: Maybe<Scalars['String']>;
+	/** Current document revision */
+	_rev?: Maybe<Scalars['String']>;
+	/** Document type */
+	_type?: Maybe<Scalars['String']>;
+	/** Date the document was last modified */
+	_updatedAt?: Maybe<Scalars['DateTime']>;
+	ctaDescription?: Maybe<PortableText>;
+	ctaImage?: Maybe<Image>;
+	ctaTitle?: Maybe<Scalars['String']>;
+	finalCtaButton?: Maybe<Cta>;
+	heroDescription?: Maybe<PortableText>;
+	heroImage?: Maybe<Image>;
+	heroTitle?: Maybe<Scalars['String']>;
+	logoDark?: Maybe<ImageIcon>;
+	logoLight?: Maybe<ImageIcon>;
+	maxBlogPostPerPage?: Maybe<Scalars['Float']>;
+	metaDescription?: Maybe<Scalars['String']>;
+	name?: Maybe<Scalars['String']>;
+	pageTitle?: Maybe<Scalars['String']>;
+};
+
+export type BlogsFilter = {
+	/** Apply filters on document level */
+	_?: InputMaybe<Sanity_DocumentFilter>;
+	_createdAt?: InputMaybe<DatetimeFilter>;
+	_id?: InputMaybe<IdFilter>;
+	_key?: InputMaybe<StringFilter>;
+	_rev?: InputMaybe<StringFilter>;
+	_type?: InputMaybe<StringFilter>;
+	_updatedAt?: InputMaybe<DatetimeFilter>;
+	ctaDescription?: InputMaybe<PortableTextFilter>;
+	ctaImage?: InputMaybe<ImageFilter>;
+	ctaTitle?: InputMaybe<StringFilter>;
+	finalCtaButton?: InputMaybe<CtaFilter>;
+	heroDescription?: InputMaybe<PortableTextFilter>;
+	heroImage?: InputMaybe<ImageFilter>;
+	heroTitle?: InputMaybe<StringFilter>;
+	logoDark?: InputMaybe<ImageIconFilter>;
+	logoLight?: InputMaybe<ImageIconFilter>;
+	maxBlogPostPerPage?: InputMaybe<FloatFilter>;
+	metaDescription?: InputMaybe<StringFilter>;
+	name?: InputMaybe<StringFilter>;
+	pageTitle?: InputMaybe<StringFilter>;
+};
+
+export type BlogsSorting = {
+	_createdAt?: InputMaybe<SortOrder>;
+	_id?: InputMaybe<SortOrder>;
+	_key?: InputMaybe<SortOrder>;
+	_rev?: InputMaybe<SortOrder>;
+	_type?: InputMaybe<SortOrder>;
+	_updatedAt?: InputMaybe<SortOrder>;
+	ctaDescription?: InputMaybe<PortableTextSorting>;
+	ctaImage?: InputMaybe<ImageSorting>;
+	ctaTitle?: InputMaybe<SortOrder>;
+	heroDescription?: InputMaybe<PortableTextSorting>;
+	heroImage?: InputMaybe<ImageSorting>;
+	heroTitle?: InputMaybe<SortOrder>;
+	maxBlogPostPerPage?: InputMaybe<SortOrder>;
+	metaDescription?: InputMaybe<SortOrder>;
+	name?: InputMaybe<SortOrder>;
+	pageTitle?: InputMaybe<SortOrder>;
 };
 
 export type Booknow = Document & {
@@ -274,6 +402,123 @@ export type BreakTypeSorting = {
 	style?: InputMaybe<SortOrder>;
 };
 
+export type Careers = Document & {
+	__typename?: 'Careers';
+	/** Date the document was created */
+	_createdAt?: Maybe<Scalars['DateTime']>;
+	/** Document ID */
+	_id?: Maybe<Scalars['ID']>;
+	_key?: Maybe<Scalars['String']>;
+	/** Current document revision */
+	_rev?: Maybe<Scalars['String']>;
+	/** Document type */
+	_type?: Maybe<Scalars['String']>;
+	/** Date the document was last modified */
+	_updatedAt?: Maybe<Scalars['DateTime']>;
+	applicationDescription?: Maybe<Scalars['String']>;
+	applicationImage?: Maybe<Image>;
+	applicationTitle?: Maybe<Scalars['String']>;
+	applyButton?: Maybe<Cta>;
+	careerBenefits?: Maybe<Array<Maybe<TitleDescriptionImage>>>;
+	careerHeroImage?: Maybe<Image>;
+	employmentTypeOptions?: Maybe<Array<Maybe<DropdownOptions>>>;
+	globaljobBenefitSectionTitle?: Maybe<Scalars['String']>;
+	heroButton?: Maybe<Cta>;
+	heroDescription?: Maybe<Scalars['String']>;
+	heroTitle?: Maybe<Scalars['String']>;
+	jobList?: Maybe<Array<Maybe<JobDetails>>>;
+	logoDark?: Maybe<ImageIcon>;
+	logoLight?: Maybe<ImageIcon>;
+	metaDescription?: Maybe<Scalars['String']>;
+	name?: Maybe<Scalars['String']>;
+	pageTitle?: Maybe<Scalars['String']>;
+};
+
+export type CareersFilter = {
+	/** Apply filters on document level */
+	_?: InputMaybe<Sanity_DocumentFilter>;
+	_createdAt?: InputMaybe<DatetimeFilter>;
+	_id?: InputMaybe<IdFilter>;
+	_key?: InputMaybe<StringFilter>;
+	_rev?: InputMaybe<StringFilter>;
+	_type?: InputMaybe<StringFilter>;
+	_updatedAt?: InputMaybe<DatetimeFilter>;
+	applicationDescription?: InputMaybe<StringFilter>;
+	applicationImage?: InputMaybe<ImageFilter>;
+	applicationTitle?: InputMaybe<StringFilter>;
+	applyButton?: InputMaybe<CtaFilter>;
+	careerHeroImage?: InputMaybe<ImageFilter>;
+	globaljobBenefitSectionTitle?: InputMaybe<StringFilter>;
+	heroButton?: InputMaybe<CtaFilter>;
+	heroDescription?: InputMaybe<StringFilter>;
+	heroTitle?: InputMaybe<StringFilter>;
+	logoDark?: InputMaybe<ImageIconFilter>;
+	logoLight?: InputMaybe<ImageIconFilter>;
+	metaDescription?: InputMaybe<StringFilter>;
+	name?: InputMaybe<StringFilter>;
+	pageTitle?: InputMaybe<StringFilter>;
+};
+
+export type CareersSorting = {
+	_createdAt?: InputMaybe<SortOrder>;
+	_id?: InputMaybe<SortOrder>;
+	_key?: InputMaybe<SortOrder>;
+	_rev?: InputMaybe<SortOrder>;
+	_type?: InputMaybe<SortOrder>;
+	_updatedAt?: InputMaybe<SortOrder>;
+	applicationDescription?: InputMaybe<SortOrder>;
+	applicationImage?: InputMaybe<ImageSorting>;
+	applicationTitle?: InputMaybe<SortOrder>;
+	careerHeroImage?: InputMaybe<ImageSorting>;
+	globaljobBenefitSectionTitle?: InputMaybe<SortOrder>;
+	heroDescription?: InputMaybe<SortOrder>;
+	heroTitle?: InputMaybe<SortOrder>;
+	metaDescription?: InputMaybe<SortOrder>;
+	name?: InputMaybe<SortOrder>;
+	pageTitle?: InputMaybe<SortOrder>;
+};
+
+export type Categories = Document & {
+	__typename?: 'Categories';
+	/** Date the document was created */
+	_createdAt?: Maybe<Scalars['DateTime']>;
+	/** Document ID */
+	_id?: Maybe<Scalars['ID']>;
+	_key?: Maybe<Scalars['String']>;
+	/** Current document revision */
+	_rev?: Maybe<Scalars['String']>;
+	/** Document type */
+	_type?: Maybe<Scalars['String']>;
+	/** Date the document was last modified */
+	_updatedAt?: Maybe<Scalars['DateTime']>;
+	category?: Maybe<Scalars['String']>;
+	name?: Maybe<Scalars['String']>;
+};
+
+export type CategoriesFilter = {
+	/** Apply filters on document level */
+	_?: InputMaybe<Sanity_DocumentFilter>;
+	_createdAt?: InputMaybe<DatetimeFilter>;
+	_id?: InputMaybe<IdFilter>;
+	_key?: InputMaybe<StringFilter>;
+	_rev?: InputMaybe<StringFilter>;
+	_type?: InputMaybe<StringFilter>;
+	_updatedAt?: InputMaybe<DatetimeFilter>;
+	category?: InputMaybe<StringFilter>;
+	name?: InputMaybe<StringFilter>;
+};
+
+export type CategoriesSorting = {
+	_createdAt?: InputMaybe<SortOrder>;
+	_id?: InputMaybe<SortOrder>;
+	_key?: InputMaybe<SortOrder>;
+	_rev?: InputMaybe<SortOrder>;
+	_type?: InputMaybe<SortOrder>;
+	_updatedAt?: InputMaybe<SortOrder>;
+	category?: InputMaybe<SortOrder>;
+	name?: InputMaybe<SortOrder>;
+};
+
 export type CheckableItem = {
 	__typename?: 'CheckableItem';
 	_key?: Maybe<Scalars['String']>;
@@ -297,6 +542,87 @@ export type CheckableItemSorting = {
 	isActivated?: InputMaybe<SortOrder>;
 	name?: InputMaybe<SortOrder>;
 	text?: InputMaybe<SortOrder>;
+};
+
+export type Community = Document & {
+	__typename?: 'Community';
+	/** Date the document was created */
+	_createdAt?: Maybe<Scalars['DateTime']>;
+	/** Document ID */
+	_id?: Maybe<Scalars['ID']>;
+	_key?: Maybe<Scalars['String']>;
+	/** Current document revision */
+	_rev?: Maybe<Scalars['String']>;
+	/** Document type */
+	_type?: Maybe<Scalars['String']>;
+	/** Date the document was last modified */
+	_updatedAt?: Maybe<Scalars['DateTime']>;
+	ctaButton?: Maybe<Cta>;
+	ctaDescription?: Maybe<PortableText>;
+	ctaImage?: Maybe<Image>;
+	ctaTitle?: Maybe<Scalars['String']>;
+	eventSectionTitle?: Maybe<Scalars['String']>;
+	heroDescription?: Maybe<Scalars['String']>;
+	heroImage?: Maybe<Image>;
+	heroTitle?: Maybe<Scalars['String']>;
+	loadMoreButtonText?: Maybe<Scalars['String']>;
+	logoDark?: Maybe<ImageIcon>;
+	logoLight?: Maybe<ImageIcon>;
+	mediaFeedTitle?: Maybe<Scalars['String']>;
+	metaDescription?: Maybe<Scalars['String']>;
+	name?: Maybe<Scalars['String']>;
+	pageTitle?: Maybe<Scalars['String']>;
+	socialMediaFeed?: Maybe<Array<Maybe<MediaFeed>>>;
+	viewEventButtonText?: Maybe<Scalars['String']>;
+};
+
+export type CommunityFilter = {
+	/** Apply filters on document level */
+	_?: InputMaybe<Sanity_DocumentFilter>;
+	_createdAt?: InputMaybe<DatetimeFilter>;
+	_id?: InputMaybe<IdFilter>;
+	_key?: InputMaybe<StringFilter>;
+	_rev?: InputMaybe<StringFilter>;
+	_type?: InputMaybe<StringFilter>;
+	_updatedAt?: InputMaybe<DatetimeFilter>;
+	ctaButton?: InputMaybe<CtaFilter>;
+	ctaDescription?: InputMaybe<PortableTextFilter>;
+	ctaImage?: InputMaybe<ImageFilter>;
+	ctaTitle?: InputMaybe<StringFilter>;
+	eventSectionTitle?: InputMaybe<StringFilter>;
+	heroDescription?: InputMaybe<StringFilter>;
+	heroImage?: InputMaybe<ImageFilter>;
+	heroTitle?: InputMaybe<StringFilter>;
+	loadMoreButtonText?: InputMaybe<StringFilter>;
+	logoDark?: InputMaybe<ImageIconFilter>;
+	logoLight?: InputMaybe<ImageIconFilter>;
+	mediaFeedTitle?: InputMaybe<StringFilter>;
+	metaDescription?: InputMaybe<StringFilter>;
+	name?: InputMaybe<StringFilter>;
+	pageTitle?: InputMaybe<StringFilter>;
+	viewEventButtonText?: InputMaybe<StringFilter>;
+};
+
+export type CommunitySorting = {
+	_createdAt?: InputMaybe<SortOrder>;
+	_id?: InputMaybe<SortOrder>;
+	_key?: InputMaybe<SortOrder>;
+	_rev?: InputMaybe<SortOrder>;
+	_type?: InputMaybe<SortOrder>;
+	_updatedAt?: InputMaybe<SortOrder>;
+	ctaDescription?: InputMaybe<PortableTextSorting>;
+	ctaImage?: InputMaybe<ImageSorting>;
+	ctaTitle?: InputMaybe<SortOrder>;
+	eventSectionTitle?: InputMaybe<SortOrder>;
+	heroDescription?: InputMaybe<SortOrder>;
+	heroImage?: InputMaybe<ImageSorting>;
+	heroTitle?: InputMaybe<SortOrder>;
+	loadMoreButtonText?: InputMaybe<SortOrder>;
+	mediaFeedTitle?: InputMaybe<SortOrder>;
+	metaDescription?: InputMaybe<SortOrder>;
+	name?: InputMaybe<SortOrder>;
+	pageTitle?: InputMaybe<SortOrder>;
+	viewEventButtonText?: InputMaybe<SortOrder>;
 };
 
 export type CrossDatasetReference = {
@@ -340,13 +666,13 @@ export type Cta = Document & {
 	_type?: Maybe<Scalars['String']>;
 	/** Date the document was last modified */
 	_updatedAt?: Maybe<Scalars['DateTime']>;
+	dialogButtonHref?: Maybe<Scalars['String']>;
+	dialogButtonText?: Maybe<Scalars['String']>;
+	dialogDesc?: Maybe<Scalars['String']>;
+	dialogTitle?: Maybe<Scalars['String']>;
 	href?: Maybe<Scalars['String']>;
 	name?: Maybe<Scalars['String']>;
 	text?: Maybe<Scalars['String']>;
-	dialogTitle?: Maybe<Scalars['String']>;
-	dialogDesc?: Maybe<Scalars['String']>;
-	dialogButtonText?: Maybe<Scalars['String']>;
-	dialogButtonHref?: Maybe<Scalars['String']>;
 };
 
 export type CtaFilter = {
@@ -358,13 +684,13 @@ export type CtaFilter = {
 	_rev?: InputMaybe<StringFilter>;
 	_type?: InputMaybe<StringFilter>;
 	_updatedAt?: InputMaybe<DatetimeFilter>;
+	dialogButtonHref?: InputMaybe<StringFilter>;
+	dialogButtonText?: InputMaybe<StringFilter>;
+	dialogDesc?: InputMaybe<StringFilter>;
+	dialogTitle?: InputMaybe<StringFilter>;
 	href?: InputMaybe<StringFilter>;
 	name?: InputMaybe<StringFilter>;
 	text?: InputMaybe<StringFilter>;
-	dialogTitle?: InputMaybe<StringFilter>;
-	dialogDesc?: InputMaybe<StringFilter>;
-	dialogButtonText?: InputMaybe<StringFilter>;
-	dialogButtonHref?: InputMaybe<StringFilter>;
 };
 
 export type CtaSorting = {
@@ -374,13 +700,13 @@ export type CtaSorting = {
 	_rev?: InputMaybe<SortOrder>;
 	_type?: InputMaybe<SortOrder>;
 	_updatedAt?: InputMaybe<SortOrder>;
+	dialogButtonHref?: InputMaybe<SortOrder>;
+	dialogButtonText?: InputMaybe<SortOrder>;
+	dialogDesc?: InputMaybe<SortOrder>;
+	dialogTitle?: InputMaybe<SortOrder>;
 	href?: InputMaybe<SortOrder>;
 	name?: InputMaybe<SortOrder>;
 	text?: InputMaybe<SortOrder>;
-	dialogTitle?: InputMaybe<SortOrder>;
-	dialogDesc?: InputMaybe<SortOrder>;
-	dialogButtonText?: InputMaybe<SortOrder>;
-	dialogButtonHref?: InputMaybe<SortOrder>;
 };
 
 export type DateFilter = {
@@ -445,6 +771,78 @@ export type DocumentSorting = {
 	_updatedAt?: InputMaybe<SortOrder>;
 };
 
+export type DropdownOptions = {
+	__typename?: 'DropdownOptions';
+	_key?: Maybe<Scalars['String']>;
+	_type?: Maybe<Scalars['String']>;
+	label?: Maybe<Scalars['String']>;
+	value?: Maybe<Scalars['String']>;
+};
+
+export type DropdownOptionsFilter = {
+	_key?: InputMaybe<StringFilter>;
+	_type?: InputMaybe<StringFilter>;
+	label?: InputMaybe<StringFilter>;
+	value?: InputMaybe<StringFilter>;
+};
+
+export type DropdownOptionsSorting = {
+	_key?: InputMaybe<SortOrder>;
+	_type?: InputMaybe<SortOrder>;
+	label?: InputMaybe<SortOrder>;
+	value?: InputMaybe<SortOrder>;
+};
+
+export type EventsList = Document & {
+	__typename?: 'EventsList';
+	/** Date the document was created */
+	_createdAt?: Maybe<Scalars['DateTime']>;
+	/** Document ID */
+	_id?: Maybe<Scalars['ID']>;
+	_key?: Maybe<Scalars['String']>;
+	/** Current document revision */
+	_rev?: Maybe<Scalars['String']>;
+	/** Document type */
+	_type?: Maybe<Scalars['String']>;
+	/** Date the document was last modified */
+	_updatedAt?: Maybe<Scalars['DateTime']>;
+	eventDate?: Maybe<Scalars['DateTime']>;
+	eventImage?: Maybe<Image>;
+	eventTitle?: Maybe<Scalars['String']>;
+	eventUrl?: Maybe<Scalars['String']>;
+	name?: Maybe<Scalars['String']>;
+};
+
+export type EventsListFilter = {
+	/** Apply filters on document level */
+	_?: InputMaybe<Sanity_DocumentFilter>;
+	_createdAt?: InputMaybe<DatetimeFilter>;
+	_id?: InputMaybe<IdFilter>;
+	_key?: InputMaybe<StringFilter>;
+	_rev?: InputMaybe<StringFilter>;
+	_type?: InputMaybe<StringFilter>;
+	_updatedAt?: InputMaybe<DatetimeFilter>;
+	eventDate?: InputMaybe<DatetimeFilter>;
+	eventImage?: InputMaybe<ImageFilter>;
+	eventTitle?: InputMaybe<StringFilter>;
+	eventUrl?: InputMaybe<StringFilter>;
+	name?: InputMaybe<StringFilter>;
+};
+
+export type EventsListSorting = {
+	_createdAt?: InputMaybe<SortOrder>;
+	_id?: InputMaybe<SortOrder>;
+	_key?: InputMaybe<SortOrder>;
+	_rev?: InputMaybe<SortOrder>;
+	_type?: InputMaybe<SortOrder>;
+	_updatedAt?: InputMaybe<SortOrder>;
+	eventDate?: InputMaybe<SortOrder>;
+	eventImage?: InputMaybe<ImageSorting>;
+	eventTitle?: InputMaybe<SortOrder>;
+	eventUrl?: InputMaybe<SortOrder>;
+	name?: InputMaybe<SortOrder>;
+};
+
 export type Faq = Document & {
 	__typename?: 'Faq';
 	/** Date the document was created */
@@ -505,6 +903,96 @@ export type FileFilter = {
 export type FileSorting = {
 	_key?: InputMaybe<SortOrder>;
 	_type?: InputMaybe<SortOrder>;
+};
+
+export type Financing = Document & {
+	__typename?: 'Financing';
+	/** Date the document was created */
+	_createdAt?: Maybe<Scalars['DateTime']>;
+	/** Document ID */
+	_id?: Maybe<Scalars['ID']>;
+	_key?: Maybe<Scalars['String']>;
+	/** Current document revision */
+	_rev?: Maybe<Scalars['String']>;
+	/** Document type */
+	_type?: Maybe<Scalars['String']>;
+	/** Date the document was last modified */
+	_updatedAt?: Maybe<Scalars['DateTime']>;
+	aboutSectionDescription?: Maybe<PortableText>;
+	aboutSectionImage?: Maybe<Image>;
+	aboutSectionTitle?: Maybe<Scalars['String']>;
+	benefitsDescription?: Maybe<PortableText>;
+	benefitsImage?: Maybe<Image>;
+	benefitsTitle?: Maybe<Scalars['String']>;
+	ctaButton?: Maybe<Cta>;
+	ctaDescription?: Maybe<PortableText>;
+	ctaImage?: Maybe<Image>;
+	ctaTitle?: Maybe<Scalars['String']>;
+	heroDescription?: Maybe<Scalars['String']>;
+	heroImage?: Maybe<Image>;
+	heroTitle?: Maybe<Scalars['String']>;
+	logoDark?: Maybe<ImageIcon>;
+	logoLight?: Maybe<ImageIcon>;
+	metaDescription?: Maybe<Scalars['String']>;
+	name?: Maybe<Scalars['String']>;
+	pageTitle?: Maybe<Scalars['String']>;
+	serviceAreaSection?: Maybe<ServiceAreas>;
+	testimonialSection?: Maybe<Testimonials>;
+};
+
+export type FinancingFilter = {
+	/** Apply filters on document level */
+	_?: InputMaybe<Sanity_DocumentFilter>;
+	_createdAt?: InputMaybe<DatetimeFilter>;
+	_id?: InputMaybe<IdFilter>;
+	_key?: InputMaybe<StringFilter>;
+	_rev?: InputMaybe<StringFilter>;
+	_type?: InputMaybe<StringFilter>;
+	_updatedAt?: InputMaybe<DatetimeFilter>;
+	aboutSectionDescription?: InputMaybe<PortableTextFilter>;
+	aboutSectionImage?: InputMaybe<ImageFilter>;
+	aboutSectionTitle?: InputMaybe<StringFilter>;
+	benefitsDescription?: InputMaybe<PortableTextFilter>;
+	benefitsImage?: InputMaybe<ImageFilter>;
+	benefitsTitle?: InputMaybe<StringFilter>;
+	ctaButton?: InputMaybe<CtaFilter>;
+	ctaDescription?: InputMaybe<PortableTextFilter>;
+	ctaImage?: InputMaybe<ImageFilter>;
+	ctaTitle?: InputMaybe<StringFilter>;
+	heroDescription?: InputMaybe<StringFilter>;
+	heroImage?: InputMaybe<ImageFilter>;
+	heroTitle?: InputMaybe<StringFilter>;
+	logoDark?: InputMaybe<ImageIconFilter>;
+	logoLight?: InputMaybe<ImageIconFilter>;
+	metaDescription?: InputMaybe<StringFilter>;
+	name?: InputMaybe<StringFilter>;
+	pageTitle?: InputMaybe<StringFilter>;
+	serviceAreaSection?: InputMaybe<ServiceAreasFilter>;
+	testimonialSection?: InputMaybe<TestimonialsFilter>;
+};
+
+export type FinancingSorting = {
+	_createdAt?: InputMaybe<SortOrder>;
+	_id?: InputMaybe<SortOrder>;
+	_key?: InputMaybe<SortOrder>;
+	_rev?: InputMaybe<SortOrder>;
+	_type?: InputMaybe<SortOrder>;
+	_updatedAt?: InputMaybe<SortOrder>;
+	aboutSectionDescription?: InputMaybe<PortableTextSorting>;
+	aboutSectionImage?: InputMaybe<ImageSorting>;
+	aboutSectionTitle?: InputMaybe<SortOrder>;
+	benefitsDescription?: InputMaybe<PortableTextSorting>;
+	benefitsImage?: InputMaybe<ImageSorting>;
+	benefitsTitle?: InputMaybe<SortOrder>;
+	ctaDescription?: InputMaybe<PortableTextSorting>;
+	ctaImage?: InputMaybe<ImageSorting>;
+	ctaTitle?: InputMaybe<SortOrder>;
+	heroDescription?: InputMaybe<SortOrder>;
+	heroImage?: InputMaybe<ImageSorting>;
+	heroTitle?: InputMaybe<SortOrder>;
+	metaDescription?: InputMaybe<SortOrder>;
+	name?: InputMaybe<SortOrder>;
+	pageTitle?: InputMaybe<SortOrder>;
 };
 
 export type FloatFilter = {
@@ -612,7 +1100,7 @@ export type HeatingAndCooling = Document & {
 	/** Date the document was last modified */
 	_updatedAt?: Maybe<Scalars['DateTime']>;
 	blogButton?: Maybe<Cta>;
-	blogCards?: Maybe<Array<Maybe<Blog>>>;
+	blogCategories?: Maybe<Array<Maybe<Categories>>>;
 	blogsDescription?: Maybe<Scalars['String']>;
 	blogsTitle?: Maybe<Scalars['String']>;
 	brandsTitle?: Maybe<Scalars['String']>;
@@ -729,7 +1217,7 @@ export type Home = Document & {
 	/** Date the document was last modified */
 	_updatedAt?: Maybe<Scalars['DateTime']>;
 	blogButton?: Maybe<Cta>;
-	blogCards?: Maybe<Array<Maybe<Blog>>>;
+	blogCategories?: Maybe<Array<Maybe<Categories>>>;
 	blogsDescription?: Maybe<Scalars['String']>;
 	blogsTitle?: Maybe<Scalars['String']>;
 	brandsTitle?: Maybe<Scalars['String']>;
@@ -751,8 +1239,8 @@ export type Home = Document & {
 	metaDescription?: Maybe<Scalars['String']>;
 	mitsubishiDiamondDescription?: Maybe<PortableText>;
 	mitsubishiDiamondImage?: Maybe<Image>;
-	mitsubishiLogo?: Maybe<Image>;
 	mitsubishiDiamondTitle?: Maybe<Scalars['String']>;
+	mitsubishiLogo?: Maybe<Image>;
 	name?: Maybe<Scalars['String']>;
 	pageTitle?: Maybe<Scalars['String']>;
 	serviceAreaSection?: Maybe<ServiceAreas>;
@@ -796,8 +1284,8 @@ export type HomeFilter = {
 	metaDescription?: InputMaybe<StringFilter>;
 	mitsubishiDiamondDescription?: InputMaybe<PortableTextFilter>;
 	mitsubishiDiamondImage?: InputMaybe<ImageFilter>;
-	mitsubishiLogo?: InputMaybe<ImageFilter>;
 	mitsubishiDiamondTitle?: InputMaybe<StringFilter>;
+	mitsubishiLogo?: InputMaybe<ImageFilter>;
 	name?: InputMaybe<StringFilter>;
 	pageTitle?: InputMaybe<StringFilter>;
 	serviceAreaSection?: InputMaybe<ServiceAreasFilter>;
@@ -831,8 +1319,8 @@ export type HomeSorting = {
 	metaDescription?: InputMaybe<SortOrder>;
 	mitsubishiDiamondDescription?: InputMaybe<PortableTextSorting>;
 	mitsubishiDiamondImage?: InputMaybe<ImageSorting>;
-	mitsubishiLogo?: InputMaybe<ImageSorting>;
 	mitsubishiDiamondTitle?: InputMaybe<SortOrder>;
+	mitsubishiLogo?: InputMaybe<ImageSorting>;
 	name?: InputMaybe<SortOrder>;
 	pageTitle?: InputMaybe<SortOrder>;
 	servicesDescription?: InputMaybe<PortableTextSorting>;
@@ -1011,6 +1499,44 @@ export type IntFilter = {
 	neq?: InputMaybe<Scalars['Int']>;
 };
 
+export type JobDetails = {
+	__typename?: 'JobDetails';
+	_key?: Maybe<Scalars['String']>;
+	_type?: Maybe<Scalars['String']>;
+	jobBenefitCards?: Maybe<Array<Maybe<TitleDescriptionImage>>>;
+	jobBenefitCardsSectionTitle?: Maybe<Scalars['String']>;
+	jobDescription?: Maybe<PortableText>;
+	jobDescriptionTitle?: Maybe<Scalars['String']>;
+	jobImage?: Maybe<Image>;
+	jobResponsibilities?: Maybe<Array<Maybe<TitleDescription>>>;
+	jobResponsibilityMainTitle?: Maybe<Scalars['String']>;
+	learnMoreButton?: Maybe<Cta>;
+	positionName?: Maybe<Scalars['String']>;
+};
+
+export type JobDetailsFilter = {
+	_key?: InputMaybe<StringFilter>;
+	_type?: InputMaybe<StringFilter>;
+	jobBenefitCardsSectionTitle?: InputMaybe<StringFilter>;
+	jobDescription?: InputMaybe<PortableTextFilter>;
+	jobDescriptionTitle?: InputMaybe<StringFilter>;
+	jobImage?: InputMaybe<ImageFilter>;
+	jobResponsibilityMainTitle?: InputMaybe<StringFilter>;
+	learnMoreButton?: InputMaybe<CtaFilter>;
+	positionName?: InputMaybe<StringFilter>;
+};
+
+export type JobDetailsSorting = {
+	_key?: InputMaybe<SortOrder>;
+	_type?: InputMaybe<SortOrder>;
+	jobBenefitCardsSectionTitle?: InputMaybe<SortOrder>;
+	jobDescription?: InputMaybe<PortableTextSorting>;
+	jobDescriptionTitle?: InputMaybe<SortOrder>;
+	jobImage?: InputMaybe<ImageSorting>;
+	jobResponsibilityMainTitle?: InputMaybe<SortOrder>;
+	positionName?: InputMaybe<SortOrder>;
+};
+
 export type Link = Document & {
 	__typename?: 'Link';
 	/** Date the document was created */
@@ -1082,6 +1608,216 @@ export type LinkSorting = {
 	linkName?: InputMaybe<SortOrder>;
 	linkText?: InputMaybe<SortOrder>;
 	newWindow?: InputMaybe<SortOrder>;
+};
+
+export type LinksHub = Document & {
+	__typename?: 'LinksHub';
+	/** Date the document was created */
+	_createdAt?: Maybe<Scalars['DateTime']>;
+	/** Document ID */
+	_id?: Maybe<Scalars['ID']>;
+	_key?: Maybe<Scalars['String']>;
+	/** Current document revision */
+	_rev?: Maybe<Scalars['String']>;
+	/** Document type */
+	_type?: Maybe<Scalars['String']>;
+	/** Date the document was last modified */
+	_updatedAt?: Maybe<Scalars['DateTime']>;
+	links?: Maybe<Array<Maybe<Link>>>;
+	linksHubDescription?: Maybe<Scalars['String']>;
+	linksHubTitle?: Maybe<Scalars['String']>;
+	logoDark?: Maybe<ImageIcon>;
+	logoLight?: Maybe<ImageIcon>;
+	metaDescription?: Maybe<Scalars['String']>;
+	name?: Maybe<Scalars['String']>;
+	pageTitle?: Maybe<Scalars['String']>;
+	socialMediaIcons?: Maybe<Array<Maybe<ImageIcon>>>;
+};
+
+export type LinksHubFilter = {
+	/** Apply filters on document level */
+	_?: InputMaybe<Sanity_DocumentFilter>;
+	_createdAt?: InputMaybe<DatetimeFilter>;
+	_id?: InputMaybe<IdFilter>;
+	_key?: InputMaybe<StringFilter>;
+	_rev?: InputMaybe<StringFilter>;
+	_type?: InputMaybe<StringFilter>;
+	_updatedAt?: InputMaybe<DatetimeFilter>;
+	linksHubDescription?: InputMaybe<StringFilter>;
+	linksHubTitle?: InputMaybe<StringFilter>;
+	logoDark?: InputMaybe<ImageIconFilter>;
+	logoLight?: InputMaybe<ImageIconFilter>;
+	metaDescription?: InputMaybe<StringFilter>;
+	name?: InputMaybe<StringFilter>;
+	pageTitle?: InputMaybe<StringFilter>;
+};
+
+export type LinksHubSorting = {
+	_createdAt?: InputMaybe<SortOrder>;
+	_id?: InputMaybe<SortOrder>;
+	_key?: InputMaybe<SortOrder>;
+	_rev?: InputMaybe<SortOrder>;
+	_type?: InputMaybe<SortOrder>;
+	_updatedAt?: InputMaybe<SortOrder>;
+	linksHubDescription?: InputMaybe<SortOrder>;
+	linksHubTitle?: InputMaybe<SortOrder>;
+	metaDescription?: InputMaybe<SortOrder>;
+	name?: InputMaybe<SortOrder>;
+	pageTitle?: InputMaybe<SortOrder>;
+};
+
+export type MassSave = Document & {
+	__typename?: 'MassSave';
+	/** Date the document was created */
+	_createdAt?: Maybe<Scalars['DateTime']>;
+	/** Document ID */
+	_id?: Maybe<Scalars['ID']>;
+	_key?: Maybe<Scalars['String']>;
+	/** Current document revision */
+	_rev?: Maybe<Scalars['String']>;
+	/** Document type */
+	_type?: Maybe<Scalars['String']>;
+	/** Date the document was last modified */
+	_updatedAt?: Maybe<Scalars['DateTime']>;
+	aboutMassSaveDescription?: Maybe<PortableText>;
+	aboutMassSaveImage?: Maybe<Image>;
+	aboutMassSaveTitle?: Maybe<Scalars['String']>;
+	contactButton?: Maybe<Cta>;
+	ctaButton?: Maybe<Cta>;
+	ctaDescription?: Maybe<PortableText>;
+	ctaImage?: Maybe<Image>;
+	ctaTitle?: Maybe<Scalars['String']>;
+	faqButton?: Maybe<Cta>;
+	faqDescription?: Maybe<Scalars['String']>;
+	faqList?: Maybe<Array<Maybe<Faq>>>;
+	faqTitle?: Maybe<Scalars['String']>;
+	featuresDescription?: Maybe<PortableText>;
+	featuresImage?: Maybe<Image>;
+	featuresTitle?: Maybe<Scalars['String']>;
+	heroDescription?: Maybe<Scalars['String']>;
+	heroImage?: Maybe<Image>;
+	heroTitle?: Maybe<Scalars['String']>;
+	howItWorksDescription?: Maybe<PortableText>;
+	howItWorksTitle?: Maybe<Scalars['String']>;
+	logoDark?: Maybe<ImageIcon>;
+	logoLight?: Maybe<ImageIcon>;
+	metaDescription?: Maybe<Scalars['String']>;
+	name?: Maybe<Scalars['String']>;
+	pageTitle?: Maybe<Scalars['String']>;
+	stagesCards?: Maybe<Array<Maybe<TitleDescriptionImage>>>;
+};
+
+export type MassSaveFilter = {
+	/** Apply filters on document level */
+	_?: InputMaybe<Sanity_DocumentFilter>;
+	_createdAt?: InputMaybe<DatetimeFilter>;
+	_id?: InputMaybe<IdFilter>;
+	_key?: InputMaybe<StringFilter>;
+	_rev?: InputMaybe<StringFilter>;
+	_type?: InputMaybe<StringFilter>;
+	_updatedAt?: InputMaybe<DatetimeFilter>;
+	aboutMassSaveDescription?: InputMaybe<PortableTextFilter>;
+	aboutMassSaveImage?: InputMaybe<ImageFilter>;
+	aboutMassSaveTitle?: InputMaybe<StringFilter>;
+	contactButton?: InputMaybe<CtaFilter>;
+	ctaButton?: InputMaybe<CtaFilter>;
+	ctaDescription?: InputMaybe<PortableTextFilter>;
+	ctaImage?: InputMaybe<ImageFilter>;
+	ctaTitle?: InputMaybe<StringFilter>;
+	faqButton?: InputMaybe<CtaFilter>;
+	faqDescription?: InputMaybe<StringFilter>;
+	faqTitle?: InputMaybe<StringFilter>;
+	featuresDescription?: InputMaybe<PortableTextFilter>;
+	featuresImage?: InputMaybe<ImageFilter>;
+	featuresTitle?: InputMaybe<StringFilter>;
+	heroDescription?: InputMaybe<StringFilter>;
+	heroImage?: InputMaybe<ImageFilter>;
+	heroTitle?: InputMaybe<StringFilter>;
+	howItWorksDescription?: InputMaybe<PortableTextFilter>;
+	howItWorksTitle?: InputMaybe<StringFilter>;
+	logoDark?: InputMaybe<ImageIconFilter>;
+	logoLight?: InputMaybe<ImageIconFilter>;
+	metaDescription?: InputMaybe<StringFilter>;
+	name?: InputMaybe<StringFilter>;
+	pageTitle?: InputMaybe<StringFilter>;
+};
+
+export type MassSaveSorting = {
+	_createdAt?: InputMaybe<SortOrder>;
+	_id?: InputMaybe<SortOrder>;
+	_key?: InputMaybe<SortOrder>;
+	_rev?: InputMaybe<SortOrder>;
+	_type?: InputMaybe<SortOrder>;
+	_updatedAt?: InputMaybe<SortOrder>;
+	aboutMassSaveDescription?: InputMaybe<PortableTextSorting>;
+	aboutMassSaveImage?: InputMaybe<ImageSorting>;
+	aboutMassSaveTitle?: InputMaybe<SortOrder>;
+	ctaDescription?: InputMaybe<PortableTextSorting>;
+	ctaImage?: InputMaybe<ImageSorting>;
+	ctaTitle?: InputMaybe<SortOrder>;
+	faqDescription?: InputMaybe<SortOrder>;
+	faqTitle?: InputMaybe<SortOrder>;
+	featuresDescription?: InputMaybe<PortableTextSorting>;
+	featuresImage?: InputMaybe<ImageSorting>;
+	featuresTitle?: InputMaybe<SortOrder>;
+	heroDescription?: InputMaybe<SortOrder>;
+	heroImage?: InputMaybe<ImageSorting>;
+	heroTitle?: InputMaybe<SortOrder>;
+	howItWorksDescription?: InputMaybe<PortableTextSorting>;
+	howItWorksTitle?: InputMaybe<SortOrder>;
+	metaDescription?: InputMaybe<SortOrder>;
+	name?: InputMaybe<SortOrder>;
+	pageTitle?: InputMaybe<SortOrder>;
+};
+
+export type MediaFeed = Document & {
+	__typename?: 'MediaFeed';
+	/** Date the document was created */
+	_createdAt?: Maybe<Scalars['DateTime']>;
+	/** Document ID */
+	_id?: Maybe<Scalars['ID']>;
+	_key?: Maybe<Scalars['String']>;
+	/** Current document revision */
+	_rev?: Maybe<Scalars['String']>;
+	/** Document type */
+	_type?: Maybe<Scalars['String']>;
+	/** Date the document was last modified */
+	_updatedAt?: Maybe<Scalars['DateTime']>;
+	fbURL?: Maybe<Scalars['String']>;
+	feedImage?: Maybe<Image>;
+	instaURL?: Maybe<Scalars['String']>;
+	name?: Maybe<Scalars['String']>;
+	twitterURL?: Maybe<Scalars['String']>;
+};
+
+export type MediaFeedFilter = {
+	/** Apply filters on document level */
+	_?: InputMaybe<Sanity_DocumentFilter>;
+	_createdAt?: InputMaybe<DatetimeFilter>;
+	_id?: InputMaybe<IdFilter>;
+	_key?: InputMaybe<StringFilter>;
+	_rev?: InputMaybe<StringFilter>;
+	_type?: InputMaybe<StringFilter>;
+	_updatedAt?: InputMaybe<DatetimeFilter>;
+	fbURL?: InputMaybe<StringFilter>;
+	feedImage?: InputMaybe<ImageFilter>;
+	instaURL?: InputMaybe<StringFilter>;
+	name?: InputMaybe<StringFilter>;
+	twitterURL?: InputMaybe<StringFilter>;
+};
+
+export type MediaFeedSorting = {
+	_createdAt?: InputMaybe<SortOrder>;
+	_id?: InputMaybe<SortOrder>;
+	_key?: InputMaybe<SortOrder>;
+	_rev?: InputMaybe<SortOrder>;
+	_type?: InputMaybe<SortOrder>;
+	_updatedAt?: InputMaybe<SortOrder>;
+	fbURL?: InputMaybe<SortOrder>;
+	feedImage?: InputMaybe<ImageSorting>;
+	instaURL?: InputMaybe<SortOrder>;
+	name?: InputMaybe<SortOrder>;
+	twitterURL?: InputMaybe<SortOrder>;
 };
 
 export type Memberships = Document & {
@@ -1209,7 +1945,7 @@ export type OtherServices = Document & {
 	aboutTheServiceImage?: Maybe<Image>;
 	aboutTheServiceTitle?: Maybe<Scalars['String']>;
 	blogButton?: Maybe<Cta>;
-	blogCards?: Maybe<Array<Maybe<Blog>>>;
+	blogCategories?: Maybe<Array<Maybe<Categories>>>;
 	blogsDescription?: Maybe<Scalars['String']>;
 	blogsTitle?: Maybe<Scalars['String']>;
 	contactUsButton?: Maybe<Cta>;
@@ -1309,47 +2045,134 @@ export type PortableTextSorting = {
 	_type?: InputMaybe<SortOrder>;
 };
 
+export type PrivacyPolicy = Document & {
+	__typename?: 'PrivacyPolicy';
+	/** Date the document was created */
+	_createdAt?: Maybe<Scalars['DateTime']>;
+	/** Document ID */
+	_id?: Maybe<Scalars['ID']>;
+	_key?: Maybe<Scalars['String']>;
+	/** Current document revision */
+	_rev?: Maybe<Scalars['String']>;
+	/** Document type */
+	_type?: Maybe<Scalars['String']>;
+	/** Date the document was last modified */
+	_updatedAt?: Maybe<Scalars['DateTime']>;
+	heroDescription?: Maybe<Scalars['String']>;
+	heroImage?: Maybe<Image>;
+	heroTitle?: Maybe<Scalars['String']>;
+	logoDark?: Maybe<ImageIcon>;
+	logoLight?: Maybe<ImageIcon>;
+	metaDescription?: Maybe<Scalars['String']>;
+	name?: Maybe<Scalars['String']>;
+	pageTitle?: Maybe<Scalars['String']>;
+	privacyPolicyContent?: Maybe<PortableText>;
+	sectionTitle?: Maybe<Scalars['String']>;
+};
+
+export type PrivacyPolicyFilter = {
+	/** Apply filters on document level */
+	_?: InputMaybe<Sanity_DocumentFilter>;
+	_createdAt?: InputMaybe<DatetimeFilter>;
+	_id?: InputMaybe<IdFilter>;
+	_key?: InputMaybe<StringFilter>;
+	_rev?: InputMaybe<StringFilter>;
+	_type?: InputMaybe<StringFilter>;
+	_updatedAt?: InputMaybe<DatetimeFilter>;
+	heroDescription?: InputMaybe<StringFilter>;
+	heroImage?: InputMaybe<ImageFilter>;
+	heroTitle?: InputMaybe<StringFilter>;
+	logoDark?: InputMaybe<ImageIconFilter>;
+	logoLight?: InputMaybe<ImageIconFilter>;
+	metaDescription?: InputMaybe<StringFilter>;
+	name?: InputMaybe<StringFilter>;
+	pageTitle?: InputMaybe<StringFilter>;
+	privacyPolicyContent?: InputMaybe<PortableTextFilter>;
+	sectionTitle?: InputMaybe<StringFilter>;
+};
+
+export type PrivacyPolicySorting = {
+	_createdAt?: InputMaybe<SortOrder>;
+	_id?: InputMaybe<SortOrder>;
+	_key?: InputMaybe<SortOrder>;
+	_rev?: InputMaybe<SortOrder>;
+	_type?: InputMaybe<SortOrder>;
+	_updatedAt?: InputMaybe<SortOrder>;
+	heroDescription?: InputMaybe<SortOrder>;
+	heroImage?: InputMaybe<ImageSorting>;
+	heroTitle?: InputMaybe<SortOrder>;
+	metaDescription?: InputMaybe<SortOrder>;
+	name?: InputMaybe<SortOrder>;
+	pageTitle?: InputMaybe<SortOrder>;
+	privacyPolicyContent?: InputMaybe<PortableTextSorting>;
+	sectionTitle?: InputMaybe<SortOrder>;
+};
+
 export type RootQuery = {
 	__typename?: 'RootQuery';
 	AboutUs?: Maybe<AboutUs>;
 	Blog?: Maybe<Blog>;
+	BlogPosts?: Maybe<BlogPosts>;
+	Blogs?: Maybe<Blogs>;
 	Booknow?: Maybe<Booknow>;
+	Careers?: Maybe<Careers>;
+	Categories?: Maybe<Categories>;
+	Community?: Maybe<Community>;
 	Cta?: Maybe<Cta>;
 	Document?: Maybe<Document>;
+	EventsList?: Maybe<EventsList>;
 	Faq?: Maybe<Faq>;
+	Financing?: Maybe<Financing>;
 	Footer?: Maybe<Footer>;
 	HeatingAndCooling?: Maybe<HeatingAndCooling>;
 	Home?: Maybe<Home>;
 	ImageIcon?: Maybe<ImageIcon>;
 	Images?: Maybe<Images>;
 	Link?: Maybe<Link>;
+	LinksHub?: Maybe<LinksHub>;
+	MassSave?: Maybe<MassSave>;
+	MediaFeed?: Maybe<MediaFeed>;
 	Memberships?: Maybe<Memberships>;
 	Nav?: Maybe<Nav>;
 	OtherServices?: Maybe<OtherServices>;
+	PrivacyPolicy?: Maybe<PrivacyPolicy>;
 	SanityFileAsset?: Maybe<SanityFileAsset>;
 	SanityImageAsset?: Maybe<SanityImageAsset>;
 	ServiceAreas?: Maybe<ServiceAreas>;
 	ServiceMemberships?: Maybe<ServiceMemberships>;
+	SubmittedApplications?: Maybe<SubmittedApplications>;
 	Testimonials?: Maybe<Testimonials>;
 	allAboutUs: Array<AboutUs>;
 	allBlog: Array<Blog>;
+	allBlogPosts: Array<BlogPosts>;
+	allBlogs: Array<Blogs>;
 	allBooknow: Array<Booknow>;
+	allCareers: Array<Careers>;
+	allCategories: Array<Categories>;
+	allCommunity: Array<Community>;
 	allCta: Array<Cta>;
 	allDocument: Array<Document>;
+	allEventsList: Array<EventsList>;
 	allFaq: Array<Faq>;
+	allFinancing: Array<Financing>;
 	allFooter: Array<Footer>;
 	allHeatingAndCooling: Array<HeatingAndCooling>;
 	allHome: Array<Home>;
 	allImageIcon: Array<ImageIcon>;
 	allImages: Array<Images>;
 	allLink: Array<Link>;
+	allLinksHub: Array<LinksHub>;
+	allMassSave: Array<MassSave>;
+	allMediaFeed: Array<MediaFeed>;
 	allMemberships: Array<Memberships>;
 	allNav: Array<Nav>;
 	allOtherServices: Array<OtherServices>;
+	allPrivacyPolicy: Array<PrivacyPolicy>;
 	allSanityFileAsset: Array<SanityFileAsset>;
 	allSanityImageAsset: Array<SanityImageAsset>;
 	allServiceAreas: Array<ServiceAreas>;
 	allServiceMemberships: Array<ServiceMemberships>;
+	allSubmittedApplications: Array<SubmittedApplications>;
 	allTestimonials: Array<Testimonials>;
 };
 
@@ -1361,7 +2184,27 @@ export type RootQueryBlogArgs = {
 	id: Scalars['ID'];
 };
 
+export type RootQueryBlogPostsArgs = {
+	id: Scalars['ID'];
+};
+
+export type RootQueryBlogsArgs = {
+	id: Scalars['ID'];
+};
+
 export type RootQueryBooknowArgs = {
+	id: Scalars['ID'];
+};
+
+export type RootQueryCareersArgs = {
+	id: Scalars['ID'];
+};
+
+export type RootQueryCategoriesArgs = {
+	id: Scalars['ID'];
+};
+
+export type RootQueryCommunityArgs = {
 	id: Scalars['ID'];
 };
 
@@ -1373,7 +2216,15 @@ export type RootQueryDocumentArgs = {
 	id: Scalars['ID'];
 };
 
+export type RootQueryEventsListArgs = {
+	id: Scalars['ID'];
+};
+
 export type RootQueryFaqArgs = {
+	id: Scalars['ID'];
+};
+
+export type RootQueryFinancingArgs = {
 	id: Scalars['ID'];
 };
 
@@ -1401,6 +2252,18 @@ export type RootQueryLinkArgs = {
 	id: Scalars['ID'];
 };
 
+export type RootQueryLinksHubArgs = {
+	id: Scalars['ID'];
+};
+
+export type RootQueryMassSaveArgs = {
+	id: Scalars['ID'];
+};
+
+export type RootQueryMediaFeedArgs = {
+	id: Scalars['ID'];
+};
+
 export type RootQueryMembershipsArgs = {
 	id: Scalars['ID'];
 };
@@ -1410,6 +2273,10 @@ export type RootQueryNavArgs = {
 };
 
 export type RootQueryOtherServicesArgs = {
+	id: Scalars['ID'];
+};
+
+export type RootQueryPrivacyPolicyArgs = {
 	id: Scalars['ID'];
 };
 
@@ -1426,6 +2293,10 @@ export type RootQueryServiceAreasArgs = {
 };
 
 export type RootQueryServiceMembershipsArgs = {
+	id: Scalars['ID'];
+};
+
+export type RootQuerySubmittedApplicationsArgs = {
 	id: Scalars['ID'];
 };
 
@@ -1447,11 +2318,46 @@ export type RootQueryAllBlogArgs = {
 	where?: InputMaybe<BlogFilter>;
 };
 
+export type RootQueryAllBlogPostsArgs = {
+	limit?: InputMaybe<Scalars['Int']>;
+	offset?: InputMaybe<Scalars['Int']>;
+	sort?: InputMaybe<Array<BlogPostsSorting>>;
+	where?: InputMaybe<BlogPostsFilter>;
+};
+
+export type RootQueryAllBlogsArgs = {
+	limit?: InputMaybe<Scalars['Int']>;
+	offset?: InputMaybe<Scalars['Int']>;
+	sort?: InputMaybe<Array<BlogsSorting>>;
+	where?: InputMaybe<BlogsFilter>;
+};
+
 export type RootQueryAllBooknowArgs = {
 	limit?: InputMaybe<Scalars['Int']>;
 	offset?: InputMaybe<Scalars['Int']>;
 	sort?: InputMaybe<Array<BooknowSorting>>;
 	where?: InputMaybe<BooknowFilter>;
+};
+
+export type RootQueryAllCareersArgs = {
+	limit?: InputMaybe<Scalars['Int']>;
+	offset?: InputMaybe<Scalars['Int']>;
+	sort?: InputMaybe<Array<CareersSorting>>;
+	where?: InputMaybe<CareersFilter>;
+};
+
+export type RootQueryAllCategoriesArgs = {
+	limit?: InputMaybe<Scalars['Int']>;
+	offset?: InputMaybe<Scalars['Int']>;
+	sort?: InputMaybe<Array<CategoriesSorting>>;
+	where?: InputMaybe<CategoriesFilter>;
+};
+
+export type RootQueryAllCommunityArgs = {
+	limit?: InputMaybe<Scalars['Int']>;
+	offset?: InputMaybe<Scalars['Int']>;
+	sort?: InputMaybe<Array<CommunitySorting>>;
+	where?: InputMaybe<CommunityFilter>;
 };
 
 export type RootQueryAllCtaArgs = {
@@ -1468,11 +2374,25 @@ export type RootQueryAllDocumentArgs = {
 	where?: InputMaybe<DocumentFilter>;
 };
 
+export type RootQueryAllEventsListArgs = {
+	limit?: InputMaybe<Scalars['Int']>;
+	offset?: InputMaybe<Scalars['Int']>;
+	sort?: InputMaybe<Array<EventsListSorting>>;
+	where?: InputMaybe<EventsListFilter>;
+};
+
 export type RootQueryAllFaqArgs = {
 	limit?: InputMaybe<Scalars['Int']>;
 	offset?: InputMaybe<Scalars['Int']>;
 	sort?: InputMaybe<Array<FaqSorting>>;
 	where?: InputMaybe<FaqFilter>;
+};
+
+export type RootQueryAllFinancingArgs = {
+	limit?: InputMaybe<Scalars['Int']>;
+	offset?: InputMaybe<Scalars['Int']>;
+	sort?: InputMaybe<Array<FinancingSorting>>;
+	where?: InputMaybe<FinancingFilter>;
 };
 
 export type RootQueryAllFooterArgs = {
@@ -1517,6 +2437,27 @@ export type RootQueryAllLinkArgs = {
 	where?: InputMaybe<LinkFilter>;
 };
 
+export type RootQueryAllLinksHubArgs = {
+	limit?: InputMaybe<Scalars['Int']>;
+	offset?: InputMaybe<Scalars['Int']>;
+	sort?: InputMaybe<Array<LinksHubSorting>>;
+	where?: InputMaybe<LinksHubFilter>;
+};
+
+export type RootQueryAllMassSaveArgs = {
+	limit?: InputMaybe<Scalars['Int']>;
+	offset?: InputMaybe<Scalars['Int']>;
+	sort?: InputMaybe<Array<MassSaveSorting>>;
+	where?: InputMaybe<MassSaveFilter>;
+};
+
+export type RootQueryAllMediaFeedArgs = {
+	limit?: InputMaybe<Scalars['Int']>;
+	offset?: InputMaybe<Scalars['Int']>;
+	sort?: InputMaybe<Array<MediaFeedSorting>>;
+	where?: InputMaybe<MediaFeedFilter>;
+};
+
 export type RootQueryAllMembershipsArgs = {
 	limit?: InputMaybe<Scalars['Int']>;
 	offset?: InputMaybe<Scalars['Int']>;
@@ -1536,6 +2477,13 @@ export type RootQueryAllOtherServicesArgs = {
 	offset?: InputMaybe<Scalars['Int']>;
 	sort?: InputMaybe<Array<OtherServicesSorting>>;
 	where?: InputMaybe<OtherServicesFilter>;
+};
+
+export type RootQueryAllPrivacyPolicyArgs = {
+	limit?: InputMaybe<Scalars['Int']>;
+	offset?: InputMaybe<Scalars['Int']>;
+	sort?: InputMaybe<Array<PrivacyPolicySorting>>;
+	where?: InputMaybe<PrivacyPolicyFilter>;
 };
 
 export type RootQueryAllSanityFileAssetArgs = {
@@ -1564,6 +2512,13 @@ export type RootQueryAllServiceMembershipsArgs = {
 	offset?: InputMaybe<Scalars['Int']>;
 	sort?: InputMaybe<Array<ServiceMembershipsSorting>>;
 	where?: InputMaybe<ServiceMembershipsFilter>;
+};
+
+export type RootQueryAllSubmittedApplicationsArgs = {
+	limit?: InputMaybe<Scalars['Int']>;
+	offset?: InputMaybe<Scalars['Int']>;
+	sort?: InputMaybe<Array<SubmittedApplicationsSorting>>;
+	where?: InputMaybe<SubmittedApplicationsFilter>;
 };
 
 export type RootQueryAllTestimonialsArgs = {
@@ -2150,6 +3105,77 @@ export type StringFilter = {
 	/** Checks if the value is not equal to the given input. */
 	neq?: InputMaybe<Scalars['String']>;
 	nin?: InputMaybe<Array<Scalars['String']>>;
+};
+
+export type SubmittedApplications = Document & {
+	__typename?: 'SubmittedApplications';
+	/** Date the document was created */
+	_createdAt?: Maybe<Scalars['DateTime']>;
+	/** Document ID */
+	_id?: Maybe<Scalars['ID']>;
+	_key?: Maybe<Scalars['String']>;
+	/** Current document revision */
+	_rev?: Maybe<Scalars['String']>;
+	/** Document type */
+	_type?: Maybe<Scalars['String']>;
+	/** Date the document was last modified */
+	_updatedAt?: Maybe<Scalars['DateTime']>;
+	aboutApplicant?: Maybe<Scalars['String']>;
+	address1?: Maybe<Scalars['String']>;
+	address2?: Maybe<Scalars['String']>;
+	city?: Maybe<Scalars['String']>;
+	email?: Maybe<Scalars['String']>;
+	employmentDesired?: Maybe<Scalars['String']>;
+	jobPosition?: Maybe<Scalars['String']>;
+	name?: Maybe<Scalars['String']>;
+	phoneNumber?: Maybe<Scalars['String']>;
+	resume?: Maybe<Scalars['String']>;
+	state?: Maybe<Scalars['String']>;
+	zipCode?: Maybe<Scalars['String']>;
+};
+
+export type SubmittedApplicationsFilter = {
+	/** Apply filters on document level */
+	_?: InputMaybe<Sanity_DocumentFilter>;
+	_createdAt?: InputMaybe<DatetimeFilter>;
+	_id?: InputMaybe<IdFilter>;
+	_key?: InputMaybe<StringFilter>;
+	_rev?: InputMaybe<StringFilter>;
+	_type?: InputMaybe<StringFilter>;
+	_updatedAt?: InputMaybe<DatetimeFilter>;
+	aboutApplicant?: InputMaybe<StringFilter>;
+	address1?: InputMaybe<StringFilter>;
+	address2?: InputMaybe<StringFilter>;
+	city?: InputMaybe<StringFilter>;
+	email?: InputMaybe<StringFilter>;
+	employmentDesired?: InputMaybe<StringFilter>;
+	jobPosition?: InputMaybe<StringFilter>;
+	name?: InputMaybe<StringFilter>;
+	phoneNumber?: InputMaybe<StringFilter>;
+	resume?: InputMaybe<StringFilter>;
+	state?: InputMaybe<StringFilter>;
+	zipCode?: InputMaybe<StringFilter>;
+};
+
+export type SubmittedApplicationsSorting = {
+	_createdAt?: InputMaybe<SortOrder>;
+	_id?: InputMaybe<SortOrder>;
+	_key?: InputMaybe<SortOrder>;
+	_rev?: InputMaybe<SortOrder>;
+	_type?: InputMaybe<SortOrder>;
+	_updatedAt?: InputMaybe<SortOrder>;
+	aboutApplicant?: InputMaybe<SortOrder>;
+	address1?: InputMaybe<SortOrder>;
+	address2?: InputMaybe<SortOrder>;
+	city?: InputMaybe<SortOrder>;
+	email?: InputMaybe<SortOrder>;
+	employmentDesired?: InputMaybe<SortOrder>;
+	jobPosition?: InputMaybe<SortOrder>;
+	name?: InputMaybe<SortOrder>;
+	phoneNumber?: InputMaybe<SortOrder>;
+	resume?: InputMaybe<SortOrder>;
+	state?: InputMaybe<SortOrder>;
+	zipCode?: InputMaybe<SortOrder>;
 };
 
 export type TeamMembers = {

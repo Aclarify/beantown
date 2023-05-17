@@ -114,24 +114,11 @@ const homeQuery = ` allHome {
 			}
 			blogsTitle
 		blogsDescription
-			blogCards {
-        blogTitle
-        description
-        blogImage{
-          image{
-            asset{
-              url
+			blogCategories{
 				_id
-				_key
-            }
-          }
-        	href
-        }
-        button{
-          href
-        	text
-        }
-      }
+				name
+				category
+			}
 			blogButton {
 				text
 				href

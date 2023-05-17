@@ -122,13 +122,13 @@ export default defineType({
       type: 'string',
     }),
     defineField({
-      name: 'blogCards',
-      title: 'Blog Cards',
+      name: 'blogCategories',
+      title: 'Blog Categories',
       type: 'array',
       of: [
         {
           type: 'reference',
-          to: [{type: 'blog'}],
+          to: [{type: 'categories'}],
         },
       ],
     }),
