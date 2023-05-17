@@ -13,6 +13,7 @@ import FooterSection from 'components/organisms/footer';
 import BookNowButton from 'components/atoms/book-now-button.atom';
 import CareerHeroSection from 'components/templates/career/hero/career-hero-section';
 import JobSection from 'components/templates/career/jobs/jobs-section';
+import { withFeatureFlag } from 'components/templates/under-construction/with-feature-flag';
 
 export interface CareersContentProps {
 	page: Careers[];
@@ -45,6 +46,19 @@ const CareerPage: React.FC = () => {
 			</Head>
 		);
 	};
+
+	const flagValue = process.env.NEXT_PUBLIC_CAREERS_PAGE;
+
+	const FlaggedContent = withFeatureFlag(
+		() => (
+			<>
+				<CareerHeroSection />
+				<JobSection />
+			</>
+		),
+		flagValue
+	);
+
 	return (
 		<div id="career" className="bg-primary-white-shade-1">
 			<PageHead />
@@ -66,8 +80,7 @@ const CareerPage: React.FC = () => {
 					</BookNowButton>
 				</div>
 			</Header>
-			<CareerHeroSection />
-			<JobSection />
+			<FlaggedContent />
 			<FooterSection logoDesktop={logoLight?.image} content={footerData} />
 		</div>
 	);
