@@ -921,13 +921,14 @@ export type Financing = Document & {
 	aboutSectionDescription?: Maybe<PortableText>;
 	aboutSectionImage?: Maybe<Image>;
 	aboutSectionTitle?: Maybe<Scalars['String']>;
-	benefitsDescription?: Maybe<PortableText>;
-	benefitsImage?: Maybe<Image>;
-	benefitsTitle?: Maybe<Scalars['String']>;
 	ctaButton?: Maybe<Cta>;
 	ctaDescription?: Maybe<PortableText>;
 	ctaImage?: Maybe<Image>;
 	ctaTitle?: Maybe<Scalars['String']>;
+	faqButton?: Maybe<Cta>;
+	faqDescription?: Maybe<Scalars['String']>;
+	faqList?: Maybe<Array<Maybe<Faq>>>;
+	faqTitle?: Maybe<Scalars['String']>;
 	heroDescription?: Maybe<Scalars['String']>;
 	heroImage?: Maybe<Image>;
 	heroTitle?: Maybe<Scalars['String']>;
@@ -936,8 +937,9 @@ export type Financing = Document & {
 	metaDescription?: Maybe<Scalars['String']>;
 	name?: Maybe<Scalars['String']>;
 	pageTitle?: Maybe<Scalars['String']>;
-	serviceAreaSection?: Maybe<ServiceAreas>;
-	testimonialSection?: Maybe<Testimonials>;
+	planCards?: Maybe<Array<Maybe<TitleDescription>>>;
+	planIcon?: Maybe<Image>;
+	planSectionTitle?: Maybe<Scalars['String']>;
 };
 
 export type FinancingFilter = {
@@ -952,13 +954,13 @@ export type FinancingFilter = {
 	aboutSectionDescription?: InputMaybe<PortableTextFilter>;
 	aboutSectionImage?: InputMaybe<ImageFilter>;
 	aboutSectionTitle?: InputMaybe<StringFilter>;
-	benefitsDescription?: InputMaybe<PortableTextFilter>;
-	benefitsImage?: InputMaybe<ImageFilter>;
-	benefitsTitle?: InputMaybe<StringFilter>;
 	ctaButton?: InputMaybe<CtaFilter>;
 	ctaDescription?: InputMaybe<PortableTextFilter>;
 	ctaImage?: InputMaybe<ImageFilter>;
 	ctaTitle?: InputMaybe<StringFilter>;
+	faqButton?: InputMaybe<CtaFilter>;
+	faqDescription?: InputMaybe<StringFilter>;
+	faqTitle?: InputMaybe<StringFilter>;
 	heroDescription?: InputMaybe<StringFilter>;
 	heroImage?: InputMaybe<ImageFilter>;
 	heroTitle?: InputMaybe<StringFilter>;
@@ -967,8 +969,8 @@ export type FinancingFilter = {
 	metaDescription?: InputMaybe<StringFilter>;
 	name?: InputMaybe<StringFilter>;
 	pageTitle?: InputMaybe<StringFilter>;
-	serviceAreaSection?: InputMaybe<ServiceAreasFilter>;
-	testimonialSection?: InputMaybe<TestimonialsFilter>;
+	planIcon?: InputMaybe<ImageFilter>;
+	planSectionTitle?: InputMaybe<StringFilter>;
 };
 
 export type FinancingSorting = {
@@ -981,18 +983,19 @@ export type FinancingSorting = {
 	aboutSectionDescription?: InputMaybe<PortableTextSorting>;
 	aboutSectionImage?: InputMaybe<ImageSorting>;
 	aboutSectionTitle?: InputMaybe<SortOrder>;
-	benefitsDescription?: InputMaybe<PortableTextSorting>;
-	benefitsImage?: InputMaybe<ImageSorting>;
-	benefitsTitle?: InputMaybe<SortOrder>;
 	ctaDescription?: InputMaybe<PortableTextSorting>;
 	ctaImage?: InputMaybe<ImageSorting>;
 	ctaTitle?: InputMaybe<SortOrder>;
+	faqDescription?: InputMaybe<SortOrder>;
+	faqTitle?: InputMaybe<SortOrder>;
 	heroDescription?: InputMaybe<SortOrder>;
 	heroImage?: InputMaybe<ImageSorting>;
 	heroTitle?: InputMaybe<SortOrder>;
 	metaDescription?: InputMaybe<SortOrder>;
 	name?: InputMaybe<SortOrder>;
 	pageTitle?: InputMaybe<SortOrder>;
+	planIcon?: InputMaybe<ImageSorting>;
+	planSectionTitle?: InputMaybe<SortOrder>;
 };
 
 export type FloatFilter = {
@@ -1668,6 +1671,9 @@ export type LinksHubSorting = {
 
 export type MassSave = Document & {
 	__typename?: 'MassSave';
+	massSaveSection3Description?: Maybe<PortableText>;
+	massSaveSection3Image?: Maybe<Image>;
+	massSaveSection3Title?: Maybe<Scalars['String']>;
 	/** Date the document was created */
 	_createdAt?: Maybe<Scalars['DateTime']>;
 	/** Document ID */
@@ -1708,6 +1714,9 @@ export type MassSave = Document & {
 };
 
 export type MassSaveFilter = {
+	massSaveSection3Description?: InputMaybe<PortableTextFilter>;
+	massSaveSection3Image?: InputMaybe<ImageFilter>;
+	massSaveSection3Title?: InputMaybe<StringFilter>;
 	/** Apply filters on document level */
 	_?: InputMaybe<Sanity_DocumentFilter>;
 	_createdAt?: InputMaybe<DatetimeFilter>;
@@ -1743,6 +1752,9 @@ export type MassSaveFilter = {
 };
 
 export type MassSaveSorting = {
+	massSaveSection3Description?: InputMaybe<PortableTextSorting>;
+	massSaveSection3Image?: InputMaybe<ImageSorting>;
+	massSaveSection3Title?: InputMaybe<SortOrder>;
 	_createdAt?: InputMaybe<SortOrder>;
 	_id?: InputMaybe<SortOrder>;
 	_key?: InputMaybe<SortOrder>;

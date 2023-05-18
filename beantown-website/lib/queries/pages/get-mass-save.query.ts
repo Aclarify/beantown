@@ -54,6 +54,18 @@ const massSaveQuery = `allMassSave {
 					_key
 				}
 			}
+
+			 massSaveSection3Title
+ 			 massSaveSection3Image{
+				asset{
+				url
+				_id
+				_key
+				}
+			}
+			massSaveSection3Description{
+				contentRaw
+			}
 			howItWorksTitle
             howItWorksDescription {
 				contentRaw

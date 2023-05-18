@@ -6,7 +6,7 @@ import topWave from 'public/images/community/events/community-events-top-wave.sv
 import bottomWave from 'public/images/community/events/community-events-bottom-wave-with-blob.svg';
 import bottomWaveMobile from 'public/images/community/events/community-events-bottom-wave-mobile.svg';
 import { GlobalContext } from 'contexts/global/global.context';
-import { CommunityContentProps } from 'temporary-ondeck-pages/community';
+import { CommunityContentProps } from 'pages/community';
 import { GlobalContextProps } from '@typing/common/interfaces/contexts.interface';
 import UpcomingEventsContent from './upcoming-events.content';
 import Image from 'next/image';

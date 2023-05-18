@@ -13,7 +13,6 @@ import textList from './molecules/textList'
 import nav from './layouts/nav'
 import titleDescriptionImage from './molecules/titleDescriptionImage'
 import heatingAndCooling from './pages/heating-and-cooling'
-import blog from './organism/blog'
 import faq from './organism/faq'
 import otherServices from './pages/other-services'
 import serviceAreas from './organism/serviceAreas'
@@ -50,7 +49,6 @@ export const schemaTypes = [
   nav,
   footer,
   otherServices,
-  blog,
   faq,
   serviceAreas,
   testimonials,

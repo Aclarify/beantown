@@ -3,7 +3,7 @@ import FinancingHeroContent from './financing-hero.content';
 
 const FinancingHeroSection = () => {
 	return (
-		<section id="about-us-hero" className="z-5 relative">
+		<section id="financing-hero" className="z-5 relative">
 			<FinancingHeroContent />
 		</section>
 	);

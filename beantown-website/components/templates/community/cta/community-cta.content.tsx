@@ -2,7 +2,7 @@ import React, { useContext } from 'react';
 import { GlobalContext } from '@contexts/global/global.context';
 import { GlobalContextProps } from '@typing/common/interfaces/contexts.interface';
 import CTAWithImage from 'components/organisms/cta-with-image.organism';
-import { CommunityContentProps } from 'temporary-ondeck-pages/community';
+import { CommunityContentProps } from 'pages/community';
 import CTATextContent, {
 	CTAButton,
 } from 'components/organisms/cta-text-content.organism';

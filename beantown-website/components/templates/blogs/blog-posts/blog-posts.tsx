@@ -11,7 +11,7 @@ import { InstantSearch } from 'react-instantsearch-dom';
 import { config } from '@lib/config';
 import algoliasearch from 'algoliasearch';
 import { GlobalContext } from 'contexts/global/global.context';
-import { BlogsContentProps } from 'temporary-ondeck-pages/blog';
+import { BlogsContentProps } from 'pages/blog';
 import { GlobalContextProps } from '@typing/common/interfaces/contexts.interface';
 import BlogFilters from 'components/organisms/blog-filter-list.organism';
 

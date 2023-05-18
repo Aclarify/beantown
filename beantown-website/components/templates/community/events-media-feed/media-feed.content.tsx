@@ -3,7 +3,7 @@ import Image from 'next/image';
 import CMSImageWrapper from 'components/molecules/cms-image-wrapper.molecule';
 import { GlobalContext } from '@contexts/global/global.context';
 import { GlobalContextProps } from '@typing/common/interfaces/contexts.interface';
-import { CommunityContentProps } from 'temporary-ondeck-pages/community';
+import { CommunityContentProps } from 'pages/community';
 import Link from 'next/link';
 import StaticImageWrapper from 'components/molecules/static-image-wrapper.molecule';
 import Animate from 'components/molecules/animate.molecule';

@@ -86,6 +86,26 @@ export default defineType({
         hotspot: true,
       },
     }),
+
+    defineField({
+      name: 'massSaveSection3Title',
+      title: 'Mass Save  Section  Title',
+      type: 'string',
+    }),
+    defineField({
+      name: 'massSaveSection3Description',
+      title: 'Mass Save Section Description',
+      type: 'portableText',
+    }),
+    defineField({
+      name: 'massSaveSection3Image',
+      title: 'Mass Save Section Image',
+      type: 'image',
+      options: {
+        hotspot: true,
+      },
+    }),
+
     defineField({
       name: 'howItWorksTitle',
       title: 'How it Works Section Title',

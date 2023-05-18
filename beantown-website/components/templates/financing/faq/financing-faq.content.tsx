@@ -4,7 +4,7 @@ import { GlobalContextProps } from '@typing/common/interfaces/contexts.interface
 import { MassSaveContentProps } from 'pages/mass-save';
 import FAQ from 'components/organisms/faq.organism';
 
-const MassSaveFaqContent = () => {
+const FinancingFaqContent = () => {
 	const { pageContent } =
 		useContext<GlobalContextProps<MassSaveContentProps>>(GlobalContext);
 	if (!pageContent || !pageContent.page || !pageContent.page[0]) {
@@ -12,8 +12,10 @@ const MassSaveFaqContent = () => {
 	}
 	const pageData = pageContent.page[0];
 	const { faqTitle, faqDescription, faqButton, faqList } = pageData;
+	
 	return (
 		<>
+			
 			{faqList && (
 				<FAQ
 					backgroundImage="/images/home/faq/home-faq-bg-thumbprint.svg"
@@ -25,8 +27,9 @@ const MassSaveFaqContent = () => {
 					faqList={faqList || []}
 				></FAQ>
 			)}
+			
 		</>
 	);
 };
 
-export default MassSaveFaqContent;
+export default FinancingFaqContent;

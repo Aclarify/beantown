@@ -3,7 +3,7 @@ import { GlobalContext } from '@contexts/global/global.context';
 import { GlobalContextProps } from '@typing/common/interfaces/contexts.interface';
 import ContentWrapper from '../../../organisms/content-wrapper.organism';
 import Animate from 'components/molecules/animate.molecule';
-import { CareersContentProps } from 'temporary-ondeck-pages/careers';
+import { CareersContentProps } from 'pages/careers';
 import Link from 'next/link';
 import Button from 'components/atoms/button.atom';
 import MaskedImageWithBackground from 'components/organisms/masked-image-with-background.organism';

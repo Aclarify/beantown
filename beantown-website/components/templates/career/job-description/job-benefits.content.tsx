@@ -3,7 +3,7 @@ import { GlobalContext } from '@contexts/global/global.context';
 import { GlobalContextProps } from '@typing/common/interfaces/contexts.interface';
 import Image from 'next/image';
 import Animate from 'components/molecules/animate.molecule';
-import { CareersContentProps } from 'temporary-ondeck-pages/careers';
+import { CareersContentProps } from 'pages/careers';
 import { jobsContext } from '@contexts/jobs/Job-benefits-context';
 import Link from 'next/link';
 import Button from 'components/atoms/button.atom';
