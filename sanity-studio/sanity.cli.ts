@@ -3,5 +3,13 @@ import * as dotenv from 'dotenv' // see https://github.com/motdotla/dotenv#how-d
 dotenv.config()
 
 const projectId = process.env.SANITY_STUDIO_PROJECT_ID
+const dataset = process.env.SANITY_STUDIO_DATASET
 
-export default defineCliConfig({api: {projectId}})
+export default defineCliConfig({
+  api: {projectId, dataset},
+  graphql: [
+    {
+      workspace: 'develop-workspace',
+    },
+  ],
+})
