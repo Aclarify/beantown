@@ -1,24 +1,22 @@
 import React from 'react';
-import MassSaveFaqContent from './mass-save-faq.content';
 import bottomWave from 'public/images/mass-save/mass-save-faq-bottom-wave.svg';
 import WaveWrapper from 'components/molecules/wave-wrapper.molecule';
-import Image from 'next/image'
+import FinancingFaqContent from './financing-faq.content';
 
-const MassSaveFaqSection = () => {
+const FinancingFaqSection = () => {
 	return (
 		<>
 			<section
-				id="mass-save-faq"
-				className=" z-5  3xl:mt-[15em] relative mb-[6em] 2xl:mt-[10em]  "
+				id="faq"
+				className=" z-5 -mb-2  relative md:mb-[-4em]  "
 			>
-				<div>
-					<MassSaveFaqContent />
+				<div className='-mt-28 '>
+					<FinancingFaqContent />
 					<WaveWrapper waveURL={bottomWave}></WaveWrapper>
 				</div>
-				
 			</section>
 		</>
 	);
 };
 
-export default MassSaveFaqSection;
+export default FinancingFaqSection;

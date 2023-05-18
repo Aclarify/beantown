@@ -8,7 +8,7 @@ import useWindowDimensions from '@lib/hooks/use-window-dimensions.hook';
 import { MassSaveContentProps } from 'pages/mass-save';
 import Animate from 'components/molecules/animate.molecule';
 import MaskedImageWithBackground from 'components/organisms/masked-image-with-background.organism';
-const AboutMassSaveContent = () => {
+const MassSaveAdditionalFeaturesContent = () => {
 	const { pageContent } =
 		useContext<GlobalContextProps<MassSaveContentProps>>(GlobalContext);
 	const { width } = useWindowDimensions();
@@ -17,7 +17,7 @@ const AboutMassSaveContent = () => {
 		return null;
 	}
 	const pageData = pageContent.page[0];
-	const { aboutMassSaveTitle, aboutMassSaveDescription, aboutMassSaveImage } =
+	const {MassSaveSection3Title,MassSaveSection3Image,MassSaveSection3Description } =
 		pageData;
 	
 	return (
@@ -34,10 +34,10 @@ const AboutMassSaveContent = () => {
 					className="mb-8 md:mt-12  md:basis-1/2 md:px-20 lg:px-10  "
 				>
 					<MaskedImageWithBackground
-						image={aboutMassSaveImage || null}
-						imgAltText={aboutMassSaveImage?.asset?.altText || ''}
-						maskImg="./images/about-us/mission/about-us-mission-mask-blob.svg"
-						bgImg="./images/about-us/mission/about-us-mission-bg-blob.svg"
+						image={MassSaveSection3Image || null }
+						imgAltText={MassSaveSection3Image?.asset?.altText || ''}
+						maskImg="/images/about-us/mission/about-us-mission-mask-blob.svg"
+						bgImg="/images/about-us/mission/about-us-mission-bg-blob.svg"
 					/>
 				</div>
 				<div
@@ -47,12 +47,12 @@ const AboutMassSaveContent = () => {
 					<ContentWrapper>
 						<ContentWrapper.Title>
 							<Animate bottom>
-								<h2 className="text-primary-black ">{aboutMassSaveTitle}</h2>
+								<h2 className="text-primary-black ">{MassSaveSection3Title}</h2>
 							</Animate>
 						</ContentWrapper.Title>
 						<ContentWrapper.Description className="text-left ">
 							<Animate>
-								<RichText value={aboutMassSaveDescription?.contentRaw} />
+								<RichText value={MassSaveSection3Description?.contentRaw} />
 							</Animate>
 						</ContentWrapper.Description>
 					</ContentWrapper>
@@ -62,4 +62,4 @@ const AboutMassSaveContent = () => {
 	);
 };
 
-export default AboutMassSaveContent;
+export default MassSaveAdditionalFeaturesContent;
