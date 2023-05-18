@@ -191,7 +191,7 @@ const JobsSliderContent = () => {
 											/>
 										</div>
 
-										<div className="container absolute bottom-24 left-0 flex  w-full items-end   justify-between  p-8    md:gap-2  lg:pt-4  ">
+										<div className="container absolute bottom-4  lg:bottom-8 left-0 flex  w-full items-end   justify-between  p-8    md:gap-2  lg:pt-4  ">
 											<span className="w-[60%] text-2xl font-semibold text-white 2xl:text-4xl ">
 												{jobDetails?.positionName}
 											</span>
