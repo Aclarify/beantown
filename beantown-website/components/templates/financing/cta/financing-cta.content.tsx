@@ -4,7 +4,7 @@ import { GlobalContextProps } from '@typing/common/interfaces/contexts.interface
 import CTAWithImage from 'components/organisms/cta-with-image.organism';
 import CTATextContent from 'components/organisms/cta-text-content.organism';
 import BookNowButton from 'components/atoms/book-now-button.atom';
-import { FinancingContentProps } from 'temporary-ondeck-pages/financing';
+import { FinancingContentProps } from 'pages/financing';
 const FinancingCTAContent = () => {
 	const { pageContent } =
 		useContext<GlobalContextProps<FinancingContentProps>>(GlobalContext);

@@ -3,7 +3,7 @@ import JobsSliderContent from './jobs-slider-content';
 import JobDescriptionResponsibilitySection from '../job-description/job-description-section';
 import { GlobalContext } from '@contexts/global/global.context';
 import { GlobalContextProps } from '@typing/common/interfaces/contexts.interface';
-import { CareersContentProps } from 'temporary-ondeck-pages/careers';
+import { CareersContentProps } from 'pages/careers';
 import { JobDetails } from '@typing/gql/graphql';
 import { jobsContext } from '@contexts/jobs/Job-benefits-context';
 import Image from 'next/image';

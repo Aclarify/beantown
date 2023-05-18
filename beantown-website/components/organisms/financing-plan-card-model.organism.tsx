@@ -2,15 +2,14 @@ import React from 'react';
 import Modal from './modal.organism';
 import PlanCard from './financing-plan-card.organism';
 interface Props {
-	visible : boolean;
-	onClose: ()=>void;
-	planIconImage : any;
-	planCardTitle :string;
-	planCardDescription:string;
+	visible: boolean;
+	onClose: () => void;
+	planIconImage: any;
+	planCardTitle: string;
+	planCardDescription: string;
 }
 
-const PlanModal: React.FC<Props> = (props) => {	
-	console.log('inside modal', props.planIconImage);
+const PlanModal: React.FC<Props> = (props) => {
 	return (
 		<Modal isVisible={props.visible} onClose={props.onClose}>
 			<PlanCard

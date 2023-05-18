@@ -5,7 +5,7 @@ import clsx from 'clsx';
 import MassSaveStagesCard from './mass-save-stages-cards';
 import { GlobalContext } from '@contexts/global/global.context';
 import { GlobalContextProps } from '@typing/common/interfaces/contexts.interface';
-import { MassSaveContentProps } from 'temporary-ondeck-pages/mass-save';
+import { MassSaveContentProps } from 'pages/mass-save';
 import SectionContentWrapper from 'components/molecules/section-content-wrapper.molecule';
 import Animate from 'components/molecules/animate.molecule';
 import CtaWrapper from 'components/molecules/cta-wrapper.molecule';

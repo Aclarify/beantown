@@ -11,7 +11,7 @@ import { GlobalContext } from '@contexts/global/global.context';
 import { GlobalContextProps } from '@typing/common/interfaces/contexts.interface';
 import { SCREEN_BREAKPOINTS } from '@typing/common/interfaces/devices.interface';
 import Animate from 'components/molecules/animate.molecule';
-import { CareersContentProps } from 'temporary-ondeck-pages/careers';
+import { CareersContentProps } from 'pages/careers';
 import CMSImageWrapper from 'components/molecules/cms-image-wrapper.molecule';
 import { jobsContext } from '@contexts/jobs/Job-benefits-context';
 
@@ -191,7 +191,7 @@ const JobsSliderContent = () => {
 											/>
 										</div>
 
-										<div className="container absolute bottom-4  lg:bottom-8 left-0 flex  w-full items-end   justify-between  p-8    md:gap-2  lg:pt-4  ">
+										<div className="container absolute bottom-4  left-0 flex w-full  items-end justify-between   p-8  md:gap-2    lg:bottom-8  lg:pt-4  ">
 											<span className="w-[60%] text-2xl font-semibold text-white 2xl:text-4xl ">
 												{jobDetails?.positionName}
 											</span>

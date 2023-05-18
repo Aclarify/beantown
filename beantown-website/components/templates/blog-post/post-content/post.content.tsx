@@ -1,7 +1,6 @@
 import React, { useContext } from 'react';
 import { GlobalContext } from '@contexts/global/global.context';
 import { GlobalContextProps } from '@typing/common/interfaces/contexts.interface';
-import { BlogPostContentProps } from 'temporary-ondeck-pages/blog/[slug]';
 import ContentWrapper from 'components/organisms/content-wrapper.organism';
 import Animate from 'components/molecules/animate.molecule';
 import Image from 'next/image';
@@ -12,6 +11,7 @@ import { formatDate } from 'utils/helper';
 import RelatedBlogPosts from 'components/organisms/related-posts.organism';
 import { toastBuilder } from 'components/molecules/toast.molecule';
 import PostTextContent from 'components/molecules/post-text-content.molecule';
+import { BlogPostContentProps } from 'pages/blog/[slug]';
 
 const PostContent = () => {
 	const { pageContent } =
