@@ -1671,9 +1671,9 @@ export type LinksHubSorting = {
 
 export type MassSave = Document & {
 	__typename?: 'MassSave';
-	MassSaveSection3Description?: Maybe<PortableText>;
-	MassSaveSection3Image?: Maybe<Image>;
-	MassSaveSection3Title?: Maybe<Scalars['String']>;
+	massSaveSection3Description?: Maybe<PortableText>;
+	massSaveSection3Image?: Maybe<Image>;
+	massSaveSection3Title?: Maybe<Scalars['String']>;
 	/** Date the document was created */
 	_createdAt?: Maybe<Scalars['DateTime']>;
 	/** Document ID */
@@ -1714,9 +1714,9 @@ export type MassSave = Document & {
 };
 
 export type MassSaveFilter = {
-	MassSaveSection3Description?: InputMaybe<PortableTextFilter>;
-	MassSaveSection3Image?: InputMaybe<ImageFilter>;
-	MassSaveSection3Title?: InputMaybe<StringFilter>;
+	massSaveSection3Description?: InputMaybe<PortableTextFilter>;
+	massSaveSection3Image?: InputMaybe<ImageFilter>;
+	massSaveSection3Title?: InputMaybe<StringFilter>;
 	/** Apply filters on document level */
 	_?: InputMaybe<Sanity_DocumentFilter>;
 	_createdAt?: InputMaybe<DatetimeFilter>;
@@ -1752,9 +1752,9 @@ export type MassSaveFilter = {
 };
 
 export type MassSaveSorting = {
-	MassSaveSection3Description?: InputMaybe<PortableTextSorting>;
-	MassSaveSection3Image?: InputMaybe<ImageSorting>;
-	MassSaveSection3Title?: InputMaybe<SortOrder>;
+	massSaveSection3Description?: InputMaybe<PortableTextSorting>;
+	massSaveSection3Image?: InputMaybe<ImageSorting>;
+	massSaveSection3Title?: InputMaybe<SortOrder>;
 	_createdAt?: InputMaybe<SortOrder>;
 	_id?: InputMaybe<SortOrder>;
 	_key?: InputMaybe<SortOrder>;

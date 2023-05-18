@@ -18,9 +18,9 @@ const MassSaveAdditionalFeaturesContent = () => {
 	}
 	const pageData = pageContent.page[0];
 	const {
-		MassSaveSection3Title,
-		MassSaveSection3Image,
-		MassSaveSection3Description,
+		massSaveSection3Title,
+		massSaveSection3Image,
+		massSaveSection3Description,
 	} = pageData;
 
 	return (
@@ -37,8 +37,8 @@ const MassSaveAdditionalFeaturesContent = () => {
 					className="mb-8 md:mt-12  md:basis-1/2 md:px-20 lg:px-10  "
 				>
 					<MaskedImageWithBackground
-						image={MassSaveSection3Image || null}
-						imgAltText={MassSaveSection3Image?.asset?.altText || ''}
+						image={massSaveSection3Image || null}
+						imgAltText={massSaveSection3Image?.asset?.altText || ''}
 						maskImg="/images/about-us/mission/about-us-mission-mask-blob.svg"
 						bgImg="/images/about-us/mission/about-us-mission-bg-blob.svg"
 					/>
@@ -50,12 +50,12 @@ const MassSaveAdditionalFeaturesContent = () => {
 					<ContentWrapper>
 						<ContentWrapper.Title>
 							<Animate bottom>
-								<h2 className="text-primary-black ">{MassSaveSection3Title}</h2>
+								<h2 className="text-primary-black ">{massSaveSection3Title}</h2>
 							</Animate>
 						</ContentWrapper.Title>
 						<ContentWrapper.Description className="text-left ">
 							<Animate>
-								<RichText value={MassSaveSection3Description?.contentRaw} />
+								<RichText value={massSaveSection3Description?.contentRaw} />
 							</Animate>
 						</ContentWrapper.Description>
 					</ContentWrapper>

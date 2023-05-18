@@ -88,17 +88,17 @@ export default defineType({
     }),
 
     defineField({
-      name: 'MassSaveSection3Title',
+      name: 'massSaveSection3Title',
       title: 'Mass Save  Section  Title',
       type: 'string',
     }),
     defineField({
-      name: 'MassSaveSection3Description',
+      name: 'massSaveSection3Description',
       title: 'Mass Save Section Description',
       type: 'portableText',
     }),
     defineField({
-      name: 'MassSaveSection3Image',
+      name: 'massSaveSection3Image',
       title: 'Mass Save Section Image',
       type: 'image',
       options: {
