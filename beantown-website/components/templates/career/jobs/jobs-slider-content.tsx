@@ -1,23 +1,28 @@
 import React, { useContext } from 'react';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faArrowRight, faArrowLeft } from '@fortawesome/free-solid-svg-icons';
-import { GlobalContext } from '@contexts/global/global.context';
-import { GlobalContextProps } from '@typing/common/interfaces/contexts.interface';
 import Slider from 'react-slick';
 import 'slick-carousel/slick/slick.css';
 import 'slick-carousel/slick/slick-theme.css';
+import debounce from 'lodash/debounce';
+import clsx from 'clsx';
+
+import { GlobalContext } from '@contexts/global/global.context';
+import { GlobalContextProps } from '@typing/common/interfaces/contexts.interface';
 import { SCREEN_BREAKPOINTS } from '@typing/common/interfaces/devices.interface';
 import Animate from 'components/molecules/animate.molecule';
 import { CareersContentProps } from 'temporary-ondeck-pages/careers';
 import CMSImageWrapper from 'components/molecules/cms-image-wrapper.molecule';
 import { jobsContext } from '@contexts/jobs/Job-benefits-context';
-import clsx from 'clsx';
-import debounce from 'lodash/debounce';
+
+const animationSpeed = 500;
+
 const JobsSliderContent = () => {
 	const slider = React.useRef<Slider | null>(null);
 	const { pageContent } =
 		useContext<GlobalContextProps<CareersContentProps>>(GlobalContext);
 	const { activeJobDetails, setActiveJobDetails } = useContext(jobsContext);
+	const [isAnimating, setIsAnimating] = React.useState(false);
 
 	if (!pageContent) {
 		return null;
@@ -29,8 +34,11 @@ const JobsSliderContent = () => {
 		return null;
 	}
 	const previous = () => {
-		if (slider.current) {
+		// wait for animation to end before triggering prev
+		if (slider.current && !isAnimating) {
 			slider.current.slickPrev();
+			setIsAnimating(true);
+
 			// Update the active job details to the previous job details
 			const activeJobIndex = jobList.findIndex(
 				(jobDetails) => jobDetails?._key == activeJobDetails?._key
@@ -42,11 +50,18 @@ const JobsSliderContent = () => {
 			if (activeJobIndex == 0) {
 				setActiveJobDetails(jobList[jobList.length - 1] as any);
 			}
+
+			setTimeout(() => {
+				setIsAnimating(false);
+			}, animationSpeed);
 		}
 	};
 	const next = () => {
-		if (slider.current) {
+		// wait for animation to end before triggering next
+		if (slider.current && !isAnimating) {
 			slider.current.slickNext();
+			setIsAnimating(true);
+
 			// Update the active job details to the next job details
 			const activeJobIndex = jobList.findIndex(
 				(jobDetails) => jobDetails?._key == activeJobDetails?._key
@@ -58,14 +73,18 @@ const JobsSliderContent = () => {
 			if (activeJobIndex == jobList.length - 1) {
 				setActiveJobDetails(jobList[0] as any);
 			}
+
+			setTimeout(() => {
+				setIsAnimating(false);
+			}, animationSpeed);
 		}
 	};
-	const debouncedNext = debounce(next, 500);
-	const debouncedPrevious = debounce(previous, 500);
+	const debouncedNext = debounce(next, 50);
+	const debouncedPrevious = debounce(previous, 50);
 	const settings = {
 		dots: false,
 		infinite: true,
-		speed: 1300,
+		speed: animationSpeed,
 		slidesToShow: 1,
 		slidesToScroll: 1,
 		arrows: false,
@@ -154,7 +173,7 @@ const JobsSliderContent = () => {
 										key={index}
 										onClick={() => setActiveJobDetails(jobDetails)}
 										className={clsx(
-											'container  h-[410px]  w-[281px] cursor-pointer   p-4  lg:h-[650px] lg:w-[480px]',
+											'container    w-[281px] cursor-pointer   p-4   lg:w-[480px]',
 											jobDetails?._key == activeJobDetails?._key &&
 												'z-10 scale-105'
 										)}
@@ -172,7 +191,7 @@ const JobsSliderContent = () => {
 											/>
 										</div>
 
-										<div className="container absolute bottom-24 left-0 flex  w-full items-end   justify-between  p-8    md:gap-2  lg:pt-4  ">
+										<div className="container absolute bottom-4  lg:bottom-8 left-0 flex  w-full items-end   justify-between  p-8    md:gap-2  lg:pt-4  ">
 											<span className="w-[60%] text-2xl font-semibold text-white 2xl:text-4xl ">
 												{jobDetails?.positionName}
 											</span>
@@ -198,7 +217,7 @@ const JobsSliderContent = () => {
 					})}
 				</Slider>
 
-				<div className="relative mt-0 flex justify-between   p-2 pr-4 md:pr-24 ">
+				<div className="relative mt-[76px] flex justify-between   p-2 pr-4 md:pr-24 ">
 					<button
 						aria-label={'left-arrow'}
 						onClick={debouncedPrevious}

@@ -51,6 +51,32 @@ export default defineType({
       },
     }),
     defineField({
+      name: 'planSectionTitle',
+      title: 'plan Section Title',
+      type: 'string',
+    }),
+
+    defineField({
+      name: 'planIcon',
+      title: 'Plan Card Icon',
+      type: 'image',
+      options: {
+        hotspot: true,
+      },
+    }),
+
+    defineField({
+      name: 'planCards',
+      title: 'Plan Cards',
+      type: 'array',
+      of: [
+        {
+          type: 'titleDescription',
+        },
+      ],
+    }),
+
+    defineField({
       name: 'aboutSectionTitle',
       title: 'About Section Title',
       type: 'string',
@@ -68,35 +94,33 @@ export default defineType({
         hotspot: true,
       },
     }),
+
     defineField({
-      name: 'benefitsTitle',
-      title: 'Benefits Section Title',
+      name: 'faqTitle',
+      title: 'FAQ Title',
       type: 'string',
     }),
     defineField({
-      name: 'benefitsDescription',
-      title: 'Benefits Section Description',
-      type: 'portableText',
+      name: 'faqDescription',
+      title: 'FAQ Description',
+      type: 'string',
     }),
     defineField({
-      name: 'benefitsImage',
-      title: 'Benefits Section Image',
-      type: 'image',
-      options: {
-        hotspot: true,
-      },
-    }),
-    defineField({
-      name: 'serviceAreaSection',
-      title: 'Service Area Section',
+      name: 'faqButton',
+      title: 'FAQ Button',
       type: 'reference',
-      to: [{type: 'serviceAreas'}],
+      to: [{type: 'cta'}],
     }),
     defineField({
-      name: 'testimonialSection',
-      title: 'Testimonials Section',
-      type: 'reference',
-      to: [{type: 'testimonials'}],
+      name: 'faqList',
+      title: 'FAQ List',
+      type: 'array',
+      of: [
+        {
+          type: 'reference',
+          to: [{type: 'faq'}],
+        },
+      ],
     }),
     defineField({
       name: 'ctaTitle',

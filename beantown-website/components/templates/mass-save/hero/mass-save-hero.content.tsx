@@ -15,7 +15,7 @@ const FinancingHeroContent = () => {
 	const pageData = pageContent.page[0];
 	const { heroImage, heroTitle, heroDescription } = pageData;
 	return (
-		<section id="financing_page_hero" className="relative">
+		<section id="mass-save-hero" className="relative">
 			<div
 				id="content-wrapper"
 				className="z-1 2xl:padding-for-section flex w-full items-center justify-center px-6  text-white  "
