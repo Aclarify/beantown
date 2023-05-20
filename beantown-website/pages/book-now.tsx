@@ -13,6 +13,7 @@ import BookNowSection from 'components/templates/Book-now/book-now.section';
 import CtaWrapper from 'components/molecules/cta-wrapper.molecule';
 import Header from 'components/organisms/nav';
 import BookNowButton from 'components/atoms/book-now-button.atom';
+import { withFeatureFlag } from 'components/templates/under-construction/with-feature-flag';
 
 export interface BookNowContentProps {
 	page: BookNow[];
@@ -46,6 +47,18 @@ const BookNowPage: React.FC = (props) => {
 			</Head>
 		);
 	};
+
+	const flagValue = process.env.NEXT_PUBLIC_FF_BOOK_NOW_PAGE;
+
+	const FlaggedContent = withFeatureFlag(
+		() => (
+			<>
+				<BookNowSection />
+			</>
+		),
+		flagValue
+	);
+
 	return (
 		<div id="book-now" className="bg-primary-white-shade-1">
 			<PageHead />
@@ -67,7 +80,7 @@ const BookNowPage: React.FC = (props) => {
 					</BookNowButton>
 				</div>
 			</Header>
-			<BookNowSection />
+			<FlaggedContent />
 			<FooterSection
 				logoDesktop={logoLight?.image || ''}
 				content={footerData}
