@@ -10,21 +10,30 @@ interface Props {
 	bgColor: string;
 	fontColor: string;
 }
+
+export const activateScheduleEngine = (retry = 0) => {
+	const maxRetries = 10;
+	const delay = Math.min(1000, Math.pow(2, retry) * 100); // 100ms, 200ms, 400ms, ..., up to 1000ms
+
+	if (retry > maxRetries) {
+		console.error('ScheduleEngine failed to load');
+		return;
+	}
+
+	if (window.ScheduleEngine) {
+		window.ScheduleEngine.show();
+	} else {
+		// Add a delay to allow the ScheduleEngine to load
+		window.setTimeout(() => activateScheduleEngine(retry + 1), delay);
+	}
+};
+
 const BookNowButton: React.FC<Props> = ({
 	children,
 	buttonStyle = 'button',
 	bgColor,
 	fontColor,
 }) => {
-	const onBtnClick = () => {
-		if (window.ScheduleEngine) {
-			window.ScheduleEngine.show();
-		} else {
-			// Add a delay to allow the ScheduleEngine to load
-			window.setTimeout(onBtnClick, 100);
-		}
-	};
-
 	return (
 		<>
 			<button
@@ -36,7 +45,7 @@ const BookNowButton: React.FC<Props> = ({
 					fontColor,
 					bgColor
 				)}
-				onClick={onBtnClick}
+				onClick={() => activateScheduleEngine()}
 			>
 				{children}
 			</button>

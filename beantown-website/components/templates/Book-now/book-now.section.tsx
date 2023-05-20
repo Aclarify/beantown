@@ -4,10 +4,7 @@ import Image from 'next/image';
 
 const BookNowSection = () => {
 	return (
-		<section
-			id="book-now"
-			className="3xl:mb-[25em] xs:mb-[12em] relative  z-10 mb-[13em] sm:mb-[15em] lg:mb-[18em] xl:mb-[20em] 2xl:mb-[22em]"
-		>
+		<section id="book-now" className="relative  z-10 mb-[20rem]">
 			<Image
 				src={'/images/book-now/book-now-top-left-blob.svg'}
 				height={590}

@@ -47,5 +47,10 @@ export default defineType({
       title: 'Book Now Description',
       type: 'string',
     }),
+    defineField({
+      name: 'bookNowCtaText',
+      title: 'Book Now Button CTA Text',
+      type: 'string',
+    }),
   ],
 })

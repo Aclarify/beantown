@@ -26,6 +26,7 @@ const bookNowQuery = `allBooknow{
     bookNowUrl
     bookNowTitle
     bookNowDescription
+    bookNowCtaText
   }
 `;
 export default gql`
