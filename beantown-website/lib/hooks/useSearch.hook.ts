@@ -17,19 +17,19 @@ const useSearch = (
 	filters: string[] = [],
 	loadMore = false
 ) => {
-	console.log(
-		'query',
-		query,
-		'page',
-		page,
-		'maxPerPage',
-		maxPerPage,
-		'filters',
-		filters,
+	// console.log(
+	// 	'query',
+	// 	query,
+	// 	'page',
+	// 	page,
+	// 	'maxPerPage',
+	// 	maxPerPage,
+	// 	'filters',
+	// 	filters,
 
-		'loadMore',
-		loadMore
-	);
+	// 	'loadMore',
+	// 	loadMore
+	// );
 
 	const { data, fetchNextPage, hasNextPage } = useInfiniteQuery<SearchResult>(
 		['search', query, filters],
