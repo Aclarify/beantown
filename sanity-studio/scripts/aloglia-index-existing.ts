@@ -46,12 +46,19 @@ const query = `* [_type == $type && !(_id in path("drafts.**"))][]{
 const saveExistingBlogPosts = async () => {
   const documents = await sanityClient.fetch(query, {type})
 
+  // Add publishedAtTimestamp field to each document
+  const updatedDocuments = documents.map((document: any) => {
+    const publishedAt = document.publishedAt ?? new Date().toISOString()
+    const publishedAtTimestamp = new Date(document.publishedAt).getTime() / 1000
+    return {...document, publishedAt, publishedAtTimestamp}
+  })
+
   const index = algoliaClient.initIndex(blogIndexName)
 
   try {
-    console.time(`Saving ${documents.length} documents to index:`)
-    await index.saveObjects(documents)
-    console.timeEnd(`Saved ${documents.length} documents to index:`)
+    console.time(`Saving ${updatedDocuments.length} documents to index:`)
+    await index.saveObjects(updatedDocuments)
+    console.timeEnd(`Saved ${updatedDocuments.length} documents to index:`)
   } catch (error) {
     console.error(error)
   }

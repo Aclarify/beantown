@@ -45,7 +45,12 @@ const handlePost = async (req: NextApiRequest, res: NextApiResponse) => {
 					projection: BLOG_POSTS_PROJECTION,
 				},
 			},
-			(document: any) => document
+			(document: any) => {
+				const publishedAt = new Date().toISOString();
+				const publishedAtTimestamp = Math.floor(Date.now() / 1000);
+				const updatedDoc = { ...document, publishedAt, publishedAtTimestamp };
+				return updatedDoc;
+			}
 		);
 
 		console.time('Syncing documents algolia to index:');
