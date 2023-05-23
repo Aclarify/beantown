@@ -98,6 +98,11 @@ const settings = {
 	],
 };
 
+const getIsWidthMaxDimension = (dimensions: {
+	width: number;
+	height: number;
+}) => dimensions.width >= dimensions.height;
+
 const JobsSliderContent = () => {
 	const slider = React.useRef<Slider | null>(null);
 	const { pageContent } =
@@ -173,25 +178,21 @@ const JobsSliderContent = () => {
 										key={index}
 										onClick={() => setActiveJobDetails(jobDetails)}
 										className={clsx(
-											'container    w-[281px] cursor-pointer   p-4   lg:w-[480px]',
+											'container h-[300px] w-[281px] cursor-pointer   p-4  lg:h-[560px] lg:w-[480px] ',
 											jobDetails?._key == activeJobDetails?._key &&
 												'z-10 scale-105'
 										)}
 									>
-										<div className="container overflow-hidden rounded-3xl">
+										<div className="after:z-1 after:from-career-cards-gradient  container relative h-full w-full overflow-hidden rounded-3xl after:absolute after:top-0 after:left-0 after:h-full after:w-full after:bg-gradient-to-t">
 											<CMSImageWrapper
 												altText={jobDetails?.jobImage?.asset?.altText || ''}
 												image={jobDetails?.jobImage || null}
 												shouldBePrefetched={true}
-												style={{
-													width: '100%',
-													height: 'auto',
-													objectFit: 'contain',
-												}}
+												className={clsx('')}
 											/>
 										</div>
 
-										<div className="container absolute bottom-4  left-0 flex w-full  items-end justify-between   p-8  md:gap-2    lg:bottom-8  lg:pt-4  ">
+										<div className="container absolute bottom-4  left-0 z-10 flex  w-full items-end   justify-between  p-8    md:gap-2  lg:bottom-8  lg:pt-4">
 											<span className="w-[60%] text-2xl font-semibold text-white 2xl:text-4xl ">
 												{jobDetails?.positionName}
 											</span>

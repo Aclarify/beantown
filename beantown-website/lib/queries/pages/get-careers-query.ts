@@ -35,7 +35,7 @@ const careersQuery = `
           heroButton{
             text
             href
-      	} 	
+      	}
     		jobList{
           _key
           positionName
@@ -44,6 +44,12 @@ const careersQuery = `
               url
               _key
               _id
+              metadata {
+                dimensions {
+                  width
+                  height
+                }
+              }
             }
           }
           learnMoreButton{
@@ -51,7 +57,7 @@ const careersQuery = `
             href
           }
           jobBenefitCards{
-            titleText                      
+            titleText
             image{
               asset{
                 url
@@ -60,7 +66,7 @@ const careersQuery = `
               }
             }
             description
-            
+
           }
            jobDescription{
             contentRaw
