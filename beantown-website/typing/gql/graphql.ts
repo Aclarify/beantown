@@ -429,6 +429,7 @@ export type Careers = Document & {
 	heroButton?: Maybe<Cta>;
 	heroDescription?: Maybe<Scalars['String']>;
 	heroTitle?: Maybe<Scalars['String']>;
+	jobListTitle?: Maybe<Scalars['String']>;
 	jobList?: Maybe<Array<Maybe<JobDetails>>>;
 	logoDark?: Maybe<ImageIcon>;
 	logoLight?: Maybe<ImageIcon>;

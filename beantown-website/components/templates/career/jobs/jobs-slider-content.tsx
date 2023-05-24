@@ -14,6 +14,7 @@ import Animate from 'components/molecules/animate.molecule';
 import { CareersContentProps } from 'pages/careers';
 import CMSImageWrapper from 'components/molecules/cms-image-wrapper.molecule';
 import { jobsContext } from '@contexts/jobs/Job-benefits-context';
+import SectionContentWrapper from 'components/molecules/section-content-wrapper.molecule';
 
 const animationSpeed = 500;
 
@@ -98,11 +99,6 @@ const settings = {
 	],
 };
 
-const getIsWidthMaxDimension = (dimensions: {
-	width: number;
-	height: number;
-}) => dimensions.width >= dimensions.height;
-
 const JobsSliderContent = () => {
 	const slider = React.useRef<Slider | null>(null);
 	const { pageContent } =
@@ -115,7 +111,7 @@ const JobsSliderContent = () => {
 	}
 
 	const pageData = pageContent.page[0];
-	const { jobList } = pageData;
+	const { jobList, jobListTitle } = pageData;
 	if (!jobList) {
 		return null;
 	}
@@ -169,6 +165,50 @@ const JobsSliderContent = () => {
 	return (
 		<>
 			<div className=" w-full pl-5 pt-4 pb-8 md:pl-8 2xl:pl-[120px] ">
+				<div className={clsx('mb-6')}>
+					<SectionContentWrapper>
+						<div
+							className={clsx(
+								'flex',
+								'flex-wrap',
+								'justify-center',
+								'md:justify-between',
+								'items-center'
+							)}
+						>
+							<h2
+								className={clsx(
+									'text-primary-black',
+									'md:text-left',
+									'w-full',
+									'mt-8',
+									'mb-2',
+									'z-10',
+									'md:w-auto',
+									'text-center'
+								)}
+							>
+								{jobListTitle}
+							</h2>
+							<div className="hidden space-x-6 md:flex">
+								<button
+									onClick={previous}
+									aria-label={'left-arrow'}
+									className=" text-primary-shade-1 bg-gray-shade-3 h-16 w-24 rounded-full py-4 px-6 text-lg md:w-32"
+								>
+									<FontAwesomeIcon icon={faArrowLeft} />
+								</button>
+								<button
+									onClick={next}
+									aria-label={'right-arrow'}
+									className="bg-primary-shade-1 h-16 w-24 rounded-full py-4 px-6 text-lg text-white md:w-32"
+								>
+									<FontAwesomeIcon icon={faArrowRight} />
+								</button>
+							</div>
+						</div>
+					</SectionContentWrapper>
+				</div>
 				<Slider ref={slider} {...settings}>
 					{jobList?.map((jobDetails, index) => {
 						return (
@@ -178,7 +218,7 @@ const JobsSliderContent = () => {
 										key={index}
 										onClick={() => setActiveJobDetails(jobDetails)}
 										className={clsx(
-											'container h-[300px] w-[281px] cursor-pointer   p-4  lg:h-[560px] lg:w-[480px] ',
+											'container h-[300px] w-[281px] cursor-pointer   p-4  lg:h-[420px] lg:w-[380px] ',
 											jobDetails?._key == activeJobDetails?._key &&
 												'z-10 scale-105'
 										)}
@@ -217,18 +257,18 @@ const JobsSliderContent = () => {
 						);
 					})}
 				</Slider>
-				<div className="relative mt-[76px] flex justify-between   p-2 pr-4 md:pr-24 ">
+				<div className="mt-8 flex w-full justify-center space-x-6 md:hidden">
 					<button
-						aria-label={'left-arrow'}
 						onClick={previous}
-						className=" text-primary-shade-1 bg-secondary-shade-3 flex  h-12 w-20 justify-center rounded-full  px-6  py-4 md:px-12 "
+						aria-label={'left-arrow'}
+						className=" text-primary-shade-1 bg-gray-shade-3 h-16 w-24 rounded-full py-4 px-6 text-lg md:w-32"
 					>
 						<FontAwesomeIcon icon={faArrowLeft} />
 					</button>
 					<button
-						aria-label={'right-arrow'}
 						onClick={next}
-						className="bg-primary-shade-1 text-secondary-shade-3 flex h-12 w-20 justify-center rounded-full px-6  py-4  md:px-12 "
+						aria-label={'right-arrow'}
+						className="bg-primary-shade-1 h-16 w-24 rounded-full py-4 px-6 text-lg text-white md:w-32"
 					>
 						<FontAwesomeIcon icon={faArrowRight} />
 					</button>

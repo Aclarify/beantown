@@ -1,19 +1,32 @@
-
+import clsx from 'clsx';
 import CMSImageWrapper from 'components/molecules/cms-image-wrapper.molecule';
 import ReadMore from 'components/molecules/read-more.molecule';
-import React from 'react'
+import React from 'react';
 interface Props {
 	briefcaseIconImage: any;
 	benefitTitle: string;
 	benefitDescription: string;
 	onShowMore?: () => void;
 }
-export const BenefitsCard: React.FC<Props> = (props) => {	
 
+const classNames = {
+	icon: [
+		'h-[80px]',
+		'w-[80px]',
+		'lg:h-[80px]',
+		'lg:w-[80px]',
+		'p-2',
+		'mt-4',
+		'mb-2',
+	],
+	title: ['text-primary-shade-1', 'text-center', 'leading-tight'],
+};
+
+export const BenefitsCard: React.FC<Props> = (props) => {
 	return (
 		<>
-			<div className='flex flex-col items-center'>
-				<div className="p-2 mt-4 h-[80px]   w-[80px] lg:h-[120px] lg:w-[120px] ">
+			<div className="flex h-full flex-col items-center">
+				<div className={clsx(classNames.icon)}>
 					<CMSImageWrapper
 						altText={props.briefcaseIconImage.image?.asset?.altText || ''}
 						image={props.briefcaseIconImage || null}
@@ -25,11 +38,8 @@ export const BenefitsCard: React.FC<Props> = (props) => {
 						}}
 					/>
 				</div>
-				<h3 className="text-primary-shade-1 p-2  lg:p-6 text-center">
-					{props.benefitTitle}
-				</h3>
-
-				<div className="text-primary-shade-1 para xs:p-2 p-4 md:p-2    cursor-pointer text-center ">
+				<h3 className={clsx(classNames.title)}>{props.benefitTitle}</h3>
+				<div className="text-primary-shade-1 para xs:p-2 cursor-pointer p-4    text-center md:p-2 ">
 					{props.onShowMore && (
 						<ReadMore
 							content={props.benefitDescription}

@@ -7,12 +7,14 @@ import { CareersContentProps } from 'pages/careers';
 import { JobDetails } from '@typing/gql/graphql';
 import { jobsContext } from '@contexts/jobs/Job-benefits-context';
 import Image from 'next/image';
+import clsx from 'clsx';
+import SectionContentWrapper from 'components/molecules/section-content-wrapper.molecule';
 
 const JobSection = () => {
 	const { pageContent } =
 		useContext<GlobalContextProps<CareersContentProps>>(GlobalContext);
 	const [activeJobDetails, setActiveJobDetails] = useState<JobDetails>();
-	const [show, setShow] = useState(true);
+	const [, setShow] = useState(true);
 
 	useEffect(() => {
 		setShow(false);
@@ -51,8 +53,13 @@ const JobSection = () => {
 				alt="Left Blob Mobile"
 				className=" xs:translate-y-[-40%] absolute left-0 bottom-0 translate-y-[-29%] translate-x-[-27%] transform  sm:translate-y-[-9%]    lg:hidden"
 			/>
-			<section id="JobsSlider" className=" md:mt-32 ">
+			<section id="JobsSlider" className="md:mt-32 ">
 				<JobsSliderContent />
+				<SectionContentWrapper>
+					<div className={clsx('w-full', 'my-16', 'flex', 'justify-center')}>
+						<hr className={clsx('w-1/2')} />
+					</div>
+				</SectionContentWrapper>
 				<JobDescriptionResponsibilitySection />
 			</section>
 		</jobsContext.Provider>

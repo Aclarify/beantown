@@ -9,6 +9,36 @@ import Link from 'next/link';
 import Button from 'components/atoms/button.atom';
 import BenefitsCard from 'components/organisms/benefit-card.organism';
 import JobBenefitsModal from 'components/organisms/job-benefits-card-model';
+import clsx from 'clsx';
+
+const classNames = {
+	benefitCardContainer: [
+		'container',
+		'mx-auto',
+		'grid',
+		'items-stretch',
+		'justify-center',
+		'gap-8',
+		'md:grid-cols-3',
+		'grid-auto-rows-minmax(auto, 1fr)',
+	],
+	benefitCard: [
+		'w-full',
+		'h-full',
+		'py-4',
+		'px-4',
+		'md:px-6',
+		'md:py-6',
+		'flex',
+		'flex-col',
+		'justify-stretch',
+		'items-center',
+		'bg-white',
+		'shadow-[rgba(44,_48,_88,_0.16)_0px_8px_200px]',
+		'rounded-2xl',
+		'lg:rounded-3xl',
+	],
+};
 
 const JobBenefitsContent = () => {
 	const [showBenefitCardModel, setShowBenefitCardModel] = useState(false);
@@ -44,16 +74,13 @@ const JobBenefitsContent = () => {
 		<section className="mb-72 mt-12 md:mt-28 2xl:mt-40">
 			<Animate>
 				<div className="flex flex-col items-center justify-center ">
-					<h3 className="text-primary-black mx-auto mb-12 py-4 px-8 text-center ">
+					<h3 className="text-primary-black mx-auto mb-12 py-4 px-8 text-center">
 						{globaljobBenefitSectionTitle}
 					</h3>
-					<div className="container mx-auto  flex  flex-wrap  items-center justify-center gap-8">
+					<div className={clsx(classNames.benefitCardContainer)}>
 						{allBenefits?.map((benefitsCard, index) => {
 							return (
-								<div
-									key={index}
-									className="justify-stretch   flex  h-[348px] w-[380px]  flex-col items-center    rounded-2xl bg-white p-2 shadow-[rgba(44,_48,_88,_0.16)_0px_8px_200px] md:h-[380px]  md:gap-4 md:p-8 lg:h-[570px]  lg:w-[480px]   lg:rounded-3xl   "
-								>
+								<div key={index} className={clsx(classNames.benefitCard)}>
 									<BenefitsCard
 										briefcaseIconImage={benefitsCard?.image || ''}
 										benefitTitle={benefitsCard?.titleText || ''}
@@ -63,19 +90,6 @@ const JobBenefitsContent = () => {
 								</div>
 							);
 						})}
-					</div>
-
-					<div className="mt-12">
-						<Link
-							href={{
-								pathname: `${applyButton?.href}`,
-								query: `positionName=${activeJobDetails.positionName}`,
-							}}
-						>
-							<Button fontColor="text-white" bgColor="bg-primary-shade-1">
-								{applyButton?.text}
-							</Button>
-						</Link>
 					</div>
 				</div>
 			</Animate>

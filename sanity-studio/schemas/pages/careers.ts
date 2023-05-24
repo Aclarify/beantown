@@ -55,7 +55,11 @@ export default defineType({
       type: 'reference',
       to: [{type: 'cta'}],
     }),
-
+    defineField({
+      name: 'jobListTitle',
+      title: 'Job List Title',
+      type: 'string',
+    }),
     defineField({
       name: 'jobList',
       title: 'List of Job Details To Show',
