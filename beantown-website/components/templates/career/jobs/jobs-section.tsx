@@ -7,6 +7,8 @@ import { CareersContentProps } from 'pages/careers';
 import { JobDetails } from '@typing/gql/graphql';
 import { jobsContext } from '@contexts/jobs/Job-benefits-context';
 import Image from 'next/image';
+import clsx from 'clsx';
+import SectionContentWrapper from 'components/molecules/section-content-wrapper.molecule';
 
 const JobSection = () => {
 	const { pageContent } =
@@ -25,7 +27,7 @@ const JobSection = () => {
 		return null;
 	}
 	const pageData = pageContent.page[0];
-	const { jobList } = pageData;
+	const { jobList, jobListTitle } = pageData;
 	if (!jobList) {
 		return null;
 	}
@@ -52,6 +54,11 @@ const JobSection = () => {
 				className=" xs:translate-y-[-40%] absolute left-0 bottom-0 translate-y-[-29%] translate-x-[-27%] transform  sm:translate-y-[-9%]    lg:hidden"
 			/>
 			<section id="JobsSlider" className=" md:mt-32 ">
+				<SectionContentWrapper>
+					<h2 className={clsx('text-primary-black', 'w-full', 'my-8')}>
+						{jobListTitle}
+					</h2>
+				</SectionContentWrapper>
 				<JobsSliderContent />
 				<JobDescriptionResponsibilitySection />
 			</section>

@@ -36,6 +36,7 @@ const careersQuery = `
             text
             href
       	}
+        jobListTitle
     		jobList{
           _key
           positionName
