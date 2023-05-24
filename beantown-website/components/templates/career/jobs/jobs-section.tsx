@@ -14,7 +14,7 @@ const JobSection = () => {
 	const { pageContent } =
 		useContext<GlobalContextProps<CareersContentProps>>(GlobalContext);
 	const [activeJobDetails, setActiveJobDetails] = useState<JobDetails>();
-	const [show, setShow] = useState(true);
+	const [, setShow] = useState(true);
 
 	useEffect(() => {
 		setShow(false);
@@ -27,7 +27,7 @@ const JobSection = () => {
 		return null;
 	}
 	const pageData = pageContent.page[0];
-	const { jobList, jobListTitle } = pageData;
+	const { jobList } = pageData;
 	if (!jobList) {
 		return null;
 	}
@@ -53,13 +53,13 @@ const JobSection = () => {
 				alt="Left Blob Mobile"
 				className=" xs:translate-y-[-40%] absolute left-0 bottom-0 translate-y-[-29%] translate-x-[-27%] transform  sm:translate-y-[-9%]    lg:hidden"
 			/>
-			<section id="JobsSlider" className=" md:mt-32 ">
-				<SectionContentWrapper>
-					<h2 className={clsx('text-primary-black', 'w-full', 'my-8')}>
-						{jobListTitle}
-					</h2>
-				</SectionContentWrapper>
+			<section id="JobsSlider" className="md:mt-32 ">
 				<JobsSliderContent />
+				<SectionContentWrapper>
+					<div className={clsx('w-full', 'my-16', 'flex', 'justify-center')}>
+						<hr className={clsx('w-1/2')} />
+					</div>
+				</SectionContentWrapper>
 				<JobDescriptionResponsibilitySection />
 			</section>
 		</jobsContext.Provider>

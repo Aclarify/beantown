@@ -1,7 +1,11 @@
 import { GlobalContext } from '@contexts/global/global.context';
 import { jobsContext } from '@contexts/jobs/Job-benefits-context';
+import { buttonHoverStyle } from '@lib/styles/button.style';
 import { GlobalContextProps } from '@typing/common/interfaces/contexts.interface';
+import clsx from 'clsx';
+import Button from 'components/atoms/button.atom';
 import RichText from 'components/molecules/rich-text.molecule';
+import Link from 'next/link';
 import { CareersContentProps } from 'pages/careers';
 import React, { useContext } from 'react';
 
@@ -13,14 +17,58 @@ const JobDescriptionResponsibilityContent = () => {
 		return null;
 	}
 
-	if (!activeJobDetails) {
+	const { applyButton } = pageContent.page[0];
+
+	if (!activeJobDetails || !applyButton) {
 		return null;
 	}
 
 	return (
 		<>
-			<div className="text-primary-black flex justify-center py-6 text-center">
-				<h1>{activeJobDetails.positionName} </h1>
+			<div className="text-primary-black flex flex-wrap justify-between gap-y-4 pt-2 pb-2 text-center">
+				<h1 className={clsx('w-full', 'md:w-auto')}>
+					{activeJobDetails.positionName}{' '}
+				</h1>
+				<div
+					className={clsx(
+						'w-full',
+						'md:w-auto',
+						'flex',
+						'justify-center',
+						'items-center'
+					)}
+				>
+					<Link
+						href={{
+							pathname: `${applyButton?.href}`,
+							query: `positionName=${activeJobDetails.positionName}`,
+						}}
+						className="w-full"
+					>
+						<button
+							className={clsx(
+								'w-full',
+								'text-white',
+								'bg-primary-shade-1',
+								'ring-0',
+								'focus:ring-0',
+								'text-xl',
+								'md:text-2xl',
+								'font-normal',
+								'leading-[32px]',
+								'rounded-lg',
+								'py-2',
+								'md:py-3',
+								'px-8',
+								'md:px-32',
+								'tracking-wide',
+								buttonHoverStyle
+							)}
+						>
+							{applyButton?.text}
+						</button>
+					</Link>
+				</div>
 			</div>
 			<div
 				id="job-description-responsibility-section"

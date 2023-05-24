@@ -91,19 +91,6 @@ const JobBenefitsContent = () => {
 							);
 						})}
 					</div>
-
-					<div className="mt-12">
-						<Link
-							href={{
-								pathname: `${applyButton?.href}`,
-								query: `positionName=${activeJobDetails.positionName}`,
-							}}
-						>
-							<Button fontColor="text-white" bgColor="bg-primary-shade-1">
-								{applyButton?.text}
-							</Button>
-						</Link>
-					</div>
 				</div>
 			</Animate>
 			<JobBenefitsModal
