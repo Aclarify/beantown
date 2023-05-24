@@ -37,7 +37,8 @@ module.exports = {
 				'home-hero-gradient-end': 'rgba(21, 40, 76, 0.45)',
 				'aboutUs-hero-gradient-start': ' rgba(21, 40, 76, 0.85) 0% ',
 				'aboutUs-hero-gradient-end': ' rgba(21, 40, 76, .6) 100% ',
-				'career-cards-gradient': 'rgba(122,173,211, 0.35) 0% ',
+				'career-cards-gradient':
+					'rgba(21, 40, 76,1) 0%, rgba(255,255,255,0) 100%',
 				'gray-shade-1': '#47515F',
 				'gray-shade-2': '#8B98AB',
 				'gray-shade-3': '#E3E5EA',

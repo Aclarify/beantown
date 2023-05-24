@@ -178,7 +178,7 @@ const JobsSliderContent = () => {
 										key={index}
 										onClick={() => setActiveJobDetails(jobDetails)}
 										className={clsx(
-											'container h-[300px] w-[281px] cursor-pointer   p-4  lg:h-[560px] lg:w-[480px] ',
+											'container h-[300px] w-[281px] cursor-pointer   p-4  lg:h-[420px] lg:w-[380px] ',
 											jobDetails?._key == activeJobDetails?._key &&
 												'z-10 scale-105'
 										)}
