@@ -165,49 +165,47 @@ const JobsSliderContent = () => {
 	return (
 		<>
 			<div className=" w-full pl-5 pt-4 pb-8 md:pl-8 2xl:pl-[120px] ">
-				<div className={clsx('mb-6')}>
-					<SectionContentWrapper>
-						<div
+				<div className={clsx('mb-6', 'pr-5', 'md:pr-8', '2xl:pr-[120px]')}>
+					<div
+						className={clsx(
+							'flex',
+							'flex-wrap',
+							'justify-center',
+							'md:justify-between',
+							'items-center'
+						)}
+					>
+						<h2
 							className={clsx(
-								'flex',
-								'flex-wrap',
-								'justify-center',
-								'md:justify-between',
-								'items-center'
+								'text-primary-black',
+								'md:text-left',
+								'w-full',
+								'mt-8',
+								'mb-2',
+								'z-10',
+								'md:w-auto',
+								'text-center'
 							)}
 						>
-							<h2
-								className={clsx(
-									'text-primary-black',
-									'md:text-left',
-									'w-full',
-									'mt-8',
-									'mb-2',
-									'z-10',
-									'md:w-auto',
-									'text-center'
-								)}
+							{jobListTitle}
+						</h2>
+						<div className="hidden space-x-6 md:flex">
+							<button
+								onClick={previous}
+								aria-label={'left-arrow'}
+								className=" text-primary-shade-1 bg-gray-shade-3 h-16 w-24 rounded-full py-4 px-6 text-lg md:w-32"
 							>
-								{jobListTitle}
-							</h2>
-							<div className="hidden space-x-6 md:flex">
-								<button
-									onClick={previous}
-									aria-label={'left-arrow'}
-									className=" text-primary-shade-1 bg-gray-shade-3 h-16 w-24 rounded-full py-4 px-6 text-lg md:w-32"
-								>
-									<FontAwesomeIcon icon={faArrowLeft} />
-								</button>
-								<button
-									onClick={next}
-									aria-label={'right-arrow'}
-									className="bg-primary-shade-1 h-16 w-24 rounded-full py-4 px-6 text-lg text-white md:w-32"
-								>
-									<FontAwesomeIcon icon={faArrowRight} />
-								</button>
-							</div>
+								<FontAwesomeIcon icon={faArrowLeft} />
+							</button>
+							<button
+								onClick={next}
+								aria-label={'right-arrow'}
+								className="bg-primary-shade-1 h-16 w-24 rounded-full py-4 px-6 text-lg text-white md:w-32"
+							>
+								<FontAwesomeIcon icon={faArrowRight} />
+							</button>
 						</div>
-					</SectionContentWrapper>
+					</div>
 				</div>
 				<Slider ref={slider} {...settings}>
 					{jobList?.map((jobDetails, index) => {
