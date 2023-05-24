@@ -35,7 +35,11 @@ const query = `* [_type == $type && !(_id in path("drafts.**"))][]{
     blogSlug {
       current
     },
-    "blogContentRaw": blogContent,
+    blogContent[@._type != 'image'] {
+      "children": children [] {
+        text
+      }[0..3]
+    }[0..3],
     blogTags [] -> {
       _id, name, category
     },
