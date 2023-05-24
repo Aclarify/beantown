@@ -18,7 +18,11 @@ export const BLOG_POSTS_PROJECTION = /* groq */ `{
     blogSlug {
       current
     },
-	"blogContentRaw": blogContent,
+	blogContent[@._type != 'image'] {
+      "children": children [] {
+        text
+      }[0..3]
+    }[0..3],
     blogTags [] -> {
       _id, name, category
     },
