@@ -1,4 +1,5 @@
 module.exports = {
+	preset: 'ts-jest',
 	roots: ['<rootDir>'],
 	testMatch: [
 		'**/__tests__/**/*.spec.[jt]s?(x)',
@@ -11,5 +12,6 @@ module.exports = {
 	},
 	moduleNameMapper: {
 		'\\.(css|less|scss|sass)$': 'identity-obj-proxy',
+		'^@lib/(.*)$': '<rootDir>/lib/$1',
 	},
 };
