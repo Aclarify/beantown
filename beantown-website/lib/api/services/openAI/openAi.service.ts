@@ -24,10 +24,11 @@ type Translator = (text: string) => Promise<string>;
 // This function creates a new translator.
 export function createTranslator(
 	options: TranslatorOptions,
-	_LLMChain = LLMChain
+	_LLMChain = LLMChain,
+	_OpenAI = OpenAI
 ): Translator {
 	// Create the language model.
-	const model = new OpenAI({
+	const model = new _OpenAI({
 		openAIApiKey,
 		modelName: 'text-davinci-003',
 		...options.modelOptions,
