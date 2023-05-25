@@ -86,7 +86,9 @@ export const parseResponse = (response: string): string =>
 		// Remove leading and trailing spaces
 		.trim();
 
+const blogTranslator = createTranslator({
+	promptTemplate: SUMMARIZE_BLOG,
+});
+
 export const summarizeBlog = (blogPostContent: string) =>
-	createTranslator({
-		promptTemplate: SUMMARIZE_BLOG,
-	});
+	blogTranslator(blogPostContent);
