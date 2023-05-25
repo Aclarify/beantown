@@ -3,8 +3,9 @@ import { PromptTemplate } from 'langchain/prompts';
 import { LLMChain, LLMChainInput } from 'langchain/chains';
 import { OpenAIBaseInput } from 'langchain/dist/types/openai-types';
 import { SUMMARIZE_BLOG } from './openAi.commonPrompts';
+import { config } from '@lib/config';
 
-const openAIApiKey = process.env.OPENAI_API_KEY || '';
+const { openAIApiKey } = config;
 
 // Define the options for the translation function.
 export type TranslatorOptions = {

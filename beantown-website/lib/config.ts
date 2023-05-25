@@ -33,7 +33,7 @@ export const config = {
 	 */
 	sanityWebhookSecret: process.env.SANITY_WEBHOOK_SECRET || '',
 	/**
-	 * feture flag
+	 * OpenAI API key
 	 */
-	featureFlag: process.env.NEXT_PUBLIC_FEATURE_FLAG || '',
+	openAIApiKey: process.env.OPENAI_API_KEY || '',
 };
