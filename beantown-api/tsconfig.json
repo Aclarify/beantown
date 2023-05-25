@@ -16,6 +16,20 @@
     "noImplicitAny": false,
     "strictBindCallApply": false,
     "forceConsistentCasingInFileNames": false,
-    "noFallthroughCasesInSwitch": false
+    "noFallthroughCasesInSwitch": false,
+    "paths": {
+      "@beantown/core": [
+        "libs/core/src"
+      ],
+      "@beantown/core/*": [
+        "libs/core/src/*"
+      ],
+      "@beantown/config": [
+        "libs/config/src"
+      ],
+      "@beantown/config/*": [
+        "libs/config/src/*"
+      ]
+    }
   }
 }
