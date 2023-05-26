@@ -2,6 +2,7 @@ import { ClientConfig } from '@sanity/client';
 
 export type SanityConfig = {
   clientConfig: ClientConfig;
+  sanityWebhookSecret: string;
 };
 
 export const sanityConfig: () => SanityConfig = () => ({
@@ -13,4 +14,5 @@ export const sanityConfig: () => SanityConfig = () => ({
     apiVersion: process.env.SANITY_API_VERSION || '2021-10-21',
     useCdn: false, // `false` if you want to ensure fresh data
   },
+  sanityWebhookSecret: process.env.SANITY_WEBHOOK_SECRET || '',
 });

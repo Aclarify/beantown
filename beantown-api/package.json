@@ -27,6 +27,8 @@
     "@nestjs/platform-express": "^8.0.0",
     "@nestjs/swagger": "^6.3.0",
     "@sanity/client": "^6.1.2",
+    "@sanity/webhook": "^2.0.0",
+    "algoliasearch": "^4.17.1",
     "reflect-metadata": "^0.1.13",
     "rimraf": "^3.0.2",
     "rxjs": "^7.2.0",

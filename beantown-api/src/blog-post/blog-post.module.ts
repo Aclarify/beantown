@@ -1,7 +1,7 @@
 import { Module } from '@nestjs/common';
 import { BlogPostService } from './blog-post.service';
 import { BlogPostController } from './blog-post.controller';
-import { SanityModule } from 'src/sanity/sanity.module';
+import { SanityModule } from '@beantown/services/clients/sanity/sanity.module';
 
 @Module({
   imports: [SanityModule],

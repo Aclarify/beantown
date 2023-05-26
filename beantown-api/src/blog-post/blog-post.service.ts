@@ -10,8 +10,6 @@ export class BlogPostService {
   }
 
   indexBlogPost(indexBlogPostDto: IndexBlogPostDto) {
-    this.logger.log('indexBlogPost');
-    this.logger.log(indexBlogPostDto);
     return 'This action adds a new blogPost';
   }
 }
