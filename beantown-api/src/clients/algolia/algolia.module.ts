@@ -3,5 +3,6 @@ import { AlgoliaService } from './algolia.service';
 
 @Module({
   providers: [AlgoliaService],
+  exports: [AlgoliaService],
 })
 export class AlgoliaModule {}
