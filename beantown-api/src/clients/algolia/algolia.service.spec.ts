@@ -1,11 +1,14 @@
 import { Test, TestingModule } from '@nestjs/testing';
 import { AlgoliaService } from './algolia.service';
+import { ConfigModule } from '@nestjs/config';
+import { algoliaConfig } from '@beantown/config';
 
 describe('AlgoliaService', () => {
   let service: AlgoliaService;
 
   beforeEach(async () => {
     const module: TestingModule = await Test.createTestingModule({
+      imports: [ConfigModule.forRoot({ load: [algoliaConfig] })],
       providers: [AlgoliaService],
     }).compile();
 
