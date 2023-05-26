@@ -28,13 +28,15 @@
     "@nestjs/swagger": "^6.3.0",
     "@sanity/client": "^6.1.2",
     "@sanity/webhook": "^2.0.0",
+    "add": "^2.0.6",
     "algoliasearch": "^4.17.1",
-    "langchain": "^0.0.83",
+    "openai": "^3.2.1",
     "reflect-metadata": "^0.1.13",
     "rimraf": "^3.0.2",
     "rxjs": "^7.2.0",
     "sanity": "^3.11.3",
-    "sanity-algolia": "^1.1.0"
+    "sanity-algolia": "^1.1.0",
+    "yarn": "^1.22.19"
   },
   "devDependencies": {
     "@nestjs/cli": "^8.0.0",
