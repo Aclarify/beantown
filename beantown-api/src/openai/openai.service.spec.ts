@@ -1,7 +1,7 @@
 import { Test, TestingModule } from '@nestjs/testing';
 import { OpenAIService } from './openai.service';
 import { OpenAIApi } from 'openai';
-import { ConfigModule, ConfigService } from '@nestjs/config';
+import { ConfigModule } from '@nestjs/config';
 import { openAIConfig } from '@beantown/config';
 
 const stubCall = jest.fn().mockResolvedValue({
@@ -46,14 +46,18 @@ describe('OpenaiService', () => {
           'Summarize the following blog post into a 100 word summary: blog post content',
       });
     });
-    it('should call openai.createCompletion', async () => {
-      const blogPostContent = 'This is blog post content';
+    /**
+     * WARNING: DO NOT UNCOMMENT UNLESS NECESSARY
+     * This integration test costs money
+     * */
+    // it('should call openai.createCompletion', async () => {
+    //   const blogPostContent = 'This is blog post content';
 
-      const result = await service.summarizeBlog(blogPostContent);
+    //   const result = await service.summarizeBlog(blogPostContent);
 
-      expect(result).toBeDefined();
-      expect(typeof result).toBe('string');
-    }, 10000);
+    //   expect(result).toBeDefined();
+    //   expect(typeof result).toBe('string');
+    // }, 10000);
   });
 
   describe('parseResponse', () => {

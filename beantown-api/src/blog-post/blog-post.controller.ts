@@ -11,6 +11,7 @@ import { IndexBlogPostDto } from './dto/index-blog-post.dto';
 import { ApiOperation, ApiResponse, ApiBody } from '@nestjs/swagger';
 import { SanityService } from '@beantown/services/clients/sanity/sanity.service';
 import { SIGNATURE_HEADER_NAME } from '@sanity/webhook';
+import { SANITY_IDEMPOTENCY_HEADER } from '../clients/sanity/sanity.constants';
 
 @Controller('blog-post')
 export class BlogPostController {
@@ -31,15 +32,20 @@ export class BlogPostController {
     @Headers() headers: { [SIGNATURE_HEADER_NAME]: string },
   ) {
     const sanitySignatureHeader = headers[SIGNATURE_HEADER_NAME];
+    const sanityRequestKey = headers[SANITY_IDEMPOTENCY_HEADER];
     if (
       !this.sanityService.isValidSanitySignature(
-        indexBlogPostDto,
+        JSON.stringify(indexBlogPostDto),
         sanitySignatureHeader,
       )
     ) {
       throw new HttpException('Bad Request', HttpStatus.BAD_REQUEST);
     }
 
-    return this.blogPostService.indexBlogPost(indexBlogPostDto);
+    this.blogPostService.indexBlogPost(indexBlogPostDto, sanityRequestKey);
+
+    return {
+      success: true,
+    };
   }
 }

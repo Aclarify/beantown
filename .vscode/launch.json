@@ -26,6 +26,26 @@
         "uriFormat": "%s",
         "action": "debugWithChrome"
       }
+    },
+    {
+      "type": "node",
+      "request": "launch",
+      "name": "NestJS: debug",
+      "runtimeExecutable": "yarn",
+      "runtimeArgs": [
+        "run",
+        "start:debug"
+      ],
+      "cwd": "${workspaceFolder}/beantown-api",
+      "console": "integratedTerminal",
+      "internalConsoleOptions": "neverOpen",
+      "restart": true,
+      "skipFiles": [
+        "<node_internals>/**"
+      ],
+      "outFiles": [
+        "${workspaceFolder}/beantown-api/dist/**/*.js"
+      ]
     }
   ]
 }

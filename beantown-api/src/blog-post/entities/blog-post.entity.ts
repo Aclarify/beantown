@@ -1,11 +1,11 @@
 import { ApiProperty } from '@nestjs/swagger';
 
-class BlogSlug {
+export class BlogSlug {
   @ApiProperty()
   current: string;
 }
 
-class Asset {
+export class Asset {
   @ApiProperty()
   _id: string;
 
@@ -16,11 +16,11 @@ class Asset {
   altText: string | null;
 }
 
-class BlogImage {
+export class BlogImage {
   asset: Asset;
 }
 
-class BlogTag {
+export class BlogTag {
   @ApiProperty()
   _id: string;
 
@@ -45,7 +45,7 @@ export class BlogPost {
   blogSlug: BlogSlug;
 
   @ApiProperty()
-  publishedAt: Date;
+  publishedAt: string;
 
   @ApiProperty({ type: () => BlogImage })
   blogImage: BlogImage;

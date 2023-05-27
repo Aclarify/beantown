@@ -27,6 +27,7 @@ export class OpenAIService {
 
     const response = await openai.createCompletion({
       model: this.openAIOptions.model,
+      max_tokens: this.openAIOptions.maxTokens,
       prompt: preppedPrompt,
     });
 

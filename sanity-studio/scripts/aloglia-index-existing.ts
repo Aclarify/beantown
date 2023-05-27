@@ -28,7 +28,7 @@ const query = `* [_type == $type && !(_id in path("drafts.**"))][]{
     _rev,
     _id,
     "objectID": _id,
-    blogTitle,  
+    blogTitle,
     blogImage {
       asset->{_id, _key, url, altText},
     },

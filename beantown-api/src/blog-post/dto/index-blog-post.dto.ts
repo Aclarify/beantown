@@ -1,9 +1,15 @@
-import { BlogPost } from '../entities/blog-post.entity';
+import { ApiProperty } from '@nestjs/swagger';
 
-export class IndexBlogPostDto extends BlogPost {
-  ids: {
-    created: string[];
-    updated: string[];
-    deleted: string[];
-  };
+export class IndexBlogPostIds {
+  @ApiProperty()
+  created: string[];
+  @ApiProperty()
+  updated: string[];
+  @ApiProperty()
+  deleted: string[];
+}
+
+export class IndexBlogPostDto {
+  @ApiProperty()
+  ids: IndexBlogPostIds;
 }
