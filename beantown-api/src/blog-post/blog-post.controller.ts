@@ -27,7 +27,7 @@ export class BlogPostController {
     description: 'The blog post has been successfully indexed.',
   })
   @ApiBody({ type: IndexBlogPostDto })
-  indexBlogPost(
+  async indexBlogPost(
     @Body() indexBlogPostDto: IndexBlogPostDto,
     @Headers() headers: { [SIGNATURE_HEADER_NAME]: string },
   ) {
@@ -42,7 +42,10 @@ export class BlogPostController {
       throw new HttpException('Bad Request', HttpStatus.BAD_REQUEST);
     }
 
-    this.blogPostService.indexBlogPost(indexBlogPostDto, sanityRequestKey);
+    await this.blogPostService.indexBlogPost(
+      indexBlogPostDto,
+      sanityRequestKey,
+    );
 
     return {
       success: true,

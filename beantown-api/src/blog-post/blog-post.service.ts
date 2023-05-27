@@ -82,6 +82,7 @@ export class BlogPostService {
       this.sanityService.getClient(),
       indexBlogPostDto,
     );
+
     this.requestKeySet.delete(requestKey);
   }
 }
